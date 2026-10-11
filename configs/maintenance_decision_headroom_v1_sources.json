@@ -1,0 +1,78 @@
+{
+  "protocol": "maintenance_decision_headroom_v1",
+  "state_source_run": "maintenance_timing_diagnostic_v1_full_cpu_20261011T072307Z",
+  "state_source_commit": "e02b504ae6f0755c6f5d150e41f3ada9ca2ee6f4",
+  "state_source_manifest_sha256": "2d9cf8caca189635e62239521a340a08860b7c8387e75c85394985a8581f0a27",
+  "joint_source_contract": {
+    "protocol": "maintenance_timing_diagnostic_v1",
+    "source_run": "maintenance_joint_rl_v1_full_cpu_20261011T045434Z",
+    "commit": "ed032858ebf174738e9c00bfe2dce72b7fff4277",
+    "manifest_sha256": "d57fef493b559362b2d305af6c0acae1ed84f60246b05f7adfd69d8de362329b",
+    "selected_rules": {
+      "dense": "adaptive_isolated_matching",
+      "skill_mask": "deadline_matching"
+    },
+    "models": {
+      "12100000": {
+        "update": 80,
+        "learned_steps": 245760,
+        "selected_checkpoint": "joint_ppo/seed_12100000/model.pt",
+        "sha256": "8d11337825c26575e90a7a7b0401da40d5b4240aa30cee002b499b3dc80327e3"
+      },
+      "12100001": {
+        "update": 20,
+        "learned_steps": 61440,
+        "selected_checkpoint": "joint_ppo/seed_12100001/model.pt",
+        "sha256": "84594cdf191131eeeea6c40f13fc4d201015f702abcc8450054167eb3a53d3db"
+      },
+      "12100002": {
+        "update": 80,
+        "learned_steps": 245760,
+        "selected_checkpoint": "joint_ppo/seed_12100002/model.pt",
+        "sha256": "193493d78e8822dc94733cdd7e131595f27ad597268e7d5d5607c424c2fff2f3"
+      },
+      "12100003": {
+        "update": 60,
+        "learned_steps": 184320,
+        "selected_checkpoint": "joint_ppo/seed_12100003/model.pt",
+        "sha256": "0d3c56f6371171081b1d1de67cccdfd884a1fcd783e0d38c3f8630ac68030b11"
+      },
+      "12100004": {
+        "update": 60,
+        "learned_steps": 184320,
+        "selected_checkpoint": "joint_ppo/seed_12100004/model.pt",
+        "sha256": "03b8550f2c456f35135ff0978f8810c5deb859f29ea4175e5992dd51271cbc53"
+      },
+      "12100005": {
+        "update": 80,
+        "learned_steps": 245760,
+        "selected_checkpoint": "joint_ppo/seed_12100005/model.pt",
+        "sha256": "0a458f596a20ea520fa7f2ebdbccf2bba9c8c6276a4f1bf9cab37a00c52a1dd4"
+      },
+      "12100006": {
+        "update": 60,
+        "learned_steps": 184320,
+        "selected_checkpoint": "joint_ppo/seed_12100006/model.pt",
+        "sha256": "1ebe5315a5a6de549d68bf69be62900c53c39b23141142d0bf97ad49965ca1a7"
+      },
+      "12100007": {
+        "update": 60,
+        "learned_steps": 184320,
+        "selected_checkpoint": "joint_ppo/seed_12100007/model.pt",
+        "sha256": "ef6c6afd1da527d5a86952138a8aa0b7bf7cc5b4db31d29d1ba8ee2e3c897fc2"
+      },
+      "12100008": {
+        "update": 80,
+        "learned_steps": 245760,
+        "selected_checkpoint": "joint_ppo/seed_12100008/model.pt",
+        "sha256": "102f174e05e6babaca1f21d10558235e83e1e3e773dafc68d30c88c45b9075ea"
+      },
+      "12100009": {
+        "update": 60,
+        "learned_steps": 184320,
+        "selected_checkpoint": "joint_ppo/seed_12100009/model.pt",
+        "sha256": "7e4370a2a2c96ee774e67fde55b53a79caff6473b159edb33815204b1d68d831"
+      }
+    }
+  }
+}
