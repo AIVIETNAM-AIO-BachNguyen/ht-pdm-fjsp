@@ -1,0 +1,32 @@
+{
+  "protocol": "maintenance_assignment_value_v1",
+  "source_protocol": "maintenance_assignment_scoring_v1",
+  "source_run": "maintenance_assignment_scoring_v1_full_cpu_20261011T131859Z",
+  "source_commit": "de47c39379f1ae1e8c4d0e64745b90cb6322c550",
+  "files": {
+    "manifest.json": "dbac4cf14371988446bc3e36badf22b4c463f368d223606b9cc71bfa6eab4447",
+    "checkpoint_selection.json": "b93e4f4d6dc6f7f4a69ea2c21318297c72c283808f374e377a17e9ac62708465",
+    "training_coverage.json": "0c16338e853552cb03a667d61d07086a203aa9e8ac29b7a0a3eb84fbb61cc4db",
+    "resolved_config.json": "ea662bfed4993aa65f9d28b045d19ac9c9a69cb4499246c591a702a8687d2454"
+  },
+  "models": {
+    "18100000": {
+      "path": "additive_ppo/seed_18100000/model.pt",
+      "sha256": "44fbbc9f4a678dfbf587ebd3db92bacb21f82f11cd5e48cabe516c92662f3110",
+      "update": 40,
+      "learned_steps": 122880
+    },
+    "18100001": {
+      "path": "additive_ppo/seed_18100001/model.pt",
+      "sha256": "49742dbd442c680a23c1c011b73fb6efa6e6bf877743d183434e38831c710f9b",
+      "update": 30,
+      "learned_steps": 92160
+    },
+    "18100002": {
+      "path": "additive_ppo/seed_18100002/model.pt",
+      "sha256": "541ec97415ad88f1d95d4f07a5f51d5f2dc5c22d4d2a52ede6ca1ab80238a369",
+      "update": 10,
+      "learned_steps": 30720
+    }
+  }
+}
