@@ -1,0 +1,24 @@
+{
+  "protocol": "maintenance_confirmation_v1",
+  "baseline": "deadline_matching",
+  "source_cell": "skill_mask:48",
+  "source_selection": {
+    "metric": "interior_cost_per_machine_tick",
+    "best_rule": "deadline_matching",
+    "scores": {
+      "risk_matching": 4.252766927083334,
+      "deadline_matching": 4.19970703125,
+      "adaptive_isolated_matching": 4.377604166666667,
+      "scarcity_0": 4.377604166666667,
+      "scarcity_1": 4.46630859375,
+      "scarcity_3": 5.098795572916666,
+      "scarcity_6": 9.2333984375
+    }
+  },
+  "source_run": "maintenance_boundary_sensitivity_v1_full_cpu_20261010T101822Z",
+  "source_commit": "54d17f9ce9c195c59ec6745868ae9b3450c0b1c5",
+  "development_selection_sha256": "d387b685f5735afc7825c4a85c8477158b1839bf74c8a2d27730d04d518136a8",
+  "resolved_config_sha256": "74198f4db5783ed2cc8b2e79aad3a8e4d29c9ff07c8f1f695cab91bec19dbe1f",
+  "manifest_sha256": "d88676532dd2080e56edd3158abfe61a127c9b8d441aa16f4c97467ee35371c9",
+  "selection_scope": "selected on prior development only; locked before new outcomes"
+}
