@@ -1,0 +1,33 @@
+{
+  "protocol": "maintenance_ar_decision_diagnostic_v1",
+  "source_protocol": "maintenance_autoregressive_pilot_v1",
+  "source_run": "maintenance_autoregressive_pilot_v1_full_cpu_20261011T112826Z",
+  "source_commit": "01f721b990ba090b10330197248a13795f0205bc",
+  "files": {
+    "manifest.json": "6c600a68241594bd2be01760e2d559be97a7e80624ea4148076b54c555d6ec05",
+    "checkpoint_selection.json": "037ffdf2e31cc7c1238962926a82279704c3b005555e6743e540758d0da3895e",
+    "resolved_config.json": "14217fb94d3d891903a4ecda0405af1ecbae9d410c9cecb69e7ccd69f2dfd791",
+    "seed_registry.json": "469ed0c53333f40d9362e523d16bdc27bfeec0e9cd76ff4a34ccc99d40cc4c47"
+  },
+  "models": {
+    "16100000": {
+      "path": "ar_context_ppo/seed_16100000/model.pt",
+      "sha256": "698a16215a60ad111f67805de6fed064cb474d5c0db2e68d9fd8f6c3fe07c994",
+      "update": 10,
+      "learned_steps": 30720
+    },
+    "16100001": {
+      "path": "ar_context_ppo/seed_16100001/model.pt",
+      "sha256": "701f6d457796efe120db06e5b431ee74337f0572f07e3fb541037c71f8982ccd",
+      "update": 40,
+      "learned_steps": 122880
+    },
+    "16100002": {
+      "path": "ar_context_ppo/seed_16100002/model.pt",
+      "sha256": "24f46608100d129990a4941d9041f3a5c8816f6c05988952fd052c18ecaafd54",
+      "update": 10,
+      "learned_steps": 30720
+    }
+  },
+  "source_outcomes_previously_analyzed": true
+}
