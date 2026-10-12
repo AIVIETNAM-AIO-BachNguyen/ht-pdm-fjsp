@@ -68,6 +68,7 @@ fig,ax=plt.subplots(figsize=(6.8,3.8));ax.plot(ns,counts,'-o',label='Complete ma
 ax.set_yscale('log');ax.set_xticks(ns);ax.set_xlabel('Machines (technicians = machines / 2)');ax.set_ylabel('Count, logarithmic scale');ax.grid(alpha=.15);ax.legend();ax.set_title('Static representation sizes, not a runtime measurement');fig.tight_layout();fig.savefig(out/'representation_sizes.png',dpi=180);fig.savefig(out/'representation_sizes.pdf');plt.close(fig)
 if teacher_assisted:
     warm=json.loads((source/'warm_choices.json').read_text())
+    warm=dict(sorted(warm.items(),key=lambda item:int(item[0])))
     fig,axs=plt.subplots(1,2,figsize=(10.4,3.9))
     for arm in ('reservation_ppo','independent_ppo'):
         curves=[]
@@ -80,12 +81,13 @@ if teacher_assisted:
         xpos=np.arange(len(agreement))+(0 if arm=='reservation_ppo' else .35)
         axs[1].bar(xpos,agreement,width=.35,label=labels[arm],color=colors[arm])
     axs[0].set_xlabel('Fixed pretraining epoch');axs[0].set_ylabel('Teacher-label NLL / technician');axs[0].legend(fontsize=7)
-    axs[1].set_xticks(np.arange(len(warm))+.175,[str(i+1) for i in range(len(warm))]);axs[1].set_xlabel('Teacher/student bundle');axs[1].set_ylabel('Exact teacher matching agreement (%)');axs[1].set_ylim(0,100);axs[1].legend(fontsize=7)
+    axs[1].set_xticks(np.arange(len(warm))+.175,list(warm));axs[1].set_xlabel('Student seed (mapped teacher bundle)');axs[1].set_ylabel('Exact teacher matching agreement (%)');axs[1].set_ylim(0,100);axs[1].legend(fontsize=7)
     for ax in axs:ax.grid(alpha=.15)
     fig.suptitle('Training-bank diagnostics; fixed epochs, no scientific test',fontsize=12);fig.tight_layout();fig.savefig(out/'teacher_transfer.png',dpi=180);fig.savefig(out/'teacher_transfer.pdf');plt.close(fig)
 inputs=['manifest.json','summary.json','resolved_config.json','development_episodes.csv','audit.json']
 if teacher_assisted:inputs+=['warm_choices.json','teachers/references.json']
 report=dict(classification='READ_ONLY_SUPPLEMENT',source=str(source),protocol=manifest['protocol'],git=manifest['git'],
+    report_script_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
     input_hashes={name:hashlib.sha256((source/name).read_bytes()).hexdigest() for name in inputs},
     matplotlib=matplotlib.__version__,numpy=np.__version__,figures=sorted(x.name for x in out.glob('*.png')))
 (out/'analysis_manifest.json').write_text(json.dumps(report,indent=2)+'\n')
