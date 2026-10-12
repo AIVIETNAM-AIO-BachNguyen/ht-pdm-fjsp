@@ -9,7 +9,7 @@ from ht_pdm_fjsp.maintenance_waiting import WaitingEnv, observation
 from ht_pdm_fjsp.maintenance_balanced_benchmark_env import fixed_config
 from ht_pdm_fjsp.maintenance_skill_contention_screen import choose, urgency, quality, pending
 
-VERSION = 'technician_reservation_ppo_v3'
+VERSION = 'technician_reservation_ppo_v4'
 
 
 def scaled_config(n):

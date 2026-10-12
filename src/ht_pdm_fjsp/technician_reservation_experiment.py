@@ -46,6 +46,7 @@ def settings(profile):
         minibatch=48 if smoke else 256,clip=.2,entropy_weight=.01,value_weight=.5,gradient_clip=.5,
         teacher_bank_steps=192 if smoke else 122880,teacher_epochs=2 if smoke else 32,
         teacher_minibatch=48 if smoke else 512,teacher_temperature=1.5,
+        behavior_log_atol=2e-5,behavior_log_rtol=0.,behavior_value_atol=2e-5,behavior_value_rtol=1e-6,
         torch_threads=1,bootstrap_samples=200 if smoke else 40000,
         confirmation_round=1,round_alpha=.025,
         confidence=1-(.025 if final else .05)/24,max_seconds=86400)
@@ -84,7 +85,7 @@ def seed_audit():
     for profile in ('smoke','development','confirmation'):
         cfg=settings(profile)
         for s in cfg['train_seeds']:
-            for role in ('initialization:reservation_pair','teacher_actions','teacher_minibatches'):
+            for role in ('initialization:reservation_pair','teacher_actions','teacher_minibatches','teacher_augmentation'):
                 derived.append(learner.role_seed(s,f'{VERSION}:'+role))
             from ht_pdm_fjsp.maintenance_dispatch import role_seed
             for w in range(cfg['vector_envs']):
@@ -260,6 +261,7 @@ def fit_job(job):
     cfg,n,a,t,out_name,global_start=job
     out=Path(out_name);torch.set_num_threads(1)
     def timeout():
+        if (out/'abort.json').exists():raise RuntimeError('sibling job failed; technical abort')
         if time.monotonic()-global_start>cfg['max_seconds']:raise TimeoutError('registered global deadline')
     timeout();model=make_model(a,n,cfg,t)
     initial=learner.parameter_digest(model)
@@ -288,7 +290,7 @@ def fit_job(job):
         if warm is None:
             assess(model,491520)
             audit=dict(algorithm=a,train_seed=t,learned_steps=0,physical_ticks=0,training_episodes=0,optimizer_steps=0,
-                changed=False,behavior_max_error=0.,parameter_sha256=learner.parameter_digest(model),reference=True,
+                changed=False,behavior_max_error=0.,behavior_normalized_max_error=0.,parameter_sha256=learner.parameter_digest(model),reference=True,
                 foundation_training_steps=491520,source_selected_steps=meta['steps'],source_sha256=meta['sha256'])
             return dict(n=n,algorithm=a,train_seed=t,initial=initial,parameters=parameters,devrows=devrows,
                 audit=dict(audit,n=n,seconds_including_development=time.monotonic()-before),choice=candidates[0])
@@ -302,6 +304,21 @@ def fit_job(job):
             choice=min(candidates,key=lambda v:(v['development_cost'],v['steps'])))
     finally:
         for journal in journals.values():journal.close()
+
+
+def pool_results(futures,out,manifest,start,description):
+    """Expose technical failure before pool shutdown; stop sibling computations."""
+    for future in tqdm(as_completed(futures),total=len(futures),desc=description,unit='job'):
+        try:
+            result=future.result()
+        except Exception as exc:
+            error=f'{type(exc).__name__}: {exc}'
+            write_json(Path(out)/'abort.json',dict(reason='TECHNICAL_FAILURE',error=error))
+            manifest.update(status='FAILED',error=error,abort_reason='TECHNICAL_FAILURE',elapsed_seconds=time.monotonic()-start)
+            write_json(Path(out)/'manifest.json',manifest)
+            for pending in futures:pending.cancel()
+            raise
+        yield result
 
 
 def run(profile,output_dir,teacher_dir=None):
@@ -329,8 +346,10 @@ def run(profile,output_dir,teacher_dir=None):
             enumerated_catalogue=n==4) for n in cfg['scales']})
         write_json(out/'execution_contract.json',dict(actor_information='current full graph plus public normalized row/column identities and competing-machine attention',
             coordination='pooled resource messages plus selected-edge prefix and reservation mask',
-            ablation='identical raw information and public identities; no reservation/prefix; fixed original summaries',
-            value_encoder='separate from actor encoder',execution='communicating resource agents and shared reservation service',teacher_assistance=True,
+            ablation='identical raw information, public identities and remaining-worker order; no machine reservation/prefix',
+            value_encoder='separate actor/value encoders; value output N/4 calibration',
+            public_remaining_workers='indices >=j in both arms',teacher_augmentation='paired machine and technician bijections',
+            attention='four heads plus incident-edge machine pooling',execution='communicating resource agents and shared reservation service',teacher_assistance=True,
             teacher_budget='122880 shared N4 states and32 fixed distillation epochs;491520 extra PPO decisions per targetscale;491520 foundation teacher decisions',
             latency_scope='single-state neural decision; observation/arbitration/physical stepping measured separately; no network transport claim'))
         snap=out/'source_snapshot';snap.mkdir()
@@ -346,8 +365,8 @@ def run(profile,output_dir,teacher_dir=None):
         warm_results={}
         with ProcessPoolExecutor(max_workers=cfg['training_processes'],mp_context=mp.get_context('spawn')) as pool:
             futures=[pool.submit(prepare_warm_job,(cfg,t,str(out),start)) for t in cfg['train_seeds']]
-            for future in tqdm(as_completed(futures),total=len(futures),desc='Teacher banks and paired warm starts'):
-                timeout();result=future.result();warm_results[str(result['train_seed'])]=result
+            for result in pool_results(futures,out,manifest,start,'Teacher banks and paired warm starts'):
+                timeout();warm_results[str(result['train_seed'])]=result
         write_json(out/'warm_choices.json',warm_results)
         warm_seals={str(p.relative_to(out)):sha(p) for p in (out/'warm').rglob('*') if p.is_file()}
         warm_seals['warm_choices.json']=sha(out/'warm_choices.json')
@@ -356,8 +375,8 @@ def run(profile,output_dir,teacher_dir=None):
         results={};partial_choices={}
         with ProcessPoolExecutor(max_workers=cfg['training_processes'],mp_context=mp.get_context('spawn')) as pool:
             futures={pool.submit(fit_job,job):job for job in jobs}
-            for future in tqdm(as_completed(futures),total=len(jobs),desc='Training models',unit='model'):
-                timeout();result=future.result();key=f'{result["n"]}:{result["algorithm"]}:{result["train_seed"]}'
+            for result in pool_results(futures,out,manifest,start,'Training models'):
+                timeout();key=f'{result["n"]}:{result["algorithm"]}:{result["train_seed"]}'
                 results[key]=result;partial_choices[key]=result['choice']
                 write_json(out/'checkpoint_choices.partial.json',partial_choices)
                 manifest['completed_models']=len(results);write_json(out/'manifest.json',manifest)
@@ -398,7 +417,7 @@ def run(profile,output_dir,teacher_dir=None):
             write_csv(out/'episodes.csv',rows);summary=summarize(rows,cfg,latencies);write_json(out/'summary.json',summary)
         for journal in journals.values():journal.close()
         journals.clear()
-        audit=audit_run(out,cfg,devrows,rows,audits,choices)
+        audit=audit_run(out,cfg,devrows,rows,audits,choices,timeout)
         if sha(out/'checkpoint_choices.json')!=choice_hash or any(sha(out/p)!=digest for p,digest in {**seals,**warm_seals}.items()): raise RuntimeError('source or checkpoint choices changed')
         if any(sha(out/c['path'])!=c['sha256'] for c in choices.values()): raise RuntimeError('checkpoint content changed')
         if sha(PLAN)!=seals['protocol.md'] or sha(REGISTRY)!=seals['seed_registry.json'] or any(sha(Path(__file__).parent/p.name)!=seals[f'source_snapshot/{p.name}'] for p in snap.iterdir()):
@@ -409,14 +428,14 @@ def run(profile,output_dir,teacher_dir=None):
             training_models=len(audits),test_episodes=len(rows),development_episodes=len(devrows),
             goal_pass=summary.get('goal_pass',False),completed_utc=datetime.now(timezone.utc).isoformat())
         manifest['output_bindings']={str(p.relative_to(out)):dict(sha256=sha(p),bytes=p.stat().st_size) for p in out.rglob('*') if p.is_file() and p.name!='manifest.json'}
-        write_json(out/'manifest.json',manifest);print(json.dumps(dict(output_dir=str(out),status='COMPLETED',summary=summary)));return manifest
+        timeout();write_json(out/'manifest.json',manifest);print(json.dumps(dict(output_dir=str(out),status='COMPLETED',summary=summary)));return manifest
     except Exception as exc:
         manifest.update(status='FAILED',error=f'{type(exc).__name__}: {exc}',elapsed_seconds=time.monotonic()-start);write_json(out/'manifest.json',manifest);raise
     finally:
         for journal in journals.values():journal.close()
 
 
-def audit_run(out,cfg,devrows,rows,audits,choices):
+def audit_run(out,cfg,devrows,rows,audits,choices,timeout=None):
     import csv
     expected={(n,a,t) for n in cfg['scales'] for a in arms(n) for t in cfg['train_seeds']}
     if len(audits)!=len(expected) or {(r['n'],r['algorithm'],r['train_seed']) for r in audits}!=expected:raise RuntimeError('training grid')
@@ -424,7 +443,7 @@ def audit_run(out,cfg,devrows,rows,audits,choices):
     references=[r for r in audits if r['reference']]
     if len(references)!=2*len(cfg['train_seeds']) or any(r['learned_steps']!=0 or r['foundation_training_steps']!=491520 for r in references):raise RuntimeError('foundation reference budget')
     for r in [r for r in audits if not r['reference']]:
-        if r['learned_steps']!=cfg['env_steps'] or r['physical_ticks']!=cfg['env_steps']//48*60 or r['training_episodes']!=cfg['env_steps']//48 or not r['changed'] or r['behavior_max_error']>2e-6:
+        if r['learned_steps']!=cfg['env_steps'] or r['physical_ticks']!=cfg['env_steps']//48*60 or r['training_episodes']!=cfg['env_steps']//48 or not r['changed'] or r['behavior_normalized_max_error']>1:
             raise RuntimeError('training budget/likelihood audit')
     expected_dev={(n,a,t,step,s) for n,a,t in expected for step in assessed_steps(a,cfg) for s in cfg['development_seeds']}
     if len(devrows)!=len(expected_dev) or {(r['n'],r['method'],r['train_seed'],r['checkpoint_steps'],r['seed']) for r in devrows}!=expected_dev: raise RuntimeError('development grid')
@@ -442,6 +461,7 @@ def audit_run(out,cfg,devrows,rows,audits,choices):
     from ht_pdm_fjsp.technician_reservation_distillation import audit_bank,load_reference
     warm=json.loads((out/'warm_choices.json').read_text());refs=json.loads((out/'teachers/references.json').read_text())['references']
     for t in cfg['train_seeds']:
+        if timeout:timeout()
         panel=warm[str(t)];bank_path=out/'warm'/str(t)/'bank.npz'
         if sha(bank_path)!=panel['bank']['bank_sha256']:raise RuntimeError('shared bank hash')
         with np.load(bank_path) as bank:
@@ -449,7 +469,7 @@ def audit_run(out,cfg,devrows,rows,audits,choices):
             audit_bank(bank,load_reference(out,refs[f'ppo:{t}']),actions,cfg)
             bank_rewards=bank['reward'].reshape(-1,48,cfg['vector_envs']).sum(1)
         ablation=list(panel['arms'].values())
-        if len({r['initial_parameter_sha256'] for r in ablation})!=1 or len({r['bank_sha256'] for r in ablation})!=1:raise RuntimeError('warm ablation pairing')
+        if len({r['initial_parameter_sha256'] for r in ablation})!=1 or len({r['bank_sha256'] for r in ablation})!=1 or len({r['augmentation_sha256'] for r in ablation})!=1:raise RuntimeError('warm ablation pairing')
         for r in ablation:
             if r['state_exposures']!=cfg['teacher_bank_steps'] or r['state_presentations']!=cfg['teacher_epochs']*cfg['teacher_bank_steps'] or r['epochs']!=cfg['teacher_epochs']:raise RuntimeError('distillation budget')
         episodes=list(csv.DictReader((out/'warm'/str(t)/'bank_episodes.csv').open()))
@@ -481,6 +501,7 @@ def audit_run(out,cfg,devrows,rows,audits,choices):
                 recorded_coord[key]=r
         with (out/'decisions.csv').open() as f:
             for r in csv.DictReader(f):
+                if timeout and replay_count%1000==0:timeout()
                 n=int(r['n']);c=scaled_config(n)
                 state=DispatchState(**{k:tuple(v) for k,v in json.loads(r['state']).items()})
                 pairs=tuple(map(tuple,json.loads(r['action'])))

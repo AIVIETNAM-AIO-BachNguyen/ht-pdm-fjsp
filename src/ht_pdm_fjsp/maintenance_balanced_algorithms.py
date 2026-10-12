@@ -211,6 +211,24 @@ def td_loss(model, target, data, gamma):
     return torch.nn.functional.smooth_l1_loss(predicted, expected), predicted.detach(), expected
 
 
+def behavior_replay_audit(check_log, old_log, check_value, old_value, cfg):
+    """Separate float precision from a changed behavior policy/value model."""
+    errors={};normalized=[]
+    for name,current,recorded in (("log",check_log,old_log),("value",check_value,old_value)):
+        if current.shape!=recorded.shape or not torch.isfinite(current).all() or not torch.isfinite(recorded).all():
+            raise RuntimeError("sampled/re-evaluated behavior policy mismatch: shape/nonfinite")
+        atol=float(cfg.get(f"behavior_{name}_atol",2e-6))
+        rtol=float(cfg.get(f"behavior_{name}_rtol",0.))
+        if atol<=0 or rtol<0:raise ValueError("positive replay precision contract required")
+        delta=(current-recorded).abs()
+        errors[f"behavior_{name}_max_error"]=float(delta.max())
+        normalized.append(float((delta/(atol+rtol*recorded.abs())).max()))
+    errors["behavior_normalized_max_error"]=max(normalized)
+    if max(normalized)>1:
+        raise RuntimeError("sampled/re-evaluated behavior policy mismatch: "+str(errors))
+    return errors
+
+
 def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=None):
     """Train on exact step budget; callback(model, steps, audit) after updates.
 
@@ -252,7 +270,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
     observations = [env.reset() for env in envs]
     episode_rewards = np.zeros(workers); episode_steps = np.zeros(workers, dtype=int)
     completed = physical_ticks = optimizer_steps = steps = update_index = 0
-    actor_buffer = []; emitted = []; behavior_error = 0.; model.train()
+    actor_buffer = []; emitted = []; behavior_error = 0.; replay_errors = {}; model.train()
 
     def emit(name, record):
         if name in journals:
@@ -323,10 +341,11 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                     torch.stack([row[5] for row in actor_buffer])).reshape(-1)
                 with torch.no_grad():
                     check_log, _, check_value = model.evaluate(flat, actions_)
-                    error = max(float((check_log - old_log).abs().max()), float((check_value - old_value).abs().max()))
+                    replay_audit=behavior_replay_audit(check_log,old_log,check_value,old_value,cfg)
+                    error = max(replay_audit["behavior_log_max_error"],replay_audit["behavior_value_max_error"])
                     behavior_error = max(behavior_error, error)
-                    if error > 2e-6:
-                        raise RuntimeError("sampled/re-evaluated behavior policy mismatch")
+                    if "behavior_log_atol" in cfg:
+                        for key,value in replay_audit.items():replay_errors[key]=max(replay_errors.get(key,0.),value)
                 advantage = returns - old_value
                 advantage = (advantage - advantage.mean()) / (advantage.std(unbiased=False) + 1e-8)
                 for epoch in range(int(cfg["epochs"])):
@@ -357,7 +376,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                 record = dict(algorithm=model.algorithm, train_seed=seed, learned_steps=steps,
                     physical_ticks=physical_ticks + int(episode_steps.sum()), training_episodes=completed,
                     optimizer_steps=optimizer_steps, update_index=update_index, loss=float(np.mean(losses)),
-                    epsilon=0. if actor else epsilon, parameter_sha256=digest, behavior_max_error=behavior_error)
+                    epsilon=0. if actor else epsilon, parameter_sha256=digest, behavior_max_error=behavior_error,**replay_errors)
                 emit("training_progress", record)
                 if steps in checkpoints:
                     if on_checkpoint:
@@ -374,6 +393,6 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
         return dict(algorithm=model.algorithm, train_seed=seed, learned_steps=steps,
             physical_ticks=physical_ticks, training_episodes=completed, optimizer_steps=optimizer_steps,
             updates=update_index, checkpoints=emitted, changed=True, behavior_max_error=behavior_error,
-            parameter_sha256=parameter_digest(model), partial_episode_steps=int(episode_steps.sum()))
+            parameter_sha256=parameter_digest(model), partial_episode_steps=int(episode_steps.sum()),**replay_errors)
     finally:
         progress.close()

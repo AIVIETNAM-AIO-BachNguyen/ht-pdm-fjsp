@@ -11,6 +11,7 @@ class ReservationPolicy(nn.Module):
     def __init__(self,algorithm,hidden=64):
         super().__init__()
         if algorithm not in ('reservation_ppo','independent_ppo'): raise ValueError(algorithm)
+        if hidden%4:raise ValueError('hidden width must divide into four attention heads')
         self.algorithm=algorithm;self.hidden=hidden
         self.edge_encoder=mlp(24,hidden,hidden)
         self.value_edge_encoder=mlp(24,hidden,hidden)
@@ -30,12 +31,17 @@ class ReservationPolicy(nn.Module):
             g[:,None,None].expand(-1,n,k,-1),machine_id,technician_id],-1)
         edge=self.edge_encoder(raw)
         machines=edge.mean(2)
-        weights=torch.softmax(torch.einsum('bnkh,bmh->bnkm',self.query(edge),self.key(machines))/self.hidden**.5,-1)
-        edge=edge+torch.einsum('bnkm,bmh->bnkh',weights,self.attention_value(machines))
+        heads=4;channels=self.hidden//heads
+        query=self.query(edge).reshape(b,n,k,heads,channels)
+        key=self.key(machines).reshape(b,n,heads,channels)
+        attention_value=self.attention_value(machines).reshape(b,n,heads,channels)
+        weights=torch.softmax(torch.einsum('bnkhd,bmhd->bnkhm',query,key)/channels**.5,-1)
+        context=torch.einsum('bnkhm,bmhd->bnkhd',weights,attention_value).reshape(b,n,k,self.hidden)
+        edge=edge+machines[:,:,None]+context
         # Full raw graph information is broadcast in both arms; no future shocks.
         global_pool=edge.mean((1,2));tech_pool=edge.mean(1)
         value_edge=self.value_edge_encoder(raw)
-        value=self.critic(torch.cat([value_edge.mean((1,2)),value_edge.mean(1).mean(1),g],-1)).squeeze(-1)
+        value=self.critic(torch.cat([value_edge.mean((1,2)),value_edge.mean(1).mean(1),g],-1)).squeeze(-1)*(n/4)
         return edge,global_pool,tech_pool,value
 
     def trace(self,batch,recorded=None,generator=None,deterministic=False):
@@ -46,7 +52,8 @@ class ReservationPolicy(nn.Module):
         logs=torch.zeros(b);entropies=torch.zeros(b);actions=[]
         for j in range(k):
             live=initial[:,:,j] & ~reserved if self.algorithm=='reservation_ppo' else initial[:,:,j]
-            resource=(initial & ~reserved[:,:,None]).float() if self.algorithm=='reservation_ppo' else initial.float()
+            future=torch.arange(k)[None,None,:]>=j
+            resource=(initial & ~reserved[:,:,None] & future).float() if self.algorithm=='reservation_ppo' else (initial & future).float()
             pool=(edge*resource[...,None]).sum((1,2))/resource.sum((1,2)).clamp_min(1)[:,None]
             stats=torch.stack([live.float().mean(1),reserved.float().mean(1) if self.algorithm=='reservation_ppo' else torch.zeros(b),
                 torch.full((b,),j/max(1,k-1))],-1)

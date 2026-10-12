@@ -120,20 +120,47 @@ def audit_bank(data,teacher,actions,cfg):
     return dict(status='PASS',state_exposures=total,labels_replayed=total)
 
 
+def rename_presentation(batch,labels,generator):
+    """Bijective N4 machine/technician relabeling; no new teacher queries."""
+    b,n,k,_=batch['edges'].shape
+    if (n,k)!=(4,2) or labels.shape!=(b,k):raise ValueError('N4 teacher presentation required')
+    machines=torch.rand((b,n),generator=generator).argsort(1)
+    technicians=torch.rand((b,k),generator=generator).argsort(1)
+    result=dict(batch)
+    result['machines']=batch['machines'].gather(1,machines[...,None].expand(-1,-1,6))
+    result['technicians']=batch['technicians'].gather(1,technicians[...,None].expand(-1,-1,3))
+    edge=batch['edges'].gather(1,machines[:,:,None,None].expand(-1,-1,k,4))
+    result['edges']=edge.gather(2,technicians[:,None,:,None].expand(-1,n,-1,4))
+    mask=batch['pair_mask'].gather(1,machines[:,:,None].expand(-1,-1,k))
+    result['pair_mask']=mask.gather(2,technicians[:,None,:].expand(-1,n,-1))
+    result['state']=torch.cat([result['machines'].flatten(1),result['technicians'].flatten(1),
+        result['edges'].flatten(1),result['global_features']],1)
+    from ht_pdm_fjsp.maintenance_heterogeneous_model import catalogue
+    result['joint_mask']=torch.stack([torch.stack([result['pair_mask'][:,m,j] for m,j in action],1).all(1)
+        if action else torch.ones(b,dtype=torch.bool) for action in catalogue(4,2)],1)
+    old_tokens=labels.gather(1,technicians)
+    inverse=machines.argsort(1)
+    following=torch.where(old_tokens>0,inverse.gather(1,(old_tokens-1).clamp_min(0))+1,0)
+    return result,following,machines,technicians
+
+
 def prepare_warm_job(job):
     """Generate one paired bank and both fixed-epoch warm starts for a seed."""
     cfg,seed,out_name,global_start=job
     from ht_pdm_fjsp.technician_reservation_experiment import make_model
     out=Path(out_name);torch.set_num_threads(1)
     def timeout():
+        if (out/'abort.json').exists():raise RuntimeError('sibling job failed; technical abort')
         if time.monotonic()-global_start>cfg['max_seconds']:raise TimeoutError('registered global deadline')
-    directory=out/'warm'/str(seed);directory.mkdir(parents=True)
+    timeout();directory=out/'warm'/str(seed);directory.mkdir(parents=True)
     references=json.loads((out/'teachers/references.json').read_text())['references'];teacher=load_reference(out,references[f'ppo:{seed}'])
     arrays,bank=build_bank(cfg,seed,directory,teacher,timeout);results={};initials=[]
     for algorithm in ('reservation_ppo','independent_ppo'):
         timeout();model=make_model(algorithm,4,cfg,seed);initial=learner.parameter_digest(model);initials.append(initial)
         optimizer=torch.optim.Adam(model.parameters(),lr=cfg['learning_rate'])
         rng=torch.Generator().manual_seed(learner.role_seed(seed,VERSION+':teacher_minibatches'))
+        augmentation=torch.Generator().manual_seed(learner.role_seed(seed,VERSION+':teacher_augmentation'))
+        transformations=hashlib.sha256()
         journal=Journal(directory/f'{algorithm}_pretraining.csv');updates=presentations=0
         try:
             for epoch in tqdm(range(cfg['teacher_epochs']),desc=f'Distill {algorithm}/{seed}',unit='epoch'):
@@ -142,6 +169,8 @@ def prepare_warm_job(job):
                     timeout();ids=permutation[start:start+cfg['teacher_minibatch']]
                     batch=learner.tensors({key:arrays[key][ids] for key in GRAPH_KEYS})
                     labels=torch.from_numpy(arrays['labels'][ids]);returns=torch.from_numpy(arrays['returns'][ids])
+                    batch,labels,machines,technicians=rename_presentation(batch,labels,augmentation)
+                    transformations.update(machines.numpy().tobytes());transformations.update(technicians.numpy().tobytes())
                     log,_,value=model.evaluate(batch,labels)
                     nll=-log.mean()/2;vf=torch.nn.functional.smooth_l1_loss(value,returns);loss=nll+.1*vf
                     if not torch.isfinite(loss):raise RuntimeError('nonfinite distillation loss')
@@ -149,7 +178,7 @@ def prepare_warm_job(job):
                     if not torch.isfinite(norm):raise RuntimeError('nonfinite distillation gradients')
                     optimizer.step();updates+=1;presentations+=len(ids);losses.append(float(nll.detach()))
                 journal.add(dict(algorithm=algorithm,train_seed=seed,epoch=epoch+1,optimizer_steps=updates,
-                    state_presentations=presentations,mean_nll=float(np.mean(losses)),bank_sha256=bank['bank_sha256']))
+                    state_presentations=presentations,mean_nll=float(np.mean(losses)),bank_sha256=bank['bank_sha256'],augmentation_sha256=transformations.hexdigest()))
         finally:journal.close()
         digest=learner.parameter_digest(model);path=directory/f'{algorithm}_warm.pt'
         payload=dict(protocol=VERSION,algorithm=algorithm,train_seed=seed,hidden=cfg['hidden'],n=4,
@@ -164,10 +193,11 @@ def prepare_warm_job(job):
         result=dict(path=str(path.relative_to(out)),sha256=sha(path),initial_parameter_sha256=initial,
             parameter_sha256=digest,bank_sha256=bank['bank_sha256'],optimizer_steps=updates,
             state_presentations=presentations,epochs=cfg['teacher_epochs'],state_exposures=cfg['teacher_bank_steps'],
-            teacher_matching_agreement=float(correct/len(arrays['labels'])),teacher_sha256=references[f'ppo:{seed}']['sha256'])
+            teacher_matching_agreement=float(correct/len(arrays['labels'])),teacher_sha256=references[f'ppo:{seed}']['sha256'],augmentation_sha256=transformations.hexdigest())
         if updates!=cfg['teacher_epochs']*((cfg['teacher_bank_steps']+cfg['teacher_minibatch']-1)//cfg['teacher_minibatch']) or presentations!=cfg['teacher_epochs']*cfg['teacher_bank_steps'] or initial==digest:raise RuntimeError('warm training budget')
         results[algorithm]=result
     if len(set(initials))!=1:raise RuntimeError('warm initial pairing')
+    if len({r['augmentation_sha256'] for r in results.values()})!=1:raise RuntimeError('teacher transformation pairing')
     write_json(directory/'warm_audit.json',dict(status='PASS',bank=bank,arms=results));return dict(train_seed=seed,bank=bank,arms=results)
 
 

@@ -191,6 +191,7 @@ def test_distillation_budget_labels_returns_and_disjoint_streams(tmp_path):
     r,i=result['arms'].values()
     assert r['initial_parameter_sha256']==i['initial_parameter_sha256']
     assert r['bank_sha256']==i['bank_sha256'] and r['teacher_sha256']==i['teacher_sha256']
+    assert r['augmentation_sha256']==i['augmentation_sha256']
     assert r['optimizer_steps']==i['optimizer_steps']==8
     assert r['state_presentations']==i['state_presentations']==384
     directory=tmp_path/'warm'/str(seed)
@@ -226,3 +227,79 @@ def test_graph_attention_capacity_independent_of_scale():
         counts.append(sum(p.numel() for p in model.parameters()))
         env=urgent(n);action=model.select(env.observe());env.resolve(action)
     assert len(set(counts))==1
+
+
+def test_teacher_renaming_preserves_physics_matching_and_observations():
+    from ht_pdm_fjsp.technician_reservation_distillation import rename_presentation
+    env=urgent();env.env.state=DispatchState((3.,6.,4.,3.),(False,True,False,True),(0,2,0,1),(0,0),(-1,-1))
+    original=env.env.state;obs=env.observe();pairs=((0,0),(2,1));labels=torch.tensor([[1,3]])
+    events=(True,False,False,True);following,cost,components=transition(env.config,original,pairs,events)
+    for seed in range(12):
+        batch,target,machines,workers=rename_presentation(tensors([obs]),labels,torch.Generator().manual_seed(seed))
+        mo=machines[0].tolist();wo=workers[0].tolist();inverse=np.argsort(mo)
+        def permute_state(state):
+            return DispatchState(tuple(state.ages[m] for m in mo),tuple(state.failed[m] for m in mo),
+                tuple(state.pending_wait[m] for m in mo),tuple(state.remaining[j] for j in wo),
+                tuple(int(inverse[state.assigned[j]]) if state.assigned[j]>=0 else -1 for j in wo))
+        cfg=replace(env.config,service_time=tuple(tuple(env.config.service_time[m][j] for j in wo) for m in mo),
+            restoration=tuple(tuple(env.config.restoration[m][j] for j in wo) for m in mo))
+        state=permute_state(original);expected=e.graph_observation(cfg,state,0)
+        for key in ('machines','technicians','edges','pair_mask','global_features','state'):
+            assert np.array_equal(batch[key][0].numpy(),expected[key])
+        renamed=tuple(sorted((int(m)-1,j) for j,m in enumerate(target[0]) if m))
+        actual,newcost,newcomponents=transition(cfg,state,renamed,tuple(events[m] for m in mo))
+        assert actual==permute_state(following) and newcost==cost and newcomponents==components
+        for arm in ('reservation_ppo','independent_ppo'):
+            model=x.make_model(arm,4,x.settings('smoke'),57800000);model.evaluate(batch,target)
+
+
+def test_public_remaining_worker_pool_excludes_consumed_wait_slot_in_both_arms():
+    env=urgent();batch=tensors([env.observe()]);cfg=x.settings('smoke')
+    for arm in ('reservation_ppo','independent_ppo'):
+        model=x.make_model(arm,4,cfg,57800000);edge,_,_,_=model.encode(batch);contexts=[]
+        handle=model.actor.register_forward_pre_hook(lambda module,args:contexts.append(args[0].detach().clone()))
+        model.evaluate(batch,torch.tensor([[0,0]]));handle.remove()
+        expected=edge[:,:,1].mean(1)
+        assert torch.allclose(contexts[1][:,:,2*model.hidden:3*model.hidden],expected[:,None].expand(-1,4,-1))
+
+
+def test_value_scales_with_public_machine_count():
+    cfg=x.settings('smoke')
+    for n in (4,8,16,32):
+        model=x.make_model('reservation_ppo',n,cfg,57800000)
+        with torch.no_grad():model.critic[-1].weight.zero_();model.critic[-1].bias.fill_(1.)
+        value=model.encode(tensors([urgent(n).observe()]))[-1]
+        assert float(value.detach()[0])==n/4
+
+
+def test_float32_replay_guard_separates_value_rounding_and_actor_drift():
+    from ht_pdm_fjsp.maintenance_balanced_algorithms import behavior_replay_audit
+    cfg=x.settings('smoke');log=torch.tensor([-2.]);value=torch.tensor([-1024.])
+    rounded=torch.nextafter(value,torch.tensor([float('inf')]))
+    with pytest.raises(RuntimeError,match='behavior policy mismatch'):
+        behavior_replay_audit(log,log,rounded,value,{})
+    audit=behavior_replay_audit(log,log,rounded,value,cfg)
+    assert audit['behavior_log_max_error']==0 and audit['behavior_value_max_error']>2e-6
+    assert audit['behavior_normalized_max_error']<=1
+    with pytest.raises(RuntimeError,match='behavior policy mismatch'):
+        behavior_replay_audit(log+.001,log,value,value,cfg)
+    with pytest.raises(RuntimeError,match='behavior policy mismatch'):
+        behavior_replay_audit(log,log,value+.1,value,cfg)
+
+
+def test_pool_failure_is_visible_before_shutdown_and_cancels_pending(tmp_path):
+    import json,time
+    from concurrent.futures import Future
+    failed=Future();failed.set_exception(RuntimeError('known numerical diagnostic'));pending=Future()
+    manifest={'status':'RUNNING'}
+    with pytest.raises(RuntimeError,match='known numerical diagnostic'):
+        list(x.pool_results([failed,pending],tmp_path,manifest,time.monotonic(),'Expected technical failure'))
+    assert pending.cancelled()
+    assert json.loads((tmp_path/'manifest.json').read_text())['status']=='FAILED'
+    assert json.loads((tmp_path/'abort.json').read_text())['reason']=='TECHNICAL_FAILURE'
+    cfg=x.settings('smoke')
+    with pytest.raises(RuntimeError,match='sibling job failed'):
+        x.fit_job((cfg,4,'reservation_ppo',cfg['train_seeds'][0],str(tmp_path),time.monotonic()))
+    from ht_pdm_fjsp.technician_reservation_distillation import prepare_warm_job
+    with pytest.raises(RuntimeError,match='sibling job failed'):
+        prepare_warm_job((cfg,cfg['train_seeds'][0],str(tmp_path),time.monotonic()))
