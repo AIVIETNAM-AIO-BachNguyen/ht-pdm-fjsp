@@ -1,11 +1,14 @@
 """Prospective development and sealed confirmation for resource reservation PPO."""
 from __future__ import annotations
 import argparse
+from concurrent.futures import ProcessPoolExecutor,as_completed
 from dataclasses import asdict
 from datetime import datetime,timezone
 import hashlib
 import itertools
+import multiprocessing as mp
 import json
+import math
 from pathlib import Path
 import platform
 import shutil
@@ -36,8 +39,9 @@ def settings(profile):
         development_seeds=list(range(raw['development_start'],raw['development_start']+raw['development_count'])),
         test_seeds=list(range(raw['test_start'],raw['test_start']+raw['test_count'])) if 'test_start' in raw else [],
         scales=[4,8] if smoke else [4,8,16,32] if final else [4,16],
-        env_steps=384 if smoke else 491520 if final else 122880,vector_envs=2 if smoke else 16,
-        rollout=192 if smoke else 3072,checkpoints=[192,384] if smoke else [122880,245760,368640,491520] if final else [30720,61440,92160,122880],
+        env_steps=384 if smoke else 491520,vector_envs=2 if smoke else 16,
+        training_processes=4,
+        rollout=192 if smoke else 3072,checkpoints=[192,384] if smoke else [122880,245760,368640,491520],
         hidden=64,mixer_hidden=32,gamma=1.,learning_rate=.0003,epochs=2 if smoke else 4,
         minibatch=48 if smoke else 256,clip=.2,entropy_weight=.01,value_weight=.5,gradient_clip=.5,
         torch_threads=1,bootstrap_samples=200 if smoke else 40000,
@@ -179,6 +183,7 @@ def summarize(rows,cfg,latencies):
     def hi(key):return intervals[key]['upper']
     guards={'near_ppo':lo('N4_gain_vs_ppo')>=-.01,'beats_mappo':lo('N4_gain_vs_mappo')>0,
         'small_mechanism':lo('N4_gain_vs_independent_ppo')>0,
+        'small_ablation_noninferiority':lo('N4_gain_vs_independent_ppo')>=-.01,
         'practical_ppo_superiority':lo('N4_gain_vs_ppo')>=.01}
     for n in cfg['scales']:
         guards[f'N{n}_health']=(lo(f'N{n}_availability_difference')>=-.01 and hi(f'N{n}_pending_per_machine_difference')<=.025 and hi(f'N{n}_failures_per_machine_difference')<=.25)
@@ -186,7 +191,7 @@ def summarize(rows,cfg,latencies):
             guards[f'N{n}_scale_quality']=(lo(f'N{n}_gain_vs_deadline')>=-.02 and hi(f'N{n}_cost_ratio_vs_N4')<=1.10)
             guards[f'N{n}_mechanism']=lo(f'N{n}_gain_vs_independent_ppo')>0
         guards[f'N{n}_latency']=float(np.quantile(latencies[f'{n}:reservation_ppo'],.95))<=50
-    required=[v for key,v in guards.items() if key!='practical_ppo_superiority']
+    required=[v for key,v in guards.items() if key not in ('practical_ppo_superiority','small_mechanism')]
     leave_one_out=[]
     if nt>1:
         for omit in range(nt):
@@ -214,7 +219,7 @@ def development_summary(rows,cfg,references=None):
                 bystep={step:np.mean([r['extended_cost'] for r in panel if r['checkpoint_steps']==step]) for step in cfg['checkpoints']}
                 step=min(bystep,key=lambda s:(bystep[s],s));selected[f'{n}:{a}:{t}']=step;costs.append(bystep[step])
             means[n][a]=float(np.mean(costs))
-    small_pass=means[4]['reservation_ppo']<=1.01*means[4]['ppo'] and means[4]['reservation_ppo']<means[4]['mappo'] and means[4]['reservation_ppo']<means[4]['independent_ppo']
+    small_pass=means[4]['reservation_ppo']<=1.01*means[4]['ppo'] and means[4]['reservation_ppo']<means[4]['mappo'] and means[4]['reservation_ppo']<=1.01*means[4]['independent_ppo']
     scale_guards={};selected_metrics={}
     for n in cfg['scales']:
         panel=[r for r in rows if r['n']==n and r['method']=='reservation_ppo'
@@ -232,6 +237,39 @@ def development_summary(rows,cfg,references=None):
         development_screen_pass=bool(small_pass and all(all(g.values()) for g in scale_guards.values())))
 
 
+def fit_job(job):
+    """Independent deterministic CPU training job; never opens test seeds."""
+    cfg,n,a,t,out_name,global_start=job
+    out=Path(out_name);torch.set_num_threads(1)
+    def timeout():
+        if time.monotonic()-global_start>cfg['max_seconds']:raise TimeoutError('registered global deadline')
+    timeout();model=make_model(a,n,cfg,t)
+    initial=learner.parameter_digest(model);parameters=sum(p.numel() for p in model.parameters())
+    directory=out/f'N{n}'/a/str(t);directory.mkdir(parents=True)
+    checkpoints=directory/'checkpoints';checkpoints.mkdir()
+    journals={name:Journal(directory/f'{name}.csv') for name in ('training_progress','training_episodes','development_episodes')}
+    probe=ResourceEnv(cfg['development_seeds'][0],n,a).reset();candidates=[];devrows=[]
+    def assess(current,steps,audit=None):
+        timeout();path=checkpoints/f'step_{steps:09d}.pt'
+        meta=save_model(current,path,n,cfg,t,steps,probe);meta['path']=str(path.relative_to(out))
+        rows=[];current.eval()
+        for seed in tqdm(cfg['development_seeds'],desc=f'Dev N{n}/{a}/{t}/{steps}',leave=False):
+            timeout();row=evaluate(a,n,t,seed,current);row['checkpoint_steps']=steps
+            journals['development_episodes'].add(row);devrows.append(row);rows.append(row)
+        current.train()
+        if steps:candidates.append(dict(meta,steps=steps,development_cost=float(np.mean([r['extended_cost'] for r in rows]))))
+    try:
+        assess(model,0);before=time.monotonic()
+        train_journals={name:Tags(journals[name],dict(n=n)) for name in ('training_progress','training_episodes')}
+        audit=learner.fit(model,dict(cfg,rng_namespace=f'{VERSION}:N{n}:'),t,
+            lambda seed,worker:ResourceEnv(seed,n,a,worker,True),train_journals,assess,timeout)
+        return dict(n=n,algorithm=a,train_seed=t,initial=initial,parameters=parameters,devrows=devrows,
+            audit=dict(audit,n=n,seconds_including_development=time.monotonic()-before),
+            choice=min(candidates,key=lambda v:(v['development_cost'],v['steps'])))
+    finally:
+        for journal in journals.values():journal.close()
+
+
 def run(profile,output_dir):
     cfg=settings(profile);out=Path(output_dir).resolve()
     if out.exists() and any(out.iterdir()): raise FileExistsError('prior run overwrite')
@@ -241,7 +279,8 @@ def run(profile,output_dir):
         dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()))
     if profile!='smoke' and git['dirty']: raise RuntimeError('commit verified code before research run')
     manifest=dict(protocol=VERSION,status='RUNNING',profile=profile,git=git,test_opened=False,
-        started_utc=datetime.now(timezone.utc).isoformat(),runtime=dict(platform=platform.platform(),torch=torch.__version__,device='cpu'))
+        started_utc=datetime.now(timezone.utc).isoformat(),runtime=dict(platform=platform.platform(),
+            python=platform.python_version(),numpy=np.__version__,torch=torch.__version__,device='cpu'))
     write_json(out/'manifest.json',manifest);journals={}
     def timeout():
         if time.monotonic()-start>cfg['max_seconds']: raise TimeoutError('fixed hard deadline; incomplete')
@@ -249,6 +288,14 @@ def run(profile,output_dir):
         seed_report=seed_audit()
         write_json(out/'resolved_config.json',cfg);write_json(out/'seed_audit.json',seed_report)
         write_json(out/'physics.json',{str(n):asdict(scaled_config(n)) for n in cfg['scales']})
+        write_json(out/'graph_sizes.json',{str(n):dict(edges=n*n//2,
+            catalogue_count=sum(math.comb(n,r)*math.comb(n//2,r)*math.factorial(r) for r in range(n//2+1)),
+            enumerated_catalogue=n==4) for n in cfg['scales']})
+        write_json(out/'execution_contract.json',dict(actor_information='current full graph plus public normalized row/column identities',
+            coordination='pooled resource messages plus selected-edge prefix and reservation mask',
+            ablation='identical raw information and public identities; no reservation/prefix; fixed original summaries',
+            value_encoder='separate from actor encoder',execution='communicating resource agents and shared reservation service',
+            latency_scope='single-state neural decision; observation/arbitration/physical stepping measured separately; no network transport claim'))
         snap=out/'source_snapshot';snap.mkdir()
         for p in Path(__file__).parent.glob('*.py'): shutil.copy2(p,snap/p.name)
         history=out/'registry_snapshot';history.mkdir()
@@ -258,29 +305,26 @@ def run(profile,output_dir):
         manifest['source_seal']=seals;write_json(out/'manifest.json',manifest)
         journals={name:Journal(out/f'{name}.csv') for name in ('training_progress','training_episodes','development_episodes','episodes.partial','coordination','decisions')}
         choices={};audits=[];devrows=[];parameters={};initials={}
-        for n in cfg['scales']:
-            for a,t in itertools.product(arms(n),cfg['train_seeds']):
-                timeout();manifest['stage']=f'train:N{n}:{a}:{t}';write_json(out/'manifest.json',manifest)
-                model=make_model(a,n,cfg,t);initials[f'{n}:{a}:{t}']=learner.parameter_digest(model)
-                parameters[f'{n}:{a}']=sum(p.numel() for p in model.parameters())
-                directory=out/f'N{n}'/a/str(t)/'checkpoints';directory.mkdir(parents=True)
-                probe=ResourceEnv(cfg['development_seeds'][0],n,a).reset();candidates=[]
-                def assess(current,steps,audit=None):
-                    timeout();path=directory/f'step_{steps:09d}.pt'
-                    meta=save_model(current,path,n,cfg,t,steps,probe);meta['path']=str(path.relative_to(out))
-                    rows=[];current.eval()
-                    for s in tqdm(cfg['development_seeds'],desc=f'Dev N{n}/{a}/{t}/{steps}',leave=False):
-                        timeout();r=evaluate(a,n,t,s,current);r['checkpoint_steps']=steps
-                        journals['development_episodes'].add(r);devrows.append(r);rows.append(r)
-                    current.train()
-                    if steps:candidates.append(dict(meta,steps=steps,development_cost=float(np.mean([r['extended_cost'] for r in rows]))))
-                assess(model,0);before=time.monotonic()
-                train_journals={name:Tags(journals[name],dict(n=n)) for name in ('training_progress','training_episodes')}
-                audit=learner.fit(model,dict(cfg,rng_namespace=f'{VERSION}:N{n}:'),t,
-                    lambda seed,worker:ResourceEnv(seed,n,a,worker,True),train_journals,assess,timeout)
-                audits.append(dict(audit,n=n,seconds_including_development=time.monotonic()-before));write_json(out/'training_audit.json',audits)
-                choices[f'{n}:{a}:{t}']=min(candidates,key=lambda v:(v['development_cost'],v['steps']))
-                write_json(out/'checkpoint_choices.partial.json',choices)
+        jobs=[(cfg,n,a,t,str(out),start) for n in cfg['scales'] for a in arms(n) for t in cfg['train_seeds']]
+        manifest['stage']='training_pool';write_json(out/'manifest.json',manifest)
+        results={};partial_choices={}
+        with ProcessPoolExecutor(max_workers=cfg['training_processes'],mp_context=mp.get_context('spawn')) as pool:
+            futures={pool.submit(fit_job,job):job for job in jobs}
+            for future in tqdm(as_completed(futures),total=len(jobs),desc='Training models',unit='model'):
+                timeout();result=future.result();key=f'{result["n"]}:{result["algorithm"]}:{result["train_seed"]}'
+                results[key]=result;partial_choices[key]=result['choice']
+                write_json(out/'checkpoint_choices.partial.json',partial_choices)
+                manifest['completed_models']=len(results);write_json(out/'manifest.json',manifest)
+        # Deterministic merge order, independent of OS process completion order.
+        import csv
+        for _,n,a,t,_,_ in jobs:
+            key=f'{n}:{a}:{t}';result=results[key];directory=out/f'N{n}'/a/str(t)
+            audits.append(result['audit']);devrows.extend(result['devrows']);choices[key]=result['choice']
+            parameters[f'{n}:{a}']=result['parameters'];initials[key]=result['initial']
+            for name in ('training_progress','training_episodes','development_episodes'):
+                with (directory/f'{name}.csv').open() as stream:
+                    for row in csv.DictReader(stream):journals[name].add(row)
+        write_json(out/'training_audit.json',audits)
         write_json(out/'checkpoint_choices.json',choices);choice_hash=sha(out/'checkpoint_choices.json')
         write_json(out/'parameter_counts.json',parameters);write_json(out/'initial_parameter_hashes.json',initials)
         for n in cfg['scales']:

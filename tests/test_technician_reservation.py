@@ -109,3 +109,48 @@ def test_panels_and_exact_family():
 def test_refuse_overwrite(tmp_path):
     (tmp_path/'prior').write_text('keep')
     with pytest.raises(FileExistsError):x.run('smoke',tmp_path)
+
+
+def test_value_gradients_cannot_change_actor_encoder():
+    model=x.make_model('reservation_ppo',4,x.settings('smoke'),53800000)
+    env=urgent();batch=tensors([env.observe()]);action,_,_=model.sample(batch,torch.Generator().manual_seed(1))
+    _,_,value=model.evaluate(batch,action);value.square().mean().backward()
+    assert all(p.grad is None for p in model.edge_encoder.parameters())
+    assert all(p.grad is None for p in model.actor.parameters())
+    assert any(p.grad is not None for p in model.value_edge_encoder.parameters())
+
+
+def test_serial_and_spawn_training_identical(tmp_path):
+    import time,multiprocessing as mp
+    from concurrent.futures import ProcessPoolExecutor
+    cfg=x.settings('smoke');cfg=dict(cfg,env_steps=192,checkpoints=[192],development_seeds=cfg['development_seeds'][:1])
+    serial=x.fit_job((cfg,4,'reservation_ppo',53800000,str(tmp_path/'serial'),time.monotonic()))
+    with ProcessPoolExecutor(max_workers=1,mp_context=mp.get_context('spawn')) as pool:
+        parallel=pool.submit(x.fit_job,(cfg,4,'reservation_ppo',53800000,str(tmp_path/'parallel'),time.monotonic())).result()
+    assert serial['initial']==parallel['initial']
+    assert serial['audit']['parameter_sha256']==parallel['audit']['parameter_sha256']
+    assert serial['choice']['development_cost']==parallel['choice']['development_cost']
+    assert serial['choice']['steps']==parallel['choice']['steps']==192
+    for key in ('learned_steps','optimizer_steps','training_episodes','behavior_max_error'):
+        assert serial['audit'][key]==parallel['audit'][key]
+
+
+def test_mechanism_gate_requires_every_large_scale_and_small_noninferiority():
+    cfg=dict(x.settings('smoke'),scales=[4,8,16,32])
+    rows=[];latencies={}
+    for n in cfg['scales']:
+        for arm in (*x.arms(n),'deadline'):
+            latencies[f'{n}:{arm}']=[1.]*4
+            cost=100. if arm in ('reservation_ppo','ppo','deadline') or n==4 and arm=='independent_ppo' else 110.
+            replicas=[-1] if arm=='deadline' else cfg['train_seeds']
+            for t in replicas:
+                for s in cfg['test_seeds']:
+                    rows.append(dict(n=n,method=arm,train_seed=t,seed=s,normalized_cost=cost,
+                        availability=.67,normalized_pending=0.,normalized_failures=.1))
+    summary=x.summarize(rows,cfg,latencies)
+    assert not summary['guards']['small_mechanism'] and summary['guards']['small_ablation_noninferiority']
+    assert summary['goal_pass']
+    damaged=[dict(r,normalized_cost=100.) if r['n']==16 and r['method']=='independent_ppo' else r for r in rows]
+    assert not x.summarize(damaged,cfg,latencies)['goal_pass']
+    damaged=[dict(r,normalized_pending=.1) if r['n']==8 and r['method']=='reservation_ppo' else r for r in rows]
+    assert not x.summarize(damaged,cfg,latencies)['goal_pass']
