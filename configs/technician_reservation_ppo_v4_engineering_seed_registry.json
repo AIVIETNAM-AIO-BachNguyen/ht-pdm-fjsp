@@ -1,0 +1,11 @@
+{
+  "classification": "ENGINEERING_ONLY",
+  "protocol_artifact": "technician_reservation_ppo_v4_engineering_preflight_20261012T200351Z/protocol.json",
+  "panels": {
+    "latency_preflight": {
+      "episode_start": 58300000,
+      "episode_count": 4
+    }
+  },
+  "purpose": "Latency and legality only; no quality endpoint, training, checkpoint selection or scientific confirmation."
+}

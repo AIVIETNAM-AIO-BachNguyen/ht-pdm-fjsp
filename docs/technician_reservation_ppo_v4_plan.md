@@ -130,7 +130,9 @@ seal,full final decisions/coordination episodes/latency,summaryCI,gates,audit.
 Audit exact grids/counts/bank label legality/initial equality/shared-bank hashes,
 checkpoint hashes,budgets and source immutability; independently replay ALL test
 physical transitions and submitted proposals/arbitration against scalar physics.
-Preserve failures. Four independent CPU processes,torchthreads1,tqdm for bank,
+Preserve failures. Four independent CPU processes for development, eight for
+confirmation and engineering smoke (prospective execution amendment below),
+torchthreads1,tqdm for bank,
 pretraining,PPO and evaluations; parent deterministic journal merging and no
 scientific test before all jobs finish. Smoke:bank192,pretrain2epochs/minibatch48,
 RL384/checkpoints192,384,vector2,N4/N8,2dev/4engineeringtest episodes, samephase
@@ -208,3 +210,37 @@ confirmation protocol/panel before any v4 scientific run. Original source PPO/
 MAPPO collection remains the same five frozen, old-development-selected models.
 Full tests, lab smoke, commit/push precede any v4 development; never edit its
 frozen source during tests with spawned children or research.
+
+## Prospective execution amendment before scientific confirmation
+
+Locked on 2026-10-12 UTC while the original four-worker development run finishes.
+No scientific confirmation test has opened. That original run and its source
+stay frozen in their separate worktree. The candidate actor, critic, physics,
+training data, initialization/RNG roles, per-model decisions, optimizer updates,
+checkpoint-selection rule, seeds, statistical endpoints, margins, alpha and
+24-hour stopping rule are unchanged. Only confirmation and engineering smoke
+use eight independent single-thread CPU workers instead of four. Development
+keeps four. The lab has sixteen logical CPUs and 64 GiB RAM; this changes
+concurrent execution and wall time, not the work or information given to any arm.
+Each job owns its RNG and outputs; parent merging follows deterministic job
+order. Final latency evaluation occurs after the training pool has shut down.
+Do not attribute a training speedup to the algorithm based on this topology.
+
+Engineering hypothesis: changing concurrency preserves every learned tensor
+and chosen checkpoint under the same registered smoke panel. Run the complete
+test suite, then an eight-worker smoke through the unmodified full pipeline.
+Compare ALL checkpoint parameter digests, both warm-start digests and teacher
+bank digest against the completed four-worker smoke
+technician_reservation_ppo_v4_smoke_20261012T184359Z. Require exact equality,
+COMPLETE/audit PASS, unchanged per-model budgets and exact episode grids.
+Stop after that fixed smoke budget; no metric-triggered extension. Store the
+new smoke in a fresh UTC artifact directory, and save an equivalence report
+binding both manifests/checkpoint inventories and this source Git revision.
+Commit/push verified execution code before starting scientific confirmation.
+
+The additional latency preflight used engineering raw seeds58300000..58300003
+(48 episodes, 2304 neural decisions, no quality endpoint), disjoint from every
+registered scientific panel. Preserve its prospective protocol and probe script
+in technician_reservation_ppo_v4_engineering_preflight_20261012T200351Z; register
+those seeds as engineering history before confirmation. Its results cannot
+select a quality checkpoint or substitute for the scientific test grid.

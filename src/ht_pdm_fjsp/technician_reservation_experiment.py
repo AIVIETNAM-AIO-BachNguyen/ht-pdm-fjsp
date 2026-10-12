@@ -40,7 +40,7 @@ def settings(profile):
         test_seeds=list(range(raw['test_start'],raw['test_start']+raw['test_count'])) if 'test_start' in raw else [],
         scales=[4,8] if smoke else [4,8,16,32] if final else [4,16],
         env_steps=384 if smoke else 491520,vector_envs=2 if smoke else 16,
-        training_processes=4,
+        training_processes=8 if (smoke or final) else 4,
         rollout=192 if smoke else 3072,checkpoints=[192,384] if smoke else [122880,245760,368640,491520],
         hidden=64,mixer_hidden=32,gamma=1.,learning_rate=.0003,epochs=2 if smoke else 4,
         minibatch=48 if smoke else 256,clip=.2,entropy_weight=.01,value_weight=.5,gradient_clip=.5,
