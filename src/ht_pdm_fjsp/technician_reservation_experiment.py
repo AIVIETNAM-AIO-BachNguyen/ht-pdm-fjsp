@@ -1,0 +1,411 @@
+"""Prospective development and sealed confirmation for resource reservation PPO."""
+from __future__ import annotations
+import argparse
+from dataclasses import asdict
+from datetime import datetime,timezone
+import hashlib
+import itertools
+import json
+from pathlib import Path
+import platform
+import shutil
+import subprocess
+import time
+import numpy as np
+import torch
+from tqdm.auto import tqdm
+from ht_pdm_fjsp import maintenance_balanced_algorithms as learner
+from ht_pdm_fjsp.maintenance_balanced_confirmation_mac import registered_integers
+from ht_pdm_fjsp.maintenance_opportunity_cost import Journal,write_csv,write_json
+from ht_pdm_fjsp.technician_reservation_env import VERSION,ResourceEnv,scaled_config
+from ht_pdm_fjsp.technician_reservation_policy import ReservationPolicy
+
+ROOT=Path(__file__).resolve().parents[2]
+REGISTRY=ROOT/'configs'/f'{VERSION}_seed_registry.json'
+PLAN=ROOT/'docs'/f'{VERSION}_plan.md'
+ARMS=('reservation_ppo','independent_ppo','ppo','mappo')
+
+
+def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def settings(profile):
+    if profile not in ('smoke','development','confirmation'): raise ValueError('unknown profile')
+    raw=json.loads(REGISTRY.read_text())['panels'][profile];smoke=profile=='smoke';final=profile=='confirmation'
+    return dict(profile=profile,train_seeds=raw['train_seeds'],analysis_seed=raw['analysis_seed'],
+        development_seeds=list(range(raw['development_start'],raw['development_start']+raw['development_count'])),
+        test_seeds=list(range(raw['test_start'],raw['test_start']+raw['test_count'])) if 'test_start' in raw else [],
+        scales=[4,8] if smoke else [4,8,16,32] if final else [4,16],
+        env_steps=384 if smoke else 491520 if final else 122880,vector_envs=2 if smoke else 16,
+        rollout=192 if smoke else 3072,checkpoints=[192,384] if smoke else [122880,245760,368640,491520] if final else [30720,61440,92160,122880],
+        hidden=64,mixer_hidden=32,gamma=1.,learning_rate=.0003,epochs=2 if smoke else 4,
+        minibatch=48 if smoke else 256,clip=.2,entropy_weight=.01,value_weight=.5,gradient_clip=.5,
+        torch_threads=1,bootstrap_samples=200 if smoke else 40000,
+        confirmation_round=1,round_alpha=.025,
+        confidence=1-(.025 if final else .05)/24,max_seconds=86400)
+
+
+def arms(n): return ARMS if n==4 else tuple(a for a in ARMS if a!='ppo')
+
+
+def seed_audit():
+    history=set();hashes={}
+    for p in sorted((ROOT/'configs').glob('*seed_registry.json')):
+        if p!=REGISTRY:
+            history|=registered_integers(json.loads(p.read_text()));hashes[p.name]=sha(p)
+    groups=[];derived=[]
+    for profile in ('smoke','development','confirmation'):
+        cfg=settings(profile)
+        groups.extend([set(cfg['train_seeds']),set(cfg['development_seeds']),set(cfg['test_seeds']),{cfg['analysis_seed']}])
+        for n in cfg['scales']:
+            for s in (*cfg['development_seeds'],*cfg['test_seeds']):
+                from ht_pdm_fjsp.maintenance_dispatch import role_seed
+                derived.append(role_seed(s,f'{VERSION}:N{n}:physical'))
+            for s in cfg['train_seeds']:
+                for role in ('reservation_pair','ppo','mappo'):
+                    derived.append(learner.role_seed(s,f'{VERSION}:N{n}:initialization:{role}'))
+                for role in ('actions','minibatches','replay'):
+                    derived.append(learner.role_seed(s,f'{VERSION}:N{n}:'+role))
+                for w in range(cfg['vector_envs']):
+                    # Audit actual environment stream seeds, not only raw seeds.
+                    from ht_pdm_fjsp.maintenance_dispatch import role_seed
+                    for e in range(cfg['env_steps']//(48*cfg['vector_envs'])):
+                        derived.append(role_seed(s,f'{VERSION}:N{n}:training_physical:worker:{w}:episode:{e}'))
+    own=set.union(*groups)
+    if any(a&b for a,b in itertools.combinations(groups,2)) or own&history: raise ValueError('raw seed overlap')
+    if len(derived)!=len(set(derived)) or set(derived)&(own|history): raise ValueError('derived seed overlap')
+    return dict(status='PASS',raw_unique=len(own),derived_unique=len(derived),historical_registry_hashes=hashes,
+        intentional_pairing='same physical tapes across methods and same initial parameters for reservation/independent')
+
+
+def make_model(algorithm,n,cfg,seed):
+    # Shared initial weights for the architecture ablation, independent of global RNG.
+    role='reservation_pair' if algorithm in ARMS[:2] else algorithm
+    with torch.random.fork_rng():
+        torch.manual_seed(learner.role_seed(seed,f'{VERSION}:N{n}:initialization:{role}'))
+        if algorithm in ARMS[:2]: return ReservationPolicy(algorithm,cfg['hidden'])
+        model=learner.Model(algorithm,cfg['hidden'])
+        if n!=4:
+            k=n//2
+            model.actor=learner.mlp(15+7*k+n,cfg['hidden'],k+1)
+            model.critic=learner.mlp(6*n+3*k+4*n*k+9,cfg['hidden'],1)
+        return model
+
+
+def save_model(model,path,n,cfg,seed,steps,probe):
+    if path.exists(): raise FileExistsError('checkpoint overwrite')
+    payload=dict(protocol=VERSION,algorithm=model.algorithm,n=n,train_seed=seed,steps=steps,
+        hidden=cfg['hidden'],parameter_sha256=learner.parameter_digest(model),state_dict=model.state_dict())
+    torch.save(payload,path)
+    loaded=load_model(path,n,cfg,seed,model.algorithm,steps)
+    if not np.array_equal(model.select(probe),loaded.select(probe)): raise RuntimeError('checkpoint prediction roundtrip')
+    return dict(path=str(path),sha256=sha(path),parameter_sha256=payload['parameter_sha256'])
+
+
+def load_model(path,n,cfg,seed,algorithm,steps):
+    p=torch.load(path,map_location='cpu',weights_only=True)
+    if any(p.get(k)!=v for k,v in dict(protocol=VERSION,algorithm=algorithm,n=n,train_seed=seed,steps=steps,hidden=cfg['hidden']).items()):
+        raise RuntimeError('checkpoint metadata mismatch')
+    model=make_model(algorithm,n,cfg,seed);model.load_state_dict(p['state_dict']);model.eval()
+    if learner.parameter_digest(model)!=p['parameter_sha256']: raise RuntimeError('checkpoint parameter digest')
+    return model
+
+
+class Tags:
+    def __init__(self,journal,tags): self.journal=journal;self.tags=tags
+    def add(self,row): self.journal.add(dict(self.tags,**row))
+
+
+def evaluate(method,n,train_seed,seed,model=None,coordination=None,decisions=None,latencies=None):
+    tags=dict(method=method,n=n,train_seed=train_seed,seed=seed)
+    env=ResourceEnv(seed,n,method,journal=Tags(decisions,tags) if decisions else None)
+    obs=env.reset();rewards=0.;conflicts=rejected=0;times=[];environment_times=[]
+    for tick in range(48):
+        before=time.perf_counter();action=model.select(obs) if model else None
+        elapsed=(time.perf_counter()-before)*1000;times.append(elapsed)
+        state_hash=hashlib.sha256(obs['state'].tobytes()).hexdigest()
+        before=time.perf_counter();obs,r,done,info=env.step(action);environment_times.append((time.perf_counter()-before)*1000)
+        rewards+=r;diag=info['coordination'];conflicts+=diag['conflicts'];rejected+=diag['rejected_proposals']
+        if coordination:
+            coordination.add(dict(tags,tick=tick,observation_sha256=state_hash,
+                submitted=json.dumps(int(action) if np.isscalar(action) else np.asarray(action).tolist()) if model else 'null',
+                **diag,decision_ms=elapsed,environment_ms=environment_times[-1]))
+    m=info['episode_metrics']
+    if not done or abs(-20*rewards-m['extended_cost'])>1e-5 or m['invalid_assignments']: raise RuntimeError('episode reconciliation')
+    if latencies is not None: latencies.extend(times)
+    return dict(tags,**m,conflicts=conflicts,rejected_proposals=rejected,decision_mean_ms=float(np.mean(times)),
+        decision_p95_ms=float(np.quantile(times,.95)),environment_mean_ms=float(np.mean(environment_times)),
+        normalized_cost=m['extended_cost']/n,normalized_pending=m['terminal_pending']/n,
+        normalized_failures=m['policy_failures']/n)
+
+
+def estimates(means,scales):
+    result={}
+    small=means[4];candidate=small['reservation_ppo']
+    for other in ('ppo','mappo','independent_ppo'): result[f'N4_gain_vs_{other}']=1-candidate[0]/small[other][0]
+    for label,index in (('availability',1),('pending_per_machine',2),('failures_per_machine',3)):
+        result[f'N4_{label}_difference']=candidate[index]-small['ppo'][index]
+    for n in scales:
+        if n==4: continue
+        current=means[n]['reservation_ppo'];reference=means[n]['deadline']
+        for other in ('independent_ppo','deadline'): result[f'N{n}_gain_vs_{other}']=1-current[0]/means[n][other][0]
+        for label,index in (('availability',1),('pending_per_machine',2),('failures_per_machine',3)):
+            result[f'N{n}_{label}_difference']=current[index]-reference[index]
+        result[f'N{n}_cost_ratio_vs_N4']=current[0]/candidate[0]
+    return result
+
+
+def summarize(rows,cfg,latencies):
+    metrics=('normalized_cost','availability','normalized_pending','normalized_failures')
+    trains=cfg['train_seeds'];tests=cfg['test_seeds'];lookup={(r['n'],r['method'],r['train_seed'],r['seed']):r for r in rows}
+    expected={(n,a,t,s) for n in cfg['scales'] for a in arms(n) for t in trains for s in tests}
+    expected|={(n,'deadline',-1,s) for n in cfg['scales'] for s in tests}
+    if len(rows)!=len(expected) or set(lookup)!=expected: raise RuntimeError('exact evaluation grid')
+    arrays={n:{a:np.array([[[lookup[n,a,t,s][m] for m in metrics] for s in tests] for t in trains]) for a in arms(n)} for n in cfg['scales']}
+    for n in cfg['scales']:
+        reference=np.array([[lookup[n,'deadline',-1,s][m] for m in metrics] for s in tests])
+        arrays[n]['deadline']=np.tile(reference[None],(len(trains),1,1))
+    means={n:{a:v.mean((0,1)) for a,v in panel.items()} for n,panel in arrays.items()}
+    point=estimates(means,cfg['scales']);draws={key:[] for key in point};rng=np.random.default_rng(learner.role_seed(cfg['analysis_seed'],VERSION+':bootstrap'))
+    nt,ns=len(trains),len(tests)
+    for start in range(0,cfg['bootstrap_samples'],128):
+        b=min(128,cfg['bootstrap_samples']-start)
+        tc=np.eye(nt)[rng.integers(nt,size=(b,nt))].mean(1);sc=np.eye(ns)[rng.integers(ns,size=(b,ns))].mean(1)
+        sampled={n:{a:np.einsum('bt,bs,tsk->bk',tc,sc,v,optimize=True).T for a,v in panel.items()} for n,panel in arrays.items()}
+        for key,value in estimates(sampled,cfg['scales']).items(): draws[key].extend(value.tolist())
+    tail=(1-cfg['confidence'])/2
+    intervals={key:dict(estimate=float(value),lower=float(np.quantile(draws[key],tail)),upper=float(np.quantile(draws[key],1-tail))) for key,value in point.items()}
+    def lo(key):return intervals[key]['lower']
+    def hi(key):return intervals[key]['upper']
+    guards={'near_ppo':lo('N4_gain_vs_ppo')>=-.01,'beats_mappo':lo('N4_gain_vs_mappo')>0,
+        'small_mechanism':lo('N4_gain_vs_independent_ppo')>0,
+        'practical_ppo_superiority':lo('N4_gain_vs_ppo')>=.01}
+    for n in cfg['scales']:
+        guards[f'N{n}_health']=(lo(f'N{n}_availability_difference')>=-.01 and hi(f'N{n}_pending_per_machine_difference')<=.025 and hi(f'N{n}_failures_per_machine_difference')<=.25)
+        if n!=4:
+            guards[f'N{n}_scale_quality']=(lo(f'N{n}_gain_vs_deadline')>=-.02 and hi(f'N{n}_cost_ratio_vs_N4')<=1.10)
+            guards[f'N{n}_mechanism']=lo(f'N{n}_gain_vs_independent_ppo')>0
+        guards[f'N{n}_latency']=float(np.quantile(latencies[f'{n}:reservation_ppo'],.95))<=50
+    required=[v for key,v in guards.items() if key!='practical_ppo_superiority']
+    leave_one_out=[]
+    if nt>1:
+        for omit in range(nt):
+            retained=[i for i in range(nt) if i!=omit]
+            loo={n:{a:v[retained].mean((0,1)) for a,v in panel.items()} for n,panel in arrays.items()}
+            leave_one_out.append(dict(omitted_train_seed=trains[omit],
+                estimates={key:float(value) for key,value in estimates(loo,cfg['scales']).items()}))
+    return dict(classification='ENGINEERING_ONLY' if cfg['profile']=='smoke' else 'CONFIRMATORY',
+        goal_pass=all(required),guards=guards,intervals=intervals,family_size=len(point),confidence=cfg['confidence'],
+        bootstrap_unit='crossed training replica and paired physical episode',
+        round_alpha=cfg['round_alpha'],confirmation_round=cfg['confirmation_round'],leave_one_replica_out=leave_one_out,
+        means={str(n):{a:dict(zip(metrics,v.tolist())) for a,v in panel.items()} for n,panel in means.items()},
+        per_replica={str(n):{a:[dict(zip(metrics,r.tolist())) for r in v.mean(1)] for a,v in panel.items()} for n,panel in arrays.items()},
+        latency={key:dict(mean_ms=float(np.mean(v)),p95_ms=float(np.quantile(v,.95)),p99_ms=float(np.quantile(v,.99)),samples=len(v)) for key,v in latencies.items()})
+
+
+def development_summary(rows,cfg,references=None):
+    selected={};means={}
+    for n in cfg['scales']:
+        means[n]={}
+        for a in arms(n):
+            costs=[]
+            for t in cfg['train_seeds']:
+                panel=[r for r in rows if r['n']==n and r['method']==a and r['train_seed']==t]
+                bystep={step:np.mean([r['extended_cost'] for r in panel if r['checkpoint_steps']==step]) for step in cfg['checkpoints']}
+                step=min(bystep,key=lambda s:(bystep[s],s));selected[f'{n}:{a}:{t}']=step;costs.append(bystep[step])
+            means[n][a]=float(np.mean(costs))
+    small_pass=means[4]['reservation_ppo']<=1.01*means[4]['ppo'] and means[4]['reservation_ppo']<means[4]['mappo'] and means[4]['reservation_ppo']<means[4]['independent_ppo']
+    scale_guards={};selected_metrics={}
+    for n in cfg['scales']:
+        panel=[r for r in rows if r['n']==n and r['method']=='reservation_ppo'
+            and r['checkpoint_steps']==selected[f'{n}:reservation_ppo:{r["train_seed"]}']]
+        selected_metrics[n]={m:float(np.mean([r[m] for r in panel])) for m in ('availability','normalized_pending','normalized_failures','conflicts','rejected_proposals')}
+        ref=[r for r in references or [] if r['n']==n]
+        if n!=4 and ref:
+            scale_guards[n]=dict(cost=means[n]['reservation_ppo']<=1.02*np.mean([r['extended_cost'] for r in ref]),
+                mechanism=means[n]['reservation_ppo']<=means[n]['independent_ppo'],
+                availability=selected_metrics[n]['availability']>=np.mean([r['availability'] for r in ref])-.01,
+                pending=selected_metrics[n]['normalized_pending']<=np.mean([r['normalized_pending'] for r in ref])+.025)
+            scale_guards[n]={key:bool(value) for key,value in scale_guards[n].items()}
+    return dict(classification='DEVELOPMENT_ONLY',test_opened=False,means=means,selected_steps=selected,
+        small_screen_pass=bool(small_pass),scale_guards=scale_guards,selected_metrics=selected_metrics,
+        development_screen_pass=bool(small_pass and all(all(g.values()) for g in scale_guards.values())))
+
+
+def run(profile,output_dir):
+    cfg=settings(profile);out=Path(output_dir).resolve()
+    if out.exists() and any(out.iterdir()): raise FileExistsError('prior run overwrite')
+    out.mkdir(parents=True,exist_ok=True);torch.set_num_threads(1);start=time.monotonic()
+    git=dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip(),
+        dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip()))
+    if profile!='smoke' and git['dirty']: raise RuntimeError('commit verified code before research run')
+    manifest=dict(protocol=VERSION,status='RUNNING',profile=profile,git=git,test_opened=False,
+        started_utc=datetime.now(timezone.utc).isoformat(),runtime=dict(platform=platform.platform(),torch=torch.__version__,device='cpu'))
+    write_json(out/'manifest.json',manifest);journals={}
+    def timeout():
+        if time.monotonic()-start>cfg['max_seconds']: raise TimeoutError('fixed hard deadline; incomplete')
+    try:
+        seed_report=seed_audit()
+        write_json(out/'resolved_config.json',cfg);write_json(out/'seed_audit.json',seed_report)
+        write_json(out/'physics.json',{str(n):asdict(scaled_config(n)) for n in cfg['scales']})
+        snap=out/'source_snapshot';snap.mkdir()
+        for p in Path(__file__).parent.glob('*.py'): shutil.copy2(p,snap/p.name)
+        history=out/'registry_snapshot';history.mkdir()
+        for name in seed_report['historical_registry_hashes']:shutil.copy2(ROOT/'configs'/name,history/name)
+        shutil.copy2(PLAN,out/'protocol.md');shutil.copy2(REGISTRY,out/'seed_registry.json')
+        seals={str(p.relative_to(out)):sha(p) for p in [*snap.iterdir(),*history.iterdir(),out/'protocol.md',out/'seed_registry.json',out/'physics.json',out/'resolved_config.json']}
+        manifest['source_seal']=seals;write_json(out/'manifest.json',manifest)
+        journals={name:Journal(out/f'{name}.csv') for name in ('training_progress','training_episodes','development_episodes','episodes.partial','coordination','decisions')}
+        choices={};audits=[];devrows=[];parameters={};initials={}
+        for n in cfg['scales']:
+            for a,t in itertools.product(arms(n),cfg['train_seeds']):
+                timeout();manifest['stage']=f'train:N{n}:{a}:{t}';write_json(out/'manifest.json',manifest)
+                model=make_model(a,n,cfg,t);initials[f'{n}:{a}:{t}']=learner.parameter_digest(model)
+                parameters[f'{n}:{a}']=sum(p.numel() for p in model.parameters())
+                directory=out/f'N{n}'/a/str(t)/'checkpoints';directory.mkdir(parents=True)
+                probe=ResourceEnv(cfg['development_seeds'][0],n,a).reset();candidates=[]
+                def assess(current,steps,audit=None):
+                    timeout();path=directory/f'step_{steps:09d}.pt'
+                    meta=save_model(current,path,n,cfg,t,steps,probe);meta['path']=str(path.relative_to(out))
+                    rows=[];current.eval()
+                    for s in tqdm(cfg['development_seeds'],desc=f'Dev N{n}/{a}/{t}/{steps}',leave=False):
+                        timeout();r=evaluate(a,n,t,s,current);r['checkpoint_steps']=steps
+                        journals['development_episodes'].add(r);devrows.append(r);rows.append(r)
+                    current.train()
+                    if steps:candidates.append(dict(meta,steps=steps,development_cost=float(np.mean([r['extended_cost'] for r in rows]))))
+                assess(model,0);before=time.monotonic()
+                train_journals={name:Tags(journals[name],dict(n=n)) for name in ('training_progress','training_episodes')}
+                audit=learner.fit(model,dict(cfg,rng_namespace=f'{VERSION}:N{n}:'),t,
+                    lambda seed,worker:ResourceEnv(seed,n,a,worker,True),train_journals,assess,timeout)
+                audits.append(dict(audit,n=n,seconds_including_development=time.monotonic()-before));write_json(out/'training_audit.json',audits)
+                choices[f'{n}:{a}:{t}']=min(candidates,key=lambda v:(v['development_cost'],v['steps']))
+                write_json(out/'checkpoint_choices.partial.json',choices)
+        write_json(out/'checkpoint_choices.json',choices);choice_hash=sha(out/'checkpoint_choices.json')
+        write_json(out/'parameter_counts.json',parameters);write_json(out/'initial_parameter_hashes.json',initials)
+        for n in cfg['scales']:
+            for t in cfg['train_seeds']:
+                if initials[f'{n}:reservation_ppo:{t}']!=initials[f'{n}:independent_ppo:{t}']:raise RuntimeError('paired initial weights')
+        if profile=='development':
+            references=[]
+            for n in cfg['scales']:
+                for s in tqdm(cfg['development_seeds'],desc=f'Dev reference N{n}'):
+                    timeout();references.append(evaluate('deadline',n,-1,s))
+            write_csv(out/'development_reference.csv',references)
+            summary=development_summary(devrows,cfg,references);write_json(out/'summary.json',summary);rows=[]
+        else:
+            manifest.update(stage='test',test_opened=True,choices_sha256=choice_hash,choices_sealed_utc=datetime.now(timezone.utc).isoformat());write_json(out/'manifest.json',manifest)
+            rows=[];latencies={}
+            for n in cfg['scales']:
+                controllers=[(a,t) for a in arms(n) for t in cfg['train_seeds']]+[('deadline',-1)]
+                for a,t in controllers:
+                    choice=choices.get(f'{n}:{a}:{t}')
+                    model=load_model(out/choice['path'],n,cfg,t,a,choice['steps']) if choice else None
+                    key=f'{n}:{a}';latencies.setdefault(key,[])
+                    for s in tqdm(cfg['test_seeds'],desc=f'Test N{n}/{a}/{t}'):
+                        timeout();row=evaluate(a,n,t,s,model,journals['coordination'],journals['decisions'],latencies[key])
+                        rows.append(row);journals['episodes.partial'].add(row)
+            write_csv(out/'episodes.csv',rows);summary=summarize(rows,cfg,latencies);write_json(out/'summary.json',summary)
+        for journal in journals.values():journal.close()
+        journals.clear()
+        audit=audit_run(out,cfg,devrows,rows,audits,choices)
+        if sha(out/'checkpoint_choices.json')!=choice_hash or any(sha(out/p)!=digest for p,digest in seals.items()): raise RuntimeError('source or checkpoint choices changed')
+        if any(sha(out/c['path'])!=c['sha256'] for c in choices.values()): raise RuntimeError('checkpoint content changed')
+        if sha(PLAN)!=seals['protocol.md'] or sha(REGISTRY)!=seals['seed_registry.json'] or any(sha(Path(__file__).parent/p.name)!=seals[f'source_snapshot/{p.name}'] for p in snap.iterdir()):
+            raise RuntimeError('working source changed during experiment')
+        if any(sha(ROOT/'configs'/name)!=digest for name,digest in seed_report['historical_registry_hashes'].items()):raise RuntimeError('historical registry changed during experiment')
+        write_json(out/'audit.json',audit)
+        manifest.update(status='COMPLETED',audit_status='PASS',stage='complete',elapsed_seconds=time.monotonic()-start,
+            training_models=len(audits),test_episodes=len(rows),development_episodes=len(devrows),
+            goal_pass=summary.get('goal_pass',False),completed_utc=datetime.now(timezone.utc).isoformat())
+        manifest['output_bindings']={str(p.relative_to(out)):dict(sha256=sha(p),bytes=p.stat().st_size) for p in out.rglob('*') if p.is_file() and p.name!='manifest.json'}
+        write_json(out/'manifest.json',manifest);print(json.dumps(dict(output_dir=str(out),status='COMPLETED',summary=summary)));return manifest
+    except Exception as exc:
+        manifest.update(status='FAILED',error=f'{type(exc).__name__}: {exc}',elapsed_seconds=time.monotonic()-start);write_json(out/'manifest.json',manifest);raise
+    finally:
+        for journal in journals.values():journal.close()
+
+
+def audit_run(out,cfg,devrows,rows,audits,choices):
+    import csv
+    expected={(n,a,t) for n in cfg['scales'] for a in arms(n) for t in cfg['train_seeds']}
+    if len(audits)!=len(expected) or {(r['n'],r['algorithm'],r['train_seed']) for r in audits}!=expected:raise RuntimeError('training grid')
+    for r in audits:
+        if r['learned_steps']!=cfg['env_steps'] or r['physical_ticks']!=cfg['env_steps']//48*60 or r['training_episodes']!=cfg['env_steps']//48 or not r['changed'] or r['behavior_max_error']>2e-6:
+            raise RuntimeError('training budget/likelihood audit')
+    expected_dev={(n,a,t,step,s) for n,a,t in expected for step in [0,*cfg['checkpoints']] for s in cfg['development_seeds']}
+    if len(devrows)!=len(expected_dev) or {(r['n'],r['method'],r['train_seed'],r['checkpoint_steps'],r['seed']) for r in devrows}!=expected_dev: raise RuntimeError('development grid')
+    paired={};seen=set()
+    with (out/'training_episodes.csv').open() as f:
+        for r in csv.DictReader(f):
+            n=int(r['n']);a=r['algorithm'];t=int(r['train_seed']);w=int(r['worker']);e=int(r['episode_index'])
+            key=(n,t,w,e);identity=key+(a,)
+            if identity in seen:raise RuntimeError('duplicate training episode')
+            seen.add(identity);tape=(r['physical_seed'],r['population_sha256'])
+            if paired.setdefault(key,tape)!=tape:raise RuntimeError('physical training pairing')
+            if abs(float(r['episode_reward'])*20+float(r['extended_cost']))>1e-5:raise RuntimeError('training reward reconciliation')
+    expected_episode={(n,t,w,e,a) for n,a,t in expected for w in range(cfg['vector_envs']) for e in range(cfg['env_steps']//(48*cfg['vector_envs']))}
+    if seen!=expected_episode:raise RuntimeError('training episode grid')
+    if cfg['test_seeds']:
+        pops={}
+        for r in rows:
+            key=r['n'],r['seed']
+            if pops.setdefault(key,r['population_sha256'])!=r['population_sha256']:raise RuntimeError('test physical pairing')
+        # Independently replay all physical transitions, rather than relying on wrappers.
+        from ht_pdm_fjsp.maintenance_dispatch import DispatchState,role_seed
+        from ht_pdm_fjsp.maintenance_waiting import transition,WaitingEnv
+        replay_count=0;replay_episodes={};lookup={(r['n'],r['method'],r['train_seed'],r['seed']):r for r in rows}
+        recorded_coord={}
+        with (out/'coordination.csv').open() as f:
+            for r in csv.DictReader(f):
+                key=(int(r['n']),r['method'],int(r['train_seed']),int(r['seed']),int(r['tick']))
+                if key in recorded_coord:raise RuntimeError('duplicate coordination record')
+                recorded_coord[key]=r
+        with (out/'decisions.csv').open() as f:
+            for r in csv.DictReader(f):
+                n=int(r['n']);c=scaled_config(n)
+                state=DispatchState(**{k:tuple(v) for k,v in json.loads(r['state']).items()})
+                pairs=tuple(map(tuple,json.loads(r['action'])))
+                key=n,r['method'],int(r['train_seed']),int(r['seed']);tick=int(r['tick'])
+                if key not in lookup:raise RuntimeError('unexpected replay episode')
+                if key not in replay_episodes:
+                    physical=role_seed(key[3],f'{VERSION}:N{n}:physical');initial=WaitingEnv(c);initial.reset(physical)
+                    replay_episodes[key]=dict(state=initial.state,events=initial.events,tick=0,
+                        metrics={k:0. for k in initial.metrics},probe=ResourceEnv(key[3],n,key[1]))
+                ep=replay_episodes[key]
+                if tick!=ep['tick'] or state!=ep['state'] or tuple(json.loads(r['events']))!=ep['events'][tick]:raise RuntimeError('physical tape/state sequence mismatch')
+                if tick<48:
+                    cr=recorded_coord.get(key+(tick,))
+                    if cr is None:raise RuntimeError('missing coordination record')
+                    probe=ep['probe'];probe.env.state=state;probe.env.time=tick
+                    obs=probe.observe()
+                    if hashlib.sha256(obs['state'].tobytes()).hexdigest()!=cr['observation_sha256']:raise RuntimeError('observation hash mismatch')
+                    submitted=json.loads(cr['submitted'])
+                    if isinstance(submitted,list):submitted=np.asarray(submitted,dtype=int)
+                    decoded,diag=probe.resolve(submitted)
+                    if decoded!=pairs or any(int(cr[k])!=v for k,v in diag.items()):raise RuntimeError('coordination/action replay mismatch')
+                else:
+                    from ht_pdm_fjsp.technician_reservation_env import deadline
+                    if deadline(c,state)!=pairs:raise RuntimeError('common tail policy mismatch')
+                following,cost,components=transition(c,state,pairs,json.loads(r['events']))
+                for k,v in components.items():ep['metrics'][k]+=v
+                ep['state']=following;ep['tick']+=1
+                if tick==47:ep['policy_cost']=ep['metrics']['objective']
+                actual={k:list(v) for k,v in asdict(following).items()}
+                if actual!=json.loads(r['following']) or abs(cost-float(r['cost']))>1e-8:raise RuntimeError('scalar transition replay')
+                replay_count+=1
+        if replay_count!=60*len(rows):raise RuntimeError('physical test replay count')
+        if len(recorded_coord)!=48*len(rows) or set(replay_episodes)!=set(lookup):raise RuntimeError('coordination/replay population')
+        for key,ep in replay_episodes.items():
+            row=lookup[key]
+            if ep['tick']!=60 or abs(ep['policy_cost']-row['policy_cost'])>1e-8 or any(abs(v-row[k])>1e-8 for k,v in ep['metrics'].items()):raise RuntimeError('aggregate physical cost/metric replay')
+    else: replay_count=0
+    return dict(status='PASS',training_models=len(audits),training_episodes=len(seen),paired_training_tapes=len(paired),
+        development_episodes=len(devrows),test_physical_ticks_replayed=replay_count,choices=len(choices),invalid_assignments=0)
+
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--profile',choices=('smoke','development','confirmation'),required=True)
+    p.add_argument('--output-dir',required=True);args=p.parse_args();run(args.profile,args.output_dir)
+
+if __name__=='__main__':main()

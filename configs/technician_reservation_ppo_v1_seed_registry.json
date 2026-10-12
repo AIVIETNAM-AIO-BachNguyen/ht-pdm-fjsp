@@ -1,0 +1,8 @@
+{
+  "protocol": "technician_reservation_ppo_v1",
+  "panels": {
+    "development": {"train_seeds": [51000000,51000001,51000002], "development_start":51100000,"development_count":32,"analysis_seed":51200000},
+    "confirmation": {"train_seeds":[51300000,51300001,51300002,51300003,51300004],"development_start":51400000,"development_count":64,"test_start":51500000,"test_count":256,"analysis_seed":51600000},
+    "smoke": {"train_seeds":[51700000],"development_start":51800000,"development_count":2,"test_start":51900000,"test_count":4,"analysis_seed":52000000}
+  }
+}

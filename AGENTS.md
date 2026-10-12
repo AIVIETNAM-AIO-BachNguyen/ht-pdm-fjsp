@@ -17,3 +17,12 @@ For every code experiment in this repository:
 
 The canonical commands and handoff contract are documented in
 `docs/experiment_workflow.md`.
+
+## Active user override (2026-10-12)
+
+The workspace is now the Ubuntu lab itself. The user explicitly authorizes
+running smoke and full experiments directly here, inspecting results here,
+and continuing research iterations. This supersedes the Mac smoke / manual
+lab handoff restrictions above for this research task. Keep prospective
+protocols, tests, commit/push gates, tqdm, and fresh timestamped artifacts.
+Do not SSH or initiate an artifact transfer; provide rsync when results exist.

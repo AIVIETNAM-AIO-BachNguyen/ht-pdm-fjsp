@@ -226,7 +226,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
         raise ValueError("whole 48-step episodes and gamma1 required")
     if checkpoints != sorted(set(checkpoints)) or any(s <= 0 or s > total or s % workers for s in checkpoints):
         raise ValueError("sorted distinct aligned checkpoint steps required")
-    actor = model.algorithm in ("ppo", "mappo")
+    actor = getattr(model, "is_actor", model.algorithm in ("ppo", "mappo"))
     rollout = int(cfg["rollout"])
     if min(rollout, cfg["epochs"], cfg["minibatch"], cfg["learning_rate"], cfg["gradient_clip"]) <= 0:
         raise ValueError("positive update settings required")
@@ -240,9 +240,10 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
         or cfg["train_frequency"] % workers or cfg["target_interval"] % workers):
         raise ValueError("value update/checkpoint alignment")
     torch.set_num_threads(int(cfg.get("torch_threads", 1)))
-    action_rng = torch.Generator().manual_seed(role_seed(seed, "actions"))
-    minibatch_rng = torch.Generator().manual_seed(role_seed(seed, "minibatches"))
-    replay_rng = np.random.default_rng(role_seed(seed, "replay"))
+    prefix = cfg.get("rng_namespace", "")
+    action_rng = torch.Generator().manual_seed(role_seed(seed, prefix + "actions"))
+    minibatch_rng = torch.Generator().manual_seed(role_seed(seed, prefix + "minibatches"))
+    replay_rng = np.random.default_rng(role_seed(seed, prefix + "replay"))
     optimizer = torch.optim.Adam(model.parameters(), lr=cfg["learning_rate"])
     initial = parameter_digest(model)
     target = copy.deepcopy(model) if not actor else None
@@ -284,7 +285,8 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
             action, log, value = model.sample(batch, action_rng, epsilon=epsilon)
             next_observations = []; rewards = []; dones = []
             for worker, env in enumerate(envs):
-                submitted = int(action[worker]) if model.algorithm == "ppo" else action[worker].numpy().copy()
+                submitted = (model.environment_action(action[worker]) if hasattr(model, "environment_action")
+                    else int(action[worker]) if model.algorithm == "ppo" else action[worker].numpy().copy())
                 nxt, reward, done, info = env.step(submitted)
                 if not math.isfinite(reward):
                     raise RuntimeError("nonfinite environment reward")
@@ -334,7 +336,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                         mini = {key: val[indices] for key, val in flat.items()}
                         current_log, entropy, current_value = model.evaluate(mini, actions_[indices])
                         ratio = torch.exp(current_log - old_log[indices])
-                        adv = advantage[indices] if model.algorithm == "ppo" else advantage[indices, None]
+                        adv = advantage[indices] if getattr(model, "joint_policy", model.algorithm == "ppo") else advantage[indices, None]
                         objective = torch.minimum(ratio * adv,
                             ratio.clamp(1 - cfg["clip"], 1 + cfg["clip"]) * adv).mean()
                         loss = (-objective - cfg["entropy_weight"] * entropy.mean()
