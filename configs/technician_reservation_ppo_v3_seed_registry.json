@@ -1,0 +1,39 @@
+{
+  "protocol": "technician_reservation_ppo_v3",
+  "panels": {
+    "development": {
+      "train_seeds": [
+        55100000,
+        55100001,
+        55100002
+      ],
+      "development_start": 55200000,
+      "development_count": 32,
+      "analysis_seed": 55300000
+    },
+    "confirmation": {
+      "train_seeds": [
+        55400000,
+        55400001,
+        55400002,
+        55400003,
+        55400004
+      ],
+      "development_start": 55500000,
+      "development_count": 64,
+      "test_start": 55600000,
+      "test_count": 256,
+      "analysis_seed": 55700000
+    },
+    "smoke": {
+      "train_seeds": [
+        55800000
+      ],
+      "development_start": 55900000,
+      "development_count": 2,
+      "test_start": 56000000,
+      "test_count": 4,
+      "analysis_seed": 56100000
+    }
+  }
+}

@@ -14,6 +14,9 @@ class ReservationPolicy(nn.Module):
         self.algorithm=algorithm;self.hidden=hidden
         self.edge_encoder=mlp(24,hidden,hidden)
         self.value_edge_encoder=mlp(24,hidden,hidden)
+        self.query=nn.Linear(hidden,hidden,bias=False)
+        self.key=nn.Linear(hidden,hidden,bias=False)
+        self.attention_value=nn.Linear(hidden,hidden,bias=False)
         self.actor=mlp(4*hidden+3,hidden,1)
         self.wait=mlp(3*hidden+3,hidden,1)
         self.critic=mlp(2*hidden+9,hidden,1)
@@ -26,6 +29,9 @@ class ReservationPolicy(nn.Module):
         raw=torch.cat([m[:,:,None].expand(-1,-1,k,-1),t[:,None].expand(-1,n,-1,-1),e,
             g[:,None,None].expand(-1,n,k,-1),machine_id,technician_id],-1)
         edge=self.edge_encoder(raw)
+        machines=edge.mean(2)
+        weights=torch.softmax(torch.einsum('bnkh,bmh->bnkm',self.query(edge),self.key(machines))/self.hidden**.5,-1)
+        edge=edge+torch.einsum('bnkm,bmh->bnkh',weights,self.attention_value(machines))
         # Full raw graph information is broadcast in both arms; no future shocks.
         global_pool=edge.mean((1,2));tech_pool=edge.mean(1)
         value_edge=self.value_edge_encoder(raw)

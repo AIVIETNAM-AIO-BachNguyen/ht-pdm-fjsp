@@ -44,12 +44,20 @@ def settings(profile):
         rollout=192 if smoke else 3072,checkpoints=[192,384] if smoke else [122880,245760,368640,491520],
         hidden=64,mixer_hidden=32,gamma=1.,learning_rate=.0003,epochs=2 if smoke else 4,
         minibatch=48 if smoke else 256,clip=.2,entropy_weight=.01,value_weight=.5,gradient_clip=.5,
+        teacher_bank_steps=192 if smoke else 122880,teacher_epochs=2 if smoke else 32,
+        teacher_minibatch=48 if smoke else 512,teacher_temperature=1.5,
         torch_threads=1,bootstrap_samples=200 if smoke else 40000,
         confirmation_round=1,round_alpha=.025,
         confidence=1-(.025 if final else .05)/24,max_seconds=86400)
 
 
-def arms(n): return ARMS if n==4 else tuple(a for a in ARMS if a!='ppo')
+def arms(n): return ARMS if n==4 else ARMS[:2]
+
+
+def eligible_steps(a,cfg):return [0,*cfg['checkpoints']] if a in ARMS[:2] else [491520]
+
+
+def assessed_steps(a,cfg):return eligible_steps(a,cfg)
 
 
 def seed_audit():
@@ -66,8 +74,6 @@ def seed_audit():
                 from ht_pdm_fjsp.maintenance_dispatch import role_seed
                 derived.append(role_seed(s,f'{VERSION}:N{n}:physical'))
             for s in cfg['train_seeds']:
-                for role in ('reservation_pair','ppo','mappo'):
-                    derived.append(learner.role_seed(s,f'{VERSION}:N{n}:initialization:{role}'))
                 for role in ('actions','minibatches','replay'):
                     derived.append(learner.role_seed(s,f'{VERSION}:N{n}:'+role))
                 for w in range(cfg['vector_envs']):
@@ -75,6 +81,15 @@ def seed_audit():
                     from ht_pdm_fjsp.maintenance_dispatch import role_seed
                     for e in range(cfg['env_steps']//(48*cfg['vector_envs'])):
                         derived.append(role_seed(s,f'{VERSION}:N{n}:training_physical:worker:{w}:episode:{e}'))
+    for profile in ('smoke','development','confirmation'):
+        cfg=settings(profile)
+        for s in cfg['train_seeds']:
+            for role in ('initialization:reservation_pair','teacher_actions','teacher_minibatches'):
+                derived.append(learner.role_seed(s,f'{VERSION}:'+role))
+            from ht_pdm_fjsp.maintenance_dispatch import role_seed
+            for w in range(cfg['vector_envs']):
+                for e in range(cfg['teacher_bank_steps']//(48*cfg['vector_envs'])):
+                    derived.append(role_seed(s,f'{VERSION}:N4:training_physical:worker:{1000+w}:episode:{e}'))
     own=set.union(*groups)
     if any(a&b for a,b in itertools.combinations(groups,2)) or own&history: raise ValueError('raw seed overlap')
     if len(derived)!=len(set(derived)) or set(derived)&(own|history): raise ValueError('derived seed overlap')
@@ -86,7 +101,7 @@ def make_model(algorithm,n,cfg,seed):
     # Shared initial weights for the architecture ablation, independent of global RNG.
     role='reservation_pair' if algorithm in ARMS[:2] else algorithm
     with torch.random.fork_rng():
-        torch.manual_seed(learner.role_seed(seed,f'{VERSION}:N{n}:initialization:{role}'))
+        torch.manual_seed(learner.role_seed(seed,f'{VERSION}:initialization:{role}' if algorithm in ARMS[:2] else f'{VERSION}:N{n}:initialization:{role}'))
         if algorithm in ARMS[:2]: return ReservationPolicy(algorithm,cfg['hidden'])
         model=learner.Model(algorithm,cfg['hidden'])
         if n!=4:
@@ -174,8 +189,11 @@ def summarize(rows,cfg,latencies):
     nt,ns=len(trains),len(tests)
     for start in range(0,cfg['bootstrap_samples'],128):
         b=min(128,cfg['bootstrap_samples']-start)
-        tc=np.eye(nt)[rng.integers(nt,size=(b,nt))].mean(1);sc=np.eye(ns)[rng.integers(ns,size=(b,ns))].mean(1)
-        sampled={n:{a:np.einsum('bt,bs,tsk->bk',tc,sc,v,optimize=True).T for a,v in panel.items()} for n,panel in arrays.items()}
+        tc=np.eye(nt)[rng.integers(nt,size=(b,nt))].mean(1)
+        sampled={}
+        for n,panel in arrays.items():
+            sc=np.eye(ns)[rng.integers(ns,size=(b,ns))].mean(1)
+            sampled[n]={a:np.einsum('bt,bs,tsk->bk',tc,sc,v,optimize=True).T for a,v in panel.items()}
         for key,value in estimates(sampled,cfg['scales']).items(): draws[key].extend(value.tolist())
     tail=(1-cfg['confidence'])/2
     intervals={key:dict(estimate=float(value),lower=float(np.quantile(draws[key],tail)),upper=float(np.quantile(draws[key],1-tail))) for key,value in point.items()}
@@ -201,7 +219,7 @@ def summarize(rows,cfg,latencies):
                 estimates={key:float(value) for key,value in estimates(loo,cfg['scales']).items()}))
     return dict(classification='ENGINEERING_ONLY' if cfg['profile']=='smoke' else 'CONFIRMATORY',
         goal_pass=all(required),guards=guards,intervals=intervals,family_size=len(point),confidence=cfg['confidence'],
-        bootstrap_unit='crossed training replica and paired physical episode',
+        bootstrap_unit='bundled teacher/student replica crossed with independently resampled scale episode axes, methods paired within scale',
         round_alpha=cfg['round_alpha'],confirmation_round=cfg['confirmation_round'],leave_one_replica_out=leave_one_out,
         means={str(n):{a:dict(zip(metrics,v.tolist())) for a,v in panel.items()} for n,panel in means.items()},
         per_replica={str(n):{a:[dict(zip(metrics,r.tolist())) for r in v.mean(1)] for a,v in panel.items()} for n,panel in arrays.items()},
@@ -216,7 +234,7 @@ def development_summary(rows,cfg,references=None):
             costs=[]
             for t in cfg['train_seeds']:
                 panel=[r for r in rows if r['n']==n and r['method']==a and r['train_seed']==t]
-                bystep={step:np.mean([r['extended_cost'] for r in panel if r['checkpoint_steps']==step]) for step in cfg['checkpoints']}
+                bystep={step:np.mean([r['extended_cost'] for r in panel if r['checkpoint_steps']==step]) for step in eligible_steps(a,cfg)}
                 step=min(bystep,key=lambda s:(bystep[s],s));selected[f'{n}:{a}:{t}']=step;costs.append(bystep[step])
             means[n][a]=float(np.mean(costs))
     small_pass=means[4]['reservation_ppo']<=1.01*means[4]['ppo'] and means[4]['reservation_ppo']<means[4]['mappo'] and means[4]['reservation_ppo']<=1.01*means[4]['independent_ppo']
@@ -244,7 +262,14 @@ def fit_job(job):
     def timeout():
         if time.monotonic()-global_start>cfg['max_seconds']:raise TimeoutError('registered global deadline')
     timeout();model=make_model(a,n,cfg,t)
-    initial=learner.parameter_digest(model);parameters=sum(p.numel() for p in model.parameters())
+    initial=learner.parameter_digest(model)
+    from ht_pdm_fjsp.technician_reservation_distillation import load_warm,load_reference
+    warm=load_warm(model,out,t) if a in ARMS[:2] else None
+    if warm is None:
+        meta=json.loads((out/'teachers/references.json').read_text())['references'][f'{a}:{t}']
+        model=load_reference(out,meta)
+        initial=learner.parameter_digest(model)
+    parameters=sum(p.numel() for p in model.parameters())
     directory=out/f'N{n}'/a/str(t);directory.mkdir(parents=True)
     checkpoints=directory/'checkpoints';checkpoints.mkdir()
     journals={name:Journal(directory/f'{name}.csv') for name in ('training_progress','training_episodes','development_episodes')}
@@ -257,20 +282,29 @@ def fit_job(job):
             timeout();row=evaluate(a,n,t,seed,current);row['checkpoint_steps']=steps
             journals['development_episodes'].add(row);devrows.append(row);rows.append(row)
         current.train()
-        if steps:candidates.append(dict(meta,steps=steps,development_cost=float(np.mean([r['extended_cost'] for r in rows]))))
+        if steps in eligible_steps(a,cfg):candidates.append(dict(meta,steps=steps,development_cost=float(np.mean([r['extended_cost'] for r in rows]))))
     try:
-        assess(model,0);before=time.monotonic()
+        before=time.monotonic()
+        if warm is None:
+            assess(model,491520)
+            audit=dict(algorithm=a,train_seed=t,learned_steps=0,physical_ticks=0,training_episodes=0,optimizer_steps=0,
+                changed=False,behavior_max_error=0.,parameter_sha256=learner.parameter_digest(model),reference=True,
+                foundation_training_steps=491520,source_selected_steps=meta['steps'],source_sha256=meta['sha256'])
+            return dict(n=n,algorithm=a,train_seed=t,initial=initial,parameters=parameters,devrows=devrows,
+                audit=dict(audit,n=n,seconds_including_development=time.monotonic()-before),choice=candidates[0])
+        assess(model,0)
         train_journals={name:Tags(journals[name],dict(n=n)) for name in ('training_progress','training_episodes')}
         audit=learner.fit(model,dict(cfg,rng_namespace=f'{VERSION}:N{n}:'),t,
             lambda seed,worker:ResourceEnv(seed,n,a,worker,True),train_journals,assess,timeout)
         return dict(n=n,algorithm=a,train_seed=t,initial=initial,parameters=parameters,devrows=devrows,
-            audit=dict(audit,n=n,seconds_including_development=time.monotonic()-before),
+            audit=dict(audit,n=n,seconds_including_development=time.monotonic()-before,reference=False,
+                warm_state_exposures=warm['state_exposures'],warm_optimizer_steps=warm['optimizer_steps'],bank_sha256=warm['bank_sha256']),
             choice=min(candidates,key=lambda v:(v['development_cost'],v['steps'])))
     finally:
         for journal in journals.values():journal.close()
 
 
-def run(profile,output_dir):
+def run(profile,output_dir,teacher_dir=None):
     cfg=settings(profile);out=Path(output_dir).resolve()
     if out.exists() and any(out.iterdir()): raise FileExistsError('prior run overwrite')
     out.mkdir(parents=True,exist_ok=True);torch.set_num_threads(1);start=time.monotonic()
@@ -286,25 +320,37 @@ def run(profile,output_dir):
         if time.monotonic()-start>cfg['max_seconds']: raise TimeoutError('fixed hard deadline; incomplete')
     try:
         seed_report=seed_audit()
+        from ht_pdm_fjsp.technician_reservation_distillation import freeze_teachers,prepare_warm_job,DEFAULT_TEACHERS
+        teacher_report=freeze_teachers(teacher_dir or DEFAULT_TEACHERS,out,cfg)
         write_json(out/'resolved_config.json',cfg);write_json(out/'seed_audit.json',seed_report)
         write_json(out/'physics.json',{str(n):asdict(scaled_config(n)) for n in cfg['scales']})
         write_json(out/'graph_sizes.json',{str(n):dict(edges=n*n//2,
             catalogue_count=sum(math.comb(n,r)*math.comb(n//2,r)*math.factorial(r) for r in range(n//2+1)),
             enumerated_catalogue=n==4) for n in cfg['scales']})
-        write_json(out/'execution_contract.json',dict(actor_information='current full graph plus public normalized row/column identities',
+        write_json(out/'execution_contract.json',dict(actor_information='current full graph plus public normalized row/column identities and competing-machine attention',
             coordination='pooled resource messages plus selected-edge prefix and reservation mask',
             ablation='identical raw information and public identities; no reservation/prefix; fixed original summaries',
-            value_encoder='separate from actor encoder',execution='communicating resource agents and shared reservation service',
+            value_encoder='separate from actor encoder',execution='communicating resource agents and shared reservation service',teacher_assistance=True,
+            teacher_budget='122880 shared N4 states and32 fixed distillation epochs;491520 extra PPO decisions per targetscale;491520 foundation teacher decisions',
             latency_scope='single-state neural decision; observation/arbitration/physical stepping measured separately; no network transport claim'))
         snap=out/'source_snapshot';snap.mkdir()
         for p in Path(__file__).parent.glob('*.py'): shutil.copy2(p,snap/p.name)
         history=out/'registry_snapshot';history.mkdir()
         for name in seed_report['historical_registry_hashes']:shutil.copy2(ROOT/'configs'/name,history/name)
         shutil.copy2(PLAN,out/'protocol.md');shutil.copy2(REGISTRY,out/'seed_registry.json')
-        seals={str(p.relative_to(out)):sha(p) for p in [*snap.iterdir(),*history.iterdir(),out/'protocol.md',out/'seed_registry.json',out/'physics.json',out/'resolved_config.json']}
+        seals={str(p.relative_to(out)):sha(p) for p in [*snap.iterdir(),*history.iterdir(),out/'protocol.md',out/'seed_registry.json',out/'physics.json',out/'resolved_config.json',*(out/'teachers').iterdir()]}
         manifest['source_seal']=seals;write_json(out/'manifest.json',manifest)
         journals={name:Journal(out/f'{name}.csv') for name in ('training_progress','training_episodes','development_episodes','episodes.partial','coordination','decisions')}
         choices={};audits=[];devrows=[];parameters={};initials={}
+        manifest['stage']='teacher_bank_and_distillation';write_json(out/'manifest.json',manifest)
+        warm_results={}
+        with ProcessPoolExecutor(max_workers=cfg['training_processes'],mp_context=mp.get_context('spawn')) as pool:
+            futures=[pool.submit(prepare_warm_job,(cfg,t,str(out),start)) for t in cfg['train_seeds']]
+            for future in tqdm(as_completed(futures),total=len(futures),desc='Teacher banks and paired warm starts'):
+                timeout();result=future.result();warm_results[str(result['train_seed'])]=result
+        write_json(out/'warm_choices.json',warm_results)
+        warm_seals={str(p.relative_to(out)):sha(p) for p in (out/'warm').rglob('*') if p.is_file()}
+        warm_seals['warm_choices.json']=sha(out/'warm_choices.json')
         jobs=[(cfg,n,a,t,str(out),start) for n in cfg['scales'] for a in arms(n) for t in cfg['train_seeds']]
         manifest['stage']='training_pool';write_json(out/'manifest.json',manifest)
         results={};partial_choices={}
@@ -353,7 +399,7 @@ def run(profile,output_dir):
         for journal in journals.values():journal.close()
         journals.clear()
         audit=audit_run(out,cfg,devrows,rows,audits,choices)
-        if sha(out/'checkpoint_choices.json')!=choice_hash or any(sha(out/p)!=digest for p,digest in seals.items()): raise RuntimeError('source or checkpoint choices changed')
+        if sha(out/'checkpoint_choices.json')!=choice_hash or any(sha(out/p)!=digest for p,digest in {**seals,**warm_seals}.items()): raise RuntimeError('source or checkpoint choices changed')
         if any(sha(out/c['path'])!=c['sha256'] for c in choices.values()): raise RuntimeError('checkpoint content changed')
         if sha(PLAN)!=seals['protocol.md'] or sha(REGISTRY)!=seals['seed_registry.json'] or any(sha(Path(__file__).parent/p.name)!=seals[f'source_snapshot/{p.name}'] for p in snap.iterdir()):
             raise RuntimeError('working source changed during experiment')
@@ -374,10 +420,13 @@ def audit_run(out,cfg,devrows,rows,audits,choices):
     import csv
     expected={(n,a,t) for n in cfg['scales'] for a in arms(n) for t in cfg['train_seeds']}
     if len(audits)!=len(expected) or {(r['n'],r['algorithm'],r['train_seed']) for r in audits}!=expected:raise RuntimeError('training grid')
-    for r in audits:
+    trained={identity for identity in expected if identity[1] in ARMS[:2]}
+    references=[r for r in audits if r['reference']]
+    if len(references)!=2*len(cfg['train_seeds']) or any(r['learned_steps']!=0 or r['foundation_training_steps']!=491520 for r in references):raise RuntimeError('foundation reference budget')
+    for r in [r for r in audits if not r['reference']]:
         if r['learned_steps']!=cfg['env_steps'] or r['physical_ticks']!=cfg['env_steps']//48*60 or r['training_episodes']!=cfg['env_steps']//48 or not r['changed'] or r['behavior_max_error']>2e-6:
             raise RuntimeError('training budget/likelihood audit')
-    expected_dev={(n,a,t,step,s) for n,a,t in expected for step in [0,*cfg['checkpoints']] for s in cfg['development_seeds']}
+    expected_dev={(n,a,t,step,s) for n,a,t in expected for step in assessed_steps(a,cfg) for s in cfg['development_seeds']}
     if len(devrows)!=len(expected_dev) or {(r['n'],r['method'],r['train_seed'],r['checkpoint_steps'],r['seed']) for r in devrows}!=expected_dev: raise RuntimeError('development grid')
     paired={};seen=set()
     with (out/'training_episodes.csv').open() as f:
@@ -388,8 +437,33 @@ def audit_run(out,cfg,devrows,rows,audits,choices):
             seen.add(identity);tape=(r['physical_seed'],r['population_sha256'])
             if paired.setdefault(key,tape)!=tape:raise RuntimeError('physical training pairing')
             if abs(float(r['episode_reward'])*20+float(r['extended_cost']))>1e-5:raise RuntimeError('training reward reconciliation')
-    expected_episode={(n,t,w,e,a) for n,a,t in expected for w in range(cfg['vector_envs']) for e in range(cfg['env_steps']//(48*cfg['vector_envs']))}
+    expected_episode={(n,t,w,e,a) for n,a,t in trained for w in range(cfg['vector_envs']) for e in range(cfg['env_steps']//(48*cfg['vector_envs']))}
     if seen!=expected_episode:raise RuntimeError('training episode grid')
+    from ht_pdm_fjsp.technician_reservation_distillation import audit_bank,load_reference
+    warm=json.loads((out/'warm_choices.json').read_text());refs=json.loads((out/'teachers/references.json').read_text())['references']
+    for t in cfg['train_seeds']:
+        panel=warm[str(t)];bank_path=out/'warm'/str(t)/'bank.npz'
+        if sha(bank_path)!=panel['bank']['bank_sha256']:raise RuntimeError('shared bank hash')
+        with np.load(bank_path) as bank:
+            actions=ResourceEnv(t,4,'ppo').actions
+            audit_bank(bank,load_reference(out,refs[f'ppo:{t}']),actions,cfg)
+            bank_rewards=bank['reward'].reshape(-1,48,cfg['vector_envs']).sum(1)
+        ablation=list(panel['arms'].values())
+        if len({r['initial_parameter_sha256'] for r in ablation})!=1 or len({r['bank_sha256'] for r in ablation})!=1:raise RuntimeError('warm ablation pairing')
+        for r in ablation:
+            if r['state_exposures']!=cfg['teacher_bank_steps'] or r['state_presentations']!=cfg['teacher_epochs']*cfg['teacher_bank_steps'] or r['epochs']!=cfg['teacher_epochs']:raise RuntimeError('distillation budget')
+        episodes=list(csv.DictReader((out/'warm'/str(t)/'bank_episodes.csv').open()))
+        identities={(int(r['worker']),int(r['episode_index'])) for r in episodes}
+        expected_bank={(1000+w,e) for w in range(cfg['vector_envs']) for e in range(cfg['teacher_bank_steps']//(48*cfg['vector_envs']))}
+        if identities!=expected_bank or len(episodes)!=len(expected_bank):raise RuntimeError('bank episode grid')
+        for r in episodes:
+            if abs(float(r['episode_reward'])*20+float(r['extended_cost']))>1e-5:raise RuntimeError('bank episode reward')
+            if abs(bank_rewards[int(r['episode_index']),int(r['worker'])-1000]-float(r['episode_reward']))>2e-4:raise RuntimeError('bank stored rewards')
+            from ht_pdm_fjsp.maintenance_dispatch import role_seed
+            physical=role_seed(t,f'{VERSION}:N4:training_physical:worker:{r["worker"]}:episode:{r["episode_index"]}')
+            if physical!=int(r['physical_seed']):raise RuntimeError('bank physical stream')
+        for r in audits:
+            if r['train_seed']==t and not r['reference'] and (r['bank_sha256']!=panel['bank']['bank_sha256'] or r['warm_state_exposures']!=cfg['teacher_bank_steps']):raise RuntimeError('fine-tuning bank provenance')
     if cfg['test_seeds']:
         pops={}
         for r in rows:
@@ -445,11 +519,15 @@ def audit_run(out,cfg,devrows,rows,audits,choices):
             if ep['tick']!=60 or abs(ep['policy_cost']-row['policy_cost'])>1e-8 or any(abs(v-row[k])>1e-8 for k,v in ep['metrics'].items()):raise RuntimeError('aggregate physical cost/metric replay')
     else: replay_count=0
     return dict(status='PASS',training_models=len(audits),training_episodes=len(seen),paired_training_tapes=len(paired),
-        development_episodes=len(devrows),test_physical_ticks_replayed=replay_count,choices=len(choices),invalid_assignments=0)
+        development_episodes=len(devrows),test_physical_ticks_replayed=replay_count,choices=len(choices),invalid_assignments=0,
+        teacher_bank_exposures=cfg['teacher_bank_steps']*len(cfg['train_seeds']),
+        per_graph_bundle=dict(shared_teacher_bank_exposures=cfg['teacher_bank_steps'],fine_tuning_per_scale=cfg['env_steps'],
+            pretraining_presentations_per_arm=cfg['teacher_bank_steps']*cfg['teacher_epochs'],foundation_ppo_steps=491520),
+        reference_models=len(references))
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--profile',choices=('smoke','development','confirmation'),required=True)
-    p.add_argument('--output-dir',required=True);args=p.parse_args();run(args.profile,args.output_dir)
+    p.add_argument('--output-dir',required=True);p.add_argument('--teacher-dir');args=p.parse_args();run(args.profile,args.output_dir,args.teacher_dir)
 
 if __name__=='__main__':main()

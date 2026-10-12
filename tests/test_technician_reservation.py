@@ -123,14 +123,22 @@ def test_value_gradients_cannot_change_actor_encoder():
 def test_serial_and_spawn_training_identical(tmp_path):
     import time,multiprocessing as mp
     from concurrent.futures import ProcessPoolExecutor
-    cfg=x.settings('smoke');cfg=dict(cfg,env_steps=192,checkpoints=[192],development_seeds=cfg['development_seeds'][:1])
+    cfg=x.settings('smoke');cfg=dict(cfg,env_steps=192,checkpoints=[192],train_seeds=[53800000],development_seeds=cfg['development_seeds'][:1])
+    from ht_pdm_fjsp.technician_reservation_distillation import freeze_teachers,prepare_warm_job,DEFAULT_TEACHERS
+    from ht_pdm_fjsp.maintenance_opportunity_cost import write_json
+    for name in ('serial','parallel'):
+        directory=tmp_path/name;directory.mkdir()
+        freeze_teachers(DEFAULT_TEACHERS,directory,cfg)
+        result=prepare_warm_job((cfg,53800000,str(directory),time.monotonic()))
+        write_json(directory/'warm_choices.json',{'53800000':result})
     serial=x.fit_job((cfg,4,'reservation_ppo',53800000,str(tmp_path/'serial'),time.monotonic()))
     with ProcessPoolExecutor(max_workers=1,mp_context=mp.get_context('spawn')) as pool:
         parallel=pool.submit(x.fit_job,(cfg,4,'reservation_ppo',53800000,str(tmp_path/'parallel'),time.monotonic())).result()
     assert serial['initial']==parallel['initial']
     assert serial['audit']['parameter_sha256']==parallel['audit']['parameter_sha256']
     assert serial['choice']['development_cost']==parallel['choice']['development_cost']
-    assert serial['choice']['steps']==parallel['choice']['steps']==192
+    assert serial['choice']['steps']==parallel['choice']['steps']
+    assert serial['choice']['steps'] in (0,192)
     for key in ('learned_steps','optimizer_steps','training_episodes','behavior_max_error'):
         assert serial['audit'][key]==parallel['audit'][key]
 
@@ -154,3 +162,67 @@ def test_mechanism_gate_requires_every_large_scale_and_small_noninferiority():
     assert not x.summarize(damaged,cfg,latencies)['goal_pass']
     damaged=[dict(r,normalized_pending=.1) if r['n']==8 and r['method']=='reservation_ppo' else r for r in rows]
     assert not x.summarize(damaged,cfg,latencies)['goal_pass']
+
+
+def test_teacher_matching_labels_cover_all_catalogue_actions():
+    from ht_pdm_fjsp.technician_reservation_distillation import matching_tokens
+    env=urgent();ppo=e.ResourceEnv(1,4,'ppo')
+    tokens=matching_tokens(np.arange(len(ppo.actions)),ppo.actions)
+    for action,target in zip(ppo.actions,tokens):assert env.resolve(target)[0]==action
+
+
+def test_frozen_teacher_hash_and_metadata(tmp_path):
+    from ht_pdm_fjsp.technician_reservation_distillation import freeze_teachers,load_reference,DEFAULT_TEACHERS
+    cfg=x.settings('smoke');report=freeze_teachers(DEFAULT_TEACHERS,tmp_path,cfg)
+    meta=report['references'][f"ppo:{cfg['train_seeds'][0]}"];model=load_reference(tmp_path,meta)
+    assert parameter_digest(model)==meta['parameter_sha256']
+    path=tmp_path/meta['path'];path.write_bytes(path.read_bytes()+b'changed')
+    with pytest.raises(RuntimeError,match='frozen teacher hash'):load_reference(tmp_path,meta)
+
+
+def test_distillation_budget_labels_returns_and_disjoint_streams(tmp_path):
+    import time,csv,json
+    from ht_pdm_fjsp.technician_reservation_distillation import freeze_teachers,prepare_warm_job,load_reference,audit_bank,DEFAULT_TEACHERS
+    from ht_pdm_fjsp.maintenance_opportunity_cost import write_json
+    cfg=x.settings('smoke');seed=cfg['train_seeds'][0]
+    refs=freeze_teachers(DEFAULT_TEACHERS,tmp_path,cfg)['references']
+    result=prepare_warm_job((cfg,seed,str(tmp_path),time.monotonic()))
+    assert result['bank']['state_exposures']==192 and result['bank']['physical_ticks']==240
+    r,i=result['arms'].values()
+    assert r['initial_parameter_sha256']==i['initial_parameter_sha256']
+    assert r['bank_sha256']==i['bank_sha256'] and r['teacher_sha256']==i['teacher_sha256']
+    assert r['optimizer_steps']==i['optimizer_steps']==8
+    assert r['state_presentations']==i['state_presentations']==384
+    directory=tmp_path/'warm'/str(seed)
+    rows=list(csv.DictReader((directory/'bank_episodes.csv').open()))
+    env=e.ResourceEnv(seed,4,'reservation_ppo',0,True);env.reset()
+    assert all(int(row['worker'])>=1000 and int(row['physical_seed'])!=env.physical_seed for row in rows)
+    data=dict(np.load(directory/'bank.npz'));data['returns']=data['returns'].copy();data['returns'][0]+=1
+    with pytest.raises(RuntimeError,match='return audit'):
+        audit_bank(data,load_reference(tmp_path,refs[f'ppo:{seed}']),e.ResourceEnv(seed,4,'ppo').actions,cfg)
+    write_json(tmp_path/'warm_choices.json',{str(seed):result})
+    from ht_pdm_fjsp.technician_reservation_distillation import load_warm
+    for n in (4,8,16,32):
+        model=x.make_model('reservation_ppo',n,cfg,seed);load_warm(model,tmp_path,seed)
+        assert parameter_digest(model)==r['parameter_sha256']
+
+
+def test_reference_evaluation_never_refits_or_reselects(tmp_path,monkeypatch):
+    import time
+    from ht_pdm_fjsp.technician_reservation_distillation import freeze_teachers,DEFAULT_TEACHERS
+    cfg=x.settings('smoke');seed=cfg['train_seeds'][0];freeze_teachers(DEFAULT_TEACHERS,tmp_path,cfg)
+    monkeypatch.setattr(x.learner,'fit',lambda *args,**kw:(_ for _ in ()).throw(AssertionError('reference refit forbidden')))
+    for arm in ('ppo','mappo'):
+        result=x.fit_job((cfg,4,arm,seed,str(tmp_path),time.monotonic()))
+        assert result['audit']['reference'] and result['audit']['learned_steps']==0
+        assert result['audit']['foundation_training_steps']==491520
+        assert {row['checkpoint_steps'] for row in result['devrows']}=={491520}
+
+
+def test_graph_attention_capacity_independent_of_scale():
+    cfg=x.settings('smoke');counts=[]
+    for n in (4,8,16,32):
+        model=x.make_model('reservation_ppo',n,cfg,55800000)
+        counts.append(sum(p.numel() for p in model.parameters()))
+        env=urgent(n);action=model.select(env.observe());env.resolve(action)
+    assert len(set(counts))==1
