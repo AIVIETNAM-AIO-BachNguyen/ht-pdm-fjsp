@@ -69,7 +69,7 @@ ax.set_yscale('log');ax.set_xticks(ns);ax.set_xlabel('Machines (technicians = ma
 if teacher_assisted:
     warm=json.loads((source/'warm_choices.json').read_text())
     warm=dict(sorted(warm.items(),key=lambda item:int(item[0])))
-    fig,axs=plt.subplots(1,2,figsize=(10.4,3.9))
+    fig,axs=plt.subplots(1,2,figsize=(10.4,4.4))
     for arm in ('reservation_ppo','independent_ppo'):
         curves=[]
         for seed,panel in warm.items():
@@ -81,9 +81,9 @@ if teacher_assisted:
         xpos=np.arange(len(agreement))+(0 if arm=='reservation_ppo' else .35)
         axs[1].bar(xpos,agreement,width=.35,label=labels[arm],color=colors[arm])
     axs[0].set_xlabel('Fixed pretraining epoch');axs[0].set_ylabel('Teacher-label NLL / technician');axs[0].legend(fontsize=7)
-    axs[1].set_xticks(np.arange(len(warm))+.175,list(warm));axs[1].set_xlabel('Student seed (mapped teacher bundle)');axs[1].set_ylabel('Exact teacher matching agreement (%)');axs[1].set_ylim(0,100);axs[1].legend(fontsize=7)
+    axs[1].set_xticks(np.arange(len(warm))+.175,list(warm));axs[1].set_xlabel('Student seed (mapped teacher bundle)');axs[1].set_ylabel('Exact teacher matching agreement (%)');axs[1].set_ylim(0,100);axs[1].legend(fontsize=7,loc='lower right',bbox_to_anchor=(1,1.02))
     for ax in axs:ax.grid(alpha=.15)
-    fig.suptitle('Training-bank diagnostics; fixed epochs, no scientific test',fontsize=12);fig.tight_layout();fig.savefig(out/'teacher_transfer.png',dpi=180);fig.savefig(out/'teacher_transfer.pdf');plt.close(fig)
+    fig.suptitle('Training-bank diagnostics; fixed epochs, no scientific test',fontsize=12);fig.tight_layout(rect=(0,0,1,.88));fig.savefig(out/'teacher_transfer.png',dpi=180);fig.savefig(out/'teacher_transfer.pdf');plt.close(fig)
 inputs=['manifest.json','summary.json','resolved_config.json','development_episodes.csv','audit.json']
 if teacher_assisted:inputs+=['warm_choices.json','teachers/references.json']
 report=dict(classification='READ_ONLY_SUPPLEMENT',source=str(source),protocol=manifest['protocol'],git=manifest['git'],
