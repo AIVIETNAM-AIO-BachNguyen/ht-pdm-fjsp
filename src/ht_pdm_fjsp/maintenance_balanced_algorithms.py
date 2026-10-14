@@ -229,6 +229,18 @@ def behavior_replay_audit(check_log, old_log, check_value, old_value, cfg):
     return errors
 
 
+def clip_gradient_groups(model, maximum, grouped):
+    """Optional actor/value clipping intervention; default ordering is unchanged."""
+    groups=model.gradient_groups()
+    def size(parameters):
+        return float(torch.sqrt(sum((p.grad.detach().square().sum() for p in parameters if p.grad is not None),torch.tensor(0.))))
+    result={name+'_grad_norm':size(params) for name,params in groups.items()}
+    norms=([torch.nn.utils.clip_grad_norm_(params,maximum) for params in groups.values()]
+           if grouped else [torch.nn.utils.clip_grad_norm_(model.parameters(),maximum)])
+    if any(not torch.isfinite(norm) for norm in norms):raise RuntimeError('nonfinite grouped gradient')
+    return result
+
+
 def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=None):
     """Train on exact step budget; callback(model, steps, audit) after updates.
 
@@ -250,6 +262,8 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
         raise ValueError("positive update settings required")
     if not math.isfinite(float(cfg.get("value_loss_normalizer", 1.))) or cfg.get("value_loss_normalizer", 1.) <= 0:
         raise ValueError("positive finite value-loss normalizer required")
+    if cfg.get('group_gradient_clipping',False) and not hasattr(model,'gradient_groups'):
+        raise ValueError('group clipping requires explicit parameter groups')
     if actor and (rollout % (48 * workers) or total % rollout or any(s % rollout for s in checkpoints)):
         raise ValueError("actor rollouts/checkpoints must contain complete episodes")
     if not actor and (min(cfg["learning_starts"], cfg["batch_size"], cfg["train_frequency"], cfg["target_interval"]) <= 0
@@ -272,7 +286,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
     observations = [env.reset() for env in envs]
     episode_rewards = np.zeros(workers); episode_steps = np.zeros(workers, dtype=int)
     completed = physical_ticks = optimizer_steps = steps = update_index = 0
-    actor_buffer = []; emitted = []; behavior_error = 0.; replay_errors = {}; model.train()
+    actor_buffer = []; emitted = []; behavior_error = 0.; replay_errors = {}; gradient_records=[]; model.train()
 
     def emit(name, record):
         if name in journals:
@@ -287,10 +301,20 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
         if not torch.isfinite(loss):
             raise RuntimeError("nonfinite training loss")
         optimizer.zero_grad(); loss.backward()
-        norm = torch.nn.utils.clip_grad_norm_(model.parameters(), cfg["gradient_clip"])
-        if not torch.isfinite(norm):
-            raise RuntimeError("nonfinite training gradient")
+        logging=cfg.get('log_gradient_groups',False) and hasattr(model,'gradient_groups')
+        if logging or cfg.get('group_gradient_clipping',False):
+            groups=model.gradient_groups()
+            if logging:before={name:[p.detach().clone() for p in params] for name,params in groups.items()}
+            metrics=clip_gradient_groups(model,cfg['gradient_clip'],cfg.get('group_gradient_clipping',False))
+        else:
+            norm = torch.nn.utils.clip_grad_norm_(model.parameters(), cfg["gradient_clip"])
+            if not torch.isfinite(norm):
+                raise RuntimeError("nonfinite training gradient")
         optimizer.step(); optimizer_steps += 1
+        if logging:
+            for name,params in groups.items():
+                metrics[name+'_update_norm']=float(torch.sqrt(sum(((p.detach()-old).square().sum() for p,old in zip(params,before[name])),torch.tensor(0.))))
+            gradient_records.append(metrics)
         if not all(torch.isfinite(p).all() for p in model.parameters()):
             raise RuntimeError("nonfinite updated parameters")
         return float(loss.detach())
@@ -333,7 +357,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
             observations = [env.reset() if dones[i] and steps + workers < total
                 else next_observations[i] for i, env in enumerate(envs)]
             steps += workers; progress.update(workers)
-            losses = []; updated = False
+            losses = []; updated = False; gradient_records.clear()
             if actor and steps % rollout == 0:
                 flat = {key: torch.cat([row[0][key] for row in actor_buffer]) for key in batch}
                 actions_ = torch.cat([row[1] for row in actor_buffer])
@@ -381,6 +405,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                     physical_ticks=physical_ticks + int(episode_steps.sum()), training_episodes=completed,
                     optimizer_steps=optimizer_steps, update_index=update_index, loss=float(np.mean(losses)),
                     epsilon=0. if actor else epsilon, parameter_sha256=digest, behavior_max_error=behavior_error,**replay_errors)
+                if gradient_records:record.update({key:float(np.mean([r[key] for r in gradient_records])) for key in gradient_records[0]})
                 emit("training_progress", record)
                 if steps in checkpoints:
                     if on_checkpoint:
