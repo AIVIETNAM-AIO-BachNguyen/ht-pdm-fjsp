@@ -372,22 +372,35 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                     behavior_error = max(behavior_error, error)
                     if "behavior_log_atol" in cfg:
                         for key,value in replay_audit.items():replay_errors[key]=max(replay_errors.get(key,0.),value)
-                advantage = returns - old_value
-                advantage = (advantage - advantage.mean()) / (advantage.std(unbiased=False) + 1e-8)
+                allocation_mode = getattr(model, 'allocation_learning_mode', None)
+                allocation_diagnostics = {}
+                if allocation_mode is not None:
+                    from ht_pdm_fjsp.technician_completion_learning import prepare_advantage
+                    advantage, allocation_diagnostics = prepare_advantage(returns, old_value, allocation_mode)
+                else:
+                    advantage = returns - old_value
+                    advantage = (advantage - advantage.mean()) / (advantage.std(unbiased=False) + 1e-8)
                 for epoch in range(int(cfg["epochs"])):
                     permutation = torch.randperm(len(returns), generator=minibatch_rng)
                     for indices in permutation.split(int(cfg["minibatch"])):
                         guard()
                         mini = {key: val[indices] for key, val in flat.items()}
                         current_log, entropy, current_value = model.evaluate(mini, actions_[indices])
-                        ratio = torch.exp(current_log - old_log[indices])
-                        adv = advantage[indices] if getattr(model, "joint_policy", model.algorithm == "ppo") else advantage[indices, None]
-                        objective = torch.minimum(ratio * adv,
-                            ratio.clamp(1 - cfg["clip"], 1 + cfg["clip"]) * adv).mean()
-                        loss = (-objective - cfg["entropy_weight"] * entropy.mean()
-                            + cfg["value_weight"] * torch.nn.functional.mse_loss(
+                        if allocation_mode is not None:
+                            from ht_pdm_fjsp.technician_completion_learning import allocation_objective, value_loss
+                            objective = allocation_objective(current_log, old_log[indices],
+                                advantage[indices], allocation_mode, cfg['clip'])
+                            critic_loss = value_loss(current_value, returns[indices], cfg.get('value_loss_normalizer', 1.))
+                        else:
+                            ratio = torch.exp(current_log - old_log[indices])
+                            adv = advantage[indices] if getattr(model, "joint_policy", model.algorithm == "ppo") else advantage[indices, None]
+                            objective = torch.minimum(ratio * adv,
+                                ratio.clamp(1 - cfg["clip"], 1 + cfg["clip"]) * adv).mean()
+                            critic_loss = torch.nn.functional.mse_loss(
                                 current_value / cfg.get("value_loss_normalizer", 1.),
-                                returns[indices] / cfg.get("value_loss_normalizer", 1.)))
+                                returns[indices] / cfg.get("value_loss_normalizer", 1.))
+                        loss = (-objective - cfg["entropy_weight"] * entropy.mean()
+                            + cfg["value_weight"] * critic_loss)
                         losses.append(optimize(loss))
                 actor_buffer.clear(); updated = True
             elif not actor and steps >= cfg["learning_starts"] and steps % cfg["train_frequency"] == 0 and replay.count >= cfg["batch_size"]:
@@ -406,6 +419,7 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                     optimizer_steps=optimizer_steps, update_index=update_index, loss=float(np.mean(losses)),
                     epsilon=0. if actor else epsilon, parameter_sha256=digest, behavior_max_error=behavior_error,**replay_errors)
                 if gradient_records:record.update({key:float(np.mean([r[key] for r in gradient_records])) for key in gradient_records[0]})
+                if actor and getattr(model, 'allocation_learning_mode', None) is not None:record.update(allocation_diagnostics)
                 emit("training_progress", record)
                 if steps in checkpoints:
                     if on_checkpoint:

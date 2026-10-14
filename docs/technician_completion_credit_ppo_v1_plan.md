@@ -10,7 +10,9 @@ initialize randomly. Existing v3 confirmation remains prohibited and unopened.
 Hypothesis: assigning credit to a technician choice conditional on already
 reserved service occupation/restoration improves coupled maintenance allocation
 over a shared state-only advantage with exactly the same policy and critic.
-Also test component PPO clipping against joint-action PPO clipping. Main claimed
+Also test the complete decomposed-learning recipe against joint-action PPO.
+That contrast changes both credit and surrogate and cannot isolate clipping.
+Main claimed
 contribution is a domain allocation/learning mechanism, not generic autoregression,
 prefix critics, PPO or a new theorem. See technician_completion_credit_prior_art_note.md,
 particularly POAD, MAT and COMA. No monotonicity or guaranteed variance claim.
@@ -24,7 +26,7 @@ Fixed technician order is a disclosed assumption; machine permutation equivarian
 is tested, not invariance to arbitrary changes in technician decoding order.
 
 Raw inputs remain M6/T3/E4/G9, exactly the centralized N4 state71. Two separate
-base pair MLP encoders consume raw22, actor and value. Hidden30. Maintain a
+base pair MLP encoders consume raw22, actor and value. Hidden27. Maintain a
 deterministic reservation calendar: per-machine service active, remaining time/12,
 known completion age/8 = floor(age*(1-restoration))/8, plus per-edge assignment
 flag. Initialize from current services; update only from selected current-state
@@ -37,11 +39,21 @@ same function without NK repeated calendar MLP calls.
 
 At each stage pool augmented edge embeddings over machines, technicians and
 the graph. Bid MLP takes four H vectors for each candidate edge of the current
-technician; WAIT takes technician/global embeddings plus stage/K. Value MLP
-takes value graph embedding, global9 and stage/K. Separate actor/value encoders;
-all MLPs have two hidden tanh layers. Expected18723 parameters for every graph
+technician; WAIT takes technician/global embeddings plus stage/K. Critic applies
+pointwise tanh to the sum of base and calendar value embeddings, binding current
+job status to its reservation before any pooling. It then pools by technician,
+applies a shared nonlinear resource-context MLP to each technician embedding
+concatenated with the value graph embedding and two decoder-role scalars
+(technician index/K, index>=current stage), then averages these contexts.
+Roles are internal fixed-order information, not added external observations.
+Value MLP takes that resource-context pool, global9
+and stage/K. This preserves contention distributions instead of collapsing all
+pair embeddings before the first nonlinear interaction. Separate actor/value
+encoders; all MLPs have two hidden tanh layers. Expected18444 parameters for every graph
 arm and size. Values output in units scaled N/4 and value losses normalize N/4.
 Shared current graph/reservation broker assumed, not local-only communication.
+Inference select evaluates only actor encoders/heads; prefix critic runs during
+training/replay, and does not enter actor inference latency.
 Cached base encodings, O(NK) candidate decisions plus O(NK²) pooled graph work;
 no matching catalogue in learned graph policies. Sizes trained separately.
 
@@ -68,7 +80,9 @@ Each stage value is computed BEFORE that stage's choice. MC return includes the
 No bootstrapped new target/extra environment sampling. Normalize actor advantages
 once per rollout, common over batch/stages; per-stage objective averages over K,
 value MSE averages over K so increasing K does not increase optimizer steps.
-Joint control normalizes its batch common advantage normally. No claimed global
+Joint control normalizes its batch common advantage normally. Its contrast with
+the candidate is a complete-learning-recipe comparison, not a clipping-only
+ablation. No claimed global
 trust-region theorem for component clipping. Forced WAIT contributes log/entropy0;
 critic targets remain on every stage in every arm. Exact behavior replay required.
 
@@ -77,11 +91,11 @@ critic targets remain on every stage in every arm. Exact behavior replay require
 Unchanged scalar balanced maintenance N4/8/16/32,K=N/2,H48+deadline tail12,
 reward=-cost/20. Fresh original PPO/localMAPPO/full-informationMAPPO at N4;
 fullMAPPO receives raw71+machine identity4. PPO18966/local15364/full18052 parameters,
-graph18723: disclose capacity differences. Deadline reference uses min-cost-flow
+graph18444: disclose capacity differences. Deadline reference uses min-cost-flow
 large and catalogue only small. All graph arms exclude allmatching enumeration.
 
 Full fits491520 joint decisions, vector16,rollout3072,epochs4,minibatch256,
-lr3e-4,clip.2,entropy.01,value.5,actor/value gradient clip.5. Graph hidden30,
+lr3e-4,clip.2,entropy.01,value.5,actor/value gradient clip.5. Graph hidden27,
 baseline64. CP0/122880/245760/368640/491520; select earliest minimum mean DEV cost,
 whole budgets spent, every replica retained. Process8,torchthreads1,tqdm.
 Hard24h per run; no extension or metric early stop. Fresh UTC artifacts.
@@ -115,14 +129,18 @@ All per-replica and leave-one-out values disclosed;5rep approximate coverage.
 N4 six gains vs PPO/localMAPPO/fullMAPPO/state_credit/independent/joint_credit
 plus3 health differences =9. Each large4 gains vs state_credit/independent/
 joint_credit/deadline plus3health =21. Three large/N4 cost/machine ratios and
-two pooled large gains (credit vs state_credit, clipping vs joint_credit) =35.
+two pooled large gains (credit vs state_credit, full recipe vs joint_credit) =35.
 Pool arithmetic mean of N8/N16/N32 gains within EACH bootstrap draw.
 
 Required N4 lower gains>=-1%, except localMAPPO lower>0. Large state_credit and
 joint_credit lower>=-1%, independent lower>0, deadline lower>=-2%, cost/machine
-ratio upper<=1.10. BOTH main pooled credit and clipping lower>=0.5%. Optional
+ratio upper<=1.10. BOTH main pooled credit and full-recipe lower>=0.5%. Optional
 PPO superiority lower>=1%, positive N4 credit lower>0. DEV screens same POINT
-thresholds. Do not remove failed learning mechanisms to redefine success.
+thresholds. The internal artifact keys `pooled_clipping_gain` and
+`clipping_mechanism` denote the full-recipe contrast; these names do not authorize
+an isolated clipping claim. This interpretation is clarified before any pilot
+outcome, with no numerical threshold or learning-source change. Do not remove
+failed learning contrasts to redefine success.
 
 All sizes health vs PPOsmall/deadlinelarge: availability difference lower>=-.01,
 pending/machine difference upper<=.025, failure/machine difference upper<=.25.
@@ -132,9 +150,22 @@ latency or zero-shot scaling claim. Lower cost never offsets failed health bound
 
 ## Validation and artifact contract
 
+Prospective engineering amendment, before pilot/development/scientific tests:
+an initial global-edge-mean critic (hidden30,18723 parameters) exactly aliased
+N4 ages(3,3,0,0) and(0,3,3,0), both at empty prefix and after reserving machine1
+with technician0. Yet their maximum one-tick urgent matchings have sizes1 and2.
+The amended critic retains nonlinear per-technician contexts, fuses job status
+with reservation identity, and retains remaining decoder roles. Hidden27 keeps
+total18444 parameters close to PPO18966. All graph controls receive the same amendment.
+No outcome-based threshold, seed, budget or learning-mode change. Prior1104-test
+PASS and two successful smoke runs apply to the pre-amendment architecture only;
+fresh tests/smoke are required before authorizing pilot.
+
 Tests: all21 unique small trace matchings and exact probability mass; canonical
 busy WAIT and WAIT-then-assignment; illegal/duplicate action replay rejection;
-stage values independent of current/future actions; calendar completion formula
+stage values independent of current/future actions; distinguish the documented
+resource-contention alias, reservation identity and known remaining decoder roles;
+calendar completion formula
 for existing and new services; cache flag0/1 identity to direct MLP; deterministic
 sample/replay and gradients; machine permutation; no future inputs/no large
 catalogue; matched initial tensors/counts; exact surrogate/advantage controls,
