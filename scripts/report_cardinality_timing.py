@@ -28,6 +28,10 @@ for name, binding in manifest['output_bindings'].items():
     assert path.stat().st_size == binding['bytes'] and sha(path) == binding['sha256'], name
 run = Path(manifest['source'])
 assert sha(run / 'manifest.json') == manifest['source_manifest_sha256']
+run_manifest = json.loads((run / 'manifest.json').read_text())
+binding = run_manifest['output_bindings']['physics.json']
+assert (run / 'physics.json').stat().st_size == binding['bytes']
+assert sha(run / 'physics.json') == binding['sha256']
 physics = json.loads((run / 'physics.json').read_text())['4']
 # All N4 edges are compatible; a free technician is a legal option for each
 # recorded unassigned at-risk machine. Do not generalize this shortcut to skills.
@@ -41,9 +45,12 @@ with (source / 'physical.csv').open() as stream:
             states[key] = json.loads(row['state'])
 assert len(states) == 672 * 48
 counts = defaultdict(Counter)
+seen = set()
 with (source / 'decisions.csv').open() as stream:
     for row in csv.DictReader(stream):
         key = tuple(row[k] for k in ('method', 'train_seed', 'development_seed', 'tick'))
+        assert key not in seen
+        seen.add(key)
         state = states[key]
         pairs = json.loads(row['executed'])
         used = {j for _, j in pairs}
@@ -58,6 +65,7 @@ with (source / 'decisions.csv').open() as stream:
                 counts[row['method']][label + ('_initial_free' if free else '_all_busy')] += 1
                 if any(j not in used for j in free):
                     counts[row['method']][label + '_residual_free'] += 1
+assert seen == set(states)
 starts = defaultdict(Counter)
 with (source / 'starts.csv').open() as stream:
     for row in csv.DictReader(stream):

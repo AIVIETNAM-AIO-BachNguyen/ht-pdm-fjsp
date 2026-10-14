@@ -9,9 +9,11 @@ teacher or scientific test. Script/plan commit `b8cbad1` pushed after a7-episode
 420-tick smoke. All716 original input bindings and diagnostic output bindings
 verified. This is descriptive evidence on the failed development panel.
 
-`technician_scarcity_ppo_v3_timing_report_20261014T182741246492Z` preserves
+`technician_scarcity_ppo_v3_timing_report_20261014T183028422990Z` preserves
 the derived risk/availability and job-weighted service fractions, with copied
-analysis script and input/output hashes. All raw trajectories remain available.
+analysis script and input/output hashes, rechecks frozen physics and the complete
+decision grid. Its numerical summary exactly matches the earlier182741 report;
+both artifacts are retained. All raw trajectories remain available.
 
 ## Observed decision pattern
 
