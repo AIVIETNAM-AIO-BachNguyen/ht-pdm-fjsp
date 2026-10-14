@@ -25,7 +25,7 @@ for ax,n in zip(axs[0],c['scales']):
   x=np.array(steps)/1000;ax.plot(x,values.mean(0),'-o',label=arm,color=color);ax.fill_between(x,values.min(0),values.max(0),color=color,alpha=.1)
  ax.axhline(s['means'][str(n)]['deadline']['normalized_cost'],color='#555555',linestyle='--',label='deadline');ax.set_title(f'N{n}, K{n//2}');ax.set_xlabel('Joint decisions / replica (thousands)');ax.set_ylabel('Development H+L cost / machine');ax.legend(fontsize=7);ax.grid(alpha=.15)
 fig.suptitle(f'{m["protocol"]}: {c["profile"]}, {len(c["train_seeds"])} replicas, no scientific test',fontsize=11);fig.text(.5,.005,'Shading: all-replica min–max, not CI. Full budgets spent; checkpoint selection uses development only.',ha='center',fontsize=8);fig.tight_layout(rect=(0,.05,1,.92));fig.savefig(out/'learning_curves.png',dpi=180);fig.savefig(out/'learning_curves.pdf');plt.close(fig)
-text=['# Teacher-free development findings','','Classification: DEVELOPMENT_ONLY. No scientific test opened.',f'Source: `{source}`; frozen commit `{m["git"]["commit"]}`.',f'Audit PASS. Full pilot budget {c["env_steps"]} decisions per fit; {len(c["train_seeds"])} replicas. Screen pass: {s["development_screen_pass"]}.','','| N | Method | Selected cost/machine | Availability | Pending/machine | Failures/machine |','|---|---|---:|---:|---:|---:|']
+text=['# Teacher-free development findings','','Classification: DEVELOPMENT_ONLY. No scientific test opened.',f'Source: `{source}`; frozen commit `{m["git"]["commit"]}`.',f'Audit PASS. Allocated {c["profile"]} budget {c["env_steps"]} decisions per fit; {len(c["train_seeds"])} replicas. Screen pass: {s["development_screen_pass"]}.','','| N | Method | Selected cost/machine | Availability | Pending/machine | Failures/machine |','|---|---|---:|---:|---:|---:|']
 for n,panel in s['means'].items():
  for arm,v in panel.items():text.append(f'| {n} | {arm} | {v["normalized_cost"]:.4f} | {v["availability"]:.6f} | {v["normalized_pending"]:.6f} | {v["normalized_failures"]:.6f} |')
 text+=['','## Descriptive intervention activity','','| N | Step | Price mean magnitude | Active slot fraction | Same-weight unpriced matching changes/episode |','|---|---:|---:|---:|---:|']
@@ -37,6 +37,15 @@ text+=['','## Learning time','','| N | Method | Seed | Seconds including dev | D
 for r in json.loads((source/'training_audit.json').read_text()):text.append(f'| {r["n"]} | {r["algorithm"]} | {r["train_seed"]} | {r["seconds_including_development"]:.2f} | {r["learned_steps"]} | {r["optimizer_steps"]} |')
 text+=['','These are exploratory development results, not scientific superiority claims.']
 if c['profile']=='pilot':text+=['Pilot uses short budgets. Point gains over equally short baseline fits are','not evidence against full-budget PPO.']
-text+=['No scientific confidence interval or alpha is spent. Preserve negative screens','and test a revised design on a new registered panel.']
+text+=['No scientific confidence interval or alpha is spent.']
+if not s['development_screen_pass']:
+ text+=['Preserve this negative screen. It does not authorize confirmation;',
+        'any revised design requires a new prospectively registered panel.']
+elif c['profile']=='development':
+ text+=['A passing full-development screen is a prerequisite, not scientific success.',
+        'Confirmation still requires the registered source, protocol and provenance checks.']
+else:
+ text+=['A passing pilot screen alone does not authorize confirmation;',
+        'completed, audited, passing full development is required first.']
 (out/'findings.md').write_text('\n'.join(text)+'\n');shutil.copyfile(__file__,out/'report_source.py')
 (out/'report_manifest.json').write_text(json.dumps(dict(classification='DEVELOPMENT_ONLY',source=str(source),input_hashes={name:sha(source/name) for name in ['manifest.json',*inputs]},script_sha256=sha(Path(__file__)),matplotlib=matplotlib.__version__,outputs={p.name:sha(p) for p in out.iterdir() if p.is_file()}),indent=2)+'\n');print(out)
