@@ -25,7 +25,7 @@ def sha(path):
     return digest.hexdigest()
 
 manifest = json.loads((source / 'manifest.json').read_text())
-assert manifest['protocol'] == 'technician_scarcity_ppo_v2'
+assert manifest['protocol'] in ('technician_scarcity_ppo_v2','technician_scarcity_ppo_v3')
 assert manifest['status'] == 'COMPLETED' and manifest['audit_status'] == 'PASS'
 assert not manifest['test_opened']
 assert manifest['profile'] in ('pilot', 'development')
@@ -42,7 +42,8 @@ with (source / 'training_progress.csv').open() as stream:
 with (source / 'development_episodes.csv').open() as stream:
     development = list(csv.DictReader(stream))
 
-arms = ('scarcity_ppo', 'reservation_ppo', 'independent_ppo', 'global_clip_ppo')
+control = 'flat_stop_ppo' if manifest['protocol'].endswith('_v3') else 'global_clip_ppo'
+arms = ('scarcity_ppo', 'reservation_ppo', 'independent_ppo', control)
 metrics = ('actor_grad_norm', 'critic_grad_norm', 'actor_update_norm', 'critic_update_norm')
 updates = []
 checkpoints = []
@@ -78,7 +79,7 @@ for n in config['scales']:
                     matching_changes_per_episode=float(np.mean([
                         float(r['same_weight_unpriced_matching_changes']) for r in rows]))))
 
-out = args.output_root / ('technician_scarcity_ppo_v2_mechanism_report_' +
+out = args.output_root / (manifest['protocol'] + '_mechanism_report_' +
                          datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
 out.mkdir()
 for name, rows in (('learning_updates.csv', updates), ('message_checkpoints.csv', checkpoints)):
@@ -101,7 +102,8 @@ lines += ['', 'Raw gradient norms cannot establish parameter-step suppression un
           'averaged across minibatches, rollouts and replicas. They do not measure',
           'policy-space movement or prove clipping caused a performance change.', '',
           'Message gates and same-weight interventions are descriptive. Independent',
-          'training of the reservation and global-clipping controls supplies the',
+          'training of the reservation and flat-STOP (v3) or global-clipping (v2)',
+          'controls supplies the',
           'registered contrasts; only untouched confirmation seeds with locked',
           'intervals can support the scientific mechanism and efficacy claims.', '',
           'All replicas and checkpoints are retained in the CSVs, including step0',

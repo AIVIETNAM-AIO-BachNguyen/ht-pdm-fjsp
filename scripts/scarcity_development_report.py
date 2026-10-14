@@ -13,7 +13,7 @@ inputs=['summary.json','resolved_config.json','development_episodes.csv','audit.
 for name in inputs:assert sha(source/name)==m['output_bindings'][name]['sha256'],name
 s=json.loads((source/'summary.json').read_text());c=json.loads((source/'resolved_config.json').read_text());assert s['classification']=='DEVELOPMENT_ONLY' and not s['teacher_assistance']
 with (source/'development_episodes.csv').open() as f:rows=list(csv.DictReader(f))
-colors={'scarcity_ppo':'#2166ac','reservation_ppo':'#d6604d','independent_ppo':'#8c6bb1','global_clip_ppo':'#5c8655','ppo':'#333333','mappo':'#c29b24','full_mappo':'#888888'}
+colors={'scarcity_ppo':'#2166ac','reservation_ppo':'#d6604d','independent_ppo':'#8c6bb1','global_clip_ppo':'#5c8655','flat_stop_ppo':'#5c8655','ppo':'#333333','mappo':'#c29b24','full_mappo':'#888888'}
 out=args.output_root/(m['protocol']+'_development_report_'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'));out.mkdir()
 fig,axs=plt.subplots(1,len(c['scales']),figsize=(6*len(c['scales']),4),squeeze=False)
 for ax,n in zip(axs[0],c['scales']):
@@ -35,6 +35,8 @@ for n in c['scales']:
   text.append(f'| {n} | {step} | {v["price_mean_abs"]:.8f} | {v["price_active_fraction"]:.6f} | {v["same_weight_unpriced_matching_changes"]:.4f} |')
 text+=['','## Learning time','','| N | Method | Seed | Seconds including dev | Decisions | Optimizer steps |','|---|---|---:|---:|---:|---:|']
 for r in json.loads((source/'training_audit.json').read_text()):text.append(f'| {r["n"]} | {r["algorithm"]} | {r["train_seed"]} | {r["seconds_including_development"]:.2f} | {r["learned_steps"]} | {r["optimizer_steps"]} |')
-text+=['','These are exploratory development results with short pilot budgets. Point gains','over equally short baseline fits are not evidence against full-budget PPO and','not scientific superiority claims. No confidence interval or alpha is spent.','Preserve negative screens and test the next design on a new registered panel.']
+text+=['','These are exploratory development results, not scientific superiority claims.']
+if c['profile']=='pilot':text+=['Pilot uses short budgets. Point gains over equally short baseline fits are','not evidence against full-budget PPO.']
+text+=['No scientific confidence interval or alpha is spent. Preserve negative screens','and test a revised design on a new registered panel.']
 (out/'findings.md').write_text('\n'.join(text)+'\n');shutil.copyfile(__file__,out/'report_source.py')
 (out/'report_manifest.json').write_text(json.dumps(dict(classification='DEVELOPMENT_ONLY',source=str(source),input_hashes={name:sha(source/name) for name in ['manifest.json',*inputs]},script_sha256=sha(Path(__file__)),matplotlib=matplotlib.__version__,outputs={p.name:sha(p) for p in out.iterdir() if p.is_file()}),indent=2)+'\n');print(out)
