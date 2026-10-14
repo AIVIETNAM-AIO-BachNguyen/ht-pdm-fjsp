@@ -1,0 +1,9 @@
+{
+  "version": "technician_scarcity_ppo_v1",
+  "panels": {
+    "smoke": {"train_seeds": [60000000], "development_start": 60100000, "development_count": 2, "test_start": 60200000, "test_count": 2, "analysis_seed": 60300000},
+    "pilot": {"train_seeds": [60400000, 60400001], "development_start": 60500000, "development_count": 16, "analysis_seed": 60600000},
+    "development": {"train_seeds": [60700000, 60700001, 60700002], "development_start": 60800000, "development_count": 32, "analysis_seed": 60900000},
+    "confirmation": {"train_seeds": [61000000, 61000001, 61000002, 61000003, 61000004], "development_start": 61100000, "development_count": 64, "test_start": 61200000, "test_count": 256, "analysis_seed": 61300000}
+  }
+}

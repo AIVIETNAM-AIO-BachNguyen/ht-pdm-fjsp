@@ -248,6 +248,8 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
     rollout = int(cfg["rollout"])
     if min(rollout, cfg["epochs"], cfg["minibatch"], cfg["learning_rate"], cfg["gradient_clip"]) <= 0:
         raise ValueError("positive update settings required")
+    if not math.isfinite(float(cfg.get("value_loss_normalizer", 1.))) or cfg.get("value_loss_normalizer", 1.) <= 0:
+        raise ValueError("positive finite value-loss normalizer required")
     if actor and (rollout % (48 * workers) or total % rollout or any(s % rollout for s in checkpoints)):
         raise ValueError("actor rollouts/checkpoints must contain complete episodes")
     if not actor and (min(cfg["learning_starts"], cfg["batch_size"], cfg["train_frequency"], cfg["target_interval"]) <= 0
@@ -359,7 +361,9 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                         objective = torch.minimum(ratio * adv,
                             ratio.clamp(1 - cfg["clip"], 1 + cfg["clip"]) * adv).mean()
                         loss = (-objective - cfg["entropy_weight"] * entropy.mean()
-                            + cfg["value_weight"] * torch.nn.functional.mse_loss(current_value, returns[indices]))
+                            + cfg["value_weight"] * torch.nn.functional.mse_loss(
+                                current_value / cfg.get("value_loss_normalizer", 1.),
+                                returns[indices] / cfg.get("value_loss_normalizer", 1.)))
                         losses.append(optimize(loss))
                 actor_buffer.clear(); updated = True
             elif not actor and steps >= cfg["learning_starts"] and steps % cfg["train_frequency"] == 0 and replay.count >= cfg["batch_size"]:
