@@ -1,0 +1,9 @@
+{
+  "version": "technician_completion_credit_ppo_v1",
+  "panels": {
+    "smoke": {"train_seeds": [70000000], "development_start": 70100000, "development_count": 2, "test_start": 70200000, "test_count": 2, "analysis_seed": 70300000},
+    "pilot": {"train_seeds": [70400000, 70400001], "development_start": 70500000, "development_count": 16, "analysis_seed": 70600000},
+    "development": {"train_seeds": [70700000, 70700001, 70700002], "development_start": 70800000, "development_count": 32, "analysis_seed": 70900000},
+    "confirmation": {"train_seeds": [71000000, 71000001, 71000002, 71000003, 71000004], "development_start": 71100000, "development_count": 64, "test_start": 71200000, "test_count": 256, "analysis_seed": 71300000}
+  }
+}
