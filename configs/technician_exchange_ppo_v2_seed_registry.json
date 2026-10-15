@@ -1,0 +1,48 @@
+{
+  "version": "technician_exchange_ppo_v2",
+  "panels": {
+    "smoke": {
+      "train_seeds": [
+        160000000
+      ],
+      "development_start": 160100000,
+      "development_count": 2,
+      "test_start": 160200000,
+      "test_count": 2,
+      "analysis_seed": 160300000
+    },
+    "pilot": {
+      "train_seeds": [
+        160400000,
+        160400001
+      ],
+      "development_start": 160500000,
+      "development_count": 16,
+      "analysis_seed": 160600000
+    },
+    "development": {
+      "train_seeds": [
+        160700000,
+        160700001,
+        160700002
+      ],
+      "development_start": 160800000,
+      "development_count": 32,
+      "analysis_seed": 160900000
+    },
+    "confirmation": {
+      "train_seeds": [
+        161000000,
+        161000001,
+        161000002,
+        161000003,
+        161000004
+      ],
+      "development_start": 161100000,
+      "development_count": 64,
+      "test_start": 161200000,
+      "test_count": 256,
+      "analysis_seed": 161300000
+    }
+  }
+}
