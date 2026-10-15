@@ -78,5 +78,5 @@ Any revised algorithm requires a new prospective design, panels and validations.
 Diagnostic validation before full analysis: syntax/diff checks PASS. Smoke
 `artifacts/technician_completion_credit_ppo_v2_allocation_diagnostic_smoke_20261015T121440980117Z`
 COMPLETE:16episodes,960 independently replayed physical ticks, all original
-metrics reconciled, frozen parameters PASS,4.02s. Learning SRC/PLAN/registries
+metrics reconciled, frozen parameters PASS,4.03s. Learning SRC/PLAN/registries
 remain unchanged from the1158-test/14-fit smoke verified learning commit.
