@@ -52,7 +52,7 @@
     "configs/technician_scarcity_ppo_v2_seed_registry.json": "e582262fb5f9b5f7e751b15c53ba017294658942f70e20cca26a1204e9c01e40",
     "configs/technician_scarcity_ppo_v3_seed_registry.json": "d953df39a58fc43174817fb0f74c3493cef6368d7766e1c64f10a1594fff8029"
   },
-  "plan_sha256": "010ba39bd33839eac5ac94f3a069d8f7d096ec8a7322637774473f36e4f923cd",
+  "plan_sha256": "d589c5e622169d1030dd5e9edd9e023973a00285e21122406fd7243994c1d279",
   "registry_sha256": "8ddc4e25816acca3d9627be82c05b4ed0391a050464bde01a9cda299f982289e",
   "family_size": 41,
   "scientific_test_opened": false,
@@ -61,5 +61,8 @@
   "pilot_decisions": 1720320,
   "development_fits": 72,
   "confirmation_fits": 120,
-  "derived_role_audit": "REQUIRED_WITH_IMPLEMENTATION_BEFORE_PILOT"
+  "derived_role_audit": "PASS",
+  "engineering_clarification": "Dimensionless replay tolerance and read-only diagnostics specified before pilot; no scientific threshold/budget/seed change.",
+  "derived_unique": 334525,
+  "derived_pairing": "same initialization/action/minibatch graph roles; original/normalized PPO paired role; physical per size across all methods"
 }

@@ -377,6 +377,8 @@ def fit(model, cfg, seed, make_env, journals=None, on_checkpoint=None, timeout=N
                 if allocation_mode is not None:
                     from ht_pdm_fjsp.technician_completion_learning import prepare_advantage
                     advantage, allocation_diagnostics = prepare_advantage(returns, old_value, allocation_mode)
+                    if hasattr(model, 'return_diagnostics'):
+                        allocation_diagnostics.update(model.return_diagnostics(returns, old_value))
                 else:
                     advantage = returns - old_value
                     advantage = (advantage - advantage.mean()) / (advantage.std(unbiased=False) + 1e-8)

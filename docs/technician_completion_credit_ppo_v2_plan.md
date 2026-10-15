@@ -172,3 +172,13 @@ latencies, actor/critic gradients and actual update norms. Log prefix spread,
 value prediction/return scales and saturation descriptively, not as variance
 proof. Timestamped copied-script/hash analysis reports and visually checked
 plots. Provide manual rsync -avhP --partial when results exist. Preserve negatives.
+
+Engineering clarification before pilot: behavior log replay keeps absolute
+tolerance2e-5. Critic replay uses absolute tolerance U(N)*2e-5 in physical units
+(2e-5 for literal original PPO), plus relative1e-6. This is the same dimensionless
+floating-point criterion under the fixed unit conversion, not a performance-gate
+relaxation. Training return/prediction statistics are logged through an optional
+read-only diagnostic callback; the old PPO update path remains unchanged.
+Checkpoint metadata additionally records a deterministic first-DEV-observation
+critic probe: output envelope, prediction in physical/normalized units and last
+hidden saturation. This is descriptive, outside inference timing and training.
