@@ -1,6 +1,6 @@
 {
   "classification": "PROSPECTIVE_REGISTRATION_NO_LEARNING",
-  "status": "RAW_SPLIT_PASS_DERIVED_PENDING",
+  "status": "PASS",
   "raw_unique": 387,
   "plan_sha256": "82bb1b35af76c042b573b504e3eb36e53586a56e95744c324e2e3431213a061a",
   "registry_sha256": "314a9ec65c1df30a5b7ce492cfd735e4f1f1119cb38ce06475e0b9ff60a4c6b9",
@@ -57,5 +57,7 @@
   },
   "family_size": 43,
   "scientific_test_opened": false,
-  "new_learning_runs": 0
+  "new_learning_runs": 0,
+  "derived_unique": 334650,
+  "derived_role_audit": "PASS"
 }
