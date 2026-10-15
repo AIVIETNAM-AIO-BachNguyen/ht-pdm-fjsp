@@ -141,6 +141,21 @@ of full matchings. Raw pair encoding O(NK),2K slots each O(NK) pooling plus O(N)
 move scores: O(NK²) neural work, bounded memory polynomial. Sizes trained separately;
 no zero-shot scaling or optimality claim. Candidate inference skips the critic.
 
+Implementation may avoid materializing an N*K*H edge-calendar tensor in every
+slot. For binary planned flags P, the same edge embedding is B+E0+P*(E1-E0).
+Gather only the candidate/own/holder/reciprocal edges and obtain its graph mean
+from the static base mean and pooled flag counts. This is an algebraic
+implementation of the same neural policy, not new features or parameters.
+Recorded prefixes may be reconstructed discretely and their conditional neural
+evaluations batched for PPO replay; sampling/deployment remain sequential.
+All six core arms use the same optimized path. Require sequence versus batched
+log-probability, entropy, value and gradient agreement at the registered float
+precision, including history masks. Benchmark both implementations at N4/N32
+and training minibatch sizes before pilot, with no parameter updates. Record
+actual throughput rather than assuming a speedup. No optimization permits
+extra physical samples, optimizer steps, modified likelihoods or an extended
+48h limit. The O(NK^2) bound above remains a conservative total-work bound.
+
 ## Budgets, panels and prerequisites
 
 Same scalar balanced maintenance N4/8/16/32,K=N/2,H48+tail12, all prices/failure
@@ -236,6 +251,9 @@ probabilities and scalar/tensor broker agreement for every reachable small
 prefix. All six core parameter counts must remain19255. Log net provisional
 plan changes and repair-with-unchanged-plan counts (matching for coordinated
 arms, proposals for independent), alongside existing broker diagnostics.
+Verify optimized actor logits and replay gradients against the literal
+sequential computation, and record an engineering timing comparison. Such
+equivalence checks do not establish scientific performance.
 
 Before training starts, jobs are scheduled by descending machine count, then
 core arms before the separate completion reference and small baselines, with

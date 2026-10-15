@@ -2,7 +2,7 @@
   "classification": "PROSPECTIVE_REGISTRATION_NO_LEARNING",
   "status": "RAW_PASS_DERIVED_PENDING",
   "raw_unique": 387,
-  "plan_sha256": "a216a41a2f47ec62d243c10ec23de22c2b05f25342477d57acdf3fb6d7e4980b",
+  "plan_sha256": "cbba3947581570be3d2b0da6a06314bc5823c44918ef9b25e87331b284bc6eb9",
   "registry_sha256": "a84ac52fe2fa41a995b86c56018f000bba172f703b10e6e1a94c26ba32f09524",
   "historical_registry_sha256": {
     "configs/maintenance_ar_decision_diagnostic_v1_seed_registry.json": "29c8210e3284d10157fa89524255aa2c893edeef2647d94b8455b001f33da54e",
@@ -58,5 +58,7 @@
   },
   "family_size": 53,
   "scientific_test_opened": false,
-  "new_learning_runs": 0
+  "new_learning_runs": 0,
+  "initial_registration_commit": "ef4e151",
+  "pre_learning_engineering_note": "exact algebra and batched recorded-prefix replay permitted for all matched core arms; budgets/endpoints unchanged"
 }
