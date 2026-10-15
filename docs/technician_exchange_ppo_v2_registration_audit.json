@@ -1,6 +1,6 @@
 {
   "classification": "PROSPECTIVE_REGISTRATION_NO_LEARNING",
-  "status": "RAW_PASS_DERIVED_PENDING",
+  "status": "PASS",
   "raw_unique": 387,
   "plan_sha256": "cbba3947581570be3d2b0da6a06314bc5823c44918ef9b25e87331b284bc6eb9",
   "registry_sha256": "a84ac52fe2fa41a995b86c56018f000bba172f703b10e6e1a94c26ba32f09524",
@@ -60,5 +60,7 @@
   "scientific_test_opened": false,
   "new_learning_runs": 0,
   "initial_registration_commit": "ef4e151",
-  "pre_learning_engineering_note": "exact algebra and batched recorded-prefix replay permitted for all matched core arms; budgets/endpoints unchanged"
+  "pre_learning_engineering_note": "exact algebra and batched recorded-prefix replay permitted for all matched core arms; budgets/endpoints unchanged",
+  "derived_unique": 334650,
+  "derived_role_audit": "PASS"
 }
