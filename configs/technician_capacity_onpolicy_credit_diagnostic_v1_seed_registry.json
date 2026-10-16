@@ -1,0 +1,8 @@
+{
+  "version": "technician_capacity_onpolicy_credit_diagnostic_v1",
+  "diagnostic": {
+    "physical_start": 240100000,
+    "physical_count": 64,
+    "action_seeds": [240200000, 240200001, 240200002]
+  }
+}
