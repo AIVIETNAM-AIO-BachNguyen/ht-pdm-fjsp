@@ -30,6 +30,9 @@ b_i(s,M^(-i)) is therefore independent of U_i. Before clipping/normalization,
 E[grad log p_i(U_i) b_i(s,M^(-i))]=0. Shared actor parameters do not change this
 score identity. A critic may learn this baseline from ordinary own-policy MC
 returns; no counterfactual simulator target or teacher is required.
+Its target would be E[G|s,M^(-i)], averaging the removed technician's ORIGINAL
+policy action, not the return of a world where that technician is absent.
+Removal is a counterfactual INPUT construction, not a measured causal cost label.
 
 For physical matching S, the preimage conditional distribution factorizes:
 - a matched i proposed its assigned machine with probability1;
