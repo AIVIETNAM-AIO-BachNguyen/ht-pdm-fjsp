@@ -1,0 +1,7 @@
+{
+  "version": "technician_marginal_matching_decoder_diagnostic_v1",
+  "panels": {
+    "diagnostic": {"evaluation_start": 210000000, "evaluation_count": 64, "analysis_seed": 210100000},
+    "engineering": {"evaluation_start": 210200000, "evaluation_count": 2}
+  }
+}
