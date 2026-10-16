@@ -36,3 +36,14 @@ correctness checks, prospective protocols, commit/push, tqdm and fresh artifacts
 Focus on N4/K2 until its registered quality, health and mechanism criteria pass;
 larger-size/generalization experiments come afterward. Scientific confirmation
 test seeds remain sealed until the registered development gate passes.
+
+## Research discipline override (2026-10-16)
+
+Keep each new research iteration tied to one explicit, falsifiable mechanism
+hypothesis. Encoder changes, learning-rate tuning or added attention are not a
+scientific explanation by themselves. Standard PPO from random initialization is
+acceptable; contributions may be policy representation or coordination. Match
+information/capacity/budgets, lock rejection criteria and mechanism measurements
+before outcomes, and reject unsupported designs rather than stacking components
+until a baseline is beaten. The residual-capacity proposal gets one locked full
+comparison; failed gates do not authorize another capacity variant or test reuse.

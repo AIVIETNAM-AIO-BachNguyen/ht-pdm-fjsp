@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "raw_unique": 366,
+  "historical_registered_integers": 16201,
+  "overlap": [],
+  "service_time": [
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      4,
+      1
+    ]
+  ],
+  "protocol_registered_before_implementation": true
+}

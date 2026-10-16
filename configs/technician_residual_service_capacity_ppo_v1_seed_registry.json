@@ -1,0 +1,8 @@
+{
+  "version": "technician_residual_service_capacity_ppo_v1",
+  "panels": {
+    "development": {"train_seeds": [220000000,220000001,220000002], "development_start": 220100000, "development_count": 32, "analysis_seed": 220200000},
+    "confirmation": {"train_seeds": [220300000,220300001,220300002,220300003,220300004], "development_start": 220400000, "development_count": 64, "test_start": 220500000, "test_count": 256, "analysis_seed": 220600000},
+    "engineering": {"train_seeds": [220700000], "development_start": 220700001, "development_count": 2, "analysis_seed": 220700003}
+  }
+}
