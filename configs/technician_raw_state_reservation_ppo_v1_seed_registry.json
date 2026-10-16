@@ -1,0 +1,8 @@
+{
+  "version": "technician_raw_state_reservation_ppo_v1",
+  "panels": {
+    "development": {"train_seeds": [270000000,270000001,270000002], "development_start": 270100000, "development_count": 32, "analysis_seed": 270200000},
+    "confirmation": {"train_seeds": [270300000,270300001,270300002,270300003,270300004], "development_start": 270400000, "development_count": 64, "test_start": 270500000, "test_count": 256, "analysis_seed": 270600000},
+    "engineering": {"train_seeds": [270700000], "development_start": 270700001, "development_count": 2, "analysis_seed": 270700003}
+  }
+}
