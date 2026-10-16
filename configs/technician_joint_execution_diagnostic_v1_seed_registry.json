@@ -1,0 +1,9 @@
+{
+  "version": "technician_joint_execution_diagnostic_v1",
+  "diagnostic": {
+    "physical_start": 260100000,
+    "physical_count": 64,
+    "action_start": 260200000,
+    "action_count": 12
+  }
+}
