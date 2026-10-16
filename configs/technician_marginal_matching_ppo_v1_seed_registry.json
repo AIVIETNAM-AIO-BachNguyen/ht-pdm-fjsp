@@ -1,0 +1,27 @@
+{
+  "version": "technician_marginal_matching_ppo_v1",
+  "panels": {
+    "smoke": {
+      "train_seeds": [200000000],
+      "development_start": 200100000,
+      "development_count": 2,
+      "test_start": 200200000,
+      "test_count": 2,
+      "analysis_seed": 200300000
+    },
+    "development": {
+      "train_seeds": [200400000, 200400001, 200400002],
+      "development_start": 200500000,
+      "development_count": 32,
+      "analysis_seed": 200600000
+    },
+    "confirmation": {
+      "train_seeds": [200700000, 200700001, 200700002, 200700003, 200700004],
+      "development_start": 200800000,
+      "development_count": 64,
+      "test_start": 200900000,
+      "test_count": 256,
+      "analysis_seed": 201000000
+    }
+  }
+}
