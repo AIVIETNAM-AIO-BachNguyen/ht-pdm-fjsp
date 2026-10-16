@@ -1,6 +1,7 @@
-import itertools,json
+import importlib.util,itertools,json
 from collections import defaultdict
 from dataclasses import asdict
+from pathlib import Path
 import numpy as np
 import pytest
 from ht_pdm_fjsp import technician_temporal_opportunity_audit as d
@@ -85,3 +86,12 @@ def test_expansion_guard_and_locked_screen_rejection():
     assert d.summarize(rows)['conditional_q_mechanism_further_design_motivated'];json.dumps(d.summarize(rows),allow_nan=False)
     for r in rows:r['conditional_q']=99.6
     assert not d.summarize(rows)['conditional_q_mechanism_further_design_motivated']
+
+
+@pytest.mark.parametrize('s',fixtures()[:3])
+def test_independent_full_event_verifier_has_same_short_bellman_values(s):
+    p=Path(__file__).resolve().parents[1]/'scripts/verify_temporal_opportunity_audit.py';spec=importlib.util.spec_from_file_location('scalar_temporal_reference',p);v=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)
+    ref=v.ScalarReference();production=d.Exact(d.helpers());assert v.unpack(v.pack(s))==s
+    for horizon in (1,2):assert ref.v(v.pack(s),horizon)==pytest.approx(production.value(d.key(s),horizon),abs=1e-9)
+    rows=[dict(origin=a,train_seed=t,seed=raw,tick=tick,isolated_q=100.,conditional_q=99.,joint_q=98.,source_q=100.) for a in d.ORIGINS for t in d.TRAINS for raw in d.SEEDS for tick in d.TICKS]
+    origins,screen=v.independent_summary(rows);expected=d.summarize(rows);v.compare(origins,expected['origins']);assert screen==expected['screen']
