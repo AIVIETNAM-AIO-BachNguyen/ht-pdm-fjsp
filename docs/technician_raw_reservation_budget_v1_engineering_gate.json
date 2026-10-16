@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "tests": 37,
+  "pytest_seconds": 10.49,
+  "pytest_command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=\"$PWD/src\" /home/bachng/ht-pdm-fjsp/.venv/bin/python -m pytest -q tests/test_technician_raw_reservation_budget.py tests/test_raw_state_reservation_independent_verifier.py",
+  "separate_smoke": false,
+  "full_run_started": false,
+  "scope": "Disposable engineering fixtures; exact conditional policy and initialization, all eight real PPO updates, paired physical audits, serial/process determinism, short/long choice cutoff and hypothesis math, fresh historical seed namespaces.",
+  "raw_seed_count": 366,
+  "derived_seed_count": 164358,
+  "scientific_test_opened": false
+}
