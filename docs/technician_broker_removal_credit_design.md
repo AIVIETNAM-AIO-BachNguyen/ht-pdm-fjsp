@@ -64,6 +64,11 @@ each of these two cases. B_i (including its actor-dependent conditional weights)
 must be STOP-GRADIENT in the actor surrogate. Do not differentiate the baseline
 as part of the policy objective. Do not confuse S\i with T(U^(-i)); the former
 misses replacement requests and in general depends on the removed proposal.
+For the score identity the baseline parameters must also be fixed independently
+of the current action sample (conditional on state/history). A future learner
+should cache baseline predictions at behavior weights BEFORE optimizing current
+batch critics. Merely detaching a critic fitted to that same action/return batch
+does not by itself remove statistical dependence or prove an unbiased estimator.
 
 ## Scope / contribution boundary / open implementation decisions
 
