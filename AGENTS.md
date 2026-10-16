@@ -47,3 +47,14 @@ information/capacity/budgets, lock rejection criteria and mechanism measurements
 before outcomes, and reject unsupported designs rather than stacking components
 until a baseline is beaten. The residual-capacity proposal gets one locked full
 comparison; failed gates do not authorize another capacity variant or test reuse.
+
+## Active user tuning clarification (2026-10-16)
+
+The user explicitly permits necessary tuning: a failed configuration may reflect
+implementation or optimization limitations rather than a false broad hypothesis.
+This supersedes the blanket ban on another capacity/configuration variant above.
+Preserve every negative run and its original verdict. Investigate specific causes,
+then register a bounded controlled follow-up before new learning outcomes; match
+information/capacity/training budgets across methods and retain all health and
+scientific-test safeguards. Tuning is permitted, not evidence of a contribution.
+Do not launch an open-ended search or reinterpret an already failed protocol.
