@@ -67,3 +67,15 @@ def test_actual_actor_shape_gram_and_masked_moments():
     logp=logits-np.logaddexp.reduce(logits,axis=1)[:,None];ranks=np.array([[0,1],[0,1],[0,1],[1,0]])
     metrics=x.noise_metrics(logp,gram,ranks,np.ones((4,2),bool));assert metrics['proposal_actions']==25 and metrics['physical_actions']==21
     assert metrics['proposal_fisher_trace']>=metrics['physical_fisher_trace']>0
+
+
+def test_independent_direct_parameter_verifier_matches_gram_moments():
+    v=module('alias_direct_verifier','verify_broker_aliasing_diagnostic.py')
+    shapes={'actor.0.weight':(3,7),'actor.0.bias':(3,),'actor.2.weight':(3,3),'actor.2.bias':(3,),'actor.4.weight':(3,3),'actor.4.bias':(3,)}
+    weights={name:(torch.cos(torch.arange(np.prod(shape),dtype=torch.float64)*.2).reshape(shape)*.3).requires_grad_() for name,shape in shapes.items()};inputs=np.sin(np.arange(14).reshape(2,7)*.3)
+    logits,gram=x.actor_logits_gram(inputs,weights);logp=logits-np.logaddexp.reduce(logits,axis=1)[:,None];ranks=np.array([[0,1],[1,0]])
+    for legal in [np.ones((2,2),bool),np.array([[True,False],[False,True]]),np.zeros((2,2),bool)]:
+        support=np.c_[np.ones(2,bool),legal.T];z=np.where(support,logits,-np.inf);logp=z-np.logaddexp.reduce(z,axis=1)[:,None]
+        metrics=x.noise_metrics(logp,gram,ranks,legal);proposal,physical=v.direct_fisher(inputs,weights,legal,ranks)
+        assert proposal==pytest.approx(metrics['proposal_fisher_trace'],abs=2e-12,rel=2e-12)
+        assert physical==pytest.approx(metrics['physical_fisher_trace'],abs=2e-12,rel=2e-12)
