@@ -32,12 +32,16 @@ def run(source,verification,output):
         values=np.array([[r['normalized_cost'] for r in curves if r['method']==a and r['steps']==step] for step in steps]);axes[0].plot(xx,values.mean(1),label=name,color=color,lw=1.3);axes[0].fill_between(xx,values.min(1),values.max(1),color=color,alpha=.07)
     axes[0].set_xlabel('Training decisions (thousands)');axes[0].set_ylabel('Mean H60 cost / machine');axes[0].set_title('Full prespecified learning interval');axes[0].legend(fontsize=7,ncol=2)
     per=summary['per_replica_auc'];gains=[100*per[str(t)]['gain'] for t in trains];axes[1].bar(range(3),gains,color='#1976D2');axes[1].axhline(.5,color='#C62828',ls='--',label='Locked practical AUC gain: 0.5%');axes[1].axhline(0,color='black',lw=.6);axes[1].set_xticks(range(3),['Replica1','Replica2','Replica3']);axes[1].set_ylabel('Candidate AUC gain vs proposal-p (%)');axes[1].set_title(f"Pooled AUC gain: {100*summary['endpoints']['auc_gain_vs_broker_proposal_ppo']:.3f}%");axes[1].legend(fontsize=8)
+    lower=min(0.,*gains);upper=max(.5,*gains);padding=.12*(upper-lower);axes[1].set_ylim(lower-padding,upper+padding)
     for i,value in enumerate(gains):axes[1].annotate(f'{value:.3f}%',(i,value),xytext=(0,4 if value>=0 else -12),textcoords='offset points',ha='center',fontsize=9)
     fig.suptitle('Learning efficiency DEV — fixed interval; descriptive means/min-max, no CI',fontsize=12);fig.savefig(out/'learning_efficiency.png',dpi=170);plt.close(fig)
     fig,axes=plt.subplots(1,3,figsize=(13,4.8),layout='constrained');y=np.arange(8);means=summary['final_means'];ppo=means['ppo']['normalized_cost'];cost=[100*(means[a]['normalized_cost']/ppo-1) for a in arms];avail=[means[a]['availability'] for a in arms];failure=[means[a]['normalized_failures'] for a in arms]
     for axis,values,title in zip(axes,(cost,avail,failure),('H60 cost vs PPO (%)','H48 availability','H48 failures / machine')):
         axis.barh(y,values,color=['#1976D2']+['#90A4AE']*7);axis.set_yticks(y,names);axis.invert_yaxis();axis.set_xlabel(title)
-    axes[0].axvline(0,color='black',lw=.6);axes[1].axvline(means['ppo']['availability']-.01,color='#C62828',ls='--',lw=1);axes[2].axvline(means['ppo']['normalized_failures']+.25,color='#C62828',ls='--',lw=1);fig.suptitle('Fixed final checkpoint245760 — original health bounds retained, no CI',fontsize=12);fig.savefig(out/'fixed_final_quality_health.png',dpi=170);plt.close(fig)
+    axes[0].axvline(0,color='black',lw=.6)
+    for baseline,color in (('ppo','#C62828'),('normalized_ppo','#6A1B9A')):
+        label='NI bound vs '+('PPO' if baseline=='ppo' else 'PPO norm');axes[1].axvline(means[baseline]['availability']-.01,color=color,ls='--',lw=1,label=label);axes[2].axvline(means[baseline]['normalized_failures']+.25,color=color,ls='--',lw=1,label=label)
+    axes[1].legend(fontsize=7,loc='lower left');axes[2].legend(fontsize=7);fig.suptitle('Fixed final checkpoint245760 — original health bounds retained, no CI',fontsize=12);fig.savefig(out/'fixed_final_quality_health.png',dpi=170);plt.close(fig)
     shutil.copy2(__file__,out/'reporter.py');manifest=dict(status='COMPLETED',source_manifest_sha256=sha(source/'manifest.json'),verification_manifest_sha256=sha(verification/'manifest.json'),goal_pass=False,test_opened=False,outputs={p.name:dict(sha256=sha(p),bytes=p.stat().st_size) for p in out.iterdir() if p.is_file()});(out/'manifest.json').write_text(json.dumps(manifest,indent=2));print(str(out))
 
 if __name__=='__main__':
