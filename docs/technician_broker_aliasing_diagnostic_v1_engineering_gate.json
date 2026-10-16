@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "tests": 21,
+  "pytest_seconds": 3.61,
+  "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONPATH=\"$PWD/src\" /home/bachng/ht-pdm-fjsp/.venv/bin/python -m pytest -q tests/test_broker_aliasing_diagnostic.py tests/test_broker_marginal_algebra.py",
+  "scientific_states_opened": false,
+  "frozen_research_results_read": false,
+  "physical_rollouts": 0,
+  "updates": 0,
+  "conditional_diagnostic_started": false,
+  "scope": "Deterministic exact mass/score/posterior and full shared actor Gram fixtures; aggregation ratio-of-sums, complete grid and primary checkpoint boundaries."
+}
