@@ -81,3 +81,6 @@ opened DEV panel. It will reconcile service occupancy, failed waiting,
 availability, failure timing and provisional construction/repair choices.
 Those observations can inform a new hypothesis; they cannot establish causal
 preventability or justify a post-hoc duration penalty or relaxed health bound.
+
+The registered diagnostic is now complete; see the
+[frozen diagnostic findings](technician_exchange_ppo_v2_diagnostic_findings.md).
