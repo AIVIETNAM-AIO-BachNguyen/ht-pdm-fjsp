@@ -1,0 +1,8 @@
+{
+ "version":"technician_residual_capacity_factorization_v1",
+ "panels":{
+  "development":{"train_seeds":[230000000,230000001,230000002],"development_start":230100000,"development_count":32,"analysis_seed":230200000},
+  "confirmation":{"train_seeds":[230300000,230300001,230300002,230300003,230300004],"development_start":230400000,"development_count":64,"test_start":230500000,"test_count":256,"analysis_seed":230600000},
+  "engineering":{"train_seeds":[230700000],"development_start":230700001,"development_count":2,"analysis_seed":230700003}
+ }
+}
