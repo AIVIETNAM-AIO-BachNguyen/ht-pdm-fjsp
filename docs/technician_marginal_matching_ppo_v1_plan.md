@@ -166,6 +166,8 @@ tests/smoke, avoiding a cheap-training result being treated as final quality.
 - Confirmation:45 fresh full-budget fits, DEV64, scientific test256. Select and
   seal all checkpoint choices before opening the scientific panel. No teacher
   rescue or extra environment/optimizer steps. Development alone is not success.
+  Exactly22,118,400 training decisions/460,800 training episodes;14,400 DEV plus64
+  deadline episodes;11,520 learned-method test plus256 deadline test episodes.
 
 Registry `configs/technician_marginal_matching_ppo_v1_seed_registry.json` fixes:
 smoke train200000000/dev200100000..1/engineering-test200200000..1/analysis200300000;
@@ -202,6 +204,14 @@ pending/machine upper<=+0.025, failures/machine upper<=+0.25. Zero invalid start
 candidate actor p95<=50ms measured isolated after the training pool, excluding
 observation/physics/verification; no network-latency claim. Cost gains cannot
 override health failures.
+
+For isolated timing without extra physical trajectories, retain the 48 observed
+states from the first DEV seed at every candidate checkpoint. After the whole
+pool closes and checkpoint choices are fixed, load only the selected states,
+warm up once on each state and time three select calls on each. This supplies
+144/432/720 measured calls for smoke/DEV/confirmation. Store the observation
+arrays and selected-state identities with output hashes. No timing result selects
+a checkpoint or enters learning, and repeated actor calls do not advance physics.
 
 Development uses the corresponding14 point gates. Confirmation is authorized
 only by completed independently audited, test-closed DEV with identical frozen
