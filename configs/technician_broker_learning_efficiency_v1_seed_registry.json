@@ -1,0 +1,8 @@
+{
+  "version": "technician_broker_learning_efficiency_v1",
+  "panels": {
+    "development": {"train_seeds": [310000000,310000001,310000002],"development_start":310100000,"development_count":32,"analysis_seed":310200000},
+    "confirmation": {"train_seeds": [310300000,310300001,310300002,310300003,310300004],"development_start":310400000,"development_count":64,"test_start":310500000,"test_count":256,"analysis_seed":310600000},
+    "engineering": {"train_seeds":[310700000],"development_start":310700001,"development_count":1,"analysis_seed":310700002}
+  }
+}
