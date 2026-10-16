@@ -68,7 +68,9 @@ maps to S and every vector mapping to S is allowed. This also covers empty S
 After computing KN proposal logits, one observed-S likelihood takes O(K|S|),
 with |S|<=min(N,K), using logsumexp for idle factors. This is a likelihood for
 one matching, NOT an algorithm for its global mode or full entropy. It needs no
-matching catalogue. A fixed-width shared MLP still has its own size/compute
+matching catalogue. The standalone engineering helper additionally validates the
+full mask/log-mass matrix and priority permutations; those checks cost O(NK log K)
+and are not an optimized production implementation. A fixed-width shared MLP still has its own size/compute
 costs; no larger physical scalability result follows from this formula alone.
 
 ## What follows, and what does not
@@ -130,3 +132,16 @@ is substantial in frozen teacher-free policies, before registering a bounded
 matched physical-ratio-versus-proposal-ratio PPO comparison. General variance
 reduction is known; any contribution would need a domain-specific tractable
 coordination likelihood plus actual quality/health/mechanism/scaling evidence.
+
+## Engineering result
+
+The standalone helper and13 deterministic float64 tests PASS (3.37seconds).
+Tests compare masses and autodiff gradients with complete proposal sums for all
+four registered tiny N/K pairs, both with and without masked/forced-WAIT support;
+they verify posterior scores, gradient means, variance decomposition, ratio
+conditioning, the clipped Jensen inequality for both advantage signs, the .44
+alias-split example, KL contraction, extreme logits and malformed inputs. No
+simulator, trained checkpoint, learning outcome, scientific seed or physical
+experiment was used. This is algebraic correctness evidence only; a diagnostic
+of actual learner noise and a new prospective controlled experiment would still
+be necessary. The current double-budget FULL has not been modified or replaced.
