@@ -37,6 +37,11 @@ lookahead to select an action. The registered main decoder and training results
 remain unchanged. At each standard/exact core state, record both decoder
 proposals, true physical probabilities, matching disagreement, feasible support,
 normalization residual and exact entropy of that small diagnostic distribution.
+Inference uses float32 component/physical logs; score replay independently
+recomputes the mixture in float64 with log/probability tolerance1e-6, and requires
+the chosen index to match the recorded float32 argmax with catalogue tie order.
+The full support must sum to one within2e-5. These are pre-episode engineering
+precision checks, not quality margins.
 Standard action selection never uses these measurements.
 
 For each start record known duration/restoration, preventive/corrective type,
