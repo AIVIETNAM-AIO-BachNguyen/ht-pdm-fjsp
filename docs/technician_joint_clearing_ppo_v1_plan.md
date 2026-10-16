@@ -100,6 +100,11 @@ Structured matching/latent-action RL is established, not invented here:
 Provisional contribution is a teacher-free maintenance coordination design and
 its cost/health/ablation/scaling evidence. This focused review is not proof of
 broad novelty or comparisons against unimplemented published algorithms.
+Agents access the shared current graph and a shared clearing service. This is
+a hybrid learned-bid/coordinator design, not communication-free decentralized
+execution; network transport/robustness and a deployment distribution are not
+validated by simulator timing. The coordinator's objective is learned utility,
+not a separately supplied maintenance objective or privileged information.
 
 ## Budget, seeds, stopping and artifacts
 
