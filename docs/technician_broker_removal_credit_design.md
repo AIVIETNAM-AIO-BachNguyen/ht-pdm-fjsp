@@ -112,3 +112,21 @@ arbitrary nonlinear b_i table and G(S), not learned/oracle targets. Tests have a
 an incorrect identity. No training outcome, source checkpoint or environment
 state needed. Commit/push verified helpers/tests before a future full experiment.
 All current scientific CF/test/largerN panels remain sealed.
+
+## Correctness result (engineering only)
+
+Helper implementation0bc270c and eight independent-oracle tests PASS1.90seconds.
+They enumerate every legal latent proposal in the fixed fixtures, group by
+physical matching, reconstruct the full removal-matching conditional law and
+compare it to the polynomial weights. Full float64 logit gradients verify the
+Rao-Blackwell credit identity and zero expected baseline score; a separate
+counterexample detects gradient leakage if the conditional baseline is not
+detached. No actor/critic was trained, no real checkpoint/physical/test seed was
+used, and no performance/scalability claim follows. Reproduce with the repository
+Python environment and `PYTHONPATH=src python -m pytest -q tests/test_broker_removal_credit.py`.
+
+Before FULL learning, still unresolved: exact PPO-derived surrogate and clipping
+controls; source state-value versus removal-value critic targets/loss units;
+common advantage centering/scaling; private/shadow critic capacity and compute
+matching; external strong PPO/MAPPO controls; prospective physical panels and
+cost/health/mechanism rejection criteria. The algebra helper is not that learner.
