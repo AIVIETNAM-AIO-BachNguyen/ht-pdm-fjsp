@@ -1,0 +1,17 @@
+{
+  "test_quality_mechanism_latency.png": {
+    "source": "artifacts/technician_reservation_ppo_v4_analysis_20261013T185421Z/test_quality_mechanism_latency.png",
+    "sha256": "6f36b024368e51c5be2552f279e849c1fab5347feef8599649add5088bb47f70",
+    "source_scientific_commit": "92b675a94fc5f390f12fd9a4ce44b4eefe0c0f4a"
+  },
+  "teacher_transfer.png": {
+    "source": "artifacts/technician_reservation_ppo_v4_analysis_20261013T185421Z/teacher_transfer.png",
+    "sha256": "780f41631512947bc4aaca6bc6c71f34f36ae01b20c5f7ce830e97edf1a08cec",
+    "source_scientific_commit": "92b675a94fc5f390f12fd9a4ce44b4eefe0c0f4a"
+  },
+  "mechanism_system_health.png": {
+    "source": "artifacts/technician_reservation_ppo_v4_evidence_report_20261013T185041Z/mechanism_system_health.png",
+    "sha256": "e0697d0878d3f6bda9e40b795af1da797f2fc637bbe35a3f421b2948a9e22382",
+    "source_scientific_commit": "92b675a94fc5f390f12fd9a4ce44b4eefe0c0f4a"
+  }
+}
