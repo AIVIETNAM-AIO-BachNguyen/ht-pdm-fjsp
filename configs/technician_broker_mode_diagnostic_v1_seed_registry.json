@@ -1,0 +1,4 @@
+{
+  "version": "technician_broker_mode_diagnostic_v1",
+  "diagnostic": {"physical_start": 300100000, "physical_count": 64}
+}
