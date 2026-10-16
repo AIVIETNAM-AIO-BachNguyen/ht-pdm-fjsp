@@ -1,0 +1,8 @@
+{
+  "version": "technician_joint_clearing_ppo_v1",
+  "panels": {
+    "development": {"train_seeds": [250000000,250000001,250000002], "development_start": 250100000, "development_count": 32, "analysis_seed": 250200000},
+    "confirmation": {"train_seeds": [250300000,250300001,250300002,250300003,250300004], "development_start": 250400000, "development_count": 64, "test_start": 250500000, "test_count": 256, "analysis_seed": 250600000},
+    "engineering": {"train_seeds": [250700000], "development_start": 250700001, "development_count": 2, "analysis_seed": 250700003}
+  }
+}
