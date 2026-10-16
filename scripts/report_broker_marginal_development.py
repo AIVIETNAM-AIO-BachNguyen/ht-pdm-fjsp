@@ -81,7 +81,7 @@ def run(source,verification,output):
         group=[r for r in episodes if r['method']==a]
         for r in group:assert abs(sum(float(r[k]) for k in ('maintenance_cost','unavailability_cost','failure_cost','waiting_cost'))-float(r['extended_cost']))<1e-8
         decomposition[a]={k:float(np.mean([float(r[k])/4 for r in group])) for k in ('maintenance_cost','unavailability_cost','failure_cost','waiting_cost','extended_cost','service_ticks','completed_jobs')}
-    differences={a:{k:decomposition[CORE[0]][k]-decomposition[a][k] for k in decomposition[a]} for a in ('ppo','normalized_ppo',CORE[3])}
+    differences={a:{k:decomposition[CORE[0]][k]-decomposition[a][k] for k in decomposition[a]} for a in ('ppo','normalized_ppo',CORE[1],CORE[3])}
     data=dict(classification='POSTHOC_DEVELOPMENT_REPORT',verification=v,curves=curves,physical_decomposition_per_machine=decomposition,candidate_minus_control=differences,
         limitation='Cost components cover H60, health H48. Frozen likelihood changes are expected to leave greedy execution identical; trained controls are the mechanism evidence. No CI or new endpoint/trajectory.')
     (out/'analysis.json').write_text(json.dumps(data,indent=2)+'\n');shutil.copy2(__file__,out/'reporter.py')
