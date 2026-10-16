@@ -79,3 +79,11 @@ def test_independent_direct_parameter_verifier_matches_gram_moments():
         metrics=x.noise_metrics(logp,gram,ranks,legal);proposal,physical=v.direct_fisher(inputs,weights,legal,ranks)
         assert proposal==pytest.approx(metrics['proposal_fisher_trace'],abs=2e-12,rel=2e-12)
         assert physical==pytest.approx(metrics['physical_fisher_trace'],abs=2e-12,rel=2e-12)
+
+
+def test_independent_screen_serializes_numpy_aggregate_scalars():
+    import json
+    v=module('alias_direct_json_verifier','verify_broker_aliasing_diagnostic.py')
+    values=dict(removed_fraction=np.float64(.10),proposal_entropy_per_technician=np.float64(.10),conflict_probability=np.float64(.05))
+    checks=v.engineering_checks(values);assert all(checks.values()) and json.loads(json.dumps(checks))==checks
+    values['removed_fraction']=np.float64(.099);assert not v.engineering_checks(values)['removed_actor_fraction']

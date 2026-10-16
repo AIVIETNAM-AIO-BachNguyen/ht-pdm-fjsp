@@ -40,6 +40,10 @@ def direct_fisher(inputs,weights,legal,ranks):
     return proposal_trace,physical_trace
 
 
+def engineering_checks(values):
+    return dict(removed_actor_fraction=bool(values['removed_fraction']>=.10),proposal_entropy=bool(values['proposal_entropy_per_technician']>=.10),conflict_probability=bool(values['conflict_probability']>=.05))
+
+
 def run(diagnostic,output):
     source=Path(diagnostic).resolve();out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False);start=time.monotonic();manifest=dict(status='RUNNING',diagnostic=str(source),source_manifest_sha256=sha(source/'manifest.json'))
     write(out/'manifest.json',manifest)
@@ -75,7 +79,7 @@ def run(diagnostic,output):
                     proposal_entropy_per_technician=np.mean([float(r['proposal_entropy_per_technician']) for r in group]),conflict_probability=np.mean([float(r['conflict_probability']) for r in group]))
                 summaries[f'{t}:{step}']=values
                 for k,v in values.items():near(v,d['summaries'][f'{t}:{step}'][k],'summary '+k)
-            r=summaries[f'{t}:122880'];checks[str(t)]=dict(removed_actor_fraction=r['removed_fraction']>=.10,proposal_entropy=r['proposal_entropy_per_technician']>=.10,conflict_probability=r['conflict_probability']>=.05)
+            r=summaries[f'{t}:122880'];checks[str(t)]=engineering_checks(r)
         passed=all(v for c in checks.values() for v in c.values());check(d['primary_checkpoint']==122880 and d['primary_checks']==checks and d['future_trial_screen_pass']==m['future_trial_screen_pass']==passed,'original engineering screen')
         physics=read(raw/'physics.json');quality=np.array(physics['restoration'])/np.array(physics['service_time']);ranks=np.zeros((4,2),int)
         for machine in range(4):
