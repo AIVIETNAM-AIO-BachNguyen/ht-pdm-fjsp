@@ -1,0 +1,8 @@
+{
+  "version": "technician_broker_marginal_ppo_v1",
+  "panels": {
+    "development": {"train_seeds": [290000000,290000001,290000002], "development_start": 290100000, "development_count": 32, "analysis_seed": 290200000},
+    "confirmation": {"train_seeds": [290300000,290300001,290300002,290300003,290300004], "development_start": 290400000, "development_count": 64, "test_start": 290500000, "test_count": 256, "analysis_seed": 290600000},
+    "engineering": {"train_seeds": [290700000], "development_start": 290700001, "development_count": 2, "analysis_seed": 290700003}
+  }
+}
