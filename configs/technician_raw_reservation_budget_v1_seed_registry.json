@@ -1,0 +1,8 @@
+{
+  "version": "technician_raw_reservation_budget_v1",
+  "panels": {
+    "development": {"train_seeds": [280000000,280000001,280000002], "development_start": 280100000, "development_count": 32, "analysis_seed": 280200000},
+    "confirmation": {"train_seeds": [280300000,280300001,280300002,280300003,280300004], "development_start": 280400000, "development_count": 64, "test_start": 280500000, "test_count": 256, "analysis_seed": 280600000},
+    "engineering": {"train_seeds": [280700000], "development_start": 280700001, "development_count": 2, "analysis_seed": 280700003}
+  }
+}
