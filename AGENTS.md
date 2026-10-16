@@ -26,3 +26,13 @@ and continuing research iterations. This supersedes the Mac smoke / manual
 lab handoff restrictions above for this research task. Keep prospective
 protocols, tests, commit/push gates, tqdm, and fresh timestamped artifacts.
 Do not SSH or initiate an artifact transfer; provide rsync when results exist.
+
+## Active user override (2026-10-16)
+
+For the current technician-coordination research, run FULL experiments directly
+on this Ubuntu lab without a separate smoke experiment. The user explicitly
+removed the smoke-before-full prerequisite. Keep necessary unit/integration
+correctness checks, prospective protocols, commit/push, tqdm and fresh artifacts.
+Focus on N4/K2 until its registered quality, health and mechanism criteria pass;
+larger-size/generalization experiments come afterward. Scientific confirmation
+test seeds remain sealed until the registered development gate passes.

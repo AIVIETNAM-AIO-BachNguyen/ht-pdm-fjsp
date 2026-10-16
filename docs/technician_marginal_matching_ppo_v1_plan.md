@@ -8,6 +8,15 @@ negative scarcity/completion/exchange result and their unopened scientific panel
 All new policies initialize randomly; no teacher, old learned tensors, labels,
 imitation, distillation, warm start, simulator fork or future-event input.
 
+Active user override on 2026-10-16, before any learning run: execute the FULL
+N4/K2 experiment directly on this lab and omit a separate smoke run. This
+supersedes the smoke-before-full execution instructions below for this round.
+Keep the unit/integration correctness checks, prospective budgets/panels/gates,
+verified commit/push, shown command and fresh artifacts. The smoke profile can
+remain implemented but is not a launch prerequisite. FULL here means the
+registered full-budget development grid; confirmation still requires passing
+development and sealed checkpoint choices before opening scientific tests.
+
 ## Hypothesis, contribution and prior-art boundary
 
 Exchange v2's cancellation invariant holds but its N4 cost/health screens fail.
@@ -233,9 +242,11 @@ accounting; exact14 endpoints and prerequisite rejection of changed/incomplete
 artifacts. Use numerical tolerances log atol2e-5/rtol0 and normalized value
 atol2e-5/rtol1e-6. Do not silently relax a failed replay tolerance.
 
-Run focused tests, required regression and local lab smoke, then independently
-verify output/source seals and physical replay before commit/push. Show the exact
-compound command after push, then execute here under the active lab override.
+Run focused correctness/integration tests and relevant regression checks, then
+commit/push verified code. Under the 2026-10-16 user override, omit a separate
+smoke experiment and launch FULL development directly. Show the exact compound
+command after push, then execute here. Independently verify output/source seals,
+budget/tape accounting and available physical replay before accepting full results.
 Never SSH or initiate artifact transfer. Fresh UTC output directory per run;
 record git identity/dirty state, resolved config, registration/source snapshots,
 raw/derived seed audit, parameter counts/initial digests, journals of training

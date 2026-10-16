@@ -4,6 +4,15 @@ Tài liệu này là workflow mặc định cho mọi code experiment trong repo
 Máy chạy full experiment là Ubuntu lab tại `bachng@100.111.83.52`; full run trên
 lab ưu tiên CPU, trừ khi một experiment ghi rõ yêu cầu khác.
 
+## Active override for technician-coordination research (2026-10-16)
+
+This workspace is the Ubuntu lab. The user authorizes direct FULL runs here and
+explicitly removes the separate smoke-before-full requirement for this research.
+Retain prospective protocols, necessary tests, verified commit/push, tqdm and
+timestamped artifacts. Solve N4/K2 before expanding. This override supersedes
+the Mac/manual-handoff/smoke requirements below for this task. Do not SSH or
+initiate artifact transfer.
+
 ## Quy tắc bắt buộc
 
 1. Khóa protocol trước khi xem kết quả: hypothesis, primary/secondary metrics,
