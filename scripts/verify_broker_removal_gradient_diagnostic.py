@@ -24,11 +24,11 @@ def dense_gradients(observations,actions,returns,value,actual,conditional,weight
     return result
 
 
-def group_physics(directory,observations,arrays,seeds,h,guard):
-    episodes={};count=0;policy=list(h.rows(directory/'policy.csv'));assert len(policy)==6144;policies={(int(r['episode']),int(r['tick'])):r for r in policy};assert len(policies)==6144
+def group_physics(directory,observations,arrays,seeds,h,guard,physical_version=VERSION):
+    size=len(seeds);episodes={};count=0;policy=list(h.rows(directory/'policy.csv'));assert len(policy)==48*size;policies={(int(r['episode']),int(r['tick'])):r for r in policy};assert len(policies)==48*size
     for row in h.rows(directory/'physical.csv'):
         if count%1000==0:guard()
-        i,tick=int(row['episode']),int(row['tick']);physical=h.seed(seeds[i],f'{VERSION}:N4:physical');s=json.loads(row['state']);pairs=tuple(map(tuple,json.loads(row['action'])))
+        i,tick=int(row['episode']),int(row['tick']);physical=h.seed(seeds[i],f'{physical_version}:N4:physical');s=json.loads(row['state']);pairs=tuple(map(tuple,json.loads(row['action'])))
         if i not in episodes:
             initial,events,pop=h.initial_events(physical);episodes[i]=dict(state=initial,events=events,pop=pop,tick=0,metrics={},reward=np.zeros(48))
         ep=episodes[i];assert ep['state']==s and ep['tick']==tick and json.loads(row['events'])==ep['events'][tick] and int(row['physical_seed'])==physical
@@ -41,12 +41,12 @@ def group_physics(directory,observations,arrays,seeds,h,guard):
         following,parts=h.primitive_step(s,pairs,ep['events'][tick]);assert following==json.loads(row['following']);h.near(parts['objective'],row['cost'],'physicscost');ep['reward'][min(tick,47)]-=parts['objective']/20
         for k,v in parts.items():ep['metrics'][k]=ep['metrics'].get(k,0)+v
         ep['state']=following;ep['tick']+=1;count+=1
-    rows=list(h.rows(directory/'episodes.csv'));assert len(rows)==128;metrics={int(r['episode']):r for r in rows};assert len(metrics)==128
+    rows=list(h.rows(directory/'episodes.csv'));assert len(rows)==size;metrics={int(r['episode']):r for r in rows};assert len(metrics)==size
     for i,ep in episodes.items():
         assert ep['tick']==60 and ep['pop']==metrics[i]['population_sha256']
         for k,v in ep['metrics'].items():h.near(v,metrics[i][k],'episode metric')
-        close(arrays['rewards'].reshape(128,48)[i],ep['reward'],'rewards');close(arrays['returns'].reshape(128,48)[i],np.cumsum(ep['reward'][::-1])[::-1],'returns')
-    assert count==7680 and len(episodes)==128;return count
+        close(arrays['rewards'].reshape(size,48)[i],ep['reward'],'rewards');close(arrays['returns'].reshape(size,48)[i],np.cumsum(ep['reward'][::-1])[::-1],'returns')
+    assert count==size*60 and len(episodes)==size;return count
 
 
 def run(source,output):
