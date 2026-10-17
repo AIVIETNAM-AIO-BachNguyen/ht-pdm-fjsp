@@ -48,7 +48,10 @@ checkpoints have strictly positive gain; all denominators finite and >1e-20.
 only, not scientific CI/confirmation or proof of better cost. Report all15points,
 sample gradient mean norms/differences, gB vs gb variance and scalar residual
 ratios; no filtering zero/low-entropy/poor points. Step0 equality is a correctness
-check, not evidence of learned benefit. Any failure means this frozen diagnostic
+check, not evidence of learned benefit. For step0, retain the raw numerical gain,
+assert |gain|<1e-10 and canonicalize the primary gain to exactly0; floating point
+roundoff must not count as a positive learned checkpoint. This engineering
+clarification is registered before FULL diagnostic data. Any failure means this frozen diagnostic
 does not establish the hypothesized material actor-gradient benefit; no automatic
 retuning. Even ALLPASS does NOT override source cost failure or open CF/scaling.
 
