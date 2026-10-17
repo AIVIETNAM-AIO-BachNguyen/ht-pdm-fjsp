@@ -42,6 +42,14 @@ và kiểm tra layout. Audit PASS xác nhận execution/verdict âm, không ph�
 [Kết quả xác nhận và tất cả12bounds](technician_typed_gibbs_confirmation_v1_findings_vi.md)
 · [Protocol xác nhận](technician_typed_gibbs_confirmation_v1_plan.md).
 
+## Chẩn đoán sau xác nhận: chưa cho phép tăng budget
+
+Đã audit18.000frozen policy-state evaluations trên240CFDEV states có sẵn,0training/
+physicalstates mới. Candidate pooledlateCFDEVgain0,6783%,4/5replicas dương, nhưng
+meanfixed-stateTV chỉ0,001773 dưới ngưỡng.01; không mở2x-budget study từ readout này.
+Đây chỉ là một pool của1CFDEVphysicalseed, không chứng minh hội tụ hoặc nguyên nhân.
+Không thêm encoder/LR/attention để cứu verdict. [Chẩn đoán và giới hạn](technician_typed_gibbs_optimization_audit_v1_findings_vi.md).
+
 ## Vòng trước: typed-capacity Gibbs PPO — đạt DEV, chưa xác nhận khoa học
 
 Mỗi máy phát utility cho hai loại technician; broker tính xác suất joint matching
