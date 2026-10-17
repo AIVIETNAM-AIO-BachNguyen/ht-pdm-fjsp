@@ -43,3 +43,11 @@ def test_stored_checkpoint_manual_actor_and_value_roundtrip(tmp_path,arm):
 def test_independent_sixteen_gate_boundaries_match_production():
     c=e.settings();rows=[dict(method=a,train_seed=t,normalized_cost=99. if a==e.CORE[0] else 100.,availability=.67,normalized_pending=0.,normalized_failures=.1,invalid_assignments=0) for a in (*e.ARMS,'deadline') for t in c['train_seeds']];s=e.point_summary(rows,c,dict(p95_ms=.1));points,checks=v.endpoint_gates(s['means'],v.helpers());assert len(checks)==16 and checks==s['checks'] and points==s['endpoints']
     s['means'][e.CORE[0]]['normalized_cost']=99.6;_,checks=v.endpoint_gates(s['means'],v.helpers());assert not checks['gain_vs_fixed_order_ppo'] and not checks['gain_vs_independent_machine_q_ppo']
+
+
+@pytest.mark.parametrize('arm',e.CORE[:4])
+def test_every_one_of64_bipartite_masks_uniform_on_all_legal_matchings(arm):
+    torch.set_num_threads(1);h=v.helpers();base=h.observation(dict(ages=[3]*4,failed=[False]*4,pending_wait=[0]*4,remaining=[0]*2,assigned=[-1]*2),0);table=ref.catalogue_tokens(h);observations=[];actions=[];expected=[]
+    for active_bits,free_bits in itertools.product(itertools.product((False,True),repeat=4),itertools.product((False,True),repeat=2)):
+        legal=np.array(active_bits)[:,None]&np.array(free_bits)[None];allowed=[u for u in table if all(legal[m,t-1] for m,t in enumerate(u) if t)];expected.extend([-np.log(len(allowed))]*len(allowed));observations.extend([dict(base,pair_mask=legal)]*len(allowed));actions.extend(allowed)
+    c=e.settings('engineering');m=e.make_model(arm,c,c['train_seeds'][0]).double();weights={k:p.detach().numpy().copy() for k,p in m.state_dict().items()};b={k:t.double() if t.is_floating_point() else t for k,t in e.learner.tensors(observations).items()};actual=m.evaluate(b,torch.tensor(np.array(actions)))[0].detach().numpy();reference=ref.machine_reference(observations,actions,arm,weights,h,False)['log_probability'];np.testing.assert_allclose(actual,expected,atol=1e-12,rtol=0);np.testing.assert_allclose(reference,expected,atol=1e-12,rtol=0)
