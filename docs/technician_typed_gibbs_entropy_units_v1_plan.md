@@ -88,7 +88,8 @@ physical H/log(feasiblematchingcount), maxphysicalmatching probability, fraction
 maxprob>=.99 and meanconditional available counts; no latent entropy proxy.
 Computations use typedcountDP, no production catalogue. Source sampler/MAP unchanged.
 
-Secondary earlywindow FIXED122880. Mean entropy gap Gjoint−Gmachine>=.02 AND
+Secondary earlywindow FIXED122880. Its inclusive diagnostic thresholds use
+absolute arithmetic tolerance1e-12 only (recorded); primary quality gates unchanged. Mean entropy gap Gjoint−Gmachine>=.02 AND
 mean near-deterministic-fraction reduction>=.10 AND at least2/3replica entropy
 gaps>0 descriptively supports delayed saturation on this panel. IfFAIL, do not
 claim entropy caused original instability even if final quality improves. Readout
@@ -111,7 +112,7 @@ confirmation5freshreplicas/64DEV/256sealedTEST,all10/same491520/fixedfinal,freez
 ALL50models before anyTESTstate.200000paired crossed train/physical bootstrap,
 familyround8alpha=.05/(8*9),one-sided/15,linearquantile,samepractical/healthbounds;
 strictzero MAPPO tieswithin1e-12FAIL. No reuse of oldtypedTEST/oldfailed alpha.
-PPOsuperiorityONLYoverallpass ANDlowergain>=.01vsBOTH P P O/norm. EvenCFPASS does
+PPOsuperiorityONLYoverallpass ANDlowergain>=.01vsBOTH PPO/norm. EvenCFPASS does
 not finishgoal: largerN/two-profile scope/generalization/contribution stillunproven.
 AnyFAILpreserve THISverdict, no beta4xagain/schedule/LR/encoder/budget sweep.
 
