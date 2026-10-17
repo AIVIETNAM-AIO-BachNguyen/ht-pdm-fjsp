@@ -91,3 +91,10 @@ def test_original_failed_verdict_and_extra_guards_cannot_be_promoted():
     assert not v.preserve_verdict(summary,manifest,checks,per,dict(p95_ms=3.),h)
     with pytest.raises(AssertionError,match='original verdict'):v.preserve_verdict(dict(summary,development_screen_pass=True),manifest,checks,per,dict(p95_ms=3.),h)
     with pytest.raises(AssertionError,match='original verdict'):v.preserve_verdict(summary,manifest,checks,dict(per,**{str(v.TRAINS[0]):0.}),dict(p95_ms=3.),h)
+
+
+def test_independent_conflict_counts_and_rejections():
+    assert ref.baseline_diagnostics([1,1,1,2],'mappo',((0,0),(3,1)))==dict(conflicts=1,rejected_proposals=2,executed_starts=2)
+    assert ref.baseline_diagnostics([1,1,2,2],'full_mappo',((0,0),(2,1)))==dict(conflicts=2,rejected_proposals=2,executed_starts=2)
+    assert ref.baseline_diagnostics(None,'deadline',())==dict(conflicts=0,rejected_proposals=0,executed_starts=0)
+    assert ref.baseline_diagnostics(20,'ppo',((2,0),(3,1)))==dict(conflicts=0,rejected_proposals=0,executed_starts=2)

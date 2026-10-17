@@ -137,22 +137,28 @@ def final_replay(source,choices,c,h,guard):
                 from typed_gibbs_reference import decode
                 expected,diag=decode(np.asarray(u),o['pair_mask']);h.check(expected==pairs and diag==json.loads(cr['diagnostics']),'typed canonical matching')
             elif a!='deadline':h.verify_baseline(u,o['pair_mask'],a,s,pairs)
+            if a not in CORE:
+                from entropy_units_reference import baseline_diagnostics
+                h.check(baseline_diagnostics(u,a,pairs)==json.loads(cr['diagnostics']),'independent baseline conflict diagnostics')
+            diag=json.loads(cr['diagnostics'])
+            ep['metrics']['broker_conflicts']+=diag['conflicts'];ep['metrics']['broker_rejected_proposals']+=diag['rejected_proposals']
             if a!='deadline':actor[label[:2]].append((o,u,json.loads(cr['policy'])))
         if tick>=48 or label[0]=='deadline':
             score=np.array([[h.urgency(s,m)+h.R[m,j]/h.D[m,j] for j in range(2)] for m in range(4)]);h.near(sum(score[m,j] for m,j in pairs),h.top_two_optimum(score,h.support(s)),'common deadline objective')
         following,parts=h.primitive_step(s,pairs,ep['events'][tick]);h.check(following==json.loads(r['following']),'primitive following');h.near(parts['objective'],r['cost'],'primitive cost')
         for k,v in parts.items():ep['metrics'][k]+=v
         ep['state']=following;ep['tick']+=1;count+=1
-        if tick==47:ep['cutoff']=dict(ep['metrics']);ep['pending']=sum(following['failed'][m] and m not in following['assigned'] for m in range(4))
+        if tick==47:ep['cutoff']=dict(ep['metrics']);ep['pending']=sum(following['failed'][m] and m not in following['assigned'] for m in range(4));ep['cutoff_failed']=sum(following['failed'])
     h.check(count==59520 and set(episodes)==wanted,'complete physical replay')
     for label,ep in episodes.items():
         r=lookup[label];h.check(ep['tick']==60 and ep['pop']==r['population_sha256'],'episode pop/final tick')
         for k,v in ep['metrics'].items():h.near(v,r[k],'episode '+k)
-        cut=ep['cutoff'];values=dict(availability=1-cut['unavailable_ticks']/192,policy_failures=cut['failures'],normalized_failures=cut['failures']/4,terminal_pending=ep['pending'],normalized_pending=ep['pending']/4,normalized_cost=ep['metrics']['objective']/4,policy_cost=cut['objective'],tail_cost=ep['metrics']['objective']-cut['objective'])
+        cut=ep['cutoff'];values=dict(availability=1-cut['unavailable_ticks']/192,policy_failures=cut['failures'],normalized_failures=cut['failures']/4,terminal_pending=ep['pending'],normalized_pending=ep['pending']/4,normalized_cost=ep['metrics']['objective']/4,policy_cost=cut['objective'],tail_cost=ep['metrics']['objective']-cut['objective'],technician_utilization=cut['service_ticks']/96,terminal_failed=ep['cutoff_failed'],tail_pending=sum(ep['state']['failed'][m] and m not in ep['state']['assigned'] for m in range(4)),tail_failed=sum(ep['state']['failed']),policy_overdue_ticks=cut['overdue_waiting_ticks'])
         for k,v in values.items():h.near(v,r[k],'H48/H60 '+k)
     checks={}
     for (a,t),data in tqdm(actor.items(),desc='30manual actors/physical Gibbs and myopic masses'):guard();checks[f'{a}:{t}']=check_neural_group(data,a,t,source,choices,c,h)
-    means={a:{k:float(np.mean([float(r[k]) for r in rows if r['method']==a])) for k in ('normalized_cost','availability','normalized_pending','normalized_failures')} for a in (*ARMS,'deadline')};per={str(t):1-float(np.mean([float(r['normalized_cost']) for r in rows if r['method']==CORE[0] and int(r['train_seed'])==t]))/float(np.mean([float(r['normalized_cost']) for r in rows if r['method']==CORE[1] and int(r['train_seed'])==t])) for t in TRAINS};return dict(episodes=992,physical_transitions=count,policy_decisions=47616,neural_checks=checks,means=means,per_replica_main_gain=per)
+    means={a:{k:float(np.mean([float(r[k]) for r in rows if r['method']==a])) for k in ('normalized_cost','availability','normalized_pending','normalized_failures')} for a in (*ARMS,'deadline')};per={str(t):1-float(np.mean([float(r['normalized_cost']) for r in rows if r['method']==CORE[0] and int(r['train_seed'])==t]))/float(np.mean([float(r['normalized_cost']) for r in rows if r['method']==CORE[1] and int(r['train_seed'])==t])) for t in TRAINS};diagnostics={a:{k:float(np.mean([float(r[k]) for r in rows if r['method']==a])) for k in ('maintenance_cost','unavailability_cost','failure_cost','waiting_cost','technician_utilization','broker_conflicts','broker_rejected_proposals','policy_overdue_ticks','terminal_failed','tail_pending','tail_failed')} for a in (*ARMS,'deadline')}
+    return dict(episodes=992,physical_transitions=count,policy_decisions=47616,neural_checks=checks,means=means,diagnostics=diagnostics,per_replica_main_gain=per)
 
 
 def secondary_readout(rows,h):

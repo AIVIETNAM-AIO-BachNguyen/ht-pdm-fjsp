@@ -17,6 +17,12 @@ def enrich_observation(observation,h,arm=None):
     return o
 
 
+
+def baseline_diagnostics(action,arm,pairs):
+    counts=np.bincount(np.asarray(action,dtype=int),minlength=3)[1:] if arm in ('mappo','full_mappo') else np.zeros(2,dtype=int)
+    return dict(conflicts=int((counts>1).sum()),rejected_proposals=int(np.maximum(counts-1,0).sum()),executed_starts=len(pairs))
+
+
 def physical_reference(observations,weights,arm,h):
     utility=h.mlp(base.features(observations).reshape(-1,89),weights,'actor').reshape(-1,4,2)
     legal=np.stack([o['pair_mask'] for o in observations]);canonical=base.tokens(h)
