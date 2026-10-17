@@ -79,7 +79,7 @@ Paired crossed train-replica/physical-seed bootstrap200000. Each resample draws
 SAME draws for EVERYmethod/metric, and averages the resulting Cartesian product.
 Ratio uses resampled mean costs, never average perepisode ratios. Fixed PCG64
 np.random.default_rng seeded by registered family learner.role_seed(380600000,
-' technician_typed_gibbs_ppo_v1:bootstrap'.strip()); this function adds original
+'technician_typed_gibbs_ppo_v1:bootstrap'); this function adds original
 maintenance_balanced_algorithm_benchmark_v1 namespace. Audit actual derivedseed.
 Generate chunks256, within each draw B×5replicaint64 FIRST then B×256seedint64,
 store indicesuint8 (sampling wasint64) and all200000×12effects. No redraw to
