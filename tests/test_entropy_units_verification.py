@@ -84,3 +84,10 @@ def test_ninety_common_probe_cells_full_independent_replay_and_tamper(tmp_path,m
 def test_cardinalities_and_factorial_descriptors():
     assert len(v.ARMS)*len(v.TRAINS)==30 and 30*491520==14745600 and 30*10240==307200 and 30*7680==230400 and 30*5*32==4800 and (30*32+32)*60==59520
     m=means();assert v.factorial(m)['cost_difference_interaction_gibbs_minus_myopic']==-1;assert len(v.endpoint_gates(m,v.helpers())[0])==15
+
+
+def test_original_failed_verdict_and_extra_guards_cannot_be_promoted():
+    h=v.helpers();_,checks=v.endpoint_gates(means(),h);checks['gain_vs_'+v.CORE[1]]=False;per={str(t):.01 for t in v.TRAINS};extra=dict(every_replica_main_gain_positive=True,zero_invalid=True,isolated_p95_at_most_50ms=True);summary=dict(checks=checks,extra_checks=extra,development_screen_pass=False,goal_pass=False,test_opened=False);manifest=dict(development_screen_pass=False)
+    assert not v.preserve_verdict(summary,manifest,checks,per,dict(p95_ms=3.),h)
+    with pytest.raises(AssertionError,match='original verdict'):v.preserve_verdict(dict(summary,development_screen_pass=True),manifest,checks,per,dict(p95_ms=3.),h)
+    with pytest.raises(AssertionError,match='original verdict'):v.preserve_verdict(summary,manifest,checks,dict(per,**{str(v.TRAINS[0]):0.}),dict(p95_ms=3.),h)

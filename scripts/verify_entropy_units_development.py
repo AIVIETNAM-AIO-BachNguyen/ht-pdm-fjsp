@@ -215,6 +215,14 @@ def probe_audit(source,c,h,guard):
     return dict(states=48,physical_ticks=60,cells=len(rows),policy_state_evaluations=48*len(rows),unit_pair_invariants_checked=len(rows),secondary=secondary,checks=checked,limitation='One deterministic deadline episode, diagnostic only; no optimizer inputs or new scientific test states.')
 
 
+
+def preserve_verdict(summary,manifest,checks,per_replica,latency,h):
+    extra=dict(every_replica_main_gain_positive=all(v>0 for v in per_replica.values()),zero_invalid=True,isolated_p95_at_most_50ms=latency['p95_ms']<=50)
+    passed=all(checks.values()) and all(extra.values())
+    h.check(checks==summary['checks'] and extra==summary['extra_checks'] and passed==summary['development_screen_pass']==manifest['development_screen_pass'] and not summary['goal_pass'] and not summary['test_opened'],'original verdict')
+    return passed
+
+
 def run(source,output):
     source=Path(source).resolve();out=Path(output).resolve();out.mkdir(parents=True,exist_ok=False);h=helpers();torch.set_num_threads(1);start=time.monotonic();manifest=dict(status='RUNNING',source=str(source),source_manifest_sha256=h.sha(source/'manifest.json'),git_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),goal_pass=False,test_opened=False)
     (out/'manifest.json').write_text(json.dumps(manifest,indent=2))
@@ -240,7 +248,7 @@ def run(source,output):
         for t,v in selected['per_replica_main_gain'].items():h.near(v,summary['per_replica_main_gain'][t],'per-replica gain')
         timing=list(h.rows(source/'isolated_timing_samples.csv'));latency=h.read(source/'latency.json');h.check(len(timing)==432 and {(int(r['train_seed']),int(r['repeat']),int(r['state_index'])) for r in timing}=={(t,r,i) for t in TRAINS for r in range(3) for i in range(48)},'raw432timing grid');times=np.array([float(r['milliseconds']) for r in timing]);h.check(np.isfinite(times).all() and (times>=0).all() and latency['choices_sha256']==h.sha(source/'checkpoint_choices.json'),'timing finite/binding')
         for key,value in dict(mean_ms=np.mean(times),p95_ms=np.percentile(times,95),p99_ms=np.percentile(times,99)).items():h.near(value,latency[key],'raw timing math')
-        extra=dict(every_replica_main_gain_positive=all(v>0 for v in selected['per_replica_main_gain'].values()),zero_invalid=True,isolated_p95_at_most_50ms=latency['p95_ms']<=50);passed=all(checks.values()) and all(extra.values());h.check(extra==summary['extra_checks'] and passed==summary['development_screen_pass']==m['development_screen_pass'] and not summary['goal_pass'] and not summary['test_opened'],'original verdict');bindings()
+        passed=preserve_verdict(summary,m,checks,selected['per_replica_main_gain'],latency,h);bindings()
         result=dict(status='PASS',classification='DEVELOPMENT_VERIFICATION_ONLY',source=str(source),source_manifest_sha256=manifest['source_manifest_sha256'],budgets=budget,common_probe=probe,selected=selected,factorial_descriptors=factorial(selected['means']),independent_points=points,independent_checks=checks,original_development_pass=passed,primary_latency=latency,goal_pass=False,test_opened=False,limitation='All final physics/manual utilities/explicit joint Gibbs and myopic physical distributions verified; All90common probe checkpoint cells and frozen unit-pair invariants checked. Historical optimizer minibatches/cache tensors not retained, not independently replayed. No scientific CI or scaling evidence from DEV.')
         (out/'verification.json').write_text(json.dumps(result,indent=2));shutil.copy2(__file__,out/'verifier.py');shutil.copy2(ROOT/'scripts/verify_broker_marginal_development.py',out/'reference_helpers.py');shutil.copy2(ROOT/'scripts/typed_gibbs_reference.py',out/'typed_gibbs_reference.py');shutil.copy2(ROOT/'scripts/entropy_units_reference.py',out/'entropy_units_reference.py');shutil.copy2(ROOT/'docs/technician_typed_gibbs_entropy_units_verification_v1_plan.md',out/'protocol.md');manifest.update(status='COMPLETED',elapsed_seconds=time.monotonic()-start,outputs={p.name:dict(sha256=h.sha(p),bytes=p.stat().st_size) for p in out.iterdir() if p.is_file() and p.name!='manifest.json'});(out/'manifest.json').write_text(json.dumps(manifest,indent=2));print(json.dumps(dict(output=str(out),status='PASS',development_pass=passed)))
     except Exception as exc:
