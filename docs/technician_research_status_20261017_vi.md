@@ -1,11 +1,30 @@
 # Trạng thái nghiên cứu technician N4/K2 — 2026-10-17
 
-**Mục tiêu tổng thể chưa đạt.** Đã hoàn tất FULL học từ đầu và hai chẩn đoán
+**Mục tiêu tổng thể chưa đạt.** Đã hoàn tất thêm FULL capacity-order từ đầu sau FULL removal-credit và hai chẩn đoán
 độc lập; loại nhánh removal-credit v1 và cách cứu bằng scalar calibration theo
 các điều kiện đã khóa. Scientific confirmation/test và N lớn vẫn đóng. Không
 có teacher, distillation hay PPO warm-start trong lần học này.
 
-## Kết quả chính
+## Mới nhất: capacity-priority machine-agent PPO — không đạt
+
+Một giả thuyết policy riêng đã được khóa, triển khai và chạy FULL từ đầu: cho máy ít lựa chọn phục vụ nhanh chọn technician trước, rồi broadcast reservation. Dùng raw MLP104→64→64→3, PPO scalar joint chuẩn và prior đếm matching để bốn nhánh phối hợp có cùng phân phối matching lúc khởi tạo. Đây là đổi chiều/thứ tự phân công, không thêm removal critic hay cứu scalar calibration.
+
+33 fits,16.220.160 quyết định mới, kết thúc21phút28giây. Kết quả12/16, không đạt; cả ba seed đều kém fixed ID order.
+
+| Nhánh | Cost/máy H60 |
+|---|---:|
+| Capacity order candidate |265,716146|
+| Fixed ID order |263,898438|
+| Independent machine physical-q |267,682292|
+| PPO gốc |262,755208|
+| PPO normalized |262,773438|
+| MAPPO full information |265,385417|
+
+Candidate tốt hơn independent0,735%, nhưng kém fixed ID0,689% và kém PPO khoảng1,12%; cả sáu health gates đạt. P95 N4 actor+decoder1,929ms. Independent verification PASS14,76s bằng matching-completion counts/NumPy actors/primitive physics, gồm all81latent proposals cho physical-q. Report/PNG đã kiểm tra trực quan; đây vẫn là DEV, không CI/scaling.
+
+[Phương pháp và đủ16tiêu chí mới](technician_capacity_order_ppo_v1_findings_vi.md). Không mở confirmation/test hay N lớn; không tự động sửa order formula, LR hoặc budget. Không promote fixed-order control thành phương pháp đã xác nhận.
+
+## Các vòng removal-credit trước (giữ nguyên kết quả âm)
 
 | Nhánh học từ đầu | Cost/máy H60, fixed final |
 |---|---:|
