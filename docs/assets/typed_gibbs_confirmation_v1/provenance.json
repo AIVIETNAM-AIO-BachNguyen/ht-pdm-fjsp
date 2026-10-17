@@ -1,0 +1,7 @@
+{
+  "report": "/home/bachng/ht-pdm-fjsp/artifacts/technician_typed_gibbs_confirmation_report_v1_20261017T125920071831Z",
+  "report_manifest_sha256": "42a0478c7187eaae3c69ac2ec3bc9da307ddeb29447952718d59ac33c19138a9",
+  "visual_qa": "PASS: both actual PNGs inspected, all labels visible",
+  "original_confirmation_pass": false,
+  "goal_pass": false
+}

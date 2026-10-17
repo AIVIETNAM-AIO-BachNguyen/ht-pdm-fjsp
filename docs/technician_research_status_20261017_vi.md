@@ -1,11 +1,48 @@
 # Trạng thái nghiên cứu technician N4/K2 — 2026-10-17
 
-**Mục tiêu tổng thể chưa đạt.** FULL mới nhất là typed-capacity Gibbs PPO,
-học từ random initialization, không teacher/distillation/PPO warm-start. DEV đã
-đạt12/12 và audit độc lập PASS; được phép đăng ký vòng xác nhận seeds mới.
-Scientific test và N lớn vẫn chưa mở. Các kết quả âm trước giữ nguyên.
+**Mục tiêu tổng thể chưa đạt.** Typed-Gibbs đã qua DEV12/12 nhưng vòng xác nhận
+5trainingseeds mới/256TESTseeds **không đạt:4/12 CI gates**. Đã kiểm chứng độc lập
+đủ dữ liệu và phép bootstrap; không đổi ngưỡng hay chọn replica/checkpoint khác.
+N lớn vẫn đóng. Không teacher/distillation/PPO warm-start; giữ mọi kết quả âm.
 
-## Mới nhất: typed-capacity Gibbs PPO — đạt DEV, chưa xác nhận khoa học
+## Mới nhất: xác nhận typed-Gibbs N4 — không đạt độ ổn định và failure bounds
+
+35mô hình mới×491.520decisions=17.203.200decisions,358.400trainEP,268.800Adamupdates.
+Freeze đủ35model hashes sau11.200CFDEVnodes rồi mới mở256TESTseeds. Kết thúc
+28phút55giây;9.216TESTepisodes,552.960physical transitions,442.368policy decisions.
+Không test-time optimizer, không best-checkpoint hoặc seed filtering.
+
+| Nhánh | TEST H60cost/máy | H48 failure/máy |
+|---|---:|---:|
+| Typed Gibbs |264,295898|0,225000|
+| Myopic đối chứng chính |282,877930|0,687891|
+| Myopic reverse |274,108594|0,422852|
+| PPO gốc |263,754883|0,146875|
+| PPO normalized |263,310938|0,121875|
+| MAPPO local |268,924609|0,432422|
+| MAPPO full |265,751758|0,358398|
+
+Điểm gain vsmyopic6,569%, nhưng lowerbound **−1,032%**, chưa đạt+.5%; cả6cost
+CI gates đều không đạt. Gain mỗi replica10,423%/10,084%/0,844%/10,915%/**−0,731%**,
+extra every-replica-positive cũng không đạt. Mean gần PPO không chứng minh N.I.:
+lowerbound vsPPO−1,897%,vsnorm−2,377%, dưới biên−1% đã khóa. Failure-delta upper
+bounds vsPPO0,279343 vàvsnorm0,260742, vượt mức+.25. Availability/pending4bounds
+đạt,zero invalid,p95 N4 actor+DP+decoder3,101ms/720samples. Không thắng PPO.
+
+Điểm12/12 và DEV12/12 **không thay thế** CI4/12. Cơ chế learnedfuture chưa được
+xác nhận ổn định theo protocol; không đổ lỗi mặc định cho thiếu budget/encoder/LR.
+Không mở N lớn từ kết quả này. Tiếp theo chỉ được chẩn đoán nguyên nhân cụ thể
+trên train/CFDEV và đăng ký follow-up có giới hạn trước dữ liệu mới; giữ test cũ.
+
+Independent audit PASS102,59s:35manualinitializers,51.200pairedtrain tapes, đủ
+CFDEV/freeze/TEST,NumPyNN/explicit21matching, toàn bộ200.000bootstrap indexrows và
+2.400.000endpointvalues bằng explicit Cartesian indexing. Hai actualPNG đã nhìn
+và kiểm tra layout. Audit PASS xác nhận execution/verdict âm, không phải đạt mục tiêu.
+
+[Kết quả xác nhận và tất cả12bounds](technician_typed_gibbs_confirmation_v1_findings_vi.md)
+· [Protocol xác nhận](technician_typed_gibbs_confirmation_v1_plan.md).
+
+## Vòng trước: typed-capacity Gibbs PPO — đạt DEV, chưa xác nhận khoa học
 
 Mỗi máy phát utility cho hai loại technician; broker tính xác suất joint matching
 bằng weighted count DP, bao gồm utility của những máy phía sau. Giữ PPO chuẩn.
@@ -44,9 +81,7 @@ là mô tả, không thay retraining causal contrast. Không đổi protocol t�
 [Protocol FULL đã khóa](technician_typed_gibbs_ppo_v1_plan.md) ·
 [Ranh giới prior art](technician_typed_gibbs_prior_art_update.md).
 Global normalization/structured policy/partition DP không phải ý tưởng mới chung;
-đóng góp cụ thể và test/scaling vẫn cần chứng minh. Tiếp theo là đăng ký riêng
-5replica mới/64DEV/256sealedTEST, giữ cùng budget/methods/fixedfinal và12endpoints;
-freeze toàn bộ model hashes trước TEST. N4/K2 vẫn là trọng tâm.
+đóng góp cụ thể và test/scaling vẫn cần chứng minh. Vòng xác nhận riêng đã thực hiện như phần mới nhất ở trên và không đạt; không dùng phần DEV này để cứu verdict. N4/K2 vẫn là trọng tâm.
 
 ## Vòng trước: capacity-priority machine-agent PPO — không đạt
 
