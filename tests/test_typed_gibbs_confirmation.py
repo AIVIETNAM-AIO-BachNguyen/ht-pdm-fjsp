@@ -94,3 +94,10 @@ def test_freeze_and_test_cannot_be_silently_reopened(engineering):
 
 def test_actual_parent_and_fresh_confirmation_metadata_without_cf_states():
     assert c.parent_gate()['status']=='PASS';cfg=c.e.settings('confirmation');assert cfg['train_seeds']==list(range(380300000,380300005));assert cfg['test_seeds']==list(range(380500000,380500256));assert len(c.e.ARMS)*len(cfg['train_seeds'])==35;assert 35*491520==17203200 and 35*10240==358400 and 35*7680==268800 and 35*5*64==11200 and (35*256+256)*60==552960
+
+
+
+def test_strict_zero_ci_does_not_claim_superiority_from_roundoff():
+    point=passing_points();effects=np.tile(point,(100,1));effects[:,4:6]=1e-14;bounds=c.confidence_bounds(point,effects)
+    assert not bounds['gain_vs_mappo']['passed'] and not bounds['gain_vs_full_mappo']['passed']
+    assert bounds['gain_vs_full_mappo']['threshold']==0 and bounds['gain_vs_full_mappo']['numeric_margin']==1e-12

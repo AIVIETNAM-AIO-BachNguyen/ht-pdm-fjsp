@@ -33,6 +33,7 @@ def parent_gate():
     check(source['status']=='COMPLETED' and source['audit_status']=='PASS' and source['git']['commit']=='51ebbeca434e83077ff4533131af49fd56fcd5cb' and not source['test_opened'],'original committed DEV')
     check(vm['status']=='COMPLETED' and v['status']=='PASS' and v['source']==str(PARENT) and v['source_manifest_sha256']==e.sha(PARENT/'manifest.json') and v['original_development_pass'] and summary['development_screen_pass'] and all(summary['checks'].values()) and all(summary['extra_checks'].values()),'independently verified ALLPASS DEV')
     for name,meta in vm['outputs'].items():check(e.sha(VERIFICATION/name)==meta['sha256'],'parent verification binding')
+    for name,meta in source['output_bindings'].items():check(e.sha(PARENT/name)==meta['sha256'] and (PARENT/name).stat().st_size==meta['bytes'],'parent full output binding')
     for name,digest in source['source_seal'].items():
         check(e.sha(PARENT/name)==digest,'parent source seal')
         if name.startswith('source_snapshot/'):check(e.sha(ROOT/'src/ht_pdm_fjsp'/Path(name).name)==digest,'frozen algorithm source unchanged')
@@ -107,8 +108,8 @@ def confidence_bounds(point,effects,alpha=ALPHA):
     check(effects.ndim==2 and effects.shape[1]==12 and np.isfinite(effects).all(),'bootstrap endpoint matrix');q=np.quantile(effects,[alpha,1-alpha],axis=0,method='linear');result={}
     for i,name in enumerate(ENDPOINTS):
         lower=name.startswith('gain_') or name.startswith('availability_');bound=float(q[0 if lower else 1,i]);threshold=.005 if name==COST_ENDPOINTS[0] else 0. if name in ('gain_vs_mappo','gain_vs_full_mappo') else -.01 if lower else .025 if name.startswith('normalized_pending_') else .25
-        strict=name in ('gain_vs_mappo','gain_vs_full_mappo');passed=bound>threshold if strict else bound>=threshold if lower else bound<=threshold
-        result[name]=dict(point=float(point[i]),bound=bound,orientation='lower' if lower else 'upper',threshold=threshold,strict=strict,passed=bool(passed),one_sided_alpha=alpha)
+        strict=name in ('gain_vs_mappo','gain_vs_full_mappo');passed=bound>threshold+1e-12 if strict else bound>=threshold if lower else bound<=threshold
+        result[name]=dict(point=float(point[i]),bound=bound,orientation='lower' if lower else 'upper',threshold=threshold,strict=strict,numeric_margin=1e-12 if strict else 0.,passed=bool(passed),one_sided_alpha=alpha)
     return result
 
 

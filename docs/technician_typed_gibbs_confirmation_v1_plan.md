@@ -86,6 +86,8 @@ store indicesuint8 (sampling wasint64) and all200000×12effects. No redraw to
 change bounds. Quantile methodlinear, oriented one-sided alpha=.05/(7*8)/12
 =0.0000744047619047619. This is sequential familyround7 plus Bonferroni12.
 Loweralphaquantile for costgains/availability; upper1−alpha for pending/failure.
+Strict-zero MAPPO bounds within1e-12 of0 count as numerical ties and FAIL; this
+conservative numerical margin is recorded, never used to rescue a result.
 Report point/bound/orientation/practicalthreshold/pass for all12, allreplicas and
 means, including any failure. Bootstrap is empirical uncertainty with5training
 replicas, not an exact distribution-free guarantee; sparse tails are disclosed.
