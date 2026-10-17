@@ -1,0 +1,8 @@
+{
+  "version": "maintenance_shared_technician_factorial_v1",
+  "training": [],
+  "smoke": [91000000, 91000001],
+  "development": {"start": 91000100, "count": 16},
+  "sealed_test": {"start": 91000200, "count": 64},
+  "analysis": 91000400
+}
