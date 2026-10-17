@@ -38,3 +38,9 @@ def test_cold_parity_and_nonzero_knockout_no_tie_inflation():
 def test_fixed_cardinalities_and_independent_endpoint_math():
     assert len(e.ARMS)*len(verifier.TRAINS)==21;assert 21*491520==10321920;assert 21*10240==215040;assert 21*7680==161280;assert 21*5*32==3360;assert (21*32+32)*60==42240
     means={a:dict(normalized_cost=99. if a==e.CORE[0] else 100.,availability=.67,normalized_pending=.01,normalized_failures=.1) for a in (*e.ARMS,'deadline')};points,checks=verifier.endpoint_gates(means,verifier.helpers());assert len(checks)==12 and all(checks.values())
+
+
+def test_independent_raw_ranges_and_prior_capacity_derived_reconstruction(tmp_path):
+    # No physical environment, checkpoints, DEV outcomes or RNG sampling.
+    import json
+    c=e.seed_audit();(tmp_path/'seed_registry.json').write_text(e.REGISTRY.read_text());(tmp_path/'seed_audit.json').write_text(json.dumps(c));r=verifier.seed_contract(tmp_path,verifier.helpers());assert r['raw']==365 and r['derived']==82397 and r['independent_capacity_order_derived']==82424

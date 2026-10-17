@@ -68,7 +68,19 @@ def seed_contract(source,h):
         p=Path(name);h.check(h.sha(p)==digest,'historical registry binding');historical|=integers(h.read(p))
     h.check(audit['status']=='PASS' and audit['raw_unique']==len(raw)==365 and audit['derived_unique']==len(streams)==len(set(streams))==82397 and not audit['confirmation_states_constructed'],'independent seed cardinality')
     h.check(not any(a&b for i,a in enumerate(groups) for b in groups[i+1:]) and not raw&historical and not set(streams)&(raw|historical),'independent raw/derived separation')
-    return dict(raw=len(raw),derived=len(streams),historical_raw_seeds=len(historical),historical_registries=len(audit['historical_registries']),limitation='Current streams and historical raw registries independently rebuilt; historical derived namespaces rely on source audit, not exhaustively independently reconstructed.')
+    capacity_registry=next(Path(name) for name in audit['historical_registries'].values() if Path(name).name=='technician_capacity_order_ppo_v1_seed_registry.json')
+    capacity_known=set();version='technician_capacity_order_ppo_v1'
+    for profile,panel in h.read(capacity_registry)['panels'].items():
+        capacity_known.add(h.seed(panel['analysis_seed'],f'maintenance_balanced_algorithm_benchmark_v1:{version}:bootstrap'))
+        physicals=list(range(panel['development_start'],panel['development_start']+panel['development_count']))+list(range(panel.get('test_start',0),panel.get('test_start',0)+panel.get('test_count',0)))
+        capacity_known.update(h.seed(seed,f'{version}:N4:physical') for seed in physicals)
+        for train in panel['train_seeds']:
+            capacity_known.update(h.seed(train,f'maintenance_balanced_algorithm_benchmark_v1:{version}:initialization:{role}') for role in ('graph','raw_tech_ppo','ppo','mappo','full_mappo','critic_state'))
+            capacity_known.update(h.seed(train,f'maintenance_balanced_algorithm_benchmark_v1:{version}:N4:{role}:{stream}') for role in ('graph','raw_tech_ppo','ppo','mappo','full_mappo') for stream in ('actions','minibatches'))
+            workers=2 if profile=='engineering' else 16;steps=192 if profile=='engineering' else 491520
+            capacity_known.update(h.seed(train,f'{version}:N4:training_physical:worker:{w}:episode:{episode}') for w in range(workers) for episode in range(steps//(48*workers)))
+    h.check(len(capacity_known)==82424 and not set(streams)&capacity_known,'independent prior capacity-order derived stream separation')
+    return dict(raw=len(raw),derived=len(streams),historical_raw_seeds=len(historical),independent_capacity_order_derived=len(capacity_known),historical_registries=len(audit['historical_registries']),limitation='Current streams and historical raw registries independently rebuilt; capacity-order historical derived streams independently rebuilt; other historical derived namespaces rely on source audit, not exhaustively independently reconstructed.')
 
 
 def budgets(source,c,choices,h,guard):
