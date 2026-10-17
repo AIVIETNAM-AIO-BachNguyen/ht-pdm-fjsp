@@ -1,11 +1,54 @@
 # Trạng thái nghiên cứu technician N4/K2 — 2026-10-17
 
-**Mục tiêu tổng thể chưa đạt.** Đã hoàn tất thêm FULL capacity-order từ đầu sau FULL removal-credit và hai chẩn đoán
-độc lập; loại nhánh removal-credit v1 và cách cứu bằng scalar calibration theo
-các điều kiện đã khóa. Scientific confirmation/test và N lớn vẫn đóng. Không
-có teacher, distillation hay PPO warm-start trong lần học này.
+**Mục tiêu tổng thể chưa đạt.** FULL mới nhất là typed-capacity Gibbs PPO,
+học từ random initialization, không teacher/distillation/PPO warm-start. DEV đã
+đạt12/12 và audit độc lập PASS; được phép đăng ký vòng xác nhận seeds mới.
+Scientific test và N lớn vẫn chưa mở. Các kết quả âm trước giữ nguyên.
 
-## Mới nhất: capacity-priority machine-agent PPO — không đạt
+## Mới nhất: typed-capacity Gibbs PPO — đạt DEV, chưa xác nhận khoa học
+
+Mỗi máy phát utility cho hai loại technician; broker tính xác suất joint matching
+bằng weighted count DP, bao gồm utility của những máy phía sau. Giữ PPO chuẩn.
+Đối chứng chính cùng mạng/thông tin/dung lượng/ngân sách chỉ đếm feasible future
+continuations, bỏ learned future utilities. Cả hai có exact physical entropy/MAP,
+khởi tạo cùng phân phối uniform matching. Đây không phải fine-tuning PPO gốc.
+
+21fits×491.520decisions,3trainingseeds mới/32DEVseeds,10.321.920decisions và
+215.040trainEP; kết thúc15phút19giây. Fixed final, không chọn checkpoint tốt nhất.
+
+| Nhánh | Cost/máy H60 |
+|---|---:|
+| Typed Gibbs candidate |263,575521|
+| Myopic, đối chứng chính |281,971354|
+| Myopic reverse |297,578125|
+| PPO gốc |263,171875|
+| PPO normalized |263,380208|
+| MAPPO local |266,583333|
+| MAPPO full information |263,591146|
+
+Giảm cost6,524% so myopic, ba replica đều dương1,790%/8,499%/8,929%. Đạt12/12
+tiêu chí điểm và các extra guards; cả sáu health bounds đạt. Cost cao hơn PPO
+gốc0,153% và normalized0,074%; **chưa thắng PPO**. So full MAPPO chỉ thấp hơn
+0,006%, thực tế gần như ngang điểm; chưa có bằng chứng ưu thế thống kê.
+P95 actor+DP+decoder3,076ms tạiN4, chưa có bằng chứng scalability.
+
+Audit độc lập PASS10,72s: dựng21fresh actors/critics, đủ215.040trainEP/3.360DEVnodes,
+704finalEP/42.240primitive transitions/33.792policy decisions, NumPy utilities và
+explicit matching densities/entropy/MAP,12gates và432rawtimings.56unique correctness
+tests đã đạt qua các đợt (55combined trước khi thêm một seed-contract test; latest
+verifier14PASS). Hai PNG report đã kiểm tra trực quan. Knockout giữ trọng số chỉ
+đổi MAP ở38/4.608trạng thái với myopic,147/4.608với reverse (loại near ties); đó
+là mô tả, không thay retraining causal contrast. Không đổi protocol từ kết quả.
+
+[Phương pháp/kết quả đầy đủ](technician_typed_gibbs_ppo_v1_findings_vi.md) ·
+[Protocol FULL đã khóa](technician_typed_gibbs_ppo_v1_plan.md) ·
+[Ranh giới prior art](technician_typed_gibbs_prior_art_update.md).
+Global normalization/structured policy/partition DP không phải ý tưởng mới chung;
+đóng góp cụ thể và test/scaling vẫn cần chứng minh. Tiếp theo là đăng ký riêng
+5replica mới/64DEV/256sealedTEST, giữ cùng budget/methods/fixedfinal và12endpoints;
+freeze toàn bộ model hashes trước TEST. N4/K2 vẫn là trọng tâm.
+
+## Vòng trước: capacity-priority machine-agent PPO — không đạt
 
 Một giả thuyết policy riêng đã được khóa, triển khai và chạy FULL từ đầu: cho máy ít lựa chọn phục vụ nhanh chọn technician trước, rồi broadcast reservation. Dùng raw MLP104→64→64→3, PPO scalar joint chuẩn và prior đếm matching để bốn nhánh phối hợp có cùng phân phối matching lúc khởi tạo. Đây là đổi chiều/thứ tự phân công, không thêm removal critic hay cứu scalar calibration.
 
@@ -70,7 +113,7 @@ thái và0optimizer update. Heldout mean gains0,96%/20,87%/−0,38%; chỉ4/9đi
 
 [Kết quả fit/heldout và toàn bộ15checkpoint](technician_broker_removal_coefficient_calibration_v1_findings_vi.md).
 
-## Quyết định nghiên cứu
+## Quyết định đối với các nhánh removal-credit đã loại
 
 Không chạy thêm biến thể hệ số, clip, regularization, seed hay budget để cứu các
 nhánh vừa bị loại. Không dùng seed thứ hai tốt làm kết quả đại diện. Tất cả
@@ -85,6 +128,4 @@ score-weighted baseline cũng đã có prior art, không thể tự nhận là �
 Hướng nghiên cứu tiếp phải tác động được lên phân công và có giả thuyết riêng
 được đo trước khi chạy học mới. Cần đối chiếu các thử nghiệm ordered-prefix,
 remaining-capacity và broker trước đây để tránh lặp lại một cơ chế đã bị bác bỏ.
-Chưa có protocol FULL học tiếp nào được mở từ các kết quả chẩn đoán này. Vẫn
-giữ yêu cầu N4/K2, random initialization, cùng thông tin/ngân sách và giới hạn
-sức khỏe trước khi xét mở rộng. Goal nghiên cứu tiếp tục ở trạng thái active.
+Các chẩn đoán này không tự mở nhánh học lại removal/scalar. FULL typed-Gibbs ở trên là giả thuyết policy riêng với protocol mới và kết quả DEV riêng. Vẫn giữ N4/K2, random initialization, cùng thông tin/ngân sách và giới hạn sức khỏe trước mở rộng. Goal tiếp tục active.

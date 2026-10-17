@@ -1,0 +1,6 @@
+{
+  "report": "/home/bachng/ht-pdm-fjsp/artifacts/technician_typed_gibbs_report_v1_20261017T121433188069Z",
+  "report_manifest_sha256": "f1a51742811eccd885b445720ed63770ee1f57d57807fb15b174032b6555ae70",
+  "visual_qa": "PASS: both actual PNGs inspected, no clipped labels",
+  "goal_pass": false
+}
