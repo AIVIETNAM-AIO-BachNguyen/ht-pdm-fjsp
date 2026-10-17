@@ -1,0 +1,8 @@
+{
+  "version": "maintenance_shared_technician_exploratory_v2",
+  "training": [],
+  "smoke": [93000000, 93000001],
+  "development": {"start": 93000100, "count": 16},
+  "sealed_test": {"start": 93000200, "count": 64},
+  "analysis": 93000400
+}

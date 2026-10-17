@@ -48,8 +48,8 @@ def config(condition):
     return c
 
 
-def panel(profile):
-    r = json.loads(REGISTRY.read_text())
+def panel(profile, registry=REGISTRY):
+    r = json.loads(registry.read_text())
     if profile == "smoke":
         return {"smoke": r["smoke"]}
     if profile == "full":
@@ -58,8 +58,8 @@ def panel(profile):
     raise ValueError(profile)
 
 
-def seed_audit():
-    ours = json.loads(REGISTRY.read_text())
+def seed_audit(registry=REGISTRY):
+    ours = json.loads(registry.read_text())
     groups = [set(ours["smoke"]),
               set(range(ours["development"]["start"], ours["development"]["start"] + ours["development"]["count"])),
               set(range(ours["sealed_test"]["start"], ours["sealed_test"]["start"] + ours["sealed_test"]["count"])),
@@ -77,7 +77,7 @@ def seed_audit():
         elif isinstance(x, dict):
             for item in x.values(): ints(item)
     for path in (ROOT / "configs").glob("*seed_registry.json"):
-        if path != REGISTRY:
+        if path != registry:
             ints(json.loads(path.read_text()))
     if set().union(*groups) & historical:
         raise RuntimeError("historical seed overlap")
@@ -158,10 +158,10 @@ def terminal_liability(c, state, pending):
     return cost
 
 
-def episode(condition, timing, method, seed, trace=None):
-    c = config(condition)
+def episode(condition, timing, method, seed, trace=None, *, config_fn=config, version=VERSION):
+    c = config_fn(condition)
     env = WaitingEnv(c)
-    physical_seed = role_seed(seed, f"{VERSION}:{condition}:physical")
+    physical_seed = role_seed(seed, f"{version}:{condition}:physical")
     env.reset(physical_seed)
     pending, active = set(), set()
     since = {}
@@ -249,9 +249,9 @@ def episode(condition, timing, method, seed, trace=None):
         invalid_assignments=env.metrics["invalid_assignments"])
 
 
-def audit_rows(rows, splits):
+def audit_rows(rows, splits, *, conditions=CONDITIONS, version=VERSION, registry=REGISTRY):
     expected = {(split, s, condition, timing, dispatcher)
-                for split, seeds in splits.items() for s in seeds for condition in CONDITIONS
+                for split, seeds in splits.items() for s in seeds for condition in conditions
                 for timing in TIMINGS for dispatcher in DISPATCHERS}
     actual = [(r["split"], r["seed"], r["condition"], r["timing"], r["dispatcher"]) for r in rows]
     if len(actual) != len(expected) or set(actual) != expected:
@@ -259,7 +259,7 @@ def audit_rows(rows, splits):
     physical = {}
     for r in rows:
         key = (r["split"], r["seed"], r["condition"])
-        expected_seed = role_seed(r["seed"], f"{VERSION}:{r['condition']}:physical")
+        expected_seed = role_seed(r["seed"], f"{version}:{r['condition']}:physical")
         if r["physical_seed"] != expected_seed or (key in physical and physical[key] != r["physical_seed"]):
             raise RuntimeError("physical pairing")
         physical[key] = r["physical_seed"]
@@ -271,10 +271,10 @@ def audit_rows(rows, splits):
                             ("maintenance_cost", "unavailability_cost", "failure_cost", "waiting_cost", "terminal_liability")), abs_tol=1e-8):
             raise RuntimeError("cost artifact")
     return {"status": "PASS", "episodes": len(rows), "unique_keys": len(expected),
-            "seed_audit": seed_audit()}
+            "seed_audit": seed_audit(registry)}
 
 
-def audit_decisions(path, expected_episodes):
+def audit_decisions(path, expected_episodes, *, config_fn=config, version=VERSION):
     """Replay saved decisions from the independent physical shock stream."""
     episodes = ticks = 0
     previous = None
@@ -289,8 +289,8 @@ def audit_decisions(path, expected_episodes):
                     raise RuntimeError("incomplete decision trace")
                 if tick != 0:
                     raise RuntimeError("trace does not begin at tick zero")
-                env = WaitingEnv(config(key[0]))
-                expected_seed = role_seed(key[3], f"{VERSION}:{key[0]}:physical")
+                env = WaitingEnv(config_fn(key[0]))
+                expected_seed = role_seed(key[3], f"{version}:{key[0]}:physical")
                 env.reset(expected_seed)
                 pending = set()
                 episodes += 1
@@ -322,13 +322,15 @@ def audit_decisions(path, expected_episodes):
     return {"status": "PASS", "episodes": episodes, "ticks": ticks}
 
 
-def analysis(rows, split):
+def analysis(rows, split, *, conditions=CONDITIONS, analysis_seed=91000400,
+             version=VERSION, confidence=.9875):
     selected = [r for r in rows if r["split"] == split]
     by = {(r["seed"], r["condition"], r["timing"], r["dispatcher"]): r for r in selected}
     seeds = sorted({r["seed"] for r in selected})
     result = {"split": split, "seed_count": len(seeds), "conditions": {}}
-    rng = np.random.default_rng(role_seed(91000400, f"{VERSION}:bootstrap"))
-    for condition in CONDITIONS:
+    rng = np.random.default_rng(role_seed(analysis_seed, f"{version}:bootstrap"))
+    ci_key = "ci_9875" if version == VERSION else "ci_95"
+    for condition in conditions:
         means = {f"{t}/{d}": statistics.fmean(by[s, condition, t, d]["cost"] for s in seeds)
                  for t in TIMINGS for d in DISPATCHERS}
         metrics = {f"{t}/{d}": {key: statistics.fmean(by[s, condition, t, d][key] for s in seeds)
@@ -347,9 +349,9 @@ def analysis(rows, split):
         for name, (a, b) in definitions.items():
             diff = np.asarray([by[s, condition, *a]["cost"] - by[s, condition, *b]["cost"] for s in seeds])
             base = means[f"{b[0]}/{b[1]}"]
-            interval = np.quantile(diff[draws].mean(1), [.00625, .99375]).tolist() if draws is not None else None
+            interval = np.quantile(diff[draws].mean(1), [(1-confidence)/2, (1+confidence)/2]).tolist() if draws is not None else None
             contrasts[name] = {"mean_difference": float(diff.mean()), "relative_reduction": float(-diff.mean()/base),
-                "ci_9875": interval, "paired_standardized_effect": float(diff.mean()/diff.std(ddof=1)) if len(diff)>1 and diff.std(ddof=1)>0 else None,
+                ci_key: interval, "paired_standardized_effect": float(diff.mean()/diff.std(ddof=1)) if len(diff)>1 and diff.std(ddof=1)>0 else None,
                 "win_fraction": float(np.mean(diff < 0))}
         interaction = np.asarray([by[s, condition, "capacity_aware", "lookahead"]["cost"]
             - by[s, condition, "capacity_aware", "fcfs"]["cost"]
@@ -357,9 +359,9 @@ def analysis(rows, split):
             + by[s, condition, "threshold", "fcfs"]["cost"] for s in seeds])
         contrasts["interaction"] = {"mean_difference": float(interaction.mean()),
             "fraction_of_reference": float(interaction.mean()/means["threshold/fcfs"]),
-            "ci_9875": np.quantile(interaction[draws].mean(1), [.00625,.99375]).tolist() if draws is not None else None}
+            ci_key: np.quantile(interaction[draws].mean(1), [(1-confidence)/2,(1+confidence)/2]).tolist() if draws is not None else None}
         result["conditions"][condition] = {"mean_cost": means, "metrics": metrics, "contrasts": contrasts}
-    if split == "sealed_test":
+    if split == "sealed_test" and version == VERSION:
         c = result["conditions"]["scarce_overlap"]["contrasts"]
         h1 = all(c[k]["relative_reduction"] >= .05 and c[k]["ci_9875"][1] < 0 for k in ("allocation", "request"))
         h2 = c["interaction"]["fraction_of_reference"] <= -.02 and c["interaction"]["ci_9875"][1] < 0
@@ -377,26 +379,29 @@ def git_revision():
     return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
 
 
-def run(profile, output_dir):
+def run(profile, output_dir, *, version=VERSION, protocol=PROTOCOL,
+        registry=REGISTRY, conditions=CONDITIONS, config_fn=config,
+        analysis_seed=91000400, confidence=.9875, extra_sources=()):
     if profile == "full" and subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT):
         raise RuntimeError("full requires clean git checkout")
-    splits = panel(profile)
-    audit = seed_audit()
+    splits = panel(profile, registry)
+    audit = seed_audit(registry)
     output = Path(output_dir)
     if output.exists() and any(output.iterdir()):
         raise FileExistsError(output)
     output.mkdir(parents=True, exist_ok=True)
     (output / "source_snapshot").mkdir()
-    for source in (PROTOCOL, REGISTRY, Path(__file__)):
+    sources = (protocol, registry, Path(__file__), *extra_sources)
+    for source in sources:
         shutil.copy2(source, output / "source_snapshot" / source.name)
     started = time.monotonic()
-    manifest = {"version": VERSION, "profile": profile, "status": "RUNNING", "git_commit": git_revision(),
+    manifest = {"version": version, "profile": profile, "status": "RUNNING", "git_commit": git_revision(),
         "started_utc": datetime.now(timezone.utc).isoformat(), "seeds": splits,
-        "training_seeds": [], "expected_episodes": sum(map(len, splits.values())) * len(CONDITIONS)*len(TIMINGS)*len(DISPATCHERS),
-        "source_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (PROTOCOL, REGISTRY, Path(__file__))},
+        "training_seeds": [], "expected_episodes": sum(map(len, splits.values())) * len(conditions)*len(TIMINGS)*len(DISPATCHERS),
+        "source_sha256": {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
         "seed_audit": audit, "device": "cpu", "max_seconds": 7200, "completed_episodes": 0}
     write_json(output / "manifest.json", manifest)
-    write_json(output / "resolved_config.json", {name: asdict(config(name)) for name in CONDITIONS})
+    write_json(output / "resolved_config.json", {name: asdict(config_fn(name)) for name in conditions})
     rows = []
     partial = output / "episodes.partial.csv"
     trace_path = output / "decisions.csv"
@@ -408,13 +413,14 @@ def run(profile, output_dir):
             tr_writer = csv.DictWriter(tr_file, fieldnames=trace_fields)
             tr_writer.writeheader()
             jobs = [(split, seed, condition, timing, dispatcher)
-                    for split, seeds in splits.items() for seed in seeds for condition in CONDITIONS
+                    for split, seeds in splits.items() for seed in seeds for condition in conditions
                     for timing in TIMINGS for dispatcher in DISPATCHERS]
             for split, seed, condition, timing, dispatcher in tqdm(jobs, desc=f"{profile} episodes", unit="episode"):
                 if time.monotonic() - started > 7200:
                     raise TimeoutError("locked 7200-second stopping rule")
                 row = {"split": split, **episode(condition, timing, dispatcher, seed,
-                    tr_writer if split in ("sealed_test", "smoke") else None)}
+                    tr_writer if split in ("sealed_test", "smoke") else None,
+                    config_fn=config_fn, version=version)}
                 if ep_writer is None:
                     ep_writer = csv.DictWriter(ep_file, fieldnames=list(row))
                     ep_writer.writeheader()
@@ -424,13 +430,16 @@ def run(profile, output_dir):
                     ep_file.flush(); tr_file.flush()
                     manifest["completed_episodes"] = len(rows)
                     write_json(output / "manifest.json", manifest)
-        integrity = audit_rows(rows, splits)
+        integrity = audit_rows(rows, splits, conditions=conditions, version=version, registry=registry)
         integrity["decision_replay"] = audit_decisions(
             trace_path, sum(len(v) for k, v in splits.items() if k in ("sealed_test", "smoke"))
-            * len(CONDITIONS) * len(TIMINGS) * len(DISPATCHERS))
+            * len(conditions) * len(TIMINGS) * len(DISPATCHERS),
+            config_fn=config_fn, version=version)
         write_json(output / "integrity.json", integrity)
         shutil.copy2(partial, output / "episodes.csv")
-        summaries = {split: analysis(rows, split) for split in splits}
+        summaries = {split: analysis(rows, split, conditions=conditions,
+                    analysis_seed=analysis_seed, version=version, confidence=confidence)
+                    for split in splits}
         write_json(output / "summary.json", {"status": "ENGINEERING_ONLY" if profile == "smoke" else "COMPLETED",
                     "panels": summaries})
         manifest.update(status="COMPLETED", completed_episodes=len(rows),
