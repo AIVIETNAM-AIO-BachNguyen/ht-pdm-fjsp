@@ -19,8 +19,11 @@ def reference():
 
 
 class DiagnosticEnv(e.ResourceEnv):
+    def __init__(self,*args,physical_version=VERSION,**kwargs):
+        self.physical_version=physical_version;super().__init__(*args,**kwargs)
+
     def reset(self):
-        self.episode_index+=1;self.physical_seed=e.role_seed(self.seed,f'{VERSION}:N4:physical');self.env.reset(self.physical_seed);self.active=True;self.broker_totals=dict.fromkeys(('order_forward','order_reverse','conflicts','rejected_proposals'),0)
+        self.episode_index+=1;self.physical_seed=e.role_seed(self.seed,f'{self.physical_version}:N4:physical');self.env.reset(self.physical_seed);self.active=True;self.broker_totals=dict.fromkeys(('order_forward','order_reverse','conflicts','rejected_proposals'),0)
         self.population=hashlib.sha256(json.dumps(dict(seed=self.physical_seed,state=asdict(self.env.state),events=self.env.events),sort_keys=True).encode()).hexdigest();return self.observe()
 
 
@@ -71,13 +74,13 @@ def primary(records):
     return result,checks
 
 
-def replay_physics(directory,raw_seeds,arrays,observations,episode_metrics,h,guard):
+def replay_physics(directory,raw_seeds,arrays,observations,episode_metrics,h,guard,physical_version=VERSION):
     episodes={};count=0;policy={}
     for row in h.rows(directory/'policy.csv'):policy[int(row['episode']),int(row['tick'])]=row
     e.check(len(policy)==48*len(raw_seeds),'complete policy log')
     for row in h.rows(directory/'physical.csv'):
         if count%1000==0:guard()
-        i,tick=int(row['episode']),int(row['tick']);s=json.loads(row['state']);pairs=tuple(map(tuple,json.loads(row['action'])));physical=h.seed(raw_seeds[i],f'{VERSION}:N4:physical')
+        i,tick=int(row['episode']),int(row['tick']);s=json.loads(row['state']);pairs=tuple(map(tuple,json.loads(row['action'])));physical=h.seed(raw_seeds[i],f'{physical_version}:N4:physical')
         if i not in episodes:
             initial,events,pop=h.initial_events(physical);episodes[i]=dict(state=initial,events=events,pop=pop,tick=0,metrics={},reward=np.zeros(48))
         ep=episodes[i];e.check(ep['state']==s and ep['tick']==tick and json.loads(row['events'])==ep['events'][tick] and int(row['physical_seed'])==physical,'fresh seeded state/event chain')
@@ -97,10 +100,10 @@ def replay_physics(directory,raw_seeds,arrays,observations,episode_metrics,h,gua
     e.check(count==len(raw_seeds)*60 and len(episodes)==len(raw_seeds),'complete physical grid');return count
 
 
-def collect(model,raw_seeds,action_seed,directory,guard):
+def collect(model,raw_seeds,action_seed,directory,guard,physical_version=VERSION):
     """One fixed model, shared trajectories for all three estimators."""
     directory=Path(directory);directory.mkdir(parents=True,exist_ok=False);r,h=reference();seal=e.learner.parameter_digest(model);e.check(next(model.actor.parameters()).dtype==torch.float64,'frozen F64 actor')
-    physical=e.Journal(directory/'physical.csv');policy=e.Journal(directory/'policy.csv');envs=[DiagnosticEnv(raw,4,e.CORE[0],journal=e.old.Tags(physical,dict(episode=i))) for i,raw in enumerate(raw_seeds)];obs=[env.reset() for env in envs];rng=torch.Generator().manual_seed(action_seed);histories=[[] for _ in envs];actions=[[] for _ in envs];rewards=[[] for _ in envs];episode_metrics={}
+    physical=e.Journal(directory/'physical.csv');policy=e.Journal(directory/'policy.csv');envs=[DiagnosticEnv(raw,4,e.CORE[0],journal=e.old.Tags(physical,dict(episode=i)),physical_version=physical_version) for i,raw in enumerate(raw_seeds)];obs=[env.reset() for env in envs];rng=torch.Generator().manual_seed(action_seed);histories=[[] for _ in envs];actions=[[] for _ in envs];rewards=[[] for _ in envs];episode_metrics={}
     try:
         for tick in range(48):
             guard();batch=double_batch(obs);u,_,_=model.sample(batch,rng)
@@ -114,7 +117,7 @@ def collect(model,raw_seeds,action_seed,directory,guard):
     with torch.no_grad():
         logs,_,value=model.evaluate(batch,torch.tensor(u));cache=baseline_cache(model,batch,torch.tensor(u),value)
     dense=r.dense_baselines(flat,u,weights,h);errors={};errors['logs']=close(logs.numpy(),dense['factors'],'dense physical factors');errors['value']=close(value.numpy(),h.mlp(observations['state'].astype(float),weights,'critic').ravel()*115.2,'NumPy state V');errors['actual']=close(cache['actual_values'].numpy(),dense['actual'],'dense actual removal');errors['conditional']=close(cache['mixed_values'].numpy(),dense['mixed'],'dense conditional removal')
-    arrays=dict(actions=u,rewards=reward.ravel(),returns=returns,value=value.numpy(),actual=cache['actual_values'].numpy(),conditional=cache['mixed_values'].numpy(),logs=logs.numpy());physical_count=replay_physics(directory,raw_seeds,arrays,observations,episode_metrics,h,guard)
+    arrays=dict(actions=u,rewards=reward.ravel(),returns=returns,value=value.numpy(),actual=cache['actual_values'].numpy(),conditional=cache['mixed_values'].numpy(),logs=logs.numpy());physical_count=replay_physics(directory,raw_seeds,arrays,observations,episode_metrics,h,guard,physical_version)
     replay_rng=torch.Generator().manual_seed(action_seed);lp=dense['logp'].reshape(len(raw_seeds),48,2,5)
     for tick in range(48):
         expected=torch.stack([torch.multinomial(torch.tensor(np.exp(lp[:,tick,j])),1,generator=replay_rng).squeeze(-1) for j in range(2)],-1).numpy();e.check(np.array_equal(expected,u.reshape(-1,48,2)[:,tick]),'independent F64 stochastic draw replay')
