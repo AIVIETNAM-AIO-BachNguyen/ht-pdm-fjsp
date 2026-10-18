@@ -50,7 +50,7 @@ measurements.
 | V4 full vs centralized PPO, N4 | 0.0778% gain, interval [−0.2960%, 0.6168%] | Passes registered 1% noninferiority; does not show superiority |
 | V4 full vs matched independent graph, N4 | 1.6430% gain, interval [−0.5997%, 5.7302%] | Positive coordination effect unconfirmed at N4 |
 | V4 full vs matched independent graph, N8/N16/N32 | 20.7877% / 43.7460% / 56.8626% gains; registered lower bounds positive | Entire reservation/message service benefits balanced larger settings |
-| B1 full vs mask-only vs no-reservation | Development in progress; new TEST sealed | Only full vs mask-only can support a prefix allocation claim |
+| B1 full vs mask-only vs no-reservation | New N4/N8 DEV gate failed: pooled +0.2205%; N4 +0.6746%, N8 −0.2437%; TEST remains sealed | V4 coordination benefit does not establish an added prefix benefit; no positive prefix claim |
 | A teacher-assisted vs scratch on N8/N16/N32 | Not yet run | Must match PPO/optimizer/physics budgets and disclose extra teacher compute |
 | C non-V4 skill/capacity and persistent-request families | Not yet run | Must beat matched mask-only and match DEV-selected strong FCFS/risk within registered bounds |
 
@@ -121,6 +121,10 @@ papers has been measured, so we must not claim superiority over their methods.
   physics or reference selection after TEST.
 - Report negative B1/A/C rounds, per-replica instability, health tradeoffs,
   decision latency and all extra teacher costs whether or not a gate passes.
+- The B1 development experiment failed its registered prefix gate despite
+  valid training/physical audits. Its N8 full-versus-mask-only gain was
+  −0.2437% on average and −1.6699% for one replica. It must remain visible
+  even if a later follow-up succeeds on a new panel.
 
 ## Planned manuscript sections
 
