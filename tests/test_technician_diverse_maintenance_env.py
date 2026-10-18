@@ -100,3 +100,15 @@ def test_scientific_development_has_no_test_seeds():
     assert not x.settings('development')['test_seeds']
     assert x.settings('smoke')['configs']==[
         ['skill_bottleneck',8],['long_service',8]]
+
+
+@pytest.mark.parametrize('family',FAMILIES)
+def test_n16_graph_select_with_persistent_busy_requests(family):
+    cfg=x.settings('smoke');seed=cfg['train_seeds'][0]
+    env=DiverseEnv(cfg['development_seeds'][0],16,family,'reservation_ppo')
+    model=make_model('reservation_ppo',16,cfg,seed)
+    obs=env.reset();reward=0.
+    for _ in range(48):
+        obs,r,done,info=env.step(model.select(obs));reward+=r
+    assert done and info['episode_metrics']['invalid_assignments']==0
+    assert abs(-20*reward-info['episode_metrics']['extended_cost'])<1e-7
