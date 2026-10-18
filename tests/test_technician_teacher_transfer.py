@@ -85,3 +85,20 @@ def test_large_teacher_and_scratch_assignments_without_catalogue(monkeypatch,n):
         for _ in range(48):
             obs,_,done,info=env.step(model.select(obs))
         assert done and info['episode_metrics']['invalid_assignments']==0
+
+
+def test_independent_confirmation_resampling_requires_teacher_gain():
+    from scripts.verify_teacher_transfer_confirmation import independently_resample
+    config=dict(profile='smoke',scales=[8,16,32],train_seeds=[62800000],
+        test_seeds=[63000000,63000001],analysis_seed=63100000)
+    rows={};coordination=[]
+    for n in config['scales']:
+        for seed in config['test_seeds']:
+            for arm,cost in (('teacher_reservation_ppo',98.),('scratch_reservation_ppo',100.)):
+                rows[n,arm,62800000,seed]=dict(normalized_cost=cost,
+                    availability=.67,normalized_pending=0.,normalized_failures=.1)
+            coordination.append(dict(n=n,method='teacher_reservation_ppo',decision_ms=1.))
+    assert independently_resample(rows,config,coordination)['goal_pass']
+    for key,row in rows.items():
+        if key[1]=='teacher_reservation_ppo':row['normalized_cost']=100.
+    assert not independently_resample(rows,config,coordination)['goal_pass']
