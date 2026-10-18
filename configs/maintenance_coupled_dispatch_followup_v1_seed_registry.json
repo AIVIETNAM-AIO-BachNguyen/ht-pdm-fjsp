@@ -1,0 +1,23 @@
+{
+  "version": "maintenance_coupled_dispatch_followup_v1",
+  "smoke": [94000000],
+  "development": {"start": 94000100, "count": 8},
+  "sealed_test": {"start": 94000200, "count": 16},
+  "analysis": 94000400,
+  "development_configs": {
+    "hub_dev": [[2,0],[2,3],[3,2],[3,4]],
+    "balanced_dev": [[2,0],[0,3],[2,3],[3,2]],
+    "bottleneck_dev": [[2,0],[3,0],[2,0],[3,2]],
+    "dense3_dev": [[2,3,3],[3,2,3],[3,3,2],[2,3,2]],
+    "sparse3_dev": [[2,0,0],[0,2,0],[0,0,3],[3,2,2]],
+    "cross3_dev": [[2,3,0],[0,2,3],[3,0,2],[2,3,2]]
+  },
+  "sealed_test_configs": {
+    "hub_test": [[3,0],[3,2],[2,3],[4,2]],
+    "balanced_test": [[3,0],[0,2],[3,4],[2,3]],
+    "bottleneck_test": [[3,0],[2,0],[4,0],[2,3]],
+    "dense3_test": [[3,2,4],[2,3,4],[4,3,2],[3,2,3]],
+    "sparse3_test": [[3,0,0],[0,3,0],[0,0,2],[2,3,3]],
+    "cross3_test": [[3,2,0],[0,3,2],[2,0,3],[3,2,3]]
+  }
+}
