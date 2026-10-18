@@ -136,3 +136,15 @@ chạy dưới user service `codex-reservation-b3-dev-20261018T173438Z` với
 3 bundle, N4/N8, 32 seed DEV/scale; panel confirmation 256 TEST seed/scale
 giữ sealed cho đến khi DEV gate và kiểm toán độc lập cùng PASS. B1/B2 FAIL
 và B1/B2 TEST sealed giữ nguyên.
+
+
+**Chuẩn bị confirmation B3 (18-10-2026 17:38 UTC):** nhánh riêng
+`codex/reservation-prefix-capacity-v3-confirmation`, commit `079001a` đã
+push. Runner này yêu cầu DEV `COMPLETED`, gate nội bộ PASS, TEST chưa mở,
+protocol/registry và mọi source module học/physics trùng snapshot DEV; thêm
+điều kiện báo cáo audit DEV độc lập `DEV_GATE_PASS` khớp đúng manifest hash
+và verifier hash. Bài kiểm tra source guard khớp snapshot DEV đang chạy;
+9 targeted tests PASS. Verifier độc lập tăng phạm vi lên cả quỹ đạo full
+và mask-only: smoke kỹ thuật 384+384 state, 2.304 decoder stage, 2.400
+physical tick, zero invalid, PASS. Không thay learner, seed, budget hay ngưỡng.
+Chỉ dùng runner nếu DEV B3 và audit độc lập cùng PASS; hiện TEST sealed.

@@ -241,3 +241,12 @@ disjoint panels are in `docs/technician_prefix_capacity_v3_plan.md` and
 and its confirmation TEST remains sealed. The engineering smoke and its
 independent replay establish implementation integrity only. B1 and B2
 negative developmental verdicts are retained whatever B3 shows.
+
+
+A separate confirmation-only branch (`079001a`) now binds any B3 TEST
+opening to the exact DEV source/protocol/registry and an independent DEV
+`DEV_GATE_PASS` report with the source manifest and verifier hashes. Its
+independent replay checks both the full and mask-only policy trajectories;
+on engineering smoke it covered 768 states, 2,304 decoder stages, 2,400
+physical ticks and zero invalid assignments. These checks remain engineering
+evidence only while B3 DEV is running.
