@@ -215,3 +215,15 @@ không phải contrast chính). Source code đã push trước DEV FULL. Run
 `codex-reservation-b4-dev-20261018T231458Z` mở **chỉ** DEV N4/N8,
 3 bundle × 32 seed DEV, artifact timestamp riêng; 256 TEST seed/scale
 của B4 vẫn sealed. B1/B2/B3 FAIL và TEST sealed không đổi.
+
+**Chuẩn bị confirmation B4 (18-10-2026 23:19 UTC):** nhánh riêng
+`codex/reservation-prefix-residual-v4-confirmation`, commit `c1f8d5c`
+đã push. Runner yêu cầu B4 DEV `COMPLETED`, internal audit PASS,
+DEV screen PASS, TEST sealed, protocol/registry và các module học/physics
+khớp snapshot DEV, cộng thêm independent DEV `DEV_GATE_PASS` gắn exact
+manifest/verifier hash. Source guard đã PASS read-only trên snapshot
+B4 DEV đang chạy; 10 focused tests PASS. Verifier TEST độc lập mở rộng
+kiểm cả quỹ đạo full/mask-only, residual/logit, legal set và physics:
+engineering smoke 384+384 state, 2.304 stage, 2.400 tick, zero invalid,
+PASS. Đây là chuẩn bị đường mở TEST có điều kiện, không là kết quả khoa học
+hay giấy phép mở TEST khi DEV chưa đạt.
