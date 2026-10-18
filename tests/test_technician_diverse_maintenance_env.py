@@ -1,7 +1,11 @@
 import numpy as np
 import pytest
+import torch
 
 from ht_pdm_fjsp.maintenance_dispatch import DispatchState
+from ht_pdm_fjsp.maintenance_balanced_algorithms import parameter_digest, tensors
+from ht_pdm_fjsp import technician_diverse_maintenance_experiment as x
+from ht_pdm_fjsp.technician_relational_prefix_experiment import make_model
 from ht_pdm_fjsp.technician_diverse_maintenance_env import (
     DiverseEnv, FAMILIES, SCALES, family_config,
 )
@@ -67,3 +71,32 @@ def test_coordinated_duplicate_and_unrequested_proposal_rejected():
         env.resolve(np.asarray([1,0,1]))
     with pytest.raises(ValueError,match='unrequested'):
         env.resolve(np.asarray([4,0,0]))
+
+
+@pytest.mark.parametrize('family',FAMILIES)
+def test_full_and_mask_only_have_identical_stage_masks_on_adapter(family):
+    cfg=x.settings('smoke');seed=cfg['train_seeds'][0]
+    n=8;env=DiverseEnv(cfg['development_seeds'][0],n,family,'reservation_ppo')
+    obs=env.reset()
+    full=make_model('reservation_ppo',n,cfg,seed)
+    mask=make_model('mask_only_ppo',n,cfg,seed)
+    assert parameter_digest(full)==parameter_digest(mask)
+    with torch.no_grad():
+        action=full.select(obs)
+        batch=tensors({k:np.asarray(v)[None] for k,v in obs.items()})
+        chosen=torch.as_tensor(action[None],dtype=torch.long)
+        ft=[];mt=[]
+        full.trace(batch,recorded=chosen,audit=ft)
+        mask.trace(batch,recorded=chosen,audit=mt)
+    assert len(ft)==len(mt)==env.config.technicians
+    for a,b in zip(ft,mt,strict=True):
+        assert torch.equal(a['legal'],b['legal'])
+        assert torch.equal(a['resource'],b['resource'])
+        assert not torch.count_nonzero(b['prefix'])
+    assert x.seed_audit()['status']=='PASS'
+
+
+def test_scientific_development_has_no_test_seeds():
+    assert not x.settings('development')['test_seeds']
+    assert x.settings('smoke')['configs']==[
+        ['skill_bottleneck',8],['long_service',8]]
