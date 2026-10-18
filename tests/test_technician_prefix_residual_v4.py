@@ -146,3 +146,45 @@ def test_direct_residual_is_exact_shared_query_key_interaction():
         assert torch.equal(ft[stage]['legal'],mt[stage]['legal'])
         assert torch.equal(ft[stage]['resource'],mt[stage]['resource'])
     assert torch.count_nonzero(ft[2]['prefix_residual'])
+
+
+def test_confirmation_source_guard_rejects_changed_dev_snapshot(tmp_path, monkeypatch):
+    prior=tmp_path/'dev';snapshot=prior/'source_snapshot';snapshot.mkdir(parents=True)
+    live=tmp_path/'live';live.mkdir()
+    for name,content in [('protocol.md','locked protocol'),('seed_registry.json','locked seeds')]:
+        (prior/name).write_text(content)
+        (live/name).write_text(content)
+    (snapshot/'physics.py').write_text('physics = 1')
+    (live/'physics.py').write_text('physics = 1')
+    (snapshot/'technician_prefix_residual_v4_experiment.py').write_text('DEV runner')
+    (live/'technician_prefix_residual_v4_experiment.py').write_text('confirmation guard')
+    monkeypatch.setattr(x,'PLAN',live/'protocol.md')
+    monkeypatch.setattr(x,'REGISTRY',live/'seed_registry.json')
+    monkeypatch.setattr(x,'__file__',str(live/'technician_prefix_residual_v4_experiment.py'))
+    x.verify_development_source(prior)
+    (live/'physics.py').write_text('physics = 2')
+    with pytest.raises(RuntimeError,match='frozen learning source changed'):
+        x.verify_development_source(prior)
+    (live/'physics.py').write_text('physics = 1')
+    (live/'seed_registry.json').write_text('changed seeds')
+    with pytest.raises(RuntimeError,match='protocol or seed registry changed'):
+        x.verify_development_source(prior)
+
+
+def test_independent_dev_gate_requires_bound_pass(tmp_path):
+    import hashlib
+    import json
+    prior=tmp_path/'dev';prior.mkdir()
+    (prior/'manifest.json').write_text('manifest')
+    audit=tmp_path/'auditor';audit.mkdir()
+    verifier=audit/'audit_prefix_residual_development.py';verifier.write_text('independent auditor')
+    report=dict(status='PASS',verdict='DEV_GATE_PASS',test_opened=False,
+        source_artifact=str(prior),source_manifest_sha256=hashlib.sha256(b'manifest').hexdigest(),
+        verifier_sha256=hashlib.sha256(verifier.read_bytes()).hexdigest())
+    (audit/'audit.json').write_text(json.dumps(report))
+    assert x.verify_independent_development_audit(prior,audit)['verifier_sha256']==report['verifier_sha256']
+    with pytest.raises(ValueError,match='independent development audit'):
+        x.verify_independent_development_audit(prior,None)
+    report['verdict']='DEV_GATE_FAIL';(audit/'audit.json').write_text(json.dumps(report))
+    with pytest.raises(RuntimeError,match='independent development audit failed'):
+        x.verify_independent_development_audit(prior,audit)

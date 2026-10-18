@@ -182,6 +182,7 @@ def verify(root, output):
     models = {}
     tapes = {}
     counts = dict(physical_ticks=0, prefix_states=0, prefix_stages=0,
+                  full_trajectory_states=0, mask_trajectory_states=0,
                   nonzero_full_prefix_stages=0, nonzero_full_residual_stages=0,
                   same_state_residual_choice_changes=0, invalid_assignments=0)
     accumulated = {}
@@ -207,7 +208,7 @@ def verify(root, output):
             assert hashlib.sha256(obs["state"].tobytes()).hexdigest() == record["observation_sha256"]
             submitted = json.loads(record["submitted"])
             assert decode(config_n, prior, arm, submitted, tick) == pairs
-            if arm == "reservation_ppo":
+            if arm in ("reservation_ppo", "mask_only_ppo"):
                 model_key = (n, train_seed)
                 if model_key not in models:
                     models[model_key] = tuple(load_graph_model(root, choices, n, a, train_seed)
@@ -255,6 +256,8 @@ def verify(root, output):
                     if submitted[j]:
                         reserved.add(submitted[j] - 1)
                 counts["prefix_states"] += 1
+                counts["full_trajectory_states"] += int(arm == "reservation_ppo")
+                counts["mask_trajectory_states"] += int(arm == "mask_only_ppo")
         else:
             assert deadline(config_n, prior) == pairs
         following, cost, info = transition(config_n, prior, pairs, event)
@@ -268,7 +271,10 @@ def verify(root, output):
         assert tapes[key][2] == 60
         assert abs(total - float(rows[key]["extended_cost"])) < 1e-7
     assert counts["invalid_assignments"] == 0
-    assert counts["prefix_states"] == len(train) * len(tests) * len(scales) * 48
+    expected_trajectory_states = len(train) * len(tests) * len(scales) * 48
+    assert counts["full_trajectory_states"] == expected_trajectory_states
+    assert counts["mask_trajectory_states"] == expected_trajectory_states
+    assert counts["prefix_states"] == 2 * expected_trajectory_states
     means = {}
     for n in scales:
         means[n] = {arm: np.mean([float(rows[n, arm, t, s]["normalized_cost"])

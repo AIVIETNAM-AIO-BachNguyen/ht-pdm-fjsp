@@ -34,6 +34,39 @@ ARMS=(*GRAPH_ARMS,'ppo','mappo')
 def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def verify_development_source(prior):
+    """Bind confirmation learner, physics, protocol, and seeds to the DEV snapshot."""
+    if sha(prior/'protocol.md')!=sha(PLAN) or sha(prior/'seed_registry.json')!=sha(REGISTRY):
+        raise RuntimeError('prospective protocol or seed registry changed after development')
+    snapshot=prior/'source_snapshot'
+    saved_files=list(snapshot.glob('*.py'))
+    if not saved_files:
+        raise RuntimeError('development source snapshot missing')
+    for saved in saved_files:
+        if saved.name==Path(__file__).name:
+            continue  # This file gains only a confirmation gate after DEV launch.
+        current=Path(__file__).parent/saved.name
+        if not current.is_file() or sha(saved)!=sha(current):
+            raise RuntimeError(f'frozen learning source changed after development: {saved.name}')
+
+
+def verify_independent_development_audit(prior, audit_dir):
+    """Require independent DEV PASS bound to the exact DEV manifest and verifier."""
+    if audit_dir is None:
+        raise ValueError('sealed confirmation requires an independent development audit')
+    audit_dir=Path(audit_dir).resolve()
+    report=json.loads((audit_dir/'audit.json').read_text())
+    verifier=audit_dir/'audit_prefix_residual_development.py'
+    if (report.get('status')!='PASS' or report.get('verdict')!='DEV_GATE_PASS' or
+        report.get('test_opened') is not False or
+        Path(report.get('source_artifact','')).resolve()!=prior or
+        report.get('source_manifest_sha256')!=sha(prior/'manifest.json') or
+        report.get('verifier_sha256')!=sha(verifier)):
+        raise RuntimeError('independent development audit failed or does not bind to DEV')
+    return dict(path=str(audit_dir),report_sha256=sha(audit_dir/'audit.json'),
+        verifier_sha256=sha(verifier))
+
+
 def settings(profile):
     if profile not in ('smoke','development','confirmation'): raise ValueError('unknown profile')
     raw=json.loads(REGISTRY.read_text())['panels'][profile];smoke=profile=='smoke';final=profile=='confirmation'
@@ -315,7 +348,7 @@ def pool_results(futures,out,manifest,start,description):
         yield result
 
 
-def run(profile,output_dir,teacher_dir=None,development_artifact=None):
+def run(profile,output_dir,teacher_dir=None,development_artifact=None,independent_development_audit=None):
     cfg=settings(profile);out=Path(output_dir).resolve()
     if out.exists() and any(out.iterdir()): raise FileExistsError('prior run overwrite')
     dev_gate=None
@@ -327,10 +360,13 @@ def run(profile,output_dir,teacher_dir=None,development_artifact=None):
         prior_audit=json.loads((prior/'audit.json').read_text())
         if (prior_manifest['protocol']!=VERSION or prior_manifest['profile']!='development' or
             prior_manifest['status']!='COMPLETED' or prior_audit['status']!='PASS' or
-            not prior_summary['development_screen_pass']):
+            prior_manifest['test_opened'] or not prior_summary['development_screen_pass']):
             raise RuntimeError('development gate failed')
+        verify_development_source(prior)
+        independent=verify_independent_development_audit(prior,independent_development_audit)
         dev_gate=dict(path=str(prior),manifest_sha256=sha(prior/'manifest.json'),
-            summary_sha256=sha(prior/'summary.json'),audit_sha256=sha(prior/'audit.json'))
+            summary_sha256=sha(prior/'summary.json'),audit_sha256=sha(prior/'audit.json'),
+            independent_audit=independent)
     out.mkdir(parents=True,exist_ok=True);torch.set_num_threads(1);start=time.monotonic()
     git=dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip(),
@@ -591,7 +627,7 @@ def audit_run(out,cfg,devrows,rows,audits,choices,timeout=None):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--profile',choices=('smoke','development','confirmation'),required=True)
-    p.add_argument('--output-dir',required=True);p.add_argument('--teacher-dir');p.add_argument('--development-artifact')
-    args=p.parse_args();run(args.profile,args.output_dir,args.teacher_dir,args.development_artifact)
+    p.add_argument('--output-dir',required=True);p.add_argument('--teacher-dir');p.add_argument('--development-artifact');p.add_argument('--independent-development-audit')
+    args=p.parse_args();run(args.profile,args.output_dir,args.teacher_dir,args.development_artifact,args.independent_development_audit)
 
 if __name__=='__main__':main()
