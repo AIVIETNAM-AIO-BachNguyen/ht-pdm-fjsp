@@ -32,3 +32,18 @@ confirmatory của mọi kiến trúc prefix. Bước kế tiếp: chẩn đoán
 đã mở xem prefix có thật sự đổi action sau khi reservation mask/resource
 summary được cung cấp hay không; sau đó đăng ký tối đa một follow-up cơ chế
 trên seed mới nếu có lý do. Không dùng TEST V4/B1 để chọn follow-up.
+
+**Chẩn đoán B1 đã đăng ký sau FAIL (18-10-2026): COMPLETED, exploratory.**
+`artifacts/technician_prefix_b1_diagnostic_full_20261018T120638Z` chạy 192
+episode DEV, 9.216/18.432 kiểm tra legal mask N4/N8 bằng nhau chính xác;
+TEST vẫn sealed. Khi giữ nguyên trọng số full nhưng tắt prefix, quyết định
+đổi ở 21/4.608 state N4 và 621/4.608 state N8. Cost/máy full thấp hơn
+cùng trọng số không prefix lần lượt 2,045% và 2,624% trên panel này.
+Do đó giả thuyết chẩn đoán “prefix hiếm khi đổi hành động” không đúng, đặc
+biệt ở N8. Đây là can thiệp cùng trọng số trên quỹ đạo đã mở, có distribution
+shift và **không** thay thế contrast chính với mask-only được huấn luyện lại;
+B1 DEV vẫn FAIL. Bài học: biểu diễn prefix hiện tại có tác động, nhưng
+mask-only học lại có thể bù phần lớn lợi ích. Follow-up hợp lý cần kiểm tra
+liệu biểu diễn quan hệ giữa từng ứng viên và các cạnh đã chọn có vượt đối
+chứng học lại trên seed hoàn toàn mới; không diễn giải chênh lệch cùng trọng
+số là claim B.
