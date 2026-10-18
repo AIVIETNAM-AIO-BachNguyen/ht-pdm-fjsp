@@ -43,6 +43,63 @@ is adaptation with fine-tuning, not zero-shot transfer or evidence of total
 compute efficiency. A zero-shot N4 policy and scratch students require separate
 measurements.
 
+## Prospective evaluation design (methods locked; outcomes pending)
+
+The new experiments use disjoint registered training, DEV and confirmation
+seed streams. Learned arms in a matched comparison share the physical tape,
+public technician order, eligible checkpoint budgets and target-scale PPO
+schedule. Every fit spends 491,520 joint decisions, including fits whose DEV
+choice is an earlier checkpoint. Checkpoints at 0, 122,880, 245,760,
+368,640 and 491,520 decisions are selected by minimum mean DEV extended
+cost, with the earliest checkpoint breaking a tie. Selected-checkpoint cost,
+fixed-final cost, learning curves and zero-shot warm-policy cost are distinct
+measurements. Confirmation TEST is opened only after the corresponding
+registered DEV screen and independent DEV audit pass. No post-TEST
+checkpoint or heuristic reselection is allowed; 48-hour A1/B2 and 72-hour
+C1 hard stops classify timeout as INCOMPLETE.
+
+| Study | Primary matched contrast | DEV screen | Conditional confirmation |
+|---|---|---|---|
+| A1 teacher transfer | N4 teacher-distilled reservation graph versus the same graph initialized from matched random tensors and trained from scratch | Three student bundles; N8/N16/N32; 32 DEV episodes per checkpoint; pooled selected-cost gain at least 0.5%, no scale below −1%, positive at two scales, zero invalid assignments and health point guards | Five new student bundles; 64 new DEV episodes for selection and 256 sealed TEST episodes at each scale |
+| B2 prefix mechanism | Relational selected-edge message versus a separately trained equal-parameter mask-only actor with identical reservation feasibility | Three bundles; N4/N8; 32 DEV episodes per checkpoint; pooled full/mask gain at least 0.5%, neither scale below −1%, zero invalid assignments and health point guards | Five new bundles; N4/N8/N16/N32; 64 new DEV and 256 sealed TEST episodes per scale |
+| C1 maintenance diversity | The fixed B2 full architecture versus matched mask-only, plus a single FCFS/risk heuristic chosen globally on DEV | Three bundles; four registered configurations; 32 DEV episodes per configuration/checkpoint; full/mask gain at least 0.5%, neither family below −1%, full within 1% of the selected heuristic, zero invalid assignments and health point guards | Five new bundles; 64 new DEV and 256 sealed TEST episodes per configuration; heuristic choice frozen before TEST |
+
+A1 measures teacher assistance at N8/N16/N32 on the balanced V4 physics.
+It attributes any advantage to teacher information **plus its additional
+teacher, bank and distillation compute**. B2 isolates the selected-edge
+message: full and mask-only have the same legal sets and parameter count;
+the no-reservation arm measures a broader coordination contrast and cannot
+establish a prefix benefit. B2 replaces B1's shared average message with
+candidate-query attention over earlier selected edges. A WAIT adds no
+selected edge, and the message is zero for an empty prefix.
+
+C1 keeps one request and cost contract across two non-V4 families. Its
+`skill_bottleneck` configurations have N/K=8/3 and 16/6, one-tick service,
+and compatibility when `m%3` equals `j%3` or `(j+1)%3`. Its `long_service`
+configurations have N/K=8/4 and 16/8, compatibility when `j%4` equals
+`m%4` or `(m+1)%4`, and two- or four-tick nonpreemptive service. Requests
+are created at failure or age at least three and persist until assignment;
+the policy chooses assignment, not request creation. The full and mask-only
+actors see the same pending-request legal set. Both FCFS and risk rules run
+on DEV in every configuration; one global reference is selected by equal
+configuration mean cost, earliest-tie FCFS, before TEST. The paper must
+report both rules on TEST, the globally selected reference, warm zero-shot,
+full scratch, and the no-reservation arm.
+
+Confirmation uses a fixed 40,000-draw crossed bootstrap over paired student
+bundles and paired physical episodes, independently by scale or
+configuration. The one-sided Bonferroni level is 0.025 divided by 13, 17
+and 10 endpoints for A1, B2 and C1 respectively. Each primary selected-cost
+gain must reach 1% and have an adjusted lower bound above zero. Registered
+scale/family cost guards, availability, terminal pending and policy-failure
+bounds, zero invalid assignments, and p95 `model.select` at most 50 ms
+at N32 (A1/B2) or N16 (C1) are separate requirements. C1 also requires the adjusted lower bound for full versus its
+DEV-selected heuristic to be at least −1%. A positive point estimate alone
+cannot establish any claim. Independent verifiers must recompute the
+estimands and replay physical trajectories; the C1 stage-level legal-mask
+replay is prospectively limited to the first eight TEST seeds per
+configuration, while its physical transition replay covers the full panel.
+
 ## Registered experiments and result table
 
 | Contrast | Historical result / current status | Valid interpretation |
