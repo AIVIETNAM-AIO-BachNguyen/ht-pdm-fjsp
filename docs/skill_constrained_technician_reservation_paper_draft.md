@@ -250,3 +250,10 @@ independent replay checks both the full and mask-only policy trajectories;
 on engineering smoke it covered 768 states, 2,304 decoder stages, 2,400
 physical ticks and zero invalid assignments. These checks remain engineering
 evidence only while B3 DEV is running.
+
+
+The A1 and C1 confirmation runners now also require independent DEV PASS
+reports bound to the exact DEV manifest and saved verifier hash (confirmation
+only commits `1b68a49` and `d1a8418`). Their scientific TEST panels remain
+sealed while DEV training proceeds. These guards support provenance and do
+not supply evidence for either claim.

@@ -148,3 +148,17 @@ và verifier hash. Bài kiểm tra source guard khớp snapshot DEV đang chạy
 và mask-only: smoke kỹ thuật 384+384 state, 2.304 decoder stage, 2.400
 physical tick, zero invalid, PASS. Không thay learner, seed, budget hay ngưỡng.
 Chỉ dùng runner nếu DEV B3 và audit độc lập cùng PASS; hiện TEST sealed.
+
+
+**Gate audit độc lập cho confirmation A1/C1 (18-10-2026 17:42 UTC):**
+A1 runner trên nhánh `codex/reservation-teacher-transfer-confirmation`,
+commit `1b68a49` đã push, yêu cầu manifest DEV hoàn chỉnh, screen PASS,
+TEST sealed và báo cáo audit độc lập PASS khớp đúng artifact path, manifest
+hash, verifier hash. Protocol/registry và các module env/policy/distillation
+khớp snapshot DEV live trong kiểm tra read-only; 8 targeted tests PASS.
+C1 runner trên nhánh `codex/reservation-diverse-confirmation-v1`, commit
+`d1a8418` đã push, thêm cùng điều kiện audit độc lập khớp exact DEV
+artifact/manifest/verifier, và tiếp tục đóng băng rule FCFS/risk chọn bằng
+DEV; 3 focused confirmation tests PASS. Hai thay đổi chỉ ở đường mở
+confirmation, không sửa learner/physics/panel của DEV đang chạy. Chưa mở
+A1/C1 TEST và chưa có verdict mới.
