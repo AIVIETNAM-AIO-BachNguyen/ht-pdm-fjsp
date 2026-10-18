@@ -30,16 +30,6 @@ from ht_pdm_fjsp.technician_relational_prefix_distillation import (
 
 
 ROOT=Path(__file__).resolve().parents[2]
-LOCKED_FILES=(
-    'technician_diverse_maintenance_env.py',
-    'technician_diverse_maintenance_experiment.py',
-    'technician_relational_prefix_policy.py',
-    'technician_relational_prefix_distillation.py',
-    'technician_relational_prefix_env.py',
-    'technician_relational_prefix_experiment.py',
-)
-
-
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -84,9 +74,10 @@ def prior_gate(profile,prior):
             raise RuntimeError('engineering smoke requires smoke prior')
     if sha(prior/'protocol.md')!=sha(core.PLAN) or sha(prior/'seed_registry.json')!=sha(core.REGISTRY):
         raise RuntimeError('C1 protocol/seed registry changed')
-    for name in LOCKED_FILES:
-        if sha(prior/'source_snapshot'/name)!=sha(ROOT/'src/ht_pdm_fjsp'/name):
-            raise RuntimeError(f'C1 frozen learner or adapter changed: {name}')
+    for snapshot in (prior/'source_snapshot').glob('*.py'):
+        current=ROOT/'src/ht_pdm_fjsp'/snapshot.name
+        if not current.is_file() or sha(snapshot)!=sha(current):
+            raise RuntimeError(f'C1 frozen source changed: {snapshot.name}')
     selection=read_json(prior/'reference_selection.json')
     if selection['selected_rule'] not in ('fcfs','risk') or selection['test_opened']:
         raise RuntimeError('C1 reference selection was not frozen on DEV')
