@@ -51,8 +51,9 @@ measurements.
 | V4 full vs matched independent graph, N4 | 1.6430% gain, interval [−0.5997%, 5.7302%] | Positive coordination effect unconfirmed at N4 |
 | V4 full vs matched independent graph, N8/N16/N32 | 20.7877% / 43.7460% / 56.8626% gains; registered lower bounds positive | Entire reservation/message service benefits balanced larger settings |
 | B1 full vs mask-only vs no-reservation | New N4/N8 DEV gate failed: pooled +0.2205%; N4 +0.6746%, N8 −0.2437%; TEST remains sealed | V4 coordination benefit does not establish an added prefix benefit; no positive prefix claim |
-| A teacher-assisted vs scratch on N8/N16/N32 | Not yet run | Must match PPO/optimizer/physics budgets and disclose extra teacher compute |
-| C non-V4 skill/capacity and persistent-request families | Not yet run | Must beat matched mask-only and match DEV-selected strong FCFS/risk within registered bounds |
+| A teacher-assisted vs scratch on N8/N16/N32 | A1 DEV running on fresh seeds; no verdict or TEST opened | Must match PPO/optimizer/physics budgets and disclose extra teacher compute |
+| B2 candidate-conditioned relational prefix vs mask-only | B2 DEV running on fresh seeds; no verdict or TEST opened | B1 negative result remains historical; B2 must pass its own matched contrast |
+| C non-V4 skill/capacity and persistent-request families | C1 DEV running on two prospectively fixed N8/N16 families; no verdict or TEST opened | Must beat matched mask-only and match DEV-selected strong FCFS/risk within registered bounds |
 
 V4 used 48 policy ticks and 12 common deadline-tail ticks, K=N/2, repeated
 balanced skill blocks. Its N32 failures per machine were higher than the
