@@ -1,0 +1,39 @@
+{
+  "protocol": "technician_prefix_capacity_v3",
+  "panels": {
+    "development": {
+      "train_seeds": [
+        67000000,
+        67000001,
+        67000002
+      ],
+      "development_start": 67100000,
+      "development_count": 32,
+      "analysis_seed": 67200000
+    },
+    "confirmation": {
+      "train_seeds": [
+        67400000,
+        67400001,
+        67400002,
+        67400003,
+        67400004
+      ],
+      "development_start": 67500000,
+      "development_count": 64,
+      "test_start": 67600000,
+      "test_count": 256,
+      "analysis_seed": 67700000
+    },
+    "smoke": {
+      "train_seeds": [
+        67800000
+      ],
+      "development_start": 67900000,
+      "development_count": 2,
+      "test_start": 68000000,
+      "test_count": 4,
+      "analysis_seed": 68100000
+    }
+  }
+}
