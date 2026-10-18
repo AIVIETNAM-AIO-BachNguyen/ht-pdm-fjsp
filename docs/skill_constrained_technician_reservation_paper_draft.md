@@ -72,7 +72,10 @@ assignments.
 | Scale-specific PPO | 5 × 2 arms × 4 scales × 491,520 = 19,660,800 joint decisions | 40 graph fits; additional to teacher training and bank |
 | V4 confirmation wall time | 76,390.11 s, about 21 h 13 min | Eight parallel CPU workers; includes training, DEV selection, TEST and replay; cannot attribute all wall time to one phase |
 | V4 inference | `model.select` p95 1.527–9.460 ms by N | Observation, environment stepping and communication excluded |
-| New B1 and future A/C | Populate from sealed artifacts after runs | Report per-phase decisions, updates, presentations, wall time and p95 end-to-end latency separately |
+| B1 DEV graph PPO | 18 fits × 491,520 = 8,847,360 joint decisions; 184,320 training episodes | Three full/mask-only/independent bundles at N4/N8; six N4 centralized reference evaluations were frozen, not additional learned fits |
+| B1 DEV teacher bank and distillation | 3 × 122,880 = 368,640 N4 bank states; 3 × 3 × 32 × 122,880 = 35,389,440 graph state presentations | Foundation PPO teachers were reused; these are additional to B1 target PPO |
+| B1 DEV wall time | 4,490.05 s, about 74 min 50 s | Includes bank, pretraining, training and DEV; no scientific TEST opened |
+| New A/B2/C1 | Populate from completed sealed artifacts | Report per-phase decisions, optimizer updates, presentations, wall time and p95 end-to-end latency separately |
 
 ## Prior art and novelty boundary
 
