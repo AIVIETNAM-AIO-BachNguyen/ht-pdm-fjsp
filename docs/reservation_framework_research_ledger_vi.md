@@ -50,11 +50,11 @@ số là claim B.
 
 ## Protocol đang chạy, chưa có verdict khoa học
 
-| Nhánh | Giả thuyết đã khóa / source commit của run | Artifact DEV | Trạng thái tính đến 18-10-2026 12:35 UTC |
+| Nhánh | Giả thuyết đã khóa / source commit của run | Artifact DEV hiện hành | Trạng thái tính đến 18-10-2026 14:20 UTC |
 |---|---|---|---|
-| A1 teacher→student | Teacher N4 + distillation giúp graph reservation trên N8/N16/N32 so với scratch cùng PPO budget; `82c1989` | `/home/bachng/ht-pdm-fjsp-teacher-transfer-v1/artifacts/technician_teacher_transfer_v1_development_20261018T120344Z` | RUNNING; TEST sealed. Verifier độc lập đã PASS trên smoke, chờ DEV. |
-| B2 relational prefix | Candidate-conditioned attention trên các selected edge giúp hơn mask-only học lại, sau B1 FAIL; `edbab65` | `/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_20261018T121324Z` | RUNNING; TEST sealed. Verifier được kiểm trên B1 artifact âm. |
-| C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `27e896f` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T122731Z` | RUNNING; TEST sealed. Verifier độc lập đã PASS trên smoke. |
+| A1 teacher→student | Teacher N4 + distillation giúp graph reservation trên N8/N16/N32 so với scratch cùng PPO budget; `a60f716` | `/home/bachng/ht-pdm-fjsp-teacher-transfer-v1/artifacts/technician_teacher_transfer_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke, chờ DEV hoàn chỉnh. |
+| B2 relational prefix | Candidate-conditioned attention trên các selected edge giúp hơn mask-only học lại, sau B1 FAIL; `b2a271f` | `/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_20261018T134357Z` | RUNNING, teacher bank và distillation; TEST sealed. Verifier được kiểm trên B1 artifact âm. |
+| C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `396ecb5` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z` | RUNNING, teacher bank và distillation; TEST sealed. Verifier độc lập đã PASS trên smoke. |
 
 Các commit verifier/doc sau khi run bắt đầu không đổi mã learner/protocol/
 registry được chụp trong artifact. Không diễn giải progress huấn luyện hoặc
