@@ -1,0 +1,27 @@
+{
+  "protocol": "technician_teacher_transfer_v1",
+  "panels": {
+    "development": {
+      "train_seeds": [62000000, 62000001, 62000002],
+      "development_start": 62100000,
+      "development_count": 32,
+      "analysis_seed": 62200000
+    },
+    "confirmation": {
+      "train_seeds": [62400000, 62400001, 62400002, 62400003, 62400004],
+      "development_start": 62500000,
+      "development_count": 64,
+      "test_start": 62600000,
+      "test_count": 256,
+      "analysis_seed": 62700000
+    },
+    "smoke": {
+      "train_seeds": [62800000],
+      "development_start": 62900000,
+      "development_count": 2,
+      "test_start": 63000000,
+      "test_count": 4,
+      "analysis_seed": 63100000
+    }
+  }
+}
