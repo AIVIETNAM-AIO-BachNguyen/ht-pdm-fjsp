@@ -162,7 +162,8 @@ def verify(root, output):
     models = {}
     tapes = {}
     counts = dict(physical_ticks=0, matched_feasibility_states=0,
-                  matched_feasibility_stages=0, invalid_assignments=0)
+                  matched_feasibility_stages=0, teacher_trajectory_states=0,
+                  scratch_trajectory_states=0, invalid_assignments=0)
     accumulated = {}
     for row in tqdm(decisions, desc="Independent physical and teacher/scratch replay", unit="tick"):
         key = episode_key(row)
@@ -186,7 +187,7 @@ def verify(root, output):
             assert hashlib.sha256(obs["state"].tobytes()).hexdigest() == record["observation_sha256"]
             submitted = json.loads(record["submitted"])
             assert decode(config_n, prior, arm, submitted, tick) == pairs
-            if arm == GRAPH_ARMS[0]:
+            if arm in GRAPH_ARMS:
                 model_key = (n, train_seed)
                 if model_key not in models:
                     models[model_key] = tuple(load_graph_model(root, choices, n, a, train_seed)
@@ -209,6 +210,8 @@ def verify(root, output):
                     if submitted[j]:
                         reserved.add(submitted[j] - 1)
                 counts["matched_feasibility_states"] += 1
+                counts["teacher_trajectory_states"] += int(arm == GRAPH_ARMS[0])
+                counts["scratch_trajectory_states"] += int(arm == GRAPH_ARMS[1])
         else:
             assert deadline(config_n, prior) == pairs
         following, cost, info = transition(config_n, prior, pairs, event)
@@ -222,7 +225,10 @@ def verify(root, output):
         assert tapes[key][2] == 60
         assert abs(total - float(rows[key]["extended_cost"])) < 1e-7
     assert counts["invalid_assignments"] == 0
-    assert counts["matched_feasibility_states"] == len(train) * len(tests) * len(scales) * 48
+    expected_trajectory_states = len(train) * len(tests) * len(scales) * 48
+    assert counts["teacher_trajectory_states"] == expected_trajectory_states
+    assert counts["scratch_trajectory_states"] == expected_trajectory_states
+    assert counts["matched_feasibility_states"] == 2 * expected_trajectory_states
     means = {}
     for n in scales:
         means[n] = {arm: np.mean([float(rows[n, arm, t, s]["normalized_cost"])

@@ -19,3 +19,11 @@ It replayed 720 physical ticks, 192 matched feasibility states/768 stages,
 and validated 12 secondary fixed-final/zero-shot episodes, with zero invalid
 assignments. The tiny smoke cost gain is engineering-only. The verifier will
 run on scientific confirmation only if A1 DEV passes its registered gate.
+
+The verifier was strengthened before any A1 scientific TEST to check matching
+feasibility and remaining-resource summaries on both selected-policy
+trajectories. Fresh engineering replay
+`artifacts/technician_teacher_transfer_v1_both_trajectory_audit_20261018T132934Z`
+PASSed: 192 teacher states, 192 scratch states, 1,536 decoder stages,
+720 scalar physical ticks and zero invalid assignments. Only the read-only
+verifier changed; learner, protocol, seeds and active DEV source stayed frozen.
