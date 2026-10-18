@@ -101,3 +101,33 @@ def test_independent_resampling_requires_matched_gain():
     for key,row in rows.items():
         if key[1]=='reservation_ppo':row['normalized_cost']=100.
     assert not independently_resample(rows,config,coordination)['goal_pass']
+
+
+def test_confirmation_rejects_changed_development_source(tmp_path, monkeypatch):
+    prior=tmp_path/'dev';saved=prior/'source_snapshot';saved.mkdir(parents=True)
+    live=tmp_path/'live';live.mkdir()
+    (prior/'protocol.md').write_text('locked protocol')
+    (prior/'seed_registry.json').write_text('locked seeds')
+    (saved/'physics.py').write_text('physics = 1')
+    (live/'physics.py').write_text('physics = 1')
+    (saved/'technician_relational_prefix_experiment.py').write_text('DEV runner')
+    (live/'technician_relational_prefix_experiment.py').write_text('confirmation guard')
+    monkeypatch.setattr(x,'PLAN',live/'protocol.md')
+    monkeypatch.setattr(x,'REGISTRY',live/'seed_registry.json')
+    monkeypatch.setattr(x,'__file__',str(live/'technician_relational_prefix_experiment.py'))
+    (live/'protocol.md').write_text('locked protocol')
+    (live/'seed_registry.json').write_text('locked seeds')
+    x.verify_development_source(prior)
+    (saved/'physics.py').unlink()
+    (saved/'technician_relational_prefix_experiment.py').unlink()
+    with pytest.raises(RuntimeError,match='snapshot missing'):
+        x.verify_development_source(prior)
+    (saved/'physics.py').write_text('physics = 1')
+    (saved/'technician_relational_prefix_experiment.py').write_text('DEV runner')
+    (live/'physics.py').write_text('physics = 2')
+    with pytest.raises(RuntimeError,match='frozen learning source changed'):
+        x.verify_development_source(prior)
+    (live/'physics.py').write_text('physics = 1')
+    (live/'seed_registry.json').write_text('new seeds')
+    with pytest.raises(RuntimeError,match='protocol or seed registry changed'):
+        x.verify_development_source(prior)

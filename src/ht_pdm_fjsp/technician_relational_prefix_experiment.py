@@ -34,6 +34,23 @@ ARMS=(*GRAPH_ARMS,'ppo','mappo')
 def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def verify_development_source(prior):
+    """Keep confirmation physics, learner, protocol and seeds frozen to DEV."""
+    if sha(prior/'protocol.md')!=sha(PLAN) or sha(prior/'seed_registry.json')!=sha(REGISTRY):
+        raise RuntimeError('prospective protocol or seed registry changed after development')
+    snapshot=prior/'source_snapshot'
+    saved_files=list(snapshot.glob('*.py'))
+    if not saved_files:
+        raise RuntimeError('development source snapshot missing')
+    for saved in saved_files:
+        # This runner may gain a confirmation-only seal guard after DEV starts.
+        if saved.name==Path(__file__).name:
+            continue
+        current=Path(__file__).parent/saved.name
+        if not current.is_file() or sha(saved)!=sha(current):
+            raise RuntimeError(f'frozen learning source changed after development: {saved.name}')
+
+
 def settings(profile):
     if profile not in ('smoke','development','confirmation'): raise ValueError('unknown profile')
     raw=json.loads(REGISTRY.read_text())['panels'][profile];smoke=profile=='smoke';final=profile=='confirmation'
@@ -327,8 +344,9 @@ def run(profile,output_dir,teacher_dir=None,development_artifact=None):
         prior_audit=json.loads((prior/'audit.json').read_text())
         if (prior_manifest['protocol']!=VERSION or prior_manifest['profile']!='development' or
             prior_manifest['status']!='COMPLETED' or prior_audit['status']!='PASS' or
-            not prior_summary['development_screen_pass']):
+            prior_manifest['test_opened'] or not prior_summary['development_screen_pass']):
             raise RuntimeError('development gate failed')
+        verify_development_source(prior)
         dev_gate=dict(path=str(prior),manifest_sha256=sha(prior/'manifest.json'),
             summary_sha256=sha(prior/'summary.json'),audit_sha256=sha(prior/'audit.json'))
     out.mkdir(parents=True,exist_ok=True);torch.set_num_threads(1);start=time.monotonic()
