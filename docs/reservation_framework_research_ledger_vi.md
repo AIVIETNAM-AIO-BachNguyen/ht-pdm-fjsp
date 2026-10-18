@@ -48,13 +48,13 @@ liệu biểu diễn quan hệ giữa từng ứng viên và các cạnh đã ch
 chứng học lại trên seed hoàn toàn mới; không diễn giải chênh lệch cùng trọng
 số là claim B.
 
-## Protocol đang chạy, chưa có verdict khoa học
+## Protocol và trạng thái khoa học
 
-| Nhánh | Giả thuyết đã khóa / source commit của run | Artifact DEV hiện hành | Trạng thái tính đến 18-10-2026 14:20 UTC |
+| Nhánh | Giả thuyết đã khóa / source commit của run | Artifact DEV hiện hành | Trạng thái tính đến 18-10-2026 17:12 UTC |
 |---|---|---|---|
 | A1 teacher→student | Teacher N4 + distillation giúp graph reservation trên N8/N16/N32 so với scratch cùng PPO budget; `a60f716` | `/home/bachng/ht-pdm-fjsp-teacher-transfer-v1/artifacts/technician_teacher_transfer_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke, chờ DEV hoàn chỉnh. |
-| B2 relational prefix | Candidate-conditioned attention trên các selected edge giúp hơn mask-only học lại, sau B1 FAIL; `b2a271f` | `/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_20261018T134357Z` | RUNNING, teacher bank và distillation; TEST sealed. Verifier được kiểm trên B1 artifact âm. |
-| C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `396ecb5` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z` | RUNNING, teacher bank và distillation; TEST sealed. Verifier độc lập đã PASS trên smoke. |
+| B2 relational prefix | Candidate-conditioned attention trên các selected edge giúp hơn mask-only học lại, sau B1 FAIL; `b2a271f` | `/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_20261018T134357Z` | DEV GATE FAIL; kiểm toán độc lập PASS; TEST sealed. |
+| C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `396ecb5` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke. |
 
 Các commit verifier/doc sau khi run bắt đầu không đổi mã learner/protocol/
 registry được chụp trong artifact. Không diễn giải progress huấn luyện hoặc
@@ -84,3 +84,21 @@ nguyên nhân/signal cụ thể chưa xác định. Incident hash-bound và các
 mới dưới detached user service đã ghi tại
 `docs/reservation_framework_execution_recovery_20261018.md`. Dùng artifact
 mới để audit; không dùng partial quality/checkpoint cũ để chọn model.
+
+**B2 DEV verdict (18-10-2026 17:12 UTC): FAIL, TEST sealed.** Run mới
+hoàn tất sạch (`systemd` exit 0, manifest `COMPLETED`, audit nội bộ PASS),
+không sử dụng artifact gián đoạn. Kiểm toán độc lập tại
+`/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_independent_audit_20261018T171152Z`
+PASS: khớp 260 source seals, 475 output bindings, 184.320 episode huấn
+luyện, 3.072 episode DEV, 61.440 kiểm tra training tape ghép cặp, tính lại
+checkpoint/cost/health và xác nhận `test_opened=false` (manifest SHA-256
+`44f3ee1b272a16486e0e57a61031d368d84e9358aac36a1da49571b5a67e9c09`).
+Gain full so với mask-only học lại theo thước đo đã đăng ký: pooled
+**−0,1644%** (gate DEV +0,5%), N4 **−0,0168%**, N8 **−0,3119%**. Mọi
+health point guard và zero-invalid đều đạt, nhưng không cứu được cost gate.
+No-reservation có cost trung bình cao hơn full ở N8 DEV, song contrast đó
+chỉ đo toàn dịch vụ
+reservation/message; không chứng minh lợi ích của prefix. Không mở B2
+confirmation hay đổi ngưỡng/panel. B1 và B2 là hai kết quả DEV âm riêng
+biệt. Chẩn đoán/follow-up nếu có chỉ dùng train/DEV đã mở và seed mới được
+khóa trước; không dùng B2 TEST.

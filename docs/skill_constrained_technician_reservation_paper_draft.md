@@ -19,9 +19,10 @@ margin and improves over a matched graph policy that removes the entire
 coordination service at N8–N32. Its N4 cost superiority over centralized PPO is
 unproven; its N4 coordination advantage is also unproven. The historical
 comparison does not isolate prefix information from reservation feasibility,
-and all large policies receive scale-specific PPO fine-tuning. New matched
-ablations and heterogeneous workload panels are in progress. Until they pass,
-the supported conclusion is bounded to the balanced simulation family.
+and all large policies receive scale-specific PPO fine-tuning. Two
+prospective prefix DEV screens have failed. Teacher transfer and
+heterogeneous workload panels remain in progress. The supported positive
+conclusion is bounded to the historical balanced simulation family.
 
 ## Problem and method
 
@@ -109,7 +110,7 @@ configuration, while its physical transition replay covers the full panel.
 | V4 full vs matched independent graph, N8/N16/N32 | 20.7877% / 43.7460% / 56.8626% gains; registered lower bounds positive | Entire reservation/message service benefits balanced larger settings |
 | B1 full vs mask-only vs no-reservation | New N4/N8 DEV gate failed: pooled +0.2205%; N4 +0.6746%, N8 −0.2437%; TEST remains sealed | V4 coordination benefit does not establish an added prefix benefit; no positive prefix claim |
 | A teacher-assisted vs scratch on N8/N16/N32 | A1 DEV running on fresh seeds; no verdict or TEST opened | Must match PPO/optimizer/physics budgets and disclose extra teacher compute |
-| B2 candidate-conditioned relational prefix vs mask-only | B2 DEV running on fresh seeds; no verdict or TEST opened | B1 negative result remains historical; B2 must pass its own matched contrast |
+| B2 candidate-conditioned relational prefix vs mask-only | DEV gate failed: pooled −0.1644%, N4 −0.0168%, N8 −0.3119%; independent DEV audit passed; TEST sealed | The relational message has no demonstrated gain over a separately trained mask-only control on this DEV panel |
 | C non-V4 skill/capacity and persistent-request families | C1 DEV running on two prospectively fixed N8/N16 families; no verdict or TEST opened | Must beat matched mask-only and match DEV-selected strong FCFS/risk within registered bounds |
 
 V4 used 48 policy ticks and 12 common deadline-tail ticks, K=N/2, repeated
@@ -132,7 +133,10 @@ assignments.
 | B1 DEV graph PPO | 18 fits × 491,520 = 8,847,360 joint decisions; 184,320 training episodes | Three full/mask-only/independent bundles at N4/N8; six N4 centralized reference evaluations were frozen, not additional learned fits |
 | B1 DEV teacher bank and distillation | 3 × 122,880 = 368,640 N4 bank states; 3 × 3 × 32 × 122,880 = 35,389,440 graph state presentations | Foundation PPO teachers were reused; these are additional to B1 target PPO |
 | B1 DEV wall time | 4,490.05 s, about 74 min 50 s | Includes bank, pretraining, training and DEV; no scientific TEST opened |
-| New A/B2/C1 | Populate from completed sealed artifacts | Report per-phase decisions, optimizer updates, presentations, wall time and p95 end-to-end latency separately |
+| B2 DEV graph PPO | 18 fits × 491,520 = 8,847,360 joint decisions; 184,320 training episodes | Three full/mask-only/independent bundles at N4/N8; six N4 centralized references were frozen evaluations, not new fits |
+| B2 DEV teacher bank and distillation | 3 × 122,880 = 368,640 N4 bank states; 3 × 3 × 32 × 122,880 = 35,389,440 graph state presentations | Foundation PPO teachers reused; bank shared across three graph arms and scales |
+| B2 DEV wall time | 12,432.63 s, about 3 h 27 min | Shared 16-core lab with simultaneous A1/C1 jobs; wall time is not isolated CPU cost; no scientific TEST opened |
+| New A/C1 and any confirmation | Populate from completed sealed artifacts | Report per-phase decisions, optimizer updates, presentations, wall time and p95 end-to-end latency separately |
 
 ## Prior art and novelty boundary
 
@@ -184,8 +188,14 @@ papers has been measured, so we must not claim superiority over their methods.
   workloads are credible competitors; a coupled-dispatch follow-up failed
   against them. The new framework must be compared directly, without changing
   physics or reference selection after TEST.
-- Report negative B1/A/C rounds, per-replica instability, health tradeoffs,
+- Report negative B1/B2/A/C rounds, per-replica instability, health tradeoffs,
   decision latency and all extra teacher costs whether or not a gate passes.
+- B2 development also failed its preregistered prefix gate on new N4/N8
+  seeds: pooled full/mask-only gain −0.1644% versus the +0.5% DEV gate,
+  with negative point gains at both scales. Its independent auditor passed
+  source/output bindings and the recomputed cost/health contrasts. All health
+  point guards passed, but B2 TEST remains sealed and no B2 positive claim
+  is supported.
 - The B1 development experiment failed its registered prefix gate despite
   valid training/physical audits. Its N8 full-versus-mask-only gain was
   −0.2437% on average and −1.6699% for one replica. It must remain visible
