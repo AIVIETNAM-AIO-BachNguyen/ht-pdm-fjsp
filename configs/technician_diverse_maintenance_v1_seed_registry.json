@@ -1,0 +1,27 @@
+{
+  "protocol": "technician_diverse_maintenance_v1",
+  "panels": {
+    "development": {
+      "train_seeds": [65000000, 65000001, 65000002],
+      "development_start": 65100000,
+      "development_count": 32,
+      "analysis_seed": 65200000
+    },
+    "confirmation": {
+      "train_seeds": [65400000, 65400001, 65400002, 65400003, 65400004],
+      "development_start": 65500000,
+      "development_count": 64,
+      "test_start": 65600000,
+      "test_count": 256,
+      "analysis_seed": 65700000
+    },
+    "smoke": {
+      "train_seeds": [65800000],
+      "development_start": 65900000,
+      "development_count": 2,
+      "test_start": 66000000,
+      "test_count": 4,
+      "analysis_seed": 66100000
+    }
+  }
+}
