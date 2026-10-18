@@ -200,6 +200,13 @@ papers has been measured, so we must not claim superiority over their methods.
   valid training/physical audits. Its N8 full-versus-mask-only gain was
   −0.2437% on average and −1.6699% for one replica. It must remain visible
   even if a later follow-up succeeds on a new panel.
+- A B2 DEV-only same-weight intervention found that zeroing the relational
+  message changed 21/4,608 N4 and 549/4,608 N8 policy-tick decisions.
+  The fitted full weights cost 1.3135% and 1.2121% less than their
+  message-off copies on those opened DEV panels, with one adverse N8
+  replica. This indicates use of the message within the fitted policy;
+  the separately trained mask-only actor still won the registered B2
+  contrast. The intervention cannot overturn B2's DEV failure.
 - A B1 DEV-only same-weight intervention found that removing prefix changed
   621/4,608 N8 decisions and increased cost 2.624% on that reused panel.
   This diagnoses active use of prefix; it does not establish benefit over a

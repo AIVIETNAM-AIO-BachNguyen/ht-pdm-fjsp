@@ -102,3 +102,18 @@ reservation/message; không chứng minh lợi ích của prefix. Không mở B2
 confirmation hay đổi ngưỡng/panel. B1 và B2 là hai kết quả DEV âm riêng
 biệt. Chẩn đoán/follow-up nếu có chỉ dùng train/DEV đã mở và seed mới được
 khóa trước; không dùng B2 TEST.
+
+**B2 chẩn đoán DEV cùng trọng số (18-10-2026 17:23 UTC):** kế hoạch
+thăm dò được khóa sau verdict B2, 8 targeted tests và smoke 12 episode
+PASS, mã `ea5f053` đã push trước full. Artifact
+`/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_dev_diagnostic_20261018T171908Z`
+COMPLETED, 192 episode DEV, `test_opened=false`; output bindings được
+kiểm lại. Với checkpoint full đã chọn, chỉ tắt message mà giữ nguyên mọi
+trọng số làm đổi 21/4.608 quyết định tick N4 và 549/4.608 tick N8;
+legal mask bằng nhau ở 9.216 và 18.432 stage. Full có cost thấp hơn bản
+tắt message cùng trọng số **1,3135% N4** và **1,2121% N8** trên DEV,
+nhưng một replica N8 không có lợi. Đây là tín hiệu policy đã sử dụng
+message, **không** là contrast full vs mask-only được huấn luyện độc lập;
+verdict B2 DEV FAIL và TEST sealed giữ nguyên. B1 từng có cùng mô thức:
+message đổi hành động nhưng không thắng matched mask-only. Không dùng
+chẩn đoán này để sửa ngưỡng hoặc mở B2 confirmation.
