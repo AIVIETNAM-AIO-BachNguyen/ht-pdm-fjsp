@@ -222,7 +222,7 @@ papers has been measured, so we must not claim superiority over their methods.
 6. Compute and latency accounting, scope, adverse cases and field limitations.
 
 
-## Registered B3 follow-up (outcome pending)
+## Registered B3 follow-up (DEV failed; TEST sealed)
 
 After the independently verified B2 DEV failure, one new mechanism test was
 registered before observing any B3 scientific outcome. B3 keeps the B2
@@ -248,7 +248,7 @@ opening to the exact DEV source/protocol/registry and an independent DEV
 independent replay checks both the full and mask-only policy trajectories;
 on engineering smoke it covered 768 states, 2,304 decoder stages, 2,400
 physical ticks and zero invalid assignments. These checks remain engineering
-evidence only while B3 DEV is running.
+evidence only; B3 DEV subsequently failed its registered gate.
 
 
 The A1 and C1 confirmation runners now also require independent DEV PASS
@@ -267,3 +267,15 @@ three N8 training replicas were adverse. This is a third developmental
 failure for the registered prefix-information contrast, despite a positive
 N4 mean. It must remain visible in any eventual manuscript and cannot be
 recast as confirmation or rescued by full-versus-no-reservation comparisons.
+
+A subsequent, prospectively recorded DEV-only diagnosis held each selected
+full checkpoint's fitted weights fixed. Zeroing only the new capacity inputs
+changed 0 of 4,608 full-policy ticks at N4 and 2 of 4,608 at N8; the
+corresponding mean cost per machine was unchanged at N4 and rose from
+265.5482 to 265.5794 at N8. Zeroing both the capacity inputs and the
+relational message changed 31 of 4,608 ticks at N4 and 470 of 4,608 at N8;
+mean costs per machine rose from 262.8047 to 269.2005 and from 265.5482
+to 270.4714, respectively. The 192-episode artifact's hashes, DEV panel,
+frozen full-policy rows and aggregates passed an independent saved-artifact
+audit. This is a same-weight mechanism diagnosis, not the separately trained
+matched-control contrast. It leaves the B3 failure and sealed TEST intact.

@@ -178,3 +178,20 @@ cost cao hơn mask-only. Mọi health point guard, zero-invalid đạt; không
 đổi verdict cost. B1/B2/B3 đều không đạt contrast prefix đã đăng ký;
 không mở B3 confirmation hay dùng 256 TEST seed B3. Chẩn đoán tiếp
 theo, nếu làm, chỉ trên DEV đã mở, phải giữ riêng khỏi claim khoa học.
+
+**B3 chẩn đoán DEV cùng trọng số (18-10-2026 22:08 UTC):** kế hoạch
+thăm dò đã khóa sau verdict B3, trước can thiệp; mã chẩn đoán `59ebdb6`
+đã qua 3 targeted tests và smoke 12 episode, commit/push trước run.
+Artifact `/home/bachng/.codex/worktrees/reservation-prefix-capacity-v3/ht-pdm-fjsp/artifacts/technician_prefix_capacity_v3_dev_diagnostic_20261018T220219Z`
+`COMPLETED`, 192 episode (N4/N8 × 3 bundle × 32 seed DEV), 373,55 s,
+`test_opened=false`. Audit độc lập chỉ trên artifact đã lưu kiểm toàn bộ
+output hash, panel, replay full so với hàng DEV đã khóa và phép tổng hợp;
+PASS tại `/home/bachng/ht-pdm-fjsp/artifacts/technician_prefix_capacity_v3_dev_diagnostic_independent_audit_20261018T230722Z` (report SHA-256 `14cd5b7f80327996db1914f4b78b8f090ce4130ddc64193026a0b9cb8f257f9b`), không tự rerun policy/physics. Tắt **riêng** hai input capacity trên
+trọng số full đã fit đổi 0/4.608 tick ở N4 và 2/4.608 tick ở N8;
+cost/machine N4 giữ 262,8047, N8 từ 265,5482 lên 265,5794. Tắt
+cả capacity lẫn relational message trên cùng trọng số đổi 31/4.608
+tick N4 và 470/4.608 tick N8; cost/machine lên 269,2005 và 270,4714.
+Các con số này cho thấy relational message hiện đang chi phối nhiều quyết
+định hơn hai capacity input mới, nhưng **không** là lợi ích so với mask-only
+huấn luyện độc lập. B3 scientific DEV FAIL, N8 bất lợi, và B3 TEST sealed
+giữ nguyên. Không chọn checkpoint/ngưỡng khác dựa trên chẩn đoán này.
