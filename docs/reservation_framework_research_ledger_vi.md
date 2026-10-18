@@ -60,3 +60,10 @@ Các commit verifier/doc sau khi run bắt đầu không đổi mã learner/prot
 registry được chụp trong artifact. Không diễn giải progress huấn luyện hoặc
 smoke là bằng chứng đạt A/B/C. Nếu DEV thất bại, giữ TEST của đúng nhánh
 niêm phong và ghi nguyên verdict trước follow-up.
+
+**Chuẩn bị confirmation B2 (13:20 UTC):** nhánh riêng
+`codex/reservation-relational-confirmation-v2`, commit `557bad1` đã push.
+Runner từ chối DEV đã mở TEST hoặc snapshot mã học/physics, protocol,
+seed registry khác DEV; kiểm tra trên snapshot DEV đang chạy PASS, 7 targeted
+tests và smoke kỹ thuật PASS. Chỉ dùng nhánh này để mở B2 confirmation nếu
+DEV gate và audit độc lập cùng PASS. Đây không phải kết quả khoa học B2.
