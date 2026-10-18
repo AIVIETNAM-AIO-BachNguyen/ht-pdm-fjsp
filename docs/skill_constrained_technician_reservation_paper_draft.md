@@ -136,7 +136,7 @@ assignments.
 | B2 DEV graph PPO | 18 fits × 491,520 = 8,847,360 joint decisions; 184,320 training episodes | Three full/mask-only/independent bundles at N4/N8; six N4 centralized references were frozen evaluations, not new fits |
 | B2 DEV teacher bank and distillation | 3 × 122,880 = 368,640 N4 bank states; 3 × 3 × 32 × 122,880 = 35,389,440 graph state presentations | Foundation PPO teachers reused; bank shared across three graph arms and scales |
 | B2 DEV wall time | 12,432.63 s, about 3 h 27 min | Shared 16-core lab with simultaneous A1/C1 jobs; wall time is not isolated CPU cost; no scientific TEST opened |
-| New A/C1 and any confirmation | Populate from completed sealed artifacts | Report per-phase decisions, optimizer updates, presentations, wall time and p95 end-to-end latency separately |
+| New A/C1/B3 and any confirmation | Populate from completed sealed artifacts | Report per-phase decisions, optimizer updates, presentations, wall time and p95 end-to-end latency separately |
 
 ## Prior art and novelty boundary
 
@@ -188,7 +188,7 @@ papers has been measured, so we must not claim superiority over their methods.
   workloads are credible competitors; a coupled-dispatch follow-up failed
   against them. The new framework must be compared directly, without changing
   physics or reference selection after TEST.
-- Report negative B1/B2/A/C rounds, per-replica instability, health tradeoffs,
+- Report negative B1/B2 and any failed A/C/B3 rounds, per-replica instability, health tradeoffs,
   decision latency and all extra teacher costs whether or not a gate passes.
 - B2 development also failed its preregistered prefix gate on new N4/N8
   seeds: pooled full/mask-only gain −0.1644% versus the +0.5% DEV gate,
@@ -220,3 +220,24 @@ papers has been measured, so we must not claim superiority over their methods.
 4. V4 historical result and new teacher/scratch, full/mask-only/no-reservation ablations.
 5. Non-V4 skill/capacity and persistent-request panels, strong heuristic controls.
 6. Compute and latency accounting, scope, adverse cases and field limitations.
+
+
+## Registered B3 follow-up (outcome pending)
+
+After the independently verified B2 DEV failure, one new mechanism test was
+registered before observing any B3 scientific outcome. B3 keeps the B2
+relational message and balanced maintenance physics, and adds two summaries
+of earlier selected technician–machine pairs: service occupancy and
+duration-weighted weak restoration, each normalized by `4*K`. Candidate
+edge logits receive these summaries multiplied by that candidate's service
+duration divided by four; WAIT receives the summaries directly. The matched
+mask-only arm shares the entire current graph, reservation legal set, order,
+resource pool, teacher bank, initialization, architecture size and PPO budget,
+while both selected-pair channels are zeroed. The separate no-reservation arm
+remains a service-level comparator. The prospective protocol and fresh
+disjoint panels are in `docs/technician_prefix_capacity_v3_plan.md` and
+`configs/technician_prefix_capacity_v3_seed_registry.json` at commit
+`0d23db8`; smoke-verified code is commit `a99ab1c`. B3 DEV has started,
+and its confirmation TEST remains sealed. The engineering smoke and its
+independent replay establish implementation integrity only. B1 and B2
+negative developmental verdicts are retained whatever B3 shows.

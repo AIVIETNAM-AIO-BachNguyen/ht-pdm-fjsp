@@ -50,10 +50,11 @@ số là claim B.
 
 ## Protocol và trạng thái khoa học
 
-| Nhánh | Giả thuyết đã khóa / source commit của run | Artifact DEV hiện hành | Trạng thái tính đến 18-10-2026 17:12 UTC |
+| Nhánh | Giả thuyết đã khóa / source commit của run | Artifact DEV hiện hành | Trạng thái tính đến 18-10-2026 17:35 UTC |
 |---|---|---|---|
 | A1 teacher→student | Teacher N4 + distillation giúp graph reservation trên N8/N16/N32 so với scratch cùng PPO budget; `a60f716` | `/home/bachng/ht-pdm-fjsp-teacher-transfer-v1/artifacts/technician_teacher_transfer_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke, chờ DEV hoàn chỉnh. |
 | B2 relational prefix | Candidate-conditioned attention trên các selected edge giúp hơn mask-only học lại, sau B1 FAIL; `b2a271f` | `/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_20261018T134357Z` | DEV GATE FAIL; kiểm toán độc lập PASS; TEST sealed. |
+| B3 selected-pair capacity prefix | Hai scalar tải dịch vụ và phục hồi yếu của cặp đã chọn, cộng B2 relational message; matched mask-only tắt cả hai; `a99ab1c` | `/home/bachng/.codex/worktrees/reservation-prefix-capacity-v3/ht-pdm-fjsp/artifacts/technician_prefix_capacity_v3_development_20261018T173438Z` | RUNNING; panel train/DEV/TEST mới, TEST sealed; smoke kỹ thuật và replay độc lập PASS. |
 | C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `396ecb5` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke. |
 
 Các commit verifier/doc sau khi run bắt đầu không đổi mã learner/protocol/
@@ -117,3 +118,21 @@ message, **không** là contrast full vs mask-only được huấn luyện độ
 verdict B2 DEV FAIL và TEST sealed giữ nguyên. B1 từng có cùng mô thức:
 message đổi hành động nhưng không thắng matched mask-only. Không dùng
 chẩn đoán này để sửa ngưỡng hoặc mở B2 confirmation.
+
+
+**B3 follow-up sau B2 FAIL (18-10-2026 17:35 UTC): prospective, DEV đang chạy.**
+Căn cứ B2 DEV-only: relational message đổi hành động và cải thiện chính trọng
+số của full khi được bật, nhưng full thua mask-only huấn luyện riêng. B3
+đăng ký *một* thay đổi biểu diễn: tổng duration của selected pair chia
+`4*K` và tổng duration × `(1-restoration)` chia `4*K`; actor của cạnh ứng
+viên nhận mỗi tổng nhân với duration/4, WAIT nhận hai tổng trực tiếp.
+Physics/cost V4, teacher bank, PPO budget và ngưỡng không đổi. Protocol và
+seed registry riêng đã push ở `0d23db8` trước mã và outcome; code `a99ab1c`
+đã qua 7 targeted tests, smoke kỹ thuật timestamp `20261018T173224Z`
+và verifier độc lập replay 2.400 physical ticks, 1.152 stage, zero invalid,
+rồi commit/push trước DEV. Smoke có 1 bundle, 384 PPO decisions và 4
+engineering TEST episodes nên **không** là bằng chứng khoa học B3. DEV mới
+chạy dưới user service `codex-reservation-b3-dev-20261018T173438Z` với
+3 bundle, N4/N8, 32 seed DEV/scale; panel confirmation 256 TEST seed/scale
+giữ sealed cho đến khi DEV gate và kiểm toán độc lập cùng PASS. B1/B2 FAIL
+và B1/B2 TEST sealed giữ nguyên.
