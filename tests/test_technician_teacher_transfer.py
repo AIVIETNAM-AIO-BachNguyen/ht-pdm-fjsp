@@ -102,3 +102,21 @@ def test_independent_confirmation_resampling_requires_teacher_gain():
     for key,row in rows.items():
         if key[1]=='teacher_reservation_ppo':row['normalized_cost']=100.
     assert not independently_resample(rows,config,coordination)['goal_pass']
+
+
+def test_confirmation_requires_exact_independent_dev_pass(tmp_path):
+    import hashlib
+    prior=tmp_path/'dev';prior.mkdir();(prior/'manifest.json').write_text('frozen A1 manifest')
+    audit=tmp_path/'audit';audit.mkdir()
+    verifier=audit/'audit_teacher_transfer_development.py';verifier.write_text('independent A1 auditor')
+    report=dict(status='PASS',profile='development',test_opened=False,
+        development_screen_pass=True,source_artifact=str(prior),
+        source_manifest_sha256=hashlib.sha256(b'frozen A1 manifest').hexdigest(),
+        verifier_sha256=hashlib.sha256(verifier.read_bytes()).hexdigest())
+    (audit/'audit.json').write_text(json.dumps(report))
+    assert x.verify_independent_development_audit(prior,audit)['verifier_sha256']==report['verifier_sha256']
+    with pytest.raises(ValueError,match='independent DEV audit'):
+        x.verify_independent_development_audit(prior,None)
+    report['development_screen_pass']=False;(audit/'audit.json').write_text(json.dumps(report))
+    with pytest.raises(RuntimeError,match='independent DEV audit failed'):
+        x.verify_independent_development_audit(prior,audit)
