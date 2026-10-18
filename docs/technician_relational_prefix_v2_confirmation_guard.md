@@ -13,3 +13,13 @@ Fresh engineering smoke:
 COMPLETED/audit PASS, eight small fits and zero invalid assignments. Smoke
 quality is engineering-only. Scientific B2 TEST remains sealed and may run
 only if DEV passes its registered gate and the independent DEV audit agrees.
+
+The independent confirmation verifier now checks full/mask-only feasibility,
+remaining-resource summaries and zeroed mask-only prefix on **both** arms'
+selected-policy trajectories, not only full-policy trajectories. Fresh replay
+of the engineering smoke at
+`artifacts/technician_relational_prefix_v2_both_trajectory_audit_20261018T132751Z`
+PASSed: 384 full states, 384 mask-only states, 2,304 decoder stages,
+2,400 scalar physical ticks and zero invalid assignments. This strengthens
+trajectory coverage without changing any learner, protocol or scientific
+outcome.
