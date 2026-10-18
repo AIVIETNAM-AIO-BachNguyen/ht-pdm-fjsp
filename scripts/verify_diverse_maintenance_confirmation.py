@@ -255,8 +255,10 @@ def verify(source,output):
     assert len(episodes)==len(expected) and set(table)==expected
     torch.set_num_threads(1)
     model_cache={};paired={};select_ms=[];end_to_end_ms=[]
+    mask_audit_seeds=set(cfg['test_seeds'][:8])
     counts=dict(episodes=0,physical_ticks=0,policy_ticks=0,
         request_checks=0,checkpoint_action_checks=0,matched_mask_stages=0,
+        full_trajectory_mask_states=0,mask_trajectory_mask_states=0,
         invalid_assignments=0)
     with ((source/'decisions.csv').open(newline='') as decision_file,
           (source/'coordination.csv').open(newline='') as coordination_file):
@@ -308,16 +310,19 @@ def verify(source,output):
                         model=model_cache[mk]
                         assert np.array_equal(model.select(obs),np.asarray(submitted))
                         counts['checkpoint_action_checks']+=1
-                    if arm=='reservation_ppo' and seed==cfg['test_seeds'][0]:
-                        mkey=f,n,'mask_only_ppo',t
-                        if mkey not in model_cache:
-                            model_cache[mkey]=load_model(source,choices,f,n,'mask_only_ppo',t)
+                    if arm in ('reservation_ppo','mask_only_ppo') and seed in mask_audit_seeds:
+                        full_key=f,n,'reservation_ppo',t
+                        mask_key=f,n,'mask_only_ppo',t
+                        for model_key in (full_key,mask_key):
+                            if model_key not in model_cache:
+                                model_cache[model_key]=load_model(source,choices,*model_key)
                         batch=tensors({k:np.asarray(v)[None] for k,v in obs.items()})
                         forced=torch.as_tensor(np.asarray(submitted)[None],dtype=torch.long)
                         full_trace=[];mask_trace=[]
                         with torch.no_grad():
-                            model_cache[f,n,'reservation_ppo',t].trace(batch,recorded=forced,audit=full_trace)
-                            model_cache[mkey].trace(batch,recorded=forced,audit=mask_trace)
+                            model_cache[full_key].trace(batch,recorded=forced,audit=full_trace)
+                            model_cache[mask_key].trace(batch,recorded=forced,audit=mask_trace)
+                        assert len(full_trace)==len(mask_trace)==c.technicians
                         reserved=set()
                         for j,(full,mask) in enumerate(zip(full_trace,mask_trace,strict=True)):
                             feasible=np.r_[True,[bool(obs['pair_mask'][m,j]) and m not in reserved
@@ -328,6 +333,8 @@ def verify(source,output):
                             assert not torch.count_nonzero(mask['prefix'])
                             counts['matched_mask_stages']+=1
                             if submitted[j]:reserved.add(submitted[j]-1)
+                        key='full_trajectory_mask_states' if arm=='reservation_ppo' else 'mask_trajectory_mask_states'
+                        counts[key]+=1
                     counts['policy_ticks']+=1
                 else:
                     selected=heuristic(c,state,pending,since,'fcfs')
@@ -375,6 +382,11 @@ def verify(source,output):
         assert next(decisions,None) is None
         assert next(coordination,None) is None
     assert counts['physical_ticks']==60*len(episodes) and counts['invalid_assignments']==0
+    expected_mask_states=len(configs)*len(cfg['train_seeds'])*len(mask_audit_seeds)*48
+    assert counts['full_trajectory_mask_states']==expected_mask_states
+    assert counts['mask_trajectory_mask_states']==expected_mask_states
+    assert counts['matched_mask_stages']==2*len(cfg['train_seeds'])*len(mask_audit_seeds)*48*sum(
+        config_from_protocol(f,n).technicians for f,n in configs)
     infer=independent_inference(episodes,cfg,selected_rule,select_ms,end_to_end_ms)
     for name,point in infer['points'].items():
         assert abs(point-summary['intervals'][name]['estimate'])<1e-12

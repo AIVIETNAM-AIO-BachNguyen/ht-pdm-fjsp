@@ -28,3 +28,15 @@ and reconciled 40 secondary episodes, all training tapes and teacher/scratch
 budgets. It confirmed zero invalid assignments. Scientific C1 confirmation
 may run only after the currently running DEV artifact passes its locked gate
 and its independent DEV verifier.
+
+Before any scientific C1 TEST, the independent verifier's stage-level
+feasibility audit was extended prospectively to the first eight registered
+TEST seeds per configuration (all four engineering TEST seeds in smoke), on
+**both** full and separately trained mask-only trajectories. This fixed audit
+subset is independent of outcomes. The verifier still replays every TEST
+physical transition, request and cost, and checks all inferential rows.
+Fresh engineering replay
+`artifacts/technician_diverse_maintenance_both_trajectory_audit_20261018T133151Z`
+PASSed 384 full states, 384 mask-only states, 2,688 decoder stages and 2,880
+physical ticks, with zero invalid assignments. No learner, physics, seed,
+protocol or endpoint code changed.
