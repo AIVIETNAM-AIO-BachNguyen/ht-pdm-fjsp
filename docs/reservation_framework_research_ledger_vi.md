@@ -195,3 +195,23 @@ Các con số này cho thấy relational message hiện đang chi phối nhiều
 định hơn hai capacity input mới, nhưng **không** là lợi ích so với mask-only
 huấn luyện độc lập. B3 scientific DEV FAIL, N8 bất lợi, và B3 TEST sealed
 giữ nguyên. Không chọn checkpoint/ngưỡng khác dựa trên chẩn đoán này.
+
+**B4 follow-up sau B3 FAIL (18-10-2026 23:15 UTC): prospective, DEV đang chạy.**
+Căn cứ từ chẩn đoán B3: capacity scalar mới gần như không đổi hành động;
+relational prefix đổi nhiều hành động nhưng chưa thắng mask-only học riêng.
+B4 thêm đúng một đường residual trên logit của mỗi cạnh ứng viên/WAIT:
+tích vô hướng `query(edge)` với `key(selected-edge prefix)` dùng lại
+trọng số graph hiện có, không thêm tham số hoặc thay physics/cost/budget.
+Mask-only cùng mô hình khử selected-edge/capacity như trước; legal mask,
+graph hiện tại và resource pool khớp. Protocol/ngưỡng/hardstop và registry
+seed mới disjoint đã commit/push tại `8521427` **trước mã**; mã `0d94985`
+đã qua 8 focused tests và smoke timestamp
+`/home/bachng/ht-pdm-fjsp-prefix-residual-v4/artifacts/technician_prefix_residual_v4_smoke_20261018T231212Z`.
+Smoke có 1 bundle và engineering TEST seed riêng, không là verdict B4.
+Audit độc lập smoke PASS tại `/home/bachng/ht-pdm-fjsp-prefix-residual-v4/artifacts/technician_prefix_residual_v4_smoke_independent_verify_20261018T231403Z` (report SHA-256 `989892d6075ef5b916c67bbddf23b4118301901ca419021cb28c62268921f3d9`): 337 output bindings, 2.400 tick vật lý,
+384 full-policy state/1.152 stage, 0 invalid; residual khác zero ở
+570 stage và đổi 80 lựa chọn greedy trên trạng thái full (same-weight,
+không phải contrast chính). Source code đã push trước DEV FULL. Run
+`codex-reservation-b4-dev-20261018T231458Z` mở **chỉ** DEV N4/N8,
+3 bundle × 32 seed DEV, artifact timestamp riêng; 256 TEST seed/scale
+của B4 vẫn sealed. B1/B2/B3 FAIL và TEST sealed không đổi.

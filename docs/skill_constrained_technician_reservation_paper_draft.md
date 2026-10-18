@@ -279,3 +279,12 @@ to 270.4714, respectively. The 192-episode artifact's hashes, DEV panel,
 frozen full-policy rows and aggregates passed an independent saved-artifact
 audit. This is a same-weight mechanism diagnosis, not the separately trained
 matched-control contrast. It leaves the B3 failure and sealed TEST intact.
+
+A fourth prefix mechanism is prospectively registered after the B3 negative
+result and same-weight diagnosis. It adds a parameter-free direct logit
+residual between the current candidate and selected-edge message, using
+the graph encoder's existing query/key maps. Its own fresh DEV and
+conditional confirmation panels are disjoint from B1–B3. Eight focused
+tests and an independently replayed engineering smoke validated the
+implementation; that smoke is not scientific evidence. B4 DEV is pending,
+and the B1–B3 failures remain part of the record.
