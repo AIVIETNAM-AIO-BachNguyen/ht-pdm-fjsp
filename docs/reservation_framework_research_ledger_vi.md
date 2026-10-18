@@ -76,3 +76,11 @@ mọi transition/request/cost trên toàn panel. Cả ba mở rộng verifier đ
 kiểm bằng smoke kỹ thuật PASS, không đổi learner/protocol/registry hay mở
 TEST khoa học. C1 verifier phải báo rõ phạm vi kiểm stage là subset;
 không được mô tả như kiểm mọi stage của mọi seed.
+
+**Gián đoạn thực thi và recovery (13:41–13:44 UTC):** ba PID A1/B2/C1
+biến mất cùng lúc, manifest cũ kẹt `RUNNING`, không có DEV summary hay TEST.
+Phân loại ba artifact cũ là TECHNICAL_INCOMPLETE, không là verdict khoa học;
+nguyên nhân/signal cụ thể chưa xác định. Incident hash-bound và các run DEV
+mới dưới detached user service đã ghi tại
+`docs/reservation_framework_execution_recovery_20261018.md`. Dùng artifact
+mới để audit; không dùng partial quality/checkpoint cũ để chọn model.
