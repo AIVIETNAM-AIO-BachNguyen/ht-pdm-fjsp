@@ -237,8 +237,7 @@ while both selected-pair channels are zeroed. The separate no-reservation arm
 remains a service-level comparator. The prospective protocol and fresh
 disjoint panels are in `docs/technician_prefix_capacity_v3_plan.md` and
 `configs/technician_prefix_capacity_v3_seed_registry.json` at commit
-`0d23db8`; smoke-verified code is commit `a99ab1c`. B3 DEV has started,
-and its confirmation TEST remains sealed. The engineering smoke and its
+`0d23db8`; smoke-verified code is commit `a99ab1c`. B3 DEV completed and failed its registered cost screen; its confirmation TEST remains sealed. The engineering smoke and its
 independent replay establish implementation integrity only. B1 and B2
 negative developmental verdicts are retained whatever B3 shows.
 
@@ -257,3 +256,14 @@ reports bound to the exact DEV manifest and saved verifier hash (confirmation
 only commits `1b68a49` and `d1a8418`). Their scientific TEST panels remain
 sealed while DEV training proceeds. These guards support provenance and do
 not supply evidence for either claim.
+
+
+B3's independently audited DEV result was pooled full/mask-only cost gain
++0.3646%, below its +0.5% DEV screen; N4 +1.1819%, N8 −0.4576%.
+All point health guards passed and there were zero invalid assignments.
+The source/output seals, training tape and checkpoint selection were
+independently recomputed; the B3 confirmation TEST was not opened. Two of
+three N8 training replicas were adverse. This is a third developmental
+failure for the registered prefix-information contrast, despite a positive
+N4 mean. It must remain visible in any eventual manuscript and cannot be
+recast as confirmation or rescued by full-versus-no-reservation comparisons.

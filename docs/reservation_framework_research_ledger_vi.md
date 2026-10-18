@@ -54,7 +54,7 @@ số là claim B.
 |---|---|---|---|
 | A1 teacher→student | Teacher N4 + distillation giúp graph reservation trên N8/N16/N32 so với scratch cùng PPO budget; `a60f716` | `/home/bachng/ht-pdm-fjsp-teacher-transfer-v1/artifacts/technician_teacher_transfer_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke, chờ DEV hoàn chỉnh. |
 | B2 relational prefix | Candidate-conditioned attention trên các selected edge giúp hơn mask-only học lại, sau B1 FAIL; `b2a271f` | `/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_20261018T134357Z` | DEV GATE FAIL; kiểm toán độc lập PASS; TEST sealed. |
-| B3 selected-pair capacity prefix | Hai scalar tải dịch vụ và phục hồi yếu của cặp đã chọn, cộng B2 relational message; matched mask-only tắt cả hai; `a99ab1c` | `/home/bachng/.codex/worktrees/reservation-prefix-capacity-v3/ht-pdm-fjsp/artifacts/technician_prefix_capacity_v3_development_20261018T173438Z` | RUNNING; panel train/DEV/TEST mới, TEST sealed; smoke kỹ thuật và replay độc lập PASS. |
+| B3 selected-pair capacity prefix | Hai scalar tải dịch vụ và phục hồi yếu của cặp đã chọn, cộng B2 relational message; matched mask-only tắt cả hai; `a99ab1c` | `/home/bachng/.codex/worktrees/reservation-prefix-capacity-v3/ht-pdm-fjsp/artifacts/technician_prefix_capacity_v3_development_20261018T173438Z` | DEV GATE FAIL; kiểm toán độc lập PASS; TEST sealed. |
 | C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `396ecb5` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke. |
 
 Các commit verifier/doc sau khi run bắt đầu không đổi mã learner/protocol/
@@ -162,3 +162,19 @@ artifact/manifest/verifier, và tiếp tục đóng băng rule FCFS/risk chọn 
 DEV; 3 focused confirmation tests PASS. Hai thay đổi chỉ ở đường mở
 confirmation, không sửa learner/physics/panel của DEV đang chạy. Chưa mở
 A1/C1 TEST và chưa có verdict mới.
+
+
+**B3 DEV verdict (18-10-2026 21:58 UTC): FAIL, TEST sealed.** Run
+hoàn tất sạch sau 13.278,84 s (service exit 0, manifest `COMPLETED`,
+audit nội bộ PASS), source commit `a99ab1c` đã push trước FULL. Verifier
+độc lập tại `/home/bachng/.codex/worktrees/reservation-prefix-capacity-v3/ht-pdm-fjsp/artifacts/technician_prefix_capacity_v3_development_independent_audit_20261018T215834Z`
+PASS, manifest SHA-256
+`3a5c4e241dc6acb5e78741146bc07ae5dacfbb8b3aeb4601f8bd1e88c93cf403`,
+kiểm 265 source seal, 480 output binding, 184.320 episode huấn luyện,
+24 model, panel DEV và training tape ghép cặp. Gain full so với
+mask-only học lại: pooled **+0,3646%**, dưới DEV gate **+0,5%**;
+N4 **+1,1819%**, N8 **−0,4576%**. N8 có 2/3 replica full
+cost cao hơn mask-only. Mọi health point guard, zero-invalid đạt; không
+đổi verdict cost. B1/B2/B3 đều không đạt contrast prefix đã đăng ký;
+không mở B3 confirmation hay dùng 256 TEST seed B3. Chẩn đoán tiếp
+theo, nếu làm, chỉ trên DEV đã mở, phải giữ riêng khỏi claim khoa học.
