@@ -67,3 +67,12 @@ Runner từ chối DEV đã mở TEST hoặc snapshot mã học/physics, protoco
 seed registry khác DEV; kiểm tra trên snapshot DEV đang chạy PASS, 7 targeted
 tests và smoke kỹ thuật PASS. Chỉ dùng nhánh này để mở B2 confirmation nếu
 DEV gate và audit độc lập cùng PASS. Đây không phải kết quả khoa học B2.
+
+**Audit trước TEST (13:33 UTC):** verifier A1 `a60f716` đã push, replay
+feasibility trên cả quỹ đạo teacher và scratch; verifier B2 `1f6f687` đã push,
+replay full và mask-only; verifier C1 `887723a` đã push, kiểm stage-level
+full/mask-only trên tám seed TEST đầu mỗi cấu hình đã định trước và replay
+mọi transition/request/cost trên toàn panel. Cả ba mở rộng verifier được
+kiểm bằng smoke kỹ thuật PASS, không đổi learner/protocol/registry hay mở
+TEST khoa học. C1 verifier phải báo rõ phạm vi kiểm stage là subset;
+không được mô tả như kiểm mọi stage của mọi seed.
