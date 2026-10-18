@@ -98,8 +98,12 @@ already learned heterogeneous-graph policies for stochastic predictive
 maintenance resource scheduling. [Bhatta and Chang (Robotics and
 Computer-Integrated Manufacturing, 2023)](https://www.sciencedirect.com/science/article/pii/S0736584523000704)
 combined heterogeneous graphs and MARL for robot assignment, tool change and
-preventive maintenance in flexible manufacturing. A nearby but distinct
-field-service problem is [Kiesmüller, Wang and Kolisch (European Journal of
+preventive maintenance in flexible manufacturing. [Chen and Zhou
+(2026)](https://www.sciencedirect.com/science/article/abs/pii/S0951832025012864)
+also combine multi-hierarchical graph representation and PPO for maintenance
+optimization with inter-machine and resource dependencies. This further
+limits any novelty claim based on combining a graph encoder with PPO. A nearby
+but distinct field-service problem is [Kiesmüller, Wang and Kolisch (European Journal of
 Operational Research, online 2026)](https://www.sciencedirect.com/science/article/pii/S0377221726004625),
 which uses graph-based value approximation for heterogeneous technician
 allocation/routing with uncertain repair outcomes. These studies establish
