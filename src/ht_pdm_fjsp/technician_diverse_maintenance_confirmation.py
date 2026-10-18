@@ -88,6 +88,24 @@ def prior_gate(profile,prior):
         engineering_gate_bypass=profile=='smoke')
 
 
+def independent_development_gate(prior,audit_dir):
+    """Bind an independent C1 DEV PASS to the exact frozen DEV artifact."""
+    if audit_dir is None:
+        raise ValueError('C1 scientific confirmation requires independent DEV audit')
+    audit_dir=Path(audit_dir).resolve()
+    report=read_json(audit_dir/'audit.json')
+    verifier=audit_dir/'audit_diverse_maintenance_development.py'
+    if (report.get('status')!='PASS' or report.get('classification')!='INDEPENDENT_DEVELOPMENT_AUDIT'
+            or report.get('development_screen_pass') is not True
+            or report.get('scientific_test_opened') is not False
+            or Path(report.get('source_artifact','')).resolve()!=prior
+            or report.get('source_manifest_sha256')!=sha(prior/'manifest.json')
+            or report.get('verifier_sha256')!=sha(verifier)):
+        raise RuntimeError('C1 independent DEV audit failed or does not bind to DEV')
+    return dict(path=str(audit_dir),report_sha256=sha(audit_dir/'audit.json'),
+        verifier_sha256=sha(verifier))
+
+
 def expected_grid(cfg):
     configs=[tuple(c) for c in cfg['configs']]
     return {(f,n,arm,t,s) for f,n in configs
@@ -226,10 +244,12 @@ def secondary_summary(rows,cfg):
         conditions='target-scale fine-tuned selected, fixed-final, N4 warm zero-shot and scratch target-scale training reported separately')
 
 
-def run(profile,out,prior,teacher_dir=None):
+def run(profile,out,prior,teacher_dir=None,independent_audit=None):
     cfg=settings(profile);out=Path(out).resolve();prior=Path(prior).resolve()
     if out.exists():raise FileExistsError('fresh confirmation artifact required')
     gate=prior_gate(profile,prior)
+    if profile=='confirmation':
+        gate['independent_audit']=independent_development_gate(prior,independent_audit)
     out.mkdir(parents=True);start=time.monotonic();torch.set_num_threads(1)
     git=dict(commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip(),
@@ -403,8 +423,9 @@ def main():
     parser.add_argument('--output-dir',required=True,type=Path)
     parser.add_argument('--development-artifact',required=True,type=Path)
     parser.add_argument('--teacher-dir',type=Path)
+    parser.add_argument('--independent-development-audit',type=Path)
     args=parser.parse_args()
-    result=run(args.profile,args.output_dir,args.development_artifact,args.teacher_dir)
+    result=run(args.profile,args.output_dir,args.development_artifact,args.teacher_dir,args.independent_development_audit)
     print(json.dumps(dict(status=result['status'],output_dir=str(args.output_dir),
         goal_pass=result['goal_pass'])))
 

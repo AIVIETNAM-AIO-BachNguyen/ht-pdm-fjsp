@@ -40,3 +40,22 @@ def test_crossed_inference_uses_matched_mask_and_frozen_rule():
     for row in rows:
         if row['method']=='reservation_ppo':row['normalized_cost']=100.
     assert not c.summarize(rows,cfg,'fcfs',coordination)['goal_pass']
+
+
+def test_confirmation_requires_exact_independent_dev_pass(tmp_path):
+    import hashlib
+    import json
+    prior=tmp_path/'dev';prior.mkdir();(prior/'manifest.json').write_text('frozen manifest')
+    audit=tmp_path/'audit';audit.mkdir()
+    verifier=audit/'audit_diverse_maintenance_development.py';verifier.write_text('independent')
+    report=dict(status='PASS',classification='INDEPENDENT_DEVELOPMENT_AUDIT',
+        development_screen_pass=True,scientific_test_opened=False,
+        source_artifact=str(prior),source_manifest_sha256=hashlib.sha256(b'frozen manifest').hexdigest(),
+        verifier_sha256=hashlib.sha256(verifier.read_bytes()).hexdigest())
+    (audit/'audit.json').write_text(json.dumps(report))
+    assert c.independent_development_gate(prior,audit)['verifier_sha256']==report['verifier_sha256']
+    with pytest.raises(ValueError,match='independent DEV audit'):
+        c.independent_development_gate(prior,None)
+    report['source_manifest_sha256']='wrong';(audit/'audit.json').write_text(json.dumps(report))
+    with pytest.raises(RuntimeError,match='independent DEV audit failed'):
+        c.independent_development_gate(prior,audit)
