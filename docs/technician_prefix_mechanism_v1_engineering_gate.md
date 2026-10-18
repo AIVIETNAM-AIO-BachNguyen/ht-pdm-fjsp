@@ -18,6 +18,14 @@ confirmation outcome has been opened.
   feasibility equality, 105 nonzero full-prefix stages, zero invalid
   assignments. Runtime 12.82 seconds. Smoke quality is excluded from scientific
   selection and inference.
+- Final metadata/CI correction before FULL: manifest records exact Python
+  executable/argv/cwd, and the inferential family contains exactly the 17
+  predeclared full/mask endpoints. After this change, 31 targeted reservation
+  and prefix tests passed, `compileall`/whitespace passed, and a fresh smoke
+  `artifacts/technician_prefix_mechanism_v1_smoke_20261018T070914Z` completed
+  with the same 8 models, 40 episodes, 2,400 replayed ticks, 96 audited
+  trajectory decisions and 105 nonzero full-prefix stages. Final smoke runtime
+  was 12.85 seconds; the first smoke remains preserved.
 - Next step after push: development FULL on N4/N8 and its registered gate.
   Confirmation TEST remains sealed until that gate passes. Fresh artifact
   directories only.

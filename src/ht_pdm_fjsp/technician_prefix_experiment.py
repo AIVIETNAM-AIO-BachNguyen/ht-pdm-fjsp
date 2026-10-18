@@ -13,6 +13,7 @@ from pathlib import Path
 import platform
 import shutil
 import subprocess
+import sys
 import time
 import numpy as np
 import torch
@@ -50,7 +51,7 @@ def settings(profile):
         behavior_log_atol=2e-5,behavior_log_rtol=0.,behavior_value_atol=2e-5,behavior_value_rtol=1e-6,
         torch_threads=1,bootstrap_samples=200 if smoke else 40000,
         confirmation_round=1,round_alpha=.025,
-        confidence=1-(.025 if final else .05)/24,max_seconds=172800)
+        confidence=1-(.025 if final else .05)/17,max_seconds=172800)
 
 
 def arms(n): return ARMS if n==4 else GRAPH_ARMS
@@ -168,7 +169,6 @@ def estimates(means,scales):
         current=means[n]['reservation_ppo'];reference=means[n]['mask_only_ppo']
         full.append(current[0]);masked.append(reference[0])
         result[f'N{n}_gain_full_vs_mask']=1-current[0]/reference[0]
-        result[f'N{n}_gain_full_vs_independent']=1-current[0]/means[n]['independent_ppo'][0]
         for label,index in (('availability',1),('pending_per_machine',2),('failures_per_machine',3)):
             result[f'N{n}_{label}_full_minus_mask']=current[index]-reference[index]
     result['pooled_gain_full_vs_mask']=1-sum(full)/sum(masked)
@@ -337,6 +337,7 @@ def run(profile,output_dir,teacher_dir=None,development_artifact=None):
         dirty=bool(subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=ROOT,text=True).strip()))
     if profile!='smoke' and git['dirty']: raise RuntimeError('commit verified code before research run')
     manifest=dict(protocol=VERSION,status='RUNNING',profile=profile,git=git,test_opened=False,development_gate=dev_gate,
+        invocation=dict(executable=sys.executable,argv=sys.argv,cwd=str(Path.cwd())),
         started_utc=datetime.now(timezone.utc).isoformat(),runtime=dict(platform=platform.platform(),
             python=platform.python_version(),numpy=np.__version__,torch=torch.__version__,device='cpu'))
     write_json(out/'manifest.json',manifest);journals={}
