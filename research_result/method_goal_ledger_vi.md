@@ -18,3 +18,17 @@ và giới hạn/điều kiện hiệu quả được báo rõ.
 Các hướng cũ Teacher PPO v3 và Reservation PPO lịch sử là dữ liệu để chọn
 câu hỏi và đối chứng, không phải bằng chứng rằng v4 method có novelty.
 V4 đã chốt: không đổi gate hay mở lại TEST để cứu H1. Vòng tiếp theo nếu triển khai cần proposal về tương tác của matching với residual capacity, protocol mới và seed mới; chỉ một confirmation round có stopping rule rõ.
+
+## Mốc v5 sau FULL (2026-10-20)
+
+V5 proposal/protocol commit `83dfc8c`, FULL/audit PASS; xem
+`research_result/framework_v5_findings_vi.md`. Postdecision−additive queue
+primary +1,55 [−1,05;+4,11], FAIL. Same-weight residual penalty chỉ đổi
+101/12.288 action dù 1.724 state có legal positive penalty. Additive−edge
+v5 −2,21 [−4,95;+0,52], không tái hiện rõ descriptive benefit v4.
+Structured postdecision thắng flat/risk v5 (secondary) nhưng không thắng
+rollout và không hơn additive; shared pair representation chưa cô lập được
+from parameter sharing/action factorization/training variance. Closest
+literature: AirME HetGPO ICAPS 2022, reusable online matching và opportunity
+loss; không claim novelty. Goal giữ ACTIVE: cần direct structural contrast
+với fresh seeds hoặc kết luận rõ rằng chưa có component đủ mạnh.
