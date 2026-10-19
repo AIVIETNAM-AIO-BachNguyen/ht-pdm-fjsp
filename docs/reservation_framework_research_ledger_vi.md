@@ -306,3 +306,12 @@ artifact mới
 đang RUNNING ở commit `2995987`, manifest `test_opened=false`. Chỉ khi
 COMPLETED mới chạy verifier DEV; nếu fail, giữ B5 TEST sealed và không
 đổi verdict B1–B4.
+
+Runner B5 confirmation nằm ở checkout riêng
+`/home/bachng/ht-pdm-fjsp-prefix-activation-v5-confirmation`, commit
+`1625101` đã push. Nó khóa protocol/registry và mọi module học/physics
+đúng snapshot DEV, chỉ ngoại lệ wrapper thêm gate; yêu cầu DEV COMPLETED,
+internal audit PASS, DEV screen PASS, TEST sealed và verifier DEV độc lập
+`DEV_GATE_PASS` gắn đúng manifest/verifier hash. 10 focused tests PASS;
+read-only guard trên snapshot DEV đang chạy PASS và khi thiếu audit độc
+lập nó từ chối mở TEST. Runner chưa được phép chạy confirmation.
