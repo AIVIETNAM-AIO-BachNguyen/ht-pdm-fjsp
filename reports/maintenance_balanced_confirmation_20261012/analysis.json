@@ -1,0 +1,196 @@
+{
+  "protocol": "maintenance_balanced_confirmation_mac_v1",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_balanced_confirmation_mac_v1_full_cpu_20261012T084759Z",
+  "commit": "f56f5bf4fc17e6ddab4e69af0b4f5205a7d8e08d",
+  "scientific_status": "NOT_CONFIRMED",
+  "winner": "cross_d3_q050_balanced",
+  "integrity": {
+    "status": "PASS",
+    "hashed_files": 62,
+    "git_bound_source_blobs": 51,
+    "phase_counts": {
+      "development": 0,
+      "screening": 0,
+      "confirmation": 1280,
+      "landmarks": 1792
+    },
+    "physical_ticks": 76800,
+    "root_rows": 3047,
+    "forecasts": 366078976,
+    "frozen_baseline_and_author_override_verified": true,
+    "all_physical_states_events_and_costs_reconstructed": true,
+    "independent_indexed_bootstrap": true,
+    "independence": "reuse of independently written scalar/indexed-bootstrap verifier; adapted in shared context, not blind or cross-model"
+  },
+  "screening": [],
+  "comparisons": {
+    "local_baseline": {
+      "estimate": 6.680219377790177,
+      "ci": [
+        4.57165289984809,
+        8.965503662351598
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_quality": {
+      "estimate": 6.680219377790177,
+      "ci": [
+        4.57165289984809,
+        8.965503662351598
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_endpoint_dp": {
+      "estimate": 6.680219377790177,
+      "ci": [
+        4.57165289984809,
+        8.965503662351598
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_cost_gain": {
+      "estimate": 0.06327570518653321,
+      "ci": [
+        0.04519364287847801,
+        0.08220989731409858
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_deadline_matching": {
+      "estimate": 0.13263866146655154,
+      "ci": [
+        0.10962856320646971,
+        0.155497987135634
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_h6": {
+      "estimate": 0.15141965024291923,
+      "ci": [
+        0.12909946788562146,
+        0.17222765455383873
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_endpoint": {
+      "estimate": 0.11635426144980285,
+      "ci": [
+        0.0943925024557548,
+        0.13791320637297255
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_availability_difference": {
+      "estimate": -0.006368001302083592,
+      "ci": [
+        -0.013778149640118692,
+        0.0009200767234519526
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_pending_difference": {
+      "estimate": 0.03125,
+      "ci": [
+        0.0,
+        0.078125
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_availability": {
+      "estimate": 0.6468098958333331,
+      "ci": [
+        0.6370555171260125,
+        0.6552169517234514
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_pending": {
+      "estimate": 0.03125,
+      "ci": [
+        0.0,
+        0.078125
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_interior_gain": {
+      "estimate": 0.05418535695278644,
+      "ci": [
+        0.03767598173296515,
+        0.071641311927045
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_availability_difference": {
+      "estimate": 0.01377360026041674,
+      "ci": [
+        0.006098966245298184,
+        0.022510726363570537
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_pending_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_availability": {
+      "estimate": 0.6669514973958335,
+      "ci": [
+        0.6655273437499999,
+        0.6682581301088688
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_interior_gain": {
+      "estimate": 0.1104919029879115,
+      "ci": [
+        0.089690145440448,
+        0.1313194978541019
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_choice_fraction": {
+      "estimate": 0.700334821428572,
+      "ci": [
+        0.6501116071428574,
+        0.7500000000000004
+      ],
+      "confidence": 0.9972222222222222
+    }
+  },
+  "gates": {
+    "local_baseline": true,
+    "local_quality": true,
+    "local_endpoint_dp": true,
+    "assignment_cost_gain": true,
+    "joint_cost_vs_deadline_matching": true,
+    "joint_cost_vs_isolated_h6": true,
+    "joint_cost_vs_isolated_endpoint": true,
+    "assignment_availability_difference": false,
+    "assignment_pending_difference": true,
+    "assignment_absolute_availability": true,
+    "assignment_absolute_pending": true,
+    "assignment_interior_gain": true,
+    "joint_availability_difference": true,
+    "joint_pending_difference": true,
+    "joint_absolute_availability": true,
+    "joint_absolute_pending": true,
+    "joint_interior_gain": true,
+    "assignment_choice_fraction": true
+  },
+  "failed_confirmation_gates": [
+    "assignment_availability_difference"
+  ],
+  "limitations": "Local assay fixes initial state, tick and subset; later state-adaptive decisions can differ. Inference is per protocol, not an unlimited-search guarantee."
+}

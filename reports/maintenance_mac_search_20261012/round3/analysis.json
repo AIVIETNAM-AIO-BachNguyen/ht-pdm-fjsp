@@ -1,0 +1,233 @@
+{
+  "status": "PASS",
+  "verification": "file hashes/committed source/complete grids/frozen checkpoint choices/training provenance/count-weight crossed bootstrap",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_joint_learning_mac_v1_full_cpu_20261012T064635Z",
+  "commit": "c300d1010fbc4ba2b8166ee1ab1100858956c844",
+  "files_checked": 56,
+  "test_episodes": 1280,
+  "development_episodes": 384,
+  "training": {
+    "41000000": {
+      "steps": 65536,
+      "complete_episodes": 1360,
+      "partial_workers": 8,
+      "physical_ticks": 81856
+    },
+    "41000001": {
+      "steps": 65536,
+      "complete_episodes": 1360,
+      "partial_workers": 8,
+      "physical_ticks": 81856
+    },
+    "41000002": {
+      "steps": 65536,
+      "complete_episodes": 1360,
+      "partial_workers": 8,
+      "physical_ticks": 81856
+    }
+  },
+  "contrasts": {
+    "gain_vs_initial": {
+      "estimate": 0.5496165244903681,
+      "ci95": [
+        0.4143176080234455,
+        0.6418416208638663
+      ]
+    },
+    "gain_vs_deadline": {
+      "estimate": 0.009550546335287513,
+      "ci95": [
+        0.0016396977864098882,
+        0.017202557834117574
+      ]
+    },
+    "availability_difference": {
+      "estimate": 0.02151150173611116,
+      "ci95": [
+        0.01542154947916663,
+        0.02803548177083315
+      ]
+    },
+    "pending_difference": {
+      "estimate": 0.018229166666666668,
+      "ci95": [
+        0.0,
+        0.041666666666666664
+      ]
+    }
+  },
+  "means": [
+    {
+      "controller": "ppo",
+      "train_seed": 41000000,
+      "extended_cost": 469.921875,
+      "policy_cost": 376.90625,
+      "tail_cost": 93.015625,
+      "availability": 0.7353922526041667,
+      "terminal_pending": 0.0234375,
+      "tail_pending": 0.0,
+      "failures": 1.5703125,
+      "policy_failures": 1.5703125,
+      "waiting_cost": 0.0,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.006494109998129716
+    },
+    {
+      "controller": "ppo",
+      "train_seed": 41000001,
+      "extended_cost": 468.9609375,
+      "policy_cost": 375.953125,
+      "tail_cost": 93.0078125,
+      "availability": 0.7347819010416667,
+      "terminal_pending": 0.015625,
+      "tail_pending": 0.0,
+      "failures": 1.46875,
+      "policy_failures": 1.46875,
+      "waiting_cost": 0.0,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.006464758171659923
+    },
+    {
+      "controller": "ppo",
+      "train_seed": 41000002,
+      "extended_cost": 466.8203125,
+      "policy_cost": 373.859375,
+      "tail_cost": 92.9609375,
+      "availability": 0.7347412109375,
+      "terminal_pending": 0.015625,
+      "tail_pending": 0.0,
+      "failures": 1.3359375,
+      "policy_failures": 1.3359375,
+      "waiting_cost": 0.0,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.006476373455825524
+    },
+    {
+      "controller": "initial",
+      "train_seed": 41000000,
+      "extended_cost": 789.9765625,
+      "policy_cost": 680.15625,
+      "tail_cost": 109.8203125,
+      "availability": 0.6301676432291666,
+      "terminal_pending": 0.265625,
+      "tail_pending": 0.0,
+      "failures": 6.9375,
+      "policy_failures": 6.6640625,
+      "waiting_cost": 108.84375,
+      "policy_overdue_ticks": 9.0703125,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.006488350277777499
+    },
+    {
+      "controller": "initial",
+      "train_seed": 41000001,
+      "extended_cost": 1021.0078125,
+      "policy_cost": 895.7578125,
+      "tail_cost": 125.25,
+      "availability": 0.5761311848958333,
+      "terminal_pending": 0.75,
+      "tail_pending": 0.0,
+      "failures": 9.125,
+      "policy_failures": 8.3828125,
+      "waiting_cost": 239.8125,
+      "policy_overdue_ticks": 19.984375,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.006404426464996504
+    },
+    {
+      "controller": "initial",
+      "train_seed": 41000002,
+      "extended_cost": 1310.140625,
+      "policy_cost": 1190.0703125,
+      "tail_cost": 120.0703125,
+      "availability": 0.46903483072916663,
+      "terminal_pending": 0.6640625,
+      "tail_pending": 0.0,
+      "failures": 11.109375,
+      "policy_failures": 10.6171875,
+      "waiting_cost": 383.53125,
+      "policy_overdue_ticks": 31.9609375,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.006346656647110649
+    },
+    {
+      "controller": "deadline_matching",
+      "train_seed": -1,
+      "extended_cost": 473.0859375,
+      "policy_cost": 379.7578125,
+      "tail_cost": 93.328125,
+      "availability": 0.7134602864583333,
+      "terminal_pending": 0.0,
+      "tail_pending": 0.0,
+      "failures": 0.25,
+      "policy_failures": 0.25,
+      "waiting_cost": 0.0,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.0005771840096713277
+    },
+    {
+      "controller": "isolated_h6",
+      "train_seed": -1,
+      "extended_cost": 492.4765625,
+      "policy_cost": 396.09375,
+      "tail_cost": 96.3828125,
+      "availability": 0.7155354817708334,
+      "terminal_pending": 0.0234375,
+      "tail_pending": 0.0,
+      "failures": 1.5234375,
+      "policy_failures": 1.4140625,
+      "waiting_cost": 0.0,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.0033351798488183704
+    },
+    {
+      "controller": "isolated_endpoint",
+      "train_seed": -1,
+      "extended_cost": 473.8359375,
+      "policy_cost": 381.515625,
+      "tail_cost": 92.3203125,
+      "availability": 0.741455078125,
+      "terminal_pending": 0.0,
+      "tail_pending": 0.0,
+      "failures": 2.2734375,
+      "policy_failures": 2.2734375,
+      "waiting_cost": 0.0,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.003088063619998138
+    },
+    {
+      "controller": "joint_rollout",
+      "train_seed": -1,
+      "extended_cost": 442.9609375,
+      "policy_cost": 357.9765625,
+      "tail_cost": 84.984375,
+      "availability": 0.7364095052083334,
+      "terminal_pending": 0.0,
+      "tail_pending": 0.0,
+      "failures": 0.453125,
+      "policy_failures": 0.453125,
+      "waiting_cost": 0.0,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 626251.0,
+      "planning_seconds": 0.3781638842810935
+    }
+  ],
+  "learned_aggregate": {
+    "extended_cost": 468.5677083333333,
+    "availability": 0.7349717881944443,
+    "terminal_pending": 0.018229166666666668
+  },
+  "initial_aggregate": {
+    "extended_cost": 1040.375,
+    "availability": 0.5584445529513883,
+    "terminal_pending": 0.5598958333333334
+  },
+  "remaining_cost_gap_to_rollout": 25.606770833333314,
+  "physical_replay_scope": "Runner audit: every test tick and learned prediction; forecast replay first two test seeds only."
+}

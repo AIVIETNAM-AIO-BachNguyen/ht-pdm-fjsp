@@ -1,0 +1,26 @@
+{
+  "exploratory": true,
+  "scope": "logged two-profile/two-shock states only; same trained weights; frozen-context inference is an input intervention, not a retrained policy or performance estimate",
+  "summary": [
+    {
+      "condition": "dense",
+      "post_first_pair_states": 252,
+      "second_has_choice": 52,
+      "second_greedy_switches": 0,
+      "median_total_variation": 0.00012259185314178467,
+      "max_total_variation": 0.001291818916797638,
+      "mean_stop_probability_change": -0.0002490878821565555,
+      "median_context_shift_l2": 0.22267399728298187
+    },
+    {
+      "condition": "skill_mask",
+      "post_first_pair_states": 262,
+      "second_has_choice": 50,
+      "second_greedy_switches": 0,
+      "median_total_variation": 0.00032770074903964996,
+      "max_total_variation": 0.002102173864841461,
+      "mean_stop_probability_change": -0.0003481947630643845,
+      "median_context_shift_l2": 0.20626956969499588
+    }
+  ]
+}

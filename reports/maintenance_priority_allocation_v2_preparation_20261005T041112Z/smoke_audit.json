@@ -1,0 +1,29 @@
+{
+  "status": "VERIFIED_ENGINEERING_SMOKE",
+  "counts": {
+    "training_episodes.csv": 36,
+    "training_progress.csv": 6,
+    "episodes.csv": 63,
+    "development_episodes.csv": 3,
+    "reference_episodes.csv": 22,
+    "exact_small_metrics.csv": 4,
+    "exact_headroom.csv": 4,
+    "exact_headroom_contrasts.csv": 3,
+    "reference_contrasts.csv": 3,
+    "decisions.csv": 243,
+    "reference_decisions.csv": 81,
+    "machine_metrics.csv": 243,
+    "reference_machine_metrics.csv": 78
+  },
+  "replayed_test_episodes": 84,
+  "replayed_physical_steps": 324,
+  "fixed_priority_dispatch_choices_audited": 0,
+  "max_numeric_error": 0.0,
+  "models": 3,
+  "engineering_gates": 26,
+  "all_gates_passed": true,
+  "sealed_panels_closed": true,
+  "scientific_gates_applicable": false,
+  "source_bundle_sha256": "68667c8171baaf76a23aafd188394619e54fa063d11b3f2b6bf38dc397651bcb",
+  "scope": "Shared-simulator full trace replay plus independent occupancy/start-cost, family mean and exact headroom arithmetic; not independent simulator reproduction or full scientific evidence"
+}

@@ -1,0 +1,35 @@
+{
+  "unavoidable_best_set_conflict_rate": {
+    "min_policy_estimate": 0.12239583333333334,
+    "min_policy_ci9875": [
+      0.09847005208333333,
+      0.14778645833333334
+    ],
+    "per_policy": {
+      "deadline_matching": 0.12239583333333334,
+      "priority_greedy": 0.14860026041666663
+    }
+  },
+  "strict_preference_deficit_rate": {
+    "min_policy_estimate": 0.0,
+    "min_policy_ci9875": [
+      0.0,
+      0.0
+    ],
+    "per_policy": {
+      "deadline_matching": 0.0,
+      "priority_greedy": 0.0
+    }
+  },
+  "tie_resolvable_conflict_rate": {
+    "min_policy_estimate": 0.16194661458333334,
+    "min_policy_ci9875": [
+      0.12955627441406253,
+      0.1971028645833332
+    ],
+    "per_policy": {
+      "deadline_matching": 0.22460937499999994,
+      "priority_greedy": 0.16194661458333334
+    }
+  }
+}

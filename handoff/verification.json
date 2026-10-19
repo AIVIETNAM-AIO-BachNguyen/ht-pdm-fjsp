@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "scope": "Packaging and read-only reanalysis; active simulator unchanged from 8855c7e",
+  "tests": {
+    "command": "PYTHONPATH=src <existing-mac-venv>/bin/python -m pytest -q tests/test_maintenance_dispatch.py tests/test_maintenance_requests.py tests/test_maintenance_request_experiment.py",
+    "passed": 42
+  },
+  "smoke": {
+    "profile": "smoke",
+    "device": "cpu",
+    "episodes": 36,
+    "status": "COMPLETED",
+    "local_path": "artifacts/maintenance_framework_handoff_smoke_20261019T150340Z"
+  },
+  "reanalysis": {
+    "scalar_transitions": 221184,
+    "validation_json_identical": true,
+    "new_seeds_used": false,
+    "forecast_banks_rerun": false,
+    "all_five_csvs_byte_identical": true,
+    "csv_files_compared": 5
+  },
+  "historical_outputs_reaudited": false,
+  "pending_legacy_code_integrated": false,
+  "credential_pattern_scan": "No common private-key/GitHub/AWS/OpenAI credential patterns detected in imported text payload; heuristic check only",
+  "packaging_checks": {
+    "verifier_rejects_missing_and_corrupt_payload": true,
+    "analysis_cli_rejects_capsule_existing_output_and_raw_descendant": true,
+    "new_authored_code_doc_whitespace": "PASS",
+    "imported_artifact_formatting": "Preserved original CSV line endings, SVG path whitespace, patch context and historical source bytes; not normalized for diff-check."
+  }
+}

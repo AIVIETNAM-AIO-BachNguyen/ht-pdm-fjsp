@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "episodes": 23040,
+  "decisions": 921600,
+  "requests": 304643,
+  "carryover_requests": 14389,
+  "rule_actions_reproduced": 405504,
+  "time_profile_rows": 1800,
+  "planner_actions": "feasibility/fixed restrictions checked; full planner inference not rerun",
+  "cutoff_and_tail_dynamics_preserved": true,
+  "interior_and_all_cost_components_reconstructed": true
+}

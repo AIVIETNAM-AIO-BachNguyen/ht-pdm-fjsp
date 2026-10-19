@@ -1,0 +1,41 @@
+{
+  "source": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_coupling_full_cpu_20261004T133132Z",
+  "source_commit": "07697c29a6e563b762ef6497b5949366ae85c554",
+  "complete": true,
+  "expected_rows": 7680,
+  "decision_rows": 2304,
+  "oracle_rows": 32,
+  "development_rows": 288,
+  "coordination_rows": 48,
+  "replayed_episodes": 7680,
+  "replayed_decisions": 2304,
+  "max_replay_error": 0.0,
+  "summary_arithmetic_match": true,
+  "hashes_match": true,
+  "independent_reproduction": false,
+  "excluded": [
+    {
+      "run": "ra_qmix_heuristic_assignment_full_cpu_20261004T124714Z",
+      "local_manifest_status": "RUNNING",
+      "reason": "different experiment; not included in coupling analysis"
+    },
+    {
+      "run": "ra_qmix_td_assignment_full_cpu_20261004T053816Z",
+      "local_manifest_status": "COMPLETED",
+      "reason": "different experiment; not included in coupling analysis"
+    }
+  ],
+  "file_sha256": {
+    "benchmark_config.json": "fe0f7bcf722dde67de3f3a04b414870ad9753fbc2cba271ebda388febbfdaad5",
+    "coordination.csv": "aca1b95372ee0e3338bd6b9ca1a09492380c9a15364b7032f7228e3fffdb94c3",
+    "decisions.csv": "8a70c31e1391b470a87f69b7db839ad9a55de91e3fd1b1f0d1002fa95d90c5f0",
+    "development.csv": "1cb9e8faf4b05d00a8dc61dade3e9ae1b1effeea61f2290ccba8ed90a77dfa95",
+    "episodes.csv": "348b6f6150426adbc6a329a4167f88fff618a9b9ef729a34a6cd48f34baec494",
+    "episodes.partial.csv": "348b6f6150426adbc6a329a4167f88fff618a9b9ef729a34a6cd48f34baec494",
+    "exact_oracle.csv": "5d43af758426c30b1b72451d20c2b1a4d86cf4494159458293069bc49011ddad",
+    "manifest.json": "c1f29d0d7ba560ef6fff94ae4788bc9a17952d6825dba1411b69f3486332f5da",
+    "policy.json": "4ec5d9338af21cdcd593a47c1f95fd0cb3b15f6f84b6324b425c31232452d84f",
+    "resolved_config.json": "ef6b50a5bc90db824a3c45fb50b5b1e0e3afd4012149880657f3cd08b56957c5",
+    "summary.json": "f9f4f358c54bba999496f027f9bff8758da376cf2e28c4a8f1f124c86670a8b0"
+  }
+}

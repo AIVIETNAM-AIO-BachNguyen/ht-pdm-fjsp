@@ -1,0 +1,78 @@
+{
+  "status": "ANALYZED",
+  "manifest": "COMPLETED",
+  "source_snapshot_hash_verified": "94b99bd6db339a82d9a6a00073dbb750e93f909b0ce60d3dad0ec46ca6541d7f",
+  "checkpoints_replayed": 90,
+  "evaluation_episodes_replayed": 15300,
+  "heuristic_reference_episodes_replayed": 680,
+  "small_exact_policy_metrics_recomputed": 120,
+  "training_oracle_labels_checked": 826,
+  "training_episode_rows_checked": 600000,
+  "training_log_rows_checked": 13410,
+  "budget_counts_and_seed_audit": true,
+  "primary_recomputed": {
+    "mean_cost_delta": -19.744333333333337,
+    "baseline_cost": 147.17283333333336,
+    "relative_reduction": 0.13415745886072725,
+    "ci95": [
+      -26.227568571609307,
+      -13.261098095057367
+    ],
+    "improving_seeds": 10,
+    "nominal_relative_increase": 1.5243609602727184,
+    "passed": false
+  },
+  "size_summary": [
+    {
+      "machines": 2,
+      "diagnostic_td": 12.383,
+      "diagnostic_heuristic": 11.895999999999999,
+      "relative_reduction": 0.039328111120084025,
+      "diagnostic_wins": 2,
+      "nominal_losses": 6,
+      "nominal_td": 11.288,
+      "nominal_heuristic": 11.12
+    },
+    {
+      "machines": 3,
+      "diagnostic_td": 70.054,
+      "diagnostic_heuristic": 47.217,
+      "relative_reduction": 0.325991378079767,
+      "diagnostic_wins": 10,
+      "nominal_losses": 4,
+      "nominal_td": 20.59,
+      "nominal_heuristic": 24.54
+    },
+    {
+      "machines": 4,
+      "diagnostic_td": 154.9155,
+      "diagnostic_heuristic": 135.162,
+      "relative_reduction": 0.12751144979036955,
+      "diagnostic_wins": 9,
+      "nominal_losses": 10,
+      "nominal_td": 44.184,
+      "nominal_heuristic": 183.037
+    },
+    {
+      "machines": 5,
+      "diagnostic_td": 216.54899999999998,
+      "diagnostic_heuristic": 199.9065,
+      "relative_reduction": 0.0768532757020351,
+      "diagnostic_wins": 9,
+      "nominal_losses": 9,
+      "nominal_td": 108.885,
+      "nominal_heuristic": 230.801
+    }
+  ],
+  "prior_failed_run_excluded": "ra_qmix_heuristic_assignment_full_cpu_20261004T124714Z (22 completed models)",
+  "limitations": [
+    "no retraining reproduction",
+    "same-source DP, not independent oracle",
+    "individual training transitions not persisted: cannot independently replay training reward reconciliation",
+    "training-config replays and behavioral decomposition are exploratory; no gate changes"
+  ],
+  "teacher_table_hashes_verified": true,
+  "exploratory_training_config_replays": 9000,
+  "exploratory_training_teacher_reference_replays": 400,
+  "nominal_machine_metrics_reconcile": true
+}

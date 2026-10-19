@@ -1,0 +1,11 @@
+{
+  "status": "MATCHED",
+  "states": 202000,
+  "sequence_mismatches": 0,
+  "physical_matching_mismatches": 0,
+  "models": 40,
+  "batch_size": 256,
+  "source_snapshot_matches": true,
+  "details": [],
+  "scope": "local batched checkpoint inference on original logged states, not independent training reproduction"
+}

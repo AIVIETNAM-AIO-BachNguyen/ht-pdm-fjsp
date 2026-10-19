@@ -1,0 +1,31 @@
+{
+  "verification_status": "ANALYZED",
+  "raw_directory": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_stagger_full_cpu_20261004T150819Z",
+  "source_commit": "ccaff3e1e36078b9258cbb209089cce6b5ca684c",
+  "hashes_match": true,
+  "complete_cartesian_panel": true,
+  "episodes": 34560,
+  "development": 7680,
+  "decisions": 20736,
+  "coordination": 384,
+  "configs": 384,
+  "summary_arithmetic_match": true,
+  "development_selection_matches": true,
+  "replayed_episodes": 1152,
+  "replayed_decisions": 20736,
+  "max_replay_error": 0.0,
+  "independent_reproduction": false,
+  "replay_scope": "first fixed episode shock per cell; all stored decisions; pinned shared implementation",
+  "file_sha256": {
+    "benchmark_config.json": "cd59c9305c2326da484a4cafb9b2d9d0f6c12ea9cab1973f3ec09240387a434d",
+    "coordination.csv": "0f46840e5a8afe79005243840ebf887087369cc95f03ce7775f7b7021896cb66",
+    "decisions.csv": "700d65b1fec338aa8c1136b9d339100084a7b7a35498ccdbf9f5821239a3b973",
+    "development.csv": "127b55269559187ad39dd2bff29b8b8f453f4e78d744a2f234df43e35e9a8315",
+    "episodes.csv": "1d5827b78581347fc87cdb7cf23edc33e60e1fc44c40ea6507128787b7be9f23",
+    "episodes.partial.csv": "1d5827b78581347fc87cdb7cf23edc33e60e1fc44c40ea6507128787b7be9f23",
+    "manifest.json": "2bf0e6b3f4192d3b145bad13e2702b040eca28e6d05a7eca2d2dba2dd9c56b32",
+    "policy.json": "63b5a320b016c8fa1f40f5294cc115a48536e46593fd3bdf6bf46b1e78282324",
+    "resolved_config.json": "9cc7515d01304a5769adb0ea852af88cd139580ebc5d77a3d3e2dc0324523fff",
+    "summary.json": "aaa880b9d6ab15c22f937f62df392645e646182784ff60146aec801d770cd578"
+  }
+}

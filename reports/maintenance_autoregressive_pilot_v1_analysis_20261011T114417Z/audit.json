@@ -1,0 +1,12 @@
+{
+  "status": "INCOMPLETE_ANALYSIS_CHECK",
+  "artifact_files": 238,
+  "source_files": 165,
+  "bytes": 34375037,
+  "source_and_current_code_match_commit": true,
+  "training_rerun": false,
+  "lab_access": false,
+  "raw_data_modified": false,
+  "run_seconds": 618.9097726410255,
+  "reason": "Initial checker disallowed undefined development served-wait averages; corrected checker verified served-request count zero. Successful analysis is in reports/maintenance_autoregressive_pilot_v1_analysis_20261011T114554Z"
+}

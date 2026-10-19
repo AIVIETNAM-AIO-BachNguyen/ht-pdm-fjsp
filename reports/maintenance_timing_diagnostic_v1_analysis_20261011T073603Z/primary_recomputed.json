@@ -1,0 +1,34 @@
+{
+  "dense:pm_deferral": {
+    "mean_total_window_cost_delta": -2.1822766570605183,
+    "ci_total_window_cost_delta": [
+      -6.443180344646706,
+      2.201353656935343
+    ],
+    "exposures": 347
+  },
+  "dense:rule_root": {
+    "mean_total_window_cost_delta": 2.5494861859838274,
+    "ci_total_window_cost_delta": [
+      -0.5295676546964618,
+      6.489065287933878
+    ],
+    "exposures": 742
+  },
+  "skill_mask:pm_deferral": {
+    "mean_total_window_cost_delta": -2.7121883202099735,
+    "ci_total_window_cost_delta": [
+      -8.683886321683701,
+      0.025173494700503042
+    ],
+    "exposures": 381
+  },
+  "skill_mask:rule_root": {
+    "mean_total_window_cost_delta": 1.091176958831341,
+    "ci_total_window_cost_delta": [
+      -0.06370421079508681,
+      2.7699950095316113
+    ],
+    "exposures": 753
+  }
+}

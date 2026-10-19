@@ -1,0 +1,25 @@
+condition,source,controller,PM_states_with_choice,max_adjusted_gain,margin,near_tie_count,changed,reasons
+dense,18100000,natural_ungated,174,1.1138843297958374,2.624477983415127,174,30,"{'insufficient_predicted_gain': 144, 'none': 30}"
+dense,18100000,natural_gated,180,0.5977722406387329,2.624477983415127,0,0,{'insufficient_predicted_gain': 180}
+dense,18100000,broad_ungated,178,1.0836294889450073,3.024914627075195,178,30,"{'insufficient_predicted_gain': 148, 'none': 30}"
+dense,18100000,broad_gated,180,0.6588292717933655,3.024914627075195,0,0,{'insufficient_predicted_gain': 180}
+dense,18100001,natural_ungated,183,0.6451743245124817,3.1335651257634165,183,49,"{'none': 49, 'insufficient_predicted_gain': 134}"
+dense,18100001,natural_gated,190,0.5584104657173157,3.1335651257634165,0,0,{'insufficient_predicted_gain': 190}
+dense,18100001,broad_ungated,178,0.5985135436058044,3.2086072655022146,178,58,"{'none': 58, 'insufficient_predicted_gain': 120}"
+dense,18100001,broad_gated,190,0.8076348900794983,3.2086072655022146,0,0,{'insufficient_predicted_gain': 190}
+dense,18100002,natural_ungated,202,0.7375828623771667,3.8262807047367096,202,52,"{'insufficient_predicted_gain': 150, 'none': 52}"
+dense,18100002,natural_gated,196,0.6894811391830444,3.8262807047367096,0,0,{'insufficient_predicted_gain': 196}
+dense,18100002,broad_ungated,191,0.607610285282135,3.5422957506775856,191,35,"{'insufficient_predicted_gain': 156, 'none': 35}"
+dense,18100002,broad_gated,196,0.4369751214981079,3.5422957506775856,0,0,{'insufficient_predicted_gain': 196}
+skill_mask,18100000,natural_ungated,32,1.0927156209945679,,32,6,"{'insufficient_predicted_gain': 26, 'none': 6}"
+skill_mask,18100000,natural_gated,33,0.5985729098320007,,33,0,{'insufficient_calibration': 33}
+skill_mask,18100000,broad_ungated,32,0.296688437461853,,32,2,"{'insufficient_predicted_gain': 30, 'none': 2}"
+skill_mask,18100000,broad_gated,33,0.10921989381313324,,33,0,{'insufficient_calibration': 33}
+skill_mask,18100001,natural_ungated,65,1.9048875570297241,,65,27,"{'none': 27, 'insufficient_predicted_gain': 38}"
+skill_mask,18100001,natural_gated,60,1.434481143951416,,60,0,{'insufficient_calibration': 60}
+skill_mask,18100001,broad_ungated,65,1.8796268701553345,,65,31,"{'none': 31, 'insufficient_predicted_gain': 34}"
+skill_mask,18100001,broad_gated,60,1.5580744743347168,,60,0,{'insufficient_calibration': 60}
+skill_mask,18100002,natural_ungated,56,0.11802815645933151,,56,15,"{'insufficient_predicted_gain': 41, 'none': 15}"
+skill_mask,18100002,natural_gated,56,0.10205194354057312,,56,0,{'insufficient_calibration': 56}
+skill_mask,18100002,broad_ungated,56,0.32334285974502563,,56,8,"{'insufficient_predicted_gain': 48, 'none': 8}"
+skill_mask,18100002,broad_gated,56,0.21067917346954346,,56,0,{'insufficient_calibration': 56}

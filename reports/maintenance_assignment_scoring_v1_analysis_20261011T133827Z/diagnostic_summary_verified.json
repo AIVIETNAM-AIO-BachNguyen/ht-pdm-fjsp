@@ -1,0 +1,699 @@
+{
+  "contrasts": {
+    "additive_ppo:dense:timing": {
+      "gain": 1.724702380952381,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -1.8842423729360165,
+        5.304347826086956
+      ],
+      "exposure": 63,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": 1.78203125,
+        "18100001": 2.416440217391304,
+        "18100002": 0.871875
+      }
+    },
+    "additive_ppo:dense:assignment": {
+      "gain": 1.475,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -3.048611111111111,
+        11.372395833333334
+      ],
+      "exposure": 40,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": -2.1947916666666667,
+        "18100001": -0.3641826923076923,
+        "18100002": 8.0546875
+      }
+    },
+    "additive_ppo:dense:mass_decoder": {
+      "gain": 1.796484375,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -4.308965320121951,
+        12.50998263888889
+      ],
+      "exposure": 40,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": -0.053125,
+        "18100001": -1.6117788461538463,
+        "18100002": 7.80078125
+      }
+    },
+    "additive_ppo:skill_mask:timing": {
+      "gain": 2.8125,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.029086538461538462,
+        6.604259096953529
+      ],
+      "exposure": 71,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": 3.5123697916666665,
+        "18100001": 0.87578125,
+        "18100002": 3.625
+      }
+    },
+    "additive_ppo:skill_mask:assignment": {
+      "gain": 17.9328125,
+      "confidence": 0.95,
+      "confidence_interval": null,
+      "exposure": 10,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.06525000000000003,
+      "exploratory": true,
+      "status": "INSUFFICIENT",
+      "replica_gains": {
+        "18100000": 0.0,
+        "18100001": 10.7109375,
+        "18100002": 34.12109375
+      }
+    },
+    "additive_ppo:skill_mask:mass_decoder": {
+      "gain": 14.925,
+      "confidence": 0.95,
+      "confidence_interval": null,
+      "exposure": 10,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.06525000000000003,
+      "exploratory": true,
+      "status": "INSUFFICIENT",
+      "replica_gains": {
+        "18100000": 0.0,
+        "18100001": 0.0,
+        "18100002": 37.3125
+      }
+    },
+    "interaction_ppo:dense:timing": {
+      "gain": 2.0825892857142856,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -2.1675347222222223,
+        7.086956521739131
+      ],
+      "exposure": 63,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": 0.4671875,
+        "18100001": 1.5699728260869565,
+        "18100002": 4.2875
+      }
+    },
+    "interaction_ppo:dense:assignment": {
+      "gain": 3.89140625,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -1.1143092105263157,
+        13.524259868421053
+      ],
+      "exposure": 40,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": 3.575,
+        "18100001": -0.09134615384615384,
+        "18100002": 8.6015625
+      }
+    },
+    "interaction_ppo:dense:mass_decoder": {
+      "gain": 1.39375,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -6.347981770833333,
+        13.332236842105264
+      ],
+      "exposure": 40,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": 0.38229166666666664,
+        "18100001": -4.092548076923077,
+        "18100002": 8.6015625
+      }
+    },
+    "interaction_ppo:skill_mask:timing": {
+      "gain": 2.1316021126760565,
+      "confidence": 0.95,
+      "confidence_interval": [
+        0.44915674603174605,
+        3.680722891566265
+      ],
+      "exposure": 71,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.0,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": 2.1744791666666665,
+        "18100001": 1.5828125,
+        "18100002": 2.5
+      }
+    },
+    "interaction_ppo:skill_mask:assignment": {
+      "gain": 10.778492647058824,
+      "confidence": 0.95,
+      "confidence_interval": [
+        0.0,
+        20.1953125
+      ],
+      "exposure": 17,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.00770000000000004,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": 9.095982142857142,
+        "18100001": 8.62109375,
+        "18100002": 14.1796875
+      }
+    },
+    "interaction_ppo:skill_mask:mass_decoder": {
+      "gain": 1.6626838235294117,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -4.268973214285714,
+        12.046875
+      ],
+      "exposure": 17,
+      "total_states": 180,
+      "empty_bootstrap_fraction": 0.00770000000000004,
+      "exploratory": true,
+      "status": "DESCRIPTIVE",
+      "replica_gains": {
+        "18100000": -2.845982142857143,
+        "18100001": 0.0,
+        "18100002": 8.03125
+      }
+    }
+  },
+  "strata": [
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 2.2135416666666665
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 6,
+      "exposure": 4,
+      "gain": 3.44140625
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 18,
+      "exposure": 5,
+      "gain": 0.375
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 30,
+      "exposure": 8,
+      "gain": -1.994140625
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 42,
+      "exposure": 10,
+      "gain": 2.928125
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 1.3415798611111112
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 30,
+      "exposure": 2,
+      "gain": 2.703125
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 42,
+      "exposure": 2,
+      "gain": 2.6484375
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 2.0182291666666665
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 30,
+      "exposure": 2,
+      "gain": -0.3984375
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 42,
+      "exposure": 2,
+      "gain": 0.0
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 4.391493055555555
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 6,
+      "exposure": 6,
+      "gain": -1.4661458333333333
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 18,
+      "exposure": 9,
+      "gain": 3.5121527777777777
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 30,
+      "exposure": 10,
+      "gain": 1.1015625
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 42,
+      "exposure": 10,
+      "gain": 0.7765625
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 0,
+      "exposure": 10,
+      "gain": 17.9328125
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 30,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 42,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 0,
+      "exposure": 10,
+      "gain": 14.925
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 30,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "additive_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 42,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 2.6497395833333335
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 6,
+      "exposure": 4,
+      "gain": 0.0
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 18,
+      "exposure": 5,
+      "gain": 1.890625
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 30,
+      "exposure": 8,
+      "gain": -1.677734375
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "timing",
+      "tick": 42,
+      "exposure": 10,
+      "gain": 3.978125
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 4.092013888888889
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 30,
+      "exposure": 2,
+      "gain": 1.5234375
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "assignment",
+      "tick": 42,
+      "exposure": 2,
+      "gain": 2.6484375
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 1.4639756944444444
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 30,
+      "exposure": 2,
+      "gain": 1.5234375
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "dense",
+      "contrast": "mass_decoder",
+      "tick": 42,
+      "exposure": 2,
+      "gain": 0.0
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 0,
+      "exposure": 36,
+      "gain": 3.4188368055555554
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 6,
+      "exposure": 6,
+      "gain": -0.9505208333333334
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 18,
+      "exposure": 9,
+      "gain": 2.0711805555555554
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 30,
+      "exposure": 10,
+      "gain": -0.321875
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "timing",
+      "tick": 42,
+      "exposure": 10,
+      "gain": 1.8546875
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 0,
+      "exposure": 16,
+      "gain": 10.787109375
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 30,
+      "exposure": 1,
+      "gain": 10.640625
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "assignment",
+      "tick": 42,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 0,
+      "exposure": 16,
+      "gain": 1.7666015625
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 6,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 18,
+      "exposure": 0,
+      "gain": null
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 30,
+      "exposure": 1,
+      "gain": 0.0
+    },
+    {
+      "arm": "interaction_ppo",
+      "condition": "skill_mask",
+      "contrast": "mass_decoder",
+      "tick": 42,
+      "exposure": 0,
+      "gain": null
+    }
+  ],
+  "scope": "same baseline-visited states, own scorer's greedy root and continuation; independent selection/evaluation tapes",
+  "uncertainty": "exploratory95% crossed replica/profile intervals conditional on MC tapes; root paired MC SE separate",
+  "interpretation": "timing and assignment residual gaps have different eligibility denominators; no oracle training or optimality claim"
+}

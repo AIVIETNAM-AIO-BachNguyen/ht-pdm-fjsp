@@ -1,0 +1,14 @@
+{
+  "decision_rows": 5160960,
+  "episodes": 286720,
+  "mismatches": 0,
+  "checks": [
+    "initial state and shock stream",
+    "state continuity",
+    "valid assignment",
+    "following state",
+    "all physical tick metrics",
+    "episode cost reconciliation"
+  ],
+  "limitation": "Uses frozen experiment physics; does not independently reimplement physics or replay actor inference."
+}

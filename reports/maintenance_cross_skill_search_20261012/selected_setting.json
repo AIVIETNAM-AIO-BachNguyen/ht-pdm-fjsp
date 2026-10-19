@@ -1,0 +1,290 @@
+{
+  "status": "CROSS_SKILL_SETTING_CONFIRMED",
+  "candidate": "cross_d3_q050_skewed",
+  "research_priority": "joint maintenance with independently isolated technician-assignment value",
+  "physics": {
+    "machines": 4,
+    "technicians": 2,
+    "horizon": 60,
+    "failure_age": 4,
+    "failure_probability": 0.45,
+    "service_time": [
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "restoration": [
+      [
+        0.5,
+        1.0
+      ],
+      [
+        0.5,
+        1.0
+      ],
+      [
+        0.5,
+        1.0
+      ],
+      [
+        1.0,
+        0.5
+      ]
+    ],
+    "max_age": 8,
+    "preventive_cost": 1.0,
+    "corrective_cost": 2.0,
+    "unavailable_cost": 6.0,
+    "failure_cost": 15.0,
+    "waiting_limit": 4,
+    "waiting_price": 12.0
+  },
+  "policy_horizon": 48,
+  "common_tail_ticks": 12,
+  "base": "deadline_matching",
+  "joint_action_catalogue": 21,
+  "rule": "Every feasible partial matching incl WAIT, current failed/age>=3 machines and free workers",
+  "evidence": {
+    "commit": "8672acbbce5628761977b5ade2cb1ab8085babb1",
+    "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_cross_skill_mac_v1_full_cpu_20261012T080148Z",
+    "development_seeds": 16,
+    "screening_seeds": 24,
+    "confirmation_seeds": 256,
+    "simultaneous_confidence": 0.9972222222222222,
+    "all_eighteen_gates_pass": true,
+    "comparisons": {
+      "local_baseline": {
+        "estimate": 5.70715767996652,
+        "ci": [
+          3.931542708381775,
+          7.626728729974657
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "local_quality": {
+        "estimate": 5.70715767996652,
+        "ci": [
+          3.931542708381775,
+          7.626728729974657
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "local_endpoint_dp": {
+        "estimate": 5.580514090401787,
+        "ci": [
+          3.821256092616489,
+          7.515857133411242
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "assignment_cost_gain": {
+        "estimate": 0.08878177138392242,
+        "ci": [
+          0.07142443126892811,
+          0.10665658693698839
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_cost_vs_deadline_matching": {
+        "estimate": 0.13869674127866893,
+        "ci": [
+          0.1227499075152936,
+          0.1550772157931235
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_cost_vs_isolated_h6": {
+        "estimate": 0.18309575186904684,
+        "ci": [
+          0.16517652636490307,
+          0.20026633834906046
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_cost_vs_isolated_endpoint": {
+        "estimate": 0.13683707486714147,
+        "ci": [
+          0.12065561487357136,
+          0.15284530954713332
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "assignment_availability_difference": {
+        "estimate": 0.017395019531249667,
+        "ci": [
+          0.01193799619321453,
+          0.0234059086552375
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "assignment_pending_difference": {
+        "estimate": -0.04296875,
+        "ci": [
+          -0.09375,
+          -0.00390625
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "assignment_absolute_availability": {
+        "estimate": 0.6450602213541663,
+        "ci": [
+          0.6394856770833333,
+          0.6501668294270835
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "assignment_absolute_pending": {
+        "estimate": 0.015625,
+        "ci": [
+          0.0,
+          0.04296875
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "assignment_interior_gain": {
+        "estimate": 0.0754360402210136,
+        "ci": [
+          0.05870906767614732,
+          0.09271111741830428
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_availability_difference": {
+        "estimate": 0.03572591145833304,
+        "ci": [
+          0.02908887509946453,
+          0.04266357421875014
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_pending_difference": {
+        "estimate": -0.05859375,
+        "ci": [
+          -0.109375,
+          -0.01953125
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_absolute_availability": {
+        "estimate": 0.6633911132812497,
+        "ci": [
+          0.6620483398437503,
+          0.6647542317708336
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_absolute_pending": {
+        "estimate": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "joint_interior_gain": {
+        "estimate": 0.12544541743006765,
+        "ci": [
+          0.10966611840239804,
+          0.14182833401543976
+        ],
+        "confidence": 0.9972222222222222
+      },
+      "assignment_choice_fraction": {
+        "estimate": 0.5842633928571429,
+        "ci": [
+          0.5306919642857147,
+          0.637834821428571
+        ],
+        "confidence": 0.9972222222222222
+      }
+    },
+    "means": {
+      "deadline_matching": {
+        "extended_cost": 679.90625,
+        "policy_cost": 541.5390625,
+        "tail_cost": 138.3671875,
+        "availability": 0.6276652018229167,
+        "terminal_pending": 0.05859375,
+        "tail_pending": 0.04296875,
+        "policy_failures": 3.62109375,
+        "planning_seconds": 0.000761156064527313
+      },
+      "isolated_h6": {
+        "extended_cost": 716.859375,
+        "policy_cost": 578.84765625,
+        "tail_cost": 138.01171875,
+        "availability": 0.590087890625,
+        "terminal_pending": 0.171875,
+        "tail_pending": 0.0703125,
+        "policy_failures": 3.78515625,
+        "planning_seconds": 0.0034511730866597645
+      },
+      "isolated_endpoint": {
+        "extended_cost": 678.44140625,
+        "policy_cost": 540.5703125,
+        "tail_cost": 137.87109375,
+        "availability": 0.6313273111979166,
+        "terminal_pending": 0.0,
+        "tail_pending": 0.0,
+        "policy_failures": 3.78515625,
+        "planning_seconds": 0.003401569725383524
+      },
+      "assignment_rollout": {
+        "extended_cost": 619.54296875,
+        "policy_cost": 500.6875,
+        "tail_cost": 118.85546875,
+        "availability": 0.6450602213541666,
+        "terminal_pending": 0.015625,
+        "tail_pending": 0.01171875,
+        "policy_failures": 2.125,
+        "planning_seconds": 0.26426161253925784
+      },
+      "joint_rollout": {
+        "extended_cost": 585.60546875,
+        "policy_cost": 473.60546875,
+        "tail_cost": 112.0,
+        "availability": 0.66339111328125,
+        "terminal_pending": 0.0,
+        "tail_pending": 0.0,
+        "policy_failures": 1.52734375,
+        "planning_seconds": 0.5395188734480598
+      }
+    },
+    "mechanism": {
+      "landmarks": 1792,
+      "choices": 1047,
+      "changed": 201,
+      "restoration_different_states": 929,
+      "duration_different_states": 901,
+      "clock_tick_counts": {
+        "0": 256,
+        "8": 256,
+        "16": 256,
+        "24": 256,
+        "32": 256,
+        "40": 256,
+        "47": 256
+      }
+    }
+  },
+  "prior_control": "old_fast1_slow325 retained unchanged; prior joint planning success remains valid",
+  "learner_status": "No training in this search; known-model diagnostic does not establish learned assignment or MARL necessity",
+  "limits": [
+    "fixed synthetic profile, shock-seed generalization only",
+    "current intervention state/time/subset fixed; future state-adaptive decisions can diverge",
+    "approximate per-protocol bootstrap; not global adaptive-search error control"
+  ]
+}

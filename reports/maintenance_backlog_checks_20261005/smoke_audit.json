@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "shared-implementation consistency replay; not independent reproduction",
+  "smoke": "/Users/bachng/.codex/worktrees/maintenance-coupling/marl/artifacts/maintenance_backlog_smoke_20261004T173448Z",
+  "episodes": 144,
+  "development": 768,
+  "configs": 24,
+  "decisions_replayed": 1932,
+  "job_completions_replayed": 1296,
+  "counterfactual_episodes": 7,
+  "counterfactual_decisions_replayed": 4262,
+  "counterfactual_job_completions_replayed": 2688,
+  "max_numeric_error": 0,
+  "sealed_panel_unopened": true,
+  "prior_manifests_seed_audited": 77,
+  "seed_freshness_scope": "locally available manifests only; untransferred remote experiments unknown",
+  "hashes": {
+    "source": "32023890082133bf8faa9e78765adeb9b4800bb3ef17e6ee12568931d365f56a",
+    "repair": "ba20047dfd5773416b76725cd1c4a9674666fb6d80444f4976873e5ac4ca45e6",
+    "production": "9cbb3c61209c79d39480c735a145a6f33f81d566fccff9b02bee800acf810237",
+    "coupling": "4dcbf3acefd4ae4258c591da1f5e0ed11ae74ffbd0de059ee557b4ccff63bc52",
+    "protocol": "5e8a7dced5c58d1e4b4a10c75b99fb56e11c0276dbf398f0d2b8ce4f1a42877b"
+  },
+  "source_commit": "3be08ac5550a64603ce88634f1043a3e00c6817f",
+  "source_dirty": false,
+  "full_suite_passed": 325
+}

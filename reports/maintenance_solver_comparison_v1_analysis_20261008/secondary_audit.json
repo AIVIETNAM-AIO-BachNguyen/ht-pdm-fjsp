@@ -1,0 +1,58 @@
+{
+  "machine_rows": 1146880,
+  "reconciled_episodes": 286720,
+  "development_rows": 82560,
+  "development_specialized_H12_mean_by_checkpoint": {
+    "central_matching_ppo:0": 395.253125,
+    "central_matching_ppo:122880": 166.9625,
+    "central_matching_ppo:245760": 166.893125,
+    "central_matching_ppo:368640": 166.31625,
+    "central_matching_ppo:491520": 166.105,
+    "central_fixed_allocation_ppo:0": 385.10875,
+    "central_fixed_allocation_ppo:122880": 166.91875,
+    "central_fixed_allocation_ppo:245760": 166.426875,
+    "central_fixed_allocation_ppo:368640": 165.841875,
+    "central_fixed_allocation_ppo:491520": 165.6925,
+    "independent_local_ppo:0": 378.638125,
+    "independent_local_ppo:122880": 207.16125,
+    "independent_local_ppo:245760": 206.316875,
+    "independent_local_ppo:368640": 207.42125,
+    "independent_local_ppo:491520": 206.15375,
+    "cooperative_local_ppo:0": 378.638125,
+    "cooperative_local_ppo:122880": 171.4175,
+    "cooperative_local_ppo:245760": 171.135,
+    "cooperative_local_ppo:368640": 170.16875,
+    "cooperative_local_ppo:491520": 170.065,
+    "cooperative_full_ppo:0": 380.545,
+    "cooperative_full_ppo:122880": 172.911875,
+    "cooperative_full_ppo:245760": 170.915625,
+    "cooperative_full_ppo:368640": 170.598125,
+    "cooperative_full_ppo:491520": 170.29125
+  },
+  "profile_consistency": {
+    "cooperative_local_ppo_vs_independent_local_ppo": {
+      "descriptive_profile_wins": 31,
+      "profiles": 32,
+      "minimum_delta": -52.99000000000001,
+      "maximum_delta": 0.060000000000002274
+    },
+    "cooperative_full_ppo_vs_central_matching_ppo": {
+      "descriptive_profile_wins": 1,
+      "profiles": 32,
+      "minimum_delta": -0.6099999999999852,
+      "maximum_delta": 22.984999999999985
+    },
+    "central_fixed_allocation_ppo_vs_adaptive_isolated_matching": {
+      "descriptive_profile_wins": 30,
+      "profiles": 32,
+      "minimum_delta": -12.625,
+      "maximum_delta": 1.289999999999992
+    },
+    "central_matching_ppo_vs_joint_rollout": {
+      "descriptive_profile_wins": 12,
+      "profiles": 32,
+      "minimum_delta": -4.219999999999999,
+      "maximum_delta": 10.140000000000015
+    }
+  }
+}

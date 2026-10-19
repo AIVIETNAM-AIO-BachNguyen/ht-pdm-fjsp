@@ -1,0 +1,33 @@
+{
+  "matched_git_commit": "4b1cffb0cc1e2413e27f0e2c3a7730f8d3e3d7a8",
+  "files": [
+    "src/ht_pdm_fjsp/maintenance_solver_diagnostics.py",
+    "configs/maintenance_solver_comparison_v1_seed_registry.json",
+    "src/ht_pdm_fjsp/maintenance_solver_policy.py",
+    "src/ht_pdm_fjsp/maintenance_heterogeneous_training.py",
+    "uv.lock",
+    "src/ht_pdm_fjsp/maintenance_contention_oracle.py",
+    "src/ht_pdm_fjsp/maintenance_dispatch.py",
+    "src/ht_pdm_fjsp/maintenance_coordination_references.py",
+    "pyproject.toml",
+    "src/ht_pdm_fjsp/maintenance_contention_model.py",
+    "src/ht_pdm_fjsp/maintenance_heterogeneous_policy.py",
+    "src/ht_pdm_fjsp/maintenance_contention_headroom.py",
+    "src/ht_pdm_fjsp/maintenance_solver_latency.py",
+    "src/ht_pdm_fjsp/maintenance_contention_imitation.py",
+    "src/ht_pdm_fjsp/maintenance_contention_learning.py",
+    "src/ht_pdm_fjsp/maintenance_contention_imitation_training.py",
+    "src/ht_pdm_fjsp/maintenance_solver_model.py",
+    "src/ht_pdm_fjsp/maintenance_waiting.py",
+    "src/ht_pdm_fjsp/maintenance_heterogeneous_marl.py",
+    "docs/maintenance_solver_comparison_v1_plan.md",
+    "src/ht_pdm_fjsp/maintenance_contention_learning_policy.py",
+    "src/ht_pdm_fjsp/maintenance_solver_statistics.py",
+    "src/ht_pdm_fjsp/maintenance_solver_training.py",
+    "src/ht_pdm_fjsp/maintenance_dispatch_policy.py",
+    "src/ht_pdm_fjsp/maintenance_contention_learning_training.py",
+    "src/ht_pdm_fjsp/maintenance_heterogeneous_model.py",
+    "src/ht_pdm_fjsp/maintenance_solver_comparison.py"
+  ],
+  "mismatches": 0
+}

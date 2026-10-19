@@ -1,0 +1,1717 @@
+{
+  "means": {
+    "homogeneous": {
+      "isolated": {
+        "objective": 185.30029296875,
+        "base_cost": 183.70068359375,
+        "maintenance_cost": 7.3115234375,
+        "failure_cost": 37.50732421875,
+        "unavailability_cost": 138.8818359375,
+        "waiting_cost": 1.599609375,
+        "failures": 2.50048828125,
+        "overdue_waiting_ticks": 0.13330078125,
+        "terminal_pending": 1.01416015625,
+        "terminal_failed": 1.14697265625,
+        "terminal_servicing": 0.57666015625,
+        "censored_requests": 1.01416015625,
+        "served_requests": 1.486328125,
+        "observed_wait_all_requests": 4.6767578125,
+        "latency_mean_ms": 0.4641194688313802
+      },
+      "scarcity": {
+        "objective": 185.30029296875,
+        "base_cost": 183.70068359375,
+        "maintenance_cost": 7.3115234375,
+        "failure_cost": 37.50732421875,
+        "unavailability_cost": 138.8818359375,
+        "waiting_cost": 1.599609375,
+        "failures": 2.50048828125,
+        "overdue_waiting_ticks": 0.13330078125,
+        "terminal_pending": 1.01416015625,
+        "terminal_failed": 1.14697265625,
+        "terminal_servicing": 0.57666015625,
+        "censored_requests": 1.01416015625,
+        "served_requests": 1.486328125,
+        "observed_wait_all_requests": 4.6767578125,
+        "latency_mean_ms": 0.04008393798828125
+      },
+      "best_rule": {
+        "objective": 185.30029296875,
+        "base_cost": 183.70068359375,
+        "maintenance_cost": 7.3115234375,
+        "failure_cost": 37.50732421875,
+        "unavailability_cost": 138.8818359375,
+        "waiting_cost": 1.599609375,
+        "failures": 2.50048828125,
+        "overdue_waiting_ticks": 0.13330078125,
+        "terminal_pending": 1.01416015625,
+        "terminal_failed": 1.14697265625,
+        "terminal_servicing": 0.57666015625,
+        "censored_requests": 1.01416015625,
+        "served_requests": 1.486328125,
+        "observed_wait_all_requests": 4.6767578125,
+        "latency_mean_ms": 0.47089069925944005
+      },
+      "fixed_rollout": {
+        "objective": 178.357421875,
+        "base_cost": 178.333984375,
+        "maintenance_cost": 7.544921875,
+        "failure_cost": 31.552734375,
+        "unavailability_cost": 139.236328125,
+        "waiting_cost": 0.0234375,
+        "failures": 2.103515625,
+        "overdue_waiting_ticks": 0.001953125,
+        "terminal_pending": 0.95556640625,
+        "terminal_failed": 1.0078125,
+        "terminal_servicing": 0.705078125,
+        "censored_requests": 0.95556640625,
+        "served_requests": 1.14794921875,
+        "observed_wait_all_requests": 3.51220703125,
+        "latency_mean_ms": 9.639759489542644
+      },
+      "flexible_rollout": {
+        "objective": 178.357421875,
+        "base_cost": 178.333984375,
+        "maintenance_cost": 7.544921875,
+        "failure_cost": 31.552734375,
+        "unavailability_cost": 139.236328125,
+        "waiting_cost": 0.0234375,
+        "failures": 2.103515625,
+        "overdue_waiting_ticks": 0.001953125,
+        "terminal_pending": 0.95556640625,
+        "terminal_failed": 1.0078125,
+        "terminal_servicing": 0.705078125,
+        "censored_requests": 0.95556640625,
+        "served_requests": 1.14794921875,
+        "observed_wait_all_requests": 3.51220703125,
+        "latency_mean_ms": 13.767616943969728
+      }
+    },
+    "specialized": {
+      "isolated": {
+        "objective": 186.5546875,
+        "base_cost": 184.421875,
+        "maintenance_cost": 6.9560546875,
+        "failure_cost": 38.5107421875,
+        "unavailability_cost": 138.955078125,
+        "waiting_cost": 2.1328125,
+        "failures": 2.5673828125,
+        "overdue_waiting_ticks": 0.177734375,
+        "terminal_pending": 0.85791015625,
+        "terminal_failed": 1.15576171875,
+        "terminal_servicing": 0.7001953125,
+        "censored_requests": 0.85791015625,
+        "served_requests": 1.70947265625,
+        "observed_wait_all_requests": 5.5224609375,
+        "latency_mean_ms": 0.4705078870035807
+      },
+      "scarcity": {
+        "objective": 186.5546875,
+        "base_cost": 184.421875,
+        "maintenance_cost": 6.9560546875,
+        "failure_cost": 38.5107421875,
+        "unavailability_cost": 138.955078125,
+        "waiting_cost": 2.1328125,
+        "failures": 2.5673828125,
+        "overdue_waiting_ticks": 0.177734375,
+        "terminal_pending": 0.85791015625,
+        "terminal_failed": 1.15576171875,
+        "terminal_servicing": 0.7001953125,
+        "censored_requests": 0.85791015625,
+        "served_requests": 1.70947265625,
+        "observed_wait_all_requests": 5.5224609375,
+        "latency_mean_ms": 0.0410511435546875
+      },
+      "best_rule": {
+        "objective": 186.55615234375,
+        "base_cost": 186.53857421875,
+        "maintenance_cost": 8.76806640625,
+        "failure_cost": 36.1376953125,
+        "unavailability_cost": 141.6328125,
+        "waiting_cost": 0.017578125,
+        "failures": 2.4091796875,
+        "overdue_waiting_ticks": 0.00146484375,
+        "terminal_pending": 0.314453125,
+        "terminal_failed": 0.818359375,
+        "terminal_servicing": 1.3994140625,
+        "censored_requests": 0.314453125,
+        "served_requests": 2.0947265625,
+        "observed_wait_all_requests": 1.84423828125,
+        "latency_mean_ms": 0.19023461258951824
+      },
+      "fixed_rollout": {
+        "objective": 178.50439453125,
+        "base_cost": 178.50439453125,
+        "maintenance_cost": 7.0869140625,
+        "failure_cost": 33.47900390625,
+        "unavailability_cost": 137.9384765625,
+        "waiting_cost": 0.0,
+        "failures": 2.23193359375,
+        "overdue_waiting_ticks": 0.0,
+        "terminal_pending": 0.9169921875,
+        "terminal_failed": 0.99951171875,
+        "terminal_servicing": 0.65869140625,
+        "censored_requests": 0.9169921875,
+        "served_requests": 1.31494140625,
+        "observed_wait_all_requests": 3.83642578125,
+        "latency_mean_ms": 9.649316712605794
+      },
+      "flexible_rollout": {
+        "objective": 177.90234375,
+        "base_cost": 177.873046875,
+        "maintenance_cost": 7.08544921875,
+        "failure_cost": 32.02880859375,
+        "unavailability_cost": 138.7587890625,
+        "waiting_cost": 0.029296875,
+        "failures": 2.13525390625,
+        "overdue_waiting_ticks": 0.00244140625,
+        "terminal_pending": 0.8681640625,
+        "terminal_failed": 0.95263671875,
+        "terminal_servicing": 0.7060546875,
+        "censored_requests": 0.8681640625,
+        "served_requests": 1.26708984375,
+        "observed_wait_all_requests": 3.76513671875,
+        "latency_mean_ms": 13.551537028523763
+      }
+    },
+    "skill_mask": {
+      "isolated": {
+        "objective": 192.33349609375,
+        "base_cost": 186.08154296875,
+        "maintenance_cost": 6.91650390625,
+        "failure_cost": 40.224609375,
+        "unavailability_cost": 138.9404296875,
+        "waiting_cost": 6.251953125,
+        "failures": 2.681640625,
+        "overdue_waiting_ticks": 0.52099609375,
+        "terminal_pending": 0.9306640625,
+        "terminal_failed": 1.30078125,
+        "terminal_servicing": 0.72705078125,
+        "censored_requests": 0.9306640625,
+        "served_requests": 1.7509765625,
+        "observed_wait_all_requests": 6.3134765625,
+        "latency_mean_ms": 0.4725629808756511
+      },
+      "scarcity": {
+        "objective": 192.33349609375,
+        "base_cost": 186.08154296875,
+        "maintenance_cost": 6.91650390625,
+        "failure_cost": 40.224609375,
+        "unavailability_cost": 138.9404296875,
+        "waiting_cost": 6.251953125,
+        "failures": 2.681640625,
+        "overdue_waiting_ticks": 0.52099609375,
+        "terminal_pending": 0.9306640625,
+        "terminal_failed": 1.30078125,
+        "terminal_servicing": 0.72705078125,
+        "censored_requests": 0.9306640625,
+        "served_requests": 1.7509765625,
+        "observed_wait_all_requests": 6.3134765625,
+        "latency_mean_ms": 0.03717119832356771
+      },
+      "best_rule": {
+        "objective": 190.07568359375,
+        "base_cost": 188.41748046875,
+        "maintenance_cost": 8.5654296875,
+        "failure_cost": 38.76708984375,
+        "unavailability_cost": 141.0849609375,
+        "waiting_cost": 1.658203125,
+        "failures": 2.58447265625,
+        "overdue_waiting_ticks": 0.13818359375,
+        "terminal_pending": 0.42431640625,
+        "terminal_failed": 0.98388671875,
+        "terminal_servicing": 1.36865234375,
+        "censored_requests": 0.42431640625,
+        "served_requests": 2.16015625,
+        "observed_wait_all_requests": 3.0146484375,
+        "latency_mean_ms": 0.1915008895670573
+      },
+      "fixed_rollout": {
+        "objective": 181.42626953125,
+        "base_cost": 181.24462890625,
+        "maintenance_cost": 7.0703125,
+        "failure_cost": 36.17431640625,
+        "unavailability_cost": 138.0,
+        "waiting_cost": 0.181640625,
+        "failures": 2.41162109375,
+        "overdue_waiting_ticks": 0.01513671875,
+        "terminal_pending": 0.99560546875,
+        "terminal_failed": 1.09619140625,
+        "terminal_servicing": 0.5966796875,
+        "censored_requests": 0.99560546875,
+        "served_requests": 1.416015625,
+        "observed_wait_all_requests": 4.25390625,
+        "latency_mean_ms": 8.8997269177653
+      },
+      "flexible_rollout": {
+        "objective": 181.23876953125,
+        "base_cost": 181.10986328125,
+        "maintenance_cost": 7.05419921875,
+        "failure_cost": 36.0205078125,
+        "unavailability_cost": 138.03515625,
+        "waiting_cost": 0.12890625,
+        "failures": 2.4013671875,
+        "overdue_waiting_ticks": 0.0107421875,
+        "terminal_pending": 0.98681640625,
+        "terminal_failed": 1.078125,
+        "terminal_servicing": 0.609375,
+        "censored_requests": 0.98681640625,
+        "served_requests": 1.41455078125,
+        "observed_wait_all_requests": 4.27001953125,
+        "latency_mean_ms": 10.13980825769043
+      }
+    }
+  },
+  "contrasts": {
+    "homogeneous:fixed_rollout_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 0.0,
+      "confidence_interval": [
+        0.0,
+        0.0
+      ],
+      "relative_improvement": 0.0,
+      "relative_confidence_interval": [
+        0.0,
+        0.0
+      ],
+      "profile_wins": 0,
+      "profile_ties": 64,
+      "profile_losses": 0
+    },
+    "homogeneous:best_rule_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 6.94287109375,
+      "confidence_interval": [
+        5.74364013671875,
+        8.1416015625
+      ],
+      "relative_improvement": 0.037468214337474805,
+      "relative_confidence_interval": [
+        0.031229640191056323,
+        0.0436274998265425
+      ],
+      "profile_wins": 57,
+      "profile_ties": 0,
+      "profile_losses": 7
+    },
+    "homogeneous:isolated_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 6.94287109375,
+      "confidence_interval": [
+        5.72119140625,
+        8.14697265625
+      ],
+      "relative_improvement": 0.037468214337474805,
+      "relative_confidence_interval": [
+        0.031191199517207217,
+        0.04363628310047555
+      ],
+      "profile_wins": 57,
+      "profile_ties": 0,
+      "profile_losses": 7
+    },
+    "homogeneous:scarcity_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 6.94287109375,
+      "confidence_interval": [
+        5.7328735351562505,
+        8.149438476562498
+      ],
+      "relative_improvement": 0.037468214337474805,
+      "relative_confidence_interval": [
+        0.031217744973830404,
+        0.043633540253245034
+      ],
+      "profile_wins": 57,
+      "profile_ties": 0,
+      "profile_losses": 7
+    },
+    "specialized:fixed_rollout_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 0.60205078125,
+      "confidence_interval": [
+        0.1323120117187502,
+        1.06982421875
+      ],
+      "relative_improvement": 0.0033727504739083695,
+      "relative_confidence_interval": [
+        0.0007402913142020976,
+        0.006025999304531254
+      ],
+      "profile_wins": 42,
+      "profile_ties": 0,
+      "profile_losses": 22
+    },
+    "specialized:best_rule_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 8.65380859375,
+      "confidence_interval": [
+        7.52586669921875,
+        9.809094238281249
+      ],
+      "relative_improvement": 0.04638715199166638,
+      "relative_confidence_interval": [
+        0.03988353501017333,
+        0.05316859316503911
+      ],
+      "profile_wins": 61,
+      "profile_ties": 0,
+      "profile_losses": 3
+    },
+    "specialized:isolated_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 8.65234375,
+      "confidence_interval": [
+        7.33056640625,
+        9.92578125
+      ],
+      "relative_improvement": 0.04637966414003936,
+      "relative_confidence_interval": [
+        0.039334106813314784,
+        0.053457735544947975
+      ],
+      "profile_wins": 59,
+      "profile_ties": 0,
+      "profile_losses": 5
+    },
+    "specialized:scarcity_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 8.65234375,
+      "confidence_interval": [
+        7.359375,
+        9.904797363281249
+      ],
+      "relative_improvement": 0.04637966414003936,
+      "relative_confidence_interval": [
+        0.03928364244024491,
+        0.05342244755886193
+      ],
+      "profile_wins": 59,
+      "profile_ties": 0,
+      "profile_losses": 5
+    },
+    "skill_mask:fixed_rollout_minus_flexible": {
+      "primary": true,
+      "confidence": 0.975,
+      "mean_difference": 0.1875,
+      "confidence_interval": [
+        -0.134765625,
+        0.50927734375
+      ],
+      "relative_improvement": 0.0010334776793043403,
+      "relative_confidence_interval": [
+        -0.0007487712473830962,
+        0.002770083358163138
+      ],
+      "profile_wins": 35,
+      "profile_ties": 7,
+      "profile_losses": 22
+    },
+    "skill_mask:best_rule_minus_flexible": {
+      "primary": true,
+      "confidence": 0.975,
+      "mean_difference": 8.8369140625,
+      "confidence_interval": [
+        7.6357421875,
+        10.053735351562501
+      ],
+      "relative_improvement": 0.04649155481343523,
+      "relative_confidence_interval": [
+        0.039602775226260226,
+        0.05362270782365445
+      ],
+      "profile_wins": 64,
+      "profile_ties": 0,
+      "profile_losses": 0
+    },
+    "skill_mask:isolated_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 11.0947265625,
+      "confidence_interval": [
+        9.5243896484375,
+        12.68359375
+      ],
+      "relative_improvement": 0.057684837991464816,
+      "relative_confidence_interval": [
+        0.049722852924008666,
+        0.06573734293774972
+      ],
+      "profile_wins": 61,
+      "profile_ties": 0,
+      "profile_losses": 3
+    },
+    "skill_mask:scarcity_minus_flexible": {
+      "primary": false,
+      "confidence": 0.95,
+      "mean_difference": 11.0947265625,
+      "confidence_interval": [
+        9.513122558593752,
+        12.685095214843747
+      ],
+      "relative_improvement": 0.057684837991464816,
+      "relative_confidence_interval": [
+        0.04968203730663078,
+        0.06569003401276656
+      ],
+      "profile_wins": 61,
+      "profile_ties": 0,
+      "profile_losses": 3
+    }
+  },
+  "exact": [
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 0,
+      "fast_minus_reserve": -2.25,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 1,
+      "fast_minus_reserve": -2.25,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 2,
+      "fast_minus_reserve": 0.8857421875,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 3,
+      "fast_minus_reserve": 1.601806640625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 4,
+      "fast_minus_reserve": 1.601806640625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 5,
+      "fast_minus_reserve": 1.601806640625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 0,
+      "fast_minus_reserve": -2.25,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 1,
+      "fast_minus_reserve": -2.25,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 2,
+      "fast_minus_reserve": 0.8857421875,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 3,
+      "fast_minus_reserve": 1.601806640625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 4,
+      "fast_minus_reserve": 1.601806640625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 5,
+      "fast_minus_reserve": 1.601806640625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 0,
+      "fast_minus_reserve": -1.265625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 1,
+      "fast_minus_reserve": -1.265625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 2,
+      "fast_minus_reserve": -1.015625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 3,
+      "fast_minus_reserve": -0.515625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 4,
+      "fast_minus_reserve": -0.515625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 5,
+      "fast_minus_reserve": -0.515625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 0,
+      "fast_minus_reserve": -1.265625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 1,
+      "fast_minus_reserve": -1.265625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 2,
+      "fast_minus_reserve": -1.015625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 3,
+      "fast_minus_reserve": -0.515625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 4,
+      "fast_minus_reserve": -0.515625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.25,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 5,
+      "fast_minus_reserve": -0.515625,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 0,
+      "fast_minus_reserve": 1.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 1,
+      "fast_minus_reserve": 1.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 2,
+      "fast_minus_reserve": 10.599999999999994,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 3,
+      "fast_minus_reserve": 8.43999999999999,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 4,
+      "fast_minus_reserve": 8.43999999999999,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 3,
+      "b_age": 5,
+      "fast_minus_reserve": 8.43999999999999,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 0,
+      "fast_minus_reserve": 1.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [],
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 1,
+      "fast_minus_reserve": 1.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 2,
+      "fast_minus_reserve": 10.599999999999994,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 3,
+      "fast_minus_reserve": 8.43999999999999,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 4,
+      "fast_minus_reserve": 8.43999999999999,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 6,
+      "a_age": 5,
+      "b_age": 5,
+      "fast_minus_reserve": 8.43999999999999,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 0,
+      "fast_minus_reserve": -6.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 1,
+      "fast_minus_reserve": -6.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 2,
+      "fast_minus_reserve": -3.3999999999999986,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 3,
+      "fast_minus_reserve": -4.960000000000001,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 4,
+      "fast_minus_reserve": -4.960000000000001,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 3,
+      "b_age": 5,
+      "fast_minus_reserve": -4.960000000000001,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 0,
+      "fast_minus_reserve": -6.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 1,
+      "fast_minus_reserve": -6.0,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 2,
+      "fast_minus_reserve": -3.3999999999999986,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 3,
+      "fast_minus_reserve": -4.960000000000001,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 4,
+      "fast_minus_reserve": -4.960000000000001,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    },
+    {
+      "probability": 0.6,
+      "horizon": 8,
+      "a_age": 5,
+      "b_age": 5,
+      "fast_minus_reserve": -4.960000000000001,
+      "fixed_root_gap": 0.0,
+      "globally_optimal_actions": [
+        [
+          [
+            0,
+            0
+          ]
+        ]
+      ]
+    }
+  ],
+  "first_divergence": {
+    "homogeneous": {
+      "identical_trajectory": 2048,
+      "first_divergence_assignment_only": 0,
+      "first_divergence_subset_changed": 0,
+      "flexible_action_outside_fixed_candidates": 0
+    },
+    "specialized": {
+      "identical_trajectory": 966,
+      "first_divergence_assignment_only": 483,
+      "first_divergence_subset_changed": 599,
+      "flexible_action_outside_fixed_candidates": 1082
+    },
+    "skill_mask": {
+      "identical_trajectory": 1603,
+      "first_divergence_assignment_only": 154,
+      "first_divergence_subset_changed": 291,
+      "flexible_action_outside_fixed_candidates": 445
+    }
+  },
+  "service_latency": {
+    "homogeneous:isolated": {
+      "requests": 5121,
+      "served": 3044,
+      "censored": 2077,
+      "censored_fraction": 0.405584846709627,
+      "censored_observed_mean": 1.9561868078960039,
+      "censored_age_zero": 449,
+      "overdue_requests": 167,
+      "observed_wait_all_requests": 9578,
+      "served_wait_mean": 1.8117608409986858,
+      "served_wait_p95": 5.0,
+      "latency_mean_ms": 0.4641194688313803,
+      "latency_p50_p95_p99_ms": [
+        0.457746,
+        0.503243,
+        0.563582
+      ]
+    },
+    "homogeneous:scarcity": {
+      "requests": 5121,
+      "served": 3044,
+      "censored": 2077,
+      "censored_fraction": 0.405584846709627,
+      "censored_observed_mean": 1.9561868078960039,
+      "censored_age_zero": 449,
+      "overdue_requests": 167,
+      "observed_wait_all_requests": 9578,
+      "served_wait_mean": 1.8117608409986858,
+      "served_wait_p95": 5.0,
+      "latency_mean_ms": 0.04008393798828125,
+      "latency_p50_p95_p99_ms": [
+        0.0371685,
+        0.062323,
+        0.07917225
+      ]
+    },
+    "homogeneous:best_rule": {
+      "requests": 5121,
+      "served": 3044,
+      "censored": 2077,
+      "censored_fraction": 0.405584846709627,
+      "censored_observed_mean": 1.9561868078960039,
+      "censored_age_zero": 449,
+      "overdue_requests": 167,
+      "observed_wait_all_requests": 9578,
+      "served_wait_mean": 1.8117608409986858,
+      "served_wait_p95": 5.0,
+      "latency_mean_ms": 0.4708906992594401,
+      "latency_p50_p95_p99_ms": [
+        0.46031900000000003,
+        0.52609975,
+        0.5993735
+      ]
+    },
+    "homogeneous:fixed_rollout": {
+      "requests": 4308,
+      "served": 2351,
+      "censored": 1957,
+      "censored_fraction": 0.4542711234911792,
+      "censored_observed_mean": 1.9095554420030658,
+      "censored_age_zero": 431,
+      "overdue_requests": 4,
+      "observed_wait_all_requests": 7193,
+      "served_wait_mean": 1.4700127605274351,
+      "served_wait_p95": 4.0,
+      "latency_mean_ms": 9.639759489542643,
+      "latency_p50_p95_p99_ms": [
+        6.202076,
+        38.1009135,
+        39.8969855
+      ]
+    },
+    "homogeneous:flexible_rollout": {
+      "requests": 4308,
+      "served": 2351,
+      "censored": 1957,
+      "censored_fraction": 0.4542711234911792,
+      "censored_observed_mean": 1.9095554420030658,
+      "censored_age_zero": 431,
+      "overdue_requests": 4,
+      "observed_wait_all_requests": 7193,
+      "served_wait_mean": 1.4700127605274351,
+      "served_wait_p95": 4.0,
+      "latency_mean_ms": 13.767616943969728,
+      "latency_p50_p95_p99_ms": [
+        6.815906,
+        70.78711925,
+        73.309451
+      ]
+    },
+    "specialized:isolated": {
+      "requests": 5258,
+      "served": 3501,
+      "censored": 1757,
+      "censored_fraction": 0.33415747432483833,
+      "censored_observed_mean": 2.0449630051223675,
+      "censored_age_zero": 396,
+      "overdue_requests": 227,
+      "observed_wait_all_requests": 11310,
+      "served_wait_mean": 2.204227363610397,
+      "served_wait_p95": 5.0,
+      "latency_mean_ms": 0.47050788700358076,
+      "latency_p50_p95_p99_ms": [
+        0.461163,
+        0.51525125,
+        0.59722875
+      ]
+    },
+    "specialized:scarcity": {
+      "requests": 5258,
+      "served": 3501,
+      "censored": 1757,
+      "censored_fraction": 0.33415747432483833,
+      "censored_observed_mean": 2.0449630051223675,
+      "censored_age_zero": 396,
+      "overdue_requests": 227,
+      "observed_wait_all_requests": 11310,
+      "served_wait_mean": 2.204227363610397,
+      "served_wait_p95": 5.0,
+      "latency_mean_ms": 0.041051143554687496,
+      "latency_p50_p95_p99_ms": [
+        0.0375275,
+        0.06527225,
+        0.08614949999999999
+      ]
+    },
+    "specialized:best_rule": {
+      "requests": 4934,
+      "served": 4290,
+      "censored": 644,
+      "censored_fraction": 0.13052290231049857,
+      "censored_observed_mean": 0.43167701863354035,
+      "censored_age_zero": 419,
+      "overdue_requests": 3,
+      "observed_wait_all_requests": 3777,
+      "served_wait_mean": 0.8156177156177156,
+      "served_wait_p95": 3.0,
+      "latency_mean_ms": 0.19023461258951824,
+      "latency_p50_p95_p99_ms": [
+        0.183683,
+        0.22666,
+        0.270587
+      ]
+    },
+    "specialized:fixed_rollout": {
+      "requests": 4571,
+      "served": 2693,
+      "censored": 1878,
+      "censored_fraction": 0.41085101728287027,
+      "censored_observed_mean": 2.056975505857295,
+      "censored_age_zero": 362,
+      "overdue_requests": 0,
+      "observed_wait_all_requests": 7857,
+      "served_wait_mean": 1.4831043445971035,
+      "served_wait_p95": 4.0,
+      "latency_mean_ms": 9.649316712605794,
+      "latency_p50_p95_p99_ms": [
+        6.150881,
+        38.30937075,
+        40.047208999999995
+      ]
+    },
+    "specialized:flexible_rollout": {
+      "requests": 4373,
+      "served": 2595,
+      "censored": 1778,
+      "censored_fraction": 0.40658586782529155,
+      "censored_observed_mean": 2.0421822272215975,
+      "censored_age_zero": 343,
+      "overdue_requests": 5,
+      "observed_wait_all_requests": 7711,
+      "served_wait_mean": 1.5722543352601157,
+      "served_wait_p95": 4.0,
+      "latency_mean_ms": 13.551537028523763,
+      "latency_p50_p95_p99_ms": [
+        6.612181,
+        71.08948699999999,
+        73.62755924999999
+      ]
+    },
+    "skill_mask:isolated": {
+      "requests": 5492,
+      "served": 3586,
+      "censored": 1906,
+      "censored_fraction": 0.3470502549162418,
+      "censored_observed_mean": 2.0398740818467997,
+      "censored_age_zero": 421,
+      "overdue_requests": 589,
+      "observed_wait_all_requests": 12930,
+      "served_wait_mean": 2.521472392638037,
+      "served_wait_p95": 6.0,
+      "latency_mean_ms": 0.472562980875651,
+      "latency_p50_p95_p99_ms": [
+        0.45854,
+        0.53751475,
+        0.63417225
+      ]
+    },
+    "skill_mask:scarcity": {
+      "requests": 5492,
+      "served": 3586,
+      "censored": 1906,
+      "censored_fraction": 0.3470502549162418,
+      "censored_observed_mean": 2.0398740818467997,
+      "censored_age_zero": 421,
+      "overdue_requests": 589,
+      "observed_wait_all_requests": 12930,
+      "served_wait_mean": 2.521472392638037,
+      "served_wait_p95": 6.0,
+      "latency_mean_ms": 0.03717119832356771,
+      "latency_p50_p95_p99_ms": [
+        0.034964999999999996,
+        0.05291725,
+        0.0724085
+      ]
+    },
+    "skill_mask:best_rule": {
+      "requests": 5293,
+      "served": 4424,
+      "censored": 869,
+      "censored_fraction": 0.16417910447761194,
+      "censored_observed_mean": 0.906789413118527,
+      "censored_age_zero": 442,
+      "overdue_requests": 155,
+      "observed_wait_all_requests": 6174,
+      "served_wait_mean": 1.2174502712477395,
+      "served_wait_p95": 4.0,
+      "latency_mean_ms": 0.19150088956705727,
+      "latency_p50_p95_p99_ms": [
+        0.183487,
+        0.233921,
+        0.2865315
+      ]
+    },
+    "skill_mask:fixed_rollout": {
+      "requests": 4939,
+      "served": 2900,
+      "censored": 2039,
+      "censored_fraction": 0.4128366066005264,
+      "censored_observed_mean": 1.9897008337420303,
+      "censored_age_zero": 386,
+      "overdue_requests": 29,
+      "observed_wait_all_requests": 8712,
+      "served_wait_mean": 1.6051724137931034,
+      "served_wait_p95": 4.0,
+      "latency_mean_ms": 8.8997269177653,
+      "latency_p50_p95_p99_ms": [
+        6.101607,
+        34.811094499999996,
+        36.20969
+      ]
+    },
+    "skill_mask:flexible_rollout": {
+      "requests": 4918,
+      "served": 2897,
+      "censored": 2021,
+      "censored_fraction": 0.4109394062627084,
+      "censored_observed_mean": 2.045027214250371,
+      "censored_age_zero": 365,
+      "overdue_requests": 22,
+      "observed_wait_all_requests": 8745,
+      "served_wait_mean": 1.5919917155678287,
+      "served_wait_p95": 4.0,
+      "latency_mean_ms": 10.13980825769043,
+      "latency_p50_p95_p99_ms": [
+        6.0678315000000005,
+        44.26078975,
+        45.898855999999995
+      ]
+    }
+  },
+  "development_selection": {
+    "locked_before_test": true,
+    "selected": {
+      "homogeneous": {
+        "best_rule": "adaptive_isolated_matching",
+        "scarcity": "scarcity_0",
+        "scores": {
+          "risk_matching": 188.0859375,
+          "deadline_matching": 188.01953125,
+          "adaptive_isolated_matching": 183.07421875,
+          "scarcity_0": 183.07421875,
+          "scarcity_1": 186.57421875,
+          "scarcity_3": 218.28125,
+          "scarcity_6": 329.203125
+        }
+      },
+      "specialized": {
+        "best_rule": "deadline_matching",
+        "scarcity": "scarcity_0",
+        "scores": {
+          "risk_matching": 187.28125,
+          "deadline_matching": 186.9921875,
+          "adaptive_isolated_matching": 187.046875,
+          "scarcity_0": 187.046875,
+          "scarcity_1": 192.4609375,
+          "scarcity_3": 239.70703125,
+          "scarcity_6": 339.71484375
+        }
+      },
+      "skill_mask": {
+        "best_rule": "deadline_matching",
+        "scarcity": "scarcity_0",
+        "scores": {
+          "risk_matching": 188.09765625,
+          "deadline_matching": 187.69140625,
+          "adaptive_isolated_matching": 191.484375,
+          "scarcity_0": 191.484375,
+          "scarcity_1": 192.8203125,
+          "scarcity_3": 223.35546875,
+          "scarcity_6": 286.46484375
+        }
+      }
+    }
+  },
+  "completed_duration_seconds": 1836.261792,
+  "exact_all_fixed_root_gaps_zero": true,
+  "counts": {
+    "development_episodes": 5376,
+    "test_episodes": 30720,
+    "test_decisions": 368640,
+    "exact_states": 48
+  },
+  "frozen_analysis_reproduced": true,
+  "reproducibility_scope": "full scalar physics, rule decisions, request histories, exact Q and aggregate statistics; planner inference not rerun"
+}

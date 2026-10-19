@@ -1,0 +1,1000 @@
+{
+  "rows": 2457600,
+  "progress_rows": 19200,
+  "maximum_reward_reconciliation_error": 2.2888183579539145e-06,
+  "seed_sequences_matched": true,
+  "nominal_configurations_matched": true,
+  "within_regime_configuration_sequences_matched": true,
+  "replicas": {
+    "legacy:central_matching_ppo:180000": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2d67cb24d4ed03c072b528e5f23827a5b0f29a4a4df45ca5bbfdb0e429e0dc7f",
+      "last20_progress_mean": {
+        "loss": 0.1370043340994016,
+        "policy_loss": -0.0010936170386230514,
+        "value_loss": 0.2816506603267044,
+        "entropy": 0.27273791236802936,
+        "gradient_norm": 1.602894675079733,
+        "clipped_fraction": 0.019718424544407753,
+        "mean_episode_cost": 171.483984375
+      }
+    },
+    "legacy:central_matching_ppo:180001": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "fd52adf35f778ea4a194b8b93d1f793ef189f500ecd27a65f618fae6ca3bfb80",
+      "last20_progress_mean": {
+        "loss": 0.13032527284340176,
+        "policy_loss": -0.0007411954731196601,
+        "value_loss": 0.26751882245298475,
+        "entropy": 0.26929432889446614,
+        "gradient_norm": 1.487501041800715,
+        "clipped_fraction": 0.01913248697819654,
+        "mean_episode_cost": 172.555078125
+      }
+    },
+    "legacy:central_matching_ppo:180002": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "05bf9a51c9c6591288c4ba495f577ccfad95228ad86c2fbf1931870fdf6ccd23",
+      "last20_progress_mean": {
+        "loss": 0.1318870677576342,
+        "policy_loss": -0.0012074542672507959,
+        "value_loss": 0.27192577547393737,
+        "entropy": 0.2868365415604785,
+        "gradient_norm": 1.4971756926970556,
+        "clipped_fraction": 0.02372233078276622,
+        "mean_episode_cost": 171.9953125
+      }
+    },
+    "legacy:central_matching_ppo:180003": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "553e48b0a9487fe0bb21ce6884056406587914290c8b05597f3086c6c0fee0e5",
+      "last20_progress_mean": {
+        "loss": 0.13150152126945613,
+        "policy_loss": -0.0006709107780807245,
+        "value_loss": 0.2699051753617823,
+        "entropy": 0.2780156018678099,
+        "gradient_norm": 1.373087748629041,
+        "clipped_fraction": 0.022330729238456117,
+        "mean_episode_cost": 171.85546875
+      }
+    },
+    "legacy:central_matching_ppo:180004": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "280308c7ff236b9072f0cf7479af9fd2726578982661650f9ae1e46fac132b3d",
+      "last20_progress_mean": {
+        "loss": 0.14944164476546576,
+        "policy_loss": -0.0011307336916843269,
+        "value_loss": 0.3066292269388214,
+        "entropy": 0.2742234759265557,
+        "gradient_norm": 1.541297691874206,
+        "clipped_fraction": 0.018001302180346103,
+        "mean_episode_cost": 172.626953125
+      }
+    },
+    "legacy:central_matching_ppo:180005": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "ced709fb9c5b3853a0c96cb744fd549ee65c4061475c9c66e2c8dab39092ba00",
+      "last20_progress_mean": {
+        "loss": 0.14762526479426014,
+        "policy_loss": -0.0007020332499791948,
+        "value_loss": 0.3021091212751344,
+        "entropy": 0.2727261875756085,
+        "gradient_norm": 1.7735837210435421,
+        "clipped_fraction": 0.021248372463014677,
+        "mean_episode_cost": 173.237109375
+      }
+    },
+    "legacy:central_matching_ppo:180006": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "9df97296ca4b270e14d0522e1e253d872d03b6246c41fe56462d5187ff8ea097",
+      "last20_progress_mean": {
+        "loss": 0.13904844395838153,
+        "policy_loss": -0.000974841046382835,
+        "value_loss": 0.28590527912601826,
+        "entropy": 0.2929354574996978,
+        "gradient_norm": 1.4971209266688674,
+        "clipped_fraction": 0.02358398438373115,
+        "mean_episode_cost": 172.56171875
+      }
+    },
+    "legacy:central_matching_ppo:180007": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2a9996f56eb4b2913ad1313684764594cb5b54e64bc016fd213cc5ebbe4c89ff",
+      "last20_progress_mean": {
+        "loss": 0.15366360741209065,
+        "policy_loss": -0.0010007249787122418,
+        "value_loss": 0.3146375795826316,
+        "entropy": 0.2654457419645041,
+        "gradient_norm": 1.4501296469243243,
+        "clipped_fraction": 0.01690266931473161,
+        "mean_episode_cost": 172.54375
+      }
+    },
+    "legacy:central_matching_ppo:180008": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "17c76ba23d6b558b3417ed8d2fa645ed453831dece0fdc9d1d209308797277c5",
+      "last20_progress_mean": {
+        "loss": 0.14901035465300083,
+        "policy_loss": -0.0006131500754463559,
+        "value_loss": 0.3040812382940203,
+        "entropy": 0.24171146573498845,
+        "gradient_norm": 1.5608669393928722,
+        "clipped_fraction": 0.014575195380166406,
+        "mean_episode_cost": 171.695703125
+      }
+    },
+    "legacy:central_matching_ppo:180009": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "6545ba733ab6e2b02e38770d7e6998b0c840483bc674e9f1a377a7e8ee6ca42d",
+      "last20_progress_mean": {
+        "loss": 0.1376415456426912,
+        "policy_loss": -0.0008307699542037028,
+        "value_loss": 0.2825181075837463,
+        "entropy": 0.2786738113500178,
+        "gradient_norm": 1.473380693164654,
+        "clipped_fraction": 0.028002929796639365,
+        "mean_episode_cost": 172.087890625
+      }
+    },
+    "legacy:cooperative_local_ppo:180000": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2d67cb24d4ed03c072b528e5f23827a5b0f29a4a4df45ca5bbfdb0e429e0dc7f",
+      "last20_progress_mean": {
+        "loss": 0.20796965363333583,
+        "policy_loss": 0.0002477393022900287,
+        "value_loss": 0.4210447638761252,
+        "entropy": 0.28004678171128033,
+        "gradient_norm": 2.1543126460397617,
+        "clipped_fraction": 0.0233805339114042,
+        "mean_episode_cost": 179.824609375
+      }
+    },
+    "legacy:cooperative_local_ppo:180001": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "fd52adf35f778ea4a194b8b93d1f793ef189f500ecd27a65f618fae6ca3bfb80",
+      "last20_progress_mean": {
+        "loss": 0.17411296130921983,
+        "policy_loss": 0.0020393903594651875,
+        "value_loss": 0.3493923680623993,
+        "entropy": 0.2622613230720162,
+        "gradient_norm": 2.013500001654029,
+        "clipped_fraction": 0.029069010407692986,
+        "mean_episode_cost": 178.656640625
+      }
+    },
+    "legacy:cooperative_local_ppo:180002": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "05bf9a51c9c6591288c4ba495f577ccfad95228ad86c2fbf1931870fdf6ccd23",
+      "last20_progress_mean": {
+        "loss": 0.21484039955976186,
+        "policy_loss": 0.00020913421188879512,
+        "value_loss": 0.4349483642028645,
+        "entropy": 0.28429164555855096,
+        "gradient_norm": 1.9973987676901743,
+        "clipped_fraction": 0.019010416758101202,
+        "mean_episode_cost": 180.077734375
+      }
+    },
+    "legacy:cooperative_local_ppo:180003": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "553e48b0a9487fe0bb21ce6884056406587914290c8b05597f3086c6c0fee0e5",
+      "last20_progress_mean": {
+        "loss": 0.21365933953566127,
+        "policy_loss": 0.00015979942727426533,
+        "value_loss": 0.4317020559683442,
+        "entropy": 0.23514874088577925,
+        "gradient_norm": 1.8868699230253696,
+        "clipped_fraction": 0.013924153700645547,
+        "mean_episode_cost": 179.05078125
+      }
+    },
+    "legacy:cooperative_local_ppo:180004": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "280308c7ff236b9072f0cf7479af9fd2726578982661650f9ae1e46fac132b3d",
+      "last20_progress_mean": {
+        "loss": 0.20483027456066338,
+        "policy_loss": 0.00016993716553770355,
+        "value_loss": 0.4148220052709803,
+        "entropy": 0.2750664996681735,
+        "gradient_norm": 1.9143239677650854,
+        "clipped_fraction": 0.017252604214445456,
+        "mean_episode_cost": 179.931640625
+      }
+    },
+    "legacy:cooperative_local_ppo:180005": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "ced709fb9c5b3853a0c96cb744fd549ee65c4061475c9c66e2c8dab39092ba00",
+      "last20_progress_mean": {
+        "loss": 0.20544417968048947,
+        "policy_loss": 0.00028433175466489045,
+        "value_loss": 0.41425913346465676,
+        "entropy": 0.196971866954118,
+        "gradient_norm": 2.0832815112313257,
+        "clipped_fraction": 0.007804362072783988,
+        "mean_episode_cost": 179.20703125
+      }
+    },
+    "legacy:cooperative_local_ppo:180006": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "9df97296ca4b270e14d0522e1e253d872d03b6246c41fe56462d5187ff8ea097",
+      "last20_progress_mean": {
+        "loss": 0.19860800079768523,
+        "policy_loss": 0.0020523307823168578,
+        "value_loss": 0.3993043274851516,
+        "entropy": 0.3096493354998529,
+        "gradient_norm": 2.179076414182782,
+        "clipped_fraction": 0.037068684888799906,
+        "mean_episode_cost": 179.190625
+      }
+    },
+    "legacy:cooperative_local_ppo:180007": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2a9996f56eb4b2913ad1313684764594cb5b54e64bc016fd213cc5ebbe4c89ff",
+      "last20_progress_mean": {
+        "loss": 0.2112415319221327,
+        "policy_loss": 0.00031795413819111216,
+        "value_loss": 0.4280847587622702,
+        "entropy": 0.3118801145115867,
+        "gradient_norm": 1.9921040514018387,
+        "clipped_fraction": 0.037117513039993354,
+        "mean_episode_cost": 180.075
+      }
+    },
+    "legacy:cooperative_local_ppo:180008": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "17c76ba23d6b558b3417ed8d2fa645ed453831dece0fdc9d1d209308797277c5",
+      "last20_progress_mean": {
+        "loss": 0.2118343442270998,
+        "policy_loss": 0.0003063974530618907,
+        "value_loss": 0.42758835074491797,
+        "entropy": 0.2266228609951213,
+        "gradient_norm": 1.8320137654896826,
+        "clipped_fraction": 0.011385091255215229,
+        "mean_episode_cost": 178.984375
+      }
+    },
+    "legacy:cooperative_local_ppo:180009": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "6545ba733ab6e2b02e38770d7e6998b0c840483bc674e9f1a377a7e8ee6ca42d",
+      "last20_progress_mean": {
+        "loss": 0.21922876235330477,
+        "policy_loss": 0.0009364618338167929,
+        "value_loss": 0.44231602337677034,
+        "entropy": 0.2865710982121527,
+        "gradient_norm": 2.013189964857884,
+        "clipped_fraction": 0.02827148440264864,
+        "mean_episode_cost": 180.365625
+      }
+    },
+    "legacy:cooperative_full_ppo:180000": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2d67cb24d4ed03c072b528e5f23827a5b0f29a4a4df45ca5bbfdb0e429e0dc7f",
+      "last20_progress_mean": {
+        "loss": 0.20621579292346723,
+        "policy_loss": -3.811801548181393e-05,
+        "value_loss": 0.41713241531979295,
+        "entropy": 0.2312296814052388,
+        "gradient_norm": 1.9426184450276196,
+        "clipped_fraction": 0.016202799564780435,
+        "mean_episode_cost": 178.86328125
+      }
+    },
+    "legacy:cooperative_full_ppo:180001": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "fd52adf35f778ea4a194b8b93d1f793ef189f500ecd27a65f618fae6ca3bfb80",
+      "last20_progress_mean": {
+        "loss": 0.20164687448559562,
+        "policy_loss": 0.00042273082565316147,
+        "value_loss": 0.4088772667106241,
+        "entropy": 0.3214489860692993,
+        "gradient_norm": 2.114225105755031,
+        "clipped_fraction": 0.034025065157766224,
+        "mean_episode_cost": 181.407421875
+      }
+    },
+    "legacy:cooperative_full_ppo:180002": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "05bf9a51c9c6591288c4ba495f577ccfad95228ad86c2fbf1931870fdf6ccd23",
+      "last20_progress_mean": {
+        "loss": 0.21233047815985628,
+        "policy_loss": 0.0005661347002387628,
+        "value_loss": 0.42969304195139557,
+        "entropy": 0.3082177816424519,
+        "gradient_norm": 2.2065673992037773,
+        "clipped_fraction": 0.03360188802034827,
+        "mean_episode_cost": 179.51328125
+      }
+    },
+    "legacy:cooperative_full_ppo:180003": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "553e48b0a9487fe0bb21ce6884056406587914290c8b05597f3086c6c0fee0e5",
+      "last20_progress_mean": {
+        "loss": 0.2071958140371862,
+        "policy_loss": 7.27781888959722e-05,
+        "value_loss": 0.41930461414158343,
+        "entropy": 0.2529271126142703,
+        "gradient_norm": 1.957045821310021,
+        "clipped_fraction": 0.018066406299476513,
+        "mean_episode_cost": 179.0640625
+      }
+    },
+    "legacy:cooperative_full_ppo:180004": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "280308c7ff236b9072f0cf7479af9fd2726578982661650f9ae1e46fac132b3d",
+      "last20_progress_mean": {
+        "loss": 0.2065755385232478,
+        "policy_loss": 0.0007903369387804559,
+        "value_loss": 0.4168056485475972,
+        "entropy": 0.2617622325895354,
+        "gradient_norm": 1.991803687089123,
+        "clipped_fraction": 0.02390136728208745,
+        "mean_episode_cost": 179.685546875
+      }
+    },
+    "legacy:cooperative_full_ppo:180005": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "ced709fb9c5b3853a0c96cb744fd549ee65c4061475c9c66e2c8dab39092ba00",
+      "last20_progress_mean": {
+        "loss": 0.1696405185619369,
+        "policy_loss": 4.646291941412528e-06,
+        "value_loss": 0.34547092264983803,
+        "entropy": 0.3099588894285262,
+        "gradient_norm": 2.080443973839283,
+        "clipped_fraction": 0.030859375029831427,
+        "mean_episode_cost": 178.29296875
+      }
+    },
+    "legacy:cooperative_full_ppo:180006": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "9df97296ca4b270e14d0522e1e253d872d03b6246c41fe56462d5187ff8ea097",
+      "last20_progress_mean": {
+        "loss": 0.20352373425885162,
+        "policy_loss": 0.0012907205743431405,
+        "value_loss": 0.41136134322732687,
+        "entropy": 0.34476585646625607,
+        "gradient_norm": 2.157933896430768,
+        "clipped_fraction": 0.048836262966506186,
+        "mean_episode_cost": 181.7140625
+      }
+    },
+    "legacy:cooperative_full_ppo:180007": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2a9996f56eb4b2913ad1313684764594cb5b54e64bc016fd213cc5ebbe4c89ff",
+      "last20_progress_mean": {
+        "loss": 0.20601300370617537,
+        "policy_loss": -0.0005110453244355995,
+        "value_loss": 0.4195621554274112,
+        "entropy": 0.3257028812309727,
+        "gradient_norm": 1.6945366964442656,
+        "clipped_fraction": 0.025577799520397092,
+        "mean_episode_cost": 180.391015625
+      }
+    },
+    "legacy:cooperative_full_ppo:180008": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "17c76ba23d6b558b3417ed8d2fa645ed453831dece0fdc9d1d209308797277c5",
+      "last20_progress_mean": {
+        "loss": 0.2131063246022677,
+        "policy_loss": 1.3112709939377965e-05,
+        "value_loss": 0.43200306247454134,
+        "entropy": 0.29083193162223325,
+        "gradient_norm": 1.9101602814625949,
+        "clipped_fraction": 0.02017415369991795,
+        "mean_episode_cost": 179.05703125
+      }
+    },
+    "legacy:cooperative_full_ppo:180009": {
+      "mixture": {
+        "specialized": 32768,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "6545ba733ab6e2b02e38770d7e6998b0c840483bc674e9f1a377a7e8ee6ca42d",
+      "last20_progress_mean": {
+        "loss": 0.21784208637836855,
+        "policy_loss": 0.00025124859776042284,
+        "value_loss": 0.44036244358867405,
+        "entropy": 0.25903843229170886,
+        "gradient_norm": 1.8808195502264424,
+        "clipped_fraction": 0.0190348307864042,
+        "mean_episode_cost": 179.766796875
+      }
+    },
+    "covered:central_matching_ppo:180000": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2d67cb24d4ed03c072b528e5f23827a5b0f29a4a4df45ca5bbfdb0e429e0dc7f",
+      "last20_progress_mean": {
+        "loss": 0.16070192800980293,
+        "policy_loss": -0.0008084003183853383,
+        "value_loss": 0.3283309679245576,
+        "entropy": 0.2655156437773257,
+        "gradient_norm": 1.6312370121479034,
+        "clipped_fraction": 0.024202473943296353,
+        "mean_episode_cost": 172.35859375
+      }
+    },
+    "covered:central_matching_ppo:180001": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "fd52adf35f778ea4a194b8b93d1f793ef189f500ecd27a65f618fae6ca3bfb80",
+      "last20_progress_mean": {
+        "loss": 0.14421170128734956,
+        "policy_loss": -0.00047342382642909795,
+        "value_loss": 0.2947972213616595,
+        "entropy": 0.271348561742343,
+        "gradient_norm": 1.6958006265806034,
+        "clipped_fraction": 0.02197265629292815,
+        "mean_episode_cost": 172.871875
+      }
+    },
+    "covered:central_matching_ppo:180002": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "05bf9a51c9c6591288c4ba495f577ccfad95228ad86c2fbf1931870fdf6ccd23",
+      "last20_progress_mean": {
+        "loss": 0.1548365021335485,
+        "policy_loss": -0.0007448296253045328,
+        "value_loss": 0.316578720533289,
+        "entropy": 0.2708028141409159,
+        "gradient_norm": 1.5460572431096806,
+        "clipped_fraction": 0.0187744141483563,
+        "mean_episode_cost": 172.84453125
+      }
+    },
+    "covered:central_matching_ppo:180003": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "553e48b0a9487fe0bb21ce6884056406587914290c8b05597f3086c6c0fee0e5",
+      "last20_progress_mean": {
+        "loss": 0.1444007118068839,
+        "policy_loss": -0.001416880685246724,
+        "value_loss": 0.2971923377364874,
+        "entropy": 0.2778576343785971,
+        "gradient_norm": 1.4586219213204459,
+        "clipped_fraction": 0.02105305994482478,
+        "mean_episode_cost": 172.099609375
+      }
+    },
+    "covered:central_matching_ppo:180004": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "280308c7ff236b9072f0cf7479af9fd2726578982661650f9ae1e46fac132b3d",
+      "last20_progress_mean": {
+        "loss": 0.15888424903278064,
+        "policy_loss": -0.0010350400497031842,
+        "value_loss": 0.3255882216617465,
+        "entropy": 0.287482176348567,
+        "gradient_norm": 1.712804731260985,
+        "clipped_fraction": 0.02976074224934564,
+        "mean_episode_cost": 173.290234375
+      }
+    },
+    "covered:central_matching_ppo:180005": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "ced709fb9c5b3853a0c96cb744fd549ee65c4061475c9c66e2c8dab39092ba00",
+      "last20_progress_mean": {
+        "loss": 0.1553973621528712,
+        "policy_loss": -0.0006325663930624615,
+        "value_loss": 0.3170302120037377,
+        "entropy": 0.24851770810782908,
+        "gradient_norm": 1.7618361775064841,
+        "clipped_fraction": 0.01601562508949428,
+        "mean_episode_cost": 172.834375
+      }
+    },
+    "covered:central_matching_ppo:180006": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "9df97296ca4b270e14d0522e1e253d872d03b6246c41fe56462d5187ff8ea097",
+      "last20_progress_mean": {
+        "loss": 0.1623310802737251,
+        "policy_loss": -0.0008658235856728424,
+        "value_loss": 0.33226744367275385,
+        "entropy": 0.2936817844863981,
+        "gradient_norm": 1.613483746838756,
+        "clipped_fraction": 0.029516601574869128,
+        "mean_episode_cost": 173.5
+      }
+    },
+    "covered:central_matching_ppo:180007": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2a9996f56eb4b2913ad1313684764594cb5b54e64bc016fd213cc5ebbe4c89ff",
+      "last20_progress_mean": {
+        "loss": 0.1485198546295578,
+        "policy_loss": -0.0008340313785311082,
+        "value_loss": 0.30404351418837905,
+        "entropy": 0.26678714009467513,
+        "gradient_norm": 1.483660762035288,
+        "clipped_fraction": 0.022696940153400645,
+        "mean_episode_cost": 172.241015625
+      }
+    },
+    "covered:central_matching_ppo:180008": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "17c76ba23d6b558b3417ed8d2fa645ed453831dece0fdc9d1d209308797277c5",
+      "last20_progress_mean": {
+        "loss": 0.162187650298074,
+        "policy_loss": -0.0007720576162682846,
+        "value_loss": 0.33093173855450003,
+        "entropy": 0.25061612043064085,
+        "gradient_norm": 1.6795277796918526,
+        "clipped_fraction": 0.01732584641795256,
+        "mean_episode_cost": 171.976171875
+      }
+    },
+    "covered:central_matching_ppo:180009": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "6545ba733ab6e2b02e38770d7e6998b0c840483bc674e9f1a377a7e8ee6ca42d",
+      "last20_progress_mean": {
+        "loss": 0.1608876745471207,
+        "policy_loss": -0.0012452474395900025,
+        "value_loss": 0.32991660812404006,
+        "entropy": 0.28253816440701485,
+        "gradient_norm": 1.5848495966522023,
+        "clipped_fraction": 0.0220621745196695,
+        "mean_episode_cost": 172.316796875
+      }
+    },
+    "covered:cooperative_local_ppo:180000": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2d67cb24d4ed03c072b528e5f23827a5b0f29a4a4df45ca5bbfdb0e429e0dc7f",
+      "last20_progress_mean": {
+        "loss": 0.22506815216620452,
+        "policy_loss": 0.001428611288429238,
+        "value_loss": 0.45283147362060844,
+        "entropy": 0.27761960378848016,
+        "gradient_norm": 2.170522909006104,
+        "clipped_fraction": 0.03343912761556567,
+        "mean_episode_cost": 178.581640625
+      }
+    },
+    "covered:cooperative_local_ppo:180001": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "fd52adf35f778ea4a194b8b93d1f793ef189f500ecd27a65f618fae6ca3bfb80",
+      "last20_progress_mean": {
+        "loss": 0.22355686021910515,
+        "policy_loss": 0.0015041009984031461,
+        "value_loss": 0.45034764693118634,
+        "entropy": 0.3121063987025991,
+        "gradient_norm": 2.3095655685290692,
+        "clipped_fraction": 0.03116048183510429,
+        "mean_episode_cost": 180.195703125
+      }
+    },
+    "covered:cooperative_local_ppo:180002": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "05bf9a51c9c6591288c4ba495f577ccfad95228ad86c2fbf1931870fdf6ccd23",
+      "last20_progress_mean": {
+        "loss": 0.25154621441179187,
+        "policy_loss": 0.0012232016777090847,
+        "value_loss": 0.5059598479187116,
+        "entropy": 0.26569114641752095,
+        "gradient_norm": 2.269870521547273,
+        "clipped_fraction": 0.030525716213742272,
+        "mean_episode_cost": 178.630078125
+      }
+    },
+    "covered:cooperative_local_ppo:180003": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "553e48b0a9487fe0bb21ce6884056406587914290c8b05597f3086c6c0fee0e5",
+      "last20_progress_mean": {
+        "loss": 0.2208973652741406,
+        "policy_loss": 0.0009983038127074906,
+        "value_loss": 0.445725358882919,
+        "entropy": 0.2963618039153516,
+        "gradient_norm": 1.9961832424160093,
+        "clipped_fraction": 0.030468750023283066,
+        "mean_episode_cost": 179.833203125
+      }
+    },
+    "covered:cooperative_local_ppo:180004": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "280308c7ff236b9072f0cf7479af9fd2726578982661650f9ae1e46fac132b3d",
+      "last20_progress_mean": {
+        "loss": 0.269070673227543,
+        "policy_loss": 0.00043541622023894887,
+        "value_loss": 0.5419048972893507,
+        "entropy": 0.2317191714188084,
+        "gradient_norm": 2.543235081038438,
+        "clipped_fraction": 0.012874349079356761,
+        "mean_episode_cost": 181.005859375
+      }
+    },
+    "covered:cooperative_local_ppo:180005": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "ced709fb9c5b3853a0c96cb744fd549ee65c4061475c9c66e2c8dab39092ba00",
+      "last20_progress_mean": {
+        "loss": 0.2515515418461291,
+        "policy_loss": 0.0005800662988349359,
+        "value_loss": 0.5077643306925893,
+        "entropy": 0.29106895844452085,
+        "gradient_norm": 2.3475584842730313,
+        "clipped_fraction": 0.030305989595217398,
+        "mean_episode_cost": 179.55625
+      }
+    },
+    "covered:cooperative_local_ppo:180006": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "9df97296ca4b270e14d0522e1e253d872d03b6246c41fe56462d5187ff8ea097",
+      "last20_progress_mean": {
+        "loss": 0.23747514011338353,
+        "policy_loss": 0.00186281240282824,
+        "value_loss": 0.47695030919276177,
+        "entropy": 0.2862826410448179,
+        "gradient_norm": 2.371640742896125,
+        "clipped_fraction": 0.03404947916133096,
+        "mean_episode_cost": 179.667578125
+      }
+    },
+    "covered:cooperative_local_ppo:180007": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2a9996f56eb4b2913ad1313684764594cb5b54e64bc016fd213cc5ebbe4c89ff",
+      "last20_progress_mean": {
+        "loss": 0.22596787094662432,
+        "policy_loss": 0.0011142991884753428,
+        "value_loss": 0.4551777028013021,
+        "entropy": 0.2735279937274754,
+        "gradient_norm": 1.863570795301348,
+        "clipped_fraction": 0.03153483068745118,
+        "mean_episode_cost": 178.8984375
+      }
+    },
+    "covered:cooperative_local_ppo:180008": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "17c76ba23d6b558b3417ed8d2fa645ed453831dece0fdc9d1d209308797277c5",
+      "last20_progress_mean": {
+        "loss": 0.2381533390522236,
+        "policy_loss": 0.0013902763046615974,
+        "value_loss": 0.47909743699710816,
+        "entropy": 0.27856556004844607,
+        "gradient_norm": 2.231178440945223,
+        "clipped_fraction": 0.032543945366342086,
+        "mean_episode_cost": 179.338671875
+      }
+    },
+    "covered:cooperative_local_ppo:180009": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "6545ba733ab6e2b02e38770d7e6998b0c840483bc674e9f1a377a7e8ee6ca42d",
+      "last20_progress_mean": {
+        "loss": 0.2701071155635873,
+        "policy_loss": 0.001289091427679523,
+        "value_loss": 0.5430276855826378,
+        "entropy": 0.2695818970678374,
+        "gradient_norm": 2.288033540407196,
+        "clipped_fraction": 0.026538085997890447,
+        "mean_episode_cost": 180.128125
+      }
+    },
+    "covered:cooperative_full_ppo:180000": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2d67cb24d4ed03c072b528e5f23827a5b0f29a4a4df45ca5bbfdb0e429e0dc7f",
+      "last20_progress_mean": {
+        "loss": 0.2740676948160399,
+        "policy_loss": 0.001378373298854285,
+        "value_loss": 0.550460095750168,
+        "entropy": 0.2540726150502451,
+        "gradient_norm": 2.306854422437027,
+        "clipped_fraction": 0.01915690114037716,
+        "mean_episode_cost": 180.550390625
+      }
+    },
+    "covered:cooperative_full_ppo:180001": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "fd52adf35f778ea4a194b8b93d1f793ef189f500ecd27a65f618fae6ca3bfb80",
+      "last20_progress_mean": {
+        "loss": 0.2138427703132038,
+        "policy_loss": 0.00025604128603617937,
+        "value_loss": 0.43245979454368355,
+        "entropy": 0.2643168375827372,
+        "gradient_norm": 2.002420888328925,
+        "clipped_fraction": 0.023258463537786156,
+        "mean_episode_cost": 177.728515625
+      }
+    },
+    "covered:cooperative_full_ppo:180002": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "05bf9a51c9c6591288c4ba495f577ccfad95228ad86c2fbf1931870fdf6ccd23",
+      "last20_progress_mean": {
+        "loss": 0.23364196940965484,
+        "policy_loss": 0.0005108625934667543,
+        "value_loss": 0.471988862962462,
+        "entropy": 0.2863324739504606,
+        "gradient_norm": 2.1935621101409195,
+        "clipped_fraction": 0.03109537765267305,
+        "mean_episode_cost": 177.478125
+      }
+    },
+    "covered:cooperative_full_ppo:180003": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "553e48b0a9487fe0bb21ce6884056406587914290c8b05597f3086c6c0fee0e5",
+      "last20_progress_mean": {
+        "loss": 0.20719064344011712,
+        "policy_loss": 0.0005874796553371198,
+        "value_loss": 0.4187389604514465,
+        "entropy": 0.27663162839598954,
+        "gradient_norm": 1.9501360466470943,
+        "clipped_fraction": 0.032324218799476515,
+        "mean_episode_cost": 177.646484375
+      }
+    },
+    "covered:cooperative_full_ppo:180004": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "280308c7ff236b9072f0cf7479af9fd2726578982661650f9ae1e46fac132b3d",
+      "last20_progress_mean": {
+        "loss": 0.21441264098903048,
+        "policy_loss": 0.001235305796637931,
+        "value_loss": 0.432581585762091,
+        "entropy": 0.31134578557685016,
+        "gradient_norm": 2.1038208332378416,
+        "clipped_fraction": 0.04143066407414153,
+        "mean_episode_cost": 178.683984375
+      }
+    },
+    "covered:cooperative_full_ppo:180005": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "ced709fb9c5b3853a0c96cb744fd549ee65c4061475c9c66e2c8dab39092ba00",
+      "last20_progress_mean": {
+        "loss": 0.22090106982504948,
+        "policy_loss": 0.0013439367845574425,
+        "value_loss": 0.44558141094166787,
+        "entropy": 0.3233572610653937,
+        "gradient_norm": 2.351302345120348,
+        "clipped_fraction": 0.03847656262878445,
+        "mean_episode_cost": 178.85859375
+      }
+    },
+    "covered:cooperative_full_ppo:180006": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "9df97296ca4b270e14d0522e1e253d872d03b6246c41fe56462d5187ff8ea097",
+      "last20_progress_mean": {
+        "loss": 0.21327194302284624,
+        "policy_loss": 0.0007870753757742932,
+        "value_loss": 0.4300938503351063,
+        "entropy": 0.25620574650820344,
+        "gradient_norm": 2.1668091259431095,
+        "clipped_fraction": 0.02716471355815884,
+        "mean_episode_cost": 178.051171875
+      }
+    },
+    "covered:cooperative_full_ppo:180007": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "2a9996f56eb4b2913ad1313684764594cb5b54e64bc016fd213cc5ebbe4c89ff",
+      "last20_progress_mean": {
+        "loss": 0.2216520623092947,
+        "policy_loss": 0.0001234692426834272,
+        "value_loss": 0.44904459808021785,
+        "entropy": 0.29937062384560703,
+        "gradient_norm": 1.7723236325662584,
+        "clipped_fraction": 0.036824544289993356,
+        "mean_episode_cost": 178.60078125
+      }
+    },
+    "covered:cooperative_full_ppo:180008": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "17c76ba23d6b558b3417ed8d2fa645ed453831dece0fdc9d1d209308797277c5",
+      "last20_progress_mean": {
+        "loss": 0.277641735895304,
+        "policy_loss": 0.0005176228948585049,
+        "value_loss": 0.5594430368859321,
+        "entropy": 0.25974064908223227,
+        "gradient_norm": 2.354363526822999,
+        "clipped_fraction": 0.017895507875800833,
+        "mean_episode_cost": 180.728515625
+      }
+    },
+    "covered:cooperative_full_ppo:180009": {
+      "mixture": {
+        "specialized": 16384,
+        "skill_mask": 16384,
+        "nominal": 8192
+      },
+      "seed_sequence_sha256": "6545ba733ab6e2b02e38770d7e6998b0c840483bc674e9f1a377a7e8ee6ca42d",
+      "last20_progress_mean": {
+        "loss": 0.2348391422536224,
+        "policy_loss": 0.0007066713857511786,
+        "value_loss": 0.4735086109256372,
+        "entropy": 0.26218345093075185,
+        "gradient_norm": 2.2487806607969105,
+        "clipped_fraction": 0.027929687509458744,
+        "mean_episode_cost": 178.198828125
+      }
+    }
+  }
+}

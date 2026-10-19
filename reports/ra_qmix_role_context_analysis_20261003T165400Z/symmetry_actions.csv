@@ -1,0 +1,16 @@
+cell,algorithm,state_seed_pairs,unequal_actions,optimal_actions
+nominal,monotonic_base,0,0,0
+nominal,monotonic_role,0,0,0
+nominal,monotonic_context,0,0,0
+nominal,monotonic_role_context,0,0,0
+nominal,joint_q,0,0,0
+shared_preference,monotonic_base,130,0,0
+shared_preference,monotonic_role,130,5,5
+shared_preference,monotonic_context,130,0,0
+shared_preference,monotonic_role_context,130,16,16
+shared_preference,joint_q,130,130,130
+pressure,monotonic_base,110,0,0
+pressure,monotonic_role,110,11,6
+pressure,monotonic_context,110,0,0
+pressure,monotonic_role_context,110,11,6
+pressure,joint_q,110,109,102

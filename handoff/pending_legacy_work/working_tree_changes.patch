@@ -1,0 +1,56 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index e415f7c..feae6f1 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -69,6 +69,7 @@ ht-pdm-fjsp-passive-algorithm-screen = "ht_pdm_fjsp.passive_technician_algorithm
+ ht-pdm-fjsp-passive-counterfactual = "ht_pdm_fjsp.passive_technician_counterfactual:main"
+ ht-pdm-fjsp-passive-long-comparison = "ht_pdm_fjsp.passive_technician_long_comparison:main"
+ ht-pdm-fjsp-passive-ablation = "ht_pdm_fjsp.passive_technician_ablation:main"
++ht-pdm-fjsp-passive-scale-transfer = "ht_pdm_fjsp.passive_technician_scale_transfer:main"
+ 
+ [tool.setuptools.packages.find]
+ where = ["src"]
+diff --git a/src/ht_pdm_fjsp/passive_technician_long_comparison.py b/src/ht_pdm_fjsp/passive_technician_long_comparison.py
+index 403ba71..6ae164a 100644
+--- a/src/ht_pdm_fjsp/passive_technician_long_comparison.py
++++ b/src/ht_pdm_fjsp/passive_technician_long_comparison.py
+@@ -274,23 +274,24 @@ def run(args: argparse.Namespace) -> Path:
+                 rows.append(_row(evaluate_fixed(config, policy, seed), cell_name, policy, 0, ""))
+     _write_csv(rows, output / "episodes.partial.csv", FIELDNAMES)
+ 
+-    for cell_name, config in cells.items():
+-        for algorithm in VALUE_ALGORITHMS:
+-            for train_seed in tqdm(train_seeds, desc=f"{cell_name}/{algorithm}", unit="seed"):
+-                root = output / cell_name / algorithm / f"train_seed_{train_seed}"
++    train_config = cells["in_distribution"]
++    for algorithm in VALUE_ALGORITHMS:
++        for train_seed in tqdm(train_seeds, desc=f"train in_distribution/{algorithm}", unit="seed"):
++            root = output / "in_distribution" / algorithm / f"train_seed_{train_seed}"
++            if algorithm == "independent_q":
++                checkpoints, training_rows = _train_q_checkpoints(train_config, train_seed, budgets, root)
++            else:
++                checkpoints, training_rows = train_value_decomposition_checkpoints(
++                    train_config, algorithm, train_seed, budgets, root, value_settings, device
++                )
++            progress.extend({**row, "cell": "in_distribution", "policy": algorithm} for row in training_rows)
++            for budget in budgets:
++                checkpoint = checkpoints[budget]
+                 if algorithm == "independent_q":
+-                    checkpoints, training_rows = _train_q_checkpoints(config, train_seed, budgets, root)
++                    policy = IndependentQ.load(checkpoint, train_config, seed=train_seed)
+                 else:
+-                    checkpoints, training_rows = train_value_decomposition_checkpoints(
+-                        config, algorithm, train_seed, budgets, root, value_settings, device
+-                    )
+-                progress.extend({**row, "cell": cell_name, "policy": algorithm} for row in training_rows)
+-                for budget in budgets:
+-                    checkpoint = checkpoints[budget]
+-                    if algorithm == "independent_q":
+-                        policy = IndependentQ.load(checkpoint, config, seed=train_seed)
+-                    else:
+-                        policy = PassiveValueDecomposition.load(checkpoint, config, device)
++                    policy = PassiveValueDecomposition.load(checkpoint, train_config, device)
++                for cell_name, config in cells.items():
+                     for seed in tqdm(
+                         evaluation_seeds,
+                         desc=f"evaluate {cell_name}/{algorithm}/{train_seed}/{budget}",

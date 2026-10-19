@@ -1,0 +1,94 @@
+{
+  "status": "DESCRIPTIVE",
+  "panels": {
+    "homogeneous_H12": {
+      "intervals": 6000.0,
+      "allocation_options_exist": 1627.0,
+      "selected_outside_fixed": 0.0,
+      "positive_forecast_allocation_gain": 0.0,
+      "total_forecast_gain": 0.0,
+      "max_forecast_gain": 0.0,
+      "outside_fixed_frequency": 0.0,
+      "positive_forecast_gain_frequency": 0.0,
+      "mean_forecast_gain_per_interval": 0.0
+    },
+    "homogeneous_H24": {
+      "intervals": 12000.0,
+      "allocation_options_exist": 2775.0,
+      "selected_outside_fixed": 0.0,
+      "positive_forecast_allocation_gain": 0.0,
+      "total_forecast_gain": 0.0,
+      "max_forecast_gain": 0.0,
+      "outside_fixed_frequency": 0.0,
+      "positive_forecast_gain_frequency": 0.0,
+      "mean_forecast_gain_per_interval": 0.0
+    },
+    "specialized_H12": {
+      "intervals": 6000.0,
+      "allocation_options_exist": 3521.0,
+      "selected_outside_fixed": 310.0,
+      "positive_forecast_allocation_gain": 222.0,
+      "total_forecast_gain": 772.46875,
+      "max_forecast_gain": 14.4375,
+      "outside_fixed_frequency": 0.051666666666666666,
+      "positive_forecast_gain_frequency": 0.037,
+      "mean_forecast_gain_per_interval": 0.12874479166666666
+    },
+    "specialized_H24": {
+      "intervals": 12000.0,
+      "allocation_options_exist": 6748.0,
+      "selected_outside_fixed": 359.0,
+      "positive_forecast_allocation_gain": 301.0,
+      "total_forecast_gain": 932.3125,
+      "max_forecast_gain": 15.3125,
+      "outside_fixed_frequency": 0.029916666666666668,
+      "positive_forecast_gain_frequency": 0.025083333333333332,
+      "mean_forecast_gain_per_interval": 0.07769270833333333
+    },
+    "nominal_H12": {
+      "intervals": 6000.0,
+      "allocation_options_exist": 5167.0,
+      "selected_outside_fixed": 0.0,
+      "positive_forecast_allocation_gain": 0.0,
+      "total_forecast_gain": 0.0,
+      "max_forecast_gain": 0.0,
+      "outside_fixed_frequency": 0.0,
+      "positive_forecast_gain_frequency": 0.0,
+      "mean_forecast_gain_per_interval": 0.0
+    },
+    "nominal_H24": {
+      "intervals": 12000.0,
+      "allocation_options_exist": 9869.0,
+      "selected_outside_fixed": 0.0,
+      "positive_forecast_allocation_gain": 0.0,
+      "total_forecast_gain": 0.0,
+      "max_forecast_gain": 0.0,
+      "outside_fixed_frequency": 0.0,
+      "positive_forecast_gain_frequency": 0.0,
+      "mean_forecast_gain_per_interval": 0.0
+    },
+    "skill_mask_H12": {
+      "intervals": 6000.0,
+      "allocation_options_exist": 3657.0,
+      "selected_outside_fixed": 59.0,
+      "positive_forecast_allocation_gain": 29.0,
+      "total_forecast_gain": 110.5625,
+      "max_forecast_gain": 13.1875,
+      "outside_fixed_frequency": 0.009833333333333333,
+      "positive_forecast_gain_frequency": 0.004833333333333334,
+      "mean_forecast_gain_per_interval": 0.018427083333333334
+    },
+    "skill_mask_H24": {
+      "intervals": 12000.0,
+      "allocation_options_exist": 7072.0,
+      "selected_outside_fixed": 72.0,
+      "positive_forecast_allocation_gain": 54.0,
+      "total_forecast_gain": 205.8125,
+      "max_forecast_gain": 16.5,
+      "outside_fixed_frequency": 0.006,
+      "positive_forecast_gain_frequency": 0.0045,
+      "mean_forecast_gain_per_interval": 0.017151041666666665
+    }
+  },
+  "explanation": "Min forecast cost with root fixed allocation vs all root matchings, on the same logged full-planner state/scenarios. Continuation stays identical. This is a rollout-model diagnostic, not an optimality bound or a new confirmatory test."
+}

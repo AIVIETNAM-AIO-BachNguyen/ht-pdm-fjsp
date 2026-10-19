@@ -1,0 +1,80 @@
+[
+  {
+    "key": [
+      138008,
+      141000,
+      "high",
+      12,
+      142023,
+      "central_subset_ppo"
+    ],
+    "logged_cost": 253.0,
+    "rerun_cost": 260.0,
+    "difference": 7.0
+  },
+  {
+    "key": [
+      138008,
+      141000,
+      "high",
+      12,
+      142026,
+      "central_subset_ppo"
+    ],
+    "logged_cost": 215.0,
+    "rerun_cost": 215.0,
+    "difference": 0.0
+  },
+  {
+    "key": [
+      138008,
+      141000,
+      "high",
+      12,
+      142031,
+      "central_subset_ppo"
+    ],
+    "logged_cost": 239.0,
+    "rerun_cost": 239.0,
+    "difference": 0.0
+  },
+  {
+    "key": [
+      138008,
+      141000,
+      "high",
+      24,
+      142026,
+      "central_subset_ppo"
+    ],
+    "logged_cost": 484.0,
+    "rerun_cost": 447.0,
+    "difference": -37.0
+  },
+  {
+    "key": [
+      138008,
+      141000,
+      "high",
+      24,
+      142031,
+      "central_subset_ppo"
+    ],
+    "logged_cost": 465.0,
+    "rerun_cost": 487.0,
+    "difference": 22.0
+  },
+  {
+    "key": [
+      138008,
+      141005,
+      "middle",
+      24,
+      142041,
+      "central_subset_ppo"
+    ],
+    "logged_cost": 381.0,
+    "rerun_cost": 381.0,
+    "difference": 0.0
+  }
+]

@@ -1,0 +1,54 @@
+{
+  "scope": "opened920211/firstshock921200; observed actual dispatch and completion only",
+  "required_work": [
+    260,
+    262,
+    249,
+    242,
+    237,
+    280
+  ],
+  "service": [
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      6,
+      2
+    ],
+    [
+      2,
+      6
+    ],
+    [
+      2,
+      6
+    ]
+  ],
+  "machine1": {
+    "H_health_risk_dispatch": {
+      "pm2": 32,
+      "pm6": 0,
+      "finished": 326
+    },
+    "S_capacity_reservation": {
+      "pm2": 24,
+      "pm6": 0,
+      "finished": 310
+    },
+    "D_deadline_packing": {
+      "pm2": 9,
+      "pm6": 23,
+      "finished": 418
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "verification_status": "ANALYZED",
+  "raw_files_unchanged": true,
+  "raw_files_checked": 112,
+  "replay_audit": {
+    "status": "PASSED",
+    "run": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_context_waiting_v1_full_cpu_20261005T064927Z",
+    "replayed_test_episodes": 16400,
+    "replayed_physical_ticks": 207050,
+    "training_episodes_checked": 400000,
+    "source_snapshot_verified": true,
+    "checkpoint_contracts_verified": true,
+    "independent_scalar_cost_and_waiting_boundary_verified": true,
+    "simulator_replay": "same implementation; not independent simulator reproduction",
+    "training_wait_penalty_positive_rows": 26975,
+    "full_scientific_inference": true
+  },
+  "policy_inference": {
+    "status": "MATCHED",
+    "states": 202000,
+    "sequence_mismatches": 0,
+    "physical_matching_mismatches": 0,
+    "models": 40,
+    "batch_size": 256,
+    "source_snapshot_matches": true,
+    "details": [],
+    "scope": "local batched checkpoint inference on original logged states, not independent training reproduction"
+  },
+  "independent_statistics_match_locked_summary": true,
+  "fallacy_scan_coverage": "11/11",
+  "independent_training_rerun": false,
+  "plot_visually_checked": true
+}

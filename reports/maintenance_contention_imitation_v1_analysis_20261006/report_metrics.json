@@ -1,0 +1,564 @@
+{
+  "primary": {
+    "contrast": "imitation_ppo vs direct_ppo",
+    "capacity": "middle",
+    "horizon": 12,
+    "paired_replica_costs": {
+      "direct_ppo": {
+        "144000": 186.176,
+        "144001": 184.412,
+        "144002": 185.004,
+        "144003": 187.812,
+        "144004": 183.416,
+        "144005": 186.516,
+        "144006": 183.434,
+        "144007": 184.27,
+        "144008": 184.918,
+        "144009": 184.054
+      },
+      "planner_imitation": {
+        "144000": 184.746,
+        "144001": 185.524,
+        "144002": 184.79,
+        "144003": 183.638,
+        "144004": 185.14,
+        "144005": 182.78,
+        "144006": 184.14,
+        "144007": 185.188,
+        "144008": 184.316,
+        "144009": 183.224
+      },
+      "imitation_ppo": {
+        "144000": 182.876,
+        "144001": 181.48,
+        "144002": 181.838,
+        "144003": 182.106,
+        "144004": 181.134,
+        "144005": 182.74,
+        "144006": 182.278,
+        "144007": 181.666,
+        "144008": 181.834,
+        "144009": 182.01
+      }
+    },
+    "paired_differences": [
+      -3.299999999999983,
+      -2.9320000000000164,
+      -3.165999999999997,
+      -5.706000000000017,
+      -2.2820000000000107,
+      -3.775999999999982,
+      -1.156000000000006,
+      -2.6040000000000134,
+      -3.084000000000003,
+      -2.044000000000011
+    ],
+    "priced_reduction": 0.01624313788234899,
+    "mean_difference": -3.005000000000004,
+    "ci95": [
+      -3.8660806145549658,
+      -2.143919385445042
+    ],
+    "wins": 10,
+    "gates": {
+      "relative_priced_reduction_2pct": false,
+      "wins_8_of_10": true,
+      "ci95_upper_below_zero": true,
+      "nominal_guard": true,
+      "waiting_guard": true
+    },
+    "status": "FAIL"
+  },
+  "exploratory": {
+    "planner_imitation_vs_direct_ppo": {
+      "difference": -0.6526000000000038,
+      "ci95": [
+        -2.0795927814153234,
+        0.774392781415316
+      ],
+      "wins": 6,
+      "relative_reduction": 0.0035275446861968707
+    },
+    "imitation_ppo_vs_planner_imitation": {
+      "difference": -2.3524000000000003,
+      "ci95": [
+        -3.2799025338509296,
+        -1.424897466149071
+      ],
+      "wins": 10,
+      "relative_reduction": 0.01276060680688651
+    }
+  },
+  "cohort_costs": {
+    "147000": {
+      "direct_ppo": 155.99,
+      "planner_imitation": 152.562,
+      "imitation_ppo": 149.068,
+      "independent_dp_matching": 170.64,
+      "joint_rollout": 150.38
+    },
+    "147001": {
+      "direct_ppo": 211.538,
+      "planner_imitation": 209.572,
+      "imitation_ppo": 208.136,
+      "independent_dp_matching": 218.88,
+      "joint_rollout": 206.0
+    },
+    "147002": {
+      "direct_ppo": 192.648,
+      "planner_imitation": 192.078,
+      "imitation_ppo": 191.56,
+      "independent_dp_matching": 189.28,
+      "joint_rollout": 178.3
+    },
+    "147003": {
+      "direct_ppo": 172.764,
+      "planner_imitation": 171.918,
+      "imitation_ppo": 170.072,
+      "independent_dp_matching": 193.6,
+      "joint_rollout": 176.22
+    },
+    "147004": {
+      "direct_ppo": 174.9,
+      "planner_imitation": 175.252,
+      "imitation_ppo": 174.566,
+      "independent_dp_matching": 195.32,
+      "joint_rollout": 176.48
+    },
+    "147005": {
+      "direct_ppo": 228.138,
+      "planner_imitation": 223.222,
+      "imitation_ppo": 219.126,
+      "independent_dp_matching": 238.26,
+      "joint_rollout": 217.0
+    },
+    "147006": {
+      "direct_ppo": 197.546,
+      "planner_imitation": 196.406,
+      "imitation_ppo": 195.89,
+      "independent_dp_matching": 204.32,
+      "joint_rollout": 191.22
+    },
+    "147007": {
+      "direct_ppo": 161.104,
+      "planner_imitation": 161.138,
+      "imitation_ppo": 159.592,
+      "independent_dp_matching": 171.04,
+      "joint_rollout": 155.4
+    },
+    "147008": {
+      "direct_ppo": 173.626,
+      "planner_imitation": 176.948,
+      "imitation_ppo": 172.696,
+      "independent_dp_matching": 181.02,
+      "joint_rollout": 167.12
+    },
+    "147009": {
+      "direct_ppo": 181.758,
+      "planner_imitation": 184.39,
+      "imitation_ppo": 179.256,
+      "independent_dp_matching": 199.86,
+      "joint_rollout": 173.18
+    }
+  },
+  "selected_bc_validation": {
+    "teacher_agreement": 0.798046875,
+    "choice_teacher_agreement": 0.7753993677783821,
+    "mean_teacher_score_regret": 1.2082295735677084,
+    "choice_mean_teacher_score_regret": 1.3436752910378496
+  },
+  "primary_sign_test_two_sided": 0.001953125,
+  "audit": {
+    "status": "NUMERICAL_ACTION_MISMATCH",
+    "raw_files": 227,
+    "checkpoint_files": 180,
+    "models": 30,
+    "training_episode_provenance": 819200,
+    "optimizer_progress_rows": 7200,
+    "development_episodes": 62400,
+    "test_episodes": 105000,
+    "physical_intervals": 1890000,
+    "planner_forecast_replay_intervals": 1080,
+    "learned_action_replay_intervals": 1620000,
+    "machine_rows": 420000,
+    "neural_action_mismatches": [
+      {
+        "key": [
+          144005,
+          147000,
+          "middle",
+          24,
+          148025,
+          "planner_imitation"
+        ],
+        "time": 3,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148019,
+          "planner_imitation"
+        ],
+        "time": 1,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148025,
+          "planner_imitation"
+        ],
+        "time": 3,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144000,
+          147005,
+          "middle",
+          24,
+          148010,
+          "imitation_ppo"
+        ],
+        "time": 20,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144001,
+          147005,
+          "low",
+          24,
+          148018,
+          "imitation_ppo"
+        ],
+        "time": 5,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144001,
+          147005,
+          "low",
+          24,
+          148027,
+          "imitation_ppo"
+        ],
+        "time": 1,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144001,
+          147005,
+          "low",
+          24,
+          148032,
+          "imitation_ppo"
+        ],
+        "time": 5,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144001,
+          147005,
+          "low",
+          24,
+          148034,
+          "imitation_ppo"
+        ],
+        "time": 5,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144001,
+          147005,
+          "middle",
+          24,
+          148014,
+          "imitation_ppo"
+        ],
+        "time": 0,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144001,
+          147005,
+          "middle",
+          24,
+          148049,
+          "imitation_ppo"
+        ],
+        "time": 5,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144001,
+          147007,
+          "middle",
+          12,
+          148014,
+          "imitation_ppo"
+        ],
+        "time": 1,
+        "expected": 6,
+        "actual": 8
+      },
+      {
+        "key": [
+          144006,
+          147005,
+          "middle",
+          24,
+          148021,
+          "imitation_ppo"
+        ],
+        "time": 0,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144007,
+          147005,
+          "middle",
+          12,
+          148023,
+          "imitation_ppo"
+        ],
+        "time": 7,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144007,
+          147005,
+          "middle",
+          24,
+          148037,
+          "imitation_ppo"
+        ],
+        "time": 19,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144007,
+          147005,
+          "middle",
+          24,
+          148045,
+          "imitation_ppo"
+        ],
+        "time": 0,
+        "expected": 8,
+        "actual": 14
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          12,
+          148025,
+          "imitation_ppo"
+        ],
+        "time": 3,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148007,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148012,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148013,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148020,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148025,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148026,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148033,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148035,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148040,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147000,
+          "middle",
+          24,
+          148049,
+          "imitation_ppo"
+        ],
+        "time": 11,
+        "expected": 8,
+        "actual": 12
+      },
+      {
+        "key": [
+          144009,
+          147005,
+          "low",
+          24,
+          148030,
+          "imitation_ppo"
+        ],
+        "time": 1,
+        "expected": 8,
+        "actual": 14
+      }
+    ],
+    "max_log_probability_error": 3.814697265625e-06,
+    "max_value_error": 2.86102294921875e-06,
+    "raw_hashes_unchanged": true,
+    "elapsed_seconds": 249.69638058400596
+  },
+  "teacher_audit": {
+    "status": "PASS",
+    "csv_rows": 138240,
+    "trajectories": 11520,
+    "tensor_rows": 138240,
+    "bc_checkpoint_diagnostics": 100,
+    "sampled_teacher_forecast_replays": 720,
+    "independent_noise_replays": 320,
+    "elapsed_seconds": 62.13311512500513
+  },
+  "numerical_sensitivity": {
+    "mismatches": 27,
+    "all_symmetric_current_profiles": true,
+    "primary_mismatches": 3,
+    "affected_episodes": 27,
+    "aggregate_mean_changes": {
+      "planner_imitation_middle_H24": 0.0,
+      "imitation_ppo_middle_H24": 0.0,
+      "imitation_ppo_low_H24": 0.0,
+      "imitation_ppo_middle_H12": 0.0
+    }
+  }
+}

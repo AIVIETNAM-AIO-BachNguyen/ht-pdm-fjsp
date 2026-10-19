@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "commit": "7390109a976a2f0cf55a67b6205d150623a3c0c5",
+  "branch": "codex/maintenance-request-lifecycle-v1",
+  "tested_source_hashes": {
+    "configs/maintenance_request_lifecycle_v1_seed_registry.json": "4f0fc17e9b43484a107a975811d548837290921b51f17e45162169e18a430a96",
+    "docs/maintenance_request_lifecycle_v1_plan.md": "7dffd84e8f2d053c5ed05707e0bdf4a1a6dc120306ba3bb136197fc2b2df0a57",
+    "src/ht_pdm_fjsp/__init__.py": "9b4c0ddca002559729a2cfd96368eac4eaf3a20efe6c7cdfacb1e029c9397fdf",
+    "src/ht_pdm_fjsp/maintenance_dispatch.py": "7c542047128e5c9816d53d20e74bd8055a77c7ef99b8a99275dd26c86e81cb8c",
+    "src/ht_pdm_fjsp/maintenance_request_experiment.py": "f6e4dd021073856cee1882a34c5070299692b2e8a201c22ac2552dacf052c6eb",
+    "src/ht_pdm_fjsp/maintenance_request_policies.py": "1e168a44fd8126f6a5fdf680bc492e96f5a7f718e87f96dbd60dbe103efe0d64",
+    "src/ht_pdm_fjsp/maintenance_requests.py": "3288f11fdc9adbd999b9a719900280bbf38788f3e3f16c6cb3ff28694229fc65"
+  },
+  "all_tests": 988,
+  "smoke_precommit": true,
+  "smoke_artifact_hashes_verified": true
+}

@@ -1,5 +1,13 @@
 # Minimal HT-PdM-FJSP benchmark
 
+## Current lab research handoff
+
+Start with [LAB_HANDOFF.md](docs/LAB_HANDOFF.md) for the current setting,
+verified evidence, historical context and a ready-to-paste lab research goal.
+The development anchor is `reciprocal_scale2` with persistent maintenance
+requests; centralized RL is sufficient to begin the framework.
+
+
 ## Explicit shared maintenance requests
 
 The request-lifecycle diagnostic builds on the completion-time maintenance

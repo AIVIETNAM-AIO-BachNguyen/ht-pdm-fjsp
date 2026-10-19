@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "scope": "shared-implementation replay and separate slot invariants; not independent scientific reproduction",
+  "smoke": "/Users/bachng/.codex/worktrees/maintenance-coupling/marl/artifacts/maintenance_deadline_smoke_20261004T183153Z",
+  "source_commit": "3be08ac5550a64603ce88634f1043a3e00c6817f",
+  "source_dirty": true,
+  "episodes": 144,
+  "development": 576,
+  "configs": 24,
+  "decisions_replayed": 1674,
+  "job_completions_replayed": 1296,
+  "regression_episodes": 9,
+  "regression_decisions_replayed": 4135,
+  "regression_job_completions_replayed": 3456,
+  "plans_audited": 2403,
+  "max_numeric_error": 0.0,
+  "sealed_panel_unopened": true,
+  "dev_selection_independently_matches": true,
+  "prior_local_manifests_seed_audited": 81,
+  "seed_freshness_scope": "local manifests only; untransferred remote experiments unknown",
+  "hashes": {
+    "source": "bd0aaa48738f3220ec0ab93313017295676fd770e145178b1384b5caa4da7e35",
+    "repair": "ba20047dfd5773416b76725cd1c4a9674666fb6d80444f4976873e5ac4ca45e6",
+    "production": "9cbb3c61209c79d39480c735a145a6f33f81d566fccff9b02bee800acf810237",
+    "coupling": "4dcbf3acefd4ae4258c591da1f5e0ed11ae74ffbd0de059ee557b4ccff63bc52",
+    "protocol": "11fc76a105898b77eebf5aa7bb3055c7f5e0d9d48526ea640d0c7eb7dfefffed"
+  }
+}

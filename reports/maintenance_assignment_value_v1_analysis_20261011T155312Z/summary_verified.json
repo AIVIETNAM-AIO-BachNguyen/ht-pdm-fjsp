@@ -1,0 +1,196 @@
+{
+  "means": {
+    "dense": {
+      "frozen_ppo": {
+        "extended_objective": 1173.5277777777778,
+        "base_objective": 935.7048611111111,
+        "tail_objective": 237.82291666666666,
+        "extended_failure_cost": 288.0208333333333,
+        "extended_waiting_cost": 3.1666666666666665,
+        "extended_maintenance_cost": 53.71527777777778,
+        "extended_unavailability_cost": 828.625,
+        "preventive_starts": 13.815972222222221,
+        "corrective_starts": 14.496527777777779,
+        "wait_with_pm_feasible": 0.041666666666666664,
+        "stop_with_pm_extension_feasible": 0.16666666666666666,
+        "pm_assignment_alternative_ticks": 2.6666666666666665
+      },
+      "true_value": {
+        "extended_objective": 1167.9027777777778,
+        "base_objective": 928.9131944444445,
+        "tail_objective": 238.98958333333334,
+        "extended_failure_cost": 283.28125,
+        "extended_waiting_cost": 2.75,
+        "extended_maintenance_cost": 53.579861111111114,
+        "extended_unavailability_cost": 828.2916666666666,
+        "preventive_starts": 14.399305555555555,
+        "corrective_starts": 14.14236111111111,
+        "wait_with_pm_feasible": 0.041666666666666664,
+        "stop_with_pm_extension_feasible": 0.16666666666666666,
+        "pm_assignment_alternative_ticks": 2.84375
+      },
+      "shuffled_value": {
+        "extended_objective": 1197.9027777777778,
+        "base_objective": 953.2951388888889,
+        "tail_objective": 244.60763888888889,
+        "extended_failure_cost": 303.6979166666667,
+        "extended_waiting_cost": 3.8333333333333335,
+        "extended_maintenance_cost": 54.079861111111114,
+        "extended_unavailability_cost": 836.2916666666666,
+        "preventive_starts": 12.475694444444445,
+        "corrective_starts": 15.23263888888889,
+        "wait_with_pm_feasible": 0.041666666666666664,
+        "stop_with_pm_extension_feasible": 0.16666666666666666,
+        "pm_assignment_alternative_ticks": 1.8055555555555556
+      }
+    },
+    "skill_mask": {
+      "frozen_ppo": {
+        "extended_objective": 1210.6215277777778,
+        "base_objective": 960.9340277777778,
+        "tail_objective": 249.6875,
+        "extended_failure_cost": 289.5833333333333,
+        "extended_waiting_cost": 10.583333333333334,
+        "extended_maintenance_cost": 52.72569444444444,
+        "extended_unavailability_cost": 857.7291666666666,
+        "preventive_starts": 13.32986111111111,
+        "corrective_starts": 14.333333333333334,
+        "wait_with_pm_feasible": 0.04861111111111111,
+        "stop_with_pm_extension_feasible": 0.2013888888888889,
+        "pm_assignment_alternative_ticks": 0.9097222222222222
+      },
+      "true_value": {
+        "extended_objective": 1211.6354166666667,
+        "base_objective": 961.3125,
+        "tail_objective": 250.32291666666666,
+        "extended_failure_cost": 290.1041666666667,
+        "extended_waiting_cost": 11.083333333333334,
+        "extended_maintenance_cost": 52.739583333333336,
+        "extended_unavailability_cost": 857.7083333333334,
+        "preventive_starts": 13.3125,
+        "corrective_starts": 14.375,
+        "wait_with_pm_feasible": 0.04861111111111111,
+        "stop_with_pm_extension_feasible": 0.2048611111111111,
+        "pm_assignment_alternative_ticks": 0.9305555555555556
+      },
+      "shuffled_value": {
+        "extended_objective": 1221.9409722222222,
+        "base_objective": 970.6076388888889,
+        "tail_objective": 251.33333333333334,
+        "extended_failure_cost": 293.125,
+        "extended_waiting_cost": 10.25,
+        "extended_maintenance_cost": 52.37847222222222,
+        "extended_unavailability_cost": 866.1875,
+        "preventive_starts": 12.628472222222221,
+        "corrective_starts": 14.614583333333334,
+        "wait_with_pm_feasible": 0.04861111111111111,
+        "stop_with_pm_extension_feasible": 0.2013888888888889,
+        "pm_assignment_alternative_ticks": 0.6840277777777778
+      }
+    }
+  },
+  "primary_contrasts": {
+    "dense:true_value_vs_frozen_ppo": {
+      "baseline": "frozen_ppo",
+      "method": "true_value",
+      "baseline_mean": 1173.5277777777778,
+      "method_mean": 1167.9027777777778,
+      "absolute_gain": 5.625,
+      "relative_gain": 0.004793239756669112,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.011294885670984366,
+        0.020174234564397243
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": -0.005621350215576052,
+        "18100001": 0.011449176185713533,
+        "18100002": 0.008180192186294453
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.009814153781387312,
+        "18100001": 0.0014062876684196898,
+        "18100002": 0.0030680600214362274
+      },
+      "status": "UNRESOLVED"
+    },
+    "dense:true_value_vs_shuffled_value": {
+      "baseline": "shuffled_value",
+      "method": "true_value",
+      "baseline_mean": 1197.9027777777778,
+      "method_mean": 1167.9027777777778,
+      "absolute_gain": 30.0,
+      "relative_gain": 0.02504376862340433,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        0.0036032876637785813,
+        0.0541637229695964
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.025577746831426607,
+        "18100001": 0.022011404962981606,
+        "18100002": 0.027526327100795184
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.024782109200217676,
+        "18100001": 0.026564193173559403,
+        "18100002": 0.023780890449597893
+      },
+      "status": "UNRESOLVED"
+    },
+    "skill_mask:true_value_vs_frozen_ppo": {
+      "baseline": "frozen_ppo",
+      "method": "true_value",
+      "baseline_mean": 1210.6215277777778,
+      "method_mean": 1211.6354166666667,
+      "absolute_gain": -1.0138888888888888,
+      "relative_gain": -0.0008374945146977418,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.005602191813899281,
+        0.0028155290349561467
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": -0.0016771962145768339,
+        "18100001": -0.00030123333534155556,
+        "18100002": -0.0005451587348910108
+      },
+      "leave_one_replica_out": {
+        "18100000": -0.00042382677044000924,
+        "18100001": -0.0011055189916978536,
+        "18100002": -0.0009858947860002941
+      },
+      "status": "BELOW_MARGIN"
+    },
+    "skill_mask:true_value_vs_shuffled_value": {
+      "baseline": "shuffled_value",
+      "method": "true_value",
+      "baseline_mean": 1221.9409722222222,
+      "method_mean": 1211.6354166666667,
+      "absolute_gain": 10.305555555555555,
+      "relative_gain": 0.008433758904747967,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.0030593626854163963,
+        0.030787510169190405
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.0033375990039082766,
+        "18100001": 0.010295232174942307,
+        "18100002": 0.011553932376255953
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.010928314153055651,
+        "18100001": 0.007501513949660108,
+        "18100002": 0.006842997189866357
+      },
+      "status": "UNRESOLVED"
+    }
+  },
+  "multiplicity": "four primary98.75% crossed paired replica/profile intervals; approximate Bonferroni",
+  "limitations": "one policy improvement, three frozen source replicas; fixed shocks; Delta Q^pi labels need not equal improved-policy value; no end-to-end timing/assignment claim"
+}

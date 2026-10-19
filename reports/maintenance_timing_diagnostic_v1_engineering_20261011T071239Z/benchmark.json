@@ -1,0 +1,71 @@
+{
+  "scope": "Engineering benchmark on the eight smoke states only; no fresh full physical outcomes",
+  "states": [
+    {
+      "condition": "dense",
+      "origin": "joint_ppo",
+      "tick": 0,
+      "candidates": 21,
+      "cold_seconds": 0.019220499962102622,
+      "warm_median_seconds": 0.017658957978710532
+    },
+    {
+      "condition": "dense",
+      "origin": "joint_ppo",
+      "tick": 2,
+      "candidates": 1,
+      "cold_seconds": 0.005434249993413687,
+      "warm_median_seconds": 0.005703166010789573
+    },
+    {
+      "condition": "dense",
+      "origin": "best_rule",
+      "tick": 0,
+      "candidates": 21,
+      "cold_seconds": 0.01638262503547594,
+      "warm_median_seconds": 0.016219375014770776
+    },
+    {
+      "condition": "dense",
+      "origin": "best_rule",
+      "tick": 2,
+      "candidates": 4,
+      "cold_seconds": 0.007643000048119575,
+      "warm_median_seconds": 0.007195333018898964
+    },
+    {
+      "condition": "skill_mask",
+      "origin": "joint_ppo",
+      "tick": 0,
+      "candidates": 13,
+      "cold_seconds": 0.011913458991330117,
+      "warm_median_seconds": 0.012142833031248301
+    },
+    {
+      "condition": "skill_mask",
+      "origin": "joint_ppo",
+      "tick": 2,
+      "candidates": 1,
+      "cold_seconds": 0.005432916048448533,
+      "warm_median_seconds": 0.005862707970663905
+    },
+    {
+      "condition": "skill_mask",
+      "origin": "best_rule",
+      "tick": 0,
+      "candidates": 13,
+      "cold_seconds": 0.011301250022370368,
+      "warm_median_seconds": 0.011232834018301219
+    },
+    {
+      "condition": "skill_mask",
+      "origin": "best_rule",
+      "tick": 2,
+      "candidates": 3,
+      "cold_seconds": 0.006548834033310413,
+      "warm_median_seconds": 0.006189708015881479
+    }
+  ],
+  "worst_cold_seconds": 0.019220499962102622,
+  "worst_warm_seconds": 0.017658957978710532
+}

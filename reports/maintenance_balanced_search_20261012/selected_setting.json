@@ -1,0 +1,234 @@
+{
+  "status": "complete",
+  "scientific_status": "CROSS_SKILL_SETTING_CONFIRMED",
+  "candidate": "balanced_a2_b4_u12",
+  "config": {
+    "machines": 4,
+    "technicians": 2,
+    "horizon": 60,
+    "failure_age": 4,
+    "failure_probability": 0.45,
+    "service_time": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        4,
+        1
+      ]
+    ],
+    "restoration": [
+      [
+        0.5,
+        1
+      ],
+      [
+        0.5,
+        1
+      ],
+      [
+        1,
+        0.5
+      ],
+      [
+        1,
+        0.5
+      ]
+    ],
+    "max_age": 8,
+    "preventive_cost": 1.0,
+    "corrective_cost": 2.0,
+    "unavailable_cost": 12.0,
+    "failure_cost": 15.0,
+    "waiting_limit": 4,
+    "waiting_price": 12.0
+  },
+  "base": "isolated_h6",
+  "protocol": "maintenance_balanced_search_mac_v2",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_balanced_search_mac_v2_full_cpu_20261012T093417Z",
+  "source_commit": "2b1cf5a8bb55e8d69ed192fc8ee4e34ae01bd9ec",
+  "branch": "codex/maintenance-balanced-search-mac-v2",
+  "all_eighteen_gates_passed": true,
+  "comparisons": {
+    "local_baseline": {
+      "estimate": 7.918239048549102,
+      "ci": [
+        5.705696137746175,
+        10.355869951702305
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "local_quality": {
+      "estimate": 7.918239048549102,
+      "ci": [
+        5.705696137746175,
+        10.355869951702305
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "local_endpoint_dp": {
+      "estimate": 7.918239048549102,
+      "ci": [
+        5.705696137746175,
+        10.355869951702305
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "assignment_cost_gain": {
+      "estimate": 0.035708305574457366,
+      "ci": [
+        0.026625250469203245,
+        0.04525991021308852
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_cost_vs_deadline_matching": {
+      "estimate": 0.09683026688403518,
+      "ci": [
+        0.08021601445606959,
+        0.11306950589414053
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_cost_vs_isolated_h6": {
+      "estimate": 0.04669903915693774,
+      "ci": [
+        0.035605930469233375,
+        0.05838974508044168
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_cost_vs_isolated_endpoint": {
+      "estimate": 0.049307008786297235,
+      "ci": [
+        0.03854426334307002,
+        0.06073173199304956
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "assignment_availability_difference": {
+      "estimate": -0.005635579427083481,
+      "ci": [
+        -0.007710774739583198,
+        -0.0038158204820420327
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "assignment_pending_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "assignment_absolute_availability": {
+      "estimate": 0.6641845703124996,
+      "ci": [
+        0.6618358400132921,
+        0.6663411458333333
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "assignment_absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "assignment_interior_gain": {
+      "estimate": 0.023974542218386796,
+      "ci": [
+        0.01436312468644103,
+        0.03417457404086681
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_availability_difference": {
+      "estimate": -0.00213623046875,
+      "ci": [
+        -0.0034790039062502715,
+        -0.0008951822916665186
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_pending_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_absolute_availability": {
+      "estimate": 0.667683919270833,
+      "ci": [
+        0.6662394205729166,
+        0.6690470377604166
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "joint_interior_gain": {
+      "estimate": 0.03666747570633655,
+      "ci": [
+        0.025197117635118563,
+        0.04877856182687806
+      ],
+      "confidence": 0.9993055555555556
+    },
+    "assignment_choice_fraction": {
+      "estimate": 0.7003348214285727,
+      "ci": [
+        0.6629464285714284,
+        0.7388392857142858
+      ],
+      "confidence": 0.9993055555555556
+    }
+  },
+  "independent_audit": {
+    "status": "PASS",
+    "hashed_files": 69,
+    "git_bound_source_blobs": 54,
+    "phase_counts": {
+      "development": 720,
+      "screening": 1600,
+      "confirmation": 1280,
+      "landmarks": 4032
+    },
+    "physical_ticks": 216000,
+    "root_rows": 6970,
+    "forecasts": 812967808,
+    "baseline_and_winner_reconstructed": true,
+    "all_physical_states_events_and_costs_reconstructed": true,
+    "seed_roles": {
+      "raw_unique": 322,
+      "derived_unique": 28352,
+      "historical_scope": "historical registered integers and expanded ranges; own derived roles"
+    },
+    "independent_indexed_bootstrap": true,
+    "independence": "independent scalar/indexed-bootstrap implementation reused and adapted in shared context; not blind or cross-model"
+  },
+  "limitations": "Local assay fixes initial state/tick/subset, not future schedules. Geometric spending applies only to the new declared series; bootstrap coverage is approximate and excludes earlier adaptive searches. Health ranking is a heuristic, not a CI. Raw monetary local gains across downtime prices9/12/6 are not evidence of stronger physical benefit; compare physical ticks/failures/backlog and components. Mean-matched(2,4) versus(3,3) can probe heterogeneity; (3,5) also changes mean burden.",
+  "availability_tradeoff": "Allocation availability \u22120.5636 percentage points; joint \u22120.2136; both within the preregistered \u22121 point noninferiority margin.",
+  "research_scope": "Synthetic rollout setting; no PPO/MARL or field validation evidence.",
+  "results_commit": "5cf773d"
+}

@@ -1,0 +1,18 @@
+{
+  "status": "INCOMPLETE_EXACT_REPLAY_CHECK",
+  "raw_artifact_files": 906,
+  "raw_bytes": 24564954,
+  "source_files_match_commit": 169,
+  "run_seconds": 210.1771333059296,
+  "raw_data_modified": false,
+  "lab_access": false,
+  "training_steps": 0,
+  "scalar_trajectory_replay": {
+    "trajectories": 144,
+    "transitions": 6912,
+    "status": "EXACT_MATCH"
+  },
+  "replayed_forecast_states": 600,
+  "replayed_forecast_transitions": 6496128,
+  "reason": "Checker stopped at a one-future forecast discrepancy; original lab data untouched. Follow-up audit quantifies all discrepancies and uses lab arrays for inference."
+}

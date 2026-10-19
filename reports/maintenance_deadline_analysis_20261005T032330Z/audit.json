@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "raw": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_deadline_full_cpu_20261005T023359Z",
+  "source_commit": "a7089acfd9074a4c1e7c9023673f0f39446562b4",
+  "all_hashes_match": true,
+  "eval": 34560,
+  "development": 10368,
+  "configs": 576,
+  "replayed_first_shock_episodes": 1728,
+  "replayed_decisions": 372042,
+  "replayed_completions": 414720,
+  "deadline_plans_independently_audited": 120021,
+  "regression_episodes_replayed": 180,
+  "regression_decisions_replayed": 3335,
+  "regression_completions_replayed": 3456,
+  "old_case_H_S_match": true,
+  "max_numeric_error": 0.0,
+  "independent_bootstrap_matches": true,
+  "development_selection_matches": true,
+  "scope": "shared-implementation replay and independent statistics/slot invariants; not independent simulator reproduction",
+  "raw_unmodified": true
+}

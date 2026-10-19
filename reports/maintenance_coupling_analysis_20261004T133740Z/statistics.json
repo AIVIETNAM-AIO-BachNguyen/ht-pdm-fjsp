@@ -1,0 +1,461 @@
+{
+  "cells": {
+    "low_uniform": {
+      "B_minus_C": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 12
+      },
+      "A_minus_B": {
+        "mean": 12.629166666666668,
+        "ci95": [
+          8.450000000000001,
+          17.183333333333334
+        ],
+        "n_instances": 12
+      },
+      "D_minus_C": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 12
+      },
+      "relative_savings": 0.0,
+      "ratio_of_grand_means_saving": 0.0
+    },
+    "low_heterogeneous": {
+      "B_minus_C": {
+        "mean": -0.16666666666666666,
+        "ci95": [
+          -0.6666666666666666,
+          0.3333333333333333
+        ],
+        "n_instances": 12
+      },
+      "A_minus_B": {
+        "mean": 4.208333333333333,
+        "ci95": [
+          1.508333333333333,
+          7.25
+        ],
+        "n_instances": 12
+      },
+      "D_minus_C": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 12
+      },
+      "relative_savings": -0.006944444444444444,
+      "ratio_of_grand_means_saving": -0.008733624454148492
+    },
+    "high_uniform": {
+      "B_minus_C": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 12
+      },
+      "A_minus_B": {
+        "mean": 12.629166666666668,
+        "ci95": [
+          8.450000000000001,
+          17.183333333333334
+        ],
+        "n_instances": 12
+      },
+      "D_minus_C": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 12
+      },
+      "relative_savings": 0.0,
+      "ratio_of_grand_means_saving": 0.0
+    },
+    "high_heterogeneous": {
+      "B_minus_C": {
+        "mean": 3.875,
+        "ci95": [
+          1.2249999999999999,
+          6.883333333333333
+        ],
+        "n_instances": 12
+      },
+      "A_minus_B": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 12
+      },
+      "D_minus_C": {
+        "mean": 1.7541666666666667,
+        "ci95": [
+          0.16666666666666666,
+          3.7541666666666664
+        ],
+        "n_instances": 12
+      },
+      "relative_savings": 0.11953100656098704,
+      "ratio_of_grand_means_saving": 0.1663685152057245
+    }
+  },
+  "interaction": {
+    "mean": 4.041666666666667,
+    "ci95": [
+      1.2249999999999999,
+      7.358333333333334
+    ],
+    "n_instances": 12
+  },
+  "primary_gate": true,
+  "stronger_mechanism_gate": true,
+  "development_mean_costs": {
+    "0": 49.625,
+    "1": 22.375,
+    "2": 30.458333333333332
+  },
+  "metrics": {
+    "low_uniform": {
+      "A_health_fastest": {
+        "cost_maintenance": 8.166666666666666,
+        "cost_planned_down": 9.583333333333334,
+        "cost_failed_down": 2.6333333333333333,
+        "cost_failure": 11.4125,
+        "cost_queue": 1.0833333333333333,
+        "failures": 0.7208333333333333,
+        "waiting": 2.1666666666666665,
+        "planned_steps": 9.583333333333334,
+        "failed_steps": 0.32916666666666666,
+        "jobs": 4.083333333333333,
+        "busy_requests": 0.75,
+        "invalid_requests": 0.0,
+        "stage_cost": 32.87916666666667,
+        "terminal_cost": 0.6666666666666666,
+        "cost": 33.545833333333334,
+        "decision_seconds": 5.128992973671605e-05,
+        "technician_utilization": 0.19965277777777776,
+        "terminal_share": 0.019802835747502197
+      },
+      "B_health_queue_assignment": {
+        "cost_maintenance": 9.166666666666666,
+        "cost_planned_down": 10.75,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 10.75,
+        "failed_steps": 0.0,
+        "jobs": 4.583333333333333,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.916666666666668,
+        "terminal_cost": 1.0,
+        "cost": 20.916666666666668,
+        "decision_seconds": 0.00012487483812340845,
+        "technician_utilization": 0.22395833333333334,
+        "terminal_share": 0.042777777777777776
+      },
+      "C_joint_lookahead": {
+        "cost_maintenance": 9.166666666666666,
+        "cost_planned_down": 10.75,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 10.75,
+        "failed_steps": 0.0,
+        "jobs": 4.583333333333333,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.916666666666668,
+        "terminal_cost": 1.0,
+        "cost": 20.916666666666668,
+        "decision_seconds": 0.006044579761025185,
+        "technician_utilization": 0.22395833333333334,
+        "terminal_share": 0.042777777777777776
+      },
+      "D_fixed_timing_lookahead": {
+        "cost_maintenance": 9.166666666666666,
+        "cost_planned_down": 10.75,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 10.75,
+        "failed_steps": 0.0,
+        "jobs": 4.583333333333333,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.916666666666668,
+        "terminal_cost": 1.0,
+        "cost": 20.916666666666668,
+        "decision_seconds": 0.0008750267035793513,
+        "technician_utilization": 0.22395833333333334,
+        "terminal_share": 0.042777777777777776
+      }
+    },
+    "low_heterogeneous": {
+      "A_health_fastest": {
+        "cost_maintenance": 10.833333333333334,
+        "cost_planned_down": 7.833333333333333,
+        "cost_failed_down": 0.36666666666666664,
+        "cost_failure": 3.55,
+        "cost_queue": 0.2916666666666667,
+        "failures": 0.20625,
+        "waiting": 0.5833333333333334,
+        "planned_steps": 7.833333333333333,
+        "failed_steps": 0.04583333333333333,
+        "jobs": 5.416666666666667,
+        "busy_requests": 0.08333333333333333,
+        "invalid_requests": 0.0,
+        "stage_cost": 22.875,
+        "terminal_cost": 0.4166666666666667,
+        "cost": 23.291666666666668,
+        "decision_seconds": 5.357133826085677e-05,
+        "technician_utilization": 0.16319444444444445,
+        "terminal_share": 0.016143180149450757
+      },
+      "B_health_queue_assignment": {
+        "cost_maintenance": 10.833333333333334,
+        "cost_planned_down": 8.083333333333334,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 8.083333333333334,
+        "failed_steps": 0.0,
+        "jobs": 5.416666666666667,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 18.916666666666668,
+        "terminal_cost": 0.16666666666666666,
+        "cost": 19.083333333333332,
+        "decision_seconds": 0.00013457400928018615,
+        "technician_utilization": 0.16840277777777776,
+        "terminal_share": 0.006944444444444444
+      },
+      "C_joint_lookahead": {
+        "cost_maintenance": 9.5,
+        "cost_planned_down": 9.583333333333334,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 9.583333333333334,
+        "failed_steps": 0.0,
+        "jobs": 4.75,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.083333333333332,
+        "terminal_cost": 0.16666666666666666,
+        "cost": 19.25,
+        "decision_seconds": 0.007148312164160112,
+        "technician_utilization": 0.1996527777777778,
+        "terminal_share": 0.006944444444444444
+      },
+      "D_fixed_timing_lookahead": {
+        "cost_maintenance": 9.5,
+        "cost_planned_down": 9.583333333333334,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 9.583333333333334,
+        "failed_steps": 0.0,
+        "jobs": 4.75,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.083333333333332,
+        "terminal_cost": 0.16666666666666666,
+        "cost": 19.25,
+        "decision_seconds": 0.0008807968561692785,
+        "technician_utilization": 0.1996527777777778,
+        "terminal_share": 0.006944444444444444
+      }
+    },
+    "high_uniform": {
+      "A_health_fastest": {
+        "cost_maintenance": 8.166666666666666,
+        "cost_planned_down": 9.583333333333334,
+        "cost_failed_down": 2.6333333333333333,
+        "cost_failure": 11.4125,
+        "cost_queue": 1.0833333333333333,
+        "failures": 0.7208333333333333,
+        "waiting": 2.1666666666666665,
+        "planned_steps": 9.583333333333334,
+        "failed_steps": 0.32916666666666666,
+        "jobs": 4.083333333333333,
+        "busy_requests": 0.75,
+        "invalid_requests": 0.0,
+        "stage_cost": 32.87916666666667,
+        "terminal_cost": 0.6666666666666666,
+        "cost": 33.545833333333334,
+        "decision_seconds": 4.802878296080356e-05,
+        "technician_utilization": 0.3993055555555555,
+        "terminal_share": 0.019802835747502197
+      },
+      "B_health_queue_assignment": {
+        "cost_maintenance": 9.166666666666666,
+        "cost_planned_down": 10.75,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 10.75,
+        "failed_steps": 0.0,
+        "jobs": 4.583333333333333,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.916666666666668,
+        "terminal_cost": 1.0,
+        "cost": 20.916666666666668,
+        "decision_seconds": 8.561298988449076e-05,
+        "technician_utilization": 0.4479166666666667,
+        "terminal_share": 0.042777777777777776
+      },
+      "C_joint_lookahead": {
+        "cost_maintenance": 9.166666666666666,
+        "cost_planned_down": 10.75,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 10.75,
+        "failed_steps": 0.0,
+        "jobs": 4.583333333333333,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.916666666666668,
+        "terminal_cost": 1.0,
+        "cost": 20.916666666666668,
+        "decision_seconds": 0.00226125188783044,
+        "technician_utilization": 0.4479166666666667,
+        "terminal_share": 0.042777777777777776
+      },
+      "D_fixed_timing_lookahead": {
+        "cost_maintenance": 9.166666666666666,
+        "cost_planned_down": 10.75,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 10.75,
+        "failed_steps": 0.0,
+        "jobs": 4.583333333333333,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.916666666666668,
+        "terminal_cost": 1.0,
+        "cost": 20.916666666666668,
+        "decision_seconds": 0.00044091984600527214,
+        "technician_utilization": 0.4479166666666667,
+        "terminal_share": 0.042777777777777776
+      }
+    },
+    "high_heterogeneous": {
+      "A_health_fastest": {
+        "cost_maintenance": 10.833333333333334,
+        "cost_planned_down": 7.833333333333333,
+        "cost_failed_down": 0.36666666666666664,
+        "cost_failure": 3.55,
+        "cost_queue": 0.2916666666666667,
+        "failures": 0.20625,
+        "waiting": 0.5833333333333334,
+        "planned_steps": 7.833333333333333,
+        "failed_steps": 0.04583333333333333,
+        "jobs": 5.416666666666667,
+        "busy_requests": 0.08333333333333333,
+        "invalid_requests": 0.0,
+        "stage_cost": 22.875,
+        "terminal_cost": 0.4166666666666667,
+        "cost": 23.291666666666668,
+        "decision_seconds": 4.95568480497847e-05,
+        "technician_utilization": 0.3263888888888889,
+        "terminal_share": 0.016143180149450757
+      },
+      "B_health_queue_assignment": {
+        "cost_maintenance": 10.833333333333334,
+        "cost_planned_down": 7.833333333333333,
+        "cost_failed_down": 0.36666666666666664,
+        "cost_failure": 3.55,
+        "cost_queue": 0.2916666666666667,
+        "failures": 0.20625,
+        "waiting": 0.5833333333333334,
+        "planned_steps": 7.833333333333333,
+        "failed_steps": 0.04583333333333333,
+        "jobs": 5.416666666666667,
+        "busy_requests": 0.08333333333333333,
+        "invalid_requests": 0.0,
+        "stage_cost": 22.875,
+        "terminal_cost": 0.4166666666666667,
+        "cost": 23.291666666666668,
+        "decision_seconds": 8.800454185499499e-05,
+        "technician_utilization": 0.3263888888888889,
+        "terminal_share": 0.016143180149450757
+      },
+      "C_joint_lookahead": {
+        "cost_maintenance": 10.0,
+        "cost_planned_down": 9.083333333333334,
+        "cost_failed_down": 0.0,
+        "cost_failure": 0.0,
+        "cost_queue": 0.0,
+        "failures": 0.0,
+        "waiting": 0.0,
+        "planned_steps": 9.083333333333334,
+        "failed_steps": 0.0,
+        "jobs": 5.0,
+        "busy_requests": 0.0,
+        "invalid_requests": 0.0,
+        "stage_cost": 19.083333333333332,
+        "terminal_cost": 0.3333333333333333,
+        "cost": 19.416666666666668,
+        "decision_seconds": 0.0026151273283176123,
+        "technician_utilization": 0.3784722222222222,
+        "terminal_share": 0.013392857142857142
+      },
+      "D_fixed_timing_lookahead": {
+        "cost_maintenance": 9.666666666666666,
+        "cost_planned_down": 8.916666666666666,
+        "cost_failed_down": 0.0,
+        "cost_failure": 1.8375,
+        "cost_queue": 0.08333333333333333,
+        "failures": 0.0875,
+        "waiting": 0.16666666666666666,
+        "planned_steps": 8.916666666666666,
+        "failed_steps": 0.0,
+        "jobs": 4.833333333333333,
+        "busy_requests": 0.16666666666666666,
+        "invalid_requests": 0.0,
+        "stage_cost": 20.504166666666666,
+        "terminal_cost": 0.6666666666666666,
+        "cost": 21.170833333333334,
+        "decision_seconds": 0.00043359895159179965,
+        "technician_utilization": 0.3715277777777778,
+        "terminal_share": 0.026157407407407407
+      }
+    }
+  }
+}

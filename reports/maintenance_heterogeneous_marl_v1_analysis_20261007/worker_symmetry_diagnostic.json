@@ -1,0 +1,494 @@
+{
+  "status": "STRUCTURAL_LIMITATION_CONFIRMED",
+  "state": {
+    "ages": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "failed": [
+      false,
+      false,
+      false,
+      false
+    ],
+    "pending_wait": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "assigned": [
+      -1,
+      -1,
+      -1,
+      -1
+    ]
+  },
+  "config": {
+    "machines": 4,
+    "technicians": 4,
+    "horizon": 12,
+    "failure_age": 3,
+    "failure_probability": 0.6,
+    "service_time": [
+      [
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3
+      ]
+    ],
+    "restoration": [
+      [
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ],
+      [
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ],
+      [
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ],
+      [
+        0.75,
+        0.75,
+        0.75,
+        0.75
+      ]
+    ],
+    "max_age": 8,
+    "preventive_cost": 1.0,
+    "corrective_cost": 2.0,
+    "unavailable_cost": 6.0,
+    "failure_cost": 15.0,
+    "waiting_limit": 4,
+    "waiting_price": 12.0
+  },
+  "replicas": [
+    {
+      "train_seed": 150000,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150001,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150002,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150003,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150004,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150005,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150006,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150007,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150008,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "train_seed": 150009,
+      "free_worker_logit_spreads": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marl_proposals": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "marl_matching": [
+        [
+          0,
+          0
+        ]
+      ],
+      "central_matching": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "explanation": "Identical free technician embeddings/edge features yield equal per-agent technician logits. Deterministic argmax nominates the same smallest free worker. Public machine rank does not supply a worker label. Simultaneous distinct-worker assignments are not representable by this deterministic head in homogeneous conditions."
+}

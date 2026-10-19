@@ -1,0 +1,9 @@
+{
+  "episodes": 3456,
+  "forecast_reconstruction": "LOGGED_SCORE_WINNERS_ONLY",
+  "independent_model_verification": false,
+  "invalid_assignments": 0,
+  "physical_replay": "ALL",
+  "physical_transitions": 221184,
+  "status": "PASS"
+}

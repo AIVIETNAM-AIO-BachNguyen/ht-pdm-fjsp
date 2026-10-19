@@ -1,0 +1,38 @@
+{
+  "dense:pm": {
+    "estimate": -6.127071325648415,
+    "confidence_interval": [
+      -8.601391596537308,
+      -3.0240032040804268
+    ],
+    "exposure": 347,
+    "status": "LOWER_ROOT_COST"
+  },
+  "dense:now": {
+    "estimate": -2.7693290190735693,
+    "confidence_interval": [
+      -6.471231688189785,
+      1.6771602883253043
+    ],
+    "exposure": 734,
+    "status": "UNRESOLVED"
+  },
+  "skill_mask:pm": {
+    "estimate": -6.852936351706036,
+    "confidence_interval": [
+      -18.30731351909411,
+      -1.2077928246970264
+    ],
+    "exposure": 381,
+    "status": "LOWER_ROOT_COST"
+  },
+  "skill_mask:now": {
+    "estimate": -7.304993252361673,
+    "confidence_interval": [
+      -14.833883186615953,
+      -2.960002179494478
+    ],
+    "exposure": 741,
+    "status": "LOWER_ROOT_COST"
+  }
+}

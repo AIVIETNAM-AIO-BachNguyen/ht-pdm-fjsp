@@ -1,0 +1,5 @@
+condition,at_risk,eligible_machine_opportunities,selected_pm_pairs,selection_fraction
+dense,False,1186,62,0.05227655986509275
+dense,True,677,322,0.4756277695716396
+skill_mask,False,1152,100,0.08680555555555555
+skill_mask,True,520,308,0.5923076923076923

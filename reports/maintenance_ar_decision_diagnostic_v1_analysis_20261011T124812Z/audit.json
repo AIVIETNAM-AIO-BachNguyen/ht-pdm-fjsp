@@ -1,0 +1,33 @@
+{
+  "status": "SOURCE_AND_STATISTICS_PASS",
+  "raw_artifact_files": 906,
+  "raw_bytes": 24564954,
+  "source_files_match_commit": 169,
+  "run_seconds": 210.1771333059296,
+  "raw_data_modified": false,
+  "lab_access": false,
+  "training_steps": 0,
+  "scalar_trajectory_replay": {
+    "trajectories": 144,
+    "transitions": 6912,
+    "status": "EXACT_MATCH"
+  },
+  "replayed_forecast_states": 720,
+  "replayed_forecast_transitions": 7810560,
+  "replayed_score_sequences": 5964,
+  "replayed_prefix_scores": 1279,
+  "forecast_numeric_match": "PARTIALLY_REPRODUCIBLE_ACROSS_PLATFORMS",
+  "forecast_affected_state_phases": 1,
+  "forecast_cost_mismatched_futures": 1,
+  "forecast_futures": 158784,
+  "replay_selection_disagreements": 0,
+  "score_tolerance": 5e-05,
+  "frozen_context_greedy_changes": 0,
+  "bootstrap_contrasts_verified": 6,
+  "profile_cells_verified": 216,
+  "analysis_elapsed_seconds": 158.36999329202808,
+  "all_raw_hashes_rechecked": true,
+  "parameter_hashes_unchanged": true,
+  "figure_visual_qa": "PASS: both PNGs inspected; labels, limits, confidence bars and probability bins correct",
+  "replay_diagnosis": "One unselected selection root/future differs; alternate tied CM token reconstructs source cost/cutoff/terminal; inferred cause, original full lab trace not saved."
+}

@@ -1,0 +1,11 @@
+{
+  "checkpoint_files": 360,
+  "initial_tensors_regenerated": true,
+  "final_weights_equal_final_snapshot": true,
+  "finite_parameters": true,
+  "changed_weights": true,
+  "development_rule_states_regenerated": 48,
+  "model_state_replays": 2880,
+  "greedy_action_mismatches": [],
+  "scope": "common development state actions only; no full test trajectory or training rerun"
+}

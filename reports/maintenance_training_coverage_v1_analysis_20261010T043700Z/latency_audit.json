@@ -1,0 +1,34 @@
+{
+  "legacy:central_matching_ppo": {
+    "mean_ms": 1.1301299847222224,
+    "count": 1440
+  },
+  "legacy:cooperative_local_ppo": {
+    "mean_ms": 2.4039942388888886,
+    "count": 1440
+  },
+  "legacy:cooperative_full_ppo": {
+    "mean_ms": 2.475013271527778,
+    "count": 1440
+  },
+  "covered:central_matching_ppo": {
+    "mean_ms": 1.126208638888889,
+    "count": 1440
+  },
+  "covered:cooperative_local_ppo": {
+    "mean_ms": 2.4019906590277778,
+    "count": 1440
+  },
+  "covered:cooperative_full_ppo": {
+    "mean_ms": 2.479118977083333,
+    "count": 1440
+  },
+  "reference:selected_rule": {
+    "mean_ms": 0.3738579652777778,
+    "count": 144
+  },
+  "reference:joint_rollout": {
+    "mean_ms": 20.13838167361111,
+    "count": 144
+  }
+}

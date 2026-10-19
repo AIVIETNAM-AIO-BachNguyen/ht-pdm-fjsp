@@ -1,0 +1,812 @@
+{
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_myopic_lookahead_v1_full_cpu_20261012T045644Z",
+  "commit": "ac9fc61316d26a75fc3a5869e084d4476bf828db",
+  "validation": {
+    "status": "PASS",
+    "hashed_files": 21,
+    "source_bindings": {
+      "maintenance_skill_contention_screen_v3_seed_registry.json": "422ba8b292afc70f8e8c799894746ce5bc8db1616efddc57da9bf11f978068da",
+      "maintenance_opportunity_cost.py": "ed92018c547e47105c8bc2a687b1621a49b3d6cb3953317a95853734ac94fae7",
+      "maintenance_skill_contention_screen.py": "d4f0a7f4b492121d1397398f871b2137dfd6cd3c998e0580b596f20f72566da7",
+      "maintenance_dispatch.py": "7c542047128e5c9816d53d20e74bd8055a77c7ef99b8a99275dd26c86e81cb8c",
+      "maintenance_waiting.py": "4d60aa179ba98368401839ce05548fffab0e66a5e92884e9f5c92d945db7d969",
+      "maintenance_skill_contention_screen_v1_seed_registry.json": "217a0479f0ed71c1df4abdb85468905f48af194ce59d427b9ac658cd6f6df337",
+      "maintenance_skill_contention_screen_v2.py": "2947f4f9895f83b1d791e46eb3b98c6bf371a0825ccfc4052e0aec6e0d57439d",
+      "maintenance_myopic_lookahead.py": "70b646e88635a172476c8d94e5e71188cfbcf336eba5342dec540408b0d473f8",
+      "maintenance_skill_contention_screen_v3.py": "6b4d613a918f4e72d3f746594170e1f6478bc815ad6a95617f40a034ec1e220f",
+      "maintenance_skill_contention_screen_v2_seed_registry.json": "c74aa7674ae4e7108912ee6411cd0723a1585769cefe4ac15b0cec745bd274f3",
+      "maintenance_heterogeneous_model.py": "248107356ceda87ad39dfb78c0b6a68fd892fed3ee4300f8b87b4362dc4dd392"
+    },
+    "exact_counts": {
+      "episodes": 384,
+      "physical_transitions": 23040,
+      "landmarks": 896
+    },
+    "seed_audit": "PASS",
+    "all_physical_replay": {
+      "status": "PASS",
+      "replayed_physical_transitions": 23040,
+      "replayed_episodes": 384,
+      "paired_tapes": true,
+      "metrics_replayed": true,
+      "forecast_audited_seeds": 128,
+      "audited_landmarks": 896,
+      "root_rows": 2366,
+      "replay_forecast_transitions": 42316800
+    },
+    "independent_metric_oracle_ticks": 18432,
+    "independent_five_CIs_match": true,
+    "independent_means_and_mechanism_CIs_match": true,
+    "all_original_files_immutable": true
+  },
+  "summary": {
+    "candidate": "overlap3__fast1_slow325",
+    "primary": "joint_vs_myopic",
+    "comparisons": {
+      "joint_vs_myopic": {
+        "estimate": 0.03139874739039661,
+        "ci": [
+          0.00838026018577586,
+          0.05399388888251694
+        ],
+        "confidence": 0.99
+      },
+      "assignment_vs_myopic": {
+        "estimate": -0.010455114822546907,
+        "ci": [
+          -0.01931437078381321,
+          -0.003339471613380889
+        ],
+        "confidence": 0.99
+      },
+      "joint_vs_assignment": {
+        "estimate": 0.04142080296193451,
+        "ci": [
+          0.022026498708610256,
+          0.06185650588416679
+        ],
+        "confidence": 0.99
+      },
+      "availability_joint_minus_myopic": {
+        "estimate": 0.010742187500000111,
+        "ci": [
+          0.0030515543619791716,
+          0.018717447916666408
+        ],
+        "confidence": 0.99
+      },
+      "pending_joint_minus_myopic": {
+        "estimate": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.99
+      }
+    },
+    "gates": {
+      "practical_cost": false,
+      "availability": true,
+      "pending": true
+    },
+    "scientific_status": "NOT_CONFIRMED",
+    "means": [
+      {
+        "controller": "myopic_matching",
+        "collision_excess": 0.09130859375,
+        "sensitive_choice_rate": 0.5400390625,
+        "selected_sensitive_rate": 0.5362955729166666,
+        "capacity_pressure_rate": 0.01123046875,
+        "skill_deficit_rate": 0.0,
+        "demand_count": 0.9672851562499999,
+        "legacy_proposal_conflict_rate": 0.08544921875,
+        "skill_contention_rate": 0.07958984375,
+        "contested_choice_rate": 0.03336588541666667,
+        "feasible_matching_cardinality": 0.95556640625,
+        "preferred_matching_cardinality": 0.8759765625,
+        "preferred_deficit": 0.07958984375,
+        "legacy_tie_rate": 0.0,
+        "cost_sensitive_contention_rate": 0.03336588541666667,
+        "selected_cost_sensitive_contention_rate": 0.029622395833333332,
+        "committed_cost_span_max": 7.3662109375,
+        "selected_committed_cost_span": 7.2978515625,
+        "disagreement_rate": 0.0,
+        "subset_change_rate": 0.0,
+        "assignment_only_change_rate": 0.0,
+        "cardinality_change_rate": 0.0,
+        "wait_change_rate": 0.0,
+        "availability": 0.7165120442708335,
+        "technician_utilization": 0.5669759114583333,
+        "terminal_pending": 0.0,
+        "terminal_failed": 0.0,
+        "tail_pending": 0.0,
+        "tail_failed": 0.0,
+        "policy_cost": 376.0703125,
+        "tail_cost": 91.703125,
+        "extended_cost": 467.7734375,
+        "policy_failures": 0.2265625,
+        "policy_overdue_ticks": 0.0,
+        "planning_seconds": 0.001836293584347004,
+        "forecast_transitions": 0.0,
+        "extended_maintenance_cost": 57.640625,
+        "extended_unavailability_cost": 406.734375,
+        "extended_failure_cost": 3.3984375,
+        "extended_waiting_cost": 0.0,
+        "extended_invalid_assignments": 0.0
+      },
+      {
+        "controller": "joint_lookahead",
+        "collision_excess": 0.0791015625,
+        "sensitive_choice_rate": 0.5973307291666666,
+        "selected_sensitive_rate": 0.59521484375,
+        "capacity_pressure_rate": 0.008626302083333332,
+        "skill_deficit_rate": 0.0,
+        "demand_count": 0.9830729166666665,
+        "legacy_proposal_conflict_rate": 0.0732421875,
+        "skill_contention_rate": 0.06998697916666666,
+        "contested_choice_rate": 0.039713541666666664,
+        "feasible_matching_cardinality": 0.9739583333333333,
+        "preferred_matching_cardinality": 0.9039713541666667,
+        "preferred_deficit": 0.06998697916666666,
+        "legacy_tie_rate": 0.0,
+        "cost_sensitive_contention_rate": 0.039713541666666664,
+        "selected_cost_sensitive_contention_rate": 0.035970052083333336,
+        "committed_cost_span_max": 8.359375,
+        "selected_committed_cost_span": 8.302734375,
+        "disagreement_rate": 0.017903645833333332,
+        "subset_change_rate": 0.011067708333333334,
+        "assignment_only_change_rate": 0.0068359375,
+        "cardinality_change_rate": 0.006673177083333332,
+        "wait_change_rate": 0.0026041666666666665,
+        "availability": 0.7272542317708334,
+        "technician_utilization": 0.5441080729166666,
+        "terminal_pending": 0.0,
+        "terminal_failed": 0.0,
+        "tail_pending": 0.0,
+        "tail_failed": 0.0,
+        "policy_cost": 365.1328125,
+        "tail_cost": 87.953125,
+        "extended_cost": 453.0859375,
+        "policy_failures": 0.28125,
+        "policy_overdue_ticks": 0.0,
+        "planning_seconds": 0.2269814241117274,
+        "forecast_transitions": 197712.0,
+        "extended_maintenance_cost": 58.4921875,
+        "extended_unavailability_cost": 390.375,
+        "extended_failure_cost": 4.21875,
+        "extended_waiting_cost": 0.0,
+        "extended_invalid_assignments": 0.0
+      },
+      {
+        "controller": "assignment_lookahead",
+        "collision_excess": 0.09635416666666667,
+        "sensitive_choice_rate": 0.51953125,
+        "selected_sensitive_rate": 0.51611328125,
+        "capacity_pressure_rate": 0.010091145833333334,
+        "skill_deficit_rate": 0.0,
+        "demand_count": 0.9611002604166665,
+        "legacy_proposal_conflict_rate": 0.0908203125,
+        "skill_contention_rate": 0.08577473958333334,
+        "contested_choice_rate": 0.037109375,
+        "feasible_matching_cardinality": 0.9505208333333333,
+        "preferred_matching_cardinality": 0.86474609375,
+        "preferred_deficit": 0.08577473958333334,
+        "legacy_tie_rate": 0.0,
+        "cost_sensitive_contention_rate": 0.037109375,
+        "selected_cost_sensitive_contention_rate": 0.03369140625,
+        "committed_cost_span_max": 7.0615234375,
+        "selected_committed_cost_span": 6.9951171875,
+        "disagreement_rate": 0.008138020833333332,
+        "subset_change_rate": 0.0,
+        "assignment_only_change_rate": 0.008138020833333332,
+        "cardinality_change_rate": 0.0,
+        "wait_change_rate": 0.0,
+        "availability": 0.7128499348958334,
+        "technician_utilization": 0.5743001302083333,
+        "terminal_pending": 0.0,
+        "terminal_failed": 0.0,
+        "tail_pending": 0.0,
+        "tail_failed": 0.0,
+        "policy_cost": 379.921875,
+        "tail_cost": 92.7421875,
+        "extended_cost": 472.6640625,
+        "policy_failures": 0.21875,
+        "policy_overdue_ticks": 0.0,
+        "planning_seconds": 0.11528511150027043,
+        "forecast_transitions": 76104.0,
+        "extended_maintenance_cost": 57.3515625,
+        "extended_unavailability_cost": 412.03125,
+        "extended_failure_cost": 3.28125,
+        "extended_waiting_cost": 0.0,
+        "extended_invalid_assignments": 0.0
+      }
+    ],
+    "mechanism_diagnostics": {
+      "joint": {
+        "mean_holdout_12_tick_gain_per_landmark": 0.14202008928571427,
+        "exploratory_ci95": [
+          0.035016741071428575,
+          0.31264299665178535
+        ],
+        "changed_roots": 19,
+        "total_landmarks": 896,
+        "scope": "independent forecast bank, myopic states, fixed landmarks; not episode savings"
+      },
+      "assignment": {
+        "mean_holdout_12_tick_gain_per_landmark": 0.012555803571428572,
+        "exploratory_ci95": [
+          0.0011160714285714285,
+          0.030412946428571428
+        ],
+        "changed_roots": 5,
+        "total_landmarks": 896,
+        "scope": "independent forecast bank, myopic states, fixed landmarks; not episode savings"
+      }
+    },
+    "interpretation": "fixed exploratory setting; known-model rollout headroom, not RL learnability or v3 setting confirmation"
+  },
+  "paired_return_and_path_diagnostics": {
+    "joint_lookahead": {
+      "mean_absolute_saving": 14.6875,
+      "wins": 27,
+      "ties": 84,
+      "losses": 17,
+      "min_saving": -69.0,
+      "max_saving": 140.0,
+      "exactly_identical_full_paths": 78,
+      "changes": {
+        "disagreement_rate": 110,
+        "subset_change_rate": 68,
+        "assignment_only_change_rate": 42,
+        "cardinality_change_rate": 41,
+        "wait_change_rate": 16
+      },
+      "most_common_change_states": [
+        [
+          "((1, 3, 3, 2), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          32
+        ],
+        [
+          "((2, 3, 3, 1), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          8
+        ],
+        [
+          "((3, 1, 0, 3), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          5
+        ],
+        [
+          "((3, 3, 3, 3), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          3
+        ],
+        [
+          "((1, 3, 1, 3), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          3
+        ]
+      ],
+      "predicted_gain_at_changes": {
+        "mean": 4.032741477272728,
+        "min": 0.125,
+        "max": 18.375
+      }
+    },
+    "assignment_lookahead": {
+      "mean_absolute_saving": -4.890625,
+      "wins": 2,
+      "ties": 112,
+      "losses": 14,
+      "min_saving": -69.0,
+      "max_saving": 16.0,
+      "exactly_identical_full_paths": 108,
+      "changes": {
+        "disagreement_rate": 50,
+        "subset_change_rate": 0,
+        "assignment_only_change_rate": 50,
+        "cardinality_change_rate": 0,
+        "wait_change_rate": 0
+      },
+      "most_common_change_states": [
+        [
+          "((1, 3, 3, 2), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          32
+        ],
+        [
+          "((2, 3, 3, 1), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          8
+        ],
+        [
+          "((2, 3, 3, 3), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          2
+        ],
+        [
+          "((1, 3, 3, 3), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          2
+        ],
+        [
+          "((0, 4, 0, 1), (False, False, False, False), (0, 0, 0, 0), (0, 0), (-1, -1))",
+          2
+        ]
+      ],
+      "predicted_gain_at_changes": {
+        "mean": 1.51,
+        "min": 0.75,
+        "max": 7.625
+      }
+    }
+  },
+  "posthoc_recurrent_horizon_example": {
+    "seed": 36000083,
+    "landmark": {
+      "seed": 36000083,
+      "tick": 0,
+      "state": "{\"ages\":[1,3,3,2],\"failed\":[false,false,false,false],\"pending_wait\":[0,0,0,0],\"remaining\":[0,0],\"assigned\":[-1,-1]}",
+      "roots": 7,
+      "selection_seed": 11379982404325695576,
+      "holdout_seed": 11943022903315134484,
+      "forecast_transitions": 21504,
+      "joint_root": 4,
+      "joint_action": "[[1,1],[2,0]]",
+      "joint_heldout_gain": 1.0,
+      "joint_heldout_gain_se": 0.0,
+      "joint_disagreement_rate": 1.0,
+      "joint_subset_change_rate": 0.0,
+      "joint_assignment_only_change_rate": 1.0,
+      "joint_cardinality_change_rate": 0.0,
+      "joint_wait_change_rate": 0.0,
+      "assignment_root": 4,
+      "assignment_action": "[[1,1],[2,0]]",
+      "assignment_heldout_gain": 1.0,
+      "assignment_heldout_gain_se": 0.0,
+      "assignment_disagreement_rate": 1.0,
+      "assignment_subset_change_rate": 0.0,
+      "assignment_assignment_only_change_rate": 1.0,
+      "assignment_cardinality_change_rate": 0.0,
+      "assignment_wait_change_rate": 0.0
+    },
+    "traces": {
+      "myopic_matching": {
+        "cumulative_cost": {
+          "12": 102.0,
+          "24": 186.0,
+          "36": 270.0,
+          "48": 354.0,
+          "60": 438.0
+        },
+        "deviations": []
+      },
+      "joint_lookahead": {
+        "cumulative_cost": {
+          "12": 101.0,
+          "24": 202.0,
+          "36": 303.0,
+          "48": 404.0,
+          "60": 506.0
+        },
+        "deviations": [
+          {
+            "tick": 0,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 7,
+              "selection_seed": 11379982404325695576,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 10752
+            }
+          },
+          {
+            "tick": 12,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 7,
+              "selection_seed": 3964810751809775413,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 10752
+            }
+          },
+          {
+            "tick": 24,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 7,
+              "selection_seed": 14596009108234154940,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 10752
+            }
+          },
+          {
+            "tick": 36,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 7,
+              "selection_seed": 7036466035853449946,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 10752
+            }
+          }
+        ]
+      },
+      "assignment_lookahead": {
+        "cumulative_cost": {
+          "12": 101.0,
+          "24": 202.0,
+          "36": 303.0,
+          "48": 404.0,
+          "60": 506.0
+        },
+        "deviations": [
+          {
+            "tick": 0,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 2,
+              "selection_seed": 11379982404325695576,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 3072
+            }
+          },
+          {
+            "tick": 12,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 2,
+              "selection_seed": 3964810751809775413,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 3072
+            }
+          },
+          {
+            "tick": 24,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 2,
+              "selection_seed": 14596009108234154940,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 3072
+            }
+          },
+          {
+            "tick": 36,
+            "state": {
+              "ages": [
+                1,
+                3,
+                3,
+                2
+              ],
+              "failed": [
+                false,
+                false,
+                false,
+                false
+              ],
+              "pending_wait": [
+                0,
+                0,
+                0,
+                0
+              ],
+              "remaining": [
+                0,
+                0
+              ],
+              "assigned": [
+                -1,
+                -1
+              ]
+            },
+            "action": [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ],
+            "diagnostic": {
+              "planned": true,
+              "candidate_count": 2,
+              "selection_seed": 7036466035853449946,
+              "selected_mean": 101.0,
+              "myopic_mean": 102.0,
+              "forecast_transitions": 3072
+            }
+          }
+        ]
+      }
+    }
+  },
+  "cost_decomposition": {
+    "joint_lookahead": {
+      "policy_cost": -10.9375,
+      "tail_cost": -3.75,
+      "extended_maintenance_cost": 0.8515625,
+      "extended_unavailability_cost": -16.359375,
+      "extended_failure_cost": 0.8203125,
+      "extended_waiting_cost": 0.0,
+      "extended_cost": -14.6875
+    },
+    "assignment_lookahead": {
+      "policy_cost": 3.8515625,
+      "tail_cost": 1.0390625,
+      "extended_maintenance_cost": -0.2890625,
+      "extended_unavailability_cost": 5.296875,
+      "extended_failure_cost": -0.1171875,
+      "extended_waiting_cost": 0.0,
+      "extended_cost": 4.890625
+    }
+  }
+}

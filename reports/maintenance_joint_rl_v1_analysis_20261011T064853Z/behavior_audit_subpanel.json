@@ -1,0 +1,50 @@
+{
+  "dense:best_rule": {
+    "ticks": 192,
+    "choice_ticks": 129,
+    "wait_with_choice": 50,
+    "assignment_choices": 26,
+    "nonfixed": 1,
+    "starts": 79
+  },
+  "skill_mask:best_rule": {
+    "ticks": 192,
+    "choice_ticks": 115,
+    "wait_with_choice": 21,
+    "assignment_choices": 0,
+    "nonfixed": 0,
+    "starts": 94
+  },
+  "dense:joint_ppo": {
+    "ticks": 1920,
+    "choice_ticks": 1016,
+    "wait_with_choice": 28,
+    "assignment_choices": 217,
+    "nonfixed": 20,
+    "starts": 988
+  },
+  "skill_mask:joint_ppo": {
+    "ticks": 1920,
+    "choice_ticks": 1003,
+    "wait_with_choice": 33,
+    "assignment_choices": 45,
+    "nonfixed": 0,
+    "starts": 970
+  },
+  "dense:fixed_ppo": {
+    "ticks": 1920,
+    "choice_ticks": 1019,
+    "wait_with_choice": 30,
+    "assignment_choices": 233,
+    "nonfixed": 0,
+    "starts": 989
+  },
+  "skill_mask:fixed_ppo": {
+    "ticks": 1920,
+    "choice_ticks": 1013,
+    "wait_with_choice": 57,
+    "assignment_choices": 77,
+    "nonfixed": 0,
+    "starts": 956
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "bootstrap_contrasts_checked": 45,
+  "expected_episode_grid": 3456,
+  "forecast_banks_reexecuted": false,
+  "independent_scalar_reconstruction": true,
+  "new_controller_runs": 0,
+  "new_seeds": 0,
+  "raw_hashes_before_and_after": {
+    "audit.json": "b4f02636d916933894e42e0eab4ba8ca7bdea37704be83327764a0b8376f5f3f",
+    "configs.json": "11b44363052d95e71376090e616f5e8752fa24498e76a614ee4147c35e83c8e3",
+    "decisions.jsonl": "7949dd10cb7a3d4e48627da023205b77c230f6181ef0c1aa1323bf56156588a0",
+    "episodes.csv": "0de566e34fb458ae5d53405ddfa218cbc19703a872792ea73df4a1382cdc819f",
+    "episodes.partial.csv": "0de566e34fb458ae5d53405ddfa218cbc19703a872792ea73df4a1382cdc819f",
+    "manifest.json": "f6021ba32532cbcfff85858f2ed2599dc490dbb6633824a1809e3092fc3c9eb8",
+    "protocol.md": "cd850a9b8fc4b5bf6b5b269a9db3833b9a2d0c8b7386de65dd334758cb4e503f",
+    "seed_registry.json": "4f0fc17e9b43484a107a975811d548837290921b51f17e45162169e18a430a96",
+    "summary.json": "2f277e154e82fde50d55457e67b9c399509cbecb2d7dd02dfd009977c8bd05f3"
+  },
+  "scalar_transitions_checked": 221184,
+  "status": "PASS",
+  "summary_mean_rows_checked": 54
+}

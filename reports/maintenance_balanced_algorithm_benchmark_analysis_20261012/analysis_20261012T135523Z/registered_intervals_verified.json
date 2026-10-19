@@ -1,0 +1,142 @@
+{
+  "ppo_cost_vs_deadline_matching": {
+    "estimate": 0.08486428889970687,
+    "lower": 0.06804036752755309,
+    "upper": 0.10161171881688238
+  },
+  "ppo_cost_vs_isolated_h6": {
+    "estimate": 0.03623111506277643,
+    "lower": 0.024822297643764066,
+    "upper": 0.0482036919530582
+  },
+  "ppo_cost_vs_isolated_endpoint": {
+    "estimate": 0.039093927944608975,
+    "lower": 0.028314799797043915,
+    "upper": 0.05019387696656839
+  },
+  "ppo_cost_vs_assignment_rollout": {
+    "estimate": 0.005857161876303585,
+    "lower": -0.0003915292910988927,
+    "upper": 0.012208900769035195
+  },
+  "ppo_cost_vs_joint_rollout": {
+    "estimate": -0.003595948584505848,
+    "lower": -0.008988593851726255,
+    "upper": 0.0016966347349119087
+  },
+  "ppo_availability_difference": {
+    "estimate": -0.0016642252604189833,
+    "lower": -0.0027018229166668596,
+    "upper": -0.0007178824288530965
+  },
+  "ppo_pending_difference": {
+    "estimate": 0.0,
+    "lower": 0.0,
+    "upper": 0.0
+  },
+  "mappo_cost_vs_deadline_matching": {
+    "estimate": 0.052746392328144154,
+    "lower": 0.018778764384005598,
+    "upper": 0.08369159566303323
+  },
+  "mappo_cost_vs_isolated_h6": {
+    "estimate": 0.0024063730164990416,
+    "lower": -0.03219696672323044,
+    "upper": 0.03207899129388093
+  },
+  "mappo_cost_vs_isolated_endpoint": {
+    "estimate": 0.005369660097870654,
+    "lower": -0.029616348984304534,
+    "upper": 0.03532028382463099
+  },
+  "mappo_cost_vs_assignment_rollout": {
+    "estimate": -0.029033594177600985,
+    "lower": -0.06354703421446774,
+    "upper": -0.0017127271575655828
+  },
+  "mappo_cost_vs_joint_rollout": {
+    "estimate": -0.03881847403651939,
+    "lower": -0.0734669141252693,
+    "upper": -0.011732498086239773
+  },
+  "mappo_availability_difference": {
+    "estimate": -0.0018676757812515765,
+    "lower": -0.0035627165294835387,
+    "upper": -0.0003057461693182534
+  },
+  "mappo_pending_difference": {
+    "estimate": 0.015625,
+    "lower": 0.0,
+    "upper": 0.05256766183035779
+  },
+  "iql_cost_vs_deadline_matching": {
+    "estimate": -0.0039230771849436685,
+    "lower": -0.026915999537865363,
+    "upper": 0.015185549640458113
+  },
+  "iql_cost_vs_isolated_h6": {
+    "estimate": -0.05727468934412716,
+    "lower": -0.0790993209609842,
+    "upper": -0.03791426670016588
+  },
+  "iql_cost_vs_isolated_endpoint": {
+    "estimate": -0.05413412354293201,
+    "lower": -0.07620344452015476,
+    "upper": -0.03446608296866834
+  },
+  "iql_cost_vs_assignment_rollout": {
+    "estimate": -0.09059555332021718,
+    "lower": -0.11125821889313128,
+    "upper": -0.07184528889257917
+  },
+  "iql_cost_vs_joint_rollout": {
+    "estimate": -0.10096581384843417,
+    "lower": -0.12200266717627495,
+    "upper": -0.08150058787289785
+  },
+  "iql_availability_difference": {
+    "estimate": 0.002384440104165275,
+    "lower": -0.000410970052084698,
+    "upper": 0.003912081037249654
+  },
+  "iql_pending_difference": {
+    "estimate": 0.12578125,
+    "lower": 0.02734375,
+    "upper": 0.3359375
+  },
+  "qmix_cost_vs_deadline_matching": {
+    "estimate": 0.001442728315670827,
+    "lower": -0.014880490327587124,
+    "upper": 0.017895329988847353
+  },
+  "qmix_cost_vs_isolated_h6": {
+    "estimate": -0.051623728157289106,
+    "lower": -0.06883844556517904,
+    "upper": -0.03522976648680106
+  },
+  "qmix_cost_vs_isolated_endpoint": {
+    "estimate": -0.04849994816930403,
+    "lower": -0.06582572505053559,
+    "upper": -0.03159400013061601
+  },
+  "qmix_cost_vs_assignment_rollout": {
+    "estimate": -0.08476649753701881,
+    "lower": -0.10071728301432421,
+    "upper": -0.06912661129676785
+  },
+  "qmix_cost_vs_joint_rollout": {
+    "estimate": -0.0950813307100431,
+    "lower": -0.11161772333252468,
+    "upper": -0.07911020765271864
+  },
+  "qmix_availability_difference": {
+    "estimate": 0.0031249999999991562,
+    "lower": 0.0022745768229146053,
+    "upper": 0.003964382353283265
+  },
+  "qmix_pending_difference": {
+    "estimate": 0.06875,
+    "lower": 0.02477608816964276,
+    "upper": 0.125
+  }
+}

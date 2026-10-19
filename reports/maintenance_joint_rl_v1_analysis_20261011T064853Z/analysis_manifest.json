@@ -1,0 +1,84 @@
+{
+  "run": "maintenance_joint_rl_v1_full_cpu_20261011T045434Z",
+  "source_manifest_sha256": "d57fef493b559362b2d305af6c0acae1ed84f60246b05f7adfd69d8de362329b",
+  "analysis_status": "ANALYZED",
+  "raw_artifacts_modified": false,
+  "files": {
+    "behavior_audit_subpanel.json": {
+      "bytes": 1022,
+      "sha256": "88e7d5c1252ca2baf26fecf7fed4cdcfd9aebd8f07ffe8edc57eeb6bd06fe019"
+    },
+    "integrity_audit.json": {
+      "bytes": 1129,
+      "sha256": "153aa4b55380ce126b04d55d97714d5e068886c0dd4744d45ad56af8bde0b49f"
+    },
+    "analysis_driver.py": {
+      "bytes": 23096,
+      "sha256": "31217ac974166136ccece547f31a7cdbd124c4232f0d7feca605ab287a077702"
+    },
+    "behavior_full_panel.csv": {
+      "bytes": 868,
+      "sha256": "7fbdde3f2d04f47b262c587bfb2105880132915956ffa1749249cc1543a086b7"
+    },
+    "learning_curves.png": {
+      "bytes": 102723,
+      "sha256": "71a12f4cd6dc4abe9ec0f57a82be8b68102f54fb86914a310a775a124bc7bcf5"
+    },
+    "cost_decomposition.png": {
+      "bytes": 78296,
+      "sha256": "9de6ffbc45d05396a897b7e737611a19d3d1d861b1142775556938220f50b904"
+    },
+    "cost_decomposition.svg": {
+      "bytes": 56589,
+      "sha256": "f47e3ef61a5e7bee7604cff692d8d14b97008cf8f43c18fc6910025128e8b1aa"
+    },
+    "plot_report_driver.py": {
+      "bytes": 17033,
+      "sha256": "5d97d725063b1c067bbe397998a2cd2b4cbb57a208fa1aa842e26eaf057fead5"
+    },
+    "learning_curves.svg": {
+      "bytes": 64560,
+      "sha256": "4b77ca634a688d96a25cdc1f0be4944723243c8fa637dfec9021c401feb65c31"
+    },
+    "learning_by_seed.csv": {
+      "bytes": 1540,
+      "sha256": "6e07d10b28ec344424c7a3f6a3ae59b67057364fe8d026f1651acc325eb1f66a"
+    },
+    "all_mean_metrics.csv": {
+      "bytes": 8964,
+      "sha256": "d8a0a5e8c034d5fb212a237d19057c45f1c70d3df185bba90c18080b88f1e356"
+    },
+    "test_by_seed.csv": {
+      "bytes": 2298,
+      "sha256": "0b11d2f0bbc80a057f11948246da127c71fb0e854fc27243a790fc3a23a9d5a6"
+    },
+    "analysis_numbers.json": {
+      "bytes": 9310,
+      "sha256": "848ac769d6cfd33e4bb783def7ff4abaad743ba78aba15b64ad08ad32e915eb4"
+    },
+    "test_contrasts.png": {
+      "bytes": 78762,
+      "sha256": "167a71a2eb9e7cc38371d0242e49172f2f034873f99976c4908006489aab70df"
+    },
+    "development_learning_curves.csv": {
+      "bytes": 706,
+      "sha256": "81f79415c199ed088e0be526f5220d37a2a8602c8956cca70b86677469a9dfb3"
+    },
+    "test_contrasts.svg": {
+      "bytes": 66975,
+      "sha256": "783eb018003f6166d8d4d31ee2a493c4e2f0fbf1b7c4c23b254bfc46c6a7b603"
+    },
+    "analysis_vi.md": {
+      "bytes": 11664,
+      "sha256": "b5fa1f2064183b20d93cebb06ee22b4a01b3c15d78846ad66795d878b76aaece"
+    },
+    "cost_decomposition.csv": {
+      "bytes": 685,
+      "sha256": "a32495d8ed917cd739ec04c73504feddb9253bfae76057191261fcecabd95cd2"
+    },
+    "training_learning_curves.csv": {
+      "bytes": 19866,
+      "sha256": "c98f169d06da42189bb7924082c0b080c9a80112652e48c5d783ffa3951fed7a"
+    }
+  }
+}

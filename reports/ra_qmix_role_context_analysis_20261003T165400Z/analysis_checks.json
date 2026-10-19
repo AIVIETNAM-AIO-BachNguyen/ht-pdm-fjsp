@@ -1,0 +1,62 @@
+{
+  "source": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/ra_qmix_role_context_full_cpu_20261003T131518Z",
+  "source_revision": "0710ca83663df6173ae9e2a08cb74a528e03c875",
+  "status": "ANALYZED",
+  "independent_checks": "CSV arithmetic, file/key/count/log audits, reconstructed SAT lookup inputs and oracle optimality; no retraining or checkpoint inference",
+  "contrasts": {
+    "role": {
+      "mean": -0.049883859177129494,
+      "ci95": [
+        -0.12125683775601695,
+        0.02148911940175796
+      ],
+      "improving_seeds": 6
+    },
+    "peer_given_role": {
+      "mean": -0.0694973377191945,
+      "ci95": [
+        -0.17350918755495096,
+        0.03451451211656195
+      ],
+      "improving_seeds": 7
+    },
+    "peer_without_role": {
+      "mean": -0.12044943505977601,
+      "ci95": [
+        -0.2103437282471228,
+        -0.03055514187242922
+      ],
+      "improving_seeds": 9
+    },
+    "factorial": {
+      "mean": 0.050952097340581495,
+      "ci95": [
+        -0.061931087708546315,
+        0.1638352823897093
+      ],
+      "improving_seeds": 4
+    }
+  },
+  "feasibility": {
+    "nominal": {
+      "monotonic_base": "OPTIMAL",
+      "monotonic_context": "OPTIMAL",
+      "monotonic_role": "OPTIMAL",
+      "monotonic_role_context": "OPTIMAL"
+    },
+    "shared_preference": {
+      "monotonic_base": "INFEASIBLE",
+      "monotonic_context": "INFEASIBLE",
+      "monotonic_role": "OPTIMAL",
+      "monotonic_role_context": "OPTIMAL"
+    },
+    "pressure": {
+      "monotonic_base": "INFEASIBLE",
+      "monotonic_context": "INFEASIBLE",
+      "monotonic_role": "INFEASIBLE",
+      "monotonic_role_context": "OPTIMAL"
+    }
+  },
+  "verified_sat_state_assignments": 2846,
+  "pressure_role_unsat": "Reported CP-SAT certificate; not independently re-solved here"
+}

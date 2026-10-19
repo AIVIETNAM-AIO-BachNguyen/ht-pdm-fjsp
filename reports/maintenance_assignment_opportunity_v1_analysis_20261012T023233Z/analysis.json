@@ -1,0 +1,2710 @@
+{
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_assignment_opportunity_v1_full_cpu_20261011T174247Z",
+  "commit": "490f8fb11b7175d40b76f32f506930a12e34c20b",
+  "audit": {
+    "hashes": 5190,
+    "episode_grid_and_statistics": "PASS; all 4032 episodes; 18 registered intervals plus 6 posthoc",
+    "gated_physical_episode_equality": 1152,
+    "source_trajectories.csv_transition_replays": 168192,
+    "logged_test_transition_replays": 10080,
+    "logged_gated_action_equality": 2880,
+    "selected_heads_dev_MSE_and_calibration_rebuilt": 27,
+    "training_draw_rows": 2160,
+    "paired_low_high_draws_and_state_tables": "PASS; 720 member-epoch pairs; initialization paired across 3 arms",
+    "paired_label_algebra": 4737,
+    "root_gain_algebra": 48,
+    "bounded_forecast_replay": {
+      "files": 30,
+      "paths": 60,
+      "transitions": 3194,
+      "sampling": "first lexicographic file per phase/source/condition/origin; first and last roots; scenario zero"
+    },
+    "source_contract_reverified": {
+      "status": "PASS",
+      "verified_source_artifacts": 957,
+      "all_pinned_models_verified": 3,
+      "used_models": 3
+    },
+    "independent_root_cluster_bootstrap": 12,
+    "git_commit_source_binding": [
+      "maintenance_assignment_opportunity.py",
+      "maintenance_assignment_opportunity_benchmark.py",
+      "maintenance_assignment_opportunity_data.py",
+      "maintenance_assignment_opportunity_evaluation.py",
+      "maintenance_assignment_opportunity_policy.py",
+      "maintenance_assignment_opportunity_statistics.py",
+      "maintenance_assignment_opportunity_training.py",
+      "maintenance_assignment_value_forks.py"
+    ],
+    "independent_seed_and_physical_split_reconstruction": "PASS"
+  },
+  "contrasts": {
+    "dense:opportunity_high_gated_vs_frozen_ppo": {
+      "mean_gain": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9875,
+      "replica_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "dense:opportunity_high_gated_vs_opportunity_high_ungated": {
+      "mean_gain": -0.006314178950775296,
+      "ci": [
+        -0.019790470867447046,
+        0.0048756206534066706
+      ],
+      "confidence": 0.9875,
+      "replica_gains": [
+        -0.007618928526768966,
+        -0.010520230201207067,
+        -0.000808784098601331
+      ]
+    },
+    "skill_mask:opportunity_high_gated_vs_frozen_ppo": {
+      "mean_gain": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9875,
+      "replica_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "skill_mask:opportunity_high_gated_vs_opportunity_high_ungated": {
+      "mean_gain": 0.002006461387249956,
+      "ci": [
+        -0.0014266539776460888,
+        0.007574670565753792
+      ],
+      "confidence": 0.9875,
+      "replica_gains": [
+        -0.0005732832371981443,
+        0.0031775050056585706,
+        0.0033726229494020084
+      ]
+    },
+    "dense:opportunity_low_ungated_vs_landmark_low_ungated": {
+      "mean_gain": 0.0026546853434352333,
+      "ci": [
+        -0.0009476840837617993,
+        0.007740332004201011
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.005009030490137637,
+        0.003485050965594948,
+        -0.0005103657034247297
+      ]
+    },
+    "dense:opportunity_low_gated_vs_landmark_low_gated": {
+      "mean_gain": 0.0002192879865269461,
+      "ci": [
+        0.0,
+        0.0012763201152557735
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0,
+        0.0006501274249752952,
+        0.0
+      ]
+    },
+    "dense:opportunity_high_ungated_vs_opportunity_low_ungated": {
+      "mean_gain": -0.0007184373398974166,
+      "ci": [
+        -0.002771104667587744,
+        0.001268983557005728
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        -0.0011087862367437453,
+        -0.0006223157156630731,
+        -0.00043095108265465867
+      ]
+    },
+    "dense:opportunity_high_gated_vs_opportunity_low_gated": {
+      "mean_gain": -0.00021933608429524392,
+      "ci": [
+        -0.0012779511900677745,
+        0.0
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0,
+        -0.0006505503656093055,
+        0.0
+      ]
+    },
+    "dense:landmark_low_gated_vs_landmark_low_ungated": {
+      "mean_gain": -0.004363785863213227,
+      "ci": [
+        -0.012635534112292693,
+        0.00249391025778596
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        -0.003683372332001744,
+        -0.007625186699158871,
+        -0.0017510823272676075
+      ]
+    },
+    "dense:opportunity_low_gated_vs_opportunity_low_ungated": {
+      "mean_gain": -0.006816321483043113,
+      "ci": [
+        -0.016380203858039767,
+        0.0017063112680446512
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        -0.00873616252660193,
+        -0.010491717065474625,
+        -0.0012400837276389158
+      ]
+    },
+    "dense:opportunity_high_gated_vs_opportunity_high_ungated_secondary": {
+      "mean_gain": -0.006314178950775296,
+      "ci": [
+        -0.015903746187141816,
+        0.0023123957878690114
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        -0.007618928526768966,
+        -0.010520230201207067,
+        -0.000808784098601331
+      ]
+    },
+    "skill_mask:opportunity_low_ungated_vs_landmark_low_ungated": {
+      "mean_gain": 0.0001105004507255227,
+      "ci": [
+        0.0,
+        0.0006394338042441752
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0,
+        0.0,
+        0.00032850659174411064
+      ]
+    },
+    "skill_mask:opportunity_low_gated_vs_landmark_low_gated": {
+      "mean_gain": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "skill_mask:opportunity_high_ungated_vs_opportunity_low_ungated": {
+      "mean_gain": -0.00010760443446599116,
+      "ci": [
+        -0.0006183593000811883,
+        0.0
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0,
+        -0.00032220703107991607,
+        0.0
+      ]
+    },
+    "skill_mask:opportunity_high_gated_vs_opportunity_low_gated": {
+      "mean_gain": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "skill_mask:landmark_low_gated_vs_landmark_low_ungated": {
+      "mean_gain": 0.002009363459245689,
+      "ci": [
+        -0.0008560849127390439,
+        0.006064468200895128
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        -0.0005732832371981443,
+        0.0028563217890327695,
+        0.003700021612275772
+      ]
+    },
+    "skill_mask:opportunity_low_gated_vs_opportunity_low_ungated": {
+      "mean_gain": 0.0018990728569268172,
+      "ci": [
+        -0.0009040147702440691,
+        0.005885594820563496
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        -0.0005732832371981443,
+        0.0028563217890327695,
+        0.0033726229494020084
+      ]
+    },
+    "skill_mask:opportunity_high_gated_vs_opportunity_high_ungated_secondary": {
+      "mean_gain": 0.002006461387249956,
+      "ci": [
+        -0.0007847292217797329,
+        0.005985199171422536
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        -0.0005732832371981443,
+        0.0031775050056585706,
+        0.0033726229494020084
+      ]
+    },
+    "dense:landmark_low_ungated_vs_frozen_ppo_posthoc": {
+      "mean_gain": 0.004344825973053892,
+      "ci": [
+        -0.002500145396447996,
+        0.012477869565018007
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.003669854890037319,
+        0.007567483226712436,
+        0.0017480213978900766
+      ]
+    },
+    "dense:opportunity_low_ungated_vs_frozen_ppo_posthoc": {
+      "mean_gain": 0.006987977170658682,
+      "ci": [
+        -0.0015871623464720887,
+        0.016502522854687632
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.00866050296513638,
+        0.011026161127581006,
+        0.0012385478246356827
+      ]
+    },
+    "dense:opportunity_high_ungated_vs_frozen_ppo_posthoc": {
+      "mean_gain": 0.006274560254491018,
+      "ci": [
+        -0.0023177553555905903,
+        0.01565477659355017
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.007561319374883655,
+        0.010410707165271059,
+        0.0008081304955069702
+      ]
+    },
+    "skill_mask:landmark_low_ungated_vs_frozen_ppo_posthoc": {
+      "mean_gain": -0.0020134091299799824,
+      "ci": [
+        -0.006101470373974799,
+        0.0008553526582245739
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0005729547718317805,
+        -0.0028645037334614205,
+        -0.003713762614211216
+      ]
+    },
+    "skill_mask:opportunity_low_ungated_vs_frozen_ppo_posthoc": {
+      "mean_gain": -0.0019026861966381023,
+      "ci": [
+        -0.005920440132342071,
+        0.0009031982655869662
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0005729547718317805,
+        -0.0028645037334614205,
+        -0.0033840360269681642
+      ]
+    },
+    "skill_mask:opportunity_high_ungated_vs_frozen_ppo_posthoc": {
+      "mean_gain": -0.002010495368576249,
+      "ci": [
+        -0.006021237477155119,
+        0.0007841139046707206
+      ],
+      "confidence": 0.95,
+      "replica_gains": [
+        0.0005729547718317805,
+        -0.003187633727784813,
+        -0.0033840360269681642
+      ]
+    }
+  },
+  "means": {
+    "dense": {
+      "frozen_ppo": {
+        "extended_objective": 1187.5555555555557,
+        "base_objective": 945.34375,
+        "tail_objective": 242.21180555555554,
+        "extended_failure_cost": 280.8333333333333,
+        "extended_waiting_cost": 8.541666666666666,
+        "extended_maintenance_cost": 49.826388888888886,
+        "extended_unavailability_cost": 848.3541666666666,
+        "preventive_starts": 11.614583333333334,
+        "corrective_starts": 14.0625,
+        "wait_with_pm_feasible": 0.013888888888888888,
+        "pm_assignment_alternative_ticks": 1.6909722222222223,
+        "assignment_override_ticks": 0.0,
+        "guard_rejected_ticks": 0.0,
+        "batch_amortized_policy_ms_mean": 0.2038796723090278
+      },
+      "landmark_low_ungated": {
+        "extended_objective": 1182.3958333333333,
+        "base_objective": 940.2152777777778,
+        "tail_objective": 242.18055555555554,
+        "extended_failure_cost": 279.2708333333333,
+        "extended_waiting_cost": 7.791666666666667,
+        "extended_maintenance_cost": 50.020833333333336,
+        "extended_unavailability_cost": 845.3125,
+        "preventive_starts": 11.989583333333334,
+        "corrective_starts": 13.899305555555555,
+        "wait_with_pm_feasible": 0.013888888888888888,
+        "pm_assignment_alternative_ticks": 1.7256944444444444,
+        "assignment_override_ticks": 0.4722222222222222,
+        "guard_rejected_ticks": 1.2534722222222223,
+        "batch_amortized_policy_ms_mean": 0.45983331235532415
+      },
+      "landmark_low_gated": {
+        "extended_objective": 1187.5555555555557,
+        "base_objective": 945.34375,
+        "tail_objective": 242.21180555555554,
+        "extended_failure_cost": 280.8333333333333,
+        "extended_waiting_cost": 8.541666666666666,
+        "extended_maintenance_cost": 49.826388888888886,
+        "extended_unavailability_cost": 848.3541666666666,
+        "preventive_starts": 11.614583333333334,
+        "corrective_starts": 14.0625,
+        "wait_with_pm_feasible": 0.013888888888888888,
+        "pm_assignment_alternative_ticks": 1.6909722222222223,
+        "assignment_override_ticks": 0.0,
+        "guard_rejected_ticks": 1.6909722222222223,
+        "batch_amortized_policy_ms_mean": 0.46129658224826386
+      },
+      "opportunity_low_ungated": {
+        "extended_objective": 1179.2569444444443,
+        "base_objective": 937.3784722222222,
+        "tail_objective": 241.87847222222223,
+        "extended_failure_cost": 278.0208333333333,
+        "extended_waiting_cost": 7.416666666666667,
+        "extended_maintenance_cost": 50.02777777777778,
+        "extended_unavailability_cost": 843.7916666666666,
+        "preventive_starts": 12.145833333333334,
+        "corrective_starts": 13.82986111111111,
+        "wait_with_pm_feasible": 0.013888888888888888,
+        "pm_assignment_alternative_ticks": 1.71875,
+        "assignment_override_ticks": 0.5138888888888888,
+        "guard_rejected_ticks": 1.2048611111111112,
+        "batch_amortized_policy_ms_mean": 0.4601346037326388
+      },
+      "opportunity_low_gated": {
+        "extended_objective": 1187.295138888889,
+        "base_objective": 944.9201388888889,
+        "tail_objective": 242.375,
+        "extended_failure_cost": 280.5208333333333,
+        "extended_waiting_cost": 8.541666666666666,
+        "extended_maintenance_cost": 49.857638888888886,
+        "extended_unavailability_cost": 848.375,
+        "preventive_starts": 11.680555555555555,
+        "corrective_starts": 14.041666666666666,
+        "wait_with_pm_feasible": 0.013888888888888888,
+        "pm_assignment_alternative_ticks": 1.6736111111111112,
+        "assignment_override_ticks": 0.017361111111111112,
+        "guard_rejected_ticks": 1.65625,
+        "batch_amortized_policy_ms_mean": 0.46257252980324065
+      },
+      "opportunity_high_ungated": {
+        "extended_objective": 1180.1041666666667,
+        "base_objective": 937.5590277777778,
+        "tail_objective": 242.54513888888889,
+        "extended_failure_cost": 278.6458333333333,
+        "extended_waiting_cost": 7.416666666666667,
+        "extended_maintenance_cost": 50.083333333333336,
+        "extended_unavailability_cost": 843.9583333333334,
+        "preventive_starts": 12.13888888888889,
+        "corrective_starts": 13.82986111111111,
+        "wait_with_pm_feasible": 0.013888888888888888,
+        "pm_assignment_alternative_ticks": 1.7222222222222223,
+        "assignment_override_ticks": 0.4756944444444444,
+        "guard_rejected_ticks": 1.2465277777777777,
+        "batch_amortized_policy_ms_mean": 0.4616377819733797
+      },
+      "opportunity_high_gated": {
+        "extended_objective": 1187.5555555555557,
+        "base_objective": 945.34375,
+        "tail_objective": 242.21180555555554,
+        "extended_failure_cost": 280.8333333333333,
+        "extended_waiting_cost": 8.541666666666666,
+        "extended_maintenance_cost": 49.826388888888886,
+        "extended_unavailability_cost": 848.3541666666666,
+        "preventive_starts": 11.614583333333334,
+        "corrective_starts": 14.0625,
+        "wait_with_pm_feasible": 0.013888888888888888,
+        "pm_assignment_alternative_ticks": 1.6909722222222223,
+        "assignment_override_ticks": 0.0,
+        "guard_rejected_ticks": 1.6909722222222223,
+        "batch_amortized_policy_ms_mean": 0.4594419900896991
+      }
+    },
+    "skill_mask": {
+      "frozen_ppo": {
+        "extended_objective": 1191.6631944444443,
+        "base_objective": 949.5694444444445,
+        "tail_objective": 242.09375,
+        "extended_failure_cost": 253.17708333333334,
+        "extended_waiting_cost": 17.583333333333332,
+        "extended_maintenance_cost": 48.13194444444444,
+        "extended_unavailability_cost": 872.7708333333334,
+        "preventive_starts": 13.29861111111111,
+        "corrective_starts": 12.583333333333334,
+        "wait_with_pm_feasible": 0.09375,
+        "pm_assignment_alternative_ticks": 0.5138888888888888,
+        "assignment_override_ticks": 0.0,
+        "guard_rejected_ticks": 0.0,
+        "batch_amortized_policy_ms_mean": 0.20534423791956016
+      },
+      "landmark_low_ungated": {
+        "extended_objective": 1194.0625,
+        "base_objective": 952.0520833333334,
+        "tail_objective": 242.01041666666666,
+        "extended_failure_cost": 253.64583333333334,
+        "extended_waiting_cost": 19.208333333333332,
+        "extended_maintenance_cost": 48.1875,
+        "extended_unavailability_cost": 873.0208333333334,
+        "preventive_starts": 13.364583333333334,
+        "corrective_starts": 12.625,
+        "wait_with_pm_feasible": 0.06597222222222222,
+        "pm_assignment_alternative_ticks": 0.53125,
+        "assignment_override_ticks": 0.1597222222222222,
+        "guard_rejected_ticks": 0.3715277777777778,
+        "batch_amortized_policy_ms_mean": 0.46016394220196766
+      },
+      "landmark_low_gated": {
+        "extended_objective": 1191.6631944444443,
+        "base_objective": 949.5694444444445,
+        "tail_objective": 242.09375,
+        "extended_failure_cost": 253.17708333333334,
+        "extended_waiting_cost": 17.583333333333332,
+        "extended_maintenance_cost": 48.13194444444444,
+        "extended_unavailability_cost": 872.7708333333334,
+        "preventive_starts": 13.29861111111111,
+        "corrective_starts": 12.583333333333334,
+        "wait_with_pm_feasible": 0.09375,
+        "pm_assignment_alternative_ticks": 0.5138888888888888,
+        "assignment_override_ticks": 0.0,
+        "guard_rejected_ticks": 0.5138888888888888,
+        "batch_amortized_policy_ms_mean": 0.46220750860821763
+      },
+      "opportunity_low_ungated": {
+        "extended_objective": 1193.9305555555557,
+        "base_objective": 951.8888888888889,
+        "tail_objective": 242.04166666666666,
+        "extended_failure_cost": 253.54166666666666,
+        "extended_waiting_cost": 19.208333333333332,
+        "extended_maintenance_cost": 48.18055555555556,
+        "extended_unavailability_cost": 873.0,
+        "preventive_starts": 13.378472222222221,
+        "corrective_starts": 12.614583333333334,
+        "wait_with_pm_feasible": 0.06597222222222222,
+        "pm_assignment_alternative_ticks": 0.53125,
+        "assignment_override_ticks": 0.15625,
+        "guard_rejected_ticks": 0.375,
+        "batch_amortized_policy_ms_mean": 0.4608460190972223
+      },
+      "opportunity_low_gated": {
+        "extended_objective": 1191.6631944444443,
+        "base_objective": 949.5694444444445,
+        "tail_objective": 242.09375,
+        "extended_failure_cost": 253.17708333333334,
+        "extended_waiting_cost": 17.583333333333332,
+        "extended_maintenance_cost": 48.13194444444444,
+        "extended_unavailability_cost": 872.7708333333334,
+        "preventive_starts": 13.29861111111111,
+        "corrective_starts": 12.583333333333334,
+        "wait_with_pm_feasible": 0.09375,
+        "pm_assignment_alternative_ticks": 0.5138888888888888,
+        "assignment_override_ticks": 0.0,
+        "guard_rejected_ticks": 0.5138888888888888,
+        "batch_amortized_policy_ms_mean": 0.4617845912181713
+      },
+      "opportunity_high_ungated": {
+        "extended_objective": 1194.0590277777778,
+        "base_objective": 952.15625,
+        "tail_objective": 241.90277777777777,
+        "extended_failure_cost": 253.59375,
+        "extended_waiting_cost": 19.208333333333332,
+        "extended_maintenance_cost": 48.19444444444444,
+        "extended_unavailability_cost": 873.0625,
+        "preventive_starts": 13.375,
+        "corrective_starts": 12.625,
+        "wait_with_pm_feasible": 0.06597222222222222,
+        "pm_assignment_alternative_ticks": 0.5208333333333334,
+        "assignment_override_ticks": 0.1527777777777778,
+        "guard_rejected_ticks": 0.3680555555555556,
+        "batch_amortized_policy_ms_mean": 0.4597870556278935
+      },
+      "opportunity_high_gated": {
+        "extended_objective": 1191.6631944444443,
+        "base_objective": 949.5694444444445,
+        "tail_objective": 242.09375,
+        "extended_failure_cost": 253.17708333333334,
+        "extended_waiting_cost": 17.583333333333332,
+        "extended_maintenance_cost": 48.13194444444444,
+        "extended_unavailability_cost": 872.7708333333334,
+        "preventive_starts": 13.29861111111111,
+        "corrective_starts": 12.583333333333334,
+        "wait_with_pm_feasible": 0.09375,
+        "pm_assignment_alternative_ticks": 0.5138888888888888,
+        "assignment_override_ticks": 0.0,
+        "guard_rejected_ticks": 0.5138888888888888,
+        "batch_amortized_policy_ms_mean": 0.4599329619502315
+      }
+    }
+  },
+  "gate_diagnostics": [
+    {
+      "condition": "dense",
+      "source": 18100000,
+      "controller": "landmark_low_ungated",
+      "PM_states_with_choice": 173,
+      "max_adjusted_gain": 1.1396080255508423,
+      "margin": 2.3750137865543364,
+      "near_tie_count": 4,
+      "changed": 42,
+      "reasons": {
+        "insufficient_predicted_gain": 131,
+        "none": 42
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100000,
+      "controller": "landmark_low_gated",
+      "PM_states_with_choice": 163,
+      "max_adjusted_gain": 0.6567955017089844,
+      "margin": 2.3750137865543364,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 163
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100000,
+      "controller": "opportunity_low_ungated",
+      "PM_states_with_choice": 172,
+      "max_adjusted_gain": 1.4217852354049683,
+      "margin": 2.164867495596409,
+      "near_tie_count": 4,
+      "changed": 36,
+      "reasons": {
+        "insufficient_predicted_gain": 136,
+        "none": 36
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100000,
+      "controller": "opportunity_low_gated",
+      "PM_states_with_choice": 163,
+      "max_adjusted_gain": 1.2506334781646729,
+      "margin": 2.164867495596409,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 163
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100000,
+      "controller": "opportunity_high_ungated",
+      "PM_states_with_choice": 173,
+      "max_adjusted_gain": 1.215035080909729,
+      "margin": 2.0210194730758664,
+      "near_tie_count": 4,
+      "changed": 33,
+      "reasons": {
+        "insufficient_predicted_gain": 140,
+        "none": 33
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100000,
+      "controller": "opportunity_high_gated",
+      "PM_states_with_choice": 163,
+      "max_adjusted_gain": 1.0855448246002197,
+      "margin": 2.0210194730758664,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 163
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100001,
+      "controller": "landmark_low_ungated",
+      "PM_states_with_choice": 158,
+      "max_adjusted_gain": 1.0088019371032715,
+      "margin": 1.5844514787197113,
+      "near_tie_count": 4,
+      "changed": 46,
+      "reasons": {
+        "insufficient_predicted_gain": 112,
+        "none": 46
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100001,
+      "controller": "landmark_low_gated",
+      "PM_states_with_choice": 161,
+      "max_adjusted_gain": 0.8337389230728149,
+      "margin": 1.5844514787197113,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 161
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100001,
+      "controller": "opportunity_low_ungated",
+      "PM_states_with_choice": 158,
+      "max_adjusted_gain": 1.9101649522781372,
+      "margin": 1.4050034895539283,
+      "near_tie_count": 4,
+      "changed": 60,
+      "reasons": {
+        "insufficient_predicted_gain": 98,
+        "none": 60
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100001,
+      "controller": "opportunity_low_gated",
+      "PM_states_with_choice": 156,
+      "max_adjusted_gain": 1.7203867435455322,
+      "margin": 1.4050034895539283,
+      "near_tie_count": 0,
+      "changed": 5,
+      "reasons": {
+        "insufficient_predicted_gain": 151,
+        "none": 5
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100001,
+      "controller": "opportunity_high_ungated",
+      "PM_states_with_choice": 158,
+      "max_adjusted_gain": 1.6143783330917358,
+      "margin": 1.4640694084763526,
+      "near_tie_count": 4,
+      "changed": 51,
+      "reasons": {
+        "insufficient_predicted_gain": 107,
+        "none": 51
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100001,
+      "controller": "opportunity_high_gated",
+      "PM_states_with_choice": 161,
+      "max_adjusted_gain": 1.34172523021698,
+      "margin": 1.4640694084763526,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 161
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100002,
+      "controller": "landmark_low_ungated",
+      "PM_states_with_choice": 166,
+      "max_adjusted_gain": 0.8680469393730164,
+      "margin": 2.1923536825738847,
+      "near_tie_count": 2,
+      "changed": 48,
+      "reasons": {
+        "insufficient_predicted_gain": 118,
+        "none": 48
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100002,
+      "controller": "landmark_low_gated",
+      "PM_states_with_choice": 163,
+      "max_adjusted_gain": 0.6008318066596985,
+      "margin": 2.1923536825738847,
+      "near_tie_count": 2,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 163
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100002,
+      "controller": "opportunity_low_ungated",
+      "PM_states_with_choice": 165,
+      "max_adjusted_gain": 1.7471919059753418,
+      "margin": 1.819349955022335,
+      "near_tie_count": 2,
+      "changed": 52,
+      "reasons": {
+        "insufficient_predicted_gain": 113,
+        "none": 52
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100002,
+      "controller": "opportunity_low_gated",
+      "PM_states_with_choice": 163,
+      "max_adjusted_gain": 1.0732171535491943,
+      "margin": 1.819349955022335,
+      "near_tie_count": 2,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 163
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100002,
+      "controller": "opportunity_high_ungated",
+      "PM_states_with_choice": 165,
+      "max_adjusted_gain": 1.546980381011963,
+      "margin": 1.8857429578900338,
+      "near_tie_count": 2,
+      "changed": 53,
+      "reasons": {
+        "insufficient_predicted_gain": 112,
+        "none": 53
+      }
+    },
+    {
+      "condition": "dense",
+      "source": 18100002,
+      "controller": "opportunity_high_gated",
+      "PM_states_with_choice": 163,
+      "max_adjusted_gain": 0.9687449932098389,
+      "margin": 1.8857429578900338,
+      "near_tie_count": 2,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 163
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100000,
+      "controller": "landmark_low_ungated",
+      "PM_states_with_choice": 46,
+      "max_adjusted_gain": 0.5700117945671082,
+      "margin": 1.6582400181889534,
+      "near_tie_count": 4,
+      "changed": 9,
+      "reasons": {
+        "insufficient_predicted_gain": 37,
+        "none": 9
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100000,
+      "controller": "landmark_low_gated",
+      "PM_states_with_choice": 44,
+      "max_adjusted_gain": 0.5119505524635315,
+      "margin": 1.6582400181889534,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 44
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100000,
+      "controller": "opportunity_low_ungated",
+      "PM_states_with_choice": 46,
+      "max_adjusted_gain": 0.9559938311576843,
+      "margin": 1.6230635124444963,
+      "near_tie_count": 4,
+      "changed": 9,
+      "reasons": {
+        "insufficient_predicted_gain": 37,
+        "none": 9
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100000,
+      "controller": "opportunity_low_gated",
+      "PM_states_with_choice": 44,
+      "max_adjusted_gain": 0.8637063503265381,
+      "margin": 1.6230635124444963,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 44
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100000,
+      "controller": "opportunity_high_ungated",
+      "PM_states_with_choice": 46,
+      "max_adjusted_gain": 0.6263737678527832,
+      "margin": 1.319507392346859,
+      "near_tie_count": 4,
+      "changed": 9,
+      "reasons": {
+        "insufficient_predicted_gain": 37,
+        "none": 9
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100000,
+      "controller": "opportunity_high_gated",
+      "PM_states_with_choice": 44,
+      "max_adjusted_gain": 0.07763135433197021,
+      "margin": 1.319507392346859,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 44
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100001,
+      "controller": "landmark_low_ungated",
+      "PM_states_with_choice": 67,
+      "max_adjusted_gain": 1.0101500749588013,
+      "margin": 1.957973400950432,
+      "near_tie_count": 4,
+      "changed": 17,
+      "reasons": {
+        "insufficient_predicted_gain": 50,
+        "none": 17
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100001,
+      "controller": "landmark_low_gated",
+      "PM_states_with_choice": 67,
+      "max_adjusted_gain": 0.8362526297569275,
+      "margin": 1.957973400950432,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 67
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100001,
+      "controller": "opportunity_low_ungated",
+      "PM_states_with_choice": 67,
+      "max_adjusted_gain": 1.908216118812561,
+      "margin": 2.1254556411504746,
+      "near_tie_count": 4,
+      "changed": 17,
+      "reasons": {
+        "insufficient_predicted_gain": 50,
+        "none": 17
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100001,
+      "controller": "opportunity_low_gated",
+      "PM_states_with_choice": 67,
+      "max_adjusted_gain": 1.7186399698257446,
+      "margin": 2.1254556411504746,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 67
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100001,
+      "controller": "opportunity_high_ungated",
+      "PM_states_with_choice": 64,
+      "max_adjusted_gain": 1.6147760152816772,
+      "margin": 2.0426518374681475,
+      "near_tie_count": 4,
+      "changed": 16,
+      "reasons": {
+        "insufficient_predicted_gain": 48,
+        "none": 16
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100001,
+      "controller": "opportunity_high_gated",
+      "PM_states_with_choice": 67,
+      "max_adjusted_gain": 1.3435324430465698,
+      "margin": 2.0426518374681475,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 67
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100002,
+      "controller": "landmark_low_ungated",
+      "PM_states_with_choice": 40,
+      "max_adjusted_gain": 1.2006131410598755,
+      "margin": 2.345653535425663,
+      "near_tie_count": 0,
+      "changed": 20,
+      "reasons": {
+        "none": 20,
+        "insufficient_predicted_gain": 20
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100002,
+      "controller": "landmark_low_gated",
+      "PM_states_with_choice": 37,
+      "max_adjusted_gain": 0.9881284236907959,
+      "margin": 2.345653535425663,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 37
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100002,
+      "controller": "opportunity_low_ungated",
+      "PM_states_with_choice": 40,
+      "max_adjusted_gain": 1.6841063499450684,
+      "margin": 1.7851531475782396,
+      "near_tie_count": 0,
+      "changed": 19,
+      "reasons": {
+        "none": 19,
+        "insufficient_predicted_gain": 21
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100002,
+      "controller": "opportunity_low_gated",
+      "PM_states_with_choice": 37,
+      "max_adjusted_gain": 1.4594553709030151,
+      "margin": 1.7851531475782396,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 37
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100002,
+      "controller": "opportunity_high_ungated",
+      "PM_states_with_choice": 40,
+      "max_adjusted_gain": 1.3724365234375,
+      "margin": 2.0343831253051756,
+      "near_tie_count": 0,
+      "changed": 19,
+      "reasons": {
+        "none": 19,
+        "insufficient_predicted_gain": 21
+      }
+    },
+    {
+      "condition": "skill_mask",
+      "source": 18100002,
+      "controller": "opportunity_high_gated",
+      "PM_states_with_choice": 37,
+      "max_adjusted_gain": 1.0758464336395264,
+      "margin": 2.0343831253051756,
+      "near_tie_count": 0,
+      "changed": 0,
+      "reasons": {
+        "insufficient_predicted_gain": 37
+      }
+    }
+  ],
+  "prediction_metrics": [
+    {
+      "source": 18100000,
+      "arm": "landmark_low",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 148,
+      "mse": 3.276198148727417,
+      "zero_mse": 3.7745978832244873,
+      "sign_accuracy": 0.662162184715271
+    },
+    {
+      "source": 18100000,
+      "arm": "landmark_low",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 20,
+      "mse": 0.8885202407836914,
+      "zero_mse": 1.7085977792739868,
+      "sign_accuracy": 0.6499999761581421
+    },
+    {
+      "source": 18100000,
+      "arm": "landmark_low",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 580,
+      "mse": 3.044313430786133,
+      "zero_mse": 3.898364305496216,
+      "sign_accuracy": 0.7448275685310364
+    },
+    {
+      "source": 18100000,
+      "arm": "landmark_low",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 126,
+      "mse": 3.748501777648926,
+      "zero_mse": 4.747857570648193,
+      "sign_accuracy": 0.7857142686843872
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_low",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 148,
+      "mse": 3.327255964279175,
+      "zero_mse": 3.7745978832244873,
+      "sign_accuracy": 0.6689189076423645
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_low",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 20,
+      "mse": 1.485263705253601,
+      "zero_mse": 1.7085977792739868,
+      "sign_accuracy": 0.550000011920929
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_low",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 580,
+      "mse": 2.9142091274261475,
+      "zero_mse": 3.898364305496216,
+      "sign_accuracy": 0.7741379141807556
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_low",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 126,
+      "mse": 3.565619468688965,
+      "zero_mse": 4.747857570648193,
+      "sign_accuracy": 0.7857142686843872
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_high",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 148,
+      "mse": 3.224454402923584,
+      "zero_mse": 3.7745978832244873,
+      "sign_accuracy": 0.6418918967247009
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_high",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 20,
+      "mse": 1.2501777410507202,
+      "zero_mse": 1.7085977792739868,
+      "sign_accuracy": 0.6499999761581421
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_high",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 580,
+      "mse": 2.92689847946167,
+      "zero_mse": 3.898364305496216,
+      "sign_accuracy": 0.7655172348022461
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_high",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 126,
+      "mse": 3.4293715953826904,
+      "zero_mse": 4.747857570648193,
+      "sign_accuracy": 0.7857142686843872
+    },
+    {
+      "source": 18100001,
+      "arm": "landmark_low",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 129,
+      "mse": 2.108320951461792,
+      "zero_mse": 2.272120237350464,
+      "sign_accuracy": 0.5813953280448914
+    },
+    {
+      "source": 18100001,
+      "arm": "landmark_low",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 34,
+      "mse": 11.464166641235352,
+      "zero_mse": 16.196359634399414,
+      "sign_accuracy": 0.6764705777168274
+    },
+    {
+      "source": 18100001,
+      "arm": "landmark_low",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 520,
+      "mse": 1.3468317985534668,
+      "zero_mse": 1.6312779188156128,
+      "sign_accuracy": 0.6557692289352417
+    },
+    {
+      "source": 18100001,
+      "arm": "landmark_low",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 150,
+      "mse": 3.315277099609375,
+      "zero_mse": 4.488457679748535,
+      "sign_accuracy": 0.8133333325386047
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_low",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 129,
+      "mse": 2.8151838779449463,
+      "zero_mse": 2.272120237350464,
+      "sign_accuracy": 0.5891472697257996
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_low",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 34,
+      "mse": 10.100486755371094,
+      "zero_mse": 16.196359634399414,
+      "sign_accuracy": 0.6764705777168274
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_low",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 520,
+      "mse": 1.7167295217514038,
+      "zero_mse": 1.6312779188156128,
+      "sign_accuracy": 0.6634615659713745
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_low",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 150,
+      "mse": 2.834589958190918,
+      "zero_mse": 4.488457679748535,
+      "sign_accuracy": 0.7866666913032532
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_high",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 129,
+      "mse": 2.9179368019104004,
+      "zero_mse": 2.272120237350464,
+      "sign_accuracy": 0.604651153087616
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_high",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 34,
+      "mse": 9.922279357910156,
+      "zero_mse": 16.196359634399414,
+      "sign_accuracy": 0.6764705777168274
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_high",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 520,
+      "mse": 1.7064613103866577,
+      "zero_mse": 1.6312779188156128,
+      "sign_accuracy": 0.6519230604171753
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_high",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 150,
+      "mse": 2.7824230194091797,
+      "zero_mse": 4.488457679748535,
+      "sign_accuracy": 0.7866666913032532
+    },
+    {
+      "source": 18100002,
+      "arm": "landmark_low",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 121,
+      "mse": 1.9603976011276245,
+      "zero_mse": 2.4293854236602783,
+      "sign_accuracy": 0.6694214940071106
+    },
+    {
+      "source": 18100002,
+      "arm": "landmark_low",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 27,
+      "mse": 4.852289199829102,
+      "zero_mse": 6.0071940422058105,
+      "sign_accuracy": 0.5925925970077515
+    },
+    {
+      "source": 18100002,
+      "arm": "landmark_low",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 480,
+      "mse": 1.7465826272964478,
+      "zero_mse": 2.241732358932495,
+      "sign_accuracy": 0.6875
+    },
+    {
+      "source": 18100002,
+      "arm": "landmark_low",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 151,
+      "mse": 1.7262111902236938,
+      "zero_mse": 1.9987045526504517,
+      "sign_accuracy": 0.6688741445541382
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_low",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 121,
+      "mse": 1.652410864830017,
+      "zero_mse": 2.4293854236602783,
+      "sign_accuracy": 0.6528925895690918
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_low",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 27,
+      "mse": 4.336217880249023,
+      "zero_mse": 6.0071940422058105,
+      "sign_accuracy": 0.6666666865348816
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_low",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 480,
+      "mse": 1.6111562252044678,
+      "zero_mse": 2.241732358932495,
+      "sign_accuracy": 0.7166666388511658
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_low",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 151,
+      "mse": 1.7081022262573242,
+      "zero_mse": 1.9987045526504517,
+      "sign_accuracy": 0.6887417435646057
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_high",
+      "split": "development",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 121,
+      "mse": 1.6363966464996338,
+      "zero_mse": 2.4293854236602783,
+      "sign_accuracy": 0.6528925895690918
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_high",
+      "split": "development",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 27,
+      "mse": 4.542934894561768,
+      "zero_mse": 6.0071940422058105,
+      "sign_accuracy": 0.6666666865348816
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_high",
+      "split": "calibration",
+      "condition": "dense",
+      "origin": "natural",
+      "labels": 480,
+      "mse": 1.5977895259857178,
+      "zero_mse": 2.241732358932495,
+      "sign_accuracy": 0.7229166626930237
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_high",
+      "split": "calibration",
+      "condition": "skill_mask",
+      "origin": "natural",
+      "labels": 151,
+      "mse": 1.6850509643554688,
+      "zero_mse": 1.9987045526504517,
+      "sign_accuracy": 0.6887417435646057
+    }
+  ],
+  "calibration": {
+    "locked_before_test": true,
+    "parameters": {
+      "18100000": {
+        "landmark_low": {
+          "dense": {
+            "enabled": true,
+            "margin": 2.3750137865543364,
+            "samples": 580,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 226,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 1.6582400181889534,
+            "samples": 126,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 31,
+            "minimum_profiles": 16,
+            "late_samples": 36,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        },
+        "opportunity_low": {
+          "dense": {
+            "enabled": true,
+            "margin": 2.164867495596409,
+            "samples": 580,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 226,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 1.6230635124444963,
+            "samples": 126,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 31,
+            "minimum_profiles": 16,
+            "late_samples": 36,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        },
+        "opportunity_high": {
+          "dense": {
+            "enabled": true,
+            "margin": 2.0210194730758664,
+            "samples": 580,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 226,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 1.319507392346859,
+            "samples": 126,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 31,
+            "minimum_profiles": 16,
+            "late_samples": 36,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        }
+      },
+      "18100001": {
+        "landmark_low": {
+          "dense": {
+            "enabled": true,
+            "margin": 1.5844514787197113,
+            "samples": 520,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 179,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 1.957973400950432,
+            "samples": 150,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 35,
+            "minimum_profiles": 16,
+            "late_samples": 43,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        },
+        "opportunity_low": {
+          "dense": {
+            "enabled": true,
+            "margin": 1.4050034895539283,
+            "samples": 520,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 179,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 2.1254556411504746,
+            "samples": 150,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 35,
+            "minimum_profiles": 16,
+            "late_samples": 43,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        },
+        "opportunity_high": {
+          "dense": {
+            "enabled": true,
+            "margin": 1.4640694084763526,
+            "samples": 520,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 179,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 2.0426518374681475,
+            "samples": 150,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 35,
+            "minimum_profiles": 16,
+            "late_samples": 43,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        }
+      },
+      "18100002": {
+        "landmark_low": {
+          "dense": {
+            "enabled": true,
+            "margin": 2.1923536825738847,
+            "samples": 480,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 172,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 2.345653535425663,
+            "samples": 151,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 30,
+            "minimum_profiles": 16,
+            "late_samples": 64,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        },
+        "opportunity_low": {
+          "dense": {
+            "enabled": true,
+            "margin": 1.819349955022335,
+            "samples": 480,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 172,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 1.7851531475782396,
+            "samples": 151,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 30,
+            "minimum_profiles": 16,
+            "late_samples": 64,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        },
+        "opportunity_high": {
+          "dense": {
+            "enabled": true,
+            "margin": 1.8857429578900338,
+            "samples": 480,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 64,
+            "minimum_profiles": 16,
+            "late_samples": 172,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          },
+          "skill_mask": {
+            "enabled": true,
+            "margin": 2.0343831253051756,
+            "samples": 151,
+            "minimum": 40,
+            "quantile": 0.9,
+            "physical_profiles": 30,
+            "minimum_profiles": 16,
+            "late_samples": 64,
+            "minimum_late": 10,
+            "semantics": "empirical guard; not a statistical confidence/safety guarantee"
+          }
+        }
+      }
+    },
+    "method": "90th percentile empirical overoptimism; ensemble SD + paired MCSE; no confidence guarantee"
+  },
+  "root_diagnostics": {
+    "root_contrasts": {
+      "dense:natural:landmark_low_ungated": {
+        "states": 33,
+        "exposures": 33,
+        "overrides": 6,
+        "harmful_overrides": 0,
+        "largest_harm": 0.0,
+        "mean_gain": 4.587594696969697,
+        "confidence_interval": [
+          0.0,
+          13.975892857142858
+        ],
+        "empty_bootstrap_fraction": 0.0,
+        "exploratory": true
+      },
+      "dense:natural:landmark_low_gated": {
+        "states": 33,
+        "exposures": 33,
+        "overrides": 0,
+        "harmful_overrides": 0,
+        "largest_harm": 0.0,
+        "mean_gain": 0.0,
+        "confidence_interval": [
+          0.0,
+          0.0
+        ],
+        "empty_bootstrap_fraction": 0.0,
+        "exploratory": true
+      },
+      "dense:natural:opportunity_low_ungated": {
+        "states": 33,
+        "exposures": 33,
+        "overrides": 10,
+        "harmful_overrides": 2,
+        "largest_harm": 28.859375,
+        "mean_gain": 5.931818181818182,
+        "confidence_interval": [
+          -2.3608630952380953,
+          16.817057291666668
+        ],
+        "empty_bootstrap_fraction": 0.0,
+        "exploratory": true
+      },
+      "dense:natural:opportunity_low_gated": {
+        "states": 33,
+        "exposures": 33,
+        "overrides": 0,
+        "harmful_overrides": 0,
+        "largest_harm": 0.0,
+        "mean_gain": 0.0,
+        "confidence_interval": [
+          0.0,
+          0.0
+        ],
+        "empty_bootstrap_fraction": 0.0,
+        "exploratory": true
+      },
+      "dense:natural:opportunity_high_ungated": {
+        "states": 33,
+        "exposures": 33,
+        "overrides": 9,
+        "harmful_overrides": 2,
+        "largest_harm": 28.859375,
+        "mean_gain": 4.515151515151516,
+        "confidence_interval": [
+          -3.0047348484848486,
+          13.930397727272727
+        ],
+        "empty_bootstrap_fraction": 0.0,
+        "exploratory": true
+      },
+      "dense:natural:opportunity_high_gated": {
+        "states": 33,
+        "exposures": 33,
+        "overrides": 0,
+        "harmful_overrides": 0,
+        "largest_harm": 0.0,
+        "mean_gain": 0.0,
+        "confidence_interval": [
+          0.0,
+          0.0
+        ],
+        "empty_bootstrap_fraction": 0.0,
+        "exploratory": true
+      },
+      "skill_mask:natural:landmark_low_ungated": {
+        "states": 15,
+        "exposures": 15,
+        "overrides": 4,
+        "harmful_overrides": 1,
+        "largest_harm": 37.234375,
+        "mean_gain": 0.6895833333333333,
+        "confidence_interval": [
+          -20.30965909090909,
+          9.085416666666667
+        ],
+        "empty_bootstrap_fraction": 0.003449999999999953,
+        "exploratory": true
+      },
+      "skill_mask:natural:landmark_low_gated": {
+        "states": 15,
+        "exposures": 15,
+        "overrides": 0,
+        "harmful_overrides": 0,
+        "largest_harm": 0.0,
+        "mean_gain": 0.0,
+        "confidence_interval": [
+          0.0,
+          0.0
+        ],
+        "empty_bootstrap_fraction": 0.003449999999999953,
+        "exploratory": true
+      },
+      "skill_mask:natural:opportunity_low_ungated": {
+        "states": 15,
+        "exposures": 15,
+        "overrides": 4,
+        "harmful_overrides": 1,
+        "largest_harm": 37.234375,
+        "mean_gain": 0.6895833333333333,
+        "confidence_interval": [
+          -20.30965909090909,
+          9.085416666666667
+        ],
+        "empty_bootstrap_fraction": 0.003449999999999953,
+        "exploratory": true
+      },
+      "skill_mask:natural:opportunity_low_gated": {
+        "states": 15,
+        "exposures": 15,
+        "overrides": 0,
+        "harmful_overrides": 0,
+        "largest_harm": 0.0,
+        "mean_gain": 0.0,
+        "confidence_interval": [
+          0.0,
+          0.0
+        ],
+        "empty_bootstrap_fraction": 0.003449999999999953,
+        "exploratory": true
+      },
+      "skill_mask:natural:opportunity_high_ungated": {
+        "states": 15,
+        "exposures": 15,
+        "overrides": 4,
+        "harmful_overrides": 1,
+        "largest_harm": 37.234375,
+        "mean_gain": 0.6895833333333333,
+        "confidence_interval": [
+          -20.30965909090909,
+          9.085416666666667
+        ],
+        "empty_bootstrap_fraction": 0.003449999999999953,
+        "exploratory": true
+      },
+      "skill_mask:natural:opportunity_high_gated": {
+        "states": 15,
+        "exposures": 15,
+        "overrides": 0,
+        "harmful_overrides": 0,
+        "largest_harm": 0.0,
+        "mean_gain": 0.0,
+        "confidence_interval": [
+          0.0,
+          0.0
+        ],
+        "empty_bootstrap_fraction": 0.003449999999999953,
+        "exploratory": true
+      }
+    },
+    "records": 48,
+    "continuation": "frozen PPO at original clock; common tail",
+    "reference": "independent selection/evaluation; not oracle",
+    "uncertainty": "profile/source clustering, fixed MC tapes; natural source opportunities only"
+  },
+  "coverage": [
+    {
+      "source_seed": 18100000,
+      "split": "train",
+      "arm": "landmark_low",
+      "condition": "dense",
+      "labels": 289,
+      "profiles": 127,
+      "labels_by_clock_bin": {
+        "0": 254,
+        "1": 12,
+        "2": 9,
+        "3": 14
+      },
+      "mean_mc_se": 0.7510878443717957,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100000,
+      "split": "train",
+      "arm": "landmark_low",
+      "condition": "skill_mask",
+      "labels": 73,
+      "profiles": 37,
+      "labels_by_clock_bin": {
+        "0": 72,
+        "1": 0,
+        "2": 1,
+        "3": 0
+      },
+      "mean_mc_se": 0.7119079232215881,
+      "missing_clock_bins": [
+        1,
+        3
+      ]
+    },
+    {
+      "source_seed": 18100000,
+      "split": "train",
+      "arm": "opportunity_low",
+      "condition": "dense",
+      "labels": 642,
+      "profiles": 128,
+      "labels_by_clock_bin": {
+        "0": 355,
+        "1": 104,
+        "2": 84,
+        "3": 99
+      },
+      "mean_mc_se": 0.6366235613822937,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100000,
+      "split": "train",
+      "arm": "opportunity_low",
+      "condition": "skill_mask",
+      "labels": 153,
+      "profiles": 65,
+      "labels_by_clock_bin": {
+        "0": 94,
+        "1": 23,
+        "2": 22,
+        "3": 14
+      },
+      "mean_mc_se": 0.6099019050598145,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100000,
+      "split": "train",
+      "arm": "opportunity_high",
+      "condition": "dense",
+      "labels": 642,
+      "profiles": 128,
+      "labels_by_clock_bin": {
+        "0": 355,
+        "1": 104,
+        "2": 84,
+        "3": 99
+      },
+      "mean_mc_se": 0.22689172625541687,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100000,
+      "split": "train",
+      "arm": "opportunity_high",
+      "condition": "skill_mask",
+      "labels": 153,
+      "profiles": 65,
+      "labels_by_clock_bin": {
+        "0": 94,
+        "1": 23,
+        "2": 22,
+        "3": 14
+      },
+      "mean_mc_se": 0.22102318704128265,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100000,
+      "split": "development",
+      "arm": "common",
+      "condition": "dense",
+      "labels": 148,
+      "profiles": 32,
+      "labels_by_clock_bin": {
+        "0": 85,
+        "1": 24,
+        "2": 16,
+        "3": 23
+      },
+      "mean_mc_se": 0.22776977717876434,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100000,
+      "split": "development",
+      "arm": "common",
+      "condition": "skill_mask",
+      "labels": 20,
+      "profiles": 11,
+      "labels_by_clock_bin": {
+        "0": 16,
+        "1": 2,
+        "2": 0,
+        "3": 2
+      },
+      "mean_mc_se": 0.2398131638765335,
+      "missing_clock_bins": [
+        2
+      ]
+    },
+    {
+      "source_seed": 18100000,
+      "split": "calibration",
+      "arm": "common",
+      "condition": "dense",
+      "labels": 580,
+      "profiles": 64,
+      "labels_by_clock_bin": {
+        "0": 354,
+        "1": 74,
+        "2": 72,
+        "3": 80
+      },
+      "mean_mc_se": 0.24124811589717865,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100000,
+      "split": "calibration",
+      "arm": "common",
+      "condition": "skill_mask",
+      "labels": 126,
+      "profiles": 31,
+      "labels_by_clock_bin": {
+        "0": 90,
+        "1": 15,
+        "2": 14,
+        "3": 7
+      },
+      "mean_mc_se": 0.21565361320972443,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "train",
+      "arm": "landmark_low",
+      "condition": "dense",
+      "labels": 275,
+      "profiles": 126,
+      "labels_by_clock_bin": {
+        "0": 250,
+        "1": 9,
+        "2": 9,
+        "3": 7
+      },
+      "mean_mc_se": 0.7726845741271973,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "train",
+      "arm": "landmark_low",
+      "condition": "skill_mask",
+      "labels": 98,
+      "profiles": 51,
+      "labels_by_clock_bin": {
+        "0": 90,
+        "1": 6,
+        "2": 0,
+        "3": 2
+      },
+      "mean_mc_se": 0.76118004322052,
+      "missing_clock_bins": [
+        2
+      ]
+    },
+    {
+      "source_seed": 18100001,
+      "split": "train",
+      "arm": "opportunity_low",
+      "condition": "dense",
+      "labels": 613,
+      "profiles": 128,
+      "labels_by_clock_bin": {
+        "0": 332,
+        "1": 101,
+        "2": 93,
+        "3": 87
+      },
+      "mean_mc_se": 0.6388596892356873,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "train",
+      "arm": "opportunity_low",
+      "condition": "skill_mask",
+      "labels": 169,
+      "profiles": 75,
+      "labels_by_clock_bin": {
+        "0": 108,
+        "1": 23,
+        "2": 21,
+        "3": 17
+      },
+      "mean_mc_se": 0.6531689167022705,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "train",
+      "arm": "opportunity_high",
+      "condition": "dense",
+      "labels": 613,
+      "profiles": 128,
+      "labels_by_clock_bin": {
+        "0": 332,
+        "1": 101,
+        "2": 93,
+        "3": 87
+      },
+      "mean_mc_se": 0.22674450278282166,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "train",
+      "arm": "opportunity_high",
+      "condition": "skill_mask",
+      "labels": 169,
+      "profiles": 75,
+      "labels_by_clock_bin": {
+        "0": 108,
+        "1": 23,
+        "2": 21,
+        "3": 17
+      },
+      "mean_mc_se": 0.2347506880760193,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "development",
+      "arm": "common",
+      "condition": "dense",
+      "labels": 129,
+      "profiles": 32,
+      "labels_by_clock_bin": {
+        "0": 80,
+        "1": 18,
+        "2": 16,
+        "3": 15
+      },
+      "mean_mc_se": 0.245602086186409,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "development",
+      "arm": "common",
+      "condition": "skill_mask",
+      "labels": 34,
+      "profiles": 18,
+      "labels_by_clock_bin": {
+        "0": 24,
+        "1": 3,
+        "2": 5,
+        "3": 2
+      },
+      "mean_mc_se": 0.26368197798728943,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "calibration",
+      "arm": "common",
+      "condition": "dense",
+      "labels": 520,
+      "profiles": 64,
+      "labels_by_clock_bin": {
+        "0": 341,
+        "1": 65,
+        "2": 54,
+        "3": 60
+      },
+      "mean_mc_se": 0.23889262974262238,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100001,
+      "split": "calibration",
+      "arm": "common",
+      "condition": "skill_mask",
+      "labels": 150,
+      "profiles": 35,
+      "labels_by_clock_bin": {
+        "0": 107,
+        "1": 15,
+        "2": 21,
+        "3": 7
+      },
+      "mean_mc_se": 0.22239255905151367,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "train",
+      "arm": "landmark_low",
+      "condition": "dense",
+      "labels": 282,
+      "profiles": 128,
+      "labels_by_clock_bin": {
+        "0": 256,
+        "1": 11,
+        "2": 5,
+        "3": 10
+      },
+      "mean_mc_se": 0.8153873085975647,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "train",
+      "arm": "landmark_low",
+      "condition": "skill_mask",
+      "labels": 89,
+      "profiles": 45,
+      "labels_by_clock_bin": {
+        "0": 82,
+        "1": 2,
+        "2": 3,
+        "3": 2
+      },
+      "mean_mc_se": 0.7112560272216797,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "train",
+      "arm": "opportunity_low",
+      "condition": "dense",
+      "labels": 524,
+      "profiles": 128,
+      "labels_by_clock_bin": {
+        "0": 338,
+        "1": 69,
+        "2": 63,
+        "3": 54
+      },
+      "mean_mc_se": 0.7227724194526672,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "train",
+      "arm": "opportunity_low",
+      "condition": "skill_mask",
+      "labels": 150,
+      "profiles": 63,
+      "labels_by_clock_bin": {
+        "0": 99,
+        "1": 17,
+        "2": 18,
+        "3": 16
+      },
+      "mean_mc_se": 0.6298425197601318,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "train",
+      "arm": "opportunity_high",
+      "condition": "dense",
+      "labels": 524,
+      "profiles": 128,
+      "labels_by_clock_bin": {
+        "0": 338,
+        "1": 69,
+        "2": 63,
+        "3": 54
+      },
+      "mean_mc_se": 0.25560814142227173,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "train",
+      "arm": "opportunity_high",
+      "condition": "skill_mask",
+      "labels": 150,
+      "profiles": 63,
+      "labels_by_clock_bin": {
+        "0": 99,
+        "1": 17,
+        "2": 18,
+        "3": 16
+      },
+      "mean_mc_se": 0.2300499677658081,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "development",
+      "arm": "common",
+      "condition": "dense",
+      "labels": 121,
+      "profiles": 32,
+      "labels_by_clock_bin": {
+        "0": 77,
+        "1": 16,
+        "2": 12,
+        "3": 16
+      },
+      "mean_mc_se": 0.24424177408218384,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "development",
+      "arm": "common",
+      "condition": "skill_mask",
+      "labels": 27,
+      "profiles": 16,
+      "labels_by_clock_bin": {
+        "0": 14,
+        "1": 5,
+        "2": 4,
+        "3": 4
+      },
+      "mean_mc_se": 0.23910492658615112,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "calibration",
+      "arm": "common",
+      "condition": "dense",
+      "labels": 480,
+      "profiles": 64,
+      "labels_by_clock_bin": {
+        "0": 308,
+        "1": 69,
+        "2": 56,
+        "3": 47
+      },
+      "mean_mc_se": 0.26196184754371643,
+      "missing_clock_bins": []
+    },
+    {
+      "source_seed": 18100002,
+      "split": "calibration",
+      "arm": "common",
+      "condition": "skill_mask",
+      "labels": 151,
+      "profiles": 30,
+      "labels_by_clock_bin": {
+        "0": 87,
+        "1": 18,
+        "2": 24,
+        "3": 22
+      },
+      "mean_mc_se": 0.20183399319648743,
+      "missing_clock_bins": []
+    }
+  ],
+  "elapsed_seconds": 2098.3429179489613,
+  "noise_metrics": [
+    {
+      "condition": "dense",
+      "labels": 1779,
+      "low_mc_se_mean": 0.6627689897549636,
+      "high_mc_se_mean": 0.23529934258211277,
+      "mc_se_ratio": 0.3550246710684318,
+      "sign_disagreements": 241,
+      "mean_absolute_target_change": 0.49518953766160767
+    },
+    {
+      "condition": "skill_mask",
+      "labels": 472,
+      "low_mc_se_mean": 0.6317307628096418,
+      "high_mc_se_mean": 0.22880701736170972,
+      "mc_se_ratio": 0.36219071609570436,
+      "sign_disagreements": 76,
+      "mean_absolute_target_change": 0.4848839711334746
+    }
+  ],
+  "coverage_metrics": [
+    {
+      "condition": "dense",
+      "arm": "landmark_low",
+      "labels": 846,
+      "draws_by_clock_bin": [
+        331602,
+        13726,
+        9992,
+        13310
+      ],
+      "late_draw_fraction": 0.1004476032878496
+    },
+    {
+      "condition": "dense",
+      "arm": "opportunity_low",
+      "labels": 1779,
+      "draws_by_clock_bin": [
+        91591,
+        92453,
+        92247,
+        92079
+      ],
+      "late_draw_fraction": 0.7513614029372642
+    },
+    {
+      "condition": "dense",
+      "arm": "opportunity_high",
+      "labels": 1779,
+      "draws_by_clock_bin": [
+        91591,
+        92453,
+        92247,
+        92079
+      ],
+      "late_draw_fraction": 0.7513614029372642
+    },
+    {
+      "condition": "skill_mask",
+      "arm": "landmark_low",
+      "labels": 260,
+      "draws_by_clock_bin": [
+        347308,
+        10320,
+        5794,
+        5228
+      ],
+      "late_draw_fraction": 0.057892309778923096
+    },
+    {
+      "condition": "skill_mask",
+      "arm": "opportunity_low",
+      "labels": 472,
+      "draws_by_clock_bin": [
+        92276,
+        92074,
+        92281,
+        92279
+      ],
+      "late_draw_fraction": 0.7498685316201784
+    },
+    {
+      "condition": "skill_mask",
+      "arm": "opportunity_high",
+      "labels": 472,
+      "draws_by_clock_bin": [
+        92276,
+        92074,
+        92281,
+        92279
+      ],
+      "late_draw_fraction": 0.7498685316201784
+    }
+  ],
+  "root_prediction_metrics": [
+    {
+      "condition": "dense",
+      "arm": "landmark_low",
+      "states": 33,
+      "mse": 2.388645363010905,
+      "zero_mse": 3.536095451586174,
+      "sign_accuracy": 0.696969696969697
+    },
+    {
+      "condition": "dense",
+      "arm": "opportunity_low",
+      "states": 33,
+      "mse": 2.2248673817576012,
+      "zero_mse": 3.536095451586174,
+      "sign_accuracy": 0.696969696969697
+    },
+    {
+      "condition": "dense",
+      "arm": "opportunity_high",
+      "states": 33,
+      "mse": 2.476009408672583,
+      "zero_mse": 3.536095451586174,
+      "sign_accuracy": 0.6666666666666666
+    },
+    {
+      "condition": "skill_mask",
+      "arm": "landmark_low",
+      "states": 15,
+      "mse": 1.4306170099877147,
+      "zero_mse": 1.784650553385417,
+      "sign_accuracy": 0.6
+    },
+    {
+      "condition": "skill_mask",
+      "arm": "opportunity_low",
+      "states": 15,
+      "mse": 2.006220325980752,
+      "zero_mse": 1.784650553385417,
+      "sign_accuracy": 0.6
+    },
+    {
+      "condition": "skill_mask",
+      "arm": "opportunity_high",
+      "states": 15,
+      "mse": 1.970920868498265,
+      "zero_mse": 1.784650553385417,
+      "sign_accuracy": 0.6
+    }
+  ],
+  "calibration_quantile_components": [
+    {
+      "source": 18100000,
+      "arm": "landmark_low",
+      "condition": "dense",
+      "samples": 580,
+      "margin": 2.3750137865543364,
+      "predicted_minus_observed": 2.238248825073242,
+      "minus_sd": -0.22337090969085693,
+      "mc_penalty": 0.3601358711719513
+    },
+    {
+      "source": 18100000,
+      "arm": "landmark_low",
+      "condition": "skill_mask",
+      "samples": 126,
+      "margin": 1.6582400181889534,
+      "predicted_minus_observed": 1.0992893390357494,
+      "minus_sd": -0.04801899567246437,
+      "mc_penalty": 0.6069696748256683
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_low",
+      "condition": "dense",
+      "samples": 580,
+      "margin": 2.164867495596409,
+      "predicted_minus_observed": 1.7156211137771606,
+      "minus_sd": -0.11248680204153061,
+      "mc_penalty": 0.5617331838607788
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_low",
+      "condition": "skill_mask",
+      "samples": 126,
+      "margin": 1.6230635124444963,
+      "predicted_minus_observed": 1.2481203079223633,
+      "minus_sd": -0.0911674052476883,
+      "mc_penalty": 0.46611060976982116
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_high",
+      "condition": "dense",
+      "samples": 580,
+      "margin": 2.0210194730758664,
+      "predicted_minus_observed": 1.7793329954147339,
+      "minus_sd": -0.3475027084350586,
+      "mc_penalty": 0.5891891860961914
+    },
+    {
+      "source": 18100000,
+      "arm": "opportunity_high",
+      "condition": "skill_mask",
+      "samples": 126,
+      "margin": 1.319507392346859,
+      "predicted_minus_observed": 1.0626145601272583,
+      "minus_sd": -0.051330022513866425,
+      "mc_penalty": 0.3082228547334671
+    },
+    {
+      "source": 18100001,
+      "arm": "landmark_low",
+      "condition": "dense",
+      "samples": 520,
+      "margin": 1.5844514787197113,
+      "predicted_minus_observed": 1.3243921101093292,
+      "minus_sd": -0.1545691341161728,
+      "mc_penalty": 0.4146285027265549
+    },
+    {
+      "source": 18100001,
+      "arm": "landmark_low",
+      "condition": "skill_mask",
+      "samples": 150,
+      "margin": 1.957973400950432,
+      "predicted_minus_observed": 1.5682432651519775,
+      "minus_sd": -0.08483557403087616,
+      "mc_penalty": 0.47456570982933044
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_low",
+      "condition": "dense",
+      "samples": 520,
+      "margin": 1.4050034895539283,
+      "predicted_minus_observed": 1.0113590955734253,
+      "minus_sd": -0.12175904959440231,
+      "mc_penalty": 0.5154034435749054
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_low",
+      "condition": "skill_mask",
+      "samples": 150,
+      "margin": 2.1254556411504746,
+      "predicted_minus_observed": 1.903167963027954,
+      "minus_sd": -0.18080087006092072,
+      "mc_penalty": 0.40308854818344114
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_high",
+      "condition": "dense",
+      "samples": 520,
+      "margin": 1.4640694084763526,
+      "predicted_minus_observed": 0.987205408513546,
+      "minus_sd": -0.07860846817493439,
+      "mc_penalty": 0.5554724681377411
+    },
+    {
+      "source": 18100001,
+      "arm": "opportunity_high",
+      "condition": "skill_mask",
+      "samples": 150,
+      "margin": 2.0426518374681475,
+      "predicted_minus_observed": 1.7609544396400452,
+      "minus_sd": -0.20875383913516998,
+      "mc_penalty": 0.4904512369632721
+    },
+    {
+      "source": 18100002,
+      "arm": "landmark_low",
+      "condition": "dense",
+      "samples": 480,
+      "margin": 2.1923536825738847,
+      "predicted_minus_observed": 1.8749099574051797,
+      "minus_sd": -0.07520962506532669,
+      "mc_penalty": 0.3926533502340317
+    },
+    {
+      "source": 18100002,
+      "arm": "landmark_low",
+      "condition": "skill_mask",
+      "samples": 151,
+      "margin": 2.345653535425663,
+      "predicted_minus_observed": 1.9019490256905556,
+      "minus_sd": -0.015471011400222778,
+      "mc_penalty": 0.45917552113533017
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_low",
+      "condition": "dense",
+      "samples": 480,
+      "margin": 1.819349955022335,
+      "predicted_minus_observed": 1.52933269739151,
+      "minus_sd": -0.08451584726572037,
+      "mc_penalty": 0.3745331048965454
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_low",
+      "condition": "skill_mask",
+      "samples": 151,
+      "margin": 1.7851531475782396,
+      "predicted_minus_observed": 1.5603703260421753,
+      "minus_sd": -0.19043783843517303,
+      "mc_penalty": 0.4152206599712372
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_high",
+      "condition": "dense",
+      "samples": 480,
+      "margin": 1.8857429578900338,
+      "predicted_minus_observed": 1.5609737038612366,
+      "minus_sd": -0.04976385086774826,
+      "mc_penalty": 0.3745331048965454
+    },
+    {
+      "source": 18100002,
+      "arm": "opportunity_high",
+      "condition": "skill_mask",
+      "samples": 151,
+      "margin": 2.0343831253051756,
+      "predicted_minus_observed": 1.6667606830596924,
+      "minus_sd": -0.05066949129104614,
+      "mc_penalty": 0.41829193353652955
+    }
+  ]
+}

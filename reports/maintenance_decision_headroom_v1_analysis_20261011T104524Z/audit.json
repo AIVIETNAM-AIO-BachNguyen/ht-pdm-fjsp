@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "verification_status": "ANALYZED: independent raw/statistics reconstruction plus limited scalar replay, no full forecast rerun",
+  "run": "maintenance_decision_headroom_v1_full_cpu_20261011T103246Z",
+  "manifest_sha256": "8f46a83be47036712096142207ea4287c158fc60401cceb3508a8c0e66ae34c9",
+  "source_commit": "c5b5cacdecdf1a8daeed4bd6566a65e5d0174ca9",
+  "verified_files": 92,
+  "artifact_bytes": 35590054,
+  "source_audit": {
+    "status": "PASS",
+    "verified_source_files": 85,
+    "source_states": 2560,
+    "frozen_models": 10,
+    "source_manifest_sha256": "2d9cf8caca189635e62239521a340a08860b7c8387e75c85394985a8581f0a27",
+    "historical_outcomes_previously_opened": true
+  },
+  "physical_audit": {
+    "status": "PASS",
+    "excluded_signatures": 52163,
+    "fresh_signatures": 16,
+    "outcomes_used": false,
+    "full_smoke_disjoint": true
+  },
+  "seed_audit": {
+    "status": "PASS",
+    "unique_derived_roles": 2583,
+    "registry_sha256": "e263bbbabf38c4b01d6c1fd45455b8b4fd4bc3ab93e2ce0748e07270c88ae4c2",
+    "intentional_pairing": "conditions/models/origins share physical tape; candidate roots share phase tape; selection and evaluation disjoint"
+  },
+  "state_rows": 2560,
+  "live_physical_transitions_replayed": 30720,
+  "live_policy_decisions_checked": 30720,
+  "scalar_subset_states": 160,
+  "scalar_forecast_transitions": 31368,
+  "scalar_returns": 836,
+  "bootstrap_draws_independently_reconstructed": 20000,
+  "full_forecast_reexecuted": false,
+  "raw_arrays_loaded_once": true,
+  "elapsed_seconds": 35.27457983401837
+}

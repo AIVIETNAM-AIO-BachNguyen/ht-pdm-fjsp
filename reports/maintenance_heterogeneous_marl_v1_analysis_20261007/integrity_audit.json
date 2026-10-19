@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "artifact_files": 218,
+  "bytes": 3135637220,
+  "commit": "693c348fdfee0d327f0ec8e7680af1f2a76645e7",
+  "source_files_against_git": 20,
+  "counts": {
+    "models": 30,
+    "training_steps": 14745600,
+    "training_episodes": 1228800,
+    "optimizer_steps": 307200,
+    "development_episodes": 63200,
+    "test_episodes": 144000,
+    "test_decision_intervals": 2592000,
+    "test_machine_rows": 576000
+  },
+  "minutes": 786.5217942666666
+}

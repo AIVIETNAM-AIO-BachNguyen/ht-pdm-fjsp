@@ -1,0 +1,238 @@
+[
+  {
+    "id": "G1",
+    "title": "Learning to Dispatch for Job Shop Scheduling via Deep Reinforcement Learning",
+    "authors": [
+      "Cong Zhang",
+      "Wen Song",
+      "Zhiguang Cao",
+      "Jie Zhang",
+      "Puay Siew Tan",
+      "Chi Xu"
+    ],
+    "year": 2020,
+    "venue": "NeurIPS 2020",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper/2020/hash/11958dfee29b6709f48a9ba0387a2431-Abstract.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper/2020/file/11958dfee29b6709f48a9ba0387a2431-Paper.pdf",
+    "access_status": "Public proceedings PDF fetched on 2026-10-10",
+    "read_scope": "Methods and experiments pp.3–8; GIN/PPO candidate-operation dispatch; train20×20/30×20→test50×20/100×20; Tables2–4 and OR-Tools gaps."
+  },
+  {
+    "id": "G2",
+    "title": "Flexible Job Shop Scheduling via Dual Attention Network-Based Reinforcement Learning",
+    "authors": [
+      "Runqing Wang",
+      "Gang Wang",
+      "Jian Sun",
+      "Fang Deng",
+      "Jie Chen"
+    ],
+    "year": 2023,
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems (online publication 2023; final issue year/volume not extracted)",
+    "doi": "10.1109/TNNLS.2023.3306421",
+    "page_url": "https://arxiv.org/abs/2305.05119",
+    "pdf_url": "https://arxiv.org/pdf/2305.05119",
+    "access_status": "Public arXiv manuscript PDF fetched; IEEE version may require subscription",
+    "read_scope": "arXivv2 HTML sectionsII–IV and currentPDF; static FJSP operation/machine attention; feasible pair decisions; train10×5/20×10→test30×10/40×10. Online2023 metadata/DOI confirmed by official author repository; no final volume/year asserted."
+  },
+  {
+    "id": "G3",
+    "title": "Attention, Learn to Solve Routing Problems!",
+    "authors": [
+      "Wouter Kool",
+      "Herke van Hoof",
+      "Max Welling"
+    ],
+    "year": 2019,
+    "venue": "ICLR 2019",
+    "doi": "",
+    "page_url": "https://openreview.net/forum?id=ByxBFsRqYm",
+    "pdf_url": "https://arxiv.org/pdf/1803.08475",
+    "access_status": "Public arXiv PDF fetched; OpenReview direct PDF currently anti-bot; initial arXiv2018, conference2019",
+    "read_scope": "Sections3–5: attention encoder, autoregressive masks/context, REINFORCE greedy rollout baseline; principal sizes20/50/100."
+  },
+  {
+    "id": "G4",
+    "title": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+    "authors": [
+      "Yeong-Dae Kwon",
+      "Jinho Choo",
+      "Byoungjip Kim",
+      "Iljoo Yoon",
+      "Youngjune Gwon",
+      "Seungjai Min"
+    ],
+    "year": 2020,
+    "venue": "NeurIPS 2020",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2010.16011",
+    "pdf_url": "https://papers.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf",
+    "access_status": "Public proceedings PDF fetched",
+    "read_scope": "Sections3–5 andTables2–4: multiple starts/shared baseline; augmentation versus single-trajectory inference; TSP/CVRP20/50/100, knapsack50/100/200."
+  },
+  {
+    "id": "G5",
+    "title": "Learning to delegate for large-scale vehicle routing",
+    "authors": [
+      "Sirui Li",
+      "Zhongxia Yan",
+      "Cathy Wu"
+    ],
+    "year": 2021,
+    "venue": "NeurIPS 2021",
+    "doi": "",
+    "page_url": "https://papers.neurips.cc/paper_files/paper/2021/hash/dc9fa5f217a1e57b8a6adeb065560b38-Abstract.html",
+    "pdf_url": "https://papers.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Paper.pdf",
+    "access_status": "Public proceedings PDF fetched",
+    "read_scope": "Sections4–6: learned subproblem selection and externalsubsolver; trainingmix500/1000/2000 and test3000; fixed-quality speedup versus fixed-time improvement; learned increment versus decomposition."
+  },
+  {
+    "id": "G6",
+    "title": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+    "authors": [
+      "Fu Luo",
+      "Xi Lin",
+      "Fei Liu",
+      "Qingfu Zhang",
+      "Zhenkun Wang"
+    ],
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1c10d0c087c14689628124bbc8fa69f6-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Paper-Conference.pdf",
+    "access_status": "Public proceedings PDF fetched",
+    "read_scope": "Sections3–6: supervised partial-solution reconstruction, dynamic remaining-node decoding; TSP100/CVRP100train, test100/200/500/1000; optionalRRCinference and teacherlabels."
+  },
+  {
+    "id": "G7",
+    "title": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+    "authors": [
+      "Darko Drakulic",
+      "Sofia Michel",
+      "Florian Mai",
+      "Arnaud Sors",
+      "Jean-Marc Andreoli"
+    ],
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "doi": "10.52202/075280-3385",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract.html",
+    "pdf_url": "https://papers.nips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Paper-Conference.pdf",
+    "access_status": "Public proceedings and arXivPDFfetched",
+    "read_scope": "Methods/section6in arXivfullversion: bisimulation constructiveMDP, expertimitation; routingtrain100→test100/200/500/1000; nearest250candidate limit; theorem concernsoptimalreducedMDPpolicy."
+  },
+  {
+    "id": "G8",
+    "title": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+    "authors": [
+      "Haoran Ye",
+      "Jiarui Wang",
+      "Helan Liang",
+      "Zhiguang Cao",
+      "Yong Li",
+      "Fanzhang Li"
+    ],
+    "year": 2024,
+    "venue": "AAAI 2024,38(18):20284–20292",
+    "doi": "10.1609/aaai.v38i18.30009",
+    "page_url": "https://ojs.aaai.org/index.php/AAAI/article/view/30009",
+    "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/30009/31772",
+    "access_status": "Public proceedings PDF fetched; initialarXiv2023, conference2024",
+    "read_scope": "Proceedingspp.1–4intro/method: hierarchicalpartition + localautoregressiveconstruction; headlineTSP100KspecifiedLKHsetting; exactlocaltrainingsizes notextracted."
+  },
+  {
+    "id": "G9",
+    "title": "How Good Is Neural Combinatorial Optimization? A Systematic Evaluation on the Traveling Salesman Problem",
+    "authors": [
+      "Shengcai Liu",
+      "Yu Zhang",
+      "Ke Tang",
+      "Xin Yao"
+    ],
+    "year": 2023,
+    "venue": "IEEE Computational Intelligence Magazine,18(3):14–28",
+    "doi": "10.1109/MCI.2023.3277768",
+    "page_url": "https://arxiv.org/abs/2209.10913",
+    "pdf_url": "https://arxiv.org/pdf/2209.10913",
+    "access_status": "Public arXiv manuscript PDF fetched; publication2023confirmed authorhomepage; initialarXiv2022",
+    "read_scope": "Comparativeexperiments, sectionIV/TableIV: POMO/DACT/NeuroLKHversustunedLKH/EAX; inputsize/distributiongeneralization;50→100DACT/POMOgapdeterioration."
+  },
+  {
+    "id": "G10",
+    "title": "Routing Arena: A Benchmark Suite for Neural Routing Solvers",
+    "authors": [
+      "Daniela Thyssens",
+      "Tim Dernedde",
+      "Jonas K. Falkner",
+      "Lars Schmidt-Thieme"
+    ],
+    "year": 2023,
+    "venue": "arXiv preprint; no peer-reviewed venue verified",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2310.04140",
+    "pdf_url": "https://arxiv.org/pdf/2310.04140",
+    "access_status": "Public arXivPDFfetched",
+    "read_scope": "Sections4/6,Table4,Figure2: fixed-budget/anytime,WRAP/hardwarenormalization caveats; strongORHGS/FILO/LKHversusneural methods."
+  },
+  {
+    "id": "G11",
+    "title": "Improving Generalization of Neural Combinatorial Optimization for Vehicle Routing Problems via Test-Time Projection Learning",
+    "authors": [
+      "Yuanyao Chen",
+      "Rongsheng Chen",
+      "Fu Luo",
+      "Zhenkun Wang"
+    ],
+    "year": 2025,
+    "venue": "NeurIPS 2025",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6edd46d69ef91f4555d67f7b321d6902-Abstract-Conference.html",
+    "pdf_url": "https://papers.nips.cc/paper_files/paper/2025/file/6edd46d69ef91f4555d67f7b321d6902-Paper-Conference.pdf",
+    "access_status": "Public proceedings and arXivPDFfetched",
+    "read_scope": "Abstract/intropp.1–2: LLM-discoveredprojection appliedatinference, no backbone retraining; localcandidateprojection/multiviewdecisionfusion;100-trainedbackboneto100K; numericaltablesnotextracted."
+  },
+  {
+    "id": "G12",
+    "title": "PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization",
+    "authors": [
+      "Federico Berto",
+      "Chuanbo Hua",
+      "Laurin Luttmann",
+      "Jiwoo Son",
+      "Junyoung Park",
+      "Kyuree Ahn",
+      "Changhyun Kwon",
+      "Lin Xie",
+      "Jinkyoo Park"
+    ],
+    "year": 2025,
+    "venue": "NeurIPS 2025",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2409.03811",
+    "pdf_url": "https://arxiv.org/pdf/2409.03811",
+    "access_status": "Public arXivv3PDFfetched; acceptanceNeurIPS2025verified; initialpreprint2024titlechanged",
+    "read_scope": "Sections4/5 andAppendixB.2/B.3: Transformercommunication/multiplepointers/conflicthandler; OMDCPDPtrainN50–100/M5–20→testN1000/newM; FFSPseparateconfigurationtraining."
+  },
+  {
+    "id": "G13",
+    "title": "RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization",
+    "authors": [
+      "Jiwoo Son",
+      "Zhikai Zhao",
+      "Federico Berto",
+      "Chuanbo Hua",
+      "Zhiguang Cao",
+      "Changhyun Kwon",
+      "Jinkyoo Park"
+    ],
+    "year": 2026,
+    "venue": "ICLR 2026",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2503.16159",
+    "pdf_url": "https://arxiv.org/pdf/2503.16159",
+    "access_status": "Public arXivv2PDFfetched; title/authorsmatch2026version; OpenReviewanti-bot; initialarXiv2025differs",
+    "read_scope": "Sections1/4/5pp.1–8:100cities asymmetricdistance/duration matrices, node+edgeadaptivebias; neuralandtraditionalcomparisons; notmaintenance-scaleproof."
+  }
+]

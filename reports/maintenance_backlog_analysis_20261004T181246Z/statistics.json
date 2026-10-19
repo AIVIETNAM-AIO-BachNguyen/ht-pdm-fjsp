@@ -1,0 +1,1182 @@
+{
+  "cells": {
+    "low_uniform_jobs16_ratio1": {
+      "A_vs_S_relative": {
+        "mean": -0.01031234120268907,
+        "ci95": [
+          -0.017926122170604342,
+          -0.0035651643407305727
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.01031234120268907,
+        "ci95": [
+          -0.017926122170604342,
+          -0.0035651643407305727
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.010761056857531093,
+        "ci95": [
+          -0.018732268635406956,
+          -0.0037245110278818147
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 0.9583333333333334,
+        "ci95": [
+          0.3333333333333333,
+          1.6666666666666667
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 18,
+      "losses_S": 6
+    },
+    "low_uniform_jobs16_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 24,
+      "losses_S": 0
+    },
+    "low_uniform_jobs16_ratio4": {
+      "A_vs_S_relative": {
+        "mean": 0.05741565687647587,
+        "ci95": [
+          0.046710836059610523,
+          0.06886125645100562
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.05741565687647587,
+        "ci95": [
+          0.046710836059610523,
+          0.06886125645100562
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.053653342931026415,
+        "ci95": [
+          0.04396527406120812,
+          0.06385463422665572
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -5.166666666666667,
+        "ci95": [
+          -6.333333333333333,
+          -4.166666666666667
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 22,
+      "ties": 2,
+      "losses_S": 0
+    },
+    "low_uniform_jobs64_ratio1": {
+      "A_vs_S_relative": {
+        "mean": -0.014505662483043753,
+        "ci95": [
+          -0.01702727404382889,
+          -0.011938236163889735
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.014505662483043753,
+        "ci95": [
+          -0.01702727404382889,
+          -0.011938236163889735
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.014761728224180292,
+        "ci95": [
+          -0.017353691317563893,
+          -0.0121173978518814
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 5.083333333333333,
+        "ci95": [
+          4.125,
+          6.041666666666667
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 2,
+      "losses_S": 22
+    },
+    "low_uniform_jobs64_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 24,
+      "losses_S": 0
+    },
+    "low_uniform_jobs64_ratio4": {
+      "A_vs_S_relative": {
+        "mean": 0.05944382794416664,
+        "ci95": [
+          0.04865234305473012,
+          0.07080612897723544
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.05944382794416664,
+        "ci95": [
+          0.04865234305473012,
+          0.07080612897723544
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.05546005353150681,
+        "ci95": [
+          0.04592418379651884,
+          0.06548179194514021
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -20.958333333333332,
+        "ci95": [
+          -25.333333333333332,
+          -16.75
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 24,
+      "ties": 0,
+      "losses_S": 0
+    },
+    "low_heterogeneous_jobs16_ratio1": {
+      "A_vs_S_relative": {
+        "mean": -0.0061005874513602705,
+        "ci95": [
+          -0.010270327090353444,
+          -0.0020325203252032522
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.0061005874513602705,
+        "ci95": [
+          -0.010270327090353444,
+          -0.0020325203252032522
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.006253259384878689,
+        "ci95": [
+          -0.01053007443220193,
+          -0.0020833333333333333
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 0.5,
+        "ci95": [
+          0.16666666666666666,
+          0.8333333333333334
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 18,
+      "losses_S": 6
+    },
+    "low_heterogeneous_jobs16_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 24,
+      "losses_S": 0
+    },
+    "low_heterogeneous_jobs16_ratio4": {
+      "A_vs_S_relative": {
+        "mean": 0.032234989979943125,
+        "ci95": [
+          0.026068635757486,
+          0.03895446587275165
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.032234989979943125,
+        "ci95": [
+          0.026068635757486,
+          0.03895446587275165
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.03099446168252253,
+        "ci95": [
+          0.025190271731740144,
+          0.0372578576647988
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -2.5833333333333335,
+        "ci95": [
+          -3.1666666666666665,
+          -2.0833333333333335
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 22,
+      "ties": 2,
+      "losses_S": 0
+    },
+    "low_heterogeneous_jobs64_ratio1": {
+      "A_vs_S_relative": {
+        "mean": -0.00805363471754714,
+        "ci95": [
+          -0.009540365534712181,
+          -0.006553233357261742
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.00805363471754714,
+        "ci95": [
+          -0.009540365534712181,
+          -0.006553233357261742
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.008133466088802409,
+        "ci95": [
+          -0.009644695411374776,
+          -0.006610289488866931
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 2.5,
+        "ci95": [
+          2.0,
+          3.0
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 2,
+      "losses_S": 22
+    },
+    "low_heterogeneous_jobs64_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 24,
+      "losses_S": 0
+    },
+    "low_heterogeneous_jobs64_ratio4": {
+      "A_vs_S_relative": {
+        "mean": 0.033720478543432915,
+        "ci95": [
+          0.02740432153773058,
+          0.0403423494592024
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.033720478543432915,
+        "ci95": [
+          0.02740432153773058,
+          0.0403423494592024
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.032381581826854584,
+        "ci95": [
+          0.0265046273594675,
+          0.0385322709680835
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -10.5,
+        "ci95": [
+          -12.666666666666666,
+          -8.416666666666666
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 24,
+      "ties": 0,
+      "losses_S": 0
+    },
+    "high_uniform_jobs16_ratio1": {
+      "A_vs_S_relative": {
+        "mean": -0.007297783099798681,
+        "ci95": [
+          -0.015188718017265299,
+          0.0004642851161113482
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.005522162590429141,
+        "ci95": [
+          -0.01576458112999046,
+          0.004488444185855409
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.007742252029547297,
+        "ci95": [
+          -0.01585848070918455,
+          0.00014572962456980686
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 0.7083333333333334,
+        "ci95": [
+          0.00833333333333286,
+          1.4312499999999986
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 7,
+      "ties": 8,
+      "losses_S": 9
+    },
+    "high_uniform_jobs16_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.03252507290392558,
+        "ci95": [
+          0.017820556502987847,
+          0.050189364335582444
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.039353421899772145,
+        "ci95": [
+          0.023203385951333966,
+          0.05570375268589978
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.03006366693204623,
+        "ci95": [
+          0.01687145938087387,
+          0.045306698845357624
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -3.1249999999999996,
+        "ci95": [
+          -4.995833333333331,
+          -1.66875
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 15,
+      "ties": 8,
+      "losses_S": 1
+    },
+    "high_uniform_jobs16_ratio4": {
+      "A_vs_S_relative": {
+        "mean": -0.09164041430214888,
+        "ci95": [
+          -0.16919131339121285,
+          -0.0170137366788726
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": -0.008447557864352149,
+        "ci95": [
+          -0.020123810273837202,
+          0.001338715822038777
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.0792740207603246,
+        "ci95": [
+          -0.20644465866985265,
+          0.054362592707948944
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.15978515856375144,
+        "ci95": [
+          -0.2825495380493218,
+          -0.05293242710573984
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 16.141666666666666,
+        "ci95": [
+          4.872916666666666,
+          28.360416666666666
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 8,
+      "ties": 1,
+      "losses_S": 15
+    },
+    "high_uniform_jobs64_ratio1": {
+      "A_vs_S_relative": {
+        "mean": -0.014639024846219375,
+        "ci95": [
+          -0.016948477306873485,
+          -0.012367492967493699
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.013508177861863521,
+        "ci95": [
+          -0.016266255975397305,
+          -0.010812139150229239
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.014890698686855885,
+        "ci95": [
+          -0.01726819008949446,
+          -0.012563897724883802
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 5.127083333333341,
+        "ci95": [
+          4.2604166666666785,
+          6.041666666666674
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 0,
+      "ties": 1,
+      "losses_S": 23
+    },
+    "high_uniform_jobs64_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.011856918246122531,
+        "ci95": [
+          0.0035076947793597105,
+          0.025975143886178137
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.006451130361699198,
+        "ci95": [
+          0.0007057120192994342,
+          0.012008668757477393
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.010855977897127174,
+        "ci95": [
+          0.0034618483960496952,
+          0.02308839405592758
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -4.625000000000003,
+        "ci95": [
+          -10.458333333333329,
+          -1.2520833333333314
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 18,
+      "ties": 4,
+      "losses_S": 2
+    },
+    "high_uniform_jobs64_ratio4": {
+      "A_vs_S_relative": {
+        "mean": -0.10528997678236585,
+        "ci95": [
+          -0.19715883623084152,
+          -0.016549333029595603
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": -0.012827545674181975,
+        "ci95": [
+          -0.03704943217869589,
+          0.005060207813600079
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.09408492399446876,
+        "ci95": [
+          -0.24268009682249192,
+          0.07411119413042115
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.20508203826707208,
+        "ci95": [
+          -0.35997016299371953,
+          -0.07118320851988966
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 82.23958333333333,
+        "ci95": [
+          27.39375000000001,
+          141.32916666666668
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 10,
+      "ties": 0,
+      "losses_S": 14
+    },
+    "high_heterogeneous_jobs16_ratio1": {
+      "A_vs_S_relative": {
+        "mean": 0.0016855723052639137,
+        "ci95": [
+          -0.006993845627237005,
+          0.010722558022814343
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.015598558440312077,
+        "ci95": [
+          0.00344845785363336,
+          0.029901160605032426
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.0012068927802800294,
+        "ci95": [
+          -0.007490889362321787,
+          0.0100780152117646
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -0.08125000000000071,
+        "ci95": [
+          -0.8062500000000004,
+          0.6416666666666652
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 9,
+      "ties": 9,
+      "losses_S": 6
+    },
+    "high_heterogeneous_jobs16_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.062141180958389046,
+        "ci95": [
+          0.04210703659152088,
+          0.08452355133452988
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.11468568886252406,
+        "ci95": [
+          0.07638488665071143,
+          0.15799284180830805
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.05619544605299245,
+        "ci95": [
+          0.038762925997905644,
+          0.07493053027386436
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -4.95,
+        "ci95": [
+          -6.722916666666667,
+          -3.3458333333333337
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 20,
+      "ties": 4,
+      "losses_S": 0
+    },
+    "high_heterogeneous_jobs16_ratio4": {
+      "A_vs_S_relative": {
+        "mean": 0.04333087390323667,
+        "ci95": [
+          0.011524374384192944,
+          0.09333555888988325
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": -0.0007795596283568847,
+        "ci95": [
+          -0.002338678885070654,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.04640789673281662,
+        "ci95": [
+          -0.020785133141681345,
+          0.14175012375615384
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.03382175269523075,
+        "ci95": [
+          0.009600589278189025,
+          0.067484775493778
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -3.5562500000000004,
+        "ci95": [
+          -7.883333333333334,
+          -0.7833333333333344
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 19,
+      "ties": 3,
+      "losses_S": 2
+    },
+    "high_heterogeneous_jobs64_ratio1": {
+      "A_vs_S_relative": {
+        "mean": -0.006361115833670407,
+        "ci95": [
+          -0.00858118664291676,
+          -0.004033095242082989
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": -0.0030251241770062353,
+        "ci95": [
+          -0.0061657929557035335,
+          0.0005015117557773873
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": -0.006433380330875703,
+        "ci95": [
+          -0.008672899496239825,
+          -0.004086494866995963
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": 1.9874999999999996,
+        "ci95": [
+          1.2645833333333343,
+          2.6854166666666663
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 2,
+      "ties": 1,
+      "losses_S": 21
+    },
+    "high_heterogeneous_jobs64_ratio2": {
+      "A_vs_S_relative": {
+        "mean": 0.023077795232439358,
+        "ci95": [
+          0.011688520573407737,
+          0.03618455658995246
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.043087766684748785,
+        "ci95": [
+          0.0230667736437514,
+          0.06670943034094098
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.02169381306521397,
+        "ci95": [
+          0.011216984062720004,
+          0.033786840348838616
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -7.131249999999999,
+        "ci95": [
+          -11.193749999999996,
+          -3.5958333333333337
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 16,
+      "ties": 6,
+      "losses_S": 2
+    },
+    "high_heterogeneous_jobs64_ratio4": {
+      "A_vs_S_relative": {
+        "mean": 0.057603752912719526,
+        "ci95": [
+          0.0215642560295172,
+          0.12089582074409168
+        ],
+        "n_instances": 24
+      },
+      "H_minus_A_relative": {
+        "mean": -0.0010459095071200782,
+        "ci95": [
+          -0.0031377285213602343,
+          0.0
+        ],
+        "n_instances": 24
+      },
+      "A_vs_S_p95_relative": {
+        "mean": 0.06795026760486687,
+        "ci95": [
+          -0.008797870257423944,
+          0.18504868289385354
+        ],
+        "n_instances": 24
+      },
+      "S_recovery_relative_A": {
+        "mean": 0.04351184943322133,
+        "ci95": [
+          0.020571427526652475,
+          0.08076978393098766
+        ],
+        "n_instances": 24
+      },
+      "S_minus_A_absolute": {
+        "mean": -17.839583333333334,
+        "ci95": [
+          -37.63958333333334,
+          -6.420833333333332
+        ],
+        "n_instances": 24
+      },
+      "wins_S": 23,
+      "ties": 0,
+      "losses_S": 1
+    }
+  },
+  "gates": {
+    "mean_adequacy": false,
+    "tail_guard": false,
+    "overall_adequacy": false
+  },
+  "counterfactual": [
+    {
+      "variant": "S_baseline",
+      "n": 20,
+      "applied": 0,
+      "makespan": 567.65,
+      "failures": 38.35,
+      "min": 319.0,
+      "max": 734.0,
+      "wins": 0,
+      "ties": 20,
+      "losses": 0,
+      "mean_saving": 0.0
+    },
+    {
+      "variant": "S_force_m4_w0_t8",
+      "n": 20,
+      "applied": 0,
+      "makespan": 567.65,
+      "failures": 38.35,
+      "min": 319.0,
+      "max": 734.0,
+      "wins": 0,
+      "ties": 20,
+      "losses": 0,
+      "mean_saving": 0.0
+    },
+    {
+      "variant": "S_force_m5_w0_t8",
+      "n": 20,
+      "applied": 0,
+      "makespan": 567.65,
+      "failures": 38.35,
+      "min": 319.0,
+      "max": 734.0,
+      "wins": 0,
+      "ties": 20,
+      "losses": 0,
+      "mean_saving": 0.0
+    },
+    {
+      "variant": "S_force_m4_w0_t9",
+      "n": 20,
+      "applied": 20,
+      "makespan": 425.1,
+      "failures": 18.0,
+      "min": 315.0,
+      "max": 692.0,
+      "wins": 12,
+      "ties": 2,
+      "losses": 6,
+      "mean_saving": 142.55
+    },
+    {
+      "variant": "S_force_m5_w0_t9",
+      "n": 20,
+      "applied": 20,
+      "makespan": 315.0,
+      "failures": 0.0,
+      "min": 315.0,
+      "max": 315.0,
+      "wins": 20,
+      "ties": 0,
+      "losses": 0,
+      "mean_saving": 252.65
+    },
+    {
+      "variant": "S_force_m4_w0_t10",
+      "n": 20,
+      "applied": 20,
+      "makespan": 632.95,
+      "failures": 49.95,
+      "min": 315.0,
+      "max": 735.0,
+      "wins": 12,
+      "ties": 1,
+      "losses": 7,
+      "mean_saving": -65.3
+    },
+    {
+      "variant": "S_force_m5_w0_t10",
+      "n": 20,
+      "applied": 20,
+      "makespan": 567.65,
+      "failures": 38.35,
+      "min": 319.0,
+      "max": 734.0,
+      "wins": 0,
+      "ties": 20,
+      "losses": 0,
+      "mean_saving": 0.0
+    }
+  ]
+}

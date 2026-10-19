@@ -1,0 +1,509 @@
+{
+  "protocol": "maintenance_cross_skill_mac_v1",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_cross_skill_mac_v1_full_cpu_20261012T080148Z",
+  "commit": "8672acbbce5628761977b5ade2cb1ab8085babb1",
+  "scientific_status": "CROSS_SKILL_SETTING_CONFIRMED",
+  "winner": "cross_d3_q050_skewed",
+  "integrity": {
+    "status": "PASS",
+    "hashed_files": 64,
+    "git_bound_source_blobs": 49,
+    "phase_counts": {
+      "development": 480,
+      "screening": 1200,
+      "confirmation": 1280,
+      "landmarks": 3472
+    },
+    "physical_ticks": 177600,
+    "root_rows": 5400,
+    "forecasts": 629846400,
+    "baseline_and_winner_reconstructed": true,
+    "all_physical_states_events_and_costs_reconstructed": true,
+    "independent_indexed_bootstrap": true,
+    "independence": "native shared-context implementation; not blind or cross-model"
+  },
+  "screening": [
+    {
+      "candidate": "cross_d2_q025_balanced",
+      "selectable": true,
+      "eligible": false,
+      "score": 0.0007899414126785597,
+      "point": {
+        "local_baseline": 0.039713541666666664,
+        "local_quality": 0.039713541666666664,
+        "local_endpoint_dp": 0.039713541666666664,
+        "assignment_cost_gain": 0.0007899414126785597,
+        "joint_cost_vs_deadline_matching": 0.002567309591205319,
+        "joint_cost_vs_isolated_h6": 0.029713114754098244,
+        "joint_cost_vs_isolated_endpoint": 0.021441487987599987,
+        "assignment_availability_difference": -0.00021701388888883955,
+        "assignment_pending_difference": 0.0,
+        "assignment_absolute_availability": 0.6022135416666665,
+        "assignment_absolute_pending": 0.0,
+        "assignment_interior_gain": 0.0004942339373970346,
+        "joint_availability_difference": -0.0013020833333331483,
+        "joint_pending_difference": 0.0,
+        "joint_absolute_availability": 0.6011284722222222,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": -0.0035420098846787856,
+        "assignment_choice_fraction": 0.380952380952381
+      },
+      "failed_screen_metrics": [
+        "assignment_cost_gain",
+        "joint_cost_vs_deadline_matching",
+        "local_baseline",
+        "local_quality",
+        "local_endpoint_dp",
+        "joint_interior_gain"
+      ]
+    },
+    {
+      "candidate": "cross_d2_q025_skewed",
+      "selectable": true,
+      "eligible": false,
+      "score": 0.0276292335115864,
+      "point": {
+        "local_baseline": 3.074125744047619,
+        "local_quality": 3.074125744047619,
+        "local_endpoint_dp": 1.5159040178571426,
+        "assignment_cost_gain": 0.0276292335115864,
+        "joint_cost_vs_deadline_matching": 0.035093582887700536,
+        "joint_cost_vs_isolated_h6": 0.10835435219025072,
+        "joint_cost_vs_isolated_endpoint": 0.037185259296314825,
+        "assignment_availability_difference": -0.001519097222222321,
+        "assignment_pending_difference": -0.04166666666666666,
+        "assignment_absolute_availability": 0.5922309027777778,
+        "assignment_absolute_pending": 0.125,
+        "assignment_interior_gain": 0.010726474890297542,
+        "joint_availability_difference": 0.0060763888888887285,
+        "joint_pending_difference": 0.12500000000000003,
+        "joint_absolute_availability": 0.5998263888888888,
+        "joint_absolute_pending": 0.2916666666666667,
+        "joint_interior_gain": 0.01776137075990806,
+        "assignment_choice_fraction": 0.3333333333333334
+      },
+      "failed_screen_metrics": [
+        "joint_pending_difference"
+      ]
+    },
+    {
+      "candidate": "cross_d2_q050_balanced",
+      "selectable": true,
+      "eligible": false,
+      "score": 0.036001664816870144,
+      "point": {
+        "local_baseline": 3.4367559523809526,
+        "local_quality": 3.4367559523809526,
+        "local_endpoint_dp": 3.5227864583333335,
+        "assignment_cost_gain": 0.036001664816870144,
+        "joint_cost_vs_deadline_matching": 0.12871287128712883,
+        "joint_cost_vs_isolated_h6": 0.059933407325194234,
+        "joint_cost_vs_isolated_endpoint": 0.09339042012309351,
+        "assignment_availability_difference": 0.00954861111111105,
+        "assignment_pending_difference": 0.125,
+        "assignment_absolute_availability": 0.6605902777777777,
+        "assignment_absolute_pending": 0.125,
+        "assignment_interior_gain": 0.038225374037879484,
+        "joint_availability_difference": 0.01649305555555558,
+        "joint_pending_difference": 0.0,
+        "joint_absolute_availability": 0.6675347222222222,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.06045143993773242,
+        "assignment_choice_fraction": 0.7380952380952381
+      },
+      "failed_screen_metrics": [
+        "assignment_pending_difference"
+      ]
+    },
+    {
+      "candidate": "cross_d2_q050_skewed",
+      "selectable": true,
+      "eligible": false,
+      "score": 0.011609110947832542,
+      "point": {
+        "local_baseline": 0.4010416666666667,
+        "local_quality": 0.4010416666666667,
+        "local_endpoint_dp": 0.42113095238095233,
+        "assignment_cost_gain": 0.011609110947832542,
+        "joint_cost_vs_deadline_matching": 0.01271124173401917,
+        "joint_cost_vs_isolated_h6": 0.06310138056059134,
+        "joint_cost_vs_isolated_endpoint": 0.05725110503051989,
+        "assignment_availability_difference": 0.0002170138888886175,
+        "assignment_pending_difference": 0.0,
+        "assignment_absolute_availability": 0.6671006944444443,
+        "assignment_absolute_pending": 0.0,
+        "assignment_interior_gain": 0.014466214978941544,
+        "joint_availability_difference": 0.0002170138888886175,
+        "joint_pending_difference": 0.0,
+        "joint_absolute_availability": 0.6671006944444443,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.01583958981871448,
+        "assignment_choice_fraction": 0.9047619047619048
+      },
+      "failed_screen_metrics": [
+        "assignment_cost_gain",
+        "joint_cost_vs_deadline_matching",
+        "local_baseline",
+        "local_quality",
+        "local_endpoint_dp"
+      ]
+    },
+    {
+      "candidate": "cross_d3_q025_balanced",
+      "selectable": true,
+      "eligible": false,
+      "score": 0.0,
+      "point": {
+        "local_baseline": 0.0,
+        "local_quality": 0.0,
+        "local_endpoint_dp": 0.0,
+        "assignment_cost_gain": 0.0,
+        "joint_cost_vs_deadline_matching": 0.005195222537625292,
+        "joint_cost_vs_isolated_h6": 0.002577596391365052,
+        "joint_cost_vs_isolated_endpoint": 0.04030174640901106,
+        "assignment_availability_difference": 0.0,
+        "assignment_pending_difference": 0.0,
+        "assignment_absolute_availability": 0.5030381944444445,
+        "assignment_absolute_pending": 0.0,
+        "assignment_interior_gain": 0.0,
+        "joint_availability_difference": -1.1102230246251565e-16,
+        "joint_pending_difference": 0.0,
+        "joint_absolute_availability": 0.5030381944444444,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.0032055562975824765,
+        "assignment_choice_fraction": 0.2202380952380952
+      },
+      "failed_screen_metrics": [
+        "assignment_cost_gain",
+        "joint_cost_vs_deadline_matching",
+        "joint_cost_vs_isolated_h6",
+        "local_baseline",
+        "local_quality",
+        "local_endpoint_dp",
+        "assignment_interior_gain"
+      ]
+    },
+    {
+      "candidate": "cross_d3_q025_skewed",
+      "selectable": true,
+      "eligible": false,
+      "score": 0.012917719741645605,
+      "point": {
+        "local_baseline": 0.3853236607142856,
+        "local_quality": 0.5679408482142857,
+        "local_endpoint_dp": 0.3853236607142856,
+        "assignment_cost_gain": 0.012917719741645605,
+        "joint_cost_vs_deadline_matching": 0.049972416329533,
+        "joint_cost_vs_isolated_h6": 0.020987303392078875,
+        "joint_cost_vs_isolated_endpoint": 0.03280913601048399,
+        "assignment_availability_difference": 0.00542534722222221,
+        "assignment_pending_difference": -0.08333333333333333,
+        "assignment_absolute_availability": 0.5132378472222222,
+        "assignment_absolute_pending": 0.0,
+        "assignment_interior_gain": 0.009438442360204203,
+        "joint_availability_difference": 0.01974826388888884,
+        "joint_pending_difference": -0.08333333333333333,
+        "joint_absolute_availability": 0.5275607638888888,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.029739997625549092,
+        "assignment_choice_fraction": 0.37500000000000006
+      },
+      "failed_screen_metrics": [
+        "assignment_cost_gain",
+        "local_baseline",
+        "local_quality",
+        "local_endpoint_dp"
+      ]
+    },
+    {
+      "candidate": "cross_d3_q050_balanced",
+      "selectable": true,
+      "eligible": false,
+      "score": 0.07488702388637819,
+      "point": {
+        "local_baseline": 7.382626488095238,
+        "local_quality": 7.382626488095238,
+        "local_endpoint_dp": 7.382626488095238,
+        "assignment_cost_gain": 0.07488702388637819,
+        "joint_cost_vs_deadline_matching": 0.12078130003202055,
+        "joint_cost_vs_isolated_h6": 0.14365019960079847,
+        "joint_cost_vs_isolated_endpoint": 0.11368624919302776,
+        "assignment_availability_difference": -0.01388888888888884,
+        "assignment_pending_difference": 0.0,
+        "assignment_absolute_availability": 0.644748263888889,
+        "assignment_absolute_pending": 0.0,
+        "assignment_interior_gain": 0.06208245070881538,
+        "joint_availability_difference": 0.00651041666666663,
+        "joint_pending_difference": 0.0,
+        "joint_absolute_availability": 0.6651475694444444,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.10045624898158709,
+        "assignment_choice_fraction": 0.6607142857142857
+      },
+      "failed_screen_metrics": [
+        "assignment_availability_difference"
+      ]
+    },
+    {
+      "candidate": "cross_d3_q050_skewed",
+      "selectable": true,
+      "eligible": true,
+      "score": 0.12218401707374911,
+      "point": {
+        "local_baseline": 7.521670386904762,
+        "local_quality": 7.521670386904762,
+        "local_endpoint_dp": 7.080124627976191,
+        "assignment_cost_gain": 0.12218401707374911,
+        "joint_cost_vs_deadline_matching": 0.16789186625563196,
+        "joint_cost_vs_isolated_h6": 0.20181973272675574,
+        "joint_cost_vs_isolated_endpoint": 0.17333176276576948,
+        "assignment_availability_difference": 0.01866319444444442,
+        "assignment_pending_difference": -0.041666666666666664,
+        "assignment_absolute_availability": 0.6475694444444443,
+        "assignment_absolute_pending": 0.041666666666666664,
+        "assignment_interior_gain": 0.10653228816722654,
+        "joint_availability_difference": 0.033203125,
+        "joint_pending_difference": -0.08333333333333333,
+        "joint_absolute_availability": 0.6621093749999999,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.15281821575214635,
+        "assignment_choice_fraction": 0.5476190476190478
+      },
+      "failed_screen_metrics": []
+    },
+    {
+      "candidate": "old_fast1_slow325",
+      "selectable": false,
+      "eligible": false,
+      "score": -0.00034057045551302297,
+      "point": {
+        "local_baseline": 0.005952380952380952,
+        "local_quality": 0.005952380952380952,
+        "local_endpoint_dp": 0.005952380952380952,
+        "assignment_cost_gain": -0.00034057045551302297,
+        "joint_cost_vs_deadline_matching": 0.09433801617709668,
+        "joint_cost_vs_isolated_h6": 0.16052403125246636,
+        "joint_cost_vs_isolated_endpoint": 0.08929794520547953,
+        "assignment_availability_difference": -0.00021701388888883955,
+        "assignment_pending_difference": 0.0,
+        "assignment_absolute_availability": 0.701171875,
+        "assignment_absolute_pending": 0.0,
+        "assignment_interior_gain": -0.0004248990864670124,
+        "joint_availability_difference": 0.038845486111111494,
+        "joint_pending_difference": 0.0,
+        "joint_absolute_availability": 0.7402343750000003,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.08423624389207568,
+        "assignment_choice_fraction": 0.4583333333333335
+      },
+      "failed_screen_metrics": [
+        "assignment_cost_gain",
+        "local_baseline",
+        "local_quality",
+        "local_endpoint_dp",
+        "assignment_interior_gain"
+      ]
+    },
+    {
+      "candidate": "exchangeable",
+      "selectable": false,
+      "eligible": false,
+      "score": 0.0,
+      "point": {
+        "local_baseline": 0.0,
+        "local_quality": 0.0,
+        "local_endpoint_dp": 0.0,
+        "assignment_cost_gain": 0.0,
+        "joint_cost_vs_deadline_matching": 0.0258983180428135,
+        "joint_cost_vs_isolated_h6": 0.0258983180428135,
+        "joint_cost_vs_isolated_endpoint": 0.0258983180428135,
+        "assignment_availability_difference": 0.0,
+        "assignment_pending_difference": 0.0,
+        "assignment_absolute_availability": 0.75,
+        "assignment_absolute_pending": 0.0,
+        "assignment_interior_gain": 0.0,
+        "joint_availability_difference": -0.0006510416666665186,
+        "joint_pending_difference": 0.0,
+        "joint_absolute_availability": 0.7493489583333335,
+        "joint_absolute_pending": 0.0,
+        "joint_interior_gain": 0.020953065134099672,
+        "assignment_choice_fraction": 0.6249999999999999
+      },
+      "failed_screen_metrics": [
+        "assignment_cost_gain",
+        "local_baseline",
+        "local_quality",
+        "local_endpoint_dp",
+        "assignment_interior_gain"
+      ]
+    }
+  ],
+  "comparisons": {
+    "local_baseline": {
+      "estimate": 5.70715767996652,
+      "ci": [
+        3.931542708381775,
+        7.626728729974657
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_quality": {
+      "estimate": 5.70715767996652,
+      "ci": [
+        3.931542708381775,
+        7.626728729974657
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_endpoint_dp": {
+      "estimate": 5.580514090401787,
+      "ci": [
+        3.821256092616489,
+        7.515857133411242
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_cost_gain": {
+      "estimate": 0.08878177138392242,
+      "ci": [
+        0.07142443126892811,
+        0.10665658693698839
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_deadline_matching": {
+      "estimate": 0.13869674127866893,
+      "ci": [
+        0.1227499075152936,
+        0.1550772157931235
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_h6": {
+      "estimate": 0.18309575186904684,
+      "ci": [
+        0.16517652636490307,
+        0.20026633834906046
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_endpoint": {
+      "estimate": 0.13683707486714147,
+      "ci": [
+        0.12065561487357136,
+        0.15284530954713332
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_availability_difference": {
+      "estimate": 0.017395019531249667,
+      "ci": [
+        0.01193799619321453,
+        0.0234059086552375
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_pending_difference": {
+      "estimate": -0.04296875,
+      "ci": [
+        -0.09375,
+        -0.00390625
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_availability": {
+      "estimate": 0.6450602213541663,
+      "ci": [
+        0.6394856770833333,
+        0.6501668294270835
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_pending": {
+      "estimate": 0.015625,
+      "ci": [
+        0.0,
+        0.04296875
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_interior_gain": {
+      "estimate": 0.0754360402210136,
+      "ci": [
+        0.05870906767614732,
+        0.09271111741830428
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_availability_difference": {
+      "estimate": 0.03572591145833304,
+      "ci": [
+        0.02908887509946453,
+        0.04266357421875014
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_pending_difference": {
+      "estimate": -0.05859375,
+      "ci": [
+        -0.109375,
+        -0.01953125
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_availability": {
+      "estimate": 0.6633911132812497,
+      "ci": [
+        0.6620483398437503,
+        0.6647542317708336
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_interior_gain": {
+      "estimate": 0.12544541743006765,
+      "ci": [
+        0.10966611840239804,
+        0.14182833401543976
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_choice_fraction": {
+      "estimate": 0.5842633928571429,
+      "ci": [
+        0.5306919642857147,
+        0.637834821428571
+      ],
+      "confidence": 0.9972222222222222
+    }
+  },
+  "gates": {
+    "local_baseline": true,
+    "local_quality": true,
+    "local_endpoint_dp": true,
+    "assignment_cost_gain": true,
+    "joint_cost_vs_deadline_matching": true,
+    "joint_cost_vs_isolated_h6": true,
+    "joint_cost_vs_isolated_endpoint": true,
+    "assignment_availability_difference": true,
+    "assignment_pending_difference": true,
+    "assignment_absolute_availability": true,
+    "assignment_absolute_pending": true,
+    "assignment_interior_gain": true,
+    "joint_availability_difference": true,
+    "joint_pending_difference": true,
+    "joint_absolute_availability": true,
+    "joint_absolute_pending": true,
+    "joint_interior_gain": true,
+    "assignment_choice_fraction": true
+  },
+  "failed_confirmation_gates": [],
+  "limitations": "Local assay fixes initial state, tick and subset; later state-adaptive decisions can differ. Inference is per protocol, not an unlimited-search guarantee."
+}

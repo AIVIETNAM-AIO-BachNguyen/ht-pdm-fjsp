@@ -1,0 +1,74 @@
+{
+  "state_diagnostics.csv": {
+    "sha256": "59fadef782bdbed0107370f8b7f580131c3aa10774bafe2bb9b2e851760566b0",
+    "bytes": 1142551
+  },
+  "rule_component_deltas.csv": {
+    "sha256": "7164bf8e0408fcae2bf2784b63d5fda9dbcc73d1e941ff91b86ea2c7da94fb97",
+    "bytes": 491
+  },
+  "behavior.csv": {
+    "sha256": "e65fd05eec5360884101cfd6840ffa4bd1dccda02468c0f920685db0f9453b93",
+    "bytes": 320
+  },
+  "audit.json": {
+    "sha256": "a5dd9b4bf11734e5c4c78f10ed9e90f7924927d1d255b8f17016b5cc04b68d7f",
+    "bytes": 934
+  },
+  "timing_behavior.pdf": {
+    "sha256": "b8982d8ed8d3916e989bc95fd8d32e736b9c784e4d33a1d350e43a229d18d057",
+    "bytes": 23651
+  },
+  "pm_timing_groups.csv": {
+    "sha256": "247a0cbfd85ce78d8e887658d80ba52ae59174472ae96a4876023863ea421e2e",
+    "bytes": 628
+  },
+  "timing_behavior.png": {
+    "sha256": "b4c4a64fc84dfe1cbf176756a46c8558f3f736d92cc280c3a2a100f2eb5de471",
+    "bytes": 105366
+  },
+  "aggregate_component_deltas.csv": {
+    "sha256": "c615d6d9ad1e2501538366bd784fd456950d9fdec1e4b13df33fb4f152d3646c",
+    "bytes": 442
+  },
+  "risk_selection.csv": {
+    "sha256": "baa69d207457d1883ef759f434aa9d754cdbb0ab191c9fef89aa12f5f0d621d6",
+    "bytes": 253
+  },
+  "cohort_pm.csv": {
+    "sha256": "216349aa8d3e366248bdec577507071e4e607d91f85430c96993581e9df046ed",
+    "bytes": 798
+  },
+  "decision_groups.csv": {
+    "sha256": "8742bc2fdecbee1aa96172ef4faf28fe0456ffb8b062de6904e04b47b23ae8f7",
+    "bytes": 1870
+  },
+  "primary_recomputed.json": {
+    "sha256": "533e1630b789fbe8406965e0e14fe84778969e9d506e2b5b5b7f2344016a7d3c",
+    "bytes": 817
+  },
+  "pm_component_deltas.csv": {
+    "sha256": "9fc6adf9ba238a7372fd90c69f50102a1a9415cc0a196d33a518544adbca0bdc",
+    "bytes": 506
+  },
+  "pair_timing_groups.csv": {
+    "sha256": "1c0cede9fcae6e0320512e8fe8404da96ad0a36caf417095cbb6395c2ad64ace",
+    "bytes": 224
+  },
+  "cohort_rule.csv": {
+    "sha256": "2569fb7935f1811e335d9c9a31cd0f84be78fe8058aa82e9c03f5d9d8d74956b",
+    "bytes": 804
+  },
+  "analysis_vi.md": {
+    "sha256": "8404a579f32e774d99504923b510dc30092b424441bd47c92d19612d7f36b0ad",
+    "bytes": 14606
+  },
+  "primary_contrasts.png": {
+    "sha256": "575a2a3a4b606ec82d48a5e6178d8dda8aa6bd8b013f5006516d214864be5fda",
+    "bytes": 69165
+  },
+  "primary_contrasts.pdf": {
+    "sha256": "f7f498e8c1023ac16c11ba81674b92035f727bdd2db0b6e36f19cc83fbac0e57",
+    "bytes": 19723
+  }
+}

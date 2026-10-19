@@ -1,0 +1,23 @@
+{
+  "states": 960,
+  "models": 20,
+  "candidate_likelihoods": 24900,
+  "maximum_likelihood_difference": 1.1444091796875e-05,
+  "greedy_action_mismatches": [],
+  "support_mismatches": [],
+  "comparison_tolerance": 1e-05,
+  "maximum_selected_likelihood_difference": 1.2516975402832031e-06,
+  "maximum_optimized_mac_vs_linux_difference": 1.1444091796875e-05,
+  "rows_exceeding_1e_minus_5": [
+    {
+      "algorithm": "cooperative_local_ppo",
+      "seed": 160005,
+      "state_index": "28",
+      "maximum_error": 1.1444091796875e-05,
+      "selected_error": 0.0,
+      "minimum_logged_score": -57.9797248840332
+    }
+  ],
+  "map_action_mismatches": [],
+  "scope": "All logged common DEVELOPMENT states, CPU Mac vs source CPU Linux; no test trajectory or training rerun."
+}

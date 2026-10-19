@@ -1,0 +1,477 @@
+{
+  "means": {
+    "dense": {
+      "best_rule": {
+        "extended_objective": 1128.0,
+        "base_objective": 883.3020833333334,
+        "tail_objective": 244.69791666666666,
+        "extended_failure_cost": 226.25,
+        "extended_waiting_cost": 36.0,
+        "extended_maintenance_cost": 45.25,
+        "extended_unavailability_cost": 820.5,
+        "preventive_starts": 13.90625,
+        "corrective_starts": 10.072916666666666,
+        "pm_feasible_ticks": 29.947916666666668,
+        "wait_with_pm_feasible": 9.354166666666666,
+        "stop_with_pm_extension_feasible": 12.416666666666666,
+        "pm_assignment_alternative_ticks": 2.9583333333333335
+      },
+      "additive_ppo:greedy": {
+        "extended_objective": 1146.1319444444443,
+        "base_objective": 912.2777777777778,
+        "tail_objective": 233.85416666666666,
+        "extended_failure_cost": 267.5520833333333,
+        "extended_waiting_cost": 2.8333333333333335,
+        "extended_maintenance_cost": 49.91319444444444,
+        "extended_unavailability_cost": 825.8333333333334,
+        "preventive_starts": 12.885416666666666,
+        "corrective_starts": 13.430555555555555,
+        "pm_feasible_ticks": 21.93402777777778,
+        "wait_with_pm_feasible": 0.027777777777777776,
+        "stop_with_pm_extension_feasible": 0.1527777777777778,
+        "pm_assignment_alternative_ticks": 2.0833333333333335
+      },
+      "additive_ppo:assignment_mass": {
+        "extended_objective": 1144.545138888889,
+        "base_objective": 910.1388888888889,
+        "tail_objective": 234.40625,
+        "extended_failure_cost": 265.7291666666667,
+        "extended_waiting_cost": 3.625,
+        "extended_maintenance_cost": 49.795138888888886,
+        "extended_unavailability_cost": 825.3958333333334,
+        "preventive_starts": 13.04513888888889,
+        "corrective_starts": 13.229166666666666,
+        "pm_feasible_ticks": 21.95138888888889,
+        "wait_with_pm_feasible": 0.027777777777777776,
+        "stop_with_pm_extension_feasible": 0.1527777777777778,
+        "pm_assignment_alternative_ticks": 2.0347222222222223
+      },
+      "interaction_ppo:greedy": {
+        "extended_objective": 1150.7569444444443,
+        "base_objective": 914.8541666666666,
+        "tail_objective": 235.90277777777777,
+        "extended_failure_cost": 268.90625,
+        "extended_waiting_cost": 3.7916666666666665,
+        "extended_maintenance_cost": 49.892361111111114,
+        "extended_unavailability_cost": 828.1666666666666,
+        "preventive_starts": 12.753472222222221,
+        "corrective_starts": 13.42013888888889,
+        "pm_feasible_ticks": 22.18402777777778,
+        "wait_with_pm_feasible": 0.18055555555555555,
+        "stop_with_pm_extension_feasible": 0.5208333333333334,
+        "pm_assignment_alternative_ticks": 2.1041666666666665
+      },
+      "interaction_ppo:assignment_mass": {
+        "extended_objective": 1146.8090277777778,
+        "base_objective": 912.9166666666666,
+        "tail_objective": 233.89236111111111,
+        "extended_failure_cost": 267.7604166666667,
+        "extended_waiting_cost": 3.7916666666666665,
+        "extended_maintenance_cost": 49.986111111111114,
+        "extended_unavailability_cost": 825.2708333333334,
+        "preventive_starts": 12.868055555555555,
+        "corrective_starts": 13.399305555555555,
+        "pm_feasible_ticks": 22.13888888888889,
+        "wait_with_pm_feasible": 0.16666666666666666,
+        "stop_with_pm_extension_feasible": 0.5069444444444444,
+        "pm_assignment_alternative_ticks": 2.1145833333333335
+      }
+    },
+    "skill_mask": {
+      "best_rule": {
+        "extended_objective": 1187.2395833333333,
+        "base_objective": 928.8854166666666,
+        "tail_objective": 258.3541666666667,
+        "extended_failure_cost": 249.6875,
+        "extended_waiting_cost": 48.375,
+        "extended_maintenance_cost": 44.239583333333336,
+        "extended_unavailability_cost": 844.9375,
+        "preventive_starts": 10.635416666666666,
+        "corrective_starts": 11.34375,
+        "pm_feasible_ticks": 31.114583333333332,
+        "wait_with_pm_feasible": 12.125,
+        "stop_with_pm_extension_feasible": 16.125,
+        "pm_assignment_alternative_ticks": 1.1354166666666667
+      },
+      "additive_ppo:greedy": {
+        "extended_objective": 1184.2465277777778,
+        "base_objective": 942.7604166666666,
+        "tail_objective": 241.48611111111111,
+        "extended_failure_cost": 260.5208333333333,
+        "extended_waiting_cost": 11.333333333333334,
+        "extended_maintenance_cost": 47.97569444444444,
+        "extended_unavailability_cost": 864.4166666666666,
+        "preventive_starts": 12.506944444444445,
+        "corrective_starts": 12.871527777777779,
+        "pm_feasible_ticks": 21.52777777777778,
+        "wait_with_pm_feasible": 0.024305555555555556,
+        "stop_with_pm_extension_feasible": 0.2916666666666667,
+        "pm_assignment_alternative_ticks": 0.5243055555555556
+      },
+      "additive_ppo:assignment_mass": {
+        "extended_objective": 1183.079861111111,
+        "base_objective": 940.6458333333334,
+        "tail_objective": 242.43402777777777,
+        "extended_failure_cost": 261.1458333333333,
+        "extended_waiting_cost": 9.833333333333334,
+        "extended_maintenance_cost": 47.954861111111114,
+        "extended_unavailability_cost": 864.1458333333334,
+        "preventive_starts": 12.493055555555555,
+        "corrective_starts": 12.878472222222221,
+        "pm_feasible_ticks": 21.51736111111111,
+        "wait_with_pm_feasible": 0.024305555555555556,
+        "stop_with_pm_extension_feasible": 0.2916666666666667,
+        "pm_assignment_alternative_ticks": 0.5243055555555556
+      },
+      "interaction_ppo:greedy": {
+        "extended_objective": 1176.8055555555557,
+        "base_objective": 933.8125,
+        "tail_objective": 242.99305555555554,
+        "extended_failure_cost": 259.21875,
+        "extended_waiting_cost": 9.25,
+        "extended_maintenance_cost": 47.62847222222222,
+        "extended_unavailability_cost": 860.7083333333334,
+        "preventive_starts": 12.364583333333334,
+        "corrective_starts": 12.75,
+        "pm_feasible_ticks": 21.875,
+        "wait_with_pm_feasible": 0.3784722222222222,
+        "stop_with_pm_extension_feasible": 0.8020833333333334,
+        "pm_assignment_alternative_ticks": 0.5972222222222222
+      },
+      "interaction_ppo:assignment_mass": {
+        "extended_objective": 1177.8229166666667,
+        "base_objective": 934.4270833333334,
+        "tail_objective": 243.39583333333334,
+        "extended_failure_cost": 260.1041666666667,
+        "extended_waiting_cost": 9.333333333333334,
+        "extended_maintenance_cost": 47.697916666666664,
+        "extended_unavailability_cost": 860.6875,
+        "preventive_starts": 12.364583333333334,
+        "corrective_starts": 12.75,
+        "pm_feasible_ticks": 21.84722222222222,
+        "wait_with_pm_feasible": 0.3784722222222222,
+        "stop_with_pm_extension_feasible": 0.8020833333333334,
+        "pm_assignment_alternative_ticks": 0.5972222222222222
+      }
+    }
+  },
+  "primary_contrasts": {
+    "dense:interaction_ppo:greedy_vs_additive_ppo:greedy": {
+      "baseline": "additive_ppo:greedy",
+      "method": "interaction_ppo:greedy",
+      "baseline_mean": 1146.1319444444443,
+      "method_mean": 1150.7569444444443,
+      "relative_gain": -0.004035312009597499,
+      "absolute_gain": -4.625,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.014229446913890418,
+        0.006654851561327806
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": -0.0062001127293223515,
+        "18100001": -0.0008758724510743123,
+        "18100002": -0.005014346098494791
+      },
+      "leave_one_replica_out": {
+        "18100000": -0.0029533641089018936,
+        "18100001": -0.0056059252271170755,
+        "18100002": -0.00354275670186655
+      },
+      "status": "BELOW_MARGIN",
+      "exploratory": false
+    },
+    "dense:interaction_ppo:assignment_mass_vs_additive_ppo:assignment_mass": {
+      "baseline": "additive_ppo:assignment_mass",
+      "method": "interaction_ppo:assignment_mass",
+      "baseline_mean": 1144.545138888889,
+      "method_mean": 1146.8090277777778,
+      "relative_gain": -0.0019779813062564275,
+      "absolute_gain": -2.263888888888889,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.012939926884086152,
+        0.006727288177372532
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": -0.0022059962990310026,
+        "18100001": -0.004897705571140087,
+        "18100002": 0.0011403850157029208
+      },
+      "leave_one_replica_out": {
+        "18100000": -0.0018642464806663999,
+        "18100001": -0.0005268177483082791,
+        "18100002": -0.003550241854522223
+      },
+      "status": "BELOW_MARGIN",
+      "exploratory": false
+    },
+    "skill_mask:interaction_ppo:greedy_vs_additive_ppo:greedy": {
+      "baseline": "additive_ppo:greedy",
+      "method": "interaction_ppo:greedy",
+      "baseline_mean": 1184.2465277777778,
+      "method_mean": 1176.8055555555557,
+      "relative_gain": 0.006283296634346147,
+      "absolute_gain": 7.440972222222222,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.002115432190304075,
+        0.018051511552273865
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.00228215584116903,
+        "18100001": 0.006459344900818654,
+        "18100002": 0.010058236490793047
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.008267108748662351,
+        "18100001": 0.006195514623172104,
+        "18100002": 0.004374696508188761
+      },
+      "status": "UNRESOLVED",
+      "exploratory": false
+    },
+    "skill_mask:interaction_ppo:assignment_mass_vs_additive_ppo:assignment_mass": {
+      "baseline": "additive_ppo:assignment_mass",
+      "method": "interaction_ppo:assignment_mass",
+      "baseline_mean": 1183.079861111111,
+      "method_mean": 1177.8229166666667,
+      "relative_gain": 0.004443440056115307,
+      "absolute_gain": 5.256944444444445,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.002897445162251403,
+        0.014176617778605122
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.0009113108720271802,
+        "18100001": 0.007829219103646885,
+        "18100002": 0.0045727701175604886
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.006196668467257787,
+        "18100001": 0.0027511466779353635,
+        "18100002": 0.004378279847996011
+      },
+      "status": "UNRESOLVED",
+      "exploratory": false
+    }
+  },
+  "secondary_contrasts": {
+    "dense:additive_ppo:assignment_mass_vs_additive_ppo:greedy": {
+      "baseline": "additive_ppo:greedy",
+      "method": "additive_ppo:assignment_mass",
+      "baseline_mean": 1146.1319444444443,
+      "method_mean": 1144.545138888889,
+      "relative_gain": 0.0013844876789685114,
+      "absolute_gain": 1.5868055555555556,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.00554375831847844,
+        0.007717600469987661
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.002700049091801669,
+        "18100001": 0.0015145294466493318,
+        "18100002": -5.430699745662229e-05
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.0007269819344989277,
+        "18100001": 0.0013198416190057193,
+        "18100002": 0.002108350068077394
+      },
+      "status": "BELOW_MARGIN",
+      "exploratory": true
+    },
+    "dense:interaction_ppo:assignment_mass_vs_interaction_ppo:greedy": {
+      "baseline": "interaction_ppo:greedy",
+      "method": "interaction_ppo:assignment_mass",
+      "baseline_mean": 1150.7569444444443,
+      "method_mean": 1146.8090277777778,
+      "relative_gain": 0.003430712876186568,
+      "absolute_gain": 3.9479166666666665,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.006290570370899494,
+        0.012318247289478643
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.006658836284784965,
+        "18100001": -0.0024976982889855152,
+        "18100002": 0.006070048722497905
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.0018121030361786374,
+        "18100001": 0.00636396848234461,
+        "18100002": 0.002100907065491127
+      },
+      "status": "UNRESOLVED",
+      "exploratory": true
+    },
+    "dense:interaction_ppo:greedy_vs_best_rule": {
+      "baseline": "best_rule",
+      "method": "interaction_ppo:greedy",
+      "baseline_mean": 1128.0,
+      "method_mean": 1150.7569444444443,
+      "relative_gain": -0.02017459613869188,
+      "absolute_gain": -22.756944444444443,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.04875328111618001,
+        0.0058548769448308275
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": -0.022089243498817968,
+        "18100001": -0.013048537234042553,
+        "18100002": -0.025386007683215132
+      },
+      "leave_one_replica_out": {
+        "18100000": -0.01921727245862884,
+        "18100001": -0.02373762559101655,
+        "18100002": -0.017568890366430258
+      },
+      "status": "BELOW_MARGIN",
+      "exploratory": true
+    },
+    "dense:interaction_ppo:assignment_mass_vs_best_rule": {
+      "baseline": "best_rule",
+      "method": "interaction_ppo:assignment_mass",
+      "baseline_mean": 1128.0,
+      "method_mean": 1146.8090277777778,
+      "relative_gain": -0.01667467001576044,
+      "absolute_gain": -18.80902777777778,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.04247366302902317,
+        0.006029968110764583
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": -0.01528331855791962,
+        "18100001": -0.015578826832151301,
+        "18100002": -0.0191618646572104
+      },
+      "leave_one_replica_out": {
+        "18100000": -0.01737034574468085,
+        "18100001": -0.01722259160756501,
+        "18100002": -0.01543107269503546
+      },
+      "status": "BELOW_MARGIN",
+      "exploratory": true
+    },
+    "skill_mask:additive_ppo:assignment_mass_vs_additive_ppo:greedy": {
+      "baseline": "additive_ppo:greedy",
+      "method": "additive_ppo:assignment_mass",
+      "baseline_mean": 1184.2465277777778,
+      "method_mean": 1183.079861111111,
+      "relative_gain": 0.0009851552352497927,
+      "absolute_gain": 1.1666666666666667,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.0017225904461042696,
+        0.006137506542077197
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.00023883026244792175,
+        "18100001": -0.000616854219723473,
+        "18100002": 0.003309089956606393
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.0013551918320088415,
+        "18100001": 0.0017839566929133861,
+        "18100002": -0.00018982033284774643
+      },
+      "status": "BELOW_MARGIN",
+      "exploratory": true
+    },
+    "skill_mask:interaction_ppo:assignment_mass_vs_interaction_ppo:greedy": {
+      "baseline": "interaction_ppo:greedy",
+      "method": "interaction_ppo:assignment_mass",
+      "baseline_mean": 1176.8055555555557,
+      "method_mean": 1177.8229166666667,
+      "relative_gain": -0.0008645107990086155,
+      "absolute_gain": -1.0173611111111112,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.0031282549102851676,
+        0.0012111383441645149
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": -0.001134822196412898,
+        "18100001": 0.0007627765064836003,
+        "18100002": -0.0022137747947186923
+      },
+      "leave_one_replica_out": {
+        "18100000": -0.0007296784550274845,
+        "18100001": -0.0016757010089577052,
+        "18100002": -0.0001862205649577235
+      },
+      "status": "BELOW_MARGIN",
+      "exploratory": true
+    },
+    "skill_mask:interaction_ppo:greedy_vs_best_rule": {
+      "baseline": "best_rule",
+      "method": "interaction_ppo:greedy",
+      "baseline_mean": 1187.2395833333333,
+      "method_mean": 1176.8055555555557,
+      "relative_gain": 0.008788477005191198,
+      "absolute_gain": 10.434027777777779,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.009717498012529373,
+        0.025116112777587334
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.01037069532792279,
+        "18100001": 0.01078306646194341,
+        "18100002": 0.005211669225707392
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.0079973678438254,
+        "18100001": 0.0077911822768150915,
+        "18100002": 0.0105768808949331
+      },
+      "status": "UNRESOLVED",
+      "exploratory": true
+    },
+    "skill_mask:interaction_ppo:assignment_mass_vs_best_rule": {
+      "baseline": "best_rule",
+      "method": "interaction_ppo:assignment_mass",
+      "baseline_mean": 1187.2395833333333,
+      "method_mean": 1177.8229166666667,
+      "relative_gain": 0.007931563939460408,
+      "absolute_gain": 9.416666666666666,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.011036666515039343,
+        0.024599883403060952
+      ],
+      "material_margin": 0.01,
+      "replica_gains": {
+        "18100000": 0.009247642026760254,
+        "18100001": 0.011537617898661987,
+        "18100002": 0.0030094318929589823
+      },
+      "leave_one_replica_out": {
+        "18100000": 0.007273524895810485,
+        "18100001": 0.006128536959859619,
+        "18100002": 0.010392629962711121
+      },
+      "status": "UNRESOLVED",
+      "exploratory": true
+    }
+  },
+  "uncertainty": "crossed paired training-replica/profile bootstrap; fixed shocks; three replicas limit calibration",
+  "multiplicity": "four primary two-sided98.75% intervals; approximate Bonferroni; secondary95% exploratory",
+  "interpretation": "scorer and decoding mechanisms separated; timing diagnostics separate; no optimality/novelty/transfer claim"
+}

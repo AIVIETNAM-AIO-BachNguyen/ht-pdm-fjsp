@@ -1,0 +1,212 @@
+[
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116000,
+    "field": "exact_policy_cost",
+    "stored": 33.77777777777778,
+    "local": 32.44444444444444
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116000,
+    "field": "optimality_gap",
+    "stored": 3.2777777777777786,
+    "local": 1.9444444444444429
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116000,
+    "field": "exact_allocation_regret",
+    "stored": 3.0277777777777777,
+    "local": 1.6944444444444442
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116000,
+    "field": "maximum_relative_reduction",
+    "stored": 0.09703947368421055,
+    "local": 0.059931506849315024
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116001,
+    "field": "exact_policy_cost",
+    "stored": 32.22222222222222,
+    "local": 32.44444444444444
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116001,
+    "field": "optimality_gap",
+    "stored": 1.7222222222222214,
+    "local": 1.9444444444444429
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116001,
+    "field": "exact_allocation_regret",
+    "stored": 1.4722222222222223,
+    "local": 1.6944444444444442
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116001,
+    "field": "maximum_relative_reduction",
+    "stored": 0.05344827586206894,
+    "local": 0.059931506849315024
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116002,
+    "field": "exact_policy_cost",
+    "stored": 33.77777777777778,
+    "local": 32.44444444444444
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116002,
+    "field": "optimality_gap",
+    "stored": 3.2777777777777786,
+    "local": 1.9444444444444429
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116002,
+    "field": "exact_allocation_regret",
+    "stored": 3.0277777777777777,
+    "local": 1.6944444444444442
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116002,
+    "field": "maximum_relative_reduction",
+    "stored": 0.09703947368421055,
+    "local": 0.059931506849315024
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116006,
+    "field": "exact_policy_cost",
+    "stored": 31.77777777777778,
+    "local": 32.44444444444444
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116006,
+    "field": "optimality_gap",
+    "stored": 1.2777777777777786,
+    "local": 1.9444444444444429
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116006,
+    "field": "exact_selection_regret",
+    "stored": 0.1388888888888889,
+    "local": 0.25
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116006,
+    "field": "exact_allocation_regret",
+    "stored": 1.1388888888888888,
+    "local": 1.6944444444444442
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116006,
+    "field": "maximum_relative_reduction",
+    "stored": 0.040209790209790236,
+    "local": 0.059931506849315024
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116007,
+    "field": "exact_policy_cost",
+    "stored": 32.22222222222222,
+    "local": 32.44444444444444
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116007,
+    "field": "optimality_gap",
+    "stored": 1.7222222222222214,
+    "local": 1.9444444444444429
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116007,
+    "field": "exact_allocation_regret",
+    "stored": 1.4722222222222223,
+    "local": 1.6944444444444442
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116007,
+    "field": "maximum_relative_reduction",
+    "stored": 0.05344827586206894,
+    "local": 0.059931506849315024
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116008,
+    "field": "exact_policy_cost",
+    "stored": 31.77777777777778,
+    "local": 32.44444444444444
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116008,
+    "field": "optimality_gap",
+    "stored": 1.2777777777777786,
+    "local": 1.9444444444444429
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116008,
+    "field": "exact_selection_regret",
+    "stored": 0.08333333333333333,
+    "local": 0.25
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116008,
+    "field": "exact_allocation_regret",
+    "stored": 1.1944444444444442,
+    "local": 1.6944444444444442
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116008,
+    "field": "maximum_relative_reduction",
+    "stored": 0.040209790209790236,
+    "local": 0.059931506849315024
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116009,
+    "field": "exact_policy_cost",
+    "stored": 32.0,
+    "local": 32.44444444444444
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116009,
+    "field": "optimality_gap",
+    "stored": 1.5,
+    "local": 1.9444444444444429
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116009,
+    "field": "exact_allocation_regret",
+    "stored": 1.25,
+    "local": 1.6944444444444442
+  },
+  {
+    "algorithm": "fixed_allocation",
+    "train_seed": 116009,
+    "field": "maximum_relative_reduction",
+    "stored": 0.046875,
+    "local": 0.059931506849315024
+  }
+]

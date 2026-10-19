@@ -1,0 +1,19 @@
+{
+  "retrieved_local_date": "2026-10-05",
+  "papers": [
+    {
+      "title": "Effects of Maintenance Policies on Production Costs and System Reliability in a Canned Food Factory",
+      "authors": [
+        "Mehmet Savsar",
+        "Hasan \u00c7i\u00e7ek"
+      ],
+      "year": 2021,
+      "doi": "10.31590/ejosat.1035168",
+      "url": "https://dergipark.org.tr/en/download/article-file/2126133",
+      "file": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_backlog_checks_20261005/additional_papers/savsar_cicek_2021.pdf",
+      "sha256": "9bd5ae3412fe3294674d11e55db1cbfca4b63a6a4e443af767c7a1bf19d86da6",
+      "verified_scope": "PDF title/abstract, sections2/3, p391 Table2 and neighboring prose, rendered page5 inspected",
+      "calibration_status": "not suitable for same-task CM/PM2 or4 calibration"
+    }
+  ]
+}

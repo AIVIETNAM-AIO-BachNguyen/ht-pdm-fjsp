@@ -1,0 +1,1145 @@
+{
+  "primary": [
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "n3_nominal",
+        "n3_pressure",
+        "n4_nominal",
+        "n4_pressure"
+      ],
+      "mean_cost": 143.0435,
+      "control_cost": 147.5275,
+      "mean_delta": -4.4840000000000035,
+      "relative_reduction": 0.030394333259900718,
+      "ci": [
+        -5.45259034628306,
+        -3.5154096537169472
+      ],
+      "ci_level": 0.975,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 5.701615190645288e-07,
+      "bonferroni_p": 1.1403230381290576e-06,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -3.930714603020763,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -3.630000000000024,
+        -6.0049999999999955,
+        -4.424999999999983,
+        -5.905000000000001,
+        -4.615000000000009,
+        -3.8000000000000114,
+        -3.329999999999984,
+        -5.680000000000007,
+        -2.664999999999992,
+        -4.785000000000025
+      ],
+      "confirmatory": true
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "n3_nominal",
+        "n3_pressure",
+        "n4_nominal",
+        "n4_pressure"
+      ],
+      "mean_cost": 143.0435,
+      "control_cost": 144.549,
+      "mean_delta": -1.505499999999992,
+      "relative_reduction": 0.010415153339006094,
+      "ci": [
+        -3.27165244304443,
+        0.2606524430444461
+      ],
+      "ci_level": 0.975,
+      "wins": 9,
+      "ties": 0,
+      "losses": 1,
+      "paired_t_p": 0.047872334889452306,
+      "bonferroni_p": 0.09574466977890461,
+      "sign_flip_p_exploratory": 0.017578125,
+      "paired_dz": -0.7237667338195104,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -1.0949999999999989,
+        -2.349999999999966,
+        -6.799999999999983,
+        -1.2199999999999989,
+        -1.1999999999999886,
+        -0.5150000000000148,
+        1.3150000000000261,
+        -0.789999999999992,
+        -0.8700000000000045,
+        -1.5300000000000011
+      ],
+      "confirmatory": true
+    }
+  ],
+  "reference_descriptive": [
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "n3_nominal",
+        "n3_pressure",
+        "n4_nominal",
+        "n4_pressure"
+      ],
+      "mean_cost": 143.0435,
+      "control_cost": 147.575,
+      "mean_delta": -4.531499999999989,
+      "relative_reduction": 0.030706420464170686,
+      "ci": [
+        -5.065862112081334,
+        -3.9971378879186443
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 1.3109151419640034e-08,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -6.066372869850085,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -3.7849999999999966,
+        -5.409999999999968,
+        -5.109999999999985,
+        -4.704999999999984,
+        -5.009999999999991,
+        -4.275000000000006,
+        -3.434999999999974,
+        -5.030000000000001,
+        -3.424999999999983,
+        -5.1299999999999955
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "fixed_priority",
+      "control": "risk_skill_rule",
+      "families": [
+        "n3_nominal",
+        "n3_pressure",
+        "n4_nominal",
+        "n4_pressure"
+      ],
+      "mean_cost": 147.5275,
+      "control_cost": 147.575,
+      "mean_delta": -0.04749999999998522,
+      "relative_reduction": 0.00032187023547338795,
+      "ci": [
+        -0.5108903470282631,
+        0.4158903470282927
+      ],
+      "ci_level": 0.95,
+      "wins": 7,
+      "ties": 0,
+      "losses": 3,
+      "paired_t_p": 0.8218152252116764,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.826171875,
+      "paired_dz": -0.07332792590848346,
+      "nominal_relative_increase": -0.002880034647033236,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -0.15499999999997272,
+        0.5950000000000273,
+        -0.6850000000000023,
+        1.200000000000017,
+        -0.3949999999999818,
+        -0.4749999999999943,
+        -0.10499999999998977,
+        0.6500000000000057,
+        -0.7599999999999909,
+        -0.34499999999997044
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "fixed_allocation",
+      "control": "risk_skill_rule",
+      "families": [
+        "n3_nominal",
+        "n3_pressure",
+        "n4_nominal",
+        "n4_pressure"
+      ],
+      "mean_cost": 144.549,
+      "control_cost": 147.575,
+      "mean_delta": -3.0259999999999962,
+      "relative_reduction": 0.020504828053532077,
+      "ci": [
+        -4.3038037911477325,
+        -1.7481962088522598
+      ],
+      "ci_level": 0.95,
+      "wins": 9,
+      "ties": 0,
+      "losses": 1,
+      "paired_t_p": 0.00045807233527060925,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.00390625,
+      "paired_dz": -1.6940550751715173,
+      "nominal_relative_increase": 0.016327414465136414,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -2.6899999999999977,
+        -3.0600000000000023,
+        1.6899999999999977,
+        -3.484999999999985,
+        -3.8100000000000023,
+        -3.759999999999991,
+        -4.75,
+        -4.240000000000009,
+        -2.5549999999999784,
+        -3.5999999999999943
+      ],
+      "confirmatory": false
+    }
+  ],
+  "secondary_descriptive": [
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "n3_nominal"
+      ],
+      "mean_cost": 76.186,
+      "control_cost": 77.102,
+      "mean_delta": -0.9160000000000025,
+      "relative_reduction": 0.011880366268060523,
+      "ci": [
+        -2.0923371922946585,
+        0.26033719229465346
+      ],
+      "ci_level": 0.95,
+      "wins": 8,
+      "ties": 0,
+      "losses": 2,
+      "paired_t_p": 0.11199455680964628,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.11328125,
+      "paired_dz": -0.5570400478377423,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        1.8399999999999892,
+        -2.0600000000000023,
+        -0.7199999999999989,
+        -1.7000000000000028,
+        -0.980000000000004,
+        -0.7399999999999949,
+        -0.5400000000000063,
+        -4.219999999999999,
+        1.0,
+        -1.0400000000000063
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "n3_nominal"
+      ],
+      "mean_cost": 76.186,
+      "control_cost": 78.70599999999999,
+      "mean_delta": -2.520000000000002,
+      "relative_reduction": 0.03201788936040457,
+      "ci": [
+        -6.250198921477834,
+        1.2101989214778301
+      ],
+      "ci_level": 0.95,
+      "wins": 6,
+      "ties": 0,
+      "losses": 4,
+      "paired_t_p": 0.16080337273128076,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.0625,
+      "paired_dz": -0.4832716541379198,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -3.8800000000000097,
+        -2.4000000000000057,
+        -16.78,
+        -2.0,
+        0.01999999999999602,
+        0.9000000000000057,
+        -0.4399999999999977,
+        0.01999999999999602,
+        0.2400000000000091,
+        -0.8800000000000097
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "n3_nominal"
+      ],
+      "mean_cost": 76.186,
+      "control_cost": 76.78,
+      "mean_delta": -0.5940000000000026,
+      "relative_reduction": 0.007736389684813788,
+      "ci": [
+        -1.1773091155823303,
+        -0.010690884417674962
+      ],
+      "ci_level": 0.95,
+      "wins": 8,
+      "ties": 0,
+      "losses": 2,
+      "paired_t_p": 0.04672195990883767,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.052734375,
+      "paired_dz": -0.7284679611467578,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        0.8199999999999932,
+        -1.0,
+        -1.2199999999999989,
+        -1.460000000000008,
+        -0.7800000000000011,
+        -0.5600000000000023,
+        -0.6400000000000006,
+        -1.0400000000000063,
+        0.9200000000000017,
+        -0.980000000000004
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "n3_pressure"
+      ],
+      "mean_cost": 156.83999999999997,
+      "control_cost": 159.192,
+      "mean_delta": -2.3520000000000096,
+      "relative_reduction": 0.014774611789537222,
+      "ci": [
+        -3.2238671833813797,
+        -1.4801328166186396
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 0.0001786956958980141,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -1.9297887051072165,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -3.5800000000000125,
+        -2.1999999999999886,
+        -1.5600000000000023,
+        -5.0,
+        -3.0200000000000102,
+        -1.660000000000025,
+        -2.4399999999999977,
+        -1.7200000000000273,
+        -1.3600000000000136,
+        -0.9800000000000182
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "n3_pressure"
+      ],
+      "mean_cost": 156.83999999999997,
+      "control_cost": 157.872,
+      "mean_delta": -1.0320000000000022,
+      "relative_reduction": 0.006536941319550029,
+      "ci": [
+        -1.584312361676422,
+        -0.4796876383235824
+      ],
+      "ci_level": 0.95,
+      "wins": 9,
+      "ties": 1,
+      "losses": 0,
+      "paired_t_p": 0.0022168736527316242,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.00390625,
+      "paired_dz": -1.3366500158007344,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -0.7400000000000091,
+        -1.0199999999999818,
+        -0.8799999999999955,
+        -0.7800000000000011,
+        -1.7199999999999989,
+        0.0,
+        -0.9399999999999977,
+        -2.8400000000000034,
+        -0.9800000000000182,
+        -0.4200000000000159
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "n3_pressure"
+      ],
+      "mean_cost": 156.83999999999997,
+      "control_cost": 159.6,
+      "mean_delta": -2.7599999999999993,
+      "relative_reduction": 0.017293233082706763,
+      "ci": [
+        -3.188790018831007,
+        -2.3312099811689917
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 1.4598351633145478e-07,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -4.604549951656333,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -2.780000000000001,
+        -2.079999999999984,
+        -2.8799999999999955,
+        -2.960000000000008,
+        -3.9399999999999977,
+        -2.460000000000008,
+        -3.1999999999999886,
+        -2.960000000000008,
+        -2.5600000000000023,
+        -1.7800000000000011
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "n4_nominal"
+      ],
+      "mean_cost": 107.734,
+      "control_cost": 107.08599999999998,
+      "mean_delta": 0.6480000000000004,
+      "relative_reduction": -0.0060512111760641024,
+      "ci": [
+        -0.43641437625563806,
+        1.7324143762556388
+      ],
+      "ci_level": 0.95,
+      "wins": 3,
+      "ties": 0,
+      "losses": 7,
+      "paired_t_p": 0.20944084614876152,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.220703125,
+      "paired_dz": 0.427466921519043,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        1.1800000000000068,
+        -0.1599999999999966,
+        0.060000000000002274,
+        0.47999999999998977,
+        0.8599999999999994,
+        0.5799999999999983,
+        3.200000000000003,
+        -1.740000000000009,
+        2.8599999999999994,
+        -0.8399999999999892
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "n4_nominal"
+      ],
+      "mean_cost": 107.734,
+      "control_cost": 109.03,
+      "mean_delta": -1.2959999999999994,
+      "relative_reduction": 0.011886636705493895,
+      "ci": [
+        -3.2971112672035616,
+        0.7051112672035629
+      ],
+      "ci_level": 0.95,
+      "wins": 6,
+      "ties": 1,
+      "losses": 3,
+      "paired_t_p": 0.1769441883611694,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.16015625,
+      "paired_dz": -0.4632938534365224,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -0.4399999999999977,
+        -2.6799999999999926,
+        -8.11999999999999,
+        -2.5800000000000125,
+        0.3199999999999932,
+        0.4399999999999977,
+        2.0200000000000102,
+        0.0,
+        -0.2400000000000091,
+        -1.6799999999999926
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "n4_nominal"
+      ],
+      "mean_cost": 107.734,
+      "control_cost": 107.94000000000001,
+      "mean_delta": -0.20599999999999738,
+      "relative_reduction": 0.0019084676672225065,
+      "ci": [
+        -1.0759568768038887,
+        0.6639568768038939
+      ],
+      "ci_level": 0.95,
+      "wins": 7,
+      "ties": 0,
+      "losses": 3,
+      "paired_t_p": 0.6051734363737276,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.595703125,
+      "paired_dz": -0.1693917555676432,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -0.1799999999999926,
+        -0.539999999999992,
+        -1.759999999999991,
+        0.519999999999996,
+        -0.060000000000002274,
+        -0.6400000000000006,
+        1.9000000000000057,
+        -1.0600000000000023,
+        1.4399999999999977,
+        -1.6799999999999926
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "n4_pressure"
+      ],
+      "mean_cost": 231.414,
+      "control_cost": 246.73000000000002,
+      "mean_delta": -15.315999999999999,
+      "relative_reduction": 0.06207595347140598,
+      "ci": [
+        -16.76874880544512,
+        -13.863251194554877
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 1.9128346406968433e-09,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -7.541845039404223,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": true,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -13.960000000000008,
+        -19.599999999999994,
+        -15.47999999999999,
+        -17.400000000000006,
+        -15.319999999999993,
+        -13.379999999999995,
+        -13.539999999999992,
+        -15.04000000000002,
+        -13.159999999999997,
+        -16.28
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "n4_pressure"
+      ],
+      "mean_cost": 231.414,
+      "control_cost": 232.58800000000002,
+      "mean_delta": -1.1739999999999982,
+      "relative_reduction": 0.005047551894336759,
+      "ci": [
+        -3.030905715661018,
+        0.6829057156610221
+      ],
+      "ci_level": 0.95,
+      "wins": 7,
+      "ties": 0,
+      "losses": 3,
+      "paired_t_p": 0.186440908744119,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.185546875,
+      "paired_dz": -0.45227337097758735,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        0.6799999999999784,
+        -3.299999999999983,
+        -1.4199999999999875,
+        0.47999999999998977,
+        -3.4199999999999875,
+        -3.4000000000000057,
+        4.6200000000000045,
+        -0.3400000000000034,
+        -2.5,
+        -3.1399999999999864
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "n4_pressure"
+      ],
+      "mean_cost": 231.414,
+      "control_cost": 245.97999999999996,
+      "mean_delta": -14.565999999999992,
+      "relative_reduction": 0.05921619643873483,
+      "ci": [
+        -15.818291012875276,
+        -13.313708987124707
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 7.989167859047944e-10,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -8.320660761147224,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": true,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -13.0,
+        -18.019999999999982,
+        -14.579999999999984,
+        -14.919999999999987,
+        -15.259999999999991,
+        -13.439999999999998,
+        -11.799999999999983,
+        -15.060000000000002,
+        -13.5,
+        -16.079999999999984
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "n5_pressure"
+      ],
+      "mean_cost": 304.088,
+      "control_cost": 331.12399999999997,
+      "mean_delta": -27.03599999999999,
+      "relative_reduction": 0.08164917070342226,
+      "ci": [
+        -28.607439386476706,
+        -25.464560613523275
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 2.4257002744736907e-11,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -12.30743576638071,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": true,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -24.399999999999977,
+        -27.880000000000052,
+        -26.47999999999996,
+        -27.980000000000018,
+        -28.91999999999996,
+        -27.45999999999998,
+        -23.680000000000007,
+        -29.779999999999973,
+        -24.439999999999998,
+        -29.339999999999975
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "n5_pressure"
+      ],
+      "mean_cost": 304.088,
+      "control_cost": 303.646,
+      "mean_delta": 0.44200000000001294,
+      "relative_reduction": -0.0014556424257194658,
+      "ci": [
+        -1.2671086003198386,
+        2.1511086003198647
+      ],
+      "ci_level": 0.95,
+      "wins": 6,
+      "ties": 0,
+      "losses": 4,
+      "paired_t_p": 0.5729030249643854,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.626953125,
+      "paired_dz": 0.18500155717423106,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        2.3000000000000114,
+        -0.7600000000000477,
+        0.8600000000000136,
+        -0.9599999999999795,
+        -0.9199999999999591,
+        -0.30000000000001137,
+        5.8799999999999955,
+        -2.839999999999975,
+        1.4600000000000364,
+        -0.2999999999999545
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "n5_pressure"
+      ],
+      "mean_cost": 304.088,
+      "control_cost": 330.94,
+      "mean_delta": -26.851999999999993,
+      "relative_reduction": 0.08113857496827218,
+      "ci": [
+        -28.177729609063807,
+        -25.52627039093618
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 5.6217332336020874e-12,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -14.489201650017355,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": true,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -25.5,
+        -27.660000000000025,
+        -25.899999999999977,
+        -27.620000000000005,
+        -28.079999999999984,
+        -26.620000000000005,
+        -23.819999999999993,
+        -29.579999999999984,
+        -24.779999999999973,
+        -28.95999999999998
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "n5_k3_sparse"
+      ],
+      "mean_cost": 281.402,
+      "control_cost": 291.986,
+      "mean_delta": -10.583999999999998,
+      "relative_reduction": 0.036248313275294014,
+      "ci": [
+        -12.479895850248495,
+        -8.688104149751501
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 4.978244038782372e-07,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -3.9935408328475046,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -7.899999999999977,
+        -10.5,
+        -8.800000000000011,
+        -9.879999999999995,
+        -13.839999999999975,
+        -9.720000000000027,
+        -7.019999999999982,
+        -15.060000000000002,
+        -9.78000000000003,
+        -13.339999999999975
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "n5_k3_sparse"
+      ],
+      "mean_cost": 281.402,
+      "control_cost": 280.546,
+      "mean_delta": 0.8560000000000002,
+      "relative_reduction": -0.0030511930307329286,
+      "ci": [
+        -2.700556172402559,
+        4.412556172402559
+      ],
+      "ci_level": 0.95,
+      "wins": 4,
+      "ties": 0,
+      "losses": 6,
+      "paired_t_p": 0.599352459102449,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.58984375,
+      "paired_dz": 0.1721737213831861,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        4.579999999999984,
+        1.920000000000016,
+        4.180000000000007,
+        3.160000000000025,
+        -2.4799999999999613,
+        1.759999999999991,
+        9.060000000000002,
+        -7.460000000000036,
+        -0.660000000000025,
+        -5.5
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "n5_k3_sparse"
+      ],
+      "mean_cost": 281.402,
+      "control_cost": 292.5,
+      "mean_delta": -11.098000000000003,
+      "relative_reduction": 0.03794188034188035,
+      "ci": [
+        -12.964744371922308,
+        -9.231255628077697
+      ],
+      "ci_level": 0.95,
+      "wins": 10,
+      "ties": 0,
+      "losses": 0,
+      "paired_t_p": 2.900152338304589e-07,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.001953125,
+      "paired_dz": -4.252875252698424,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -9.120000000000005,
+        -13.180000000000007,
+        -9.480000000000018,
+        -10.819999999999993,
+        -13.399999999999977,
+        -8.920000000000016,
+        -8.120000000000005,
+        -15.420000000000016,
+        -8.740000000000009,
+        -13.779999999999973
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_priority",
+      "families": [
+        "small"
+      ],
+      "mean_cost": 30.259999999999998,
+      "control_cost": 31.677999999999997,
+      "mean_delta": -1.4180000000000006,
+      "relative_reduction": 0.04476292695245914,
+      "ci": [
+        -3.9416181182102434,
+        1.1056181182102423
+      ],
+      "ci_level": 0.95,
+      "wins": 4,
+      "ties": 5,
+      "losses": 1,
+      "paired_t_p": 0.2355653700716835,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.25,
+      "paired_dz": -0.40195308685840364,
+      "nominal_relative_increase": -0.0014550350728603778,
+      "gate": {
+        "effect_at_least_5percent": false,
+        "wins_at_least_8": false,
+        "ci_upper_below_zero": false,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        0.0,
+        2.0000000000000036,
+        0.0,
+        -2.0000000000000036,
+        0.0,
+        -10.620000000000001,
+        -0.20000000000000284,
+        -3.360000000000003,
+        0.0,
+        0.0
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "fixed_allocation",
+      "families": [
+        "small"
+      ],
+      "mean_cost": 30.259999999999998,
+      "control_cost": 32.068,
+      "mean_delta": -1.8080000000000005,
+      "relative_reduction": 0.056380192091804934,
+      "ci": [
+        -2.636200834238765,
+        -0.9797991657612359
+      ],
+      "ci_level": 0.95,
+      "wins": 9,
+      "ties": 0,
+      "losses": 1,
+      "paired_t_p": 0.0008040136396097794,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.00390625,
+      "paired_dz": -1.5616565844005101,
+      "nominal_relative_increase": -0.020326415817957022,
+      "gate": {
+        "effect_at_least_5percent": true,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -3.599999999999998,
+        0.360000000000003,
+        -3.599999999999998,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.2000000000000028,
+        -1.6400000000000006,
+        -1.2000000000000028,
+        -1.4400000000000013
+      ],
+      "confirmatory": false
+    },
+    {
+      "algorithm": "learned_both",
+      "control": "risk_skill_rule",
+      "families": [
+        "small"
+      ],
+      "mean_cost": 30.259999999999998,
+      "control_cost": 31.98,
+      "mean_delta": -1.7200000000000013,
+      "relative_reduction": 0.05378361475922456,
+      "ci": [
+        -2.172431432559643,
+        -1.2675685674403596
+      ],
+      "ci_level": 0.95,
+      "wins": 9,
+      "ties": 0,
+      "losses": 1,
+      "paired_t_p": 1.2365093056587925e-05,
+      "bonferroni_p": null,
+      "sign_flip_p_exploratory": 0.00390625,
+      "paired_dz": -2.7195587877448033,
+      "nominal_relative_increase": -0.00433087916847108,
+      "gate": {
+        "effect_at_least_5percent": true,
+        "wins_at_least_8": true,
+        "ci_upper_below_zero": true,
+        "nominal_within_10percent": true
+      },
+      "seed_deltas": [
+        -1.9200000000000017,
+        0.08000000000000185,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.9200000000000017,
+        -1.9200000000000017
+      ],
+      "confirmatory": false
+    }
+  ],
+  "critical975": 2.685010846816458,
+  "critical95": 2.262157162798205,
+  "inference": "paired training seed, conditional on common finite evaluation episode/configuration panel; no independent configuration population CI",
+  "normality_assumption": "n=10; paired-t normality not established; exploratory exact sign-flip sensitivity assumes symmetric paired differences and does not replace locked gates"
+}

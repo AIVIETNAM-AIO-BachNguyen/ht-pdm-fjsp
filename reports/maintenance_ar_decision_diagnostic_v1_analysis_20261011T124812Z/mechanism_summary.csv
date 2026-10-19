@@ -1,0 +1,7 @@
+condition,contrast,exposure,switched,gains_positive,gains_negative,gains_zero,positive_mc95,selected_less_probability,mc95_positive_less_probability,original_assignment_conditional_p_median,original_assignment_conditional_p_mean,mean_mc_se,selected_all_pm_deferred,selected_partial_pm_deferred,selected_technicians_changed,assignment_at_tick0
+dense,timing,130,55,34,21,0,7,55,7,0.5557253244895107,0.7263689083472793,3.0909308132697837,29,26,0,72
+dense,assignment,74,40,31,9,0,17,30,15,0.5055195631252722,0.5192967308803557,4.266447741428483,0,0,40,72
+dense,joint,130,78,57,21,0,22,72,20,0.5557253244895107,0.7263689083472793,4.444070165902215,27,33,37,72
+skill_mask,timing,146,66,47,19,0,15,66,15,1.0,0.9073528393063971,2.99901812766687,27,39,0,72
+skill_mask,assignment,28,11,9,2,0,5,10,5,0.5018369902640027,0.5169112335262129,3.166293396077719,0,0,11,28
+skill_mask,joint,146,72,54,18,0,23,71,23,1.0,0.9073528393063971,3.368074330369047,27,38,23,72

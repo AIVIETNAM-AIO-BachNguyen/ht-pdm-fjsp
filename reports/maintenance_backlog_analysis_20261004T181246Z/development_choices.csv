@@ -1,0 +1,49 @@
+ratio,policy,parameter,normalized_makespan,primary_cell,selected
+1,H_health_risk_dispatch,"{""offset"": 0}",1.187702952167248,1.13116801717454,True
+1,H_health_risk_dispatch,"{""offset"": 1}",1.2006154045233979,1.1394347755313488,False
+1,H_health_risk_dispatch,"{""offset"": 2}",1.2196444316826138,1.149605042900957,False
+1,H_health_risk_dispatch,"{""offset"": 4}",1.2540275667804268,1.1770379318548747,False
+1,A_backlog_health,"{""gain"": 0, ""offset"": 0}",1.187702952167248,1.13116801717454,True
+1,A_backlog_health,"{""gain"": 1, ""offset"": 0}",1.1889659450273649,1.132832627290903,False
+1,A_backlog_health,"{""gain"": 0, ""offset"": 1}",1.2006154045233979,1.1394347755313488,False
+1,A_backlog_health,"{""gain"": 1, ""offset"": 1}",1.2021483977945069,1.1418948001315947,False
+1,A_backlog_health,"{""gain"": 0, ""offset"": 2}",1.2196444316826138,1.149605042900957,False
+1,A_backlog_health,"{""gain"": 1, ""offset"": 2}",1.2228911575139478,1.1532021652031152,False
+1,A_backlog_health,"{""gain"": 0, ""offset"": 4}",1.2540275667804268,1.1770379318548747,False
+1,A_backlog_health,"{""gain"": 1, ""offset"": 4}",1.2540275667804268,1.1770379318548747,False
+1,S_capacity_reservation,"{""lead"": 0}",1.2042556161216318,1.1427518452636365,False
+1,S_capacity_reservation,"{""lead"": 2}",1.2039353004184747,1.1401893196383803,False
+1,S_capacity_reservation,"{""lead"": 4}",1.203035433009961,1.1376852160510211,True
+1,S_capacity_reservation,"{""lead"": 6}",1.2033301234568654,1.1389152283511441,False
+2,H_health_risk_dispatch,"{""offset"": 0}",1.306221164116161,1.267855094234616,False
+2,H_health_risk_dispatch,"{""offset"": 1}",1.2305167021407444,1.1703178512749162,True
+2,H_health_risk_dispatch,"{""offset"": 2}",1.2373449858878822,1.156588201007608,False
+2,H_health_risk_dispatch,"{""offset"": 4}",1.2528020765843484,1.1770379318548747,False
+2,A_backlog_health,"{""gain"": 0, ""offset"": 0}",1.306221164116161,1.267855094234616,False
+2,A_backlog_health,"{""gain"": 1, ""offset"": 0}",1.3062386331976157,1.2628983789508041,False
+2,A_backlog_health,"{""gain"": 0, ""offset"": 1}",1.2305167021407444,1.1703178512749162,True
+2,A_backlog_health,"{""gain"": 1, ""offset"": 1}",1.2333889116430188,1.170334924458993,False
+2,A_backlog_health,"{""gain"": 0, ""offset"": 2}",1.2373449858878822,1.156588201007608,False
+2,A_backlog_health,"{""gain"": 1, ""offset"": 2}",1.2330805088371035,1.1562760911449363,False
+2,A_backlog_health,"{""gain"": 0, ""offset"": 4}",1.2528020765843484,1.1770379318548747,False
+2,A_backlog_health,"{""gain"": 1, ""offset"": 4}",1.2571103227918106,1.1770379318548747,False
+2,S_capacity_reservation,"{""lead"": 0}",1.2343743992163199,1.1690352627996272,False
+2,S_capacity_reservation,"{""lead"": 2}",1.2262657478352503,1.1429796143736632,False
+2,S_capacity_reservation,"{""lead"": 4}",1.2249950553091886,1.140145240651267,False
+2,S_capacity_reservation,"{""lead"": 6}",1.2161109387760463,1.1389152283511441,True
+4,H_health_risk_dispatch,"{""offset"": 0}",1.8264535060989582,2.046571412992533,False
+4,H_health_risk_dispatch,"{""offset"": 1}",1.5671447072393456,1.744183043619225,False
+4,H_health_risk_dispatch,"{""offset"": 2}",1.4593185081833202,1.3233358703569607,False
+4,H_health_risk_dispatch,"{""offset"": 4}",1.3422960834820914,1.1770379318548747,True
+4,A_backlog_health,"{""gain"": 0, ""offset"": 0}",1.8264535060989582,2.046571412992533,False
+4,A_backlog_health,"{""gain"": 1, ""offset"": 0}",1.8196116066056283,2.014733655628048,False
+4,A_backlog_health,"{""gain"": 0, ""offset"": 1}",1.5671447072393456,1.744183043619225,False
+4,A_backlog_health,"{""gain"": 1, ""offset"": 1}",1.5078765209892313,1.4880329821186098,False
+4,A_backlog_health,"{""gain"": 0, ""offset"": 2}",1.4593185081833202,1.3233358703569607,False
+4,A_backlog_health,"{""gain"": 1, ""offset"": 2}",1.4333035656484567,1.2634752717509747,False
+4,A_backlog_health,"{""gain"": 0, ""offset"": 4}",1.3422960834820914,1.1770379318548747,False
+4,A_backlog_health,"{""gain"": 1, ""offset"": 4}",1.3340433761161925,1.1770379318548747,True
+4,S_capacity_reservation,"{""lead"": 0}",1.5051196411500005,1.2964578289570063,False
+4,S_capacity_reservation,"{""lead"": 2}",1.5071186527386842,1.3228020672195329,False
+4,S_capacity_reservation,"{""lead"": 4}",1.4787919303678834,1.2103584427832885,False
+4,S_capacity_reservation,"{""lead"": 6}",1.340883092701778,1.1979558187570483,True

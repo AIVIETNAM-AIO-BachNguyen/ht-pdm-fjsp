@@ -1,0 +1,6733 @@
+{
+  "status": "POSTHOC_NUMERICAL_SENSITIVITY",
+  "batch_action_mismatches": 532,
+  "scalar_matches_on_logged_state": 242,
+  "changed_episode_costs": 115,
+  "max_episode_cost_change": 76.0,
+  "total_difference_on_affected_episodes": 730.0,
+  "affected_episodes": 517,
+  "rows": [
+    {
+      "key": [
+        150000,
+        153000,
+        "homogeneous",
+        12,
+        154003,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 254.0,
+      "local_scalar_cost": 254.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "homogeneous",
+        12,
+        154009,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 224.0,
+      "local_scalar_cost": 224.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "homogeneous",
+        12,
+        154023,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 238.0,
+      "local_scalar_cost": 238.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "homogeneous",
+        24,
+        154034,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 628.0,
+      "local_scalar_cost": 628.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "nominal",
+        12,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 176.0,
+      "local_scalar_cost": 176.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "nominal",
+        12,
+        154020,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 227.0,
+      "local_scalar_cost": 223.0,
+      "difference": -4.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "nominal",
+        12,
+        154035,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 192.0,
+      "local_scalar_cost": 192.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "nominal",
+        12,
+        154043,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 217.0,
+      "local_scalar_cost": 223.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "nominal",
+        24,
+        154020,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 425.0,
+      "local_scalar_cost": 421.0,
+      "difference": -4.0
+    },
+    {
+      "key": [
+        150000,
+        153000,
+        "nominal",
+        24,
+        154043,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 399.0,
+      "local_scalar_cost": 405.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150000,
+        153001,
+        "nominal",
+        12,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 202.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153001,
+        "nominal",
+        12,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 195.0,
+      "local_scalar_cost": 195.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153002,
+        "homogeneous",
+        12,
+        154048,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 234.0,
+      "local_scalar_cost": 234.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153002,
+        "nominal",
+        12,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 193.0,
+      "local_scalar_cost": 193.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153002,
+        "nominal",
+        12,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 215.0,
+      "local_scalar_cost": 215.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153002,
+        "nominal",
+        24,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 407.0,
+      "local_scalar_cost": 407.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153002,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 388.0,
+      "local_scalar_cost": 388.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153003,
+        "homogeneous",
+        12,
+        154039,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 263.0,
+      "local_scalar_cost": 263.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153003,
+        "nominal",
+        24,
+        154006,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 385.0,
+      "local_scalar_cost": 393.0,
+      "difference": 8.0
+    },
+    {
+      "key": [
+        150000,
+        153003,
+        "nominal",
+        24,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 394.0,
+      "local_scalar_cost": 394.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153003,
+        "nominal",
+        24,
+        154021,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 363.0,
+      "local_scalar_cost": 371.0,
+      "difference": 8.0
+    },
+    {
+      "key": [
+        150000,
+        153003,
+        "nominal",
+        24,
+        154026,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 401.0,
+      "local_scalar_cost": 425.0,
+      "difference": 24.0
+    },
+    {
+      "key": [
+        150000,
+        153003,
+        "nominal",
+        24,
+        154041,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 410.0,
+      "local_scalar_cost": 394.0,
+      "difference": -16.0
+    },
+    {
+      "key": [
+        150000,
+        153004,
+        "nominal",
+        12,
+        154045,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 196.0,
+      "local_scalar_cost": 196.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153004,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 365.0,
+      "local_scalar_cost": 374.0,
+      "difference": 9.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154008,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 386.0,
+      "local_scalar_cost": 386.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154009,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 406.0,
+      "local_scalar_cost": 406.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 402.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 348.0,
+      "local_scalar_cost": 348.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 412.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 392.0,
+      "local_scalar_cost": 392.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154030,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 372.0,
+      "local_scalar_cost": 372.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154031,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 386.0,
+      "local_scalar_cost": 386.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154032,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 370.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154035,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 374.0,
+      "local_scalar_cost": 342.0,
+      "difference": -32.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154039,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 386.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154040,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 416.0,
+      "local_scalar_cost": 416.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153005,
+        "nominal",
+        24,
+        154047,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 396.0,
+      "local_scalar_cost": 424.0,
+      "difference": 28.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "homogeneous",
+        12,
+        154000,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 231.0,
+      "local_scalar_cost": 231.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "homogeneous",
+        12,
+        154027,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 303.0,
+      "local_scalar_cost": 303.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "nominal",
+        12,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 188.0,
+      "local_scalar_cost": 188.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "nominal",
+        24,
+        154005,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 362.0,
+      "local_scalar_cost": 362.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "nominal",
+        24,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 362.0,
+      "local_scalar_cost": 362.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 359.0,
+      "local_scalar_cost": 359.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "nominal",
+        24,
+        154035,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153006,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153007,
+        "nominal",
+        12,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 202.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153007,
+        "nominal",
+        12,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 195.0,
+      "local_scalar_cost": 195.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "homogeneous",
+        12,
+        154017,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 259.0,
+      "local_scalar_cost": 259.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154002,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 364.0,
+      "local_scalar_cost": 364.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154003,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 396.0,
+      "local_scalar_cost": 412.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154011,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 379.0,
+      "local_scalar_cost": 379.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 411.0,
+      "local_scalar_cost": 411.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 367.0,
+      "local_scalar_cost": 367.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154023,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 395.0,
+      "local_scalar_cost": 395.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154024,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 364.0,
+      "local_scalar_cost": 380.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 408.0,
+      "local_scalar_cost": 429.0,
+      "difference": 21.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153008,
+        "nominal",
+        24,
+        154048,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "homogeneous",
+        12,
+        154017,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 259.0,
+      "local_scalar_cost": 259.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154002,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 364.0,
+      "local_scalar_cost": 364.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154003,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 396.0,
+      "local_scalar_cost": 412.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154011,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 379.0,
+      "local_scalar_cost": 379.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 411.0,
+      "local_scalar_cost": 411.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 367.0,
+      "local_scalar_cost": 367.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154023,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 395.0,
+      "local_scalar_cost": 395.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154024,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 364.0,
+      "local_scalar_cost": 380.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 408.0,
+      "local_scalar_cost": 429.0,
+      "difference": 21.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150000,
+        153009,
+        "nominal",
+        24,
+        154048,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153000,
+        "nominal",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 407.0,
+      "local_scalar_cost": 407.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153000,
+        "nominal",
+        24,
+        154002,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 348.0,
+      "local_scalar_cost": 417.0,
+      "difference": 69.0
+    },
+    {
+      "key": [
+        150001,
+        153000,
+        "nominal",
+        24,
+        154003,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 381.0,
+      "local_scalar_cost": 386.0,
+      "difference": 5.0
+    },
+    {
+      "key": [
+        150001,
+        153000,
+        "nominal",
+        24,
+        154004,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 348.0,
+      "local_scalar_cost": 395.0,
+      "difference": 47.0
+    },
+    {
+      "key": [
+        150001,
+        153000,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 429.0,
+      "difference": 11.0
+    },
+    {
+      "key": [
+        150001,
+        153000,
+        "nominal",
+        24,
+        154023,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 370.0,
+      "local_scalar_cost": 385.0,
+      "difference": 15.0
+    },
+    {
+      "key": [
+        150001,
+        153000,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 394.0,
+      "local_scalar_cost": 394.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153001,
+        "homogeneous",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 228.0,
+      "local_scalar_cost": 228.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153001,
+        "nominal",
+        24,
+        154020,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 409.0,
+      "local_scalar_cost": 393.0,
+      "difference": -16.0
+    },
+    {
+      "key": [
+        150001,
+        153001,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 400.0,
+      "local_scalar_cost": 397.0,
+      "difference": -3.0
+    },
+    {
+      "key": [
+        150001,
+        153001,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 368.0,
+      "local_scalar_cost": 368.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153001,
+        "nominal",
+        24,
+        154043,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 447.0,
+      "local_scalar_cost": 371.0,
+      "difference": -76.0
+    },
+    {
+      "key": [
+        150001,
+        153003,
+        "nominal",
+        24,
+        154002,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 384.0,
+      "local_scalar_cost": 384.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153003,
+        "nominal",
+        24,
+        154003,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 437.0,
+      "local_scalar_cost": 437.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153003,
+        "nominal",
+        24,
+        154012,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 421.0,
+      "local_scalar_cost": 421.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153003,
+        "nominal",
+        24,
+        154023,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 389.0,
+      "local_scalar_cost": 389.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153003,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 383.0,
+      "local_scalar_cost": 383.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        12,
+        154028,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 168.0,
+      "local_scalar_cost": 168.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 408.0,
+      "local_scalar_cost": 408.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154006,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154012,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 413.0,
+      "local_scalar_cost": 407.0,
+      "difference": -6.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154020,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 398.0,
+      "local_scalar_cost": 419.0,
+      "difference": 21.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154021,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154026,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 363.0,
+      "local_scalar_cost": 363.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154035,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 406.0,
+      "local_scalar_cost": 422.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150001,
+        153004,
+        "nominal",
+        24,
+        154043,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 411.0,
+      "local_scalar_cost": 418.0,
+      "difference": 7.0
+    },
+    {
+      "key": [
+        150001,
+        153005,
+        "homogeneous",
+        12,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 202.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153005,
+        "nominal",
+        24,
+        154049,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 410.0,
+      "local_scalar_cost": 410.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "homogeneous",
+        12,
+        154027,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 386.0,
+      "local_scalar_cost": 386.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "homogeneous",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 244.0,
+      "local_scalar_cost": 244.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "nominal",
+        24,
+        154011,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 377.0,
+      "local_scalar_cost": 377.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "nominal",
+        24,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 362.0,
+      "local_scalar_cost": 362.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "nominal",
+        24,
+        154014,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 399.0,
+      "local_scalar_cost": 399.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 412.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 406.0,
+      "local_scalar_cost": 406.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "nominal",
+        24,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153006,
+        "nominal",
+        24,
+        154046,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153007,
+        "homogeneous",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 228.0,
+      "local_scalar_cost": 228.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153007,
+        "nominal",
+        24,
+        154020,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 409.0,
+      "local_scalar_cost": 393.0,
+      "difference": -16.0
+    },
+    {
+      "key": [
+        150001,
+        153007,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 400.0,
+      "local_scalar_cost": 397.0,
+      "difference": -3.0
+    },
+    {
+      "key": [
+        150001,
+        153007,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 368.0,
+      "local_scalar_cost": 368.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150001,
+        153007,
+        "nominal",
+        24,
+        154043,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 447.0,
+      "local_scalar_cost": 371.0,
+      "difference": -76.0
+    },
+    {
+      "key": [
+        150002,
+        153000,
+        "nominal",
+        12,
+        154013,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 166.0,
+      "local_scalar_cost": 166.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153000,
+        "nominal",
+        12,
+        154035,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 166.0,
+      "local_scalar_cost": 166.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153000,
+        "nominal",
+        12,
+        154041,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 160.0,
+      "local_scalar_cost": 160.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153000,
+        "nominal",
+        12,
+        154049,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 160.0,
+      "local_scalar_cost": 160.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153000,
+        "nominal",
+        24,
+        154007,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 429.0,
+      "local_scalar_cost": 429.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153000,
+        "nominal",
+        24,
+        154048,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "homogeneous",
+        12,
+        154038,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 202.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        12,
+        154005,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        12,
+        154026,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 161.0,
+      "local_scalar_cost": 161.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154006,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 334.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154008,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 414.0,
+      "local_scalar_cost": 417.0,
+      "difference": 3.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154019,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154021,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 334.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 413.0,
+      "local_scalar_cost": 426.0,
+      "difference": 13.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154026,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154027,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 362.0,
+      "local_scalar_cost": 391.0,
+      "difference": 29.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 406.0,
+      "local_scalar_cost": 406.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154038,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153001,
+        "nominal",
+        24,
+        154049,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 412.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "homogeneous",
+        24,
+        154047,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 477.0,
+      "local_scalar_cost": 477.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        12,
+        154004,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        12,
+        154030,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        12,
+        154044,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        12,
+        154046,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154007,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154008,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 432.0,
+      "local_scalar_cost": 432.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154014,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154019,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 404.0,
+      "local_scalar_cost": 404.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154027,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154030,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153002,
+        "nominal",
+        24,
+        154044,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        12,
+        154006,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        12,
+        154021,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        12,
+        154028,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        12,
+        154047,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 180.0,
+      "local_scalar_cost": 180.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        24,
+        154008,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        24,
+        154030,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 399.0,
+      "local_scalar_cost": 377.0,
+      "difference": -22.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        24,
+        154031,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 421.0,
+      "local_scalar_cost": 427.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150002,
+        153003,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 389.0,
+      "local_scalar_cost": 389.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154000,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154001,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154003,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154007,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154011,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154016,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154017,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154019,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 168.0,
+      "local_scalar_cost": 168.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154023,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154027,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 168.0,
+      "local_scalar_cost": 168.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154038,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        12,
+        154040,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154001,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154007,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154008,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 366.0,
+      "local_scalar_cost": 366.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 372.0,
+      "local_scalar_cost": 385.0,
+      "difference": 13.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154026,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154031,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 370.0,
+      "local_scalar_cost": 397.0,
+      "difference": 27.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154032,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 363.0,
+      "local_scalar_cost": 375.0,
+      "difference": 12.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 335.0,
+      "local_scalar_cost": 356.0,
+      "difference": 21.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 350.0,
+      "local_scalar_cost": 350.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154035,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 372.0,
+      "local_scalar_cost": 401.0,
+      "difference": 29.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154036,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 366.0,
+      "local_scalar_cost": 366.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153004,
+        "nominal",
+        24,
+        154049,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 393.0,
+      "local_scalar_cost": 393.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154000,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154002,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154004,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154008,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 168.0,
+      "local_scalar_cost": 168.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154012,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154015,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 168.0,
+      "local_scalar_cost": 168.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154042,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        12,
+        154046,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 158.0,
+      "local_scalar_cost": 158.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        24,
+        154008,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 412.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153005,
+        "nominal",
+        24,
+        154035,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 372.0,
+      "local_scalar_cost": 372.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153006,
+        "homogeneous",
+        24,
+        154032,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 470.0,
+      "local_scalar_cost": 470.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153006,
+        "nominal",
+        12,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 232.0,
+      "local_scalar_cost": 232.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153006,
+        "nominal",
+        12,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 197.0,
+      "local_scalar_cost": 197.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153006,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 406.0,
+      "local_scalar_cost": 406.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153006,
+        "nominal",
+        24,
+        154035,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 377.0,
+      "local_scalar_cost": 377.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "homogeneous",
+        12,
+        154038,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 202.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        12,
+        154005,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        12,
+        154026,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 161.0,
+      "local_scalar_cost": 161.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154006,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 334.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154008,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 414.0,
+      "local_scalar_cost": 417.0,
+      "difference": 3.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154019,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154021,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 334.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 413.0,
+      "local_scalar_cost": 426.0,
+      "difference": 13.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154026,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154027,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 362.0,
+      "local_scalar_cost": 391.0,
+      "difference": 29.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 406.0,
+      "local_scalar_cost": 406.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154038,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153007,
+        "nominal",
+        24,
+        154049,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 412.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        12,
+        154020,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 229.0,
+      "local_scalar_cost": 241.0,
+      "difference": 12.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        12,
+        154034,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 160.0,
+      "local_scalar_cost": 160.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154005,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 419.0,
+      "local_scalar_cost": 419.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 438.0,
+      "local_scalar_cost": 438.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 369.0,
+      "local_scalar_cost": 369.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154044,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153008,
+        "nominal",
+        24,
+        154045,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 391.0,
+      "local_scalar_cost": 391.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        12,
+        154020,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 229.0,
+      "local_scalar_cost": 241.0,
+      "difference": 12.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        12,
+        154034,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 160.0,
+      "local_scalar_cost": 160.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154005,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 419.0,
+      "local_scalar_cost": 419.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 438.0,
+      "local_scalar_cost": 438.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 369.0,
+      "local_scalar_cost": 369.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154044,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150002,
+        153009,
+        "nominal",
+        24,
+        154045,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 391.0,
+      "local_scalar_cost": 391.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153000,
+        "nominal",
+        12,
+        154014,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 186.0,
+      "local_scalar_cost": 186.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153000,
+        "nominal",
+        12,
+        154017,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 160.0,
+      "local_scalar_cost": 160.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153000,
+        "nominal",
+        12,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 182.0,
+      "local_scalar_cost": 192.0,
+      "difference": 10.0
+    },
+    {
+      "key": [
+        150003,
+        153000,
+        "nominal",
+        12,
+        154049,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 198.0,
+      "local_scalar_cost": 206.0,
+      "difference": 8.0
+    },
+    {
+      "key": [
+        150003,
+        153000,
+        "nominal",
+        24,
+        154008,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 351.0,
+      "local_scalar_cost": 351.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153000,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 408.0,
+      "local_scalar_cost": 408.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153000,
+        "nominal",
+        24,
+        154026,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 374.0,
+      "difference": -6.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "homogeneous",
+        24,
+        154009,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 439.0,
+      "local_scalar_cost": 439.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "homogeneous",
+        24,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 428.0,
+      "local_scalar_cost": 428.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "homogeneous",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 459.0,
+      "local_scalar_cost": 459.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "homogeneous",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 475.0,
+      "local_scalar_cost": 475.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "homogeneous",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 434.0,
+      "local_scalar_cost": 434.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        12,
+        154022,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 214.0,
+      "difference": 12.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        12,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 183.0,
+      "local_scalar_cost": 205.0,
+      "difference": 22.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        24,
+        154000,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 365.0,
+      "difference": 31.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 385.0,
+      "local_scalar_cost": 381.0,
+      "difference": -4.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 387.0,
+      "local_scalar_cost": 413.0,
+      "difference": 26.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 382.0,
+      "local_scalar_cost": 382.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        24,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 387.0,
+      "local_scalar_cost": 399.0,
+      "difference": 12.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        24,
+        154041,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 334.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153001,
+        "nominal",
+        24,
+        154045,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 340.0,
+      "difference": -6.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        12,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        12,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        12,
+        154039,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        12,
+        154049,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 168.0,
+      "local_scalar_cost": 168.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        24,
+        154000,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 393.0,
+      "local_scalar_cost": 377.0,
+      "difference": -16.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        24,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 400.0,
+      "local_scalar_cost": 407.0,
+      "difference": 7.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        24,
+        154030,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 401.0,
+      "local_scalar_cost": 401.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 385.0,
+      "local_scalar_cost": 385.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153002,
+        "nominal",
+        24,
+        154042,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 426.0,
+      "local_scalar_cost": 416.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        12,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 233.0,
+      "local_scalar_cost": 233.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 161.0,
+      "local_scalar_cost": 161.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        24,
+        154008,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        24,
+        154011,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 401.0,
+      "local_scalar_cost": 411.0,
+      "difference": 10.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        24,
+        154023,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 393.0,
+      "local_scalar_cost": 393.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        24,
+        154024,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        24,
+        154026,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 363.0,
+      "local_scalar_cost": 425.0,
+      "difference": 62.0
+    },
+    {
+      "key": [
+        150003,
+        153003,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 379.0,
+      "local_scalar_cost": 417.0,
+      "difference": 38.0
+    },
+    {
+      "key": [
+        150003,
+        153004,
+        "nominal",
+        12,
+        154013,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153004,
+        "nominal",
+        12,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 187.0,
+      "local_scalar_cost": 187.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153004,
+        "nominal",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153004,
+        "nominal",
+        12,
+        154035,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153004,
+        "nominal",
+        12,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153004,
+        "nominal",
+        24,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 393.0,
+      "local_scalar_cost": 393.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153004,
+        "nominal",
+        24,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 361.0,
+      "local_scalar_cost": 351.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150003,
+        153005,
+        "homogeneous",
+        12,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 168.0,
+      "local_scalar_cost": 168.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153005,
+        "homogeneous",
+        24,
+        154007,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 439.0,
+      "local_scalar_cost": 439.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153005,
+        "homogeneous",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 385.0,
+      "local_scalar_cost": 385.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153005,
+        "nominal",
+        12,
+        154024,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153005,
+        "nominal",
+        24,
+        154023,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 382.0,
+      "local_scalar_cost": 382.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153005,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 387.0,
+      "local_scalar_cost": 409.0,
+      "difference": 22.0
+    },
+    {
+      "key": [
+        150003,
+        153006,
+        "nominal",
+        24,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153006,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "homogeneous",
+        24,
+        154009,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 439.0,
+      "local_scalar_cost": 439.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "homogeneous",
+        24,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 428.0,
+      "local_scalar_cost": 428.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "homogeneous",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 459.0,
+      "local_scalar_cost": 459.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "homogeneous",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 475.0,
+      "local_scalar_cost": 475.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "homogeneous",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 434.0,
+      "local_scalar_cost": 434.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        12,
+        154022,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 214.0,
+      "difference": 12.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        12,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 183.0,
+      "local_scalar_cost": 205.0,
+      "difference": 22.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        24,
+        154000,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 365.0,
+      "difference": 31.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 385.0,
+      "local_scalar_cost": 381.0,
+      "difference": -4.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 387.0,
+      "local_scalar_cost": 413.0,
+      "difference": 26.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 382.0,
+      "local_scalar_cost": 382.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        24,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 387.0,
+      "local_scalar_cost": 399.0,
+      "difference": 12.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        24,
+        154041,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 334.0,
+      "local_scalar_cost": 334.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153007,
+        "nominal",
+        24,
+        154045,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 340.0,
+      "difference": -6.0
+    },
+    {
+      "key": [
+        150003,
+        153008,
+        "nominal",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153008,
+        "nominal",
+        12,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 176.0,
+      "local_scalar_cost": 176.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153008,
+        "nominal",
+        12,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153008,
+        "nominal",
+        24,
+        154004,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153008,
+        "nominal",
+        24,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 363.0,
+      "local_scalar_cost": 363.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153008,
+        "nominal",
+        24,
+        154046,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 364.0,
+      "local_scalar_cost": 364.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153009,
+        "nominal",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153009,
+        "nominal",
+        12,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 176.0,
+      "local_scalar_cost": 176.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153009,
+        "nominal",
+        12,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153009,
+        "nominal",
+        24,
+        154004,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153009,
+        "nominal",
+        24,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 363.0,
+      "local_scalar_cost": 363.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150003,
+        153009,
+        "nominal",
+        24,
+        154046,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 364.0,
+      "local_scalar_cost": 364.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153000,
+        "nominal",
+        12,
+        154032,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 176.0,
+      "local_scalar_cost": 176.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153000,
+        "nominal",
+        24,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 402.0,
+      "difference": -16.0
+    },
+    {
+      "key": [
+        150004,
+        153001,
+        "homogeneous",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 228.0,
+      "local_scalar_cost": 228.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153001,
+        "homogeneous",
+        12,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 186.0,
+      "local_scalar_cost": 186.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153001,
+        "homogeneous",
+        12,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 170.0,
+      "local_scalar_cost": 170.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153001,
+        "nominal",
+        12,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 218.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150004,
+        153001,
+        "nominal",
+        12,
+        154040,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 202.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153002,
+        "homogeneous",
+        12,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153002,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 396.0,
+      "local_scalar_cost": 396.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153002,
+        "nominal",
+        24,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 417.0,
+      "local_scalar_cost": 417.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153002,
+        "nominal",
+        24,
+        154022,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 412.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153002,
+        "nominal",
+        24,
+        154032,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 385.0,
+      "local_scalar_cost": 385.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153002,
+        "nominal",
+        24,
+        154044,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 369.0,
+      "local_scalar_cost": 369.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153003,
+        "nominal",
+        12,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 186.0,
+      "local_scalar_cost": 186.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153003,
+        "nominal",
+        24,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 413.0,
+      "local_scalar_cost": 402.0,
+      "difference": -11.0
+    },
+    {
+      "key": [
+        150004,
+        153004,
+        "nominal",
+        12,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 180.0,
+      "local_scalar_cost": 180.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153004,
+        "nominal",
+        12,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 181.0,
+      "local_scalar_cost": 171.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150004,
+        153006,
+        "nominal",
+        12,
+        154014,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 210.0,
+      "local_scalar_cost": 210.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153006,
+        "nominal",
+        12,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 235.0,
+      "local_scalar_cost": 210.0,
+      "difference": -25.0
+    },
+    {
+      "key": [
+        150004,
+        153006,
+        "nominal",
+        24,
+        154005,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 368.0,
+      "local_scalar_cost": 368.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153006,
+        "nominal",
+        24,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153007,
+        "homogeneous",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 228.0,
+      "local_scalar_cost": 228.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153007,
+        "homogeneous",
+        12,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 186.0,
+      "local_scalar_cost": 186.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153007,
+        "homogeneous",
+        12,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 170.0,
+      "local_scalar_cost": 170.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153007,
+        "nominal",
+        12,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 218.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150004,
+        153007,
+        "nominal",
+        12,
+        154040,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 202.0,
+      "local_scalar_cost": 202.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153008,
+        "nominal",
+        12,
+        154005,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 176.0,
+      "local_scalar_cost": 176.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153008,
+        "nominal",
+        24,
+        154036,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 399.0,
+      "local_scalar_cost": 399.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153009,
+        "nominal",
+        12,
+        154005,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 176.0,
+      "local_scalar_cost": 176.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150004,
+        153009,
+        "nominal",
+        24,
+        154036,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 399.0,
+      "local_scalar_cost": 399.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153000,
+        "homogeneous",
+        12,
+        154045,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 212.0,
+      "local_scalar_cost": 212.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153000,
+        "homogeneous",
+        24,
+        154032,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 476.0,
+      "local_scalar_cost": 476.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153000,
+        "homogeneous",
+        24,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 448.0,
+      "local_scalar_cost": 448.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153000,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 392.0,
+      "local_scalar_cost": 402.0,
+      "difference": 10.0
+    },
+    {
+      "key": [
+        150005,
+        153001,
+        "homogeneous",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 228.0,
+      "local_scalar_cost": 228.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153001,
+        "nominal",
+        12,
+        154022,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 214.0,
+      "local_scalar_cost": 214.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153001,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 375.0,
+      "local_scalar_cost": 381.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150005,
+        153001,
+        "nominal",
+        24,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 399.0,
+      "local_scalar_cost": 399.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153002,
+        "nominal",
+        24,
+        154009,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 396.0,
+      "local_scalar_cost": 396.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153002,
+        "nominal",
+        24,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 410.0,
+      "local_scalar_cost": 410.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153004,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 345.0,
+      "local_scalar_cost": 345.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153005,
+        "nominal",
+        12,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 213.0,
+      "local_scalar_cost": 213.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153005,
+        "nominal",
+        12,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 221.0,
+      "local_scalar_cost": 221.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153005,
+        "nominal",
+        12,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 173.0,
+      "local_scalar_cost": 173.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153005,
+        "nominal",
+        24,
+        154029,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 364.0,
+      "local_scalar_cost": 364.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153006,
+        "nominal",
+        12,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 181.0,
+      "local_scalar_cost": 181.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153007,
+        "homogeneous",
+        12,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 228.0,
+      "local_scalar_cost": 228.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153007,
+        "nominal",
+        12,
+        154022,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 214.0,
+      "local_scalar_cost": 214.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153007,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 375.0,
+      "local_scalar_cost": 381.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150005,
+        153007,
+        "nominal",
+        24,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 399.0,
+      "local_scalar_cost": 399.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153008,
+        "homogeneous",
+        24,
+        154042,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 455.0,
+      "local_scalar_cost": 455.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153008,
+        "nominal",
+        24,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 386.0,
+      "local_scalar_cost": 411.0,
+      "difference": 25.0
+    },
+    {
+      "key": [
+        150005,
+        153008,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153008,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153009,
+        "homogeneous",
+        24,
+        154042,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 455.0,
+      "local_scalar_cost": 455.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153009,
+        "nominal",
+        24,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 386.0,
+      "local_scalar_cost": 411.0,
+      "difference": 25.0
+    },
+    {
+      "key": [
+        150005,
+        153009,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150005,
+        153009,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153000,
+        "homogeneous",
+        12,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 213.0,
+      "local_scalar_cost": 213.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153000,
+        "nominal",
+        12,
+        154008,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 203.0,
+      "local_scalar_cost": 203.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153000,
+        "nominal",
+        12,
+        154048,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 166.0,
+      "local_scalar_cost": 166.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153000,
+        "nominal",
+        24,
+        154007,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 416.0,
+      "local_scalar_cost": 395.0,
+      "difference": -21.0
+    },
+    {
+      "key": [
+        150006,
+        153000,
+        "nominal",
+        24,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 402.0,
+      "local_scalar_cost": 433.0,
+      "difference": 31.0
+    },
+    {
+      "key": [
+        150006,
+        153000,
+        "nominal",
+        24,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 395.0,
+      "local_scalar_cost": 410.0,
+      "difference": 15.0
+    },
+    {
+      "key": [
+        150006,
+        153000,
+        "nominal",
+        24,
+        154040,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 417.0,
+      "local_scalar_cost": 396.0,
+      "difference": -21.0
+    },
+    {
+      "key": [
+        150006,
+        153001,
+        "homogeneous",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 454.0,
+      "local_scalar_cost": 454.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153001,
+        "nominal",
+        12,
+        154047,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153001,
+        "nominal",
+        24,
+        154005,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153001,
+        "nominal",
+        24,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153001,
+        "nominal",
+        24,
+        154038,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153001,
+        "nominal",
+        24,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153002,
+        "nominal",
+        12,
+        154007,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 213.0,
+      "local_scalar_cost": 213.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153002,
+        "nominal",
+        12,
+        154022,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153002,
+        "nominal",
+        12,
+        154034,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 154.0,
+      "local_scalar_cost": 154.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153002,
+        "nominal",
+        12,
+        154037,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153002,
+        "nominal",
+        24,
+        154000,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 383.0,
+      "local_scalar_cost": 383.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153002,
+        "nominal",
+        24,
+        154028,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153002,
+        "nominal",
+        24,
+        154039,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154013,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 169.0,
+      "local_scalar_cost": 169.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154015,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 220.0,
+      "local_scalar_cost": 220.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 154.0,
+      "local_scalar_cost": 154.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154028,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 154.0,
+      "local_scalar_cost": 154.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154035,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        12,
+        154041,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 161.0,
+      "local_scalar_cost": 161.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153003,
+        "nominal",
+        24,
+        154002,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 374.0,
+      "local_scalar_cost": 390.0,
+      "difference": 16.0
+    },
+    {
+      "key": [
+        150006,
+        153004,
+        "nominal",
+        12,
+        154008,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153004,
+        "nominal",
+        12,
+        154049,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153004,
+        "nominal",
+        24,
+        154007,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153004,
+        "nominal",
+        24,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 323.0,
+      "local_scalar_cost": 323.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153004,
+        "nominal",
+        24,
+        154037,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        12,
+        154000,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 155.0,
+      "local_scalar_cost": 155.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        12,
+        154036,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        12,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        12,
+        154049,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        24,
+        154013,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        24,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        24,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153005,
+        "nominal",
+        24,
+        154035,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 329.0,
+      "local_scalar_cost": 329.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153006,
+        "homogeneous",
+        12,
+        154031,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 258.0,
+      "local_scalar_cost": 258.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153007,
+        "homogeneous",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 454.0,
+      "local_scalar_cost": 454.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153007,
+        "nominal",
+        12,
+        154047,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 174.0,
+      "local_scalar_cost": 174.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153007,
+        "nominal",
+        24,
+        154005,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153007,
+        "nominal",
+        24,
+        154020,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153007,
+        "nominal",
+        24,
+        154038,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153007,
+        "nominal",
+        24,
+        154043,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153008,
+        "nominal",
+        12,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 166.0,
+      "local_scalar_cost": 166.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153008,
+        "nominal",
+        12,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 166.0,
+      "local_scalar_cost": 166.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153008,
+        "nominal",
+        24,
+        154009,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 357.0,
+      "local_scalar_cost": 357.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153008,
+        "nominal",
+        24,
+        154022,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 357.0,
+      "local_scalar_cost": 357.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153009,
+        "nominal",
+        12,
+        154025,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 166.0,
+      "local_scalar_cost": 166.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153009,
+        "nominal",
+        12,
+        154033,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 166.0,
+      "local_scalar_cost": 166.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153009,
+        "nominal",
+        24,
+        154009,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 357.0,
+      "local_scalar_cost": 357.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150006,
+        153009,
+        "nominal",
+        24,
+        154022,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 357.0,
+      "local_scalar_cost": 357.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150007,
+        153000,
+        "homogeneous",
+        24,
+        154019,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 484.0,
+      "local_scalar_cost": 484.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150007,
+        153000,
+        "homogeneous",
+        24,
+        154027,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 561.0,
+      "local_scalar_cost": 561.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150007,
+        153002,
+        "nominal",
+        24,
+        154049,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 433.0,
+      "local_scalar_cost": 433.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150007,
+        153004,
+        "nominal",
+        12,
+        154026,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 162.0,
+      "local_scalar_cost": 162.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150007,
+        153004,
+        "nominal",
+        24,
+        154038,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 363.0,
+      "local_scalar_cost": 368.0,
+      "difference": 5.0
+    },
+    {
+      "key": [
+        150007,
+        153005,
+        "homogeneous",
+        12,
+        154026,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 192.0,
+      "local_scalar_cost": 192.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150007,
+        153005,
+        "homogeneous",
+        12,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 229.0,
+      "local_scalar_cost": 229.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150007,
+        153006,
+        "homogeneous",
+        12,
+        154028,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 386.0,
+      "local_scalar_cost": 386.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153000,
+        "nominal",
+        12,
+        154000,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 210.0,
+      "local_scalar_cost": 185.0,
+      "difference": -25.0
+    },
+    {
+      "key": [
+        150008,
+        153000,
+        "nominal",
+        24,
+        154009,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 396.0,
+      "local_scalar_cost": 396.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153000,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 408.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150008,
+        153000,
+        "nominal",
+        24,
+        154022,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 406.0,
+      "local_scalar_cost": 396.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150008,
+        153000,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 412.0,
+      "local_scalar_cost": 422.0,
+      "difference": 10.0
+    },
+    {
+      "key": [
+        150008,
+        153000,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153001,
+        "nominal",
+        12,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 186.0,
+      "local_scalar_cost": 218.0,
+      "difference": 32.0
+    },
+    {
+      "key": [
+        150008,
+        153001,
+        "nominal",
+        12,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 170.0,
+      "local_scalar_cost": 158.0,
+      "difference": -12.0
+    },
+    {
+      "key": [
+        150008,
+        153001,
+        "nominal",
+        24,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 420.0,
+      "local_scalar_cost": 420.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153001,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 381.0,
+      "local_scalar_cost": 381.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153001,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 356.0,
+      "local_scalar_cost": 356.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153002,
+        "nominal",
+        12,
+        154030,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153002,
+        "nominal",
+        12,
+        154044,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 167.0,
+      "local_scalar_cost": 167.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153002,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 396.0,
+      "local_scalar_cost": 396.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153002,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 422.0,
+      "local_scalar_cost": 403.0,
+      "difference": -19.0
+    },
+    {
+      "key": [
+        150008,
+        153002,
+        "nominal",
+        24,
+        154044,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 369.0,
+      "local_scalar_cost": 369.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153003,
+        "nominal",
+        12,
+        154013,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 169.0,
+      "local_scalar_cost": 169.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153003,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 427.0,
+      "local_scalar_cost": 417.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150008,
+        153003,
+        "nominal",
+        24,
+        154044,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 350.0,
+      "local_scalar_cost": 350.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153004,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 367.0,
+      "local_scalar_cost": 367.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153005,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 376.0,
+      "local_scalar_cost": 390.0,
+      "difference": 14.0
+    },
+    {
+      "key": [
+        150008,
+        153005,
+        "nominal",
+        24,
+        154023,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 382.0,
+      "local_scalar_cost": 382.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153005,
+        "nominal",
+        24,
+        154030,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 374.0,
+      "local_scalar_cost": 372.0,
+      "difference": -2.0
+    },
+    {
+      "key": [
+        150008,
+        153005,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153005,
+        "nominal",
+        24,
+        154044,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 310.0,
+      "local_scalar_cost": 336.0,
+      "difference": 26.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        12,
+        154008,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 204.0,
+      "local_scalar_cost": 204.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        12,
+        154016,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 220.0,
+      "local_scalar_cost": 220.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        12,
+        154031,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 210.0,
+      "local_scalar_cost": 210.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        12,
+        154032,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 188.0,
+      "local_scalar_cost": 188.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        12,
+        154039,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 204.0,
+      "local_scalar_cost": 204.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        12,
+        154040,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 220.0,
+      "local_scalar_cost": 220.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154009,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 400.0,
+      "difference": 22.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 384.0,
+      "local_scalar_cost": 384.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154015,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 384.0,
+      "local_scalar_cost": 394.0,
+      "difference": 10.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154017,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 365.0,
+      "local_scalar_cost": 365.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 410.0,
+      "local_scalar_cost": 400.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 432.0,
+      "local_scalar_cost": 412.0,
+      "difference": -20.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154022,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 410.0,
+      "local_scalar_cost": 394.0,
+      "difference": -16.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 416.0,
+      "local_scalar_cost": 406.0,
+      "difference": -10.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154028,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 410.0,
+      "local_scalar_cost": 410.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154034,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 375.0,
+      "local_scalar_cost": 381.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150008,
+        153006,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 378.0,
+      "local_scalar_cost": 378.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153007,
+        "nominal",
+        12,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 186.0,
+      "local_scalar_cost": 218.0,
+      "difference": 32.0
+    },
+    {
+      "key": [
+        150008,
+        153007,
+        "nominal",
+        12,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 170.0,
+      "local_scalar_cost": 158.0,
+      "difference": -12.0
+    },
+    {
+      "key": [
+        150008,
+        153007,
+        "nominal",
+        24,
+        154025,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 420.0,
+      "local_scalar_cost": 420.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153007,
+        "nominal",
+        24,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 381.0,
+      "local_scalar_cost": 381.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153007,
+        "nominal",
+        24,
+        154033,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 356.0,
+      "local_scalar_cost": 356.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153008,
+        "nominal",
+        24,
+        154004,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153008,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153008,
+        "nominal",
+        24,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 382.0,
+      "local_scalar_cost": 402.0,
+      "difference": 20.0
+    },
+    {
+      "key": [
+        150008,
+        153008,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153009,
+        "nominal",
+        24,
+        154004,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153009,
+        "nominal",
+        24,
+        154010,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 418.0,
+      "local_scalar_cost": 418.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150008,
+        153009,
+        "nominal",
+        24,
+        154018,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 382.0,
+      "local_scalar_cost": 402.0,
+      "difference": 20.0
+    },
+    {
+      "key": [
+        150008,
+        153009,
+        "nominal",
+        24,
+        154037,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153000,
+        "nominal",
+        12,
+        154027,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 220.0,
+      "local_scalar_cost": 220.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153001,
+        "homogeneous",
+        24,
+        154032,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 439.0,
+      "local_scalar_cost": 439.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153001,
+        "homogeneous",
+        24,
+        154039,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 439.0,
+      "local_scalar_cost": 439.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153001,
+        "homogeneous",
+        24,
+        154040,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 471.0,
+      "local_scalar_cost": 471.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153002,
+        "nominal",
+        12,
+        154019,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 220.0,
+      "local_scalar_cost": 226.0,
+      "difference": 6.0
+    },
+    {
+      "key": [
+        150009,
+        153002,
+        "nominal",
+        24,
+        154004,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153002,
+        "nominal",
+        24,
+        154041,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 340.0,
+      "local_scalar_cost": 340.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153002,
+        "nominal",
+        24,
+        154046,
+        "central_matching_ppo"
+      ],
+      "recorded_cost": 346.0,
+      "local_scalar_cost": 346.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153007,
+        "homogeneous",
+        24,
+        154032,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 439.0,
+      "local_scalar_cost": 439.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153007,
+        "homogeneous",
+        24,
+        154039,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 439.0,
+      "local_scalar_cost": 439.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153007,
+        "homogeneous",
+        24,
+        154040,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 471.0,
+      "local_scalar_cost": 471.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153008,
+        "nominal",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    },
+    {
+      "key": [
+        150009,
+        153009,
+        "nominal",
+        24,
+        154001,
+        "machine_cooperative_ppo"
+      ],
+      "recorded_cost": 380.0,
+      "local_scalar_cost": 380.0,
+      "difference": 0.0
+    }
+  ],
+  "scope": "Only episodes with cross-platform/batch action mismatch were re-evaluated on local Mac CPU. Not a rerun of training or a replacement of original test estimates. No primary specialized or skill-mask actions mismatched."
+}

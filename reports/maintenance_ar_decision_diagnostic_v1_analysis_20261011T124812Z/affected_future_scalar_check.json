@@ -1,0 +1,79 @@
+{
+  "scope": "affected selection future only; Mac scalar replay, no lab trace available",
+  "lab_cost": 1294.0,
+  "mac_scalar_cost": 1264.0,
+  "smallest_choice_margins": [
+    {
+      "tick": 35,
+      "step": 0,
+      "margin": 0.0,
+      "chosen": 5,
+      "runner_up": 5
+    },
+    {
+      "tick": 8,
+      "step": 0,
+      "margin": 0.002593994140625,
+      "chosen": 5,
+      "runner_up": 4
+    },
+    {
+      "tick": 17,
+      "step": 0,
+      "margin": 0.0032051801681518555,
+      "chosen": 7,
+      "runner_up": 6
+    },
+    {
+      "tick": 26,
+      "step": 0,
+      "margin": 0.0032140016555786133,
+      "chosen": 7,
+      "runner_up": 6
+    },
+    {
+      "tick": 12,
+      "step": 0,
+      "margin": 0.0036298036575317383,
+      "chosen": 1,
+      "runner_up": 0
+    },
+    {
+      "tick": 44,
+      "step": 0,
+      "margin": 0.04824817180633545,
+      "chosen": 5,
+      "runner_up": 7
+    },
+    {
+      "tick": 3,
+      "step": 0,
+      "margin": 0.07618820667266846,
+      "chosen": 0,
+      "runner_up": 2
+    },
+    {
+      "tick": 47,
+      "step": 0,
+      "margin": 0.08119726181030273,
+      "chosen": 6,
+      "runner_up": 0
+    },
+    {
+      "tick": 17,
+      "step": 1,
+      "margin": 0.10526525974273682,
+      "chosen": 4,
+      "runner_up": 2
+    },
+    {
+      "tick": 8,
+      "step": 1,
+      "margin": 0.16232728958129883,
+      "chosen": 6,
+      "runner_up": 0
+    }
+  ],
+  "numpy": "2.5.3",
+  "torch": "2.14.0"
+}

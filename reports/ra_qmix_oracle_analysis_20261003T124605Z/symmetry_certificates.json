@@ -1,0 +1,2051 @@
+{
+  "status": "EXPLORATORY_POSTHOC",
+  "assumption": "shared deterministic memoryless local policy and identical observations/action masks imply identical actions",
+  "certificates": {
+    "nominal": [],
+    "shared_preference": [
+      {
+        "state_id": 32,
+        "time": 2,
+        "state": {
+          "ages": [
+            2,
+            2
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            2,
+            2
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            2,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            2,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 18.525250000000003
+      },
+      {
+        "state_id": 70,
+        "time": 3,
+        "state": {
+          "ages": [
+            2,
+            2
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            3,
+            3
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            3,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            3,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 19.610325
+      },
+      {
+        "state_id": 93,
+        "time": 3,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            3,
+            3
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            3,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            3,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 19.610325
+      },
+      {
+        "state_id": 96,
+        "time": 3,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            true,
+            true
+          ],
+          "busy_until": [
+            3,
+            3
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            3,
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            3,
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 15.099999999999994
+      },
+      {
+        "state_id": 150,
+        "time": 4,
+        "state": {
+          "ages": [
+            2,
+            2
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            4,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 13.671875
+      },
+      {
+        "state_id": 179,
+        "time": 4,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            4,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 13.671875
+      },
+      {
+        "state_id": 182,
+        "time": 4,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            true,
+            true
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            4,
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 7.574999999999999
+      },
+      {
+        "state_id": 207,
+        "time": 4,
+        "state": {
+          "ages": [
+            4,
+            4
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            4,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 13.671875
+      },
+      {
+        "state_id": 210,
+        "time": 4,
+        "state": {
+          "ages": [
+            4,
+            4
+          ],
+          "failed": [
+            true,
+            true
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            4,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            4,
+            4,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 7.574999999999999
+      },
+      {
+        "state_id": 280,
+        "time": 5,
+        "state": {
+          "ages": [
+            2,
+            2
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            5,
+            5
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            5,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            5,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 6.25
+      },
+      {
+        "state_id": 313,
+        "time": 5,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            5,
+            5
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            5,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            5,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 6.25
+      },
+      {
+        "state_id": 345,
+        "time": 5,
+        "state": {
+          "ages": [
+            4,
+            4
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            5,
+            5
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            5,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            5,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 6.25
+      },
+      {
+        "state_id": 377,
+        "time": 5,
+        "state": {
+          "ages": [
+            5,
+            5
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            5,
+            5
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            5,
+            5,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ],
+          [
+            5,
+            5,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 6.25
+      }
+    ],
+    "pressure": [
+      {
+        "state_id": 9,
+        "time": 1,
+        "state": {
+          "ages": [
+            1,
+            1
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            1,
+            1
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 11.192765734374994
+      },
+      {
+        "state_id": 46,
+        "time": 2,
+        "state": {
+          "ages": [
+            2,
+            2
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            2,
+            2
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            2,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            2,
+            2,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 14.714510937500002
+      },
+      {
+        "state_id": 49,
+        "time": 2,
+        "state": {
+          "ages": [
+            2,
+            2
+          ],
+          "failed": [
+            true,
+            true
+          ],
+          "busy_until": [
+            2,
+            2
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            2,
+            2,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            2,
+            2,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "minimum_equal_action_regret": 1.1646937499999979
+      },
+      {
+        "state_id": 142,
+        "time": 3,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            3,
+            3
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            3,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            3,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 11.681250000000002
+      },
+      {
+        "state_id": 260,
+        "time": 4,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            4,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 17.906875
+      },
+      {
+        "state_id": 269,
+        "time": 4,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            true,
+            true
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            4,
+            3,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 7.574999999999999
+      },
+      {
+        "state_id": 316,
+        "time": 4,
+        "state": {
+          "ages": [
+            4,
+            4
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            4,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 17.906875
+      },
+      {
+        "state_id": 319,
+        "time": 4,
+        "state": {
+          "ages": [
+            4,
+            4
+          ],
+          "failed": [
+            true,
+            true
+          ],
+          "busy_until": [
+            4,
+            4
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            4,
+            4,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            4,
+            4,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 7.574999999999999
+      },
+      {
+        "state_id": 466,
+        "time": 5,
+        "state": {
+          "ages": [
+            3,
+            3
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            5,
+            5
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            5,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            5,
+            3,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 9.25
+      },
+      {
+        "state_id": 532,
+        "time": 5,
+        "state": {
+          "ages": [
+            4,
+            4
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            5,
+            5
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            5,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            5,
+            4,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 9.25
+      },
+      {
+        "state_id": 580,
+        "time": 5,
+        "state": {
+          "ages": [
+            5,
+            5
+          ],
+          "failed": [
+            false,
+            false
+          ],
+          "busy_until": [
+            5,
+            5
+          ],
+          "assigned_machine": [
+            -1,
+            -1
+          ],
+          "queues": [
+            [],
+            []
+          ]
+        },
+        "observations": [
+          [
+            5,
+            5,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            5,
+            5,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            3,
+            1,
+            0,
+            0,
+            0,
+            0,
+            4
+          ]
+        ],
+        "masks": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            true,
+            true,
+            true
+          ]
+        ],
+        "optimal_actions": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "minimum_equal_action_regret": 9.25
+      }
+    ]
+  }
+}

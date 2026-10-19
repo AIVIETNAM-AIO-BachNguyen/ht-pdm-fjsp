@@ -1,0 +1,102 @@
+## Material Passport
+
+- Workflow: ARS academic-research-suite / experiment-agent validate, inline.
+- Verification Status: ANALYZED; audit dữ liệu và thống kê độc lập về arithmetic; replay cùng source không phải independent reproduction.
+- Raw: `/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_production_full_cpu_20261004T155224Z`.
+- Protocol maintenance_production_impact_v1; source commit 27abfabd6a9787ddaeabad0f2caeddd99cdb2801; không thay protocol/seed/gate sau kết quả.
+- Chỉ run production impact; các experiment khác không nhập vào bảng này.
+
+## Kết luận
+
+Không đạt bằng chứng đã khóa để chốt một problem phối hợp bảo trì có impact đáng kể và bền lên makespan. S cải thiện workload ngắn khoảng 1,54% nhưng ở workload dài làm makespan tăng 0,49% so với H; S thua H 21/24 instance. Scarcity có hiệu ứng dương nhỏ trên panel; chưa xác lập tương tác capacity×skill. Failure/cost giảm rất lớn khi phối hợp, nên không được diễn giải S kém trên mọi mục tiêu.
+
+Bằng chứng chỉ áp dụng cho fixed-route parallel production diagnostic hiện tại: 6 máy, jobs sẵn tại t0, preempt/resume và không mất phần việc đã làm. Không phải FJSP đầy đủ, không phải số liệu nhà máy thực tế.
+
+## Cell chính: high / heterogeneous / 64 jobs mỗi máy
+
+| Policy | Makespan ↓ | Failure/episode ↓ | Service machine-ticks | Failed waiting machine-ticks | Chi phí mô phỏng ↓ |
+|---|---:|---:|---:|---:|---:|
+| I | 306.8687 | 46.2667 | 200.0417 | 3.5646 | 1125.8708 |
+| H | 308.2375 | 46.0708 | 207.8458 | 2.5292 | 1121.6573 |
+| S | 309.7396 | 0.5542 | 217.7708 | 0.1875 | 443.5208 |
+
+I = health individually + fastest worker; H = health + risk/backlog-aware greedy dispatch; S = analytical capacity reservation. Primary comparator là H, không phải I. `planned_steps` trong source gồm service cho cả máy khỏe và máy đã hỏng; không diễn giải tất cả là preventive maintenance.
+
+Primary recovery `(H−S)/H`, trung bình trên 24 instance = −0,4855%, CI95 [−0,7781%; −0,1473%]. Paired H−S makespan = −1,5021 ticks, CI95 [−2,4292; −0,4354]. Đây là evidence S chậm hơn H trên panel dài, không phải “chưa thấy khác biệt”. S thắng3/thua21/hòa0 instance.
+
+Mean simulated cost H=1121,6573 → S=443,5208. Mean instance-relative savings 59,3345%, CI95 [55,8626%; 62,6398%] (secondary descriptive). Tỷ số hai grand means cho mức giảm ~60,46%, là endpoint khác. Failure mean 46,0708 → 0,5542; S tăng active service machine-ticks 207,8458→217,7708 nhưng giảm failed-waiting 2,5292→0,1875. Do đó hiệu quả phụ thuộc mục tiêu makespan hay failure/cost; chi phí này là đơn vị simulator, không là tiền thật.
+
+## Gates và đối chứng tài nguyên
+
+| Gate đã khóa | Dữ liệu | Kết quả |
+|---|---|---|
+| Recovery >=5%, H−S CI dưới >0 | −0,49%; CI H−S hoàn toàn âm | FAIL |
+| Resource-specific burden: H capacity×skill interaction CI dưới >0 | +0,003475 ideal-normalized; CI [−0,000150; +0,007774] | FAIL |
+| Persistence: long recovery >= một nửa positive short recovery, và H có late waiting | Short +1,54%; long −0,49%; late waiting chỉ 0,2 machine-ticks/episode | FAIL |
+| Problem support: cả ba gate | Không gate nào đạt | FAIL |
+
+FAIL của interaction không chứng minh thiếu thợ không có ảnh hưởng. Dưới H, long uniform: high−low = 342,6250−341,7083 = +0,9167 ticks. Long heterogeneous: 308,2375−306,3813 = +1,8563 ticks (~0,61% của low mean makespan). Paired scarcity burden normalized theo ideal: uniform +0,003390 CI [0,001895;0,005135]; heterogeneous +0,006865 CI [0,003395;0,011073]. Đó là các secondary CIs mô tả có dấu dương, nhưng effect nhỏ và không chứng minh interaction. Không gộp giá trị raw makespan giữa workload16 và64.
+
+## Tất cả cell và độ bền
+
+| Pressure | Skill | Jobs/máy | I makespan | H makespan | S makespan | S recovery/H mean relative |
+|---|---|---:|---:|---:|---:|
+| low | uniform | 16 | 104.900 | 87.833 | 89.458 | -1.829% |
+| low | uniform | 64 | 397.665 | 341.708 | 347.375 | -1.640% |
+| low | heterogeneous | 16 | 79.902 | 79.083 | 79.792 | -0.881% |
+| low | heterogeneous | 64 | 306.869 | 306.381 | 309.208 | -0.917% |
+| high | uniform | 16 | 104.900 | 88.931 | 89.458 | -0.611% |
+| high | uniform | 64 | 397.665 | 342.625 | 347.542 | -1.422% |
+| high | heterogeneous | 16 | 79.902 | 81.308 | 80.015 | +1.542% |
+| high | heterogeneous | 64 | 306.869 | 308.238 | 309.740 | -0.485% |
+
+Ở high/heterogeneous/short16, recovery +1,5423%, CI95 [0,2985%;2,8998%], absolute H−S +1,2938 ticks [0,2542;2,4354]. Đây là secondary cell; không đổi primary sang nó. Khi kéo dài4× workload, hiệu ứng đổi dấu.
+
+H primary waiting tổng4,9563, late waiting0,2 machine-ticks. Chỉ instance880212 có H mean late waiting>0 (4,8), 23 instance còn lại bằng0; phase đầu chứa phần lớn contention. I primary total waiting6,5417 và late waiting0. I uniform có waiting rất lớn vì tie shortest-duration chọn worker0, nên makespan I giống hệt giữa K2 và K6. Đây là hệ quả weak individual policy bỏ qua worker còn lại, không phải proof capacity không quan trọng. H/S là các đối chứng chính có sử dụng tài nguyên.
+
+## Cơ chế và giới hạn vật lý của simulator
+
+Development chọn H offset0, S lead4 đúng objective normalized makespan: H offsets0/1/2/4 có dev score 1,205636 /1,211889 /1,235826 /1,275568; S leads0/2/4/6 có 1,212864 /1,211453 /1,211410 /1,215391. Không dùng sealed evaluation để đổi settings. Offset0 request sau khi age đạt failure_age; lead4 cho S khả năng bảo trì sớm.
+
+Một productive tick được tính hoàn thành trước khi hazard event đánh dấu hỏng. Khi hỏng, công việc đã làm được giữ nguyên; corrective service dùng cùng duration matrix với preventive service. H offset0 vốn đã request ở tick sau khi age đạt limit, dù hazard xảy ra hay không. Khi còn worker rảnh, một event hỏng vì thế không kéo dài service hoặc tạo lost productive work so với request mà H vốn sẽ làm. Tổn thất hỏng thêm chủ yếu đi qua failed waiting và penalty tiền mô phỏng; objective makespan không bao gồm penalty tiền. Đây là semantics source, không lỗi seed/tuning.
+
+Trong first-shock trace panel của primary H có 1107 failure events; 1064 (96,12%) được bắt đầu service ngay tick tiếp theo (mọi service duration>=2 nên nhận diện từ next assigned state). Đây là thống kê trace24 shocks theo24 instances, không tất cả480 episodes và không independent sample. 46,07 failures/episode nhưng chỉ2,53 failed-waiting machine-ticks/episode cho thấy failure count không quy đổi thành production-time impact lớn trong mô hình này.
+
+Witness instance880200: H mean makespan328,55, S334; H failures34,7, S0,8; H active service266,6, S287,4. Dữ liệu thể hiện rõ giảm hỏng nhưng tăng service burden. Không suy diễn đây là chứng minh corrective maintenance ngoài đời ít tốn thời gian hoặc mọi coordinated policy kém hơn H.
+
+## Ý nghĩa cho problem nghiên cứu
+
+Chưa chốt được mệnh đề “thiếu thợ + khác biệt kỹ năng tạo tổn thất sản xuất lớn và bền cần joint timing algorithm mới” với benchmark này. Có cost/risk trade-off và scarcity effect nhỏ; thiếu evidence về production recovery dài hạn. Failure của heuristic S không refute toàn bộ class; interaction CI còn cắt0 trên24 instance.
+
+Bước tiếp hợp lý là xác định objective vận hành và quan hệ giữa hỏng với production loss dựa trên domain: corrective repair duration có khác preventive service không, có scrap/rework/detection delay không, và intensity/resource utilization nào đại diện thực tế. Kiểm tra cùng workload của H đã tạo contention lặp lại hay mới transient. Chỉ đưa những khác biệt có căn cứ vào protocol mới; không tăng stress/đổi metric post hoc để ép gate. Nếu mục tiêu thật là economic risk, cần nghiên cứu cost và production cùng nhau vì makespan một mình bỏ qua failure penalties. Không tự sửa code/chạy experiment mới trong lần phân tích này.
+
+## Audit và tái lập
+
+- Completed trên CPU Linux, sạch đúng commit; source/dependency/protocol SHA256 khớp Git object snapshot.
+- Đủ Cartesian keys: 11.520 episodes,2.304 dev,192 config/cell/length và coordination rows; không missing/duplicate.
+- 121.703 decision rows;138.240 job-completion rows có unique đúng first-shock keys và step/job coverage.
+- Episode work balance, completed jobs, cost reconciliation, finite numbers, feasibility và mask metrics PASS; partial/final byte-identical.
+- Config regeneration đúng; workload, age/hazard giữ nguyên qua capacity/skill; row means matched; short là prefix long.
+- Dev/test config và shock seeds disjoint; policy chọn đúng minimum development makespan/ideal.
+- Tính lại tất cả stored endpoint means/CIs, capacity/interaction và gates từ CSV bằng arithmetic riêng; khớp summary.
+- Replay576 episode (first shock/cell), tất cả121.703 decision/state/work transitions và138.240 completions bằng pinned source: max error0; runtime không so sánh. Không replay10.944 episode shock còn lại.
+- Replay là shared implementation consistency, không independent reproduction của model.
+- n=24 independent instance means, bootstrap10.000 seed882100, CI conditional trên fixed common20-shock panel. Secondary/sensitivity CIs mô tả, không familywise-controlled.
+
+## Statistical fallacy scan — 11/11
+
+| Loại | Xử lý/giới hạn |
+|---|---|
+| Simpson | Giữ capacity/skill/workload strata; không pooling raw short/long. |
+| Ecological | Không xem episode/job completions là inference units độc lập; n24. |
+| Berkson | Không lọc instance theo thắng/hỏng; generator fixed và scope chỉ parallel stream. |
+| Collider | Không điều chỉnh failure/queue trong primary makespan; dùng mô tả cơ chế. |
+| Base rate | Báo absolute failures/downtime/cost/makespan và CI cùng % recovery. |
+| Regression to mean | Panel mới, paired cells/policies, không chọn lại instance thắng từ experiment cũ. |
+| Survivorship | Fixed full Cartesian panel, không drops/censored cap hits. |
+| Look-elsewhere | Không chuyển primary sang short16; secondary results mô tả. |
+| Forking paths | Giữ locked metric,gates,seeds; không retune offset/lead trên eval. |
+| Correlation/causation | Policy/capacity interventions trong simulator; không suy ra plant causality hay mechanism dominance qua counterfactual chưa chạy. |
+| Reverse causality | Action trước production/hazard transition; không đảo failure impact từ observed makespan. |
+
+Artifacts cùng thư mục: analyze.py, audit.json, statistics.json, instances.csv, pinned sources, protocol_snapshot.md.

@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "file_hashes": 169,
+  "source_snapshot_matches_commit": true,
+  "bytes": 137898223,
+  "expected_counts": {
+    "models": 20,
+    "training_learned_steps": 4915200,
+    "training_physical_steps": 6144000,
+    "training_episodes": 102400,
+    "optimizer_steps": 76800,
+    "development_episodes": 6848,
+    "test_episodes": 21504,
+    "test_base_decisions": 1032192,
+    "test_tail_decisions": 258048,
+    "test_decisions": 1290240,
+    "logged_test_decisions": 10080
+  },
+  "independent_replay_decisions": 10080,
+  "independent_replay_episodes": 168,
+  "episode_reconciliation": 21504,
+  "request_rows_reconciled": 693269,
+  "carryover_rows_reconciled": 16886,
+  "regenerated_training_profiles": 51200,
+  "paired_training_tapes": "PASS",
+  "development_selection": "PASS",
+  "physical_profile_splits": "PASS",
+  "diagnostic_float_max_difference": {
+    "log_probability": 1.1920928955078125e-06,
+    "value": 7.62939453125e-06
+  },
+  "diagnostic_float_tolerance": "atol5e-5/rtol1e-5; Mac single-item inference vs Linux batched inference",
+  "recomputed_intervals": 10,
+  "checkpoint_files_verified": 120
+}

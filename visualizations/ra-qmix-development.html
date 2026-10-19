@@ -1,0 +1,93 @@
+<div id="ra-qmix-development" role="img" aria-label="Preliminary Resource-Aware QMIX development results: mean objective cost comparison and training-seed spread.">
+  <style>
+    #ra-qmix-development {
+      --background: #ffffff;
+      --foreground: #172033;
+      --muted-foreground: #667085;
+      --border: #d9dee8;
+      --viz-series-1: #0f766e;
+      --viz-series-2: #475569;
+      --viz-series-3: #64748b;
+      --viz-series-4: #94a3b8;
+      --viz-series-5: #c2410c;
+      color: var(--foreground);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    #ra-qmix-development svg { width: 100%; height: auto; display: block; }
+    #ra-qmix-development .grid { stroke: var(--border); stroke-width: 1; }
+    #ra-qmix-development .axis { stroke: var(--foreground); stroke-width: 1.2; }
+    #ra-qmix-development text { fill: var(--foreground); font-size: 13px; }
+    #ra-qmix-development .muted { fill: var(--muted-foreground); font-size: 12px; }
+    #ra-qmix-development .title { font-size: 18px; font-weight: 500; }
+    #ra-qmix-development .panel { font-size: 14px; font-weight: 500; }
+    #ra-qmix-development .bar { opacity: .88; }
+    #ra-qmix-development .dot { fill: var(--foreground); stroke: var(--background); stroke-width: 1.5; }
+    #ra-qmix-development .line { fill: none; stroke-width: 2.5; }
+  </style>
+  <svg viewBox="0 0 980 500" aria-labelledby="viz-title viz-desc">
+    <title id="viz-title">Resource-Aware QMIX preliminary development evidence</title>
+    <desc id="viz-desc">RA-QMIX has mean objective cost 8.33, compared with 9.67 for QMIX, 9.83 for VDN, 11.00 for independent Q, and 24.84 for the skill-aware FIFO dispatcher. Lower is better.</desc>
+    <text x="34" y="30" class="title">Resource-Aware QMIX: preliminary development evidence</text>
+    <text x="34" y="48" class="muted">Locked stress cell; three training seeds. Lower objective cost is better.</text>
+
+    <text x="48" y="82" class="panel">(a) Mean objective cost</text>
+    <line x1="60" y1="350" x2="450" y2="350" class="axis"/>
+    <line x1="60" y1="120" x2="60" y2="350" class="axis"/>
+    <line x1="60" y1="292.5" x2="450" y2="292.5" class="grid"/>
+    <line x1="60" y1="235" x2="450" y2="235" class="grid"/>
+    <line x1="60" y1="177.5" x2="450" y2="177.5" class="grid"/>
+    <text x="50" y="354" text-anchor="end" class="muted">0</text>
+    <text x="50" y="296.5" text-anchor="end" class="muted">7</text>
+    <text x="50" y="239" text-anchor="end" class="muted">14</text>
+    <text x="50" y="181.5" text-anchor="end" class="muted">21</text>
+    <text x="50" y="124" text-anchor="end" class="muted">28</text>
+    <text x="255" y="392" text-anchor="middle" class="muted">Mean objective cost</text>
+    <rect x="82" y="281.6" width="48" height="68.4" fill="var(--viz-series-1)" class="bar"/>
+    <rect x="154" y="270.7" width="48" height="79.3" fill="var(--viz-series-2)" class="bar"/>
+    <rect x="226" y="269.2" width="48" height="80.8" fill="var(--viz-series-3)" class="bar"/>
+    <rect x="298" y="259.6" width="48" height="90.4" fill="var(--viz-series-4)" class="bar"/>
+    <rect x="370" y="145.2" width="48" height="204.8" fill="var(--viz-series-5)" class="bar"/>
+    <text x="106" y="369" text-anchor="middle" class="muted">RA-QMIX</text>
+    <text x="178" y="369" text-anchor="middle" class="muted">QMIX</text>
+    <text x="250" y="369" text-anchor="middle" class="muted">VDN</text>
+    <text x="322" y="369" text-anchor="middle" class="muted">Ind. Q</text>
+    <text x="394" y="369" text-anchor="middle" class="muted">FIFO</text>
+    <text x="106" y="273" text-anchor="middle">8.33</text>
+    <text x="178" y="262" text-anchor="middle">9.67</text>
+    <text x="250" y="260" text-anchor="middle">9.83</text>
+    <text x="322" y="250" text-anchor="middle">11.00</text>
+    <text x="394" y="136" text-anchor="middle">24.84</text>
+    <text x="106" y="403" text-anchor="middle" class="muted">-13.8% vs QMIX</text>
+
+    <text x="540" y="82" class="panel">(b) Training-seed spread</text>
+    <line x1="555" y1="350" x2="935" y2="350" class="axis"/>
+    <line x1="555" y1="120" x2="555" y2="350" class="axis"/>
+    <line x1="555" y1="292.5" x2="935" y2="292.5" class="grid"/>
+    <line x1="555" y1="235" x2="935" y2="235" class="grid"/>
+    <line x1="555" y1="177.5" x2="935" y2="177.5" class="grid"/>
+    <text x="545" y="354" text-anchor="end" class="muted">0</text>
+    <text x="545" y="296.5" text-anchor="end" class="muted">7</text>
+    <text x="545" y="239" text-anchor="end" class="muted">14</text>
+    <text x="545" y="181.5" text-anchor="end" class="muted">21</text>
+    <text x="545" y="124" text-anchor="end" class="muted">28</text>
+    <text x="575" y="372" text-anchor="middle" class="muted">11</text>
+    <text x="745" y="372" text-anchor="middle" class="muted">12</text>
+    <text x="915" y="372" text-anchor="middle" class="muted">13</text>
+    <text x="745" y="392" text-anchor="middle" class="muted">Training seed</text>
+    <path d="M575 267.9 L745 292.5 L915 284.3" class="line" stroke="var(--viz-series-1)"/>
+    <path d="M575 280.2 L745 276.1 L915 255.4" class="line" stroke="var(--viz-series-2)"/>
+    <path d="M575 267.9 L745 276.1 L915 263.2" class="line" stroke="var(--viz-series-3)"/>
+    <path d="M575 255.4 L745 271.4 L915 251.4" class="line" stroke="var(--viz-series-4)"/>
+    <circle cx="575" cy="267.9" r="4.5" class="dot"/><circle cx="745" cy="292.5" r="4.5" class="dot"/><circle cx="915" cy="284.3" r="4.5" class="dot"/>
+    <circle cx="575" cy="280.2" r="4.5" class="dot"/><circle cx="745" cy="276.1" r="4.5" class="dot"/><circle cx="915" cy="255.4" r="4.5" class="dot"/>
+    <circle cx="575" cy="267.9" r="4.5" class="dot"/><circle cx="745" cy="276.1" r="4.5" class="dot"/><circle cx="915" cy="263.2" r="4.5" class="dot"/>
+    <circle cx="575" cy="255.4" r="4.5" class="dot"/><circle cx="745" cy="271.4" r="4.5" class="dot"/><circle cx="915" cy="251.4" r="4.5" class="dot"/>
+    <line x1="575" y1="420" x2="600" y2="420" class="line" stroke="var(--viz-series-1)"/><text x="608" y="424" class="muted">RA-QMIX</text>
+    <line x1="680" y1="420" x2="705" y2="420" class="line" stroke="var(--viz-series-2)"/><text x="713" y="424" class="muted">QMIX</text>
+    <line x1="760" y1="420" x2="785" y2="420" class="line" stroke="var(--viz-series-3)"/><text x="793" y="424" class="muted">VDN</text>
+    <line x1="835" y1="420" x2="860" y2="420" class="line" stroke="var(--viz-series-4)"/><text x="868" y="424" class="muted">Independent Q</text>
+    <text x="34" y="472" class="muted">Development evidence only; the final claim requires artifact-level verification and the planned RA-QMIX ablation.</text>
+  </svg>
+</div>

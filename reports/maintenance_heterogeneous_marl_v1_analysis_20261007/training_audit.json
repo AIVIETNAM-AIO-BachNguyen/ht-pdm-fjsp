@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "episodes": 1228800,
+  "progress_rows": 9600,
+  "paired_configuration_streams": true,
+  "reserved_seed_overlap": 0,
+  "sampled_config_hash_checks": 1470,
+  "identical_initial_parameters": true,
+  "identical_parameter_counts": true,
+  "development_infeasible": [
+    "machine_cooperative_ppo:150000",
+    "machine_cooperative_ppo:150001",
+    "machine_cooperative_ppo:150002",
+    "machine_cooperative_ppo:150003",
+    "machine_cooperative_ppo:150004",
+    "machine_cooperative_ppo:150005",
+    "machine_cooperative_ppo:150006",
+    "machine_cooperative_ppo:150007",
+    "machine_cooperative_ppo:150008",
+    "machine_cooperative_ppo:150009"
+  ],
+  "actual_initial_checkpoint_parameter_hashes_verified": 30
+}

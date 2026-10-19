@@ -1,0 +1,33 @@
+{
+  "verification_status": "ANALYZED",
+  "raw": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_repair_full_cpu_20261004T162209Z",
+  "source_commit": "c8f6abb5f68b01c77bb1699d558936028b5721fa",
+  "hashes_match": true,
+  "full_cartesian_complete": true,
+  "episodes": 34560,
+  "development": 6912,
+  "config_coordination": 576,
+  "decisions": 399576,
+  "job_completions": 414720,
+  "summary_arithmetic_match": true,
+  "development_selection_matches": true,
+  "replayed_episodes": 1728,
+  "replayed_decisions": 399576,
+  "replayed_job_completions": 414720,
+  "max_replay_error": 0.0,
+  "independent_reproduction": false,
+  "replay_scope": "first shared shock per config/cell/ratio; entire recorded trace/completion panel",
+  "file_sha256": {
+    "benchmark_config.json": "1a35bc5c21e0c9b182ca1ad1cbb5b519e16add4eca26458f92d5e1a268d09b80",
+    "coordination.csv": "84534e4afb259dbbb35783688d1803f2d01ed1a05318ea7c8cb60eb9abeccbee",
+    "decisions.csv": "0a076d45918dfb9bbee0cf7faf297f71d7bb19cb24aa5119887849a28686f723",
+    "development.csv": "48001bcbbfb8732ad66815749ef91a77c87f5e0cb21d221f0a4bfbab761c9a19",
+    "episodes.csv": "47d34b8466636886697ece9a5bf7ee467e5d1e33603c36f1e7c11ec64c12daee",
+    "episodes.partial.csv": "47d34b8466636886697ece9a5bf7ee467e5d1e33603c36f1e7c11ec64c12daee",
+    "job_completions.csv": "0ce357c4fad08ddca83dfada15e31fab1777fec4a6ce7806613c0866f4918b97",
+    "manifest.json": "5e30cea2517c3d509ad79760cc2485ef6425d29ece6775252cd42ad2ccc5079e",
+    "policy.json": "cc15c84783dbeebfcd4cd6b9cfa1c458d000c21397a985c51a4d167bdb464a21",
+    "resolved_config.json": "6971995abef4b33bfbfe9f82d46712b853e8b74393c4b43ad1f8f44558359e98",
+    "summary.json": "4300f91b33e7f60cef85ed28ac5acad5425951e712640634d116f5616693822c"
+  }
+}

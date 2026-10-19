@@ -1,0 +1,22 @@
+[
+  {
+    "file": "lee_2026_planning_or_learning.pdf",
+    "url": "https://arxiv.org/pdf/2609.13566",
+    "status": "downloaded",
+    "bytes": 539061,
+    "pages": 12
+  },
+  {
+    "file": "mira_2026.pdf",
+    "url": "https://www.mdpi.com/1999-5903/18/8/430/pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "file": "tseremoglou_santos_2024.pdf",
+    "url": "https://repository.tudelft.nl/file/File_4befded8-b28c-4b21-838c-1eb147819b9f",
+    "status": "downloaded",
+    "bytes": 2928911,
+    "pages": 21
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "status": "PASS",
+  "verification": "hash/commit/count/grid/selection seal and independent eight-CI bootstrap",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_joint_frontier_mac_v1_full_cpu_20261012T062329Z",
+  "files_checked": 28,
+  "commit": "a7691895b5cad853a52a18a6348faf8e5ff87754",
+  "scientific_status": "JOINT_SETTING_CONFIRMED",
+  "comparisons": {
+    "cost_vs_deadline_matching": {
+      "estimate": 0.05394753253232443,
+      "ci": [
+        0.04062335727446872,
+        0.06800046231246742
+      ],
+      "confidence": 0.99375
+    },
+    "cost_vs_isolated_h6": {
+      "estimate": 0.08392847078525933,
+      "ci": [
+        0.0677042245637888,
+        0.10048613131447744
+      ],
+      "confidence": 0.99375
+    },
+    "cost_vs_isolated_endpoint": {
+      "estimate": 0.0566927828213738,
+      "ci": [
+        0.040275973038504324,
+        0.07313367758242062
+      ],
+      "confidence": 0.99375
+    },
+    "availability_difference": {
+      "estimate": 0.02003987630208348,
+      "ci": [
+        0.014811197916666907,
+        0.025655110677083925
+      ],
+      "confidence": 0.99375
+    },
+    "pending_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.99375
+    },
+    "absolute_availability": {
+      "estimate": 0.7356160481770836,
+      "ci": [
+        0.7319539388020834,
+        0.7386983871459962
+      ],
+      "confidence": 0.99375
+    },
+    "absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.99375
+    },
+    "interior_cost_gain": {
+      "estimate": 0.04879285019757118,
+      "ci": [
+        0.03651635877738011,
+        0.06171483534403095
+      ],
+      "confidence": 0.99375
+    }
+  },
+  "gates": {
+    "cost_vs_deadline_matching": true,
+    "cost_vs_isolated_h6": true,
+    "cost_vs_isolated_endpoint": true,
+    "availability_difference": true,
+    "pending_difference": true,
+    "absolute_availability": true,
+    "absolute_pending": true,
+    "interior_cost_gain": true
+  },
+  "means": [
+    {
+      "method": "deadline_matching",
+      "collision_excess": 0.09098307291666666,
+      "sensitive_choice_rate": 0.53515625,
+      "selected_sensitive_rate": 0.53125,
+      "capacity_pressure_rate": 0.011149088541666666,
+      "skill_deficit_rate": 0.0,
+      "demand_count": 0.9642740885416666,
+      "legacy_proposal_conflict_rate": 0.08544921875,
+      "skill_contention_rate": 0.079345703125,
+      "contested_choice_rate": 0.03108723958333333,
+      "feasible_matching_cardinality": 0.95263671875,
+      "preferred_matching_cardinality": 0.8732910156249999,
+      "preferred_deficit": 0.079345703125,
+      "legacy_tie_rate": 0.0,
+      "cost_sensitive_contention_rate": 0.03108723958333333,
+      "selected_cost_sensitive_contention_rate": 0.02718098958333333,
+      "committed_cost_span_max": 7.27978515625,
+      "selected_committed_cost_span": 7.22021484375,
+      "disagreement_rate": 0.0,
+      "subset_change_rate": 0.0,
+      "assignment_only_change_rate": 0.0,
+      "cardinality_change_rate": 0.0,
+      "wait_change_rate": 0.0,
+      "availability": 0.715576171875,
+      "technician_utilization": 0.5688069661458334,
+      "terminal_pending": 0.0,
+      "terminal_failed": 0.0,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 377.6328125,
+      "tail_cost": 92.15234375,
+      "extended_cost": 469.78515625,
+      "policy_failures": 0.265625,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.000702905909065521,
+      "extended_maintenance_cost": 57.56640625,
+      "extended_unavailability_cost": 408.234375,
+      "extended_failure_cost": 3.984375,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "isolated_h6",
+      "collision_excess": 0.15291341145833334,
+      "sensitive_choice_rate": 0.5362955729166666,
+      "selected_sensitive_rate": 0.5286458333333333,
+      "capacity_pressure_rate": 0.020833333333333336,
+      "skill_deficit_rate": 0.0,
+      "demand_count": 1.0144856770833333,
+      "legacy_proposal_conflict_rate": 0.14290364583333334,
+      "skill_contention_rate": 0.131591796875,
+      "contested_choice_rate": 0.068359375,
+      "feasible_matching_cardinality": 0.9931640625,
+      "preferred_matching_cardinality": 0.861572265625,
+      "preferred_deficit": 0.131591796875,
+      "legacy_tie_rate": 0.0,
+      "cost_sensitive_contention_rate": 0.068359375,
+      "selected_cost_sensitive_contention_rate": 0.060709635416666664,
+      "committed_cost_span_max": 7.45556640625,
+      "selected_committed_cost_span": 7.34375,
+      "disagreement_rate": 0.07242838541666666,
+      "subset_change_rate": 0.042643229166666664,
+      "assignment_only_change_rate": 0.02978515625,
+      "cardinality_change_rate": 0.038736979166666664,
+      "wait_change_rate": 0.0,
+      "availability": 0.71875,
+      "technician_utilization": 0.5618082682291667,
+      "terminal_pending": 0.03515625,
+      "terminal_failed": 0.03515625,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 390.40234375,
+      "tail_cost": 94.7578125,
+      "extended_cost": 485.16015625,
+      "policy_failures": 1.2890625,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.003376474142214647,
+      "extended_maintenance_cost": 58.75,
+      "extended_unavailability_cost": 406.3125,
+      "extended_failure_cost": 20.09765625,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "isolated_endpoint",
+      "collision_excess": 0.1396484375,
+      "sensitive_choice_rate": 0.6825358072916667,
+      "selected_sensitive_rate": 0.6774088541666666,
+      "capacity_pressure_rate": 0.008870442708333332,
+      "skill_deficit_rate": 0.0,
+      "demand_count": 1.0861002604166665,
+      "legacy_proposal_conflict_rate": 0.13297526041666666,
+      "skill_contention_rate": 0.13028971354166666,
+      "contested_choice_rate": 0.06722005208333333,
+      "feasible_matching_cardinality": 1.0767415364583333,
+      "preferred_matching_cardinality": 0.9464518229166667,
+      "preferred_deficit": 0.13028971354166666,
+      "legacy_tie_rate": 0.0,
+      "cost_sensitive_contention_rate": 0.06722005208333333,
+      "selected_cost_sensitive_contention_rate": 0.024983723958333332,
+      "committed_cost_span_max": 9.7001953125,
+      "selected_committed_cost_span": 9.59375,
+      "disagreement_rate": 0.09708658854166667,
+      "subset_change_rate": 0.09708658854166667,
+      "assignment_only_change_rate": 0.0,
+      "cardinality_change_rate": 0.093994140625,
+      "wait_change_rate": 0.0021158854166666665,
+      "availability": 0.7414754231770833,
+      "technician_utilization": 0.5133463541666667,
+      "terminal_pending": 0.0,
+      "terminal_failed": 0.0,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 379.9921875,
+      "tail_cost": 91.16015625,
+      "extended_cost": 471.15234375,
+      "policy_failures": 2.1875,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.0033047146134776995,
+      "extended_maintenance_cost": 61.04296875,
+      "extended_unavailability_cost": 377.296875,
+      "extended_failure_cost": 32.8125,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "joint_rollout",
+      "collision_excess": 0.06559244791666667,
+      "sensitive_choice_rate": 0.65185546875,
+      "selected_sensitive_rate": 0.6482747395833333,
+      "capacity_pressure_rate": 0.012288411458333332,
+      "skill_deficit_rate": 0.0,
+      "demand_count": 1.001953125,
+      "legacy_proposal_conflict_rate": 0.056722005208333336,
+      "skill_contention_rate": 0.05126953125,
+      "contested_choice_rate": 0.029052734375,
+      "feasible_matching_cardinality": 0.9876302083333333,
+      "preferred_matching_cardinality": 0.9363606770833334,
+      "preferred_deficit": 0.05126953125,
+      "legacy_tie_rate": 0.0,
+      "cost_sensitive_contention_rate": 0.029052734375,
+      "selected_cost_sensitive_contention_rate": 0.023600260416666664,
+      "committed_cost_span_max": 9.19287109375,
+      "selected_committed_cost_span": 9.12109375,
+      "disagreement_rate": 0.014811197916666666,
+      "subset_change_rate": 0.014322916666666666,
+      "assignment_only_change_rate": 0.00048828125,
+      "cardinality_change_rate": 0.009033203125,
+      "wait_change_rate": 0.004557291666666666,
+      "availability": 0.7356160481770834,
+      "technician_utilization": 0.526611328125,
+      "terminal_pending": 0.0,
+      "terminal_failed": 0.0,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 359.20703125,
+      "tail_cost": 85.234375,
+      "extended_cost": 444.44140625,
+      "policy_failures": 0.484375,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 621673.0,
+      "planning_seconds": 0.3724284845538932,
+      "extended_maintenance_cost": 59.31640625,
+      "extended_unavailability_cost": 377.859375,
+      "extended_failure_cost": 7.265625,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "subset_rollout",
+      "collision_excess": 0.06827799479166667,
+      "sensitive_choice_rate": 0.6498209635416666,
+      "selected_sensitive_rate": 0.6434733072916667,
+      "capacity_pressure_rate": 0.013509114583333332,
+      "skill_deficit_rate": 0.0,
+      "demand_count": 1.0037434895833333,
+      "legacy_proposal_conflict_rate": 0.05777994791666667,
+      "skill_contention_rate": 0.05289713541666667,
+      "contested_choice_rate": 0.030354817708333332,
+      "feasible_matching_cardinality": 0.9883626302083333,
+      "preferred_matching_cardinality": 0.9354654947916666,
+      "preferred_deficit": 0.05289713541666667,
+      "legacy_tie_rate": 0.0,
+      "cost_sensitive_contention_rate": 0.030354817708333332,
+      "selected_cost_sensitive_contention_rate": 0.023600260416666668,
+      "committed_cost_span_max": 9.171875,
+      "selected_committed_cost_span": 9.06787109375,
+      "disagreement_rate": 0.015462239583333332,
+      "subset_change_rate": 0.015462239583333332,
+      "assignment_only_change_rate": 0.0,
+      "cardinality_change_rate": 0.008870442708333332,
+      "wait_change_rate": 0.005777994791666666,
+      "availability": 0.7353312174479166,
+      "technician_utilization": 0.526611328125,
+      "terminal_pending": 0.0,
+      "terminal_failed": 0.0,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 359.953125,
+      "tail_cost": 85.30078125,
+      "extended_cost": 445.25390625,
+      "policy_failures": 0.51171875,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 456287.0,
+      "planning_seconds": 0.32274821028204315,
+      "extended_maintenance_cost": 59.3203125,
+      "extended_unavailability_cost": 378.2578125,
+      "extended_failure_cost": 7.67578125,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    }
+  ],
+  "mechanism": {
+    "joint_rollout": {
+      "mean_holdout_gain": 1.2371956961495534,
+      "ci95": [
+        0.6613138471330915,
+        1.9345172337123322
+      ],
+      "changed": 89,
+      "landmarks": 1792
+    },
+    "subset_rollout": {
+      "mean_holdout_gain": 1.1965375627790178,
+      "ci95": [
+        0.6284232003348215,
+        1.8866735185895642
+      ],
+      "changed": 73,
+      "landmarks": 1792
+    }
+  },
+  "subset_ablation": {
+    "estimate": 0.052218018542385614,
+    "ci95": [
+      0.04250850608915711,
+      0.061982581050629794
+    ],
+    "scope": "exploratory"
+  }
+}

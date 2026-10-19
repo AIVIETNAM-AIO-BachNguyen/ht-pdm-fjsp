@@ -1,0 +1,23 @@
+{
+  "objective": "Find independently confirmed good joint maintenance setting on Mac; continue until achieved",
+  "user_priority": "joint machine selection/timing/technician",
+  "local_authorization": "Explicit autonomous Mac full runs; default lab handoff superseded",
+  "clean_implementation_checkout": "/private/tmp/marl-maintenance-assignment-confidence-v1",
+  "branch": "codex/maintenance-joint-learning-mac-v1",
+  "round1_run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_lookahead_boundary_v1_full_mac_cpu_20261012T060421Z",
+  "round1_result": "joint secondary passes vs myopic; original assignment-primary NOT_CONFIRMED preserved",
+  "round2_protocol": "docs/maintenance_joint_frontier_mac_v1_plan.md",
+  "round2_status": "JOINT_SETTING_CONFIRMED; independent hash/commit/count/CI verification PASS",
+  "goal_status": "complete",
+  "next": "Setting selected; do not tune on opened test panels",
+  "round2_commit": "a769189",
+  "round2_run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_joint_frontier_mac_v1_full_cpu_20261012T062329Z",
+  "round2_result": "5.3948% gain vs deadline CI99.375%[4.0623%,6.8000%], all8 gates PASS; setting qualifies for joint decision headroom",
+  "round3_status": "COMPLETED / audit PASS / independent 56 hash+source+grid+bootstrap bindings PASS",
+  "round3_commit": "c300d10",
+  "round3_run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_joint_learning_mac_v1_full_cpu_20261012T064635Z",
+  "round3_result": "PPO gain0.9551% vs deadline CI95%[0.1640%,1.7203%] exploratory, mean468.5677 vs rollout442.9609",
+  "selected_setting": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_mac_search_20261012/selected_setting.md",
+  "results_commit": "5f584d8",
+  "results_pushed": true
+}

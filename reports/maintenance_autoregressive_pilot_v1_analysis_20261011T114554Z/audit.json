@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "artifact_files": 238,
+  "source_files": 165,
+  "bytes": 34375037,
+  "source_and_current_code_match_commit": true,
+  "training_rerun": false,
+  "lab_access": false,
+  "raw_data_modified": false,
+  "run_seconds": 618.9097726410255,
+  "evaluation_replay_episodes": 1920,
+  "evaluation_replay_physical_steps": 115200,
+  "evaluation_replay_matches_all_non_latency_episode_fields": true,
+  "logged_transition_replay": 4800,
+  "scalar_greedy_matching_disagreements": 0,
+  "ordered_token_likelihoods_rechecked": 2304,
+  "paired_statistics_independently_reconstructed": true,
+  "physical_split_audit": {
+    "method": "metadata-only historical reconstruction and canonical physical signature exclusion",
+    "excluded_historical_signatures": 52181,
+    "outcomes_used": false,
+    "smoke_full_and_train_development_test_disjoint": true
+  },
+  "primary_contrasts": 4,
+  "exploratory_rule_contrasts": 2,
+  "training_models": 9,
+  "test_episodes": 1920,
+  "pm_choice_rows": 22033,
+  "raw_hashes_rechecked_after_analysis": true,
+  "context_functional_probe_states_with_choice": 102
+}

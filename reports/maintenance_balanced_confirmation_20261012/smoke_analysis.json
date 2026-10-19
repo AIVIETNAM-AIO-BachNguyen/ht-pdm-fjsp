@@ -1,0 +1,204 @@
+{
+  "protocol": "maintenance_balanced_confirmation_mac_v1",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_balanced_confirmation_mac_v1_smoke_cpu_20261012T084736Z",
+  "commit": "f56f5bf4fc17e6ddab4e69af0b4f5205a7d8e08d",
+  "scientific_status": "ENGINEERING_ONLY",
+  "winner": "cross_d3_q050_balanced",
+  "integrity": {
+    "status": "PASS",
+    "hashed_files": 62,
+    "git_bound_source_blobs": 51,
+    "phase_counts": {
+      "development": 0,
+      "screening": 0,
+      "confirmation": 10,
+      "landmarks": 14
+    },
+    "physical_ticks": 600,
+    "root_rows": 19,
+    "forecasts": 163248,
+    "frozen_baseline_and_author_override_verified": true,
+    "all_physical_states_events_and_costs_reconstructed": true,
+    "independent_indexed_bootstrap": true,
+    "independence": "reuse of independently written scalar/indexed-bootstrap verifier; adapted in shared context, not blind or cross-model"
+  },
+  "screening": [],
+  "comparisons": {
+    "local_baseline": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_quality": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_endpoint_dp": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_cost_gain": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_deadline_matching": {
+      "estimate": 0.15361670395227442,
+      "ci": [
+        0.0,
+        0.2614213197969543
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_h6": {
+      "estimate": 0.13622526636225266,
+      "ci": [
+        0.0,
+        0.2352168199737188
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_endpoint": {
+      "estimate": 0.13622526636225266,
+      "ci": [
+        0.0,
+        0.2352168199737188
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_availability_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_pending_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_availability": {
+      "estimate": 0.5859375,
+      "ci": [
+        0.5,
+        0.671875
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_interior_gain": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_availability_difference": {
+      "estimate": 0.08072916666666663,
+      "ci": [
+        0.0,
+        0.16145833333333326
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_pending_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_availability": {
+      "estimate": 0.6666666666666666,
+      "ci": [
+        0.6614583333333333,
+        0.671875
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_interior_gain": {
+      "estimate": 0.13238095238095238,
+      "ci": [
+        0.0,
+        0.22824302134646962
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_choice_fraction": {
+      "estimate": 0.3571428571428571,
+      "ci": [
+        0.14285714285714285,
+        0.5714285714285714
+      ],
+      "confidence": 0.9972222222222222
+    }
+  },
+  "gates": {
+    "local_baseline": false,
+    "local_quality": false,
+    "local_endpoint_dp": false,
+    "assignment_cost_gain": false,
+    "joint_cost_vs_deadline_matching": false,
+    "joint_cost_vs_isolated_h6": false,
+    "joint_cost_vs_isolated_endpoint": false,
+    "assignment_availability_difference": true,
+    "assignment_pending_difference": true,
+    "assignment_absolute_availability": true,
+    "assignment_absolute_pending": true,
+    "assignment_interior_gain": false,
+    "joint_availability_difference": true,
+    "joint_pending_difference": true,
+    "joint_absolute_availability": true,
+    "joint_absolute_pending": true,
+    "joint_interior_gain": false,
+    "assignment_choice_fraction": true
+  },
+  "failed_confirmation_gates": [
+    "local_baseline",
+    "local_quality",
+    "local_endpoint_dp",
+    "assignment_cost_gain",
+    "joint_cost_vs_deadline_matching",
+    "joint_cost_vs_isolated_h6",
+    "joint_cost_vs_isolated_endpoint",
+    "assignment_interior_gain",
+    "joint_interior_gain"
+  ],
+  "limitations": "Local assay fixes initial state, tick and subset; later state-adaptive decisions can differ. Inference is per protocol, not an unlimited-search guarantee."
+}

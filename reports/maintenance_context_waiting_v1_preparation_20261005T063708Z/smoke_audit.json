@@ -1,0 +1,13 @@
+{
+  "status": "PASSED",
+  "run": "/private/tmp/marl-oracle-representation-20261003/artifacts/maintenance_context_waiting_v1_smoke_cpu_20261005T063708Z",
+  "replayed_test_episodes": 120,
+  "replayed_physical_ticks": 525,
+  "training_episodes_checked": 48,
+  "source_snapshot_verified": true,
+  "checkpoint_contracts_verified": true,
+  "independent_scalar_cost_and_waiting_boundary_verified": true,
+  "simulator_replay": "same implementation; not independent simulator reproduction",
+  "training_wait_penalty_positive_rows": 0,
+  "full_scientific_inference": false
+}

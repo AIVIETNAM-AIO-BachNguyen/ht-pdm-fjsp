@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "verification_status": "ANALYZED with exact scalar audit subset, not a new full-run replication",
+  "run_manifest_sha256": "7da4a2323ebb267213538bc064626ab16d841976efde155cc1667d4decc47cac",
+  "hashed_files": 88,
+  "artifact_bytes": 14591384,
+  "snapshot_matches_commit": true,
+  "source_audit": {
+    "status": "PASS",
+    "verified_source_files": 85,
+    "source_states": 2560,
+    "frozen_models": 10,
+    "source_manifest_sha256": "2d9cf8caca189635e62239521a340a08860b7c8387e75c85394985a8581f0a27",
+    "historical_outcomes_previously_opened": true
+  },
+  "states": 2560,
+  "unique_roots": 4417,
+  "raw_cost_samples": 655360,
+  "forecast_transitions_reported": 10229376,
+  "exact_raw_arrays_metrics_checked": true,
+  "frozen_models": 10,
+  "scalar_states": 160,
+  "scalar_scenarios": [
+    0,
+    31
+  ],
+  "scalar_transition_checks": 45480,
+  "scalar_return_component_sum_checks": 1284,
+  "primary_cis_independently_recomputed": 4,
+  "full_lab_runtime_seconds": 185.2314506121911,
+  "scope": "same historical occupancy panel, exploratory single-step root interventions; deterministic frozen policy; future tapes fixed"
+}

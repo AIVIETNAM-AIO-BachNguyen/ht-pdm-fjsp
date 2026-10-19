@@ -1,0 +1,9 @@
+condition,contrast,metric,eligible,mean
+dense,pm,pm_deadline_delta,347,-3.188670749279539
+dense,pm,pm_interaction_delta,347,-2.938400576368876
+dense,now,now_deadline_delta,734,-2.076549727520436
+dense,now,now_interaction_delta,734,-0.6927792915531336
+skill_mask,pm,pm_deadline_delta,381,-4.799048556430447
+skill_mask,pm,pm_interaction_delta,381,-2.0538877952755907
+skill_mask,now,now_deadline_delta,741,-5.369095816464237
+skill_mask,now,now_interaction_delta,741,-1.935897435897436

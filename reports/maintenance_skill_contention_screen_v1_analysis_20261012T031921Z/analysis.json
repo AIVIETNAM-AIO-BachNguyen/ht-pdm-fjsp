@@ -1,0 +1,1498 @@
+{
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_skill_contention_screen_v1_full_cpu_20261012T031404Z",
+  "manifest": {
+    "protocol": "maintenance_skill_contention_screen_v1",
+    "environment_version": "pending_matching_overdue_waiting_v1",
+    "status": "COMPLETED",
+    "profile": "full",
+    "git": {
+      "commit": "8047eeb104dc9b9c3e833ae98b554e13d90a96b3",
+      "branch": "codex/maintenance-skill-contention-screen-v1",
+      "dirty": false
+    },
+    "started_utc": "2026-10-12T03:14:04.608686+00:00",
+    "runtime": {
+      "python": "3.12.3",
+      "platform": "Linux-7.0.0-31-generic-x86_64-with-glibc2.39",
+      "numpy": "2.5.3",
+      "device": "cpu"
+    },
+    "full_confirmation_outcomes_opened": true,
+    "selection_sha256": "4991db2087464480f918716f9fd39e44b125b916ef7194fc1bd7b068d064a7ef",
+    "phase": "COMPLETED",
+    "audit": "PASS",
+    "elapsed_seconds": 19.266523548867553,
+    "expected_counts": {
+      "screening": 3200,
+      "confirmation": 1024
+    },
+    "actual_counts": {
+      "screening": 3200,
+      "confirmation": 1024
+    },
+    "confirmation_status": "CONFIRMED",
+    "files": {
+      "audit.json": {
+        "sha256": "c831edde42d61f92587fd348b1db953fa9f576a89c95c5118af9e930576b0c98",
+        "bytes": 3960
+      },
+      "confirmation_episodes.csv": {
+        "sha256": "d6edc3ee0d6415dcb56e54c0aa42381cb6d196b0d555d2322ab465bec6a0f440",
+        "bytes": 269507
+      },
+      "decision_audit.jsonl": {
+        "sha256": "5453e9556531c7b234ce2a448bb422e143db3980a85fa97542294fa5ec12af8d",
+        "bytes": 6277065
+      },
+      "protocol.md": {
+        "sha256": "76eeb8899a77647226f0b9f8104df3106a40e0f6f987a84839c1f2fee9f026a5",
+        "bytes": 10555
+      },
+      "resolved_config.json": {
+        "sha256": "ef0f3907962eee7f921bdcd4565b6a4a907af8e413253b2f581564e988948977",
+        "bytes": 31165
+      },
+      "screening_episodes.csv": {
+        "sha256": "27426378f52054e73a993e397efe083f133b8b6436ea277285030ac5e3b3367f",
+        "bytes": 847176
+      },
+      "screening_ranking.csv": {
+        "sha256": "2ebb48d7c4ea7ffec4643f431071d26cf8b438bc2016a56bbff20bb936e0f517",
+        "bytes": 4290
+      },
+      "seed_registry.json": {
+        "sha256": "217a0479f0ed71c1df4abdb85468905f48af194ce59d427b9ac658cd6f6df337",
+        "bytes": 379
+      },
+      "selection.json": {
+        "sha256": "4991db2087464480f918716f9fd39e44b125b916ef7194fc1bd7b068d064a7ef",
+        "bytes": 619
+      },
+      "source_snapshot/maintenance_dispatch.py": {
+        "sha256": "7c542047128e5c9816d53d20e74bd8055a77c7ef99b8a99275dd26c86e81cb8c",
+        "bytes": 14102
+      },
+      "source_snapshot/maintenance_heterogeneous_model.py": {
+        "sha256": "248107356ceda87ad39dfb78c0b6a68fd892fed3ee4300f8b87b4362dc4dd392",
+        "bytes": 11615
+      },
+      "source_snapshot/maintenance_opportunity_cost.py": {
+        "sha256": "ed92018c547e47105c8bc2a687b1621a49b3d6cb3953317a95853734ac94fae7",
+        "bytes": 28209
+      },
+      "source_snapshot/maintenance_skill_contention_screen.py": {
+        "sha256": "d4f0a7f4b492121d1397398f871b2137dfd6cd3c998e0580b596f20f72566da7",
+        "bytes": 23441
+      },
+      "source_snapshot/maintenance_waiting.py": {
+        "sha256": "4d60aa179ba98368401839ce05548fffab0e66a5e92884e9f5c92d945db7d969",
+        "bytes": 4525
+      },
+      "summary.json": {
+        "sha256": "5d1017cc412f48cae686b53ff42f8e00fe53f5bd70d1e0ce5df67af6f10ea94e",
+        "bytes": 21116
+      }
+    },
+    "artifact_bytes": 7547724
+  },
+  "validation": {
+    "status": "PASS",
+    "hashed_artifacts": 15,
+    "bytes": 7547724,
+    "source_bindings": {
+      "maintenance_opportunity_cost.py": "ed92018c547e47105c8bc2a687b1621a49b3d6cb3953317a95853734ac94fae7",
+      "maintenance_skill_contention_screen.py": "d4f0a7f4b492121d1397398f871b2137dfd6cd3c998e0580b596f20f72566da7",
+      "maintenance_dispatch.py": "7c542047128e5c9816d53d20e74bd8055a77c7ef99b8a99275dd26c86e81cb8c",
+      "maintenance_waiting.py": "4d60aa179ba98368401839ce05548fffab0e66a5e92884e9f5c92d945db7d969",
+      "maintenance_heterogeneous_model.py": "248107356ceda87ad39dfb78c0b6a68fd892fed3ee4300f8b87b4362dc4dd392"
+    },
+    "exact_episode_grids": true,
+    "scalar_logged_replay": {
+      "status": "PASS",
+      "replayed_transitions": 6960,
+      "audited_episodes": 116
+    },
+    "reconstructed_episodes": 4224,
+    "reconstructed_physical_transitions": 253440,
+    "all_episode_metrics_match": true,
+    "selection_reconstructed": true,
+    "independent_bootstrap_intervals_match": true,
+    "seeds": "PASS"
+  },
+  "selection": {
+    "status": "SELECTED",
+    "winner": "overlap3__tradeoff_2_4",
+    "runner_up": "balanced2__tradeoff_2_4",
+    "strongest_contention": "bottleneck1__common_2_4",
+    "confirmation_candidates": [
+      "overlap3__tradeoff_2_4",
+      "balanced2__tradeoff_2_4",
+      "overlap3__equal_control",
+      "partitioned_control__tradeoff_2_4"
+    ],
+    "rule": "min-policy conflict * min-policy physical choice; cost not used",
+    "limits": {
+      "conflict_rate": 0.1,
+      "sensitive_choice_rate": 0.05,
+      "availability": 0.25,
+      "terminal_pending": 1.0
+    },
+    "selection_phase": "screening_only",
+    "confirmation_outcomes_opened": false
+  },
+  "confirmation": {
+    "status": "CONFIRMED",
+    "winner": "overlap3__tradeoff_2_4",
+    "metrics": {
+      "conflict_rate": {
+        "estimate": 0.31054687499999994,
+        "ci": [
+          0.28776041666666663,
+          0.33382161458333337
+        ],
+        "pass_gate": true
+      },
+      "sensitive_choice_rate": {
+        "estimate": 0.10465494791666667,
+        "ci": [
+          0.08756510416666662,
+          0.12272135416666666
+        ],
+        "pass_gate": true
+      },
+      "availability": {
+        "estimate": 0.49723307291666674,
+        "ci": [
+          0.4937337239583334,
+          0.5005289713541664
+        ],
+        "pass_gate": true
+      },
+      "terminal_pending": {
+        "estimate": 0.40625,
+        "ci": [
+          0.28125,
+          0.5390625
+        ],
+        "pass_gate": true
+      }
+    },
+    "confidence": 0.9875,
+    "inference_scope": "new seed trajectories in fixed selected setting under two observation policies"
+  },
+  "screening_rank": [
+    {
+      "candidate": "overlap3__tradeoff_2_4",
+      "topology": "overlap3",
+      "pattern": "tradeoff_2_4",
+      "selectable": true,
+      "eligible": true,
+      "rejection": "",
+      "score": 0.03535270690917969,
+      "conflict_rate": 0.322265625,
+      "sensitive_choice_rate": 0.10970052083333333,
+      "availability": 0.4984537760416667,
+      "terminal_pending": 0.40625,
+      "mean_cost": 978.296875
+    },
+    {
+      "candidate": "balanced2__tradeoff_2_4",
+      "topology": "balanced2",
+      "pattern": "tradeoff_2_4",
+      "selectable": true,
+      "eligible": true,
+      "rejection": "",
+      "score": 0.018320083618164062,
+      "conflict_rate": 0.2490234375,
+      "sensitive_choice_rate": 0.07356770833333333,
+      "availability": 0.5078125,
+      "terminal_pending": 0.515625,
+      "mean_cost": 966.46875
+    },
+    {
+      "candidate": "overlap3__paired_2_4",
+      "topology": "overlap3",
+      "pattern": "paired_2_4",
+      "selectable": true,
+      "eligible": true,
+      "rejection": "",
+      "score": 0.018128289116753474,
+      "conflict_rate": 0.10709635416666667,
+      "sensitive_choice_rate": 0.16927083333333334,
+      "availability": 0.5738932291666666,
+      "terminal_pending": 0.265625,
+      "mean_cost": 770.4609375
+    },
+    {
+      "candidate": "bottleneck2__tradeoff_2_4",
+      "topology": "bottleneck2",
+      "pattern": "tradeoff_2_4",
+      "selectable": true,
+      "eligible": true,
+      "rejection": "",
+      "score": 0.01567363739013672,
+      "conflict_rate": 0.2783203125,
+      "sensitive_choice_rate": 0.056315104166666664,
+      "availability": 0.4674479166666667,
+      "terminal_pending": 0.640625,
+      "mean_cost": 1096.765625
+    },
+    {
+      "candidate": "overlap3__paired_2_8",
+      "topology": "overlap3",
+      "pattern": "paired_2_8",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "conflict_rate",
+      "score": 0.014180607265896268,
+      "conflict_rate": 0.08626302083333333,
+      "sensitive_choice_rate": 0.16438802083333334,
+      "availability": 0.532958984375,
+      "terminal_pending": 0.21875,
+      "mean_cost": 829.3203125
+    },
+    {
+      "candidate": "bottleneck2__common_2_4",
+      "topology": "bottleneck2",
+      "pattern": "common_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.013068305121527776,
+      "conflict_rate": 0.4270833333333333,
+      "sensitive_choice_rate": 0.030598958333333332,
+      "availability": 0.55029296875,
+      "terminal_pending": 0.625,
+      "mean_cost": 969.1484375
+    },
+    {
+      "candidate": "overlap3__common_2_4",
+      "topology": "overlap3",
+      "pattern": "common_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.01040882534450955,
+      "conflict_rate": 0.2906901041666667,
+      "sensitive_choice_rate": 0.035807291666666664,
+      "availability": 0.54150390625,
+      "terminal_pending": 0.5625,
+      "mean_cost": 906.8046875
+    },
+    {
+      "candidate": "balanced2__common_2_4",
+      "topology": "balanced2",
+      "pattern": "common_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.007372962103949652,
+      "conflict_rate": 0.15950520833333334,
+      "sensitive_choice_rate": 0.04622395833333333,
+      "availability": 0.531982421875,
+      "terminal_pending": 0.296875,
+      "mean_cost": 913.90625
+    },
+    {
+      "candidate": "balanced2__paired_2_4",
+      "topology": "balanced2",
+      "pattern": "paired_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "conflict_rate",
+      "score": 0.0066878000895182295,
+      "conflict_rate": 0.0654296875,
+      "sensitive_choice_rate": 0.10221354166666667,
+      "availability": 0.5731608072916666,
+      "terminal_pending": 0.21875,
+      "mean_cost": 781.203125
+    },
+    {
+      "candidate": "bottleneck2__paired_2_4",
+      "topology": "bottleneck2",
+      "pattern": "paired_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.00554445054796007,
+      "conflict_rate": 0.16536458333333334,
+      "sensitive_choice_rate": 0.033528645833333336,
+      "availability": 0.4925944010416667,
+      "terminal_pending": 0.8125,
+      "mean_cost": 1008.0703125
+    },
+    {
+      "candidate": "balanced1__common_2_4",
+      "topology": "balanced1",
+      "pattern": "common_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.0054073333740234375,
+      "conflict_rate": 0.2373046875,
+      "sensitive_choice_rate": 0.022786458333333332,
+      "availability": 0.541748046875,
+      "terminal_pending": 0.5625,
+      "mean_cost": 928.4765625
+    },
+    {
+      "candidate": "balanced2__paired_2_8",
+      "topology": "balanced2",
+      "pattern": "paired_2_8",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "conflict_rate",
+      "score": 0.005391014946831597,
+      "conflict_rate": 0.051432291666666664,
+      "sensitive_choice_rate": 0.10481770833333334,
+      "availability": 0.5381673177083334,
+      "terminal_pending": 0.28125,
+      "mean_cost": 824.203125
+    },
+    {
+      "candidate": "bottleneck2__paired_2_8",
+      "topology": "bottleneck2",
+      "pattern": "paired_2_8",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.0023882124159071176,
+      "conflict_rate": 0.12434895833333333,
+      "sensitive_choice_rate": 0.019205729166666664,
+      "availability": 0.33203125,
+      "terminal_pending": 0.921875,
+      "mean_cost": 1343.734375
+    },
+    {
+      "candidate": "balanced1__tradeoff_2_4",
+      "topology": "balanced1",
+      "pattern": "tradeoff_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.001701778835720486,
+      "conflict_rate": 0.23763020833333334,
+      "sensitive_choice_rate": 0.007161458333333333,
+      "availability": 0.4601236979166667,
+      "terminal_pending": 0.78125,
+      "mean_cost": 1104.8515625
+    },
+    {
+      "candidate": "bottleneck1__common_2_4",
+      "topology": "bottleneck1",
+      "pattern": "common_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.0013580322265625,
+      "conflict_rate": 0.4635416666666667,
+      "sensitive_choice_rate": 0.0029296875,
+      "availability": 0.55517578125,
+      "terminal_pending": 0.734375,
+      "mean_cost": 1005.265625
+    },
+    {
+      "candidate": "balanced1__paired_2_4",
+      "topology": "balanced1",
+      "pattern": "paired_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate",
+      "score": 0.0010295444064670138,
+      "conflict_rate": 0.11295572916666667,
+      "sensitive_choice_rate": 0.009114583333333332,
+      "availability": 0.4893391927083333,
+      "terminal_pending": 1.0,
+      "mean_cost": 997.1640625
+    },
+    {
+      "candidate": "bottleneck1__paired_2_4",
+      "topology": "bottleneck1",
+      "pattern": "paired_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate;terminal_pending",
+      "score": 0.00099945068359375,
+      "conflict_rate": 0.3411458333333333,
+      "sensitive_choice_rate": 0.0029296875,
+      "availability": 0.5274251302083334,
+      "terminal_pending": 1.109375,
+      "mean_cost": 1033.0
+    },
+    {
+      "candidate": "bottleneck1__tradeoff_2_4",
+      "topology": "bottleneck1",
+      "pattern": "tradeoff_2_4",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate;terminal_pending",
+      "score": 0.0009660720825195312,
+      "conflict_rate": 0.3297526041666667,
+      "sensitive_choice_rate": 0.0029296875,
+      "availability": 0.4672037760416667,
+      "terminal_pending": 1.078125,
+      "mean_cost": 1165.890625
+    },
+    {
+      "candidate": "balanced1__paired_2_8",
+      "topology": "balanced1",
+      "pattern": "paired_2_8",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "conflict_rate;sensitive_choice_rate;terminal_pending",
+      "score": 0.0007311503092447916,
+      "conflict_rate": 0.09765625,
+      "sensitive_choice_rate": 0.007486979166666666,
+      "availability": 0.3299153645833333,
+      "terminal_pending": 1.0625,
+      "mean_cost": 1350.625
+    },
+    {
+      "candidate": "bottleneck1__paired_2_8",
+      "topology": "bottleneck1",
+      "pattern": "paired_2_8",
+      "selectable": true,
+      "eligible": false,
+      "rejection": "sensitive_choice_rate;terminal_pending",
+      "score": 0.0006351470947265625,
+      "conflict_rate": 0.216796875,
+      "sensitive_choice_rate": 0.0029296875,
+      "availability": 0.4122721354166667,
+      "terminal_pending": 1.625,
+      "mean_cost": 1273.15625
+    },
+    {
+      "candidate": "overlap3__equal_control",
+      "topology": "overlap3",
+      "pattern": "equal_control",
+      "selectable": false,
+      "eligible": false,
+      "rejection": "control",
+      "score": 0.0,
+      "conflict_rate": 0.26041666666666663,
+      "sensitive_choice_rate": 0.0,
+      "availability": 0.5045572916666666,
+      "terminal_pending": 0.109375,
+      "mean_cost": 909.84375
+    },
+    {
+      "candidate": "partitioned_control__common_2_4",
+      "topology": "partitioned_control",
+      "pattern": "common_2_4",
+      "selectable": false,
+      "eligible": false,
+      "rejection": "control",
+      "score": 0.0,
+      "conflict_rate": 0.0126953125,
+      "sensitive_choice_rate": 0.0,
+      "availability": 0.5288899739583334,
+      "terminal_pending": 0.5625,
+      "mean_cost": 935.015625
+    },
+    {
+      "candidate": "partitioned_control__paired_2_4",
+      "topology": "partitioned_control",
+      "pattern": "paired_2_4",
+      "selectable": false,
+      "eligible": false,
+      "rejection": "control",
+      "score": 0.0,
+      "conflict_rate": 0.0126953125,
+      "sensitive_choice_rate": 0.0,
+      "availability": 0.4931640625,
+      "terminal_pending": 0.9375,
+      "mean_cost": 978.8828125
+    },
+    {
+      "candidate": "partitioned_control__paired_2_8",
+      "topology": "partitioned_control",
+      "pattern": "paired_2_8",
+      "selectable": false,
+      "eligible": false,
+      "rejection": "control",
+      "score": 0.0,
+      "conflict_rate": 0.0263671875,
+      "sensitive_choice_rate": 0.0,
+      "availability": 0.3534342447916667,
+      "terminal_pending": 0.953125,
+      "mean_cost": 1256.734375
+    },
+    {
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "topology": "partitioned_control",
+      "pattern": "tradeoff_2_4",
+      "selectable": false,
+      "eligible": false,
+      "rejection": "control",
+      "score": 0.0,
+      "conflict_rate": 0.20052083333333334,
+      "sensitive_choice_rate": 0.0,
+      "availability": 0.4808756510416667,
+      "terminal_pending": 0.8125,
+      "mean_cost": 1057.953125
+    }
+  ],
+  "confirmation_means": [
+    {
+      "candidate": "overlap3__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "conflict_rate": 0.3470052083333333,
+      "collision_excess": 0.365234375,
+      "sensitive_choice_rate": 0.1337890625,
+      "selected_sensitive_rate": 0.12255859374999999,
+      "capacity_pressure_rate": 0.4130859375,
+      "skill_deficit_rate": 0.0146484375,
+      "demand_count": 1.4534505208333333,
+      "availability": 0.5013834635416667,
+      "technician_utilization": 0.9600423177083333,
+      "terminal_pending": 0.2421875,
+      "terminal_failed": 0.3984375,
+      "tail_pending": 0.2578125,
+      "tail_failed": 0.4453125,
+      "policy_cost": 785.96875,
+      "tail_cost": 197.1640625,
+      "extended_cost": 983.1328125,
+      "policy_failures": 10.5703125,
+      "policy_overdue_ticks": 0.0234375,
+      "extended_maintenance_cost": 67.2421875,
+      "extended_unavailability_cost": 718.5,
+      "extended_failure_cost": 197.109375,
+      "extended_waiting_cost": 0.28125,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "candidate": "overlap3__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "conflict_rate": 0.310546875,
+      "collision_excess": 0.33870442708333337,
+      "sensitive_choice_rate": 0.10465494791666666,
+      "selected_sensitive_rate": 0.09602864583333331,
+      "capacity_pressure_rate": 0.4677734375,
+      "skill_deficit_rate": 0.03369140625,
+      "demand_count": 1.4645182291666665,
+      "availability": 0.49723307291666663,
+      "technician_utilization": 0.939208984375,
+      "terminal_pending": 0.40625,
+      "terminal_failed": 0.625,
+      "tail_pending": 0.3125,
+      "tail_failed": 0.5,
+      "policy_cost": 799.4765625,
+      "tail_cost": 200.7109375,
+      "extended_cost": 1000.1875,
+      "policy_failures": 11.2578125,
+      "policy_overdue_ticks": 0.15625,
+      "extended_maintenance_cost": 63.5546875,
+      "extended_unavailability_cost": 724.921875,
+      "extended_failure_cost": 209.6484375,
+      "extended_waiting_cost": 2.0625,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "candidate": "balanced2__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "conflict_rate": 0.22835286458333334,
+      "collision_excess": 0.23046875,
+      "sensitive_choice_rate": 0.05875651041666666,
+      "selected_sensitive_rate": 0.057454427083333336,
+      "capacity_pressure_rate": 0.38932291666666663,
+      "skill_deficit_rate": 0.018880208333333336,
+      "demand_count": 1.4246419270833333,
+      "availability": 0.5081787109375,
+      "technician_utilization": 0.9620768229166666,
+      "terminal_pending": 0.25,
+      "terminal_failed": 0.5546875,
+      "tail_pending": 0.1796875,
+      "tail_failed": 0.484375,
+      "policy_cost": 765.859375,
+      "tail_cost": 193.703125,
+      "extended_cost": 959.5625,
+      "policy_failures": 9.703125,
+      "policy_overdue_ticks": 0.0,
+      "extended_maintenance_cost": 67.6484375,
+      "extended_unavailability_cost": 710.625,
+      "extended_failure_cost": 181.2890625,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "candidate": "balanced2__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "conflict_rate": 0.23258463541666666,
+      "collision_excess": 0.24153645833333331,
+      "sensitive_choice_rate": 0.06477864583333334,
+      "selected_sensitive_rate": 0.0634765625,
+      "capacity_pressure_rate": 0.41455078125,
+      "skill_deficit_rate": 0.02685546875,
+      "demand_count": 1.4503580729166665,
+      "availability": 0.5075276692708333,
+      "technician_utilization": 0.949951171875,
+      "terminal_pending": 0.3046875,
+      "terminal_failed": 0.6328125,
+      "tail_pending": 0.234375,
+      "tail_failed": 0.6171875,
+      "policy_cost": 778.6484375,
+      "tail_cost": 197.8125,
+      "extended_cost": 976.4609375,
+      "policy_failures": 10.5546875,
+      "policy_overdue_ticks": 0.0,
+      "extended_maintenance_cost": 67.0859375,
+      "extended_unavailability_cost": 711.09375,
+      "extended_failure_cost": 198.28125,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "conflict_rate": 0.19840494791666666,
+      "collision_excess": 0.20914713541666669,
+      "sensitive_choice_rate": 0.0,
+      "selected_sensitive_rate": 0.0,
+      "capacity_pressure_rate": 0.61474609375,
+      "skill_deficit_rate": 0.10384114583333334,
+      "demand_count": 1.585611979166667,
+      "availability": 0.48173014322916663,
+      "technician_utilization": 0.8815104166666667,
+      "terminal_pending": 0.8828125,
+      "terminal_failed": 1.4921875,
+      "tail_pending": 0.5625,
+      "tail_failed": 1.046875,
+      "policy_cost": 844.3046875,
+      "tail_cost": 214.7890625,
+      "extended_cost": 1059.09375,
+      "policy_failures": 13.5703125,
+      "policy_overdue_ticks": 0.0,
+      "extended_maintenance_cost": 54.890625,
+      "extended_unavailability_cost": 750.609375,
+      "extended_failure_cost": 253.59375,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "conflict_rate": 0.19840494791666666,
+      "collision_excess": 0.20914713541666669,
+      "sensitive_choice_rate": 0.0,
+      "selected_sensitive_rate": 0.0,
+      "capacity_pressure_rate": 0.61474609375,
+      "skill_deficit_rate": 0.10384114583333334,
+      "demand_count": 1.585611979166667,
+      "availability": 0.48173014322916663,
+      "technician_utilization": 0.8815104166666667,
+      "terminal_pending": 0.8828125,
+      "terminal_failed": 1.4921875,
+      "tail_pending": 0.5625,
+      "tail_failed": 1.046875,
+      "policy_cost": 844.3046875,
+      "tail_cost": 214.7890625,
+      "extended_cost": 1059.09375,
+      "policy_failures": 13.5703125,
+      "policy_overdue_ticks": 0.0,
+      "extended_maintenance_cost": 54.890625,
+      "extended_unavailability_cost": 750.609375,
+      "extended_failure_cost": 253.59375,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "candidate": "overlap3__equal_control",
+      "policy": "deadline_matching",
+      "conflict_rate": 0.2677408854166667,
+      "collision_excess": 0.2713216145833333,
+      "sensitive_choice_rate": 0.0,
+      "selected_sensitive_rate": 0.0,
+      "capacity_pressure_rate": 0.2537434895833333,
+      "skill_deficit_rate": 0.007649739583333332,
+      "demand_count": 0.9995117187499999,
+      "availability": 0.5047200520833334,
+      "technician_utilization": 0.9820149739583333,
+      "terminal_pending": 0.1015625,
+      "terminal_failed": 0.4453125,
+      "tail_pending": 0.1171875,
+      "tail_failed": 0.4453125,
+      "policy_cost": 714.8359375,
+      "tail_cost": 178.859375,
+      "extended_cost": 893.6953125,
+      "policy_failures": 7.0390625,
+      "policy_overdue_ticks": 0.0,
+      "extended_maintenance_cost": 48.3515625,
+      "extended_unavailability_cost": 714.5625,
+      "extended_failure_cost": 130.78125,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "candidate": "overlap3__equal_control",
+      "policy": "priority_greedy",
+      "conflict_rate": 0.2677408854166667,
+      "collision_excess": 0.27376302083333337,
+      "sensitive_choice_rate": 0.0,
+      "selected_sensitive_rate": 0.0,
+      "capacity_pressure_rate": 0.2703450520833333,
+      "skill_deficit_rate": 0.012532552083333332,
+      "demand_count": 1.0232747395833335,
+      "availability": 0.5050862630208333,
+      "technician_utilization": 0.9783528645833333,
+      "terminal_pending": 0.1328125,
+      "terminal_failed": 0.46875,
+      "tail_pending": 0.1328125,
+      "tail_failed": 0.4609375,
+      "policy_cost": 718.390625,
+      "tail_cost": 180.75,
+      "extended_cost": 899.140625,
+      "policy_failures": 7.296875,
+      "policy_overdue_ticks": 0.0,
+      "extended_maintenance_cost": 48.59375,
+      "extended_unavailability_cost": 714.140625,
+      "extended_failure_cost": 136.40625,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    }
+  ],
+  "tie_diagnostics": [
+    {
+      "phase": "screening",
+      "candidate": "overlap3__paired_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.10709635416666667,
+      "strict_preference_deficit_rate": 0.0048828125,
+      "original_conflict_rate": 0.10709635416666667,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__paired_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.107421875,
+      "strict_preference_deficit_rate": 0.009440104166666666,
+      "original_conflict_rate": 0.107421875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__common_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.29069010416666663,
+      "strict_preference_deficit_rate": 0.14485677083333331,
+      "original_conflict_rate": 0.29069010416666663,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__common_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.4072265625,
+      "strict_preference_deficit_rate": 0.2080078125,
+      "original_conflict_rate": 0.4072265625,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__paired_2_8",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.10026041666666666,
+      "strict_preference_deficit_rate": 0.0029296875,
+      "original_conflict_rate": 0.10026041666666666,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__paired_2_8",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.08626302083333333,
+      "strict_preference_deficit_rate": 0.0029296875,
+      "original_conflict_rate": 0.08626302083333333,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.2604166666666667,
+      "tie_resolvable_conflict_rate": 0.23730468750000003,
+      "unavoidable_best_set_conflict_rate": 0.1279296875,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.365234375,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.6497326203208557
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.19596354166666669,
+      "tie_resolvable_conflict_rate": 0.1630859375,
+      "unavoidable_best_set_conflict_rate": 0.1591796875,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.322265625,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.5060606060606061
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__paired_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.07356770833333334,
+      "strict_preference_deficit_rate": 0.012369791666666668,
+      "original_conflict_rate": 0.07356770833333334,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__paired_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.0654296875,
+      "strict_preference_deficit_rate": 0.022786458333333332,
+      "original_conflict_rate": 0.0654296875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__common_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.15950520833333331,
+      "strict_preference_deficit_rate": 0.04134114583333333,
+      "original_conflict_rate": 0.15950520833333331,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__common_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.16829427083333334,
+      "strict_preference_deficit_rate": 0.04915364583333333,
+      "original_conflict_rate": 0.16829427083333334,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__paired_2_8",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.06868489583333334,
+      "strict_preference_deficit_rate": 0.0068359375,
+      "original_conflict_rate": 0.06868489583333334,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__paired_2_8",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.05143229166666667,
+      "strict_preference_deficit_rate": 0.0068359375,
+      "original_conflict_rate": 0.05143229166666667,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.24251302083333331,
+      "tie_resolvable_conflict_rate": 0.13248697916666666,
+      "unavoidable_best_set_conflict_rate": 0.11653645833333334,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.2490234375,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.5320261437908497
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced2__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.1923828125,
+      "tie_resolvable_conflict_rate": 0.1015625,
+      "unavoidable_best_set_conflict_rate": 0.1591796875,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.26074218750000006,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.3895131086142321
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__paired_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.16536458333333334,
+      "strict_preference_deficit_rate": 0.054361979166666664,
+      "original_conflict_rate": 0.16536458333333334,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__paired_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.171875,
+      "strict_preference_deficit_rate": 0.0625,
+      "original_conflict_rate": 0.171875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__common_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.4270833333333333,
+      "strict_preference_deficit_rate": 0.15071614583333331,
+      "original_conflict_rate": 0.4270833333333333,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__common_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.447265625,
+      "strict_preference_deficit_rate": 0.15006510416666666,
+      "original_conflict_rate": 0.447265625,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__paired_2_8",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.1376953125,
+      "strict_preference_deficit_rate": 0.025065104166666668,
+      "original_conflict_rate": 0.1376953125,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__paired_2_8",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.12434895833333334,
+      "strict_preference_deficit_rate": 0.030598958333333336,
+      "original_conflict_rate": 0.12434895833333334,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.140625,
+      "tie_resolvable_conflict_rate": 0.07259114583333334,
+      "unavoidable_best_set_conflict_rate": 0.20963541666666666,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.2822265625,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.2572087658592849
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck2__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.1357421875,
+      "tie_resolvable_conflict_rate": 0.07682291666666666,
+      "unavoidable_best_set_conflict_rate": 0.20149739583333331,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.2783203125,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.27602339181286545
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__paired_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.11295572916666666,
+      "strict_preference_deficit_rate": 0.001953125,
+      "original_conflict_rate": 0.11295572916666666,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__paired_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.11848958333333334,
+      "strict_preference_deficit_rate": 0.001953125,
+      "original_conflict_rate": 0.11848958333333334,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__common_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.2373046875,
+      "strict_preference_deficit_rate": 0.04459635416666667,
+      "original_conflict_rate": 0.2373046875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__common_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.28059895833333337,
+      "strict_preference_deficit_rate": 0.05631510416666667,
+      "original_conflict_rate": 0.28059895833333337,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__paired_2_8",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.1005859375,
+      "strict_preference_deficit_rate": 0.002278645833333333,
+      "original_conflict_rate": 0.1005859375,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__paired_2_8",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.09765625,
+      "strict_preference_deficit_rate": 0.002278645833333333,
+      "original_conflict_rate": 0.09765625,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.07486979166666666,
+      "tie_resolvable_conflict_rate": 0.030924479166666664,
+      "unavoidable_best_set_conflict_rate": 0.21712239583333331,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.248046875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.12467191601049868
+    },
+    {
+      "phase": "screening",
+      "candidate": "balanced1__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.06477864583333333,
+      "tie_resolvable_conflict_rate": 0.0263671875,
+      "unavoidable_best_set_conflict_rate": 0.21126302083333331,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.23763020833333331,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.11095890410958904
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__paired_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.3414713541666667,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.3414713541666667,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__paired_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.34114583333333337,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.34114583333333337,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__common_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.46354166666666663,
+      "strict_preference_deficit_rate": 0.07421875,
+      "original_conflict_rate": 0.46354166666666663,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__common_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.46354166666666663,
+      "strict_preference_deficit_rate": 0.07421875,
+      "original_conflict_rate": 0.46354166666666663,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__paired_2_8",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.2265625,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.2265625,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__paired_2_8",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.216796875,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.216796875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.1083984375,
+      "tie_resolvable_conflict_rate": 0.021809895833333332,
+      "unavoidable_best_set_conflict_rate": 0.30794270833333337,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.32975260416666663,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.06614017769002963
+    },
+    {
+      "phase": "screening",
+      "candidate": "bottleneck1__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.1083984375,
+      "tie_resolvable_conflict_rate": 0.021809895833333332,
+      "unavoidable_best_set_conflict_rate": 0.30794270833333337,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.32975260416666663,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.06614017769002963
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__paired_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.012695312499999998,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.012695312499999998,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__paired_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.012695312499999998,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.012695312499999998,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__common_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.012695312499999998,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.012695312499999998,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__common_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.012695312499999998,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.012695312499999998,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__paired_2_8",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.0263671875,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.0263671875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__paired_2_8",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.02669270833333333,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.02669270833333333,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.20052083333333337,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.20052083333333337,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.20052083333333337,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.20052083333333337,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__equal_control",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.2158203125,
+      "tie_resolvable_conflict_rate": 0.2041015625,
+      "unavoidable_best_set_conflict_rate": 0.056315104166666664,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.26041666666666663,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.7837500000000001
+    },
+    {
+      "phase": "screening",
+      "candidate": "overlap3__equal_control",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.2158203125,
+      "tie_resolvable_conflict_rate": 0.201171875,
+      "unavoidable_best_set_conflict_rate": 0.05924479166666667,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.26041666666666663,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.7725000000000001
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "overlap3__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.2501627604166667,
+      "tie_resolvable_conflict_rate": 0.224609375,
+      "unavoidable_best_set_conflict_rate": 0.12239583333333334,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.3470052083333333,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.6472795497185742
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "overlap3__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.19140625,
+      "tie_resolvable_conflict_rate": 0.16194661458333331,
+      "unavoidable_best_set_conflict_rate": 0.14860026041666666,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.310546875,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.521488469601677
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "balanced2__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.2109375,
+      "tie_resolvable_conflict_rate": 0.11116536458333333,
+      "unavoidable_best_set_conflict_rate": 0.1171875,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.22835286458333334,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.4868139700641482
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "balanced2__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.18717447916666669,
+      "tie_resolvable_conflict_rate": 0.09847005208333333,
+      "unavoidable_best_set_conflict_rate": 0.13411458333333334,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.23258463541666666,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.42337298810356894
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.19840494791666666,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.19840494791666666,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.0,
+      "tie_resolvable_conflict_rate": 0.0,
+      "unavoidable_best_set_conflict_rate": 0.19840494791666666,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.19840494791666666,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.0
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "overlap3__equal_control",
+      "policy": "deadline_matching",
+      "tied_preference_rate": 0.2275390625,
+      "tie_resolvable_conflict_rate": 0.2158203125,
+      "unavoidable_best_set_conflict_rate": 0.05192057291666667,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.2677408854166667,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.8060790273556231
+    },
+    {
+      "phase": "confirmation",
+      "candidate": "overlap3__equal_control",
+      "policy": "priority_greedy",
+      "tied_preference_rate": 0.2275390625,
+      "tie_resolvable_conflict_rate": 0.21337890625,
+      "unavoidable_best_set_conflict_rate": 0.054361979166666664,
+      "strict_preference_deficit_rate": 0.0,
+      "original_conflict_rate": 0.2677408854166667,
+      "tie_resolvable_fraction_of_reported_conflicts": 0.7969604863221884
+    }
+  ],
+  "cost_comparisons": [
+    {
+      "candidate": "overlap3__tradeoff_2_4",
+      "reduction_vs_priority_greedy": 0.017051490345560208,
+      "ci95": [
+        0.009153874570196677,
+        0.025447903608543616
+      ],
+      "mean_cost_deadline": 983.1328125,
+      "mean_cost_greedy": 1000.1875,
+      "status": "posthoc_exploratory; not pure assignment intervention or evidence of RL gain"
+    },
+    {
+      "candidate": "balanced2__tradeoff_2_4",
+      "reduction_vs_priority_greedy": 0.01730579980317953,
+      "ci95": [
+        0.009425737229669112,
+        0.026200606309700364
+      ],
+      "mean_cost_deadline": 959.5625,
+      "mean_cost_greedy": 976.4609375,
+      "status": "posthoc_exploratory; not pure assignment intervention or evidence of RL gain"
+    },
+    {
+      "candidate": "overlap3__equal_control",
+      "reduction_vs_priority_greedy": 0.006056129985228951,
+      "ci95": [
+        0.0021925765207010473,
+        0.010555094102003252
+      ],
+      "mean_cost_deadline": 893.6953125,
+      "mean_cost_greedy": 899.140625,
+      "status": "posthoc_exploratory; not pure assignment intervention or evidence of RL gain"
+    },
+    {
+      "candidate": "partitioned_control__tradeoff_2_4",
+      "reduction_vs_priority_greedy": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "mean_cost_deadline": 1059.09375,
+      "mean_cost_greedy": 1059.09375,
+      "status": "posthoc_exploratory; not pure assignment intervention or evidence of RL gain"
+    }
+  ],
+  "selected_setting": {
+    "candidate": "overlap3__tradeoff_2_4",
+    "topology": "overlap3",
+    "pattern": "tradeoff_2_4",
+    "selectable": true,
+    "eligible_edges": 7,
+    "shared_machines": 3,
+    "config": {
+      "machines": 4,
+      "technicians": 2,
+      "horizon": 60,
+      "failure_age": 4,
+      "failure_probability": 0.45,
+      "service_time": [
+        [
+          2,
+          0
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "restoration": [
+        [
+          0.5,
+          1.0
+        ],
+        [
+          1.0,
+          0.5
+        ],
+        [
+          0.5,
+          1.0
+        ],
+        [
+          1.0,
+          0.5
+        ]
+      ],
+      "max_age": 8,
+      "preventive_cost": 1.0,
+      "corrective_cost": 2.0,
+      "unavailable_cost": 6.0,
+      "failure_cost": 15.0,
+      "waiting_limit": 4,
+      "waiting_price": 12.0
+    }
+  },
+  "eligible_settings": 4
+}

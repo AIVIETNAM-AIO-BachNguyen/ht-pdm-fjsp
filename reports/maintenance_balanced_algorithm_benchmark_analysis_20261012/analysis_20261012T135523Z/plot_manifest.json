@@ -1,0 +1,16 @@
+{
+  "status": "COMPLETED",
+  "source_analysis_sha256": "22d4f0877e61494553241d78b8a79dca4f561e1068d3d10d466c8a74dbf8ab9d",
+  "plot_script_sha256": "7a1f4bda4a6b1c6e149f2704fc9e79b4877acf17aed4f15f1f04f12f6745bc5c",
+  "figures": {
+    "cost_vs_h6.png": {
+      "sha256": "4b5f7f7e79c150b8a81ed7fa8ed44f2181a589c5dddcdb6b26caf9161ff407b1",
+      "bytes": 39942
+    },
+    "development_learning_curves.png": {
+      "sha256": "3f4a2ab929b2a032a0ac8a5460412fb479c96f87c3740aa404673174837265ab",
+      "bytes": 199028
+    }
+  },
+  "note": "Numerical analysis finished successfully; its optional plot phase lacked matplotlib in the temporary learner venv. These figures use the existing main venv without rerunning inference."
+}

@@ -1,0 +1,7 @@
+arm,seed,update,development_cost
+additive_ppo,18100000,40,1229.0
+additive_ppo,18100001,30,1222.7083333333333
+additive_ppo,18100002,10,1240.9583333333333
+interaction_ppo,18100000,40,1237.0
+interaction_ppo,18100001,30,1220.625
+interaction_ppo,18100002,30,1232.7916666666667

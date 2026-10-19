@@ -1,0 +1,19 @@
+{
+  "status": "ANALYZED",
+  "artifact_integrity": "PASS",
+  "exact_grids": "PASS",
+  "checkpoint_selection": "PASS",
+  "training_population_pairing": "PASS",
+  "registered_statistics_recalculation": "PASS",
+  "registered_ci_count": 28,
+  "bootstrap_draws": 40000,
+  "maximum_ci_difference": 2.635478640877764e-15,
+  "bound_files": 338,
+  "bound_bytes": 519953778,
+  "source_manifest_sha256": "2269b9c6fd69be897564c12bfc8177e837a8d7587a4ab375ddd9a0ded05633d8",
+  "training_rerun": false,
+  "physical_replay": "original lab audit PASS; no new full simulator replay on Mac",
+  "source": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_balanced_algorithm_benchmark_v1_full_cpu_20261012T115140Z",
+  "analysis_script_sha256": "19c0e48caf10ebb301416fdba40cf528267cf7de776e0e905cf8e166068d41f9",
+  "elapsed_lab_seconds": 6078.8931323860015
+}

@@ -1,0 +1,112 @@
+{
+  "scope": "Verified head input limitation, not causal explanation of full-panel performance",
+  "family": "n3_nominal",
+  "eval_seed": 118009,
+  "time": 1,
+  "machine": 0,
+  "state": {
+    "ages": [
+      4,
+      0,
+      1
+    ],
+    "failed": [
+      false,
+      false,
+      false
+    ],
+    "pending_wait": [
+      0,
+      0,
+      0
+    ],
+    "remaining": [
+      0,
+      0
+    ],
+    "assigned": [
+      -1,
+      -1
+    ]
+  },
+  "config": {
+    "machines": 3,
+    "technicians": 2,
+    "horizon": 12,
+    "failure_age": 5,
+    "failure_probability": 0.25,
+    "service_time": [
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "restoration": [
+      [
+        0.75,
+        0.75
+      ],
+      [
+        1.0,
+        0.75
+      ],
+      [
+        1.0,
+        0.5
+      ]
+    ],
+    "max_age": 8,
+    "preventive_cost": 1.0,
+    "corrective_cost": 2.0,
+    "unavailable_cost": 6.0,
+    "failure_cost": 15.0
+  },
+  "own_edges": [
+    [
+      1.0,
+      0.1666666716337204,
+      0.75,
+      0.0
+    ],
+    [
+      1.0,
+      0.1666666716337204,
+      0.75,
+      0.0
+    ]
+  ],
+  "technician_features": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "technician_probabilities": [
+    [
+      0.5,
+      0.5
+    ]
+  ],
+  "technician_logits": [
+    [
+      -0.6931471824645996,
+      -0.6931471824645996
+    ]
+  ],
+  "source_inputs": "technician_head(selected edge encoding before peer update, shared global context, shared prefix); updated per-technician neighbor encoding omitted",
+  "interpretation": "Same local machine-service edge and same technician public state cannot distinguish workers via per-worker competing-machine capabilities, despite different service rows for other machines. Entity order/rounding can resolve the tie; this is not an explicit learned opportunity-cost comparison."
+}

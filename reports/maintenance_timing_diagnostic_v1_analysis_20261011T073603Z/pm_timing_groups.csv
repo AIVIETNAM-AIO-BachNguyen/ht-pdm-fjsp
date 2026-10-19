@@ -1,0 +1,11 @@
+condition,origin,pm_timing,n,mean,negative,positive
+dense,best_rule,ALL_RISK,152,-0.048718904194078934,104,48
+dense,best_rule,ALL_SAFE,10,0.17451171874999996,0,10
+dense,joint_ppo,ALL_RISK,144,-0.03712293836805555,83,61
+dense,joint_ppo,ALL_SAFE,36,0.09508825231481481,11,24
+dense,joint_ppo,MIXED_RISK,5,-0.061067708333333345,3,2
+skill_mask,best_rule,ALL_RISK,145,-0.04787625718390803,108,36
+skill_mask,best_rule,ALL_SAFE,19,-0.03981633771929824,12,6
+skill_mask,joint_ppo,ALL_RISK,142,-0.03465650674882629,85,57
+skill_mask,joint_ppo,ALL_SAFE,69,0.024989621074879214,29,38
+skill_mask,joint_ppo,MIXED_RISK,6,0.02191840277777775,1,5

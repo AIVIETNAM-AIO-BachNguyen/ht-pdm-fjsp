@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "goal": "fresh balanced 2\u20132 setting passing all18 unchanged guards",
+  "checkout": "/private/tmp/marl-maintenance-assignment-confidence-v1",
+  "branch": "codex/maintenance-balanced-search-mac-v2",
+  "round": 2,
+  "protocol": "maintenance_balanced_search_mac_v2",
+  "stage": "verified_results_pushed",
+  "next": null,
+  "previous_result": "balanced d3/q.50 NOT_CONFIRMED sole assignment availability lowerCI failure",
+  "family_alpha": 0.0125,
+  "confirmation_confidence": 0.9993055555555556,
+  "bootstrap_samples": 160000,
+  "code_commit": "2b1cf5a",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_balanced_search_mac_v2_full_cpu_20261012T093417Z",
+  "tests": "42PASS39.49s",
+  "smoke": "engineering_and_independent_auditPASS",
+  "previous_round": {
+    "protocol": "maintenance_balanced_search_mac_v1",
+    "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_balanced_search_mac_v1_full_cpu_20261012T091339Z",
+    "scientific_status": "NO_SCREEN_CANDIDATE",
+    "independent_audit": "PASS"
+  },
+  "selected_setting": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_balanced_search_20261012/selected_setting.json",
+  "scientific_status": "CROSS_SKILL_SETTING_CONFIRMED",
+  "results_commit": "5cf773d",
+  "stopping_reason": "balanced2\u20132passedall18unchangedguardsandindependentverification",
+  "report": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_balanced_search_20261012/selected_setting.md"
+}

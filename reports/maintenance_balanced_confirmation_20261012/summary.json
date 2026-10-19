@@ -1,0 +1,308 @@
+{
+  "candidate": "cross_d3_q050_balanced",
+  "base": "isolated_endpoint",
+  "comparisons": {
+    "local_baseline": {
+      "estimate": 6.680219377790177,
+      "ci": [
+        4.571652899848091,
+        8.965503662351594
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_quality": {
+      "estimate": 6.680219377790177,
+      "ci": [
+        4.571652899848091,
+        8.965503662351594
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "local_endpoint_dp": {
+      "estimate": 6.680219377790177,
+      "ci": [
+        4.571652899848091,
+        8.965503662351594
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_cost_gain": {
+      "estimate": 0.06327570518653325,
+      "ci": [
+        0.04519364287847804,
+        0.08220989731409854
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_deadline_matching": {
+      "estimate": 0.13263866146655157,
+      "ci": [
+        0.10962856320646974,
+        0.155497987135634
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_h6": {
+      "estimate": 0.15141965024291926,
+      "ci": [
+        0.12909946788562146,
+        0.1722276545538387
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_cost_vs_isolated_endpoint": {
+      "estimate": 0.11635426144980288,
+      "ci": [
+        0.09439250245575474,
+        0.13791320637297255
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_availability_difference": {
+      "estimate": -0.006368001302083592,
+      "ci": [
+        -0.013778149640118842,
+        0.0009200767234521132
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_pending_difference": {
+      "estimate": 0.03125,
+      "ci": [
+        0.0,
+        0.078125
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_availability": {
+      "estimate": 0.6468098958333331,
+      "ci": [
+        0.6370555171260125,
+        0.6552169517234522
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_absolute_pending": {
+      "estimate": 0.03125,
+      "ci": [
+        0.0,
+        0.078125
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_interior_gain": {
+      "estimate": 0.05418535695278648,
+      "ci": [
+        0.03767598173296515,
+        0.07164131192704501
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_availability_difference": {
+      "estimate": 0.01377360026041674,
+      "ci": [
+        0.006098966245298022,
+        0.022510726363570953
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_pending_difference": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_availability": {
+      "estimate": 0.6669514973958335,
+      "ci": [
+        0.66552734375,
+        0.668258130108869
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_absolute_pending": {
+      "estimate": 0.0,
+      "ci": [
+        0.0,
+        0.0
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "joint_interior_gain": {
+      "estimate": 0.11049190298791145,
+      "ci": [
+        0.08969014544044798,
+        0.1313194978541019
+      ],
+      "confidence": 0.9972222222222222
+    },
+    "assignment_choice_fraction": {
+      "estimate": 0.700334821428572,
+      "ci": [
+        0.6501116071428571,
+        0.75
+      ],
+      "confidence": 0.9972222222222222
+    }
+  },
+  "gates": {
+    "local_baseline": true,
+    "local_quality": true,
+    "local_endpoint_dp": true,
+    "assignment_cost_gain": true,
+    "joint_cost_vs_deadline_matching": true,
+    "joint_cost_vs_isolated_h6": true,
+    "joint_cost_vs_isolated_endpoint": true,
+    "assignment_availability_difference": false,
+    "assignment_pending_difference": true,
+    "assignment_absolute_availability": true,
+    "assignment_absolute_pending": true,
+    "assignment_interior_gain": true,
+    "joint_availability_difference": true,
+    "joint_pending_difference": true,
+    "joint_absolute_availability": true,
+    "joint_absolute_pending": true,
+    "joint_interior_gain": true,
+    "assignment_choice_fraction": true
+  },
+  "means": [
+    {
+      "method": "deadline_matching",
+      "availability": 0.6541951497395833,
+      "terminal_pending": 0.0546875,
+      "terminal_failed": 0.0546875,
+      "tail_pending": 0.0546875,
+      "tail_failed": 0.0546875,
+      "policy_cost": 523.37890625,
+      "extended_cost": 656.03515625,
+      "tail_cost": 132.65625,
+      "policy_failures": 4.08984375,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.0008737279868000769,
+      "disagreement_rate": 0.02945963541666667,
+      "subset_change_rate": 0.018961588541666664,
+      "assignment_only_change_rate": 0.010498046875,
+      "cardinality_change_rate": 0.007649739583333333,
+      "wait_change_rate": 0.00040690104166666663,
+      "extended_maintenance_cost": 79.84765625,
+      "extended_unavailability_cost": 499.4296875,
+      "extended_failure_cost": 76.7578125,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "isolated_h6",
+      "availability": 0.5947265625,
+      "terminal_pending": 0.00390625,
+      "terminal_failed": 0.0625,
+      "tail_pending": 0.046875,
+      "tail_failed": 0.046875,
+      "policy_cost": 538.0234375,
+      "extended_cost": 670.5546875,
+      "tail_cost": 132.53125,
+      "policy_failures": 1.4375,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.003288762164856962,
+      "disagreement_rate": 0.03271484375,
+      "subset_change_rate": 0.012939453125,
+      "assignment_only_change_rate": 0.019775390625,
+      "cardinality_change_rate": 0.008056640625,
+      "wait_change_rate": 0.005452473958333332,
+      "extended_maintenance_cost": 62.0,
+      "extended_unavailability_cost": 583.828125,
+      "extended_failure_cost": 24.7265625,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "isolated_endpoint",
+      "availability": 0.6531778971354166,
+      "terminal_pending": 0.0,
+      "terminal_failed": 0.0,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 513.7890625,
+      "extended_cost": 643.9453125,
+      "tail_cost": 130.15625,
+      "policy_failures": 3.43359375,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 0.0,
+      "planning_seconds": 0.0032937236105681222,
+      "disagreement_rate": 0.0,
+      "subset_change_rate": 0.0,
+      "assignment_only_change_rate": 0.0,
+      "cardinality_change_rate": 0.0,
+      "wait_change_rate": 0.0,
+      "extended_maintenance_cost": 78.7734375,
+      "extended_unavailability_cost": 500.6015625,
+      "extended_failure_cost": 64.5703125,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "assignment_rollout",
+      "availability": 0.6468098958333333,
+      "terminal_pending": 0.03125,
+      "terminal_failed": 0.03125,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 485.94921875,
+      "extended_cost": 603.19921875,
+      "tail_cost": 117.25,
+      "policy_failures": 1.30078125,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 329186.0,
+      "planning_seconds": 0.27122977003500637,
+      "disagreement_rate": 0.020263671875,
+      "subset_change_rate": 0.0,
+      "assignment_only_change_rate": 0.020263671875,
+      "cardinality_change_rate": 0.0,
+      "wait_change_rate": 0.0,
+      "extended_maintenance_cost": 75.08203125,
+      "extended_unavailability_cost": 506.4375,
+      "extended_failure_cost": 21.6796875,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    },
+    {
+      "method": "joint_rollout",
+      "availability": 0.6669514973958333,
+      "terminal_pending": 0.0,
+      "terminal_failed": 0.0,
+      "tail_pending": 0.0,
+      "tail_failed": 0.0,
+      "policy_cost": 457.01953125,
+      "extended_cost": 569.01953125,
+      "tail_cost": 112.0,
+      "policy_failures": 0.7109375,
+      "policy_overdue_ticks": 0.0,
+      "forecast_transitions": 990673.0,
+      "planning_seconds": 0.5384125352381943,
+      "disagreement_rate": 0.023681640625,
+      "subset_change_rate": 0.018798828125,
+      "assignment_only_change_rate": 0.0048828125,
+      "cardinality_change_rate": 0.015625,
+      "wait_change_rate": 0.011067708333333332,
+      "extended_maintenance_cost": 78.68359375,
+      "extended_unavailability_cost": 479.671875,
+      "extended_failure_cost": 10.6640625,
+      "extended_waiting_cost": 0.0,
+      "extended_invalid_assignments": 0.0
+    }
+  ],
+  "scientific_status": "NOT_CONFIRMED",
+  "inference": "fixed current state/tick/subset in local intervention; future decisions state-adaptive; full assignment trajectories can diverge",
+  "selection": {
+    "winner": "cross_d3_q050_balanced",
+    "status": "AUTHOR_REQUESTED_FIXED_CONFIRMATION",
+    "confirmation_outcomes_opened": false,
+    "prior_screen_passed": false,
+    "reason": "balanced 2\u20132 requested after earlier screening; no new selection"
+  },
+  "standalone_author_requested": true,
+  "prior_screen_passed": false
+}

@@ -1,0 +1,2 @@
+condition,cohort,shock,model_seed,tick,phase,root_index,future,original_cost,mac_cost,original_action
+dense,17000008,17100000,16100002,0,selection,6,29,1294.0,1264.0,"[[3, 1]]"

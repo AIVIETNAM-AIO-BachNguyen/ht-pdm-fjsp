@@ -1,0 +1,187 @@
+{
+  "status": "JOINT_SETTING_CONFIRMED",
+  "research_scope": "joint machine selection, timing and technician; fixed synthetic maintenance benchmark",
+  "physics": {
+    "machines": 4,
+    "technicians": 2,
+    "horizon": 60,
+    "failure_age": 4,
+    "failure_probability": 0.45,
+    "service_time": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "restoration": [
+      [
+        0.75,
+        0.75
+      ],
+      [
+        0.75,
+        0.75
+      ],
+      [
+        0.75,
+        0.75
+      ],
+      [
+        0.75,
+        0.75
+      ]
+    ],
+    "max_age": 8,
+    "preventive_cost": 1.0,
+    "corrective_cost": 2.0,
+    "unavailable_cost": 6.0,
+    "failure_cost": 15.0,
+    "waiting_limit": 4,
+    "waiting_price": 12.0
+  },
+  "policy_horizon": 48,
+  "common_tail_ticks": 12,
+  "root_eligibility": "idle eligible machine failed or age>=3; free technician; any partial feasible matching including WAIT",
+  "observation_dimensions": 71,
+  "joint_action_catalogue_size": 21,
+  "confirmation": {
+    "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_joint_frontier_mac_v1_full_cpu_20261012T062329Z",
+    "commit": "a7691895b5cad853a52a18a6348faf8e5ff87754",
+    "paired_seeds": 256,
+    "all_eight_gates_pass": true,
+    "comparisons": {
+      "cost_vs_deadline_matching": {
+        "estimate": 0.05394753253232443,
+        "ci": [
+          0.04062335727446872,
+          0.06800046231246742
+        ],
+        "confidence": 0.99375
+      },
+      "cost_vs_isolated_h6": {
+        "estimate": 0.08392847078525933,
+        "ci": [
+          0.0677042245637888,
+          0.10048613131447744
+        ],
+        "confidence": 0.99375
+      },
+      "cost_vs_isolated_endpoint": {
+        "estimate": 0.0566927828213738,
+        "ci": [
+          0.040275973038504324,
+          0.07313367758242062
+        ],
+        "confidence": 0.99375
+      },
+      "availability_difference": {
+        "estimate": 0.02003987630208348,
+        "ci": [
+          0.014811197916666907,
+          0.025655110677083925
+        ],
+        "confidence": 0.99375
+      },
+      "pending_difference": {
+        "estimate": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.99375
+      },
+      "absolute_availability": {
+        "estimate": 0.7356160481770836,
+        "ci": [
+          0.7319539388020834,
+          0.7386983871459962
+        ],
+        "confidence": 0.99375
+      },
+      "absolute_pending": {
+        "estimate": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "confidence": 0.99375
+      },
+      "interior_cost_gain": {
+        "estimate": 0.04879285019757118,
+        "ci": [
+          0.03651635877738011,
+          0.06171483534403095
+        ],
+        "confidence": 0.99375
+      }
+    }
+  },
+  "learning_pilot": {
+    "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_joint_learning_mac_v1_full_cpu_20261012T064635Z",
+    "commit": "c300d1010fbc4ba2b8166ee1ab1100858956c844",
+    "training_replicas": 3,
+    "steps_per_replica": 65536,
+    "test_seeds": 128,
+    "selected_steps": {
+      "41000000": 49152,
+      "41000001": 65536,
+      "41000002": 65536
+    },
+    "aggregate": {
+      "extended_cost": 468.5677083333333,
+      "availability": 0.7349717881944443,
+      "terminal_pending": 0.018229166666666668
+    },
+    "contrasts": {
+      "gain_vs_initial": {
+        "estimate": 0.5496165244903681,
+        "ci95": [
+          0.4143176080234455,
+          0.6418416208638663
+        ]
+      },
+      "gain_vs_deadline": {
+        "estimate": 0.009550546335287513,
+        "ci95": [
+          0.0016396977864098882,
+          0.017202557834117574
+        ]
+      },
+      "availability_difference": {
+        "estimate": 0.02151150173611116,
+        "ci95": [
+          0.01542154947916663,
+          0.02803548177083315
+        ]
+      },
+      "pending_difference": {
+        "estimate": 0.018229166666666668,
+        "ci95": [
+          0.0,
+          0.041666666666666664
+        ]
+      }
+    },
+    "scientific_status": "EXPLORATORY_LEARNING_PROBE"
+  },
+  "prior_assignment_primary": "NOT_CONFIRMED; unchanged",
+  "limitations": [
+    "one physical profile, fresh shocks only",
+    "known-model rollout is not globally optimal",
+    "learning pilot is centralized PPO, not MARL",
+    "benefit is predominantly subset/timing; assignment-specific contribution is weak",
+    "approximate per-protocol bootstrap, no global guarantee for adaptive search"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "decisions": 368640,
+  "episodes": 30720,
+  "requests": 74507,
+  "rule_actions_reproduced": 221184,
+  "planner_actions": "feasibility and fixed restriction checked; inference not rerun"
+}

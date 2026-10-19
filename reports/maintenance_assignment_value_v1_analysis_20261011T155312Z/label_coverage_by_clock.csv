@@ -1,0 +1,13 @@
+split,condition,tick,labels
+development,dense,0,240
+development,dense,12,10
+development,dense,24,20
+development,skill_mask,0,72
+development,skill_mask,36,6
+train,dense,0,1920
+train,dense,24,40
+train,dense,36,60
+train,skill_mask,0,576
+train,skill_mask,12,18
+train,skill_mask,24,6
+train,skill_mask,36,24

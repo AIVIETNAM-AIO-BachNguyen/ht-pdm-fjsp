@@ -1,0 +1,574 @@
+{
+  "verification_status": "ANALYZED",
+  "raw_run": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_context_waiting_v1_full_cpu_20261005T064927Z",
+  "git_revision": "e2ec53e3239881aaf2d7db57aa7b72c64342165f",
+  "primary": [
+    {
+      "algorithm": "local_cost",
+      "base_cost": 146.233,
+      "service_adjusted_cost": 156.895,
+      "pressure_overdue_per_machine": 0.49316666666666664,
+      "nominal_base_cost": 91.784
+    },
+    {
+      "algorithm": "context_cost",
+      "base_cost": 145.8055,
+      "service_adjusted_cost": 158.27949999999998,
+      "pressure_overdue_per_machine": 0.5758333333333334,
+      "nominal_base_cost": 91.507
+    },
+    {
+      "algorithm": "local_wait",
+      "base_cost": 147.7245,
+      "service_adjusted_cost": 147.8145,
+      "pressure_overdue_per_machine": 0.00375,
+      "nominal_base_cost": 92.08200000000001
+    },
+    {
+      "algorithm": "context_wait",
+      "base_cost": 147.2025,
+      "service_adjusted_cost": 147.2625,
+      "pressure_overdue_per_machine": 0.0025833333333333333,
+      "nominal_base_cost": 91.54299999999999
+    },
+    {
+      "algorithm": "risk_skill_rule",
+      "base_cost": 148.105,
+      "service_adjusted_cost": 148.105,
+      "pressure_overdue_per_machine": 0.0,
+      "nominal_base_cost": 89.71000000000001
+    }
+  ],
+  "contrasts": {
+    "H_context": {
+      "learner": "context_cost",
+      "control": "local_cost",
+      "metric": "base_cost",
+      "confirmatory": true,
+      "control_mean": 146.233,
+      "learned_mean": 145.8055,
+      "delta": -0.4274999999999977,
+      "relative_reduction": 0.002923416739039736,
+      "improving_seeds": 6,
+      "ci": [
+        -1.7003406027227725,
+        0.845340602722777
+      ],
+      "critical": 2.685010847,
+      "df": 9,
+      "t": -0.9017956644666326,
+      "p_two_sided": 0.3906603439473927,
+      "p_bonferroni_two": 0.7813206878947854,
+      "signflip_p_two_sided_descriptive": 0.376953125,
+      "paired_sd": 1.499090928233217,
+      "paired_effect": -0.28517282837795316,
+      "seed_deltas": [
+        -2.2649999999999864,
+        0.6000000000000227,
+        1.8100000000000023,
+        -0.4099999999999966,
+        -1.4749999999999943,
+        -0.6400000000000148,
+        1.5550000000000068,
+        -2.515000000000015,
+        0.3550000000000182,
+        -1.2900000000000205
+      ]
+    },
+    "H_wait": {
+      "learner": "context_wait",
+      "control": "context_cost",
+      "metric": "overdue_ticks_per_machine",
+      "confirmatory": true,
+      "control_mean": 0.5758333333333333,
+      "learned_mean": 0.0025833333333333333,
+      "delta": -0.57325,
+      "relative_reduction": 0.9955137481910276,
+      "improving_seeds": 10,
+      "ci": [
+        -0.9559859261847172,
+        -0.19051407381528285
+      ],
+      "critical": 2.685010847,
+      "df": 9,
+      "t": -4.021525973236976,
+      "p_two_sided": 0.0030111344481994528,
+      "p_bonferroni_two": 0.0060222688963989055,
+      "signflip_p_two_sided_descriptive": 0.001953125,
+      "paired_sd": 0.45076811159630487,
+      "paired_effect": -1.2717181744954187,
+      "seed_deltas": [
+        -1.2475,
+        -0.3575,
+        -0.31333333333333335,
+        -0.74,
+        -0.7791666666666666,
+        -0.16666666666666666,
+        -0.0725,
+        -1.2924999999999998,
+        -0.07916666666666666,
+        -0.6841666666666667
+      ]
+    },
+    "waiting_economic_cost": {
+      "learner": "context_wait",
+      "control": "context_cost",
+      "metric": "base_cost",
+      "confirmatory": false,
+      "control_mean": 145.8055,
+      "learned_mean": 147.20250000000001,
+      "delta": 1.3969999999999942,
+      "relative_reduction": -0.009581257222807057,
+      "improving_seeds": 3,
+      "ci": [
+        -0.35403823752143615,
+        3.1480382375214244
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": 1.8047770111429733,
+      "p_two_sided": 0.10459664086990174,
+      "signflip_p_two_sided_descriptive": 0.103515625,
+      "paired_sd": 2.447782670091447,
+      "paired_effect": 0.5707206023922882,
+      "seed_deltas": [
+        2.069999999999993,
+        1.1049999999999898,
+        -1.9350000000000023,
+        0.060000000000002274,
+        2.859999999999985,
+        2.460000000000008,
+        -1.8950000000000102,
+        3.6049999999999898,
+        -0.13500000000001933,
+        5.775000000000006
+      ]
+    },
+    "waiting_nominal_cost": {
+      "learner": "context_wait",
+      "control": "context_cost",
+      "metric": "base_cost",
+      "confirmatory": false,
+      "control_mean": 91.50699999999999,
+      "learned_mean": 91.543,
+      "delta": 0.036000000000001364,
+      "relative_reduction": -0.00039341252581771196,
+      "improving_seeds": 6,
+      "ci": [
+        -2.493299435065795,
+        2.5652994350657976
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": 0.03219771322405115,
+      "p_two_sided": 0.9750171227089728,
+      "signflip_p_two_sided_descriptive": 0.98046875,
+      "paired_sd": 3.535716806155908,
+      "paired_effect": 0.010181810923692495,
+      "seed_deltas": [
+        -0.7300000000000182,
+        -0.4899999999999949,
+        -5.639999999999986,
+        -1.1500000000000057,
+        2.0600000000000023,
+        3.3500000000000085,
+        -3.780000000000001,
+        1.0800000000000125,
+        -1.1500000000000057,
+        6.810000000000002
+      ]
+    },
+    "waiting_with_local_head": {
+      "learner": "local_wait",
+      "control": "local_cost",
+      "metric": "overdue_ticks_per_machine",
+      "confirmatory": false,
+      "control_mean": 0.49316666666666664,
+      "learned_mean": 0.00375,
+      "delta": -0.4894166666666667,
+      "relative_reduction": 0.9923960797566748,
+      "improving_seeds": 10,
+      "ci": [
+        -0.708787033723982,
+        -0.27004629960935145
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": -5.046886838195059,
+      "p_two_sided": 0.0006932691077816382,
+      "signflip_p_two_sided_descriptive": 0.001953125,
+      "paired_sd": 0.30665862761202217,
+      "paired_effect": -1.595965750182206,
+      "seed_deltas": [
+        -0.6291666666666667,
+        -0.9283333333333333,
+        -0.6950000000000001,
+        -0.16083333333333333,
+        -0.7066666666666668,
+        -0.5391666666666667,
+        -0.7558333333333334,
+        -0.0925,
+        -0.31666666666666665,
+        -0.07
+      ]
+    },
+    "context_given_waiting": {
+      "learner": "context_wait",
+      "control": "local_wait",
+      "metric": "base_cost",
+      "confirmatory": false,
+      "control_mean": 147.72449999999998,
+      "learned_mean": 147.20250000000001,
+      "delta": -0.5220000000000027,
+      "relative_reduction": 0.0035336047845821294,
+      "improving_seeds": 7,
+      "ci": [
+        -1.827255970689313,
+        0.7832559706893076
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": -0.9046854146642188,
+      "p_two_sided": 0.3892071100454242,
+      "signflip_p_two_sided_descriptive": 0.455078125,
+      "paired_sd": 1.824622030875314,
+      "paired_effect": -0.2860866476272826,
+      "seed_deltas": [
+        -0.22499999999999432,
+        -0.4749999999999943,
+        -0.34499999999999886,
+        -4.840000000000003,
+        1.2549999999999955,
+        0.37999999999999545,
+        -1.039999999999992,
+        -0.42500000000001137,
+        -1.450000000000017,
+        1.9449999999999932
+      ]
+    },
+    "long_horizon_waiting": {
+      "learner": "context_wait",
+      "control": "context_cost",
+      "metric": "overdue_ticks_per_machine",
+      "confirmatory": false,
+      "control_mean": 1.9529999999999998,
+      "learned_mean": 0.0115,
+      "delta": -1.9415,
+      "relative_reduction": 0.9941116231438812,
+      "improving_seeds": 10,
+      "ci": [
+        -3.4742225876516093,
+        -0.4087774123483907
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": -2.8654749185198307,
+      "p_two_sided": 0.01861349604274257,
+      "signflip_p_two_sided_descriptive": 0.001953125,
+      "paired_sd": 2.1425984354413115,
+      "paired_effect": -0.9061427320608068,
+      "seed_deltas": [
+        -1.645,
+        -0.89,
+        -0.715,
+        -6.335,
+        -1.505,
+        -1.04,
+        -0.40499999999999997,
+        -5.484999999999999,
+        -0.31,
+        -1.0850000000000002
+      ]
+    },
+    "local_cost_vs_rule": {
+      "confirmatory": false,
+      "control_mean": 148.105,
+      "learned_mean": 146.233,
+      "delta": -1.8719999999999886,
+      "relative_reduction": 0.01263968130718064,
+      "improving_seeds": 10,
+      "ci": [
+        -2.3402847462125664,
+        -1.4037152537874105
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": -9.04312652373606,
+      "p_two_sided": 8.210464784337134e-06,
+      "signflip_p_two_sided_descriptive": 0.001953125,
+      "paired_sd": 0.654616936332489,
+      "paired_effect": -2.8596876984086674,
+      "seed_deltas": [
+        -1.1099999999999852,
+        -2.7150000000000034,
+        -1.6699999999999875,
+        -1.414999999999992,
+        -0.8249999999999886,
+        -2.839999999999975,
+        -1.759999999999991,
+        -2.0549999999999784,
+        -2.344999999999999,
+        -1.9849999999999852
+      ]
+    },
+    "context_cost_vs_rule": {
+      "confirmatory": false,
+      "control_mean": 148.105,
+      "learned_mean": 145.8055,
+      "delta": -2.2994999999999863,
+      "relative_reduction": 0.015526146990310836,
+      "improving_seeds": 9,
+      "ci": [
+        -3.348422445542515,
+        -1.2505775544574578
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": -4.959213541881977,
+      "p_two_sided": 0.000781365509236798,
+      "signflip_p_two_sided_descriptive": 0.00390625,
+      "paired_sd": 1.4662924712045404,
+      "paired_effect": -1.5682410195497878,
+      "seed_deltas": [
+        -3.3749999999999716,
+        -2.1149999999999807,
+        0.14000000000001478,
+        -1.8249999999999886,
+        -2.299999999999983,
+        -3.4799999999999898,
+        -0.20499999999998408,
+        -4.569999999999993,
+        -1.9899999999999807,
+        -3.2750000000000057
+      ]
+    },
+    "local_wait_vs_rule": {
+      "confirmatory": false,
+      "control_mean": 148.105,
+      "learned_mean": 147.72449999999998,
+      "delta": -0.3804999999999893,
+      "relative_reduction": 0.0025691232571485724,
+      "improving_seeds": 8,
+      "ci": [
+        -1.3398023091569466,
+        0.5788023091569681
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": -0.8972675165119851,
+      "p_two_sided": 0.39294528762305553,
+      "signflip_p_two_sided_descriptive": 0.41015625,
+      "paired_sd": 1.3410121591958493,
+      "paired_effect": -0.2837409022660613,
+      "seed_deltas": [
+        -1.079999999999984,
+        -0.5349999999999966,
+        -1.4499999999999886,
+        3.075000000000017,
+        -0.6949999999999932,
+        -1.3999999999999773,
+        -1.0600000000000023,
+        -0.539999999999992,
+        -0.674999999999983,
+        0.5550000000000068
+      ]
+    },
+    "context_wait_vs_rule": {
+      "confirmatory": false,
+      "control_mean": 148.105,
+      "learned_mean": 147.20250000000001,
+      "delta": -0.9024999999999921,
+      "relative_reduction": 0.00609364977549706,
+      "improving_seeds": 8,
+      "ci": [
+        -1.9246836517069852,
+        0.11968365170700102
+      ],
+      "critical": 2.262157163,
+      "df": 9,
+      "t": -1.9972896614009843,
+      "p_two_sided": 0.0768880405401501,
+      "signflip_p_two_sided_descriptive": 0.076171875,
+      "paired_sd": 1.4289142148265321,
+      "paired_effect": -0.6315984477133598,
+      "seed_deltas": [
+        -1.3049999999999784,
+        -1.009999999999991,
+        -1.7949999999999875,
+        -1.7649999999999864,
+        0.5600000000000023,
+        -1.0199999999999818,
+        -2.0999999999999943,
+        -0.9650000000000034,
+        -2.125,
+        2.5
+      ]
+    }
+  },
+  "gates": {
+    "H_context": {
+      "practical_5_percent": false,
+      "wins_8_of_10": false,
+      "uncertainty": false,
+      "nominal": true
+    },
+    "H_wait": {
+      "practical_50_percent": true,
+      "wins_8_of_10": true,
+      "uncertainty": true,
+      "nominal": true,
+      "economic": true,
+      "p95_bound": true
+    }
+  },
+  "nominal_cost_increase": 0.0003934125258178156,
+  "primary_cost_increase": 0.009581257222807338,
+  "elapsed_seconds": 18495.150242,
+  "locked_summary_recomputed": true,
+  "exact": [
+    {
+      "algorithm": "local_cost",
+      "rows": 10,
+      "exact_policy_cost": 30.866666666666667,
+      "exact_optimum": 30.5,
+      "optimality_gap": 0.3666666666666675,
+      "exact_selection_regret": 0.18333333333333335,
+      "exact_allocation_regret": 0.1833333333333333,
+      "close_optimal_seeds": 9
+    },
+    {
+      "algorithm": "context_cost",
+      "rows": 10,
+      "exact_policy_cost": 30.666666666666668,
+      "exact_optimum": 30.5,
+      "optimality_gap": 0.16666666666666785,
+      "exact_selection_regret": 0.16666666666666669,
+      "exact_allocation_regret": 0.0,
+      "close_optimal_seeds": 10
+    },
+    {
+      "algorithm": "local_wait",
+      "rows": 10,
+      "exact_policy_cost": 30.866666666666667,
+      "exact_optimum": 30.5,
+      "optimality_gap": 0.3666666666666675,
+      "exact_selection_regret": 0.18333333333333335,
+      "exact_allocation_regret": 0.1833333333333333,
+      "close_optimal_seeds": 9
+    },
+    {
+      "algorithm": "context_wait",
+      "rows": 10,
+      "exact_policy_cost": 30.866666666666667,
+      "exact_optimum": 30.5,
+      "optimality_gap": 0.3666666666666675,
+      "exact_selection_regret": 0.18333333333333335,
+      "exact_allocation_regret": 0.1833333333333333,
+      "close_optimal_seeds": 9
+    },
+    {
+      "algorithm": "risk_skill_rule",
+      "rows": 1,
+      "exact_policy_cost": 32.44444444444444,
+      "exact_optimum": 30.5,
+      "optimality_gap": 1.9444444444444429,
+      "exact_selection_regret": 0.25,
+      "exact_allocation_regret": 1.6944444444444442,
+      "close_optimal_seeds": 0
+    }
+  ],
+  "learning_curves": [
+    {
+      "algorithm": "local_cost",
+      "phase": "first20",
+      "mean_episode_cost": 168.780875,
+      "mean_matching_size": 0.4715,
+      "entropy": 0.9822836910001933,
+      "value_loss": 9.377159438338131,
+      "gradient_norm": 4.918706422690303
+    },
+    {
+      "algorithm": "local_cost",
+      "phase": "last20",
+      "mean_episode_cost": 132.340375,
+      "mean_matching_size": 0.5118958333333333,
+      "entropy": 0.25115135559113694,
+      "value_loss": 0.5279133256012574,
+      "gradient_norm": 3.12360554581508
+    },
+    {
+      "algorithm": "context_cost",
+      "phase": "first20",
+      "mean_episode_cost": 168.720875,
+      "mean_matching_size": 0.4684791666666667,
+      "entropy": 0.9812046201899648,
+      "value_loss": 9.38163158454001,
+      "gradient_norm": 4.913381609511561
+    },
+    {
+      "algorithm": "context_cost",
+      "phase": "last20",
+      "mean_episode_cost": 132.03924999999998,
+      "mean_matching_size": 0.50265625,
+      "entropy": 0.23962662712438032,
+      "value_loss": 0.5377580545283854,
+      "gradient_norm": 3.173205427946523
+    },
+    {
+      "algorithm": "local_wait",
+      "phase": "first20",
+      "mean_episode_cost": 192.637,
+      "mean_matching_size": 0.5273749999999999,
+      "entropy": 0.9295045495592058,
+      "value_loss": 18.33977753520012,
+      "gradient_norm": 6.910202155972947
+    },
+    {
+      "algorithm": "local_wait",
+      "phase": "last20",
+      "mean_episode_cost": 135.748625,
+      "mean_matching_size": 0.5056562499999999,
+      "entropy": 0.2535923237795942,
+      "value_loss": 0.7266269849613309,
+      "gradient_norm": 4.200382760856301
+    },
+    {
+      "algorithm": "context_wait",
+      "phase": "first20",
+      "mean_episode_cost": 193.01175,
+      "mean_matching_size": 0.5225104166666666,
+      "entropy": 0.932849595900625,
+      "value_loss": 18.444688668847085,
+      "gradient_norm": 6.9063443136328715
+    },
+    {
+      "algorithm": "context_wait",
+      "phase": "last20",
+      "mean_episode_cost": 135.70925,
+      "mean_matching_size": 0.5068020833333333,
+      "entropy": 0.26296463151462374,
+      "value_loss": 0.7255712844897062,
+      "gradient_norm": 4.210780886188149
+    }
+  ],
+  "fallacy_scan": {
+    "coverage": "11/11",
+    "simpson": "family effects reported; nominal and pressure not substituted for primary",
+    "ecological": "CI unit training seed; machine/tick summaries are descriptive",
+    "berkson": "synthetic benchmark population; no selective seed exclusion",
+    "collider": "no post-treatment covariate adjustment; actionable-deferral ratios are descriptive",
+    "base_rate": "all machine-record denominators reported",
+    "regression_to_mean": "fresh matched seed panels; original poor run not a within-panel control",
+    "survivorship": "40/40 models and all test keys; no best checkpoint/seed selection",
+    "look_elsewhere": "two locked Bonferroni tests; all other contrasts descriptive",
+    "forking_paths": "unchanged practical margins and p95/economic gates",
+    "causal": "factor intervention evaluated within this simulator/budget; no MARL-necessity claim",
+    "reverse_causality": "context and waiting factors assigned before training"
+  },
+  "limits": [
+    "No independent training rerun or independent simulator reproduction",
+    "Paired-t uncertainty conditions on this evaluation panel and uses ten training seeds; normality unverified, signflip sensitivity descriptive",
+    "4-tick limit and 12/tick price synthetic; soft cost and pooled p95 do not establish a hard bound",
+    "Long horizon OOD and base-only N2 exact results are secondary"
+  ]
+}

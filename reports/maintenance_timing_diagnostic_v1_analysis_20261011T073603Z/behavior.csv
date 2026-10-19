@@ -1,0 +1,5 @@
+condition,origin,states,choice_states,forced_wait,rl_wait_with_choice,rule_wait_with_choice,total_rl_wait,agreement,rl_pm_rule_wait
+dense,best_rule,640,370,270,2,130,272,382,50
+dense,joint_ppo,640,372,268,6,143,274,404,72
+skill_mask,best_rule,640,330,310,3,20,313,593,19
+skill_mask,joint_ppo,640,423,217,9,74,226,537,67

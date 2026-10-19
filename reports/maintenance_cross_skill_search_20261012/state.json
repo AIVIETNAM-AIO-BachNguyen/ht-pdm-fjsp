@@ -1,0 +1,19 @@
+{
+  "objective": "Confirm reciprocal skill assignment value beyond quality and isolated-DP references, with joint operational health",
+  "user_authorization": "Autonomous full Mac execution, prospective new rounds until suitable setting; default lab handoff superseded",
+  "implementation_checkout": "/private/tmp/marl-maintenance-assignment-confidence-v1",
+  "branch": "codex/maintenance-cross-skill-search-mac-v1",
+  "round1_protocol": "docs/maintenance_cross_skill_mac_v1_plan.md",
+  "round1_status": "CROSS_SKILL_SETTING_CONFIRMED / runner PASS / independent scalar+CI verification PASS",
+  "prior_control": "old_fast1_slow325; prior setting remains JOINT_SETTING_CONFIRMED, assignment contribution weak",
+  "new_control": "exchangeable duration1/restoration0.75; nonselectable, exact zero assignment gain",
+  "seed_panels": "420-429 million domains; development16, screening24, confirmation256",
+  "goal_status": "complete",
+  "next": "Setting selected; do not tune on opened confirmation seeds; learned assignment remains untested",
+  "round1_commit": "8672acb",
+  "round1_run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_cross_skill_mac_v1_full_cpu_20261012T080148Z",
+  "round1_result": "assignment8.8782% CI99.7222%[7.1424%,10.6657%];rootDPgain5.5805 CI[3.8213,7.5159];all18gatesPASS",
+  "selected_setting": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_cross_skill_search_20261012/selected_setting.md",
+  "results_commit": "499b8d6",
+  "results_pushed": true
+}

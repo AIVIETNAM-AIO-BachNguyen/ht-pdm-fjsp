@@ -1,0 +1,1188 @@
+{
+  "cells": {
+    "low_uniform_jobs16": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 18.8375,
+          "waiting": 116.5,
+          "planned_steps": 88.99583333333334,
+          "failed_steps": 92.82916666666667,
+          "jobs": 22.254166666666666,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 88.15833333333333,
+          "active_waiting": 115.72083333333333,
+          "busy_requests": 3.2916666666666665,
+          "invalid_requests": 0.0,
+          "late_waiting": 64.30416666666666,
+          "late_productive_steps": 240.21041666666667,
+          "late_active_service_steps": 61.825,
+          "late_failed_steps": 50.74375,
+          "cost_maintenance": 44.50833333333333,
+          "cost_planned_down": 88.99583333333334,
+          "cost_failed_down": 742.6333333333333,
+          "cost_failure": 282.5625,
+          "cost_queue": 58.25,
+          "makespan": 104.9,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.4921534377904413,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.020833333333333332,
+          "late_boundary": 34.875,
+          "mean_job_completion": 49.28582899305555,
+          "cost": 1216.95,
+          "decision_seconds": 0.0014314866736337233
+        },
+        "H_health_risk_dispatch": {
+          "failures": 10.70625,
+          "waiting": 0.0,
+          "planned_steps": 94.66666666666667,
+          "failed_steps": 0.0,
+          "jobs": 23.666666666666668,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 94.66666666666667,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 209.95833333333334,
+          "late_active_service_steps": 56.5,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 47.333333333333336,
+          "cost_planned_down": 94.66666666666667,
+          "cost_failed_down": 0.0,
+          "cost_failure": 160.59375,
+          "cost_queue": 0.0,
+          "makespan": 87.83333333333333,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.2486590340252022,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 41.400173611111114,
+          "cost": 302.59375,
+          "decision_seconds": 0.0013365500194292205
+        },
+        "S_capacity_reservation": {
+          "failures": 0.0,
+          "waiting": 0.0,
+          "planned_steps": 101.83333333333333,
+          "failed_steps": 0.0,
+          "jobs": 25.458333333333332,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 101.83333333333333,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 212.75,
+          "late_active_service_steps": 60.875,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 50.916666666666664,
+          "cost_planned_down": 101.83333333333333,
+          "cost_failed_down": 0.0,
+          "cost_failure": 0.0,
+          "cost_queue": 0.0,
+          "makespan": 89.45833333333333,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.2714920334785582,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 42.11024305555556,
+          "cost": 152.75,
+          "decision_seconds": 0.005663333749301576
+        }
+      },
+      "H_minus_S": {
+        "mean": -1.625,
+        "ci95": [
+          -2.375,
+          -0.9166666666666666
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": -0.018291989774619034,
+        "ci95": [
+          -0.026543094508353026,
+          -0.010132058915412462
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": 17.066666666666666,
+        "ci95": [
+          13.131249999999996,
+          21.216666666666665
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": -4.375,
+        "ci95": [
+          -6.458333333333333,
+          -2.4166666666666665
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.48379953894208716,
+        "ci95": [
+          0.44572615185345626,
+          0.5213509330371214
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 0,
+        "ties": 13,
+        "losses": 11
+      }
+    },
+    "low_uniform_jobs64": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 78.83125,
+          "waiting": 447.7166666666667,
+          "planned_steps": 372.83125,
+          "failed_steps": 351.97291666666666,
+          "jobs": 93.20833333333333,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 372.125,
+          "active_waiting": 447.01458333333335,
+          "busy_requests": 3.2916666666666665,
+          "invalid_requests": 0.0,
+          "late_waiting": 286.80625,
+          "late_productive_steps": 976.1145833333334,
+          "late_active_service_steps": 245.375,
+          "late_failed_steps": 226.06666666666666,
+          "cost_maintenance": 186.41666666666666,
+          "cost_planned_down": 372.83125,
+          "cost_failed_down": 2815.7833333333333,
+          "cost_failure": 1182.46875,
+          "cost_queue": 223.85833333333335,
+          "makespan": 397.6645833333333,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.4678521543440273,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0020833333333333333,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 191.19754774305557,
+          "cost": 4781.358333333334,
+          "decision_seconds": 0.00561438287695637
+        },
+        "H_health_risk_dispatch": {
+          "failures": 44.797916666666666,
+          "waiting": 0.0,
+          "planned_steps": 401.0,
+          "failed_steps": 0.0,
+          "jobs": 100.25,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 401.0,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 887.2916666666666,
+          "late_active_service_steps": 237.16666666666666,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 200.5,
+          "cost_planned_down": 401.0,
+          "cost_failed_down": 0.0,
+          "cost_failure": 671.96875,
+          "cost_queue": 0.0,
+          "makespan": 341.7083333333333,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.2607171685853207,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 162.52191840277777,
+          "cost": 1273.46875,
+          "decision_seconds": 0.005363947277752838
+        },
+        "S_capacity_reservation": {
+          "failures": 0.0,
+          "waiting": 0.0,
+          "planned_steps": 431.3333333333333,
+          "failed_steps": 0.0,
+          "jobs": 107.83333333333333,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 431.3333333333333,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 899.4583333333334,
+          "late_active_service_steps": 255.33333333333334,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 215.66666666666666,
+          "cost_planned_down": 431.3333333333333,
+          "cost_failed_down": 0.0,
+          "cost_failure": 0.0,
+          "cost_queue": 0.0,
+          "makespan": 347.375,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.28163617672759,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 165.138671875,
+          "cost": 647.0,
+          "decision_seconds": 0.024674133010557854
+        }
+      },
+      "H_minus_S": {
+        "mean": -5.666666666666667,
+        "ci95": [
+          -6.666666666666667,
+          -4.833333333333333
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": -0.016402311707588817,
+        "ci95": [
+          -0.018910641277550714,
+          -0.014177381850759454
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": 55.956250000000004,
+        "ci95": [
+          38.68541666666667,
+          74.75625000000001
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": -18.166666666666668,
+        "ci95": [
+          -22.958333333333332,
+          -13.666666666666666
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.4827859369872345,
+        "ci95": [
+          0.4468432926831449,
+          0.5170044621225438
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 24
+      }
+    },
+    "low_heterogeneous_jobs16": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 11.779166666666667,
+          "waiting": 6.541666666666667,
+          "planned_steps": 47.12916666666667,
+          "failed_steps": 3.564583333333333,
+          "jobs": 23.564583333333335,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 47.12916666666667,
+          "active_waiting": 6.541666666666667,
+          "busy_requests": 1.7916666666666667,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 196.18958333333333,
+          "late_active_service_steps": 26.295833333333334,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 47.12916666666667,
+          "cost_planned_down": 47.12916666666667,
+          "cost_failed_down": 28.516666666666666,
+          "cost_failure": 176.6875,
+          "cost_queue": 3.2708333333333335,
+          "makespan": 79.90208333333334,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.1363396458812878,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 37.92133246527778,
+          "cost": 302.73333333333335,
+          "decision_seconds": 0.0011922774336805258
+        },
+        "H_health_risk_dispatch": {
+          "failures": 10.564583333333333,
+          "waiting": 0.041666666666666664,
+          "planned_steps": 47.333333333333336,
+          "failed_steps": 0.0062499999999999995,
+          "jobs": 23.666666666666668,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 47.333333333333336,
+          "active_waiting": 0.041666666666666664,
+          "busy_requests": 0.041666666666666664,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 193.50625,
+          "late_active_service_steps": 25.625,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 47.333333333333336,
+          "cost_planned_down": 47.333333333333336,
+          "cost_failed_down": 0.049999999999999996,
+          "cost_failure": 158.46875,
+          "cost_queue": 0.020833333333333332,
+          "makespan": 79.08333333333333,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.124329517012601,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 37.494900173611114,
+          "cost": 253.20625,
+          "decision_seconds": 0.0012503301079656618
+        },
+        "S_capacity_reservation": {
+          "failures": 0.0,
+          "waiting": 0.0,
+          "planned_steps": 50.916666666666664,
+          "failed_steps": 0.0,
+          "jobs": 25.458333333333332,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 50.916666666666664,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 196.16666666666666,
+          "late_active_service_steps": 26.541666666666668,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 50.916666666666664,
+          "cost_planned_down": 50.916666666666664,
+          "cost_failed_down": 0.0,
+          "cost_failure": 0.0,
+          "cost_queue": 0.0,
+          "makespan": 79.79166666666667,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.134226919517057,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 37.8515625,
+          "cost": 101.83333333333333,
+          "decision_seconds": 0.005101348220584138
+        }
+      },
+      "H_minus_S": {
+        "mean": -0.7083333333333334,
+        "ci95": [
+          -1.0833333333333333,
+          -0.3333333333333333
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": -0.00880619854643203,
+        "ci95": [
+          -0.013506546106747945,
+          -0.004165484504583151
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": 0.8187499999999996,
+        "ci95": [
+          0.36874999999999974,
+          1.3583333333333336
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": -0.9166666666666666,
+        "ci95": [
+          -2.125,
+          0.375
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.5853200161772463,
+        "ci95": [
+          0.5505566009037685,
+          0.6192766379012623
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 0,
+        "ties": 15,
+        "losses": 9
+      }
+    },
+    "low_heterogeneous_jobs64": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 46.266666666666666,
+          "waiting": 6.541666666666667,
+          "planned_steps": 200.04166666666666,
+          "failed_steps": 3.564583333333333,
+          "jobs": 100.02083333333333,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 200.04166666666666,
+          "active_waiting": 6.541666666666667,
+          "busy_requests": 1.7916666666666667,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 818.48125,
+          "late_active_service_steps": 108.58333333333333,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 200.04166666666666,
+          "cost_planned_down": 200.04166666666666,
+          "cost_failed_down": 28.516666666666666,
+          "cost_failure": 694.0,
+          "cost_queue": 3.2708333333333335,
+          "makespan": 306.86875,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.132194296472336,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 146.41249457465278,
+          "cost": 1125.8708333333334,
+          "decision_seconds": 0.004748503987017708
+        },
+        "H_health_risk_dispatch": {
+          "failures": 45.14375,
+          "waiting": 0.041666666666666664,
+          "planned_steps": 200.5,
+          "failed_steps": 0.0062499999999999995,
+          "jobs": 100.25,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 200.5,
+          "active_waiting": 0.041666666666666664,
+          "busy_requests": 0.041666666666666664,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 815.2979166666667,
+          "late_active_service_steps": 108.66666666666667,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 200.5,
+          "cost_planned_down": 200.5,
+          "cost_failed_down": 0.049999999999999996,
+          "cost_failure": 677.15625,
+          "cost_queue": 0.020833333333333332,
+          "makespan": 306.38125,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.1303816470232877,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 145.91251627604166,
+          "cost": 1078.2270833333334,
+          "decision_seconds": 0.005019156108998383
+        },
+        "S_capacity_reservation": {
+          "failures": 0.0,
+          "waiting": 0.0,
+          "planned_steps": 215.66666666666666,
+          "failed_steps": 0.0,
+          "jobs": 107.83333333333333,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 215.66666666666666,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 821.5,
+          "late_active_service_steps": 117.625,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 215.66666666666666,
+          "cost_planned_down": 215.66666666666666,
+          "cost_failed_down": 0.0,
+          "cost_failure": 0.0,
+          "cost_queue": 0.0,
+          "makespan": 309.2083333333333,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.140818088363795,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 147.22287326388889,
+          "cost": 431.3333333333333,
+          "decision_seconds": 0.022179876451264135
+        }
+      },
+      "H_minus_S": {
+        "mean": -2.8270833333333343,
+        "ci95": [
+          -3.3270833333333343,
+          -2.4041666666666686
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": -0.009168495826048123,
+        "ci95": [
+          -0.010646327785598243,
+          -0.007867727239176699
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": 0.48750000000000426,
+        "ci95": [
+          0.15625000000000236,
+          0.956250000000009
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": -8.958333333333334,
+        "ci95": [
+          -10.5,
+          -7.416666666666667
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.588000002396976,
+        "ci95": [
+          0.5529235911971854,
+          0.6213506101743128
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 24
+      }
+    },
+    "high_uniform_jobs16": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 18.8375,
+          "waiting": 116.5,
+          "planned_steps": 88.99583333333334,
+          "failed_steps": 92.82916666666667,
+          "jobs": 22.254166666666666,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 88.15833333333333,
+          "active_waiting": 115.72083333333333,
+          "busy_requests": 3.2916666666666665,
+          "invalid_requests": 0.0,
+          "late_waiting": 64.30416666666666,
+          "late_productive_steps": 240.21041666666667,
+          "late_active_service_steps": 61.825,
+          "late_failed_steps": 50.74375,
+          "cost_maintenance": 44.50833333333333,
+          "cost_planned_down": 88.99583333333334,
+          "cost_failed_down": 742.6333333333333,
+          "cost_failure": 282.5625,
+          "cost_queue": 58.25,
+          "makespan": 104.9,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.4921534377904413,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.020833333333333332,
+          "late_boundary": 34.875,
+          "mean_job_completion": 49.28582899305555,
+          "cost": 1216.95,
+          "decision_seconds": 0.0012472429846335823
+        },
+        "H_health_risk_dispatch": {
+          "failures": 12.064583333333333,
+          "waiting": 8.958333333333334,
+          "planned_steps": 93.875,
+          "failed_steps": 5.4875,
+          "jobs": 23.46875,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 93.875,
+          "active_waiting": 8.958333333333334,
+          "busy_requests": 2.6666666666666665,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 213.90416666666667,
+          "late_active_service_steps": 57.25,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 46.9375,
+          "cost_planned_down": 93.875,
+          "cost_failed_down": 43.9,
+          "cost_failure": 180.96875,
+          "cost_queue": 4.479166666666667,
+          "makespan": 88.93124999999999,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.2644255750200681,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 42.00086805555556,
+          "cost": 370.16041666666666,
+          "decision_seconds": 0.0011513746222287105
+        },
+        "S_capacity_reservation": {
+          "failures": 2.2354166666666666,
+          "waiting": 0.0,
+          "planned_steps": 100.55,
+          "failed_steps": 2.5375,
+          "jobs": 25.1375,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 100.55,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 214.0375,
+          "late_active_service_steps": 60.84166666666667,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 50.275,
+          "cost_planned_down": 100.55,
+          "cost_failed_down": 20.3,
+          "cost_failure": 33.53125,
+          "cost_queue": 0.0,
+          "makespan": 89.45833333333333,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.271781269092525,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 42.2658203125,
+          "cost": 204.65625,
+          "decision_seconds": 0.0031513871266118563
+        }
+      },
+      "H_minus_S": {
+        "mean": -0.5270833333333359,
+        "ci95": [
+          -1.1541666666666692,
+          0.04999999999999775
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": -0.006110773839451595,
+        "ci95": [
+          -0.013206811688737781,
+          0.00041259283103362216
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": 15.968750000000002,
+        "ci95": [
+          12.379166666666668,
+          19.78125
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": -3.5916666666666663,
+        "ci95": [
+          -5.508333333333333,
+          -1.7583333333333322
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.44466761843417585,
+        "ci95": [
+          0.4147409493744712,
+          0.47457855816328115
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 9,
+        "ties": 6,
+        "losses": 9
+      }
+    },
+    "high_uniform_jobs64": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 78.83125,
+          "waiting": 447.7166666666667,
+          "planned_steps": 372.83125,
+          "failed_steps": 351.97291666666666,
+          "jobs": 93.20833333333333,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 372.125,
+          "active_waiting": 447.01458333333335,
+          "busy_requests": 3.2916666666666665,
+          "invalid_requests": 0.0,
+          "late_waiting": 286.80625,
+          "late_productive_steps": 976.1145833333334,
+          "late_active_service_steps": 245.375,
+          "late_failed_steps": 226.06666666666666,
+          "cost_maintenance": 186.41666666666666,
+          "cost_planned_down": 372.83125,
+          "cost_failed_down": 2815.7833333333333,
+          "cost_failure": 1182.46875,
+          "cost_queue": 223.85833333333335,
+          "makespan": 397.6645833333333,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.4678521543440273,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0020833333333333333,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 191.19754774305557,
+          "cost": 4781.358333333334,
+          "decision_seconds": 0.00487022065402319
+        },
+        "H_health_risk_dispatch": {
+          "failures": 46.229166666666664,
+          "waiting": 8.958333333333334,
+          "planned_steps": 400.0416666666667,
+          "failed_steps": 5.4875,
+          "jobs": 100.01041666666667,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 400.0416666666667,
+          "active_waiting": 8.958333333333334,
+          "busy_requests": 2.6666666666666665,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 891.0291666666667,
+          "late_active_service_steps": 237.95833333333334,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 200.02083333333334,
+          "cost_planned_down": 400.0416666666667,
+          "cost_failed_down": 43.9,
+          "cost_failure": 693.4375,
+          "cost_queue": 4.479166666666667,
+          "makespan": 342.625,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.2641072985917718,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 163.23567708333334,
+          "cost": 1341.8791666666666,
+          "decision_seconds": 0.004580052116943989
+        },
+        "S_capacity_reservation": {
+          "failures": 2.2354166666666666,
+          "waiting": 0.0,
+          "planned_steps": 429.95,
+          "failed_steps": 2.5375,
+          "jobs": 107.4875,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 429.95,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 899.9125,
+          "late_active_service_steps": 256.03333333333336,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 214.975,
+          "cost_planned_down": 429.95,
+          "cost_failed_down": 20.3,
+          "cost_failure": 33.53125,
+          "cost_queue": 0.0,
+          "makespan": 347.5416666666667,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.2822713501086853,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 165.34093424479167,
+          "cost": 698.75625,
+          "decision_seconds": 0.013261298713041469
+        }
+      },
+      "H_minus_S": {
+        "mean": -4.916666666666664,
+        "ci95": [
+          -5.691666666666663,
+          -4.197916666666669
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": -0.01422002247090743,
+        "ci95": [
+          -0.016308910833018903,
+          -0.012277597671194851
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": 55.03958333333333,
+        "ci95": [
+          37.99166666666667,
+          73.59166666666668
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": -18.075000000000003,
+        "ci95": [
+          -22.108333333333334,
+          -14.183333333333337
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.4727464977688621,
+        "ci95": [
+          0.44086362575293925,
+          0.5031504485243058
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 24
+      }
+    },
+    "high_heterogeneous_jobs16": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 11.779166666666667,
+          "waiting": 6.541666666666667,
+          "planned_steps": 47.12916666666667,
+          "failed_steps": 3.564583333333333,
+          "jobs": 23.564583333333335,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 47.12916666666667,
+          "active_waiting": 6.541666666666667,
+          "busy_requests": 1.7916666666666667,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 196.18958333333333,
+          "late_active_service_steps": 26.295833333333334,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 47.12916666666667,
+          "cost_planned_down": 47.12916666666667,
+          "cost_failed_down": 28.516666666666666,
+          "cost_failure": 176.6875,
+          "cost_queue": 3.2708333333333335,
+          "makespan": 79.90208333333334,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.1363396458812878,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 37.92133246527778,
+          "cost": 302.73333333333335,
+          "decision_seconds": 0.0010411404427334977
+        },
+        "H_health_risk_dispatch": {
+          "failures": 11.429166666666667,
+          "waiting": 4.7562500000000005,
+          "planned_steps": 53.770833333333336,
+          "failed_steps": 2.375,
+          "jobs": 23.60625,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 53.770833333333336,
+          "active_waiting": 4.7562500000000005,
+          "busy_requests": 1.9895833333333333,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.35,
+          "late_productive_steps": 199.85,
+          "late_active_service_steps": 27.920833333333334,
+          "late_failed_steps": 0.16666666666666666,
+          "cost_maintenance": 47.2125,
+          "cost_planned_down": 53.770833333333336,
+          "cost_failed_down": 19.0,
+          "cost_failure": 171.4375,
+          "cost_queue": 2.3781250000000003,
+          "makespan": 81.30833333333334,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.156606239329423,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 38.5435546875,
+          "cost": 293.7989583333333,
+          "decision_seconds": 0.0010873119778504285
+        },
+        "S_capacity_reservation": {
+          "failures": 0.5541666666666667,
+          "waiting": 0.0,
+          "planned_steps": 53.07083333333333,
+          "failed_steps": 0.1875,
+          "jobs": 25.61875,
+          "productive_steps": 381.0416666666667,
+          "active_service_steps": 53.07083333333333,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 197.97916666666666,
+          "late_active_service_steps": 27.070833333333333,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 51.2375,
+          "cost_planned_down": 53.07083333333333,
+          "cost_failed_down": 1.5,
+          "cost_failure": 8.3125,
+          "cost_queue": 0.0,
+          "makespan": 80.01458333333333,
+          "ideal_makespan": 70.33333333333333,
+          "normalized_makespan": 1.1377061442761032,
+          "completed_jobs": 96.0,
+          "required_work": 381.0416666666667,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 34.875,
+          "mean_job_completion": 38.167057291666666,
+          "cost": 114.12083333333334,
+          "decision_seconds": 0.0027591281366767363
+        }
+      },
+      "H_minus_S": {
+        "mean": 1.2937500000000004,
+        "ci95": [
+          0.25416666666666704,
+          2.435416666666668
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": 0.015423457429767194,
+        "ci95": [
+          0.0029846783799170606,
+          0.02899765276501498
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": -1.406250000000001,
+        "ci95": [
+          -2.318750000000001,
+          -0.6395833333333348
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": 0.85,
+        "ci95": [
+          -0.23333333333333353,
+          1.9624999999999997
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.6020110545219981,
+        "ci95": [
+          0.5662671051529343,
+          0.636055087301163
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 14,
+        "ties": 4,
+        "losses": 6
+      }
+    },
+    "high_heterogeneous_jobs64": {
+      "metrics": {
+        "I_individual_fast": {
+          "failures": 46.266666666666666,
+          "waiting": 6.541666666666667,
+          "planned_steps": 200.04166666666666,
+          "failed_steps": 3.564583333333333,
+          "jobs": 100.02083333333333,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 200.04166666666666,
+          "active_waiting": 6.541666666666667,
+          "busy_requests": 1.7916666666666667,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 818.48125,
+          "late_active_service_steps": 108.58333333333333,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 200.04166666666666,
+          "cost_planned_down": 200.04166666666666,
+          "cost_failed_down": 28.516666666666666,
+          "cost_failure": 694.0,
+          "cost_queue": 3.2708333333333335,
+          "makespan": 306.86875,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.132194296472336,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 146.41249457465278,
+          "cost": 1125.8708333333334,
+          "decision_seconds": 0.004152579870909297
+        },
+        "H_health_risk_dispatch": {
+          "failures": 46.07083333333333,
+          "waiting": 4.95625,
+          "planned_steps": 207.84583333333333,
+          "failed_steps": 2.529166666666667,
+          "jobs": 100.01875,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 207.84583333333333,
+          "active_waiting": 4.95625,
+          "busy_requests": 2.0729166666666665,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.19999999999999998,
+          "late_productive_steps": 823.8875,
+          "late_active_service_steps": 109.79166666666667,
+          "late_failed_steps": 0.15416666666666667,
+          "cost_maintenance": 200.0375,
+          "cost_planned_down": 207.84583333333333,
+          "cost_failed_down": 20.233333333333334,
+          "cost_failure": 691.0625,
+          "cost_queue": 2.478125,
+          "makespan": 308.2375,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.1372468484321745,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 147.34542100694443,
+          "cost": 1121.6572916666667,
+          "decision_seconds": 0.0043078151565471975
+        },
+        "S_capacity_reservation": {
+          "failures": 0.5541666666666667,
+          "waiting": 0.0,
+          "planned_steps": 217.77083333333334,
+          "failed_steps": 0.1875,
+          "jobs": 107.96875,
+          "productive_steps": 1535.2083333333333,
+          "active_service_steps": 217.77083333333334,
+          "active_waiting": 0.0,
+          "busy_requests": 0.0,
+          "invalid_requests": 0.0,
+          "late_waiting": 0.0,
+          "late_productive_steps": 823.6875,
+          "late_active_service_steps": 117.72916666666667,
+          "late_failed_steps": 0.0,
+          "cost_maintenance": 215.9375,
+          "cost_planned_down": 217.77083333333334,
+          "cost_failed_down": 1.5,
+          "cost_failure": 8.3125,
+          "cost_queue": 0.0,
+          "makespan": 309.7395833333333,
+          "ideal_makespan": 271.0416666666667,
+          "normalized_makespan": 1.1427729530531288,
+          "completed_jobs": 384.0,
+          "required_work": 1535.2083333333333,
+          "outstanding_service_ticks": 0.0,
+          "late_boundary": 135.29166666666666,
+          "mean_job_completion": 147.57999131944445,
+          "cost": 443.5208333333333,
+          "decision_seconds": 0.011600021940345566
+        }
+      },
+      "H_minus_S": {
+        "mean": -1.502083333333336,
+        "ci95": [
+          -2.4291666666666694,
+          -0.43541666666667095
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_relative": {
+        "mean": -0.004854715900900642,
+        "ci95": [
+          -0.007781497917958478,
+          -0.0014727854852220627
+        ],
+        "n_instances": 24
+      },
+      "I_minus_H": {
+        "mean": -1.368749999999994,
+        "ci95": [
+          -2.545833333333325,
+          -0.4458333333333305
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_late_service": {
+        "mean": -7.937500000000001,
+        "ci95": [
+          -9.779166666666667,
+          -5.912500000000001
+        ],
+        "n_instances": 24
+      },
+      "H_minus_S_cost_relative": {
+        "mean": 0.5933447113867951,
+        "ci95": [
+          0.5586264228747169,
+          0.6263981136988365
+        ],
+        "n_instances": 24
+      },
+      "S_vs_H_counts": {
+        "wins": 3,
+        "ties": 0,
+        "losses": 21
+      }
+    }
+  },
+  "interaction": {
+    "mean": 0.0034750714024355347,
+    "ci95": [
+      -0.00015012833626663427,
+      0.007774197490289773
+    ],
+    "n_instances": 24
+  },
+  "capacity_burden": {
+    "uniform": {
+      "mean": 0.0033901300064512288,
+      "ci95": [
+        0.001894850746350522,
+        0.005135297222215331
+      ],
+      "n_instances": 24
+    },
+    "heterogeneous": {
+      "mean": 0.0068652014088867635,
+      "ci95": [
+        0.0033948338600429304,
+        0.011073465256893419
+      ],
+      "n_instances": 24
+    }
+  },
+  "gates": {
+    "recovery": false,
+    "resource_specific_burden": false,
+    "persistence": false,
+    "problem_support": false
+  },
+  "development": {
+    "offset": {
+      "0": 1.2056363518964321,
+      "1": 1.2118888466173896,
+      "2": 1.2358257764348235,
+      "4": 1.2755681242985202
+    },
+    "lead": {
+      "0": 1.2128643368005,
+      "2": 1.2114534654975424,
+      "4": 1.2114103599990647,
+      "6": 1.2153906492991635
+    }
+  },
+  "primary_H_trace_failures": 1107,
+  "primary_H_trace_next_tick_service": 1064
+}

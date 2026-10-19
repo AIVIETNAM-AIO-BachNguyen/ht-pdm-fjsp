@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETED",
+  "verification_status": "ANALYZED",
+  "source": "lab_results/ra_qmix_oracle_representation_full_cpu_20261003T041401Z",
+  "source_commit": "a541b2dd677bbf59244e008498c88122549d2b90",
+  "method": "artifact analysis; exact-oracle arithmetic regenerated, no training/checkpoint replay",
+  "derived_symmetry_analysis": "exploratory, not a preregistered endpoint",
+  "outputs": [
+    "symmetry_certificates.json",
+    "symmetry_policy_bounds.csv",
+    "cell_model_means.csv",
+    "manifest.json"
+  ]
+}

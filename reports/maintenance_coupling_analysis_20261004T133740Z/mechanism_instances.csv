@@ -1,0 +1,13 @@
+instance_seed,pressure,skill,A_health_fastest,B_health_queue_assignment,C_joint_lookahead,D_fixed_timing_lookahead,B_minus_C,D_minus_C,service,initial_ages,failure_age,same_specialist
+780200,high,heterogeneous,26.7,26.7,16.0,18.0,10.7,2.0,"[[2, 4], [2, 4]]","[1, 1]",5,True
+780201,high,heterogeneous,37.7,37.7,24.0,34.1,13.700000000000003,10.100000000000001,"[[1, 3], [1, 3]]","[1, 1]",3,True
+780202,high,heterogeneous,18.0,18.0,18.0,18.0,0.0,0.0,"[[1, 3], [3, 1]]","[3, 3]",5,False
+780203,high,heterogeneous,31.7,31.7,24.0,24.0,7.699999999999999,0.0,"[[2, 4], [2, 4]]","[1, 0]",3,True
+780204,high,heterogeneous,16.0,16.0,16.0,16.0,0.0,0.0,"[[2, 4], [4, 2]]","[2, 1]",5,False
+780205,high,heterogeneous,15.0,15.0,15.0,15.0,0.0,0.0,"[[1, 3], [1, 3]]","[3, 1]",5,True
+780206,high,heterogeneous,16.0,16.0,16.0,16.0,0.0,0.0,"[[2, 4], [2, 4]]","[1, 3]",5,True
+780207,high,heterogeneous,12.0,12.0,12.0,12.0,0.0,0.0,"[[1, 3], [3, 1]]","[1, 2]",5,False
+780208,high,heterogeneous,32.0,32.0,28.0,30.0,4.0,2.0,"[[2, 4], [2, 4]]","[1, 1]",3,True
+780209,high,heterogeneous,34.4,34.4,24.0,30.95,10.399999999999999,6.949999999999999,"[[1, 3], [1, 3]]","[1, 1]",3,True
+780210,high,heterogeneous,16.0,16.0,16.0,16.0,0.0,0.0,"[[2, 4], [2, 4]]","[0, 2]",5,True
+780211,high,heterogeneous,24.0,24.0,24.0,24.0,0.0,0.0,"[[2, 4], [4, 2]]","[2, 2]",4,False

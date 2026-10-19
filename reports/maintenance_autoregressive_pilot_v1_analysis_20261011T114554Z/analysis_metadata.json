@@ -1,0 +1,8 @@
+{
+  "source": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_autoregressive_pilot_v1_full_cpu_20261011T112826Z",
+  "report": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_autoregressive_pilot_v1_analysis_20261011T114554Z",
+  "manifest_sha256": "6c600a68241594bd2be01760e2d559be97a7e80624ea4148076b54c555d6ec05",
+  "complete_training_rerun": false,
+  "full_evaluation_rerun": true,
+  "uncertainty": "Three training replicas only; conditional fixed shock panel"
+}

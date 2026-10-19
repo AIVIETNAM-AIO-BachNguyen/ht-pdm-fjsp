@@ -1,0 +1,20 @@
+[
+  {
+    "file": "lee_2026_planning_or_learning.pdf",
+    "url": "https://arxiv.org/pdf/2609.13566",
+    "status": "unavailable",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "file": "mira_2026.html",
+    "url": "https://www.mdpi.com/1999-5903/18/8/430",
+    "status": "unavailable",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  {
+    "file": "tseremoglou_2024.pdf",
+    "url": "https://cdn.wildapricot.com/197820/resources/Documents/Anna%20Valicek%20Papers/2024/04-Iordanis%20Tseremoglou%20-%20Paper%20-%20Condition-Based%20Maintenance%20scheduling%20of%20an%20aircraft%20fleet.pdf",
+    "status": "unavailable",
+    "error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  }
+]

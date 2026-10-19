@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "source_manifest_sha256": "d57fef493b559362b2d305af6c0acae1ed84f60246b05f7adfd69d8de362329b",
+  "run_manifest_sha256": "2d9cf8caca189635e62239521a340a08860b7c8387e75c85394985a8581f0a27",
+  "hashed_files": 85,
+  "artifact_bytes": 31978031,
+  "snapshot_matches_commit": true,
+  "source_models": 10,
+  "states": 2560,
+  "candidate_roots": 12007,
+  "all_forecast_transition_samples_replayed": 9221376,
+  "original_scalar_transition_checks": 288168,
+  "scalar_scenario_scope": "first forecast scenario for every saved root on every saved state",
+  "all_physical_trajectory_ticks_replayed": 30720,
+  "all_trajectory_policy_actions_replayed": true,
+  "preventive_pairs": 792,
+  "primary_CIs_independently_recomputed": 4,
+  "full_lab_runtime_seconds": 74.9015027419664,
+  "scope": "ANALYZED with exact frozen-tape replay; no fresh full experiment or retraining",
+  "fallacy_scan": "11/11 covered in analysis report"
+}

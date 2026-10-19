@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "replayed_episodes": 25200,
+  "replayed_ticks": 318150,
+  "proposal_ticks": 252500,
+  "source_and_checkpoint_replay": true,
+  "independent_arbitration": true,
+  "independent_scalar_costs": true,
+  "per_machine_reconciliation": true,
+  "development_only_reference_reselection": true,
+  "physical_training_population_identical": true
+}

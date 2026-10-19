@@ -1,0 +1,47 @@
+{
+  "status": "ANALYZED",
+  "source": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/ra_qmix_td_assignment_full_cpu_20261004T053816Z",
+  "checkpoint_models_replayed": 90,
+  "checkpoint_decisions_replayed": 40200,
+  "exact_costs_recomputed": 90,
+  "train_teacher_assignments_verified": 1068,
+  "training_episode_rows_verified": 600000,
+  "discounted_oracle_scope": "same implementation arithmetic consistency, not independent oracle",
+  "gates_recomputed": {
+    "primary": {
+      "mean_cost_delta": -1.6571479687500008,
+      "baseline_cost": 25.38464796875,
+      "relative_reduction": 0.06528150285125277,
+      "improving_seeds": 8,
+      "ci95": [
+        -3.1258818546766953,
+        -0.18841408282330607
+      ],
+      "nominal_relative_increase": -0.06976744186046513,
+      "passed": false
+    },
+    "positive_control": {
+      "cells": {
+        "nominal": {
+          "mean_train_regret": 0.0,
+          "seeds_at_99_percent_optimal": 10,
+          "passed": true
+        },
+        "shared_preference": {
+          "mean_train_regret": 0.0,
+          "seeds_at_99_percent_optimal": 10,
+          "passed": true
+        },
+        "pressure": {
+          "mean_train_regret": 0.0,
+          "seeds_at_99_percent_optimal": 10,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    "scientific_gate_applicable": true,
+    "empirical_attribution_supported": false,
+    "interpretation": "held out from supervision; online RL may visit and learn TD rewards there"
+  }
+}

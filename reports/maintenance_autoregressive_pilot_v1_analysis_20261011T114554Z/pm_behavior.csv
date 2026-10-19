@@ -1,0 +1,9 @@
+condition,controller,episodes,mean_cost,pm_feasible_ticks,wait_with_pm_feasible,stop_with_pm_extension_feasible,pm_jobs,low_risk_pm_jobs,low_risk_pm_fraction,pm_two_worker_opportunity_ticks,pm_jobs_with_two_initial_workers,pm_specific_alternative_ticks,pm_specific_alternative_jobs,cm_only_alternative_ticks
+dense,ar_context_ppo,288,1219.9131944444443,6409,0,0,3235,464,0.14343122102009273,1258,1416,497,994,339
+dense,ar_frozen_context_ppo,288,1214.0694444444443,6428,40,96,3247,439,0.13520172466892516,1307,1424,507,958,330
+dense,best_rule,96,1159.3333333333333,2262,160,232,1078,0,0.0,442,416,182,304,120
+dense,catalogue_ppo,288,1212.53125,6331,0,82,3072,510,0.166015625,1177,1264,481,954,386
+skill_mask,ar_context_ppo,288,1246.9479166666667,6476,0,0,3413,628,0.1840023439789042,1142,736,131,262,126
+skill_mask,ar_frozen_context_ppo,288,1242.451388888889,6536,67,140,3394,605,0.17825574543311726,1181,724,156,272,110
+skill_mask,best_rule,96,1191.75,2250,155,214,1193,0,0.0,433,231,49,79,31
+skill_mask,catalogue_ppo,288,1232.5104166666667,6439,0,82,3401,653,0.19200235224933843,1139,740,128,255,117

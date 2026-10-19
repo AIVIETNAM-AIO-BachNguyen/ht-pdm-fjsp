@@ -1,0 +1,34 @@
+{
+  "omitted_local_storage": {
+    "gpu_results": {
+      "local_files": 59,
+      "local_bytes": 96879731,
+      "included_in_handoff": "Only selected exact evidence capsule and compact reports; no blanket upload"
+    },
+    "output": {
+      "local_files": 211,
+      "local_bytes": 11193365,
+      "included_in_handoff": "Only selected exact evidence capsule and compact reports; no blanket upload"
+    },
+    "tmp": {
+      "local_files": 113,
+      "local_bytes": 20902729,
+      "included_in_handoff": "Only selected exact evidence capsule and compact reports; no blanket upload"
+    },
+    "lab_results": {
+      "local_files": 31462,
+      "local_bytes": 30385617524,
+      "included_in_handoff": "Only selected exact evidence capsule and compact reports; no blanket upload"
+    },
+    "artifacts": {
+      "local_files": 3877,
+      "local_bytes": 1418928017,
+      "included_in_handoff": "Only selected exact evidence capsule and compact reports; no blanket upload"
+    }
+  },
+  "notes": [
+    "Original local storage is preserved.",
+    "No raw run, checkpoint or generated document directory was bulk uploaded.",
+    "Use the lab original raw run path from docs/LAB_HANDOFF.md."
+  ]
+}

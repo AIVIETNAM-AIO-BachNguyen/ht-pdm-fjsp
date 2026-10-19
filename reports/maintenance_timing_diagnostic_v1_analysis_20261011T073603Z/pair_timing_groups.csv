@@ -1,0 +1,5 @@
+condition,at_risk,n,mean,negative,positive
+dense,False,62,0.06545068884408602,22,38
+dense,True,322,-0.04877858922101449,209,113
+skill_mask,False,100,0.026370442708333327,42,51
+skill_mask,True,308,-0.04544503348214284,210,97

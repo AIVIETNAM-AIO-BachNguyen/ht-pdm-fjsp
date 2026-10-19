@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "raw": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/maintenance_backlog_full_cpu_20261004T173740Z",
+  "source_commit": "3be08ac5550a64603ce88634f1043a3e00c6817f",
+  "all_hashes_match": true,
+  "complete_eval": 34560,
+  "complete_dev": 13824,
+  "resolved_configs": 576,
+  "replayed_first_shock_episodes": 1728,
+  "replayed_decisions": 369745,
+  "replayed_completions": 414720,
+  "replayed_counterfactual_episodes": 140,
+  "replayed_counterfactual_decisions": 72873,
+  "replayed_counterfactual_completions": 53760,
+  "max_numeric_error": 0.0,
+  "independent_bootstrap_matches": true,
+  "development_selection_matches": true,
+  "scope": "shared-implementation exact replay, independent statistics; not independent simulator reproduction",
+  "raw_unmodified": true
+}

@@ -1,0 +1,287 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\TBD}{\textit{To be completed after the planned experiments.}}
+
+\title{Resource-Aware Multi-Agent Reinforcement Learning for\
+Decentralized Maintenance with Shared Heterogeneous Technicians}
+\author{Bach Nguyen}
+\date{Working proposal --- September 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Maintenance decisions in a multi-machine system are coupled when machines share a limited pool of technicians. The coupling becomes more difficult when technicians have different service capabilities and when each machine must decide locally when to request maintenance and which technician to request. Existing maintenance MARL studies mainly focus on maintenance timing, while shared-resource and heterogeneous-workforce studies are usually formulated as centralized optimization problems. This proposal studies resource-aware multi-agent reinforcement learning for this setting. Each machine is a learning agent; technicians are passive resources with fixed service-time and eligibility characteristics. The current benchmark is deliberately small and controlled: it is a discrete-time, finite-horizon maintenance environment with FIFO technician queues, a seeded threshold-based failure process, and explicit action masks for duplicate requests. A preliminary long-budget comparison on the locked stress cell suggests that the proposed Technician-aware QMIX (T-QMIX) can improve over standard QMIX, VDN, and independent Q-learning on mean objective cost. This is development evidence rather than a general superiority claim; validation on additional contention and heterogeneity cells remains part of the proposed study.
+\end{abstract}
+
+\section{Background and motivation}
+
+Predictive maintenance is a sequential decision problem under uncertain degradation and failure. A maintenance action can prevent downtime, but it also consumes resources and may be performed before it is economically necessary. In a system with several machines, maintenance decisions are coupled by the availability of technicians.
+
+The coupling has two forms. First, technicians are shared: several machines may request the same technician at the same decision epoch. Second, technicians may be heterogeneous: the service time for a machine depends on the technician selected. Consequently, the best local action for one machine depends on the requests made by the other machines and on the current technician queues.
+
+This proposal considers a decentralized setting. Each machine is represented by a learning agent. Technicians do not learn and do not make decisions; they are passive resources with fixed service times and a fixed machine-technician service-time matrix. The current simulator removes production routing, precedence, travel, absence, and technician learning so that the study isolates maintenance timing, technician selection, queue waiting, and contention. The aim is to learn policies that coordinate maintenance requests while respecting the shared-resource dynamics.
+
+\section{Related work and research gap}
+
+The closest prior work is Rodríguez et al.~\cite{rodriguez2022}, which assigns one independent RL agent to each parallel machine and allows an agent to select a technician with technician-dependent repair times. Their conflict semantics treat simultaneous requests for the same technician as invalid actions that incur a penalty and restart the episode. This provides a direct MARL reference, but it does not expose persistent queueing and waiting effects.
+
+Other MARL maintenance studies address maintenance timing, system-level re-optimization, or network decomposition without an explicit heterogeneous technician pool. Shared-resource maintenance studies use restless-bandit or index policies with a centralized controller and generally model repair capacity without identifiable technician skills. Heterogeneous workforce studies model competence, proficiency, routing, and service times, but use MILP, metaheuristics, or a centralized scheduler.
+
+\begin{table}[ht]
+\centering
+\scriptsize
+\caption{Focused comparison of the most relevant studies.}
+\label{tab:related-work}
+\begin{tabularx}{\textwidth}{p{2.7cm}p{1.6cm}p{2.15cm}p{3.0cm}p{2.35cm}Y}
+\toprule
+Study & Agents / decision-maker & Decision scope & Resource and heterogeneity model & Method / comparator & Missing element relative to this proposal \\
+\midrule
+Rodríguez et al. (2022) & One RL agent per machine & Timing and technician choice & Shared pool; duplicate requests are invalid and restart the episode; technician-component repair times & Independent PPO; corrective, preventive, and random policies & Persistent FIFO queue and exact small-instance validation \\
+Pérez-Hernández et al. (2024) & MARL agents in localized subnetworks & Local maintenance plans & No explicit technician pool; asset and network heterogeneity & Localized MARL versus network-wide and individual approaches & No technician contention or technician choice \\
+Chen and Liu (2025) & MARL agents & Replacement timing and inspection interval & No explicit technician resource; RUL and component uncertainty & Sequential multi-objective PPO & No shared human-resource model \\
+Ruiz-Hernández et al. (2020) & Central controller & Sequential maintenance allocation & Shared repairmen; no technician skill differentiation & Restless-bandit index policy & No decentralized machine agents or technician identity selection \\
+Demirci et al. (2024) & Central controller & Maintenance under capacity limit & Worker-count capacity; workers are interchangeable & Whittle index and LP lower bound & No skill-aware assignment or queue semantics \\
+An et al. (2021) & Central scheduler & Joint production and maintenance scheduling & Shared repairmen with timetables; competence and availability constraints & HMOBBO with tabu search & No online decentralized machine-agent coordination \\
+Yu et al. (2023) & Central scheduler & Task assignment and sequencing & Limited technicians; skills, proficiency, and experience-dependent service times & MILP and modified iterated local search & Static scheduling; no stochastic machine-agent requests \\
+Sanhueza et al. (2026) & Central planner & Where, when, and by whom to maintain & Multi-base workforce; uni-skilled to multi-skilled technicians; shifts and relocation & MILP and Price-and-Branch & Offline workforce planning; no decentralized contention learning \\
+\textbf{Proposed study} & \textbf{One learning agent per machine} & \textbf{Timing and technician choice} & \textbf{Passive shared pool with FIFO queues, fixed service-time matrix, and duplicate-request masks} & \textbf{Technician-aware QMIX with independent, VDN, MAPPO-style, dispatcher, and exact baselines} & \textbf{Explicit contention semantics and decentralized execution} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+The resulting gap is specific: the reviewed literature does not provide a controlled study of decentralized machine agents that jointly learn maintenance timing and technician selection under a persistent shared pool of heterogeneous, non-learning technicians. The proposed work targets this intersection rather than general workforce planning.
+
+\section{System architecture}
+
+The proposed system is organized around decentralized machine agents interacting with a shared environment. Each machine agent observes its local condition together with resource-aware technician information, chooses whether to defer maintenance or request a technician, and receives feedback from the resulting assignment and queue dynamics. The technicians remain passive resources with fixed skills and service times; the learning algorithm coordinates the machine decisions during training while execution remains decentralized.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{Untitled-2026-09-25-1413.png}
+\caption{System architecture for resource-aware MARL with machine agents and passive shared technicians.}
+\label{fig:system-architecture}
+\end{figure}
+
+\section{Research question and hypotheses}
+
+\subsection{Main research question}
+
+Can technician-aware value decomposition learn maintenance timing and technician selection that reduce expected system cost when machines compete for shared passive technicians with heterogeneous fixed service capabilities?
+
+\subsection{Research hypotheses}
+
+\begin{enumerate}[leftmargin=*]
+    \item T-QMIX will achieve lower expected total cost than standard QMIX, VDN, and independent Q-learning under technician contention.
+    \item Technician-edge utilities, queue-conditioned mixing, and counterfactual technician consistency will each contribute to performance beyond standard QMIX.
+    \item The advantage of technician-aware coordination will increase when technicians are scarce or their service-time differences are larger.
+    \item T-QMIX will retain decentralized execution while approaching or improving on centralized actor-critic references on the locked stress cell.
+\end{enumerate}
+
+The first hypothesis has preliminary support on one locked stress-cell experiment, but all four hypotheses remain subject to broader validation.
+
+\section{Problem formulation}
+
+Consider the discrete-time, finite-horizon system implemented by the RL simulator, with machines $i\in\mathcal{M}=\{1,\ldots,N\}$, passive technicians $k\in\mathcal{K}=\{1,\ldots,K\}$, and steps $t=0,\ldots,T-1$. Each machine has an integer operating age $x_{i,t}\in\{0,\ldots,X_{\max}\}$ and a failure indicator $y_{i,t}\in\{0,1\}$. Each technician has a busy-until time $b_{k,t}$, a currently assigned machine $m_{k,t}$ (or $-1$ when idle), and a FIFO queue $q_{k,t}$ of pending machine requests. Each machine appears at most once in the union of all queues and current technician assignments.
+
+The local action of machine $i$ is
+\begin{equation}
+    a_{i,t}\in\{0,1,\ldots,K\},
+\end{equation}
+where $a_{i,t}=0$ means defer and $a_{i,t}=k$ means request technician $k$. A fixed service-time matrix $d_{ik}$ represents technician heterogeneity. A lower $d_{ik}$ means that technician $k$ is more capable for machine $i$; an infeasible assignment may be represented by $d_{ik}=+\infty$. A dynamic action mask always leaves defer valid. It masks a nonzero request when the machine is already queued or being serviced, but it does not mask a request merely because the selected technician is busy: such a request is a legitimate FIFO request and may wait in the queue.
+
+The decentralized observation contains the local machine state and public resource features:
+\begin{equation}
+    o_{i,t}=\left(t,x_{i,t},y_{i,t},
+    \{z_{i,k,t}\}_{k\in\mathcal{K}}\right),
+\end{equation}
+where
+\begin{equation}
+    z_{i,k,t}=\left(\mathbf{1}[b_{k,t}\leq t],
+    \max(0,b_{k,t}-t),
+    \mathbf{1}[m_{k,t}=i],
+    |q_{k,t}|,
+    \operatorname{pos}(i,q_{k,t}),
+    d_{ik}\right).
+\end{equation}
+
+Thus each technician contributes availability, remaining busy time, self-assignment, queue length, the machine's queue position, and its fixed service time. With $K$ technicians, the observation dimension is $3+6K$. The action mask is part of the environment-policy interface, not an additional learned observation feature.
+
+At each step, all nonzero requests are processed simultaneously. Under the primary FIFO semantics, a request is appended to the selected technician's queue if the machine is not already queued or assigned; every idle technician then pops the oldest queued machine and starts service immediately. Service starts reset that machine's age and failure flag and set the technician's busy-until time to $t+d_{ik}$. Every machine that did not start service ages by one, capped at $X_{\max}$; this includes queued machines. If a nonfailed machine reaches the threshold $A$, it fails with probability $p_{\mathrm{fail}}$ (the current stress cell uses $A=5$ and $p_{\mathrm{fail}}=0.45$). A failed machine remains failed until service starts, and a technician remains unavailable until its busy-until time. The primary semantics use FIFO queues. Priority resolution and the Rodríguez-style invalid-collision rule are retained as diagnostic/ablation semantics. A same-machine duplicate request is rejected and masked; simultaneous requests by different machines for the same technician remain possible and are the intended contention signal.
+
+The finite-horizon objective is to minimize expected cumulative cost:
+\begin{equation}
+    J(\boldsymbol{\pi}) = \mathbb{E}\left[\sum_{t=0}^{T-1} c(s_t,a_t,s_{t+1})\right],
+\end{equation}
+where the step cost includes the downtime cost for machines failed at the beginning of the step, maintenance cost for each service that starts, failure cost for newly sampled failures, and queue waiting cost for requests remaining in FIFO queues after service starts. Under the primary FIFO semantics, simultaneous-request collisions are recorded as a diagnostic and do not add a cost; the collision penalty is used only by the priority and invalid-collision ablations. The same transition function, costs, horizon, dynamic action masks, and random-seed protocol will be used for all methods. The learning discount factor is an algorithm hyperparameter and is not part of the environment objective.
+
+For a small oracle instance, the optimal value is defined by
+\begin{equation}
+    V_t(s)=\min_{a\in\mathcal{A}_{\mathrm{full}}}\left[c(s,a)+\sum_{s'}P(s'\mid s,a)V_{t+1}(s')\right],
+    \qquad V_T(s)=0.
+\end{equation}
+The oracle enumerates the independent failure outcomes after the deterministic FIFO service update. Learned policies use the dynamic action mask; the current exact solver enumerates the full joint action catalog because a same-machine duplicate is a transition no-op under FIFO semantics.
+
+\section{Proposed method}
+
+\subsection{Technician-aware QMIX (T-QMIX)}
+
+The current leading method is Technician-aware QMIX (T-QMIX), a cooperative value-decomposition learner with decentralized machine action selection. Each machine computes local action values from its resource-aware observation and respects the dynamic duplicate-request mask. Unlike standard QMIX, T-QMIX separates the defer value from technician-edge values, allowing the local network to represent the difference between requesting a particular technician and postponing maintenance.
+
+The mixing network receives the flattened global observation together with explicit technician availability, remaining busy time, and queue-length context. This gives the centralized training signal access to the resource variables that determine whether a local technician request will create useful service or queue delay. Execution remains decentralized: each machine selects its action from its local value estimates and the current mask, while the mixer is used only during training.
+
+T-QMIX also includes a counterfactual technician-consistency loss. For a selected machine, the loss compares the local difference between two technician choices with the corresponding change in joint value when that machine's request is replaced while the other machines' requests are held fixed. The full method combines the technician-edge local head, queue-conditioned mixer, and counterfactual consistency term. A component factorial will test whether the observed improvement is attributable to one component or to their interaction.
+
+\subsection{Comparison algorithms}
+
+Independent Q-learning is the independent value baseline. VDN tests additive value decomposition, standard QMIX tests monotonic mixing without technician-specific structure, and MAPPO-style centralized-critic PPO provides an actor-critic reference. A queue-aware counterfactual actor-critic is included as a second coordination reference. Fixed random-feasible and skill-aware FIFO dispatchers provide non-learning references, while exact dynamic programming is used only on the small oracle cell.
+
+\section{Experimental design}
+
+\subsection{Environment cells}
+
+\begin{itemize}[leftmargin=*]
+    \item Main stress cell: three machines and two technicians, horizon $T=12$, failure threshold $A=5$, maximum tracked age $X_{\max}=8$, and service-time matrix $D=((2,4),(4,2),(3,3))$ under FIFO queues.
+    \item Exact oracle cell: two machines, two technicians, horizon $T=6$, failure threshold $A=3$, maximum tracked age $X_{\max}=5$, and service-time matrix $D=((2,4),(4,2))$.
+    \item Rodríguez ablation: the main stress cell with invalid duplicate-assignment semantics; priority resolution is diagnostic only.
+    \item Heterogeneity ablations: homogeneous and asymmetric fixed service-time matrices, with the same failure and cost contract.
+    \item Scalability cells: larger configurations only after the locked stress and oracle cells pass the simulator and checkpoint audits.
+\end{itemize}
+
+\subsection{Baselines}
+
+The planned comparison includes:
+\begin{itemize}[leftmargin=*]
+    \item random feasible policy;
+    \item skill-aware FIFO dispatcher;
+    \item independent Q-learning;
+    \item VDN and standard QMIX;
+    \item MAPPO-style centralized-critic PPO;
+    \item queue-aware counterfactual actor-critic;
+    \item the proposed T-QMIX method;
+    \item the Rodríguez invalid-collision semantics as an environment ablation;
+    \item exact finite-horizon dynamic programming on the oracle cell;
+\end{itemize}
+
+\subsection{Ablation studies}
+
+The proposed method will be compared with versions that remove the technician-edge local head, the queue-conditioned mixer, or the counterfactual consistency loss. These ablations are needed to attribute any improvement to a particular coordination mechanism rather than to a larger network or additional training time.
+
+Training and evaluation seeds will be fixed in advance. The latest long comparison used train seeds $11$--$13$, one hundred common evaluation seeds $101$--$200$, and value-learning budgets of 5,000, 20,000, and 50,000 episodes per seed. Actor-critic references used the final 50,000-episode budget. Smoke and pilot profiles remain implementation checks and are not used as confirmatory evidence.
+
+\section{Evaluation protocol and metrics}
+
+The primary metric is mean total objective cost on common evaluation seeds, with lower values preferred. Secondary diagnostics are:
+
+\begin{itemize}[leftmargin=*]
+    \item failure count and downtime;
+    \item number of maintenance jobs;
+    \item queue waiting and requests to busy technicians;
+    \item simultaneous proposal conflicts and invalid duplicate requests;
+    \item service-job counts and machine-level service counts when trace instrumentation is enabled;
+    \item action diagnostics: unique joint actions, defer fraction, and request count;
+    \item generalization across technician scarcity and fixed service-time matrices.
+\end{itemize}
+
+All methods will use the same failure process, horizon, cost coefficients, evaluation seeds, and reporting schema. The latest long comparison completed all expected rows, recorded zero invalid requests and nonnegative objectives, and kept the sealed test panel closed. Full empirical claims still require the planned follow-up cells.
+
+\section{Expected results}
+
+The current evidence and expected outcomes are:
+
+\begin{itemize}[leftmargin=*]
+    \item Preliminary evidence indicates that T-QMIX can reduce total cost relative to independent Q-learning, VDN, and standard QMIX on the locked stress cell at the long budget.
+    \item The skill-aware dispatcher should provide a strong non-learning reference, especially when service-time heterogeneity is high.
+    \item Centralized actor-critic methods should provide a coordination reference, but their variance and failure modes must be compared rather than assumed to be superior.
+    \item The exact dynamic-programming oracle will quantify the optimality gap on the small instance.
+    \item The relative advantage of T-QMIX should be most visible under scarce technicians and asymmetric service-time matrices.
+\end{itemize}
+
+\subsection{Empirical results}
+
+The latest completed long comparison used the three-machine/two-technician FIFO stress cell, 50,000 training episodes for value-based methods, three training seeds, and the common evaluation panel of seeds 101--200. The primary metric is mean objective cost, so lower is better.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Preliminary long-budget results on the locked stress cell. Values are means over the three training-seed means, each evaluated on 100 common seeds.}
+\label{tab:preliminary-results}
+\begin{tabular}{lccc}
+\toprule
+Method & Mean objective & Across-seed SD & Training-seed means \\
+\midrule
+T-QMIX & 8.33 & 1.53 & 10.0, 7.0, 8.0 \\
+QMIX & 9.67 & 1.61 & 8.5, 9.0, 11.5 \\
+VDN & 9.83 & 0.76 & 10.0, 9.0, 10.5 \\
+Independent Q & 11.00 & 1.32 & 11.5, 9.5, 12.0 \\
+Skill-aware FIFO & 24.84 & -- & fixed policy \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+T-QMIX improves the mean objective by approximately 13.8\% relative to standard QMIX and 24.2\% relative to independent Q on this panel. It is lower than QMIX for two of the three training seeds, while QMIX is lower for the remaining seed. All completed rows passed the implementation audits: invalid requests were zero, objectives were nonnegative, and the sealed test panel was not evaluated. These results support promoting T-QMIX to the main candidate, but they do not establish statistical significance, generalization beyond the stress cell, or superiority over an exact optimum.
+
+\section{Expected contributions}
+
+The proposal aims to make the following contributions:
+
+\begin{enumerate}[leftmargin=*]
+    \item A technician-aware value-decomposition formulation for decentralized maintenance timing and technician selection.
+    \item A reproducible discrete-time, finite-horizon simulator in which technicians are passive shared resources with a fixed service-time matrix, explicit FIFO queues, seeded threshold failures, queue waiting cost, and duplicate-request masks.
+    \item A controlled comparison against independent Q-learning, VDN, standard QMIX, actor-critic references, fixed dispatchers, Rodríguez-style collision semantics, and an exact small-instance oracle.
+    \item An empirical analysis separating maintenance-timing quality, technician-selection quality, and coordination under contention.
+\end{enumerate}
+
+\section{Scope and limitations}
+
+The initial study deliberately excludes technician learning, technician training, travel time, routing, shift scheduling, outsourcing, and adaptive technician skill. The technician model is a fixed feasibility and service-time matrix. The first paper will focus on controlled coordination under stochastic failures and shared capacity. Additional workforce-planning features may be considered only after the core algorithmic result is established.
+
+\section*{References}
+
+\begin{thebibliography}{99}
+
+\bibitem{rodriguez2022}
+M. L. Ruiz Rodríguez et al., ``Multi-agent deep reinforcement learning based Predictive Maintenance on parallel machines,'' \emph{Robotics and Computer-Integrated Manufacturing}, vol. 78, 102406, 2022. doi: \href{https://doi.org/10.1016/j.rcim.2022.102406}{10.1016/j.rcim.2022.102406}.
+
+\bibitem{perez2024}
+M. Pérez-Hernández, A. Puchkova, and A. K. Parlikad, ``Multi-Agent Learning of Asset Maintenance Plans through Localised Subnetworks,'' \emph{Engineering Applications of Artificial Intelligence}, vol. 127, 107362, 2024. doi: \href{https://doi.org/10.1016/j.engappai.2023.107362}{10.1016/j.engappai.2023.107362}.
+
+\bibitem{chen2025}
+Chen and Liu, ``Sequential multi-objective multi-agent reinforcement learning approach for system predictive maintenance of turbofan engine,'' \emph{Advanced Engineering Informatics}, 2025. doi: \href{https://doi.org/10.1016/j.aei.2025.103553}{10.1016/j.aei.2025.103553}.
+
+\bibitem{ruiz2020}
+D. Ruiz-Hernández, J. M. Pinar-Pérez, and D. Delgado-Gómez, ``Multi-machine preventive maintenance scheduling with imperfect interventions: A restless bandit approach,'' \emph{Computers \& Operations Research}, vol. 119, 104927, 2020. doi: \href{https://doi.org/10.1016/j.cor.2020.104927}{10.1016/j.cor.2020.104927}.
+
+\bibitem{demirci2024}
+E. Z. Demirci, J. Arts, and G.-J. van Houtum, ``A restless bandit approach for capacitated condition based maintenance scheduling,'' \emph{Flexible Services and Manufacturing Journal}, vol. 37, pp. 179--207, 2024. doi: \href{https://doi.org/10.1007/s10696-024-09544-y}{10.1007/s10696-024-09544-y}.
+
+\bibitem{an2021}
+Y. An et al., ``Flexible job-shop scheduling and heterogeneous repairman assignment with maintenance time window and employee timetable constraints,'' \emph{Expert Systems with Applications}, vol. 186, 115693, 2021. doi: \href{https://doi.org/10.1016/j.eswa.2021.115693}{10.1016/j.eswa.2021.115693}.
+
+\bibitem{yu2023}
+X. Yu et al., ``The Field Technician Scheduling Problem with Experience-Dependent Service Times,'' \emph{Mathematics}, vol. 11, no. 21, 4562, 2023. doi: \href{https://doi.org/10.3390/math11214562}{10.3390/math11214562}.
+
+\bibitem{sanhueza2026}
+J. I. Sanhueza, F. Delgado, and M. A. Klapp, ``On planning cost-efficient and flexible aircraft maintenance operations: Technician shift scheduling and task assignment over multiple bases,'' \emph{Computers \& Industrial Engineering}, vol. 214, 111801, 2026. doi: \href{https://doi.org/10.1016/j.cie.2026.111801}{10.1016/j.cie.2026.111801}.
+
+\bibitem{schulman2017}
+J. Schulman et al., ``Proximal Policy Optimization Algorithms,'' arXiv:1707.06347, 2017.
+
+\bibitem{rashid2018}
+T. Rashid et al., ``QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning,'' in \emph{Proceedings of ICML}, 2018.
+
+\end{thebibliography}
+
+\end{document}

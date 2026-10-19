@@ -1,0 +1,31 @@
+{
+  "priced_gap_capture": 0.3832767910596677,
+  "base_gap_capture": 0.31523149183627913,
+  "development_mean_costs": {
+    "0": {
+      "middle": 323.195,
+      "low": 306.3935
+    },
+    "122880": {
+      "middle": 191.0525,
+      "low": 164.4085
+    },
+    "245760": {
+      "middle": 188.34,
+      "low": 164.14849999999998
+    },
+    "368640": {
+      "middle": 184.3325,
+      "low": 163.2505
+    },
+    "491520": {
+      "middle": 183.1405,
+      "low": 162.899
+    }
+  },
+  "numerical_mean_cost_sensitivity": {
+    "high_H12": 0.0014,
+    "high_H24": -0.003,
+    "middle_H24": 0.0
+  }
+}

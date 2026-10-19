@@ -1,0 +1,12 @@
+condition,cohort,shock,model_seed,tick,phase,field,mismatched_elements,total_elements,maximum_absolute_difference
+dense,17000008,17100000,16100002,0,selection,costs,1,224,30.0
+dense,17000008,17100000,16100002,0,selection,base,1,224,16.0
+dense,17000008,17100000,16100002,0,selection,tail,1,224,14.0
+dense,17000008,17100000,16100002,0,selection,maintenance_cost,1,224,3.0
+dense,17000008,17100000,16100002,0,selection,unavailability_cost,1,224,12.0
+dense,17000008,17100000,16100002,0,selection,failure_cost,1,224,15.0
+dense,17000008,17100000,16100002,0,selection,cutoff_ages,1,896,2.0
+dense,17000008,17100000,16100002,0,selection,cutoff_remaining,1,448,2.0
+dense,17000008,17100000,16100002,0,selection,terminal_ages,1,896,1.0
+dense,17000008,17100000,16100002,0,selection,terminal_remaining,1,448,3.0
+dense,17000008,17100000,16100002,0,selection,terminal_assigned,1,448,1.0

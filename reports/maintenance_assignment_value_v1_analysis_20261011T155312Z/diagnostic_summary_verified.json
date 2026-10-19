@@ -1,0 +1,335 @@
+{
+  "exploratory_contrasts": {
+    "assignment:dense:frozen_ppo": {
+      "estimate": 0.0,
+      "exposures": 72,
+      "confidence": 0.95,
+      "confidence_interval": [
+        0.0,
+        0.0
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 0.0,
+        "18100001": 0.0,
+        "18100002": 0.0
+      },
+      "exploratory": true
+    },
+    "assignment:dense:true_value": {
+      "estimate": 0.3626302083333333,
+      "exposures": 72,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -4.448078125,
+        5.302923943014699
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 3.5325520833333335,
+        "18100001": 0.6521739130434783,
+        "18100002": -2.946875
+      },
+      "exploratory": true
+    },
+    "assignment:dense:shuffled_value": {
+      "estimate": -9.75607638888889,
+      "exposures": 72,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -25.255219594594593,
+        1.4210044642857123
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": -4.968098958333333,
+        "18100001": -5.650135869565218,
+        "18100002": -18.13
+      },
+      "exploratory": true
+    },
+    "assignment:dense:simulation_reference": {
+      "estimate": 4.081380208333333,
+      "exposures": 72,
+      "confidence": 0.95,
+      "confidence_interval": [
+        0.03263802083333335,
+        9.231804687499997
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 7.260416666666667,
+        "18100001": 4.380434782608695,
+        "18100002": 0.754375
+      },
+      "exploratory": true
+    },
+    "ranking_mse:dense:true_value": {
+      "estimate": 5.744834487719021,
+      "exposures": 750,
+      "confidence": 0.95,
+      "confidence_interval": [
+        1.4051564135470027,
+        13.767906053124396
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 4.995841357516583,
+        "18100001": 6.093673114304099,
+        "18100002": 6.144988991336379
+      },
+      "exploratory": true,
+      "rmse": 2.3968384358815302
+    },
+    "ranking_mse:dense:shuffled_value": {
+      "estimate": 6.244980308828108,
+      "exposures": 750,
+      "confidence": 0.95,
+      "confidence_interval": [
+        1.603464629040323,
+        14.7543104046918
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 5.414986727702458,
+        "18100001": 6.692424460309366,
+        "18100002": 6.627529738472503
+      },
+      "exploratory": true,
+      "rmse": 2.4989958601062363
+    },
+    "timing:dense:frozen_ppo:correction_gain": {
+      "estimate": 12.8046875,
+      "exposures": 30,
+      "confidence": 0.95,
+      "confidence_interval": [
+        2.2728365384615383,
+        26.2861328125
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 7.845170454545454,
+        "18100001": 12.234375,
+        "18100002": 17.68359375
+      },
+      "exploratory": true
+    },
+    "timing:dense:frozen_ppo:no_pm_gain": {
+      "estimate": -0.5322916666666667,
+      "exposures": 30,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -24.266493055555557,
+        24.392578125
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": -12.457386363636363,
+        "18100001": 14.857142857142858,
+        "18100002": 1.421875
+      },
+      "exploratory": true
+    },
+    "timing:dense:true_value:correction_gain": {
+      "estimate": 7.458333333333333,
+      "exposures": 30,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.00744047619047619,
+        17.96435546875
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 4.215909090909091,
+        "18100001": 4.591517857142857,
+        "18100002": 12.102864583333334
+      },
+      "exploratory": true
+    },
+    "timing:dense:true_value:no_pm_gain": {
+      "estimate": -4.7234375,
+      "exposures": 30,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -25.76171875,
+        16.217329545454547
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": -13.291193181818182,
+        "18100001": 8.430803571428571,
+        "18100002": -4.54296875
+      },
+      "exploratory": true
+    },
+    "assignment:skill_mask:frozen_ppo": {
+      "estimate": 0.0,
+      "exposures": 23,
+      "confidence": 0.95,
+      "confidence_interval": [
+        0.0,
+        0.0
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 0.0,
+        "18100001": 0.0,
+        "18100002": 0.0
+      },
+      "exploratory": true
+    },
+    "assignment:skill_mask:true_value": {
+      "estimate": -4.612092391304348,
+      "exposures": 23,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -17.842633928571427,
+        0.5546875
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 0.47544642857142855,
+        "18100001": -2.859375,
+        "18100002": -10.81640625
+      },
+      "exploratory": true
+    },
+    "assignment:skill_mask:shuffled_value": {
+      "estimate": -23.653532608695652,
+      "exposures": 23,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -72.34244602958937,
+        -1.2514407169117996
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": -18.897321428571427,
+        "18100001": -9.119140625,
+        "18100002": -42.349609375
+      },
+      "exploratory": true
+    },
+    "assignment:skill_mask:simulation_reference": {
+      "estimate": 0.40353260869565216,
+      "exposures": 23,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -2.586647727272727,
+        4.171875
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 0.47544642857142855,
+        "18100001": 2.85546875,
+        "18100002": -2.111328125
+      },
+      "exploratory": true
+    },
+    "ranking_mse:skill_mask:true_value": {
+      "estimate": 5.862707005646017,
+      "exposures": 222,
+      "confidence": 0.95,
+      "confidence_interval": [
+        0.984956363240617,
+        15.738618542845703
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 6.303072071478069,
+        "18100001": 6.353541284028961,
+        "18100002": 4.892707688755397
+      },
+      "exploratory": true,
+      "rmse": 2.4213027496878654
+    },
+    "ranking_mse:skill_mask:shuffled_value": {
+      "estimate": 6.553357999746034,
+      "exposures": 222,
+      "confidence": 0.95,
+      "confidence_interval": [
+        1.0936507356438032,
+        17.67091073472256
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 6.882511263279677,
+        "18100001": 7.326537290311612,
+        "18100002": 5.405094922559348
+      },
+      "exploratory": true,
+      "rmse": 2.559952733889052
+    },
+    "timing:skill_mask:frozen_ppo:correction_gain": {
+      "estimate": 4.179375,
+      "exposures": 25,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.30580357142857145,
+        8.765625
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 2.157986111111111,
+        "18100001": 6.57421875,
+        "18100002": 4.05859375
+      },
+      "exploratory": true
+    },
+    "timing:skill_mask:frozen_ppo:no_pm_gain": {
+      "estimate": -5.305,
+      "exposures": 25,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -11.610991379310345,
+        0.4390625
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": -7.663194444444445,
+        "18100001": -3.953125,
+        "18100002": -4.00390625
+      },
+      "exploratory": true
+    },
+    "timing:skill_mask:true_value:correction_gain": {
+      "estimate": 4.163125,
+      "exposures": 25,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.38169642857142855,
+        8.859375
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": 2.1788194444444446,
+        "18100001": 6.57421875,
+        "18100002": 3.984375
+      },
+      "exploratory": true
+    },
+    "timing:skill_mask:true_value:no_pm_gain": {
+      "estimate": -5.280625,
+      "exposures": 25,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -11.551185344827585,
+        0.540296052631579
+      ],
+      "empty_bootstrap_fraction": 0.0,
+      "replica_estimates": {
+        "18100000": -7.663194444444445,
+        "18100001": -3.736328125,
+        "18100002": -4.14453125
+      },
+      "exploratory": true
+    }
+  },
+  "ranking_states": 288,
+  "ranking_pairs": 972,
+  "timing_records": 240,
+  "uncertainty": "crossed replica/profile conditional ratio; classes/futures are not independent profiles; no interval when >5% empty bootstrap cells",
+  "ranking_continuation": "frozen PPO",
+  "timing_continuation": "same evaluated controller at t+1..47; common deadline tail",
+  "simulation_reference": "chosen on32 independent-selection futures, measured on64 evaluation futures; noisy, not oracle"
+}

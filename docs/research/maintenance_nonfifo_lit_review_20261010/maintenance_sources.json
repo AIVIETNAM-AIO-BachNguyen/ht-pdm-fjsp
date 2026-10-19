@@ -1,0 +1,242 @@
+[
+  {
+    "id": "M01",
+    "title": "Multi-agent deep reinforcement learning based Predictive Maintenance on parallel machines",
+    "authors": [
+      "Marcelo Luis Ruiz Rodríguez",
+      "Sylvain Kubler",
+      "Andrea de Giorgio",
+      "Maxime Cordy",
+      "Jérémy Robert",
+      "Yves Le Traon"
+    ],
+    "year": 2022,
+    "venue": "Robotics and Computer-Integrated Manufacturing 78, 102406 (2022).",
+    "doi": "10.1016/j.rcim.2022.102406",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0736584522000928",
+    "pdf_url": "https://orbilu.uni.lu/bitstream/10993/54345/1/1-s2.0-S0736584522000928-main.pdf",
+    "access_status": "Publisher states CC BY open access. University PDF indexed; direct fetch failed. Abstract and indexed Methods 3.2/4.3, Table 5, evaluation 4.4 checked.",
+    "read_scope": "Publisher states CC BY open access. University PDF indexed; direct fetch failed. Abstract and indexed Methods 3.2/4.3, Table 5, evaluation 4.4 checked."
+  },
+  {
+    "id": "M02",
+    "title": "Flexible job-shop scheduling and heterogeneous repairman assignment with maintenance time window and employee timetable constraints",
+    "authors": [
+      "Youjun An",
+      "Xiaohui Chen",
+      "Yinghe Li",
+      "Ji Zhang",
+      "Junwei Jiang"
+    ],
+    "year": 2021,
+    "venue": "Expert Systems with Applications 186, 115693 (2021).",
+    "doi": "10.1016/j.eswa.2021.115693",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0957417421010770",
+    "pdf_url": "",
+    "access_status": "Subscription preview; no verified public PDF found. Abstract/introduction checked, mathematical methods unavailable.",
+    "read_scope": "Subscription preview; no verified public PDF found. Abstract/introduction checked, mathematical methods unavailable."
+  },
+  {
+    "id": "M03",
+    "title": "Multi-machine preventive maintenance scheduling with imperfect interventions: A restless bandit approach",
+    "authors": [
+      "Diego Ruiz-Hernández",
+      "Jesús María Pinar-Pérez",
+      "David Delgado-Gómez"
+    ],
+    "year": 2020,
+    "venue": "Computers & Operations Research 119, 104927 (2020).",
+    "doi": "10.1016/j.cor.2020.104927",
+    "page_url": "https://researchportal.uc3m.es/display/act529211",
+    "pdf_url": "https://arxiv.org/pdf/2401.14055",
+    "access_status": "Public author manuscript; PDF opened successfully. Formulation and numerical sections checked.",
+    "read_scope": "Public author manuscript; PDF opened successfully. Formulation and numerical sections checked."
+  },
+  {
+    "id": "M04",
+    "title": "A restless bandit approach for capacitated condition based maintenance scheduling",
+    "authors": [
+      "Ece Zeliha Demirci",
+      "Joachim Arts",
+      "Geert-Jan van Houtum"
+    ],
+    "year": 2025,
+    "venue": "Flexible Services and Manufacturing Journal 37, 179–207 (2025); online 13 June 2024.",
+    "doi": "10.1007/s10696-024-09544-y",
+    "page_url": "https://link.springer.com/article/10.1007/s10696-024-09544-y",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10696-024-09544-y.pdf",
+    "access_status": "CC BY; PDF opened successfully. Model, MDP/RBP formulation and numerical setup checked.",
+    "read_scope": "CC BY; PDF opened successfully. Model, MDP/RBP formulation and numerical setup checked."
+  },
+  {
+    "id": "M05",
+    "title": "Workers-constrained shutdown maintenance scheduling with skills flexibility: Models and solution algorithms",
+    "authors": [
+      "Mehmet Ertem",
+      "Rami As'ad",
+      "Mahmoud Awad",
+      "AbdulRahman Al-Bar"
+    ],
+    "year": 2022,
+    "venue": "Computers & Industrial Engineering 172, 108575 (2022).",
+    "doi": "10.1016/j.cie.2022.108575",
+    "page_url": "https://www.sciencedirect.com/science/article/abs/pii/S0360835222005769",
+    "pdf_url": "",
+    "access_status": "Publisher abstract/introduction inspected; full manuscript and public PDF not verified.",
+    "read_scope": "Publisher abstract/introduction inspected; full manuscript and public PDF not verified."
+  },
+  {
+    "id": "M06",
+    "title": "Deep Reinforcement Learning Based on Proximal Policy Optimization for the Maintenance of a Wind Farm with Multiple Crews",
+    "authors": [
+      "Luca Pinciroli",
+      "Piero Baraldi",
+      "Guido Ballabio",
+      "Michele Compare",
+      "Enrico Zio"
+    ],
+    "year": 2021,
+    "venue": "Energies 14(20), 6743 (2021).",
+    "doi": "10.3390/en14206743",
+    "page_url": "https://www.mdpi.com/1996-1073/14/20/6743",
+    "pdf_url": "https://www.mdpi.com/1996-1073/14/20/6743/pdf",
+    "access_status": "Open access; indexed full HTML Methods 3.1/3.2 and Results 5 checked; direct fetch failed.",
+    "read_scope": "Open access; indexed full HTML Methods 3.1/3.2 and Results 5 checked; direct fetch failed."
+  },
+  {
+    "id": "M07",
+    "title": "Optimization of the Operation and Maintenance of renewable energy systems by Deep Reinforcement Learning",
+    "authors": [
+      "Luca Pinciroli",
+      "Piero Baraldi",
+      "Guido Ballabio",
+      "Michele Compare",
+      "Enrico Zio"
+    ],
+    "year": 2022,
+    "venue": "Renewable Energy 183, 752–763 (2022), online 2021.",
+    "doi": "10.1016/j.renene.2021.11.052",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0960148121016347",
+    "pdf_url": "",
+    "access_status": "Abstract and indexed introduction/conclusion checked. Repository record exists; direct access returned 403. No direct public PDF verified.",
+    "read_scope": "Abstract and indexed introduction/conclusion checked. Repository record exists; direct access returned 403. No direct public PDF verified."
+  },
+  {
+    "id": "M08",
+    "title": "Dynamic maintenance scheduling approach under uncertainty: Comparison between reinforcement learning, genetic algorithm simheuristic, dispatching rules",
+    "authors": [
+      "Marcelo Luis Ruiz-Rodríguez",
+      "Sylvain Kubler",
+      "Jérémy Robert",
+      "Yves Le Traon"
+    ],
+    "year": 2024,
+    "venue": "Expert Systems with Applications 248, 123404 (2024).",
+    "doi": "10.1016/j.eswa.2024.123404",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0957417424002690",
+    "pdf_url": "https://orbilu.uni.lu/bitstream/10993/62366/1/1-s2.0-S0957417424002690-main.pdf",
+    "access_status": "CC BY university PDF indexed, direct fetch not confirmed. Abstract and indexed Methods 3.2/experimental setup checked.",
+    "read_scope": "CC BY university PDF indexed, direct fetch not confirmed. Abstract and indexed Methods 3.2/experimental setup checked."
+  },
+  {
+    "id": "M09",
+    "title": "Two-stage graph attention networks and Q-learning based maintenance tasks scheduling",
+    "authors": [
+      "Xiaoyong Gao",
+      "Diao Peng",
+      "Yixu Yang",
+      "Fuyu Huang",
+      "Yu Yuan",
+      "Chaodong Tan",
+      "Feifei Li"
+    ],
+    "year": 2025,
+    "venue": "Applied Intelligence 55(5), 331 (2025), online 16 January.",
+    "doi": "10.1007/s10489-025-06249-z",
+    "page_url": "https://link.springer.com/article/10.1007/s10489-025-06249-z",
+    "pdf_url": "",
+    "access_status": "Subscription preview explicitly states paid/institutional access. No public manuscript found after title/DOI/arXiv/author searches. Abstract and university methods summary checked.",
+    "read_scope": "Subscription preview explicitly states paid/institutional access. No public manuscript found after title/DOI/arXiv/author searches. Abstract and university methods summary checked."
+  },
+  {
+    "id": "M10",
+    "title": "Evolutionary multi-objective multi-agent deep reinforcement learning for sustainable maintenance scheduling",
+    "authors": [
+      "Marcelo Luis Ruiz-Rodríguez",
+      "Sylvain Kubler",
+      "Jérémy Robert",
+      "Alexandre Voisin",
+      "Yves Le Traon"
+    ],
+    "year": 2025,
+    "venue": "Engineering Applications of Artificial Intelligence 156, 111126 (2025).",
+    "doi": "10.1016/j.engappai.2025.111126",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0952197625011273",
+    "pdf_url": "https://orbilu.uni.lu/bitstream/10993/66631/1/1-s2.0-S0952197625011273-main.pdf",
+    "access_status": "CC BY publisher/university PDF indexed; direct fetch failed. Abstract and indexed Methods 4 state/actions checked.",
+    "read_scope": "CC BY publisher/university PDF indexed; direct fetch failed. Abstract and indexed Methods 4 state/actions checked."
+  },
+  {
+    "id": "M11",
+    "title": "Hybrid Genetic Algorithm and Deep Reinforcement Learning Framework for IoT-Enabled Healthcare Equipment Maintenance Scheduling",
+    "authors": [
+      "Francesco Nucci",
+      "Gabriele Papadia"
+    ],
+    "year": 2025,
+    "venue": "Electronics 14(21), 4160 (2025).",
+    "doi": "10.3390/electronics14214160",
+    "page_url": "https://www.mdpi.com/2079-9292/14/21/4160",
+    "pdf_url": "https://iris.unisalento.it/bitstream/11587/564147/1/electronics-14-04160.pdf",
+    "access_status": "Open-access publisher and repository file indexed; direct fetch failed. Methods 3 and evaluation/discussion indexed excerpts checked.",
+    "read_scope": "Open-access publisher and repository file indexed; direct fetch failed. Methods 3 and evaluation/discussion indexed excerpts checked."
+  },
+  {
+    "id": "M12",
+    "title": "Dynamic repair and maintenance of heterogeneous machines dispersed on a network: A rollout method for online reinforcement learning",
+    "authors": [
+      "Dongnuan Tian",
+      "Rob Shone"
+    ],
+    "year": 2026,
+    "venue": "Computers & Operations Research 193, 107517 (September 2026).",
+    "doi": "10.1016/j.cor.2026.107517",
+    "page_url": "https://www.sciencedirect.com/science/article/abs/pii/S0305054826001358",
+    "pdf_url": "https://arxiv.org/pdf/2602.19277",
+    "access_status": "Public arXiv PDF opened successfully; formulation, index and rollout method and numerical sections checked.",
+    "read_scope": "Public arXiv PDF opened successfully; formulation, index and rollout method and numerical sections checked."
+  },
+  {
+    "id": "M13",
+    "title": "Optimal maintenance scheduling under uncertainties using Linear Programming-enhanced Reinforcement Learning",
+    "authors": [
+      "Jueming Hu",
+      "Yuhao Wang",
+      "Yutian Pang",
+      "Yongming Liu"
+    ],
+    "year": 2022,
+    "venue": "Engineering Applications of Artificial Intelligence109,104655",
+    "doi": "10.1016/j.engappai.2021.104655",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0952197621004565",
+    "pdf_url": "",
+    "access_status": "Publisher lists Open Manuscript; direct public PDF not verified",
+    "read_scope": "Abstract, introduction and section previews"
+  },
+  {
+    "id": "M14",
+    "title": "MIRA: Safety-Constrained Multi-Agent Reinforcement Learning for Joint Prescriptive Maintenance and Production Rescheduling in Industrial IoT",
+    "authors": [
+      "Md. Ashraful Babu",
+      "Ali AlArjani",
+      "Mohamed Lahby"
+    ],
+    "year": 2026,
+    "venue": "Future Internet18(8),430",
+    "doi": "10.3390/fi18080430",
+    "page_url": "https://www.mdpi.com/1999-5903/18/8/430",
+    "pdf_url": "https://www.mdpi.com/1999-5903/18/8/430/pdf",
+    "access_status": "Open-access publisher link; PDF fetch not confirmed",
+    "read_scope": "Metadata and abstract only; contextual neighbor"
+  }
+]

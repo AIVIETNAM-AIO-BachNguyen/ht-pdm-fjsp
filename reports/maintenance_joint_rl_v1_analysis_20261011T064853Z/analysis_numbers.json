@@ -1,0 +1,315 @@
+{
+  "run": "maintenance_joint_rl_v1_full_cpu_20261011T045434Z",
+  "commit": "ed032858ebf174738e9c00bfe2dce72b7fff4277",
+  "report": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_joint_rl_v1_analysis_20261011T064853Z",
+  "elapsed_seconds": 2814.308214,
+  "primary": {
+    "dense:joint_vs_best_rule": {
+      "left": "best_rule",
+      "right": "joint_ppo",
+      "metric": "extended_cost_per_machine_tick",
+      "estimate": -0.010904759614724036,
+      "absolute_difference": -0.05166910807291669,
+      "left_mean": 4.7382161458333325,
+      "right_mean": 4.78988525390625,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.028259670166313727,
+        0.0054642402046911585
+      ],
+      "margin": 0.01,
+      "training_replicas": 10,
+      "profiles": 64,
+      "status": "BELOW_MARGIN"
+    },
+    "dense:joint_vs_fixed_ppo": {
+      "left": "fixed_ppo",
+      "right": "joint_ppo",
+      "metric": "extended_cost_per_machine_tick",
+      "estimate": 0.0009883506001900303,
+      "absolute_difference": 0.0047387695312499905,
+      "left_mean": 4.7946240234375,
+      "right_mean": 4.78988525390625,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.007035707083966602,
+        0.009908061535231265
+      ],
+      "margin": 0.01,
+      "training_replicas": 10,
+      "profiles": 64,
+      "status": "BELOW_MARGIN"
+    },
+    "skill_mask:joint_vs_best_rule": {
+      "left": "best_rule",
+      "right": "joint_ppo",
+      "metric": "extended_cost_per_machine_tick",
+      "estimate": -0.011022029096751743,
+      "absolute_difference": -0.05515625000000002,
+      "left_mean": 5.004182942708334,
+      "right_mean": 5.059339192708333,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.02137291102358498,
+        -0.0016940273862808394
+      ],
+      "margin": 0.01,
+      "training_replicas": 10,
+      "profiles": 64,
+      "status": "BELOW_MARGIN"
+    },
+    "skill_mask:joint_vs_fixed_ppo": {
+      "left": "fixed_ppo",
+      "right": "joint_ppo",
+      "metric": "extended_cost_per_machine_tick",
+      "estimate": 0.0025103641167147565,
+      "absolute_difference": 0.012732747395833296,
+      "left_mean": 5.072071940104166,
+      "right_mean": 5.059339192708333,
+      "confidence": 0.9875,
+      "confidence_interval": [
+        -0.008623869737057513,
+        0.0149540210537022
+      ],
+      "margin": 0.01,
+      "training_replicas": 10,
+      "profiles": 64,
+      "status": "INCONCLUSIVE"
+    }
+  },
+  "service": {
+    "dense:interior_pending_mean": {
+      "estimate": -0.1592936197916667,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.2005704752604167,
+        -0.1175537109375
+      ],
+      "margin": 0.1,
+      "exploratory": true
+    },
+    "dense:interior_failed_mean": {
+      "estimate": 0.10157877604166668,
+      "confidence": 0.95,
+      "confidence_interval": [
+        0.019303181966145846,
+        0.18535339355468736
+      ],
+      "margin": 0.1,
+      "exploratory": true
+    },
+    "dense:interior_overdue_per_tick": {
+      "estimate": -0.05950520833333334,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.07556966145833334,
+        -0.04518208821614585
+      ],
+      "margin": 0.020833333333333332,
+      "exploratory": true
+    },
+    "skill_mask:interior_pending_mean": {
+      "estimate": 0.010782877604166666,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.01691101074218751,
+        0.041089274088541634
+      ],
+      "margin": 0.1,
+      "exploratory": true
+    },
+    "skill_mask:interior_failed_mean": {
+      "estimate": 0.012963867187499967,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.03843607584635418,
+        0.0668214925130208
+      ],
+      "margin": 0.1,
+      "exploratory": true
+    },
+    "skill_mask:interior_overdue_per_tick": {
+      "estimate": 0.0027018229166666653,
+      "confidence": 0.95,
+      "confidence_interval": [
+        -0.0062418619791666675,
+        0.01336283365885415
+      ],
+      "margin": 0.020833333333333332,
+      "exploratory": true
+    }
+  },
+  "selected_rules": {
+    "dense": "adaptive_isolated_matching",
+    "skill_mask": "deadline_matching"
+  },
+  "development_initial_to_final": {
+    "joint_ppo": {
+      "initial": 2418.503125,
+      "final": 1139.2609375,
+      "selected": 1134.846875,
+      "improved_seeds": 10
+    },
+    "fixed_ppo": {
+      "initial": 2405.6796875,
+      "final": 1141.2171875,
+      "selected": 1139.4546875,
+      "improved_seeds": 10
+    }
+  },
+  "selection_updates": {
+    "joint_ppo": {
+      "80": 4,
+      "20": 1,
+      "60": 5
+    },
+    "fixed_ppo": {
+      "80": 7,
+      "40": 1,
+      "60": 2
+    }
+  },
+  "components": [
+    {
+      "condition": "dense",
+      "component": "maintenance_cost",
+      "rule": 46.138671875,
+      "joint": 50.312109375,
+      "difference": 4.173437499999999
+    },
+    {
+      "condition": "dense",
+      "component": "unavailability_cost",
+      "rule": 831.9140625,
+      "joint": 826.833984375,
+      "difference": -5.080078125
+    },
+    {
+      "condition": "dense",
+      "component": "failure_cost",
+      "rule": 225.322265625,
+      "joint": 268.3857421875,
+      "difference": 43.0634765625
+    },
+    {
+      "condition": "dense",
+      "component": "waiting_cost",
+      "rule": 33.796875,
+      "joint": 4.040625,
+      "difference": -29.75625
+    },
+    {
+      "condition": "dense",
+      "component": "objective",
+      "rule": 1137.171875,
+      "joint": 1149.5724609375,
+      "difference": 12.400585937499955
+    },
+    {
+      "condition": "skill_mask",
+      "component": "maintenance_cost",
+      "rule": 49.642578125,
+      "joint": 50.026953125,
+      "difference": 0.3843749999999986
+    },
+    {
+      "condition": "skill_mask",
+      "component": "unavailability_cost",
+      "rule": 860.953125,
+      "joint": 872.033203125,
+      "difference": 11.080078125
+    },
+    {
+      "condition": "skill_mask",
+      "component": "failure_cost",
+      "rule": 268.798828125,
+      "joint": 269.89453125,
+      "difference": 1.095703125
+    },
+    {
+      "condition": "skill_mask",
+      "component": "waiting_cost",
+      "rule": 21.609375,
+      "joint": 22.28671875,
+      "difference": 0.6773437499999986
+    },
+    {
+      "condition": "skill_mask",
+      "component": "objective",
+      "rule": 1201.00390625,
+      "joint": 1214.24140625,
+      "difference": 13.237499999999955
+    }
+  ],
+  "behaviors": [
+    {
+      "condition": "dense",
+      "controller": "best_rule",
+      "wait_with_choice_per_episode": 8.896484375,
+      "wait_per_all_base_ticks": 0.18534342447916666,
+      "same_subset_assignment_choice_ticks": 6.908203125,
+      "nonfixed_assignments_per_episode": 0.7109375,
+      "nonfixed_given_selected_subset_has_choices": 0.10291207237772124,
+      "preventive_starts": 14.8203125,
+      "corrective_starts": 9.96875
+    },
+    {
+      "condition": "dense",
+      "controller": "joint_ppo",
+      "wait_with_choice_per_episode": 0.2884765625,
+      "wait_per_all_base_ticks": 0.006009928385416666,
+      "same_subset_assignment_choice_ticks": 4.5375,
+      "nonfixed_assignments_per_episode": 0.6478515625,
+      "nonfixed_given_selected_subset_has_choices": 0.14277720385674933,
+      "preventive_starts": 13.013671875,
+      "corrective_starts": 13.55078125
+    },
+    {
+      "condition": "dense",
+      "controller": "fixed_ppo",
+      "wait_with_choice_per_episode": 0.44921875,
+      "wait_per_all_base_ticks": 0.009358723958333334,
+      "same_subset_assignment_choice_ticks": 4.5353515625,
+      "nonfixed_assignments_per_episode": 0.0,
+      "nonfixed_given_selected_subset_has_choices": 0.0,
+      "preventive_starts": 12.9111328125,
+      "corrective_starts": 13.719140625
+    },
+    {
+      "condition": "skill_mask",
+      "controller": "best_rule",
+      "wait_with_choice_per_episode": 2.61328125,
+      "wait_per_all_base_ticks": 0.054443359375,
+      "same_subset_assignment_choice_ticks": 0.931640625,
+      "nonfixed_assignments_per_episode": 0.060546875,
+      "nonfixed_given_selected_subset_has_choices": 0.0649895178197065,
+      "preventive_starts": 12.6875,
+      "corrective_starts": 13.5
+    },
+    {
+      "condition": "skill_mask",
+      "controller": "joint_ppo",
+      "wait_with_choice_per_episode": 0.8134765625,
+      "wait_per_all_base_ticks": 0.016947428385416668,
+      "same_subset_assignment_choice_ticks": 0.95234375,
+      "nonfixed_assignments_per_episode": 0.073046875,
+      "nonfixed_given_selected_subset_has_choices": 0.07670221493027071,
+      "preventive_starts": 12.98515625,
+      "corrective_starts": 13.4857421875
+    },
+    {
+      "condition": "skill_mask",
+      "controller": "fixed_ppo",
+      "wait_with_choice_per_episode": 0.9859375,
+      "wait_per_all_base_ticks": 0.020540364583333335,
+      "same_subset_assignment_choice_ticks": 1.05390625,
+      "nonfixed_assignments_per_episode": 0.0,
+      "nonfixed_given_selected_subset_has_choices": 0.0,
+      "preventive_starts": 12.7849609375,
+      "corrective_starts": 13.5978515625
+    }
+  ],
+  "best_seed_not_selected_from_test": true,
+  "training_elapsed_seconds": 2104.6273688040674,
+  "scope": "ANALYZED; statistical intervals and locked replay subpanel VERIFIED; no complete training rerun or full test rerun"
+}

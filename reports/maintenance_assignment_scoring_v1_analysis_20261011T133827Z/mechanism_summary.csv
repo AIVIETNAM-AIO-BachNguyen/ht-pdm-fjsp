@@ -1,0 +1,5 @@
+arm,condition,assignment_exposure,assignment_switches,positive_mc95,corrections_lower_mass,positive_mc95_lower_mass,conditional_original_mass_median,mass_switches,timing_exposure,timing_switches,defer_all_mean
+additive_ppo,dense,40,15,2,10,0,0.5015782697736677,9,63,42,-3.541170634920635
+additive_ppo,skill_mask,10,5,4,3,2,0.5013893384271164,2,71,44,-2.857394366197183
+interaction_ppo,dense,40,15,4,8,1,0.5035069012310247,11,63,37,-4.950644841269841
+interaction_ppo,skill_mask,17,11,8,9,6,0.5057411969813189,4,71,37,-3.6474471830985915

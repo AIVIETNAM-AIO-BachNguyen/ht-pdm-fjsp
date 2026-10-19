@@ -1,0 +1,124 @@
+{
+  "review_form": "narrative/integrative",
+  "user_words": "ok",
+  "checkpoint_closed": "review-form-note",
+  "search_date": "2026-10-10",
+  "question": "Centralized maintenance dispatch with scarce heterogeneous passive technicians: planning, learned policies and size generalization",
+  "claim_intent_manifests": [
+    {
+      "manifest_version": "1.0",
+      "manifest_id": "M-20261010-root-synthesis-01",
+      "emitted_by": "root synthesis stage",
+      "emitted_at": "2026-10-10",
+      "claims": [
+        {
+          "claim_id": "C01",
+          "claim_text": "Capacity-constrained maintenance and heterogeneous repairman assignment already have analytical and optimization precedents.",
+          "intended_evidence_kind": "empirical",
+          "planned_refs": [
+            "M02",
+            "M03",
+            "M04",
+            "M05"
+          ]
+        },
+        {
+          "claim_id": "C02",
+          "claim_text": "Centralized PPO with multiple crews and imitation pretraining predates this project direction.",
+          "intended_evidence_kind": "empirical",
+          "planned_refs": [
+            "M06",
+            "M07"
+          ]
+        },
+        {
+          "claim_id": "C03",
+          "claim_text": "Quality-compute comparison and graph-based maintenance assignment/size testing have direct precedents.",
+          "intended_evidence_kind": "empirical",
+          "planned_refs": [
+            "M08",
+            "M09"
+          ]
+        },
+        {
+          "claim_id": "C04",
+          "claim_text": "Learning and planning can be combined; finite rollout is not an exhaustive optimal oracle.",
+          "intended_evidence_kind": "theoretical",
+          "planned_refs": [
+            "P01",
+            "P03",
+            "P04",
+            "M12",
+            "M13"
+          ]
+        },
+        {
+          "claim_id": "C05",
+          "claim_text": "Variable-size neural inputs permit application but do not guarantee scale generalization; explicit constructive and residual-state methods have tested transfer.",
+          "intended_evidence_kind": "empirical",
+          "planned_refs": [
+            "G1",
+            "G2",
+            "G6",
+            "G7",
+            "G9",
+            "G12"
+          ]
+        },
+        {
+          "claim_id": "C06",
+          "claim_text": "Compute accounting must distinguish training, teacher generation, decoding, sampling and search; robust evaluation includes uncertainty and strong solver baselines.",
+          "intended_evidence_kind": "empirical",
+          "planned_refs": [
+            "G4",
+            "G5",
+            "G10",
+            "P05",
+            "P06"
+          ]
+        },
+        {
+          "claim_id": "C07",
+          "claim_text": "A non-FIFO scarce-skill dispatcher with size/topology transfer is a candidate research question, not proven novelty or RL superiority.",
+          "intended_evidence_kind": "normative",
+          "planned_refs": [
+            "M04",
+            "M08",
+            "M09",
+            "M12",
+            "G2",
+            "G9",
+            "G12"
+          ]
+        },
+        {
+          "claim_id": "C08",
+          "claim_text": "DAgger addresses learner-induced state distribution, but its guarantee does not turn an approximate teacher into a maintenance optimum.",
+          "intended_evidence_kind": "theoretical",
+          "planned_refs": [
+            "P02",
+            "P03"
+          ]
+        }
+      ],
+      "manifest_negative_constraints": [
+        {
+          "constraint_id": "N01",
+          "rule": "No first-ever or exhaustive novelty claim; abstract-only unknowns must remain unknown."
+        },
+        {
+          "constraint_id": "N02",
+          "rule": "Do not call planning or bounded solver references global optimum without certified bounds."
+        },
+        {
+          "constraint_id": "N03",
+          "rule": "Do not equate MARL labels with decentralized execution or heterogeneous machines with heterogeneous workforce."
+        },
+        {
+          "constraint_id": "N04",
+          "rule": "Clearly separate project results and proposed hypotheses from published evidence."
+        }
+      ]
+    }
+  ]
+}

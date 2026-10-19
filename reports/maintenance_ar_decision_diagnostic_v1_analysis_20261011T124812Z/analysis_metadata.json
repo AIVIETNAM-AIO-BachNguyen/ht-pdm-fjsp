@@ -1,0 +1,15 @@
+{
+  "run": "maintenance_ar_decision_diagnostic_v1_full_cpu_20261011T123034Z",
+  "source_commit": "89eb91e10e99a707ab3886915e14790ecf2ebaae",
+  "derived_path": "/Users/bachng/Coding/Reinforcement Learning/marl/reports/maintenance_ar_decision_diagnostic_v1_analysis_20261011T124812Z",
+  "origin_skill": "ars-codex:academic-research-suite",
+  "mode": "validate inline",
+  "new_experiments": false,
+  "training": false,
+  "raw_data_modified": false,
+  "exploratory_added_analysis": [
+    "secondary95% intervals",
+    "leave-one-replica/profile descriptive estimates",
+    "policy probability mechanism summaries"
+  ]
+}

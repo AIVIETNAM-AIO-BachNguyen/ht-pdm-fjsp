@@ -1,0 +1,5 @@
+condition,origin,n,mean,negative,positive,median_mc_se
+dense,best_rule,370,2.004391891891892,135,123,5.8736518804076745
+dense,joint_ppo,372,0.9170866935483871,107,128,4.863867440116082
+skill_mask,best_rule,330,0.9016098484848485,18,29,0.0
+skill_mask,joint_ppo,423,0.9318853427895981,39,64,0.0

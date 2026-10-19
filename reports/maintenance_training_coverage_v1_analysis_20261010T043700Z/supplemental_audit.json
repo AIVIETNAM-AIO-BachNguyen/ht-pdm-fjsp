@@ -1,0 +1,4577 @@
+{
+  "development_rows": 40960,
+  "selected_rules": {
+    "homogeneous": "deadline_matching",
+    "specialized": "adaptive_isolated_matching",
+    "nominal": "adaptive_isolated_matching",
+    "skill_mask": "adaptive_isolated_matching"
+  },
+  "development_rule_means": {
+    "homogeneous": {
+      "risk_matching": 202.74375,
+      "deadline_matching": 202.74375,
+      "lookahead_matching": 213.875,
+      "adaptive_isolated_matching": 206.3375
+    },
+    "specialized": {
+      "risk_matching": 199.41875,
+      "deadline_matching": 199.36875,
+      "lookahead_matching": 177.46875,
+      "adaptive_isolated_matching": 174.66875
+    },
+    "nominal": {
+      "risk_matching": 167.76875,
+      "deadline_matching": 167.76875,
+      "lookahead_matching": 167.76875,
+      "adaptive_isolated_matching": 167.76875
+    },
+    "skill_mask": {
+      "risk_matching": 196.81875,
+      "deadline_matching": 196.60625,
+      "lookahead_matching": 177.95,
+      "adaptive_isolated_matching": 174.875
+    }
+  },
+  "primary_posthoc_sensitivity": {
+    "coverage:cooperative_local_ppo:skill_mask_H24": {
+      "two_sided_exact_sign_flip_p": 0.013671875,
+      "bonferroni4_p": 0.0546875,
+      "leave_one_replica_out_mean_range": [
+        -15.091319444444443,
+        -11.698784722222221
+      ],
+      "max_difference": 1.7078124999999886,
+      "max_difference_seed": 180006,
+      "min_difference": -28.82499999999999,
+      "caveat": "Posthoc sensitivity, sign-flip needs symmetric null paired differences; no deleted replica, no replacement confirmatory verdict."
+    },
+    "coverage:cooperative_full_ppo:skill_mask_H24": {
+      "two_sided_exact_sign_flip_p": 0.03515625,
+      "bonferroni4_p": 0.140625,
+      "leave_one_replica_out_mean_range": [
+        -19.358333333333334,
+        -12.490625000000003
+      ],
+      "max_difference": 27.806249999999977,
+      "max_difference_seed": 180005,
+      "min_difference": -34.00312500000001,
+      "caveat": "Posthoc sensitivity, sign-flip needs symmetric null paired differences; no deleted replica, no replacement confirmatory verdict."
+    },
+    "gap_closure:cooperative_local_ppo:skill_mask_H24": {
+      "two_sided_exact_sign_flip_p": 0.0234375,
+      "bonferroni4_p": 0.09375,
+      "leave_one_replica_out_mean_range": [
+        -13.769444444444439,
+        -9.912499999999998
+      ],
+      "max_difference": 5.21875,
+      "max_difference_seed": 180006,
+      "min_difference": -29.493749999999977,
+      "caveat": "Posthoc sensitivity, sign-flip needs symmetric null paired differences; no deleted replica, no replacement confirmatory verdict."
+    },
+    "gap_closure:cooperative_full_ppo:skill_mask_H24": {
+      "two_sided_exact_sign_flip_p": 0.052734375,
+      "bonferroni4_p": 0.2109375,
+      "leave_one_replica_out_mean_range": [
+        -17.692708333333332,
+        -10.835416666666667
+      ],
+      "max_difference": 28.22343749999999,
+      "max_difference_seed": 180005,
+      "min_difference": -33.4921875,
+      "caveat": "Posthoc sensitivity, sign-flip needs symmetric null paired differences; no deleted replica, no replacement confirmatory verdict."
+    }
+  },
+  "seed_means": {
+    "legacy:central_matching_ppo:homogeneous:12:180000": {
+      "objective": 213.6109375,
+      "waiting_cost": 3.45,
+      "waiting_violation": 0.1703125,
+      "terminal_pending": 0.296875,
+      "failure_cost": 44.8828125,
+      "unavailability_cost": 153.46875,
+      "failures": 2.9921875
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180000": {
+      "objective": 403.846875,
+      "waiting_cost": 3.61875,
+      "waiting_violation": 0.090625,
+      "terminal_pending": 0.28125,
+      "failure_cost": 76.2421875,
+      "unavailability_cost": 299.9625,
+      "failures": 5.0828125
+    },
+    "legacy:central_matching_ppo:specialized:12:180000": {
+      "objective": 165.4609375,
+      "waiting_cost": 0.16875,
+      "waiting_violation": 0.0140625,
+      "terminal_pending": 0.2234375,
+      "failure_cost": 34.125,
+      "unavailability_cost": 116.625,
+      "failures": 2.275
+    },
+    "legacy:central_matching_ppo:specialized:24:180000": {
+      "objective": 328.3453125,
+      "waiting_cost": 0.88125,
+      "waiting_violation": 0.0578125,
+      "terminal_pending": 0.2375,
+      "failure_cost": 66.0,
+      "unavailability_cost": 232.2375,
+      "failures": 4.4
+    },
+    "legacy:central_matching_ppo:nominal:12:180000": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180000": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180000": {
+      "objective": 166.109375,
+      "waiting_cost": 0.1875,
+      "waiting_violation": 0.015625,
+      "terminal_pending": 0.3140625,
+      "failure_cost": 36.328125,
+      "unavailability_cost": 115.153125,
+      "failures": 2.421875
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180000": {
+      "objective": 328.703125,
+      "waiting_cost": 0.43125,
+      "waiting_violation": 0.0328125,
+      "terminal_pending": 0.3265625,
+      "failure_cost": 68.4375,
+      "unavailability_cost": 230.690625,
+      "failures": 4.5625
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180001": {
+      "objective": 197.71875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.240625,
+      "failure_cost": 39.421875,
+      "unavailability_cost": 145.903125,
+      "failures": 2.628125
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180001": {
+      "objective": 396.14375,
+      "waiting_cost": 0.9375,
+      "waiting_violation": 0.0359375,
+      "terminal_pending": 0.2203125,
+      "failure_cost": 75.7265625,
+      "unavailability_cost": 294.825,
+      "failures": 5.0484375
+    },
+    "legacy:central_matching_ppo:specialized:12:180001": {
+      "objective": 163.1015625,
+      "waiting_cost": 0.01875,
+      "waiting_violation": 0.0015625,
+      "terminal_pending": 0.2375,
+      "failure_cost": 32.671875,
+      "unavailability_cost": 115.78125,
+      "failures": 2.178125
+    },
+    "legacy:central_matching_ppo:specialized:24:180001": {
+      "objective": 325.940625,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.25625,
+      "failure_cost": 65.3203125,
+      "unavailability_cost": 231.1875,
+      "failures": 4.3546875
+    },
+    "legacy:central_matching_ppo:nominal:12:180001": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180001": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180001": {
+      "objective": 164.8546875,
+      "waiting_cost": 0.13125,
+      "waiting_violation": 0.0109375,
+      "terminal_pending": 0.2890625,
+      "failure_cost": 35.015625,
+      "unavailability_cost": 115.21875,
+      "failures": 2.334375
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180001": {
+      "objective": 331.721875,
+      "waiting_cost": 0.24375,
+      "waiting_violation": 0.0203125,
+      "terminal_pending": 0.3109375,
+      "failure_cost": 68.15625,
+      "unavailability_cost": 234.1125,
+      "failures": 4.54375
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180002": {
+      "objective": 209.0421875,
+      "waiting_cost": 2.4375,
+      "waiting_violation": 0.065625,
+      "terminal_pending": 0.3078125,
+      "failure_cost": 45.84375,
+      "unavailability_cost": 148.44375,
+      "failures": 3.05625
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180002": {
+      "objective": 416.884375,
+      "waiting_cost": 12.65625,
+      "waiting_violation": 0.096875,
+      "terminal_pending": 0.2109375,
+      "failure_cost": 80.53125,
+      "unavailability_cost": 299.15625,
+      "failures": 5.36875
+    },
+    "legacy:central_matching_ppo:specialized:12:180002": {
+      "objective": 163.915625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.1703125,
+      "failure_cost": 32.2265625,
+      "unavailability_cost": 116.8125,
+      "failures": 2.1484375
+    },
+    "legacy:central_matching_ppo:specialized:24:180002": {
+      "objective": 331.878125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.209375,
+      "failure_cost": 64.7578125,
+      "unavailability_cost": 237.6375,
+      "failures": 4.3171875
+    },
+    "legacy:central_matching_ppo:nominal:12:180002": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180002": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180002": {
+      "objective": 165.5984375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3046875,
+      "failure_cost": 35.109375,
+      "unavailability_cost": 115.903125,
+      "failures": 2.340625
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180002": {
+      "objective": 331.5875,
+      "waiting_cost": 0.01875,
+      "waiting_violation": 0.0015625,
+      "terminal_pending": 0.30625,
+      "failure_cost": 67.171875,
+      "unavailability_cost": 235.06875,
+      "failures": 4.478125
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180003": {
+      "objective": 252.7546875,
+      "waiting_cost": 21.61875,
+      "waiting_violation": 0.465625,
+      "terminal_pending": 0.30625,
+      "failure_cost": 54.3515625,
+      "unavailability_cost": 165.75,
+      "failures": 3.6234375
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180003": {
+      "objective": 479.2296875,
+      "waiting_cost": 48.75,
+      "waiting_violation": 0.31875,
+      "terminal_pending": 0.30625,
+      "failure_cost": 91.21875,
+      "unavailability_cost": 316.040625,
+      "failures": 6.08125
+    },
+    "legacy:central_matching_ppo:specialized:12:180003": {
+      "objective": 164.575,
+      "waiting_cost": 0.24375,
+      "waiting_violation": 0.0203125,
+      "terminal_pending": 0.2265625,
+      "failure_cost": 33.7734375,
+      "unavailability_cost": 115.940625,
+      "failures": 2.2515625
+    },
+    "legacy:central_matching_ppo:specialized:24:180003": {
+      "objective": 326.1,
+      "waiting_cost": 0.43125,
+      "waiting_violation": 0.03125,
+      "terminal_pending": 0.2359375,
+      "failure_cost": 64.8046875,
+      "unavailability_cost": 231.496875,
+      "failures": 4.3203125
+    },
+    "legacy:central_matching_ppo:nominal:12:180003": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180003": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180003": {
+      "objective": 165.215625,
+      "waiting_cost": 0.375,
+      "waiting_violation": 0.0296875,
+      "terminal_pending": 0.30625,
+      "failure_cost": 35.4375,
+      "unavailability_cost": 114.91875,
+      "failures": 2.3625
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180003": {
+      "objective": 327.0765625,
+      "waiting_cost": 0.91875,
+      "waiting_violation": 0.0515625,
+      "terminal_pending": 0.3125,
+      "failure_cost": 66.234375,
+      "unavailability_cost": 230.709375,
+      "failures": 4.415625
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180004": {
+      "objective": 200.225,
+      "waiting_cost": 0.225,
+      "waiting_violation": 0.0125,
+      "terminal_pending": 0.2703125,
+      "failure_cost": 41.0859375,
+      "unavailability_cost": 146.596875,
+      "failures": 2.7390625
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180004": {
+      "objective": 401.63125,
+      "waiting_cost": 1.96875,
+      "waiting_violation": 0.0625,
+      "terminal_pending": 0.2640625,
+      "failure_cost": 78.7734375,
+      "unavailability_cost": 296.428125,
+      "failures": 5.2515625
+    },
+    "legacy:central_matching_ppo:specialized:12:180004": {
+      "objective": 164.340625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.38125,
+      "failure_cost": 35.6953125,
+      "unavailability_cost": 114.140625,
+      "failures": 2.3796875
+    },
+    "legacy:central_matching_ppo:specialized:24:180004": {
+      "objective": 326.94375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.378125,
+      "failure_cost": 67.9921875,
+      "unavailability_cost": 229.696875,
+      "failures": 4.5328125
+    },
+    "legacy:central_matching_ppo:nominal:12:180004": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180004": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180004": {
+      "objective": 165.33125,
+      "waiting_cost": 0.09375,
+      "waiting_violation": 0.0078125,
+      "terminal_pending": 0.3875,
+      "failure_cost": 36.375,
+      "unavailability_cost": 114.3375,
+      "failures": 2.425
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180004": {
+      "objective": 328.5515625,
+      "waiting_cost": 0.15,
+      "waiting_violation": 0.0125,
+      "terminal_pending": 0.3875,
+      "failure_cost": 68.7421875,
+      "unavailability_cost": 230.334375,
+      "failures": 4.5828125
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180005": {
+      "objective": 207.203125,
+      "waiting_cost": 2.5875,
+      "waiting_violation": 0.05625,
+      "terminal_pending": 0.3796875,
+      "failure_cost": 44.625,
+      "unavailability_cost": 147.928125,
+      "failures": 2.975
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180005": {
+      "objective": 399.85,
+      "waiting_cost": 2.98125,
+      "waiting_violation": 0.0265625,
+      "terminal_pending": 0.34375,
+      "failure_cost": 77.4375,
+      "unavailability_cost": 295.040625,
+      "failures": 5.1625
+    },
+    "legacy:central_matching_ppo:specialized:12:180005": {
+      "objective": 164.23125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3890625,
+      "failure_cost": 35.8828125,
+      "unavailability_cost": 113.8875,
+      "failures": 2.3921875
+    },
+    "legacy:central_matching_ppo:specialized:24:180005": {
+      "objective": 327.8265625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3734375,
+      "failure_cost": 69.046875,
+      "unavailability_cost": 229.575,
+      "failures": 4.603125
+    },
+    "legacy:central_matching_ppo:nominal:12:180005": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180005": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180005": {
+      "objective": 163.8640625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3828125,
+      "failure_cost": 35.671875,
+      "unavailability_cost": 113.7375,
+      "failures": 2.378125
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180005": {
+      "objective": 327.834375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3734375,
+      "failure_cost": 68.859375,
+      "unavailability_cost": 229.725,
+      "failures": 4.590625
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180006": {
+      "objective": 203.06875,
+      "waiting_cost": 2.5875,
+      "waiting_violation": 0.03125,
+      "terminal_pending": 0.29375,
+      "failure_cost": 41.484375,
+      "unavailability_cost": 146.7375,
+      "failures": 2.765625
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180006": {
+      "objective": 391.68125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.1984375,
+      "failure_cost": 72.3984375,
+      "unavailability_cost": 294.65625,
+      "failures": 4.8265625
+    },
+    "legacy:central_matching_ppo:specialized:12:180006": {
+      "objective": 163.8765625,
+      "waiting_cost": 0.31875,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.1953125,
+      "failure_cost": 32.2734375,
+      "unavailability_cost": 116.521875,
+      "failures": 2.1515625
+    },
+    "legacy:central_matching_ppo:specialized:24:180006": {
+      "objective": 326.71875,
+      "waiting_cost": 0.975,
+      "waiting_violation": 0.05625,
+      "terminal_pending": 0.221875,
+      "failure_cost": 63.9140625,
+      "unavailability_cost": 232.33125,
+      "failures": 4.2609375
+    },
+    "legacy:central_matching_ppo:nominal:12:180006": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180006": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180006": {
+      "objective": 165.5203125,
+      "waiting_cost": 0.35625,
+      "waiting_violation": 0.0234375,
+      "terminal_pending": 0.2890625,
+      "failure_cost": 34.0546875,
+      "unavailability_cost": 116.41875,
+      "failures": 2.2703125
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180006": {
+      "objective": 331.3671875,
+      "waiting_cost": 0.7875,
+      "waiting_violation": 0.05,
+      "terminal_pending": 0.3171875,
+      "failure_cost": 66.1640625,
+      "unavailability_cost": 234.759375,
+      "failures": 4.4109375
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180007": {
+      "objective": 212.2375,
+      "waiting_cost": 3.16875,
+      "waiting_violation": 0.1171875,
+      "terminal_pending": 0.49375,
+      "failure_cost": 47.3203125,
+      "unavailability_cost": 149.94375,
+      "failures": 3.1546875
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180007": {
+      "objective": 424.8875,
+      "waiting_cost": 14.23125,
+      "waiting_violation": 0.1984375,
+      "terminal_pending": 0.5015625,
+      "failure_cost": 81.375,
+      "unavailability_cost": 305.859375,
+      "failures": 5.425
+    },
+    "legacy:central_matching_ppo:specialized:12:180007": {
+      "objective": 163.8625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.375,
+      "failure_cost": 34.8984375,
+      "unavailability_cost": 114.46875,
+      "failures": 2.3265625
+    },
+    "legacy:central_matching_ppo:specialized:24:180007": {
+      "objective": 326.45625,
+      "waiting_cost": 0.01875,
+      "waiting_violation": 0.0015625,
+      "terminal_pending": 0.3828125,
+      "failure_cost": 67.1015625,
+      "unavailability_cost": 230.1,
+      "failures": 4.4734375
+    },
+    "legacy:central_matching_ppo:nominal:12:180007": {
+      "objective": 165.8625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.003125,
+      "failure_cost": 0.046875,
+      "unavailability_cost": 154.5375,
+      "failures": 0.003125
+    },
+    "legacy:central_matching_ppo:nominal:24:180007": {
+      "objective": 339.56875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.003125,
+      "failure_cost": 0.046875,
+      "unavailability_cost": 317.4,
+      "failures": 0.003125
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180007": {
+      "objective": 164.2375,
+      "waiting_cost": 0.075,
+      "waiting_violation": 0.00625,
+      "terminal_pending": 0.38125,
+      "failure_cost": 35.0625,
+      "unavailability_cost": 114.609375,
+      "failures": 2.3375
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180007": {
+      "objective": 327.978125,
+      "waiting_cost": 0.05625,
+      "waiting_violation": 0.0046875,
+      "terminal_pending": 0.4,
+      "failure_cost": 67.828125,
+      "unavailability_cost": 230.75625,
+      "failures": 4.521875
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180008": {
+      "objective": 216.4109375,
+      "waiting_cost": 0.75,
+      "waiting_violation": 0.046875,
+      "terminal_pending": 0.5140625,
+      "failure_cost": 58.828125,
+      "unavailability_cost": 144.3375,
+      "failures": 3.921875
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180008": {
+      "objective": 416.8515625,
+      "waiting_cost": 0.31875,
+      "waiting_violation": 0.0265625,
+      "terminal_pending": 0.3984375,
+      "failure_cost": 102.1875,
+      "unavailability_cost": 289.171875,
+      "failures": 6.8125
+    },
+    "legacy:central_matching_ppo:specialized:12:180008": {
+      "objective": 164.1125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3921875,
+      "failure_cost": 36.2578125,
+      "unavailability_cost": 113.371875,
+      "failures": 2.4171875
+    },
+    "legacy:central_matching_ppo:specialized:24:180008": {
+      "objective": 326.41875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3828125,
+      "failure_cost": 68.484375,
+      "unavailability_cost": 228.684375,
+      "failures": 4.565625
+    },
+    "legacy:central_matching_ppo:nominal:12:180008": {
+      "objective": 166.0453125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.375,
+      "unavailability_cost": 154.3875,
+      "failures": 0.025
+    },
+    "legacy:central_matching_ppo:nominal:24:180008": {
+      "objective": 342.4359375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 5.1796875,
+      "unavailability_cost": 314.896875,
+      "failures": 0.3453125
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180008": {
+      "objective": 167.3484375,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.403125,
+      "failure_cost": 39.3984375,
+      "unavailability_cost": 113.428125,
+      "failures": 2.6265625
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180008": {
+      "objective": 329.0359375,
+      "waiting_cost": 0.13125,
+      "waiting_violation": 0.0109375,
+      "terminal_pending": 0.396875,
+      "failure_cost": 70.59375,
+      "unavailability_cost": 229.021875,
+      "failures": 4.70625
+    },
+    "legacy:central_matching_ppo:homogeneous:12:180009": {
+      "objective": 264.0109375,
+      "waiting_cost": 29.98125,
+      "waiting_violation": 0.3796875,
+      "terminal_pending": 0.3203125,
+      "failure_cost": 57.1640625,
+      "unavailability_cost": 165.69375,
+      "failures": 3.8109375
+    },
+    "legacy:central_matching_ppo:homogeneous:24:180009": {
+      "objective": 445.1078125,
+      "waiting_cost": 22.63125,
+      "waiting_violation": 0.090625,
+      "terminal_pending": 0.221875,
+      "failure_cost": 99.0703125,
+      "unavailability_cost": 298.48125,
+      "failures": 6.6046875
+    },
+    "legacy:central_matching_ppo:specialized:12:180009": {
+      "objective": 165.2625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.18125,
+      "failure_cost": 34.359375,
+      "unavailability_cost": 116.240625,
+      "failures": 2.290625
+    },
+    "legacy:central_matching_ppo:specialized:24:180009": {
+      "objective": 327.903125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.215625,
+      "failure_cost": 67.265625,
+      "unavailability_cost": 231.24375,
+      "failures": 4.484375
+    },
+    "legacy:central_matching_ppo:nominal:12:180009": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:nominal:24:180009": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:central_matching_ppo:skill_mask:12:180009": {
+      "objective": 166.26875,
+      "waiting_cost": 0.075,
+      "waiting_violation": 0.00625,
+      "terminal_pending": 0.296875,
+      "failure_cost": 36.75,
+      "unavailability_cost": 114.91875,
+      "failures": 2.45
+    },
+    "legacy:central_matching_ppo:skill_mask:24:180009": {
+      "objective": 328.75625,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.309375,
+      "failure_cost": 69.1171875,
+      "unavailability_cost": 230.2875,
+      "failures": 4.6078125
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180000": {
+      "objective": 216.0421875,
+      "waiting_cost": 1.3875,
+      "waiting_violation": 0.10625,
+      "terminal_pending": 0.6359375,
+      "failure_cost": 45.75,
+      "unavailability_cost": 157.85625,
+      "failures": 3.05
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180000": {
+      "objective": 431.171875,
+      "waiting_cost": 1.70625,
+      "waiting_violation": 0.128125,
+      "terminal_pending": 0.7015625,
+      "failure_cost": 88.40625,
+      "unavailability_cost": 318.7125,
+      "failures": 5.89375
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180000": {
+      "objective": 173.8078125,
+      "waiting_cost": 0.7125,
+      "waiting_violation": 0.0515625,
+      "terminal_pending": 0.34375,
+      "failure_cost": 42.2109375,
+      "unavailability_cost": 116.371875,
+      "failures": 2.8140625
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180000": {
+      "objective": 345.9015625,
+      "waiting_cost": 2.15625,
+      "waiting_violation": 0.1484375,
+      "terminal_pending": 0.45625,
+      "failure_cost": 73.0546875,
+      "unavailability_cost": 242.175,
+      "failures": 4.8703125
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180000": {
+      "objective": 176.7,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 9.75,
+      "unavailability_cost": 155.428125,
+      "failures": 0.65
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180000": {
+      "objective": 361.2171875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 22.9921875,
+      "unavailability_cost": 315.534375,
+      "failures": 1.5328125
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180000": {
+      "objective": 182.6921875,
+      "waiting_cost": 10.14375,
+      "waiting_violation": 0.2546875,
+      "terminal_pending": 0.54375,
+      "failure_cost": 34.96875,
+      "unavailability_cost": 124.2375,
+      "failures": 2.33125
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180000": {
+      "objective": 383.8765625,
+      "waiting_cost": 44.4,
+      "waiting_violation": 0.3859375,
+      "terminal_pending": 0.525,
+      "failure_cost": 53.1328125,
+      "unavailability_cost": 260.08125,
+      "failures": 3.5421875
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180001": {
+      "objective": 206.7265625,
+      "waiting_cost": 2.0625,
+      "waiting_violation": 0.153125,
+      "terminal_pending": 0.478125,
+      "failure_cost": 38.109375,
+      "unavailability_cost": 155.34375,
+      "failures": 2.540625
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180001": {
+      "objective": 415.515625,
+      "waiting_cost": 5.49375,
+      "waiting_violation": 0.3609375,
+      "terminal_pending": 0.6390625,
+      "failure_cost": 71.3203125,
+      "unavailability_cost": 316.528125,
+      "failures": 4.7546875
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180001": {
+      "objective": 171.3171875,
+      "waiting_cost": 0.525,
+      "waiting_violation": 0.0375,
+      "terminal_pending": 0.425,
+      "failure_cost": 40.265625,
+      "unavailability_cost": 116.240625,
+      "failures": 2.684375
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180001": {
+      "objective": 345.2828125,
+      "waiting_cost": 0.91875,
+      "waiting_violation": 0.0625,
+      "terminal_pending": 0.4546875,
+      "failure_cost": 75.328125,
+      "unavailability_cost": 240.290625,
+      "failures": 5.021875
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180001": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180001": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180001": {
+      "objective": 176.4234375,
+      "waiting_cost": 6.54375,
+      "waiting_violation": 0.14375,
+      "terminal_pending": 0.534375,
+      "failure_cost": 35.1328125,
+      "unavailability_cost": 121.153125,
+      "failures": 2.3421875
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180001": {
+      "objective": 366.496875,
+      "waiting_cost": 28.96875,
+      "waiting_violation": 0.2046875,
+      "terminal_pending": 0.5390625,
+      "failure_cost": 59.71875,
+      "unavailability_cost": 250.603125,
+      "failures": 3.98125
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180002": {
+      "objective": 206.075,
+      "waiting_cost": 0.675,
+      "waiting_violation": 0.05625,
+      "terminal_pending": 0.453125,
+      "failure_cost": 41.203125,
+      "unavailability_cost": 152.728125,
+      "failures": 2.746875
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180002": {
+      "objective": 414.2828125,
+      "waiting_cost": 2.5125,
+      "waiting_violation": 0.196875,
+      "terminal_pending": 0.584375,
+      "failure_cost": 76.40625,
+      "unavailability_cost": 312.646875,
+      "failures": 5.09375
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180002": {
+      "objective": 173.7828125,
+      "waiting_cost": 0.5625,
+      "waiting_violation": 0.040625,
+      "terminal_pending": 0.35625,
+      "failure_cost": 42.46875,
+      "unavailability_cost": 116.23125,
+      "failures": 2.83125
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180002": {
+      "objective": 345.7578125,
+      "waiting_cost": 1.7625,
+      "waiting_violation": 0.1328125,
+      "terminal_pending": 0.43125,
+      "failure_cost": 73.3359375,
+      "unavailability_cost": 242.053125,
+      "failures": 4.8890625
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180002": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180002": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180002": {
+      "objective": 180.2421875,
+      "waiting_cost": 9.58125,
+      "waiting_violation": 0.18125,
+      "terminal_pending": 0.515625,
+      "failure_cost": 35.953125,
+      "unavailability_cost": 121.0125,
+      "failures": 2.396875
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180002": {
+      "objective": 378.5296875,
+      "waiting_cost": 41.9625,
+      "waiting_violation": 0.2640625,
+      "terminal_pending": 0.5140625,
+      "failure_cost": 57.8671875,
+      "unavailability_cost": 251.55,
+      "failures": 3.8578125
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180003": {
+      "objective": 201.584375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.371875,
+      "failure_cost": 42.5390625,
+      "unavailability_cost": 146.8125,
+      "failures": 2.8359375
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180003": {
+      "objective": 398.34375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.48125,
+      "failure_cost": 77.6953125,
+      "unavailability_cost": 296.465625,
+      "failures": 5.1796875
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180003": {
+      "objective": 173.8796875,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.3765625,
+      "failure_cost": 43.1953125,
+      "unavailability_cost": 116.053125,
+      "failures": 2.8796875
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180003": {
+      "objective": 345.8125,
+      "waiting_cost": 0.3,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.4390625,
+      "failure_cost": 75.2109375,
+      "unavailability_cost": 241.603125,
+      "failures": 5.0140625
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180003": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180003": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180003": {
+      "objective": 182.2921875,
+      "waiting_cost": 10.36875,
+      "waiting_violation": 0.196875,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 39.8203125,
+      "unavailability_cost": 118.03125,
+      "failures": 2.6546875
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180003": {
+      "objective": 389.9546875,
+      "waiting_cost": 51.9,
+      "waiting_violation": 0.3265625,
+      "terminal_pending": 0.5140625,
+      "failure_cost": 60.7734375,
+      "unavailability_cost": 249.946875,
+      "failures": 4.0515625
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180004": {
+      "objective": 201.565625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.265625,
+      "failure_cost": 44.6953125,
+      "unavailability_cost": 144.13125,
+      "failures": 2.9796875
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180004": {
+      "objective": 397.43125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.2640625,
+      "failure_cost": 80.6953125,
+      "unavailability_cost": 291.609375,
+      "failures": 5.3796875
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180004": {
+      "objective": 174.4703125,
+      "waiting_cost": 0.05625,
+      "waiting_violation": 0.0046875,
+      "terminal_pending": 0.38125,
+      "failure_cost": 44.296875,
+      "unavailability_cost": 115.5,
+      "failures": 2.953125
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180004": {
+      "objective": 346.9765625,
+      "waiting_cost": 0.075,
+      "waiting_violation": 0.00625,
+      "terminal_pending": 0.3515625,
+      "failure_cost": 77.6015625,
+      "unavailability_cost": 240.24375,
+      "failures": 5.1734375
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180004": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180004": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180004": {
+      "objective": 182.48125,
+      "waiting_cost": 10.36875,
+      "waiting_violation": 0.196875,
+      "terminal_pending": 0.4859375,
+      "failure_cost": 40.125,
+      "unavailability_cost": 117.909375,
+      "failures": 2.675
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180004": {
+      "objective": 389.9703125,
+      "waiting_cost": 51.91875,
+      "waiting_violation": 0.321875,
+      "terminal_pending": 0.490625,
+      "failure_cost": 61.21875,
+      "unavailability_cost": 249.4125,
+      "failures": 4.08125
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180005": {
+      "objective": 204.35625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3796875,
+      "failure_cost": 43.7578125,
+      "unavailability_cost": 148.59375,
+      "failures": 2.9171875
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180005": {
+      "objective": 406.909375,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.521875,
+      "failure_cost": 81.6328125,
+      "unavailability_cost": 301.434375,
+      "failures": 5.4421875
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180005": {
+      "objective": 173.7875,
+      "waiting_cost": 0.54375,
+      "waiting_violation": 0.040625,
+      "terminal_pending": 0.35,
+      "failure_cost": 42.4921875,
+      "unavailability_cost": 116.240625,
+      "failures": 2.8328125
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180005": {
+      "objective": 345.909375,
+      "waiting_cost": 1.74375,
+      "waiting_violation": 0.125,
+      "terminal_pending": 0.459375,
+      "failure_cost": 73.5234375,
+      "unavailability_cost": 242.1,
+      "failures": 4.9015625
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180005": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180005": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180005": {
+      "objective": 182.096875,
+      "waiting_cost": 10.4625,
+      "waiting_violation": 0.2046875,
+      "terminal_pending": 0.459375,
+      "failure_cost": 39.5390625,
+      "unavailability_cost": 118.021875,
+      "failures": 2.6359375
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180005": {
+      "objective": 390.096875,
+      "waiting_cost": 52.2,
+      "waiting_violation": 0.3515625,
+      "terminal_pending": 0.5171875,
+      "failure_cost": 60.3984375,
+      "unavailability_cost": 250.190625,
+      "failures": 4.0265625
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180006": {
+      "objective": 211.515625,
+      "waiting_cost": 3.2625,
+      "waiting_violation": 0.2171875,
+      "terminal_pending": 0.6734375,
+      "failure_cost": 38.8359375,
+      "unavailability_cost": 158.803125,
+      "failures": 2.5890625
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180006": {
+      "objective": 423.7609375,
+      "waiting_cost": 7.425,
+      "waiting_violation": 0.471875,
+      "terminal_pending": 0.7171875,
+      "failure_cost": 69.5625,
+      "unavailability_cost": 325.415625,
+      "failures": 4.6375
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180006": {
+      "objective": 172.84375,
+      "waiting_cost": 1.59375,
+      "waiting_violation": 0.1140625,
+      "terminal_pending": 0.5015625,
+      "failure_cost": 36.0,
+      "unavailability_cost": 121.55625,
+      "failures": 2.4
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180006": {
+      "objective": 343.7,
+      "waiting_cost": 4.25625,
+      "waiting_violation": 0.225,
+      "terminal_pending": 0.46875,
+      "failure_cost": 62.765625,
+      "unavailability_cost": 249.0375,
+      "failures": 4.184375
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180006": {
+      "objective": 176.2921875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.190625,
+      "failure_cost": 11.15625,
+      "unavailability_cost": 154.040625,
+      "failures": 0.74375
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180006": {
+      "objective": 356.9515625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.1859375,
+      "failure_cost": 20.0859375,
+      "unavailability_cost": 314.971875,
+      "failures": 1.3390625
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180006": {
+      "objective": 177.3015625,
+      "waiting_cost": 6.43125,
+      "waiting_violation": 0.1609375,
+      "terminal_pending": 0.553125,
+      "failure_cost": 34.0078125,
+      "unavailability_cost": 123.515625,
+      "failures": 2.2671875
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180006": {
+      "objective": 365.3515625,
+      "waiting_cost": 29.1375,
+      "waiting_violation": 0.26875,
+      "terminal_pending": 0.55,
+      "failure_cost": 55.1484375,
+      "unavailability_cost": 254.334375,
+      "failures": 3.6765625
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180007": {
+      "objective": 208.2453125,
+      "waiting_cost": 2.25,
+      "waiting_violation": 0.165625,
+      "terminal_pending": 0.5390625,
+      "failure_cost": 36.9140625,
+      "unavailability_cost": 158.19375,
+      "failures": 2.4609375
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180007": {
+      "objective": 417.475,
+      "waiting_cost": 6.69375,
+      "waiting_violation": 0.4078125,
+      "terminal_pending": 0.659375,
+      "failure_cost": 65.953125,
+      "unavailability_cost": 323.34375,
+      "failures": 4.396875
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180007": {
+      "objective": 171.8234375,
+      "waiting_cost": 0.75,
+      "waiting_violation": 0.0515625,
+      "terminal_pending": 0.4171875,
+      "failure_cost": 39.8671875,
+      "unavailability_cost": 116.9625,
+      "failures": 2.6578125
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180007": {
+      "objective": 342.9625,
+      "waiting_cost": 2.34375,
+      "waiting_violation": 0.146875,
+      "terminal_pending": 0.4234375,
+      "failure_cost": 71.859375,
+      "unavailability_cost": 240.178125,
+      "failures": 4.790625
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180007": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180007": {
+      "objective": 347.615625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 8.296875,
+      "unavailability_cost": 317.19375,
+      "failures": 0.553125
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180007": {
+      "objective": 176.0,
+      "waiting_cost": 5.94375,
+      "waiting_violation": 0.128125,
+      "terminal_pending": 0.5265625,
+      "failure_cost": 35.53125,
+      "unavailability_cost": 120.871875,
+      "failures": 2.36875
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180007": {
+      "objective": 365.64375,
+      "waiting_cost": 29.4375,
+      "waiting_violation": 0.2515625,
+      "terminal_pending": 0.4953125,
+      "failure_cost": 58.40625,
+      "unavailability_cost": 250.59375,
+      "failures": 3.89375
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180008": {
+      "objective": 204.4140625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.453125,
+      "failure_cost": 44.3671875,
+      "unavailability_cost": 148.040625,
+      "failures": 2.9578125
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180008": {
+      "objective": 405.79375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.490625,
+      "failure_cost": 81.421875,
+      "unavailability_cost": 300.43125,
+      "failures": 5.428125
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180008": {
+      "objective": 173.90625,
+      "waiting_cost": 0.43125,
+      "waiting_violation": 0.0296875,
+      "terminal_pending": 0.3625,
+      "failure_cost": 42.6796875,
+      "unavailability_cost": 116.278125,
+      "failures": 2.8453125
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180008": {
+      "objective": 345.9203125,
+      "waiting_cost": 1.3875,
+      "waiting_violation": 0.109375,
+      "terminal_pending": 0.4515625,
+      "failure_cost": 73.8984375,
+      "unavailability_cost": 242.053125,
+      "failures": 4.9265625
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180008": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180008": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180008": {
+      "objective": 182.175,
+      "waiting_cost": 10.44375,
+      "waiting_violation": 0.203125,
+      "terminal_pending": 0.4609375,
+      "failure_cost": 39.5390625,
+      "unavailability_cost": 118.115625,
+      "failures": 2.6359375
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180008": {
+      "objective": 389.9796875,
+      "waiting_cost": 52.2,
+      "waiting_violation": 0.3515625,
+      "terminal_pending": 0.5203125,
+      "failure_cost": 60.3515625,
+      "unavailability_cost": 250.134375,
+      "failures": 4.0234375
+    },
+    "legacy:cooperative_local_ppo:homogeneous:12:180009": {
+      "objective": 203.3953125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3296875,
+      "failure_cost": 43.078125,
+      "unavailability_cost": 148.209375,
+      "failures": 2.871875
+    },
+    "legacy:cooperative_local_ppo:homogeneous:24:180009": {
+      "objective": 403.409375,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.434375,
+      "failure_cost": 78.890625,
+      "unavailability_cost": 300.5625,
+      "failures": 5.259375
+    },
+    "legacy:cooperative_local_ppo:specialized:12:180009": {
+      "objective": 173.8671875,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.375,
+      "failure_cost": 43.2421875,
+      "unavailability_cost": 115.9875,
+      "failures": 2.8828125
+    },
+    "legacy:cooperative_local_ppo:specialized:24:180009": {
+      "objective": 345.8859375,
+      "waiting_cost": 0.3,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.4265625,
+      "failure_cost": 75.375,
+      "unavailability_cost": 241.48125,
+      "failures": 5.025
+    },
+    "legacy:cooperative_local_ppo:nominal:12:180009": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:nominal:24:180009": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_local_ppo:skill_mask:12:180009": {
+      "objective": 182.284375,
+      "waiting_cost": 10.36875,
+      "waiting_violation": 0.196875,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 39.8203125,
+      "unavailability_cost": 118.021875,
+      "failures": 2.6546875
+    },
+    "legacy:cooperative_local_ppo:skill_mask:24:180009": {
+      "objective": 389.8796875,
+      "waiting_cost": 51.8625,
+      "waiting_violation": 0.3234375,
+      "terminal_pending": 0.5046875,
+      "failure_cost": 60.75,
+      "unavailability_cost": 249.91875,
+      "failures": 4.05
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180000": {
+      "objective": 201.375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.30625,
+      "failure_cost": 41.8125,
+      "unavailability_cost": 147.309375,
+      "failures": 2.7875
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180000": {
+      "objective": 406.6671875,
+      "waiting_cost": 0.375,
+      "waiting_violation": 0.03125,
+      "terminal_pending": 0.4328125,
+      "failure_cost": 79.546875,
+      "unavailability_cost": 302.85,
+      "failures": 5.303125
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180000": {
+      "objective": 173.7234375,
+      "waiting_cost": 0.28125,
+      "waiting_violation": 0.0234375,
+      "terminal_pending": 0.3703125,
+      "failure_cost": 42.8203125,
+      "unavailability_cost": 116.090625,
+      "failures": 2.8546875
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180000": {
+      "objective": 345.4859375,
+      "waiting_cost": 0.99375,
+      "waiting_violation": 0.071875,
+      "terminal_pending": 0.4546875,
+      "failure_cost": 74.2734375,
+      "unavailability_cost": 241.584375,
+      "failures": 4.9515625
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180000": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180000": {
+      "objective": 341.6546875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 1.9921875,
+      "unavailability_cost": 317.409375,
+      "failures": 0.1328125
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180000": {
+      "objective": 182.13125,
+      "waiting_cost": 10.4625,
+      "waiting_violation": 0.2046875,
+      "terminal_pending": 0.4609375,
+      "failure_cost": 39.515625,
+      "unavailability_cost": 118.06875,
+      "failures": 2.634375
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180000": {
+      "objective": 389.8453125,
+      "waiting_cost": 52.125,
+      "waiting_violation": 0.34375,
+      "terminal_pending": 0.515625,
+      "failure_cost": 60.4453125,
+      "unavailability_cost": 249.95625,
+      "failures": 4.0296875
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180001": {
+      "objective": 203.5359375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.378125,
+      "failure_cost": 44.25,
+      "unavailability_cost": 147.065625,
+      "failures": 2.95
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180001": {
+      "objective": 403.696875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.44375,
+      "failure_cost": 80.765625,
+      "unavailability_cost": 298.846875,
+      "failures": 5.384375
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180001": {
+      "objective": 174.1796875,
+      "waiting_cost": 0.15,
+      "waiting_violation": 0.0125,
+      "terminal_pending": 0.375,
+      "failure_cost": 42.9140625,
+      "unavailability_cost": 116.578125,
+      "failures": 2.8609375
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180001": {
+      "objective": 346.365625,
+      "waiting_cost": 0.375,
+      "waiting_violation": 0.03125,
+      "terminal_pending": 0.378125,
+      "failure_cost": 74.8359375,
+      "unavailability_cost": 242.334375,
+      "failures": 4.9890625
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180001": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180001": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180001": {
+      "objective": 181.3828125,
+      "waiting_cost": 10.0125,
+      "waiting_violation": 0.209375,
+      "terminal_pending": 0.5296875,
+      "failure_cost": 38.390625,
+      "unavailability_cost": 119.11875,
+      "failures": 2.559375
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180001": {
+      "objective": 381.5171875,
+      "waiting_cost": 44.5125,
+      "waiting_violation": 0.31875,
+      "terminal_pending": 0.521875,
+      "failure_cost": 61.59375,
+      "unavailability_cost": 247.93125,
+      "failures": 4.10625
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180002": {
+      "objective": 206.6828125,
+      "waiting_cost": 0.6375,
+      "waiting_violation": 0.053125,
+      "terminal_pending": 0.4921875,
+      "failure_cost": 40.1015625,
+      "unavailability_cost": 154.640625,
+      "failures": 2.6734375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180002": {
+      "objective": 414.990625,
+      "waiting_cost": 2.4375,
+      "waiting_violation": 0.1828125,
+      "terminal_pending": 0.6765625,
+      "failure_cost": 74.8828125,
+      "unavailability_cost": 315.365625,
+      "failures": 4.9921875
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180002": {
+      "objective": 173.071875,
+      "waiting_cost": 0.50625,
+      "waiting_violation": 0.034375,
+      "terminal_pending": 0.3640625,
+      "failure_cost": 42.5390625,
+      "unavailability_cost": 115.48125,
+      "failures": 2.8359375
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180002": {
+      "objective": 343.6125,
+      "waiting_cost": 1.44375,
+      "waiting_violation": 0.0953125,
+      "terminal_pending": 0.41875,
+      "failure_cost": 76.1015625,
+      "unavailability_cost": 237.15,
+      "failures": 5.0734375
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180002": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180002": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180002": {
+      "objective": 180.19375,
+      "waiting_cost": 9.09375,
+      "waiting_violation": 0.20625,
+      "terminal_pending": 0.51875,
+      "failure_cost": 36.3984375,
+      "unavailability_cost": 121.021875,
+      "failures": 2.4265625
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180002": {
+      "objective": 371.93125,
+      "waiting_cost": 35.2875,
+      "waiting_violation": 0.2859375,
+      "terminal_pending": 0.496875,
+      "failure_cost": 58.640625,
+      "unavailability_cost": 250.790625,
+      "failures": 3.909375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180003": {
+      "objective": 203.5359375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.38125,
+      "failure_cost": 45.8671875,
+      "unavailability_cost": 145.18125,
+      "failures": 3.0578125
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180003": {
+      "objective": 400.2640625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.40625,
+      "failure_cost": 82.9921875,
+      "unavailability_cost": 292.434375,
+      "failures": 5.5328125
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180003": {
+      "objective": 173.8375,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.3765625,
+      "failure_cost": 43.21875,
+      "unavailability_cost": 115.978125,
+      "failures": 2.88125
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180003": {
+      "objective": 345.9734375,
+      "waiting_cost": 0.3,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.4203125,
+      "failure_cost": 75.5625,
+      "unavailability_cost": 241.35,
+      "failures": 5.0375
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180003": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180003": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180003": {
+      "objective": 182.04375,
+      "waiting_cost": 10.5,
+      "waiting_violation": 0.2078125,
+      "terminal_pending": 0.4546875,
+      "failure_cost": 39.3984375,
+      "unavailability_cost": 118.06875,
+      "failures": 2.6265625
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180003": {
+      "objective": 390.0859375,
+      "waiting_cost": 52.2,
+      "waiting_violation": 0.3515625,
+      "terminal_pending": 0.521875,
+      "failure_cost": 60.3515625,
+      "unavailability_cost": 250.2375,
+      "failures": 4.0234375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180004": {
+      "objective": 204.0046875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.421875,
+      "failure_cost": 44.8828125,
+      "unavailability_cost": 147.0,
+      "failures": 2.9921875
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180004": {
+      "objective": 410.453125,
+      "waiting_cost": 0.15,
+      "waiting_violation": 0.0125,
+      "terminal_pending": 0.4671875,
+      "failure_cost": 85.1484375,
+      "unavailability_cost": 301.115625,
+      "failures": 5.6765625
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180004": {
+      "objective": 173.9015625,
+      "waiting_cost": 0.6375,
+      "waiting_violation": 0.05,
+      "terminal_pending": 0.35625,
+      "failure_cost": 42.3984375,
+      "unavailability_cost": 116.34375,
+      "failures": 2.8265625
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180004": {
+      "objective": 346.0390625,
+      "waiting_cost": 1.9125,
+      "waiting_violation": 0.1390625,
+      "terminal_pending": 0.4578125,
+      "failure_cost": 73.40625,
+      "unavailability_cost": 242.165625,
+      "failures": 4.89375
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180004": {
+      "objective": 170.184375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.15,
+      "failure_cost": 5.6484375,
+      "unavailability_cost": 153.31875,
+      "failures": 0.3765625
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180004": {
+      "objective": 354.56875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.08125,
+      "failure_cost": 19.4296875,
+      "unavailability_cost": 312.646875,
+      "failures": 1.2953125
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180004": {
+      "objective": 182.9859375,
+      "waiting_cost": 11.7,
+      "waiting_violation": 0.2734375,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 39.0234375,
+      "unavailability_cost": 118.25625,
+      "failures": 2.6015625
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180004": {
+      "objective": 391.940625,
+      "waiting_cost": 55.14375,
+      "waiting_violation": 0.4359375,
+      "terminal_pending": 0.50625,
+      "failure_cost": 59.15625,
+      "unavailability_cost": 250.415625,
+      "failures": 3.94375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180005": {
+      "objective": 205.653125,
+      "waiting_cost": 1.81875,
+      "waiting_violation": 0.1359375,
+      "terminal_pending": 0.4921875,
+      "failure_cost": 36.515625,
+      "unavailability_cost": 156.215625,
+      "failures": 2.434375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180005": {
+      "objective": 411.1796875,
+      "waiting_cost": 4.74375,
+      "waiting_violation": 0.3375,
+      "terminal_pending": 0.628125,
+      "failure_cost": 69.421875,
+      "unavailability_cost": 314.709375,
+      "failures": 4.628125
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180005": {
+      "objective": 170.73125,
+      "waiting_cost": 0.375,
+      "waiting_violation": 0.028125,
+      "terminal_pending": 0.38125,
+      "failure_cost": 35.8828125,
+      "unavailability_cost": 120.4125,
+      "failures": 2.3921875
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180005": {
+      "objective": 340.859375,
+      "waiting_cost": 0.46875,
+      "waiting_violation": 0.0375,
+      "terminal_pending": 0.4265625,
+      "failure_cost": 68.484375,
+      "unavailability_cost": 243.403125,
+      "failures": 4.565625
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180005": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180005": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180005": {
+      "objective": 175.36875,
+      "waiting_cost": 6.50625,
+      "waiting_violation": 0.1484375,
+      "terminal_pending": 0.48125,
+      "failure_cost": 34.078125,
+      "unavailability_cost": 121.134375,
+      "failures": 2.271875
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180005": {
+      "objective": 365.7765625,
+      "waiting_cost": 31.275,
+      "waiting_violation": 0.24375,
+      "terminal_pending": 0.5046875,
+      "failure_cost": 59.90625,
+      "unavailability_cost": 247.06875,
+      "failures": 3.99375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180006": {
+      "objective": 203.2140625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.365625,
+      "failure_cost": 43.03125,
+      "unavailability_cost": 148.0875,
+      "failures": 2.86875
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180006": {
+      "objective": 403.46875,
+      "waiting_cost": 0.075,
+      "waiting_violation": 0.00625,
+      "terminal_pending": 0.4546875,
+      "failure_cost": 78.5859375,
+      "unavailability_cost": 300.928125,
+      "failures": 5.2390625
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180006": {
+      "objective": 174.74375,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.3109375,
+      "failure_cost": 39.6328125,
+      "unavailability_cost": 120.496875,
+      "failures": 2.6421875
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180006": {
+      "objective": 346.6984375,
+      "waiting_cost": 0.09375,
+      "waiting_violation": 0.0078125,
+      "terminal_pending": 0.2890625,
+      "failure_cost": 68.015625,
+      "unavailability_cost": 249.853125,
+      "failures": 4.534375
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180006": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180006": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180006": {
+      "objective": 180.94375,
+      "waiting_cost": 9.91875,
+      "waiting_violation": 0.190625,
+      "terminal_pending": 0.478125,
+      "failure_cost": 39.1640625,
+      "unavailability_cost": 117.815625,
+      "failures": 2.6109375
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180006": {
+      "objective": 382.7703125,
+      "waiting_cost": 45.58125,
+      "waiting_violation": 0.3046875,
+      "terminal_pending": 0.509375,
+      "failure_cost": 63.3984375,
+      "unavailability_cost": 246.159375,
+      "failures": 4.2265625
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180007": {
+      "objective": 203.6859375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3375,
+      "failure_cost": 43.078125,
+      "unavailability_cost": 148.5375,
+      "failures": 2.871875
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180007": {
+      "objective": 405.840625,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.471875,
+      "failure_cost": 80.578125,
+      "unavailability_cost": 301.3875,
+      "failures": 5.371875
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180007": {
+      "objective": 173.7578125,
+      "waiting_cost": 0.525,
+      "waiting_violation": 0.0375,
+      "terminal_pending": 0.3640625,
+      "failure_cost": 42.515625,
+      "unavailability_cost": 116.19375,
+      "failures": 2.834375
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180007": {
+      "objective": 345.5546875,
+      "waiting_cost": 1.8375,
+      "waiting_violation": 0.1328125,
+      "terminal_pending": 0.434375,
+      "failure_cost": 73.3125,
+      "unavailability_cost": 241.8,
+      "failures": 4.8875
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180007": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180007": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180007": {
+      "objective": 182.146875,
+      "waiting_cost": 10.3875,
+      "waiting_violation": 0.1984375,
+      "terminal_pending": 0.4640625,
+      "failure_cost": 39.65625,
+      "unavailability_cost": 118.021875,
+      "failures": 2.64375
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180007": {
+      "objective": 389.921875,
+      "waiting_cost": 52.0875,
+      "waiting_violation": 0.3421875,
+      "terminal_pending": 0.51875,
+      "failure_cost": 60.5625,
+      "unavailability_cost": 249.946875,
+      "failures": 4.0375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180008": {
+      "objective": 200.9203125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.28125,
+      "failure_cost": 43.2890625,
+      "unavailability_cost": 145.021875,
+      "failures": 2.8859375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180008": {
+      "objective": 399.50625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3234375,
+      "failure_cost": 78.65625,
+      "unavailability_cost": 296.30625,
+      "failures": 5.24375
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180008": {
+      "objective": 173.8625,
+      "waiting_cost": 0.35625,
+      "waiting_violation": 0.0265625,
+      "terminal_pending": 0.3671875,
+      "failure_cost": 42.84375,
+      "unavailability_cost": 116.11875,
+      "failures": 2.85625
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180008": {
+      "objective": 345.51875,
+      "waiting_cost": 1.06875,
+      "waiting_violation": 0.08125,
+      "terminal_pending": 0.45,
+      "failure_cost": 74.25,
+      "unavailability_cost": 241.575,
+      "failures": 4.95
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180008": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180008": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180008": {
+      "objective": 182.10625,
+      "waiting_cost": 10.44375,
+      "waiting_violation": 0.203125,
+      "terminal_pending": 0.4609375,
+      "failure_cost": 39.5390625,
+      "unavailability_cost": 118.040625,
+      "failures": 2.6359375
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180008": {
+      "objective": 389.940625,
+      "waiting_cost": 52.03125,
+      "waiting_violation": 0.3375,
+      "terminal_pending": 0.515625,
+      "failure_cost": 60.5390625,
+      "unavailability_cost": 250.05,
+      "failures": 4.0359375
+    },
+    "legacy:cooperative_full_ppo:homogeneous:12:180009": {
+      "objective": 202.0390625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3125,
+      "failure_cost": 42.0703125,
+      "unavailability_cost": 147.7875,
+      "failures": 2.8046875
+    },
+    "legacy:cooperative_full_ppo:homogeneous:24:180009": {
+      "objective": 402.2578125,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.403125,
+      "failure_cost": 78.2109375,
+      "unavailability_cost": 299.94375,
+      "failures": 5.2140625
+    },
+    "legacy:cooperative_full_ppo:specialized:12:180009": {
+      "objective": 173.825,
+      "waiting_cost": 0.6,
+      "waiting_violation": 0.0421875,
+      "terminal_pending": 0.35625,
+      "failure_cost": 42.421875,
+      "unavailability_cost": 116.2875,
+      "failures": 2.828125
+    },
+    "legacy:cooperative_full_ppo:specialized:24:180009": {
+      "objective": 345.7015625,
+      "waiting_cost": 1.8375,
+      "waiting_violation": 0.134375,
+      "terminal_pending": 0.4328125,
+      "failure_cost": 73.3359375,
+      "unavailability_cost": 241.93125,
+      "failures": 4.8890625
+    },
+    "legacy:cooperative_full_ppo:nominal:12:180009": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:nominal:24:180009": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "legacy:cooperative_full_ppo:skill_mask:12:180009": {
+      "objective": 182.26875,
+      "waiting_cost": 10.3875,
+      "waiting_violation": 0.1984375,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 39.796875,
+      "unavailability_cost": 118.0125,
+      "failures": 2.653125
+    },
+    "legacy:cooperative_full_ppo:skill_mask:24:180009": {
+      "objective": 389.8578125,
+      "waiting_cost": 51.99375,
+      "waiting_violation": 0.334375,
+      "terminal_pending": 0.5109375,
+      "failure_cost": 60.703125,
+      "unavailability_cost": 249.825,
+      "failures": 4.046875
+    },
+    "covered:central_matching_ppo:homogeneous:12:180000": {
+      "objective": 208.2734375,
+      "waiting_cost": 2.00625,
+      "waiting_violation": 0.096875,
+      "terminal_pending": 0.3328125,
+      "failure_cost": 43.96875,
+      "unavailability_cost": 150.35625,
+      "failures": 2.93125
+    },
+    "covered:central_matching_ppo:homogeneous:24:180000": {
+      "objective": 408.840625,
+      "waiting_cost": 1.85625,
+      "waiting_violation": 0.0578125,
+      "terminal_pending": 0.4515625,
+      "failure_cost": 85.8984375,
+      "unavailability_cost": 296.83125,
+      "failures": 5.7265625
+    },
+    "covered:central_matching_ppo:specialized:12:180000": {
+      "objective": 165.8875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.38125,
+      "failure_cost": 37.1953125,
+      "unavailability_cost": 114.31875,
+      "failures": 2.4796875
+    },
+    "covered:central_matching_ppo:specialized:24:180000": {
+      "objective": 328.178125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.371875,
+      "failure_cost": 69.2578125,
+      "unavailability_cost": 229.809375,
+      "failures": 4.6171875
+    },
+    "covered:central_matching_ppo:nominal:12:180000": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180000": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180000": {
+      "objective": 166.478125,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.3890625,
+      "failure_cost": 37.640625,
+      "unavailability_cost": 114.346875,
+      "failures": 2.509375
+    },
+    "covered:central_matching_ppo:skill_mask:24:180000": {
+      "objective": 328.8734375,
+      "waiting_cost": 0.075,
+      "waiting_violation": 0.00625,
+      "terminal_pending": 0.3703125,
+      "failure_cost": 69.7265625,
+      "unavailability_cost": 229.940625,
+      "failures": 4.6484375
+    },
+    "covered:central_matching_ppo:homogeneous:12:180001": {
+      "objective": 232.36875,
+      "waiting_cost": 16.875,
+      "waiting_violation": 0.228125,
+      "terminal_pending": 0.33125,
+      "failure_cost": 46.3828125,
+      "unavailability_cost": 157.5375,
+      "failures": 3.0921875
+    },
+    "covered:central_matching_ppo:homogeneous:24:180001": {
+      "objective": 416.1828125,
+      "waiting_cost": 10.14375,
+      "waiting_violation": 0.090625,
+      "terminal_pending": 0.2828125,
+      "failure_cost": 81.6796875,
+      "unavailability_cost": 300.084375,
+      "failures": 5.4453125
+    },
+    "covered:central_matching_ppo:specialized:12:180001": {
+      "objective": 163.55625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.2109375,
+      "failure_cost": 33.0234375,
+      "unavailability_cost": 115.8,
+      "failures": 2.2015625
+    },
+    "covered:central_matching_ppo:specialized:24:180001": {
+      "objective": 326.2078125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.2265625,
+      "failure_cost": 65.4140625,
+      "unavailability_cost": 231.328125,
+      "failures": 4.3609375
+    },
+    "covered:central_matching_ppo:nominal:12:180001": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180001": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180001": {
+      "objective": 163.8,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.3171875,
+      "failure_cost": 34.359375,
+      "unavailability_cost": 114.84375,
+      "failures": 2.290625
+    },
+    "covered:central_matching_ppo:skill_mask:24:180001": {
+      "objective": 326.55625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3125,
+      "failure_cost": 66.46875,
+      "unavailability_cost": 230.75625,
+      "failures": 4.43125
+    },
+    "covered:central_matching_ppo:homogeneous:12:180002": {
+      "objective": 229.4578125,
+      "waiting_cost": 4.3875,
+      "waiting_violation": 0.271875,
+      "terminal_pending": 0.5,
+      "failure_cost": 60.328125,
+      "unavailability_cost": 152.896875,
+      "failures": 4.021875
+    },
+    "covered:central_matching_ppo:homogeneous:24:180002": {
+      "objective": 445.39375,
+      "waiting_cost": 9.225,
+      "waiting_violation": 0.2828125,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 110.0859375,
+      "unavailability_cost": 301.63125,
+      "failures": 7.3390625
+    },
+    "covered:central_matching_ppo:specialized:12:180002": {
+      "objective": 166.7078125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3796875,
+      "failure_cost": 38.34375,
+      "unavailability_cost": 113.90625,
+      "failures": 2.55625
+    },
+    "covered:central_matching_ppo:specialized:24:180002": {
+      "objective": 329.521875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3453125,
+      "failure_cost": 70.359375,
+      "unavailability_cost": 230.00625,
+      "failures": 4.690625
+    },
+    "covered:central_matching_ppo:nominal:12:180002": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180002": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180002": {
+      "objective": 166.7890625,
+      "waiting_cost": 0.01875,
+      "waiting_violation": 0.0015625,
+      "terminal_pending": 0.4,
+      "failure_cost": 38.1796875,
+      "unavailability_cost": 114.1875,
+      "failures": 2.5453125
+    },
+    "covered:central_matching_ppo:skill_mask:24:180002": {
+      "objective": 329.0875,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.40625,
+      "failure_cost": 69.4453125,
+      "unavailability_cost": 230.540625,
+      "failures": 4.6296875
+    },
+    "covered:central_matching_ppo:homogeneous:12:180003": {
+      "objective": 207.5109375,
+      "waiting_cost": 2.71875,
+      "waiting_violation": 0.0984375,
+      "terminal_pending": 0.2890625,
+      "failure_cost": 42.65625,
+      "unavailability_cost": 150.05625,
+      "failures": 2.84375
+    },
+    "covered:central_matching_ppo:homogeneous:24:180003": {
+      "objective": 396.6484375,
+      "waiting_cost": 1.875,
+      "waiting_violation": 0.0234375,
+      "terminal_pending": 0.2640625,
+      "failure_cost": 74.9765625,
+      "unavailability_cost": 295.303125,
+      "failures": 4.9984375
+    },
+    "covered:central_matching_ppo:specialized:12:180003": {
+      "objective": 163.3796875,
+      "waiting_cost": 0.0375,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.246875,
+      "failure_cost": 32.296875,
+      "unavailability_cost": 116.371875,
+      "failures": 2.153125
+    },
+    "covered:central_matching_ppo:specialized:24:180003": {
+      "objective": 326.9421875,
+      "waiting_cost": 0.05625,
+      "waiting_violation": 0.003125,
+      "terminal_pending": 0.2796875,
+      "failure_cost": 65.2265625,
+      "unavailability_cost": 232.246875,
+      "failures": 4.3484375
+    },
+    "covered:central_matching_ppo:nominal:12:180003": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180003": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180003": {
+      "objective": 164.359375,
+      "waiting_cost": 0.3,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.3265625,
+      "failure_cost": 34.40625,
+      "unavailability_cost": 115.059375,
+      "failures": 2.29375
+    },
+    "covered:central_matching_ppo:skill_mask:24:180003": {
+      "objective": 327.7453125,
+      "waiting_cost": 0.8625,
+      "waiting_violation": 0.0640625,
+      "terminal_pending": 0.3234375,
+      "failure_cost": 66.5390625,
+      "unavailability_cost": 231.0,
+      "failures": 4.4359375
+    },
+    "covered:central_matching_ppo:homogeneous:12:180004": {
+      "objective": 200.5796875,
+      "waiting_cost": 0.525,
+      "waiting_violation": 0.028125,
+      "terminal_pending": 0.2703125,
+      "failure_cost": 41.625,
+      "unavailability_cost": 146.128125,
+      "failures": 2.775
+    },
+    "covered:central_matching_ppo:homogeneous:24:180004": {
+      "objective": 396.3015625,
+      "waiting_cost": 0.75,
+      "waiting_violation": 0.0625,
+      "terminal_pending": 0.234375,
+      "failure_cost": 77.2734375,
+      "unavailability_cost": 293.7375,
+      "failures": 5.1515625
+    },
+    "covered:central_matching_ppo:specialized:12:180004": {
+      "objective": 164.26875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3578125,
+      "failure_cost": 35.1328125,
+      "unavailability_cost": 114.553125,
+      "failures": 2.3421875
+    },
+    "covered:central_matching_ppo:specialized:24:180004": {
+      "objective": 327.078125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.378125,
+      "failure_cost": 67.734375,
+      "unavailability_cost": 230.034375,
+      "failures": 4.515625
+    },
+    "covered:central_matching_ppo:nominal:12:180004": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180004": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180004": {
+      "objective": 164.3296875,
+      "waiting_cost": 0.2625,
+      "waiting_violation": 0.021875,
+      "terminal_pending": 0.3734375,
+      "failure_cost": 35.0625,
+      "unavailability_cost": 114.440625,
+      "failures": 2.3375
+    },
+    "covered:central_matching_ppo:skill_mask:24:180004": {
+      "objective": 327.4765625,
+      "waiting_cost": 0.46875,
+      "waiting_violation": 0.0359375,
+      "terminal_pending": 0.3765625,
+      "failure_cost": 67.3828125,
+      "unavailability_cost": 230.315625,
+      "failures": 4.4921875
+    },
+    "covered:central_matching_ppo:homogeneous:12:180005": {
+      "objective": 246.91875,
+      "waiting_cost": 25.03125,
+      "waiting_violation": 0.3078125,
+      "terminal_pending": 0.5765625,
+      "failure_cost": 49.78125,
+      "unavailability_cost": 161.240625,
+      "failures": 3.31875
+    },
+    "covered:central_matching_ppo:homogeneous:24:180005": {
+      "objective": 439.190625,
+      "waiting_cost": 25.14375,
+      "waiting_violation": 0.1671875,
+      "terminal_pending": 0.6734375,
+      "failure_cost": 85.5234375,
+      "unavailability_cost": 305.4,
+      "failures": 5.7015625
+    },
+    "covered:central_matching_ppo:specialized:12:180005": {
+      "objective": 164.5015625,
+      "waiting_cost": 0.15,
+      "waiting_violation": 0.0125,
+      "terminal_pending": 0.3875,
+      "failure_cost": 35.5546875,
+      "unavailability_cost": 114.3,
+      "failures": 2.3703125
+    },
+    "covered:central_matching_ppo:specialized:24:180005": {
+      "objective": 327.225,
+      "waiting_cost": 0.20625,
+      "waiting_violation": 0.0171875,
+      "terminal_pending": 0.3828125,
+      "failure_cost": 67.875,
+      "unavailability_cost": 229.875,
+      "failures": 4.525
+    },
+    "covered:central_matching_ppo:nominal:12:180005": {
+      "objective": 168.9421875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.1015625,
+      "failure_cost": 3.84375,
+      "unavailability_cost": 153.80625,
+      "failures": 0.25625
+    },
+    "covered:central_matching_ppo:nominal:24:180005": {
+      "objective": 341.05,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.109375,
+      "failure_cost": 3.0234375,
+      "unavailability_cost": 315.946875,
+      "failures": 0.2015625
+    },
+    "covered:central_matching_ppo:skill_mask:12:180005": {
+      "objective": 164.6671875,
+      "waiting_cost": 0.1875,
+      "waiting_violation": 0.015625,
+      "terminal_pending": 0.3828125,
+      "failure_cost": 35.6015625,
+      "unavailability_cost": 114.365625,
+      "failures": 2.3734375
+    },
+    "covered:central_matching_ppo:skill_mask:24:180005": {
+      "objective": 327.4171875,
+      "waiting_cost": 0.4125,
+      "waiting_violation": 0.03125,
+      "terminal_pending": 0.38125,
+      "failure_cost": 67.5234375,
+      "unavailability_cost": 230.240625,
+      "failures": 4.5015625
+    },
+    "covered:central_matching_ppo:homogeneous:12:180006": {
+      "objective": 221.2890625,
+      "waiting_cost": 10.29375,
+      "waiting_violation": 0.1078125,
+      "terminal_pending": 0.4296875,
+      "failure_cost": 48.5390625,
+      "unavailability_cost": 150.54375,
+      "failures": 3.2359375
+    },
+    "covered:central_matching_ppo:homogeneous:24:180006": {
+      "objective": 455.0390625,
+      "waiting_cost": 36.54375,
+      "waiting_violation": 0.1828125,
+      "terminal_pending": 0.35,
+      "failure_cost": 89.4140625,
+      "unavailability_cost": 305.1375,
+      "failures": 5.9609375
+    },
+    "covered:central_matching_ppo:specialized:12:180006": {
+      "objective": 163.9390625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3890625,
+      "failure_cost": 35.25,
+      "unavailability_cost": 114.159375,
+      "failures": 2.35
+    },
+    "covered:central_matching_ppo:specialized:24:180006": {
+      "objective": 326.9515625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.4078125,
+      "failure_cost": 67.21875,
+      "unavailability_cost": 230.4,
+      "failures": 4.48125
+    },
+    "covered:central_matching_ppo:nominal:12:180006": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180006": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180006": {
+      "objective": 164.3015625,
+      "waiting_cost": 0.16875,
+      "waiting_violation": 0.0140625,
+      "terminal_pending": 0.3875,
+      "failure_cost": 35.0625,
+      "unavailability_cost": 114.54375,
+      "failures": 2.3375
+    },
+    "covered:central_matching_ppo:skill_mask:24:180006": {
+      "objective": 327.85625,
+      "waiting_cost": 0.24375,
+      "waiting_violation": 0.0171875,
+      "terminal_pending": 0.3953125,
+      "failure_cost": 67.125,
+      "unavailability_cost": 231.084375,
+      "failures": 4.475
+    },
+    "covered:central_matching_ppo:homogeneous:12:180007": {
+      "objective": 247.1328125,
+      "waiting_cost": 24.675,
+      "waiting_violation": 0.321875,
+      "terminal_pending": 0.3625,
+      "failure_cost": 48.7734375,
+      "unavailability_cost": 162.5625,
+      "failures": 3.2515625
+    },
+    "covered:central_matching_ppo:homogeneous:24:180007": {
+      "objective": 403.109375,
+      "waiting_cost": 3.09375,
+      "waiting_violation": 0.103125,
+      "terminal_pending": 0.3,
+      "failure_cost": 77.2734375,
+      "unavailability_cost": 298.575,
+      "failures": 5.1515625
+    },
+    "covered:central_matching_ppo:specialized:12:180007": {
+      "objective": 165.59375,
+      "waiting_cost": 0.01875,
+      "waiting_violation": 0.0015625,
+      "terminal_pending": 0.2328125,
+      "failure_cost": 34.5234375,
+      "unavailability_cost": 116.49375,
+      "failures": 2.3015625
+    },
+    "covered:central_matching_ppo:specialized:24:180007": {
+      "objective": 328.4109375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.2296875,
+      "failure_cost": 67.125,
+      "unavailability_cost": 231.95625,
+      "failures": 4.475
+    },
+    "covered:central_matching_ppo:nominal:12:180007": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180007": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180007": {
+      "objective": 165.8390625,
+      "waiting_cost": 0.01875,
+      "waiting_violation": 0.0015625,
+      "terminal_pending": 0.328125,
+      "failure_cost": 36.3984375,
+      "unavailability_cost": 114.975,
+      "failures": 2.4265625
+    },
+    "covered:central_matching_ppo:skill_mask:24:180007": {
+      "objective": 327.89375,
+      "waiting_cost": 0.01875,
+      "waiting_violation": 0.0015625,
+      "terminal_pending": 0.2984375,
+      "failure_cost": 68.2265625,
+      "unavailability_cost": 230.41875,
+      "failures": 4.5484375
+    },
+    "covered:central_matching_ppo:homogeneous:12:180008": {
+      "objective": 206.6421875,
+      "waiting_cost": 0.4875,
+      "waiting_violation": 0.0171875,
+      "terminal_pending": 0.3703125,
+      "failure_cost": 49.5,
+      "unavailability_cost": 144.13125,
+      "failures": 3.3
+    },
+    "covered:central_matching_ppo:homogeneous:24:180008": {
+      "objective": 404.634375,
+      "waiting_cost": 0.31875,
+      "waiting_violation": 0.0265625,
+      "terminal_pending": 0.3328125,
+      "failure_cost": 87.6328125,
+      "unavailability_cost": 291.80625,
+      "failures": 5.8421875
+    },
+    "covered:central_matching_ppo:specialized:12:180008": {
+      "objective": 164.103125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3859375,
+      "failure_cost": 35.859375,
+      "unavailability_cost": 113.728125,
+      "failures": 2.390625
+    },
+    "covered:central_matching_ppo:specialized:24:180008": {
+      "objective": 326.709375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3890625,
+      "failure_cost": 68.859375,
+      "unavailability_cost": 228.6,
+      "failures": 4.590625
+    },
+    "covered:central_matching_ppo:nominal:12:180008": {
+      "objective": 166.1203125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0109375,
+      "failure_cost": 0.4453125,
+      "unavailability_cost": 154.396875,
+      "failures": 0.0296875
+    },
+    "covered:central_matching_ppo:nominal:24:180008": {
+      "objective": 342.3484375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 4.265625,
+      "unavailability_cost": 315.75,
+      "failures": 0.284375
+    },
+    "covered:central_matching_ppo:skill_mask:12:180008": {
+      "objective": 164.465625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.38125,
+      "failure_cost": 36.0703125,
+      "unavailability_cost": 113.859375,
+      "failures": 2.4046875
+    },
+    "covered:central_matching_ppo:skill_mask:24:180008": {
+      "objective": 327.1734375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.384375,
+      "failure_cost": 69.1875,
+      "unavailability_cost": 228.73125,
+      "failures": 4.6125
+    },
+    "covered:central_matching_ppo:homogeneous:12:180009": {
+      "objective": 205.2203125,
+      "waiting_cost": 1.44375,
+      "waiting_violation": 0.0265625,
+      "terminal_pending": 0.25,
+      "failure_cost": 43.9453125,
+      "unavailability_cost": 147.4875,
+      "failures": 2.9296875
+    },
+    "covered:central_matching_ppo:homogeneous:24:180009": {
+      "objective": 394.125,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.2828125,
+      "failure_cost": 75.515625,
+      "unavailability_cost": 294.046875,
+      "failures": 5.034375
+    },
+    "covered:central_matching_ppo:specialized:12:180009": {
+      "objective": 164.5390625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.31875,
+      "failure_cost": 34.875,
+      "unavailability_cost": 115.05,
+      "failures": 2.325
+    },
+    "covered:central_matching_ppo:specialized:24:180009": {
+      "objective": 327.734375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.3484375,
+      "failure_cost": 67.6875,
+      "unavailability_cost": 230.634375,
+      "failures": 4.5125
+    },
+    "covered:central_matching_ppo:nominal:12:180009": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:nominal:24:180009": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:central_matching_ppo:skill_mask:12:180009": {
+      "objective": 164.11875,
+      "waiting_cost": 0.13125,
+      "waiting_violation": 0.0109375,
+      "terminal_pending": 0.34375,
+      "failure_cost": 34.6875,
+      "unavailability_cost": 114.75,
+      "failures": 2.3125
+    },
+    "covered:central_matching_ppo:skill_mask:24:180009": {
+      "objective": 327.125,
+      "waiting_cost": 0.20625,
+      "waiting_violation": 0.0171875,
+      "terminal_pending": 0.35,
+      "failure_cost": 67.3359375,
+      "unavailability_cost": 230.184375,
+      "failures": 4.4890625
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180000": {
+      "objective": 210.05,
+      "waiting_cost": 3.84375,
+      "waiting_violation": 0.265625,
+      "terminal_pending": 0.54375,
+      "failure_cost": 35.9765625,
+      "unavailability_cost": 159.4125,
+      "failures": 2.3984375
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180000": {
+      "objective": 418.075,
+      "waiting_cost": 10.33125,
+      "waiting_violation": 0.5796875,
+      "terminal_pending": 0.6265625,
+      "failure_cost": 62.2734375,
+      "unavailability_cost": 324.05625,
+      "failures": 4.1515625
+    },
+    "covered:cooperative_local_ppo:specialized:12:180000": {
+      "objective": 170.534375,
+      "waiting_cost": 0.7125,
+      "waiting_violation": 0.0484375,
+      "terminal_pending": 0.446875,
+      "failure_cost": 36.2578125,
+      "unavailability_cost": 119.615625,
+      "failures": 2.4171875
+    },
+    "covered:cooperative_local_ppo:specialized:24:180000": {
+      "objective": 341.765625,
+      "waiting_cost": 2.34375,
+      "waiting_violation": 0.140625,
+      "terminal_pending": 0.459375,
+      "failure_cost": 65.953125,
+      "unavailability_cost": 245.015625,
+      "failures": 4.396875
+    },
+    "covered:cooperative_local_ppo:nominal:12:180000": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180000": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180000": {
+      "objective": 174.346875,
+      "waiting_cost": 5.8125,
+      "waiting_violation": 0.1234375,
+      "terminal_pending": 0.525,
+      "failure_cost": 33.984375,
+      "unavailability_cost": 120.88125,
+      "failures": 2.265625
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180000": {
+      "objective": 368.009375,
+      "waiting_cost": 31.48125,
+      "waiting_violation": 0.2421875,
+      "terminal_pending": 0.534375,
+      "failure_cost": 59.0390625,
+      "unavailability_cost": 249.834375,
+      "failures": 3.9359375
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180001": {
+      "objective": 208.3875,
+      "waiting_cost": 3.61875,
+      "waiting_violation": 0.2625,
+      "terminal_pending": 0.5796875,
+      "failure_cost": 35.4375,
+      "unavailability_cost": 158.56875,
+      "failures": 2.3625
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180001": {
+      "objective": 417.5859375,
+      "waiting_cost": 10.8,
+      "waiting_violation": 0.596875,
+      "terminal_pending": 0.646875,
+      "failure_cost": 61.8515625,
+      "unavailability_cost": 323.503125,
+      "failures": 4.1234375
+    },
+    "covered:cooperative_local_ppo:specialized:12:180001": {
+      "objective": 171.4359375,
+      "waiting_cost": 0.65625,
+      "waiting_violation": 0.0421875,
+      "terminal_pending": 0.496875,
+      "failure_cost": 35.4609375,
+      "unavailability_cost": 121.678125,
+      "failures": 2.3640625
+    },
+    "covered:cooperative_local_ppo:specialized:24:180001": {
+      "objective": 341.684375,
+      "waiting_cost": 1.7625,
+      "waiting_violation": 0.1109375,
+      "terminal_pending": 0.5015625,
+      "failure_cost": 63.1171875,
+      "unavailability_cost": 249.3,
+      "failures": 4.2078125
+    },
+    "covered:cooperative_local_ppo:nominal:12:180001": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180001": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180001": {
+      "objective": 174.5359375,
+      "waiting_cost": 4.2375,
+      "waiting_violation": 0.1015625,
+      "terminal_pending": 0.534375,
+      "failure_cost": 34.7109375,
+      "unavailability_cost": 122.090625,
+      "failures": 2.3140625
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180001": {
+      "objective": 358.06875,
+      "waiting_cost": 21.46875,
+      "waiting_violation": 0.215625,
+      "terminal_pending": 0.534375,
+      "failure_cost": 58.6875,
+      "unavailability_cost": 250.846875,
+      "failures": 3.9125
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180002": {
+      "objective": 209.30625,
+      "waiting_cost": 3.61875,
+      "waiting_violation": 0.2609375,
+      "terminal_pending": 0.596875,
+      "failure_cost": 35.0625,
+      "unavailability_cost": 159.95625,
+      "failures": 2.3375
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180002": {
+      "objective": 420.459375,
+      "waiting_cost": 11.83125,
+      "waiting_violation": 0.6234375,
+      "terminal_pending": 0.64375,
+      "failure_cost": 60.5859375,
+      "unavailability_cost": 326.840625,
+      "failures": 4.0390625
+    },
+    "covered:cooperative_local_ppo:specialized:12:180002": {
+      "objective": 171.6375,
+      "waiting_cost": 0.99375,
+      "waiting_violation": 0.0640625,
+      "terminal_pending": 0.503125,
+      "failure_cost": 35.3671875,
+      "unavailability_cost": 121.65,
+      "failures": 2.3578125
+    },
+    "covered:cooperative_local_ppo:specialized:24:180002": {
+      "objective": 343.29375,
+      "waiting_cost": 3.1875,
+      "waiting_violation": 0.18125,
+      "terminal_pending": 0.4921875,
+      "failure_cost": 61.8515625,
+      "unavailability_cost": 250.81875,
+      "failures": 4.1234375
+    },
+    "covered:cooperative_local_ppo:nominal:12:180002": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180002": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180002": {
+      "objective": 174.521875,
+      "waiting_cost": 4.33125,
+      "waiting_violation": 0.109375,
+      "terminal_pending": 0.5390625,
+      "failure_cost": 34.546875,
+      "unavailability_cost": 122.15625,
+      "failures": 2.303125
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180002": {
+      "objective": 363.6890625,
+      "waiting_cost": 27.69375,
+      "waiting_violation": 0.2484375,
+      "terminal_pending": 0.5421875,
+      "failure_cost": 55.8046875,
+      "unavailability_cost": 253.359375,
+      "failures": 3.7203125
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180003": {
+      "objective": 209.5359375,
+      "waiting_cost": 3.375,
+      "waiting_violation": 0.246875,
+      "terminal_pending": 0.6109375,
+      "failure_cost": 35.4375,
+      "unavailability_cost": 160.06875,
+      "failures": 2.3625
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180003": {
+      "objective": 420.8640625,
+      "waiting_cost": 11.53125,
+      "waiting_violation": 0.61875,
+      "terminal_pending": 0.6375,
+      "failure_cost": 60.9140625,
+      "unavailability_cost": 327.20625,
+      "failures": 4.0609375
+    },
+    "covered:cooperative_local_ppo:specialized:12:180003": {
+      "objective": 173.346875,
+      "waiting_cost": 0.825,
+      "waiting_violation": 0.0546875,
+      "terminal_pending": 0.5140625,
+      "failure_cost": 35.625,
+      "unavailability_cost": 123.384375,
+      "failures": 2.375
+    },
+    "covered:cooperative_local_ppo:specialized:24:180003": {
+      "objective": 343.93125,
+      "waiting_cost": 2.325,
+      "waiting_violation": 0.125,
+      "terminal_pending": 0.490625,
+      "failure_cost": 61.9453125,
+      "unavailability_cost": 252.403125,
+      "failures": 4.1296875
+    },
+    "covered:cooperative_local_ppo:nominal:12:180003": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180003": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180003": {
+      "objective": 176.0171875,
+      "waiting_cost": 4.6125,
+      "waiting_violation": 0.1234375,
+      "terminal_pending": 0.559375,
+      "failure_cost": 34.5,
+      "unavailability_cost": 123.58125,
+      "failures": 2.3
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180003": {
+      "objective": 361.1296875,
+      "waiting_cost": 22.36875,
+      "waiting_violation": 0.221875,
+      "terminal_pending": 0.565625,
+      "failure_cost": 57.375,
+      "unavailability_cost": 254.68125,
+      "failures": 3.825
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180004": {
+      "objective": 204.7546875,
+      "waiting_cost": 0.3,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.38125,
+      "failure_cost": 42.328125,
+      "unavailability_cost": 150.346875,
+      "failures": 2.821875
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180004": {
+      "objective": 408.146875,
+      "waiting_cost": 1.275,
+      "waiting_violation": 0.103125,
+      "terminal_pending": 0.5515625,
+      "failure_cost": 77.8828125,
+      "unavailability_cost": 305.68125,
+      "failures": 5.1921875
+    },
+    "covered:cooperative_local_ppo:specialized:12:180004": {
+      "objective": 173.959375,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.375,
+      "failure_cost": 43.3359375,
+      "unavailability_cost": 115.978125,
+      "failures": 2.8890625
+    },
+    "covered:cooperative_local_ppo:specialized:24:180004": {
+      "objective": 346.0390625,
+      "waiting_cost": 0.31875,
+      "waiting_violation": 0.0265625,
+      "terminal_pending": 0.4203125,
+      "failure_cost": 75.3515625,
+      "unavailability_cost": 241.63125,
+      "failures": 5.0234375
+    },
+    "covered:cooperative_local_ppo:nominal:12:180004": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180004": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180004": {
+      "objective": 182.3,
+      "waiting_cost": 10.36875,
+      "waiting_violation": 0.196875,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 39.84375,
+      "unavailability_cost": 118.0125,
+      "failures": 2.65625
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180004": {
+      "objective": 389.871875,
+      "waiting_cost": 51.8625,
+      "waiting_violation": 0.3234375,
+      "terminal_pending": 0.503125,
+      "failure_cost": 60.75,
+      "unavailability_cost": 249.909375,
+      "failures": 4.05
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180005": {
+      "objective": 208.4765625,
+      "waiting_cost": 2.11875,
+      "waiting_violation": 0.1578125,
+      "terminal_pending": 0.528125,
+      "failure_cost": 37.640625,
+      "unavailability_cost": 157.7625,
+      "failures": 2.509375
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180005": {
+      "objective": 416.596875,
+      "waiting_cost": 5.53125,
+      "waiting_violation": 0.3734375,
+      "terminal_pending": 0.6890625,
+      "failure_cost": 69.7265625,
+      "unavailability_cost": 319.490625,
+      "failures": 4.6484375
+    },
+    "covered:cooperative_local_ppo:specialized:12:180005": {
+      "objective": 171.178125,
+      "waiting_cost": 0.375,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.4375,
+      "failure_cost": 39.28125,
+      "unavailability_cost": 117.346875,
+      "failures": 2.61875
+    },
+    "covered:cooperative_local_ppo:specialized:24:180005": {
+      "objective": 339.8484375,
+      "waiting_cost": 1.21875,
+      "waiting_violation": 0.084375,
+      "terminal_pending": 0.465625,
+      "failure_cost": 71.625,
+      "unavailability_cost": 238.415625,
+      "failures": 4.775
+    },
+    "covered:cooperative_local_ppo:nominal:12:180005": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180005": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180005": {
+      "objective": 176.215625,
+      "waiting_cost": 6.2625,
+      "waiting_violation": 0.121875,
+      "terminal_pending": 0.490625,
+      "failure_cost": 38.34375,
+      "unavailability_cost": 117.628125,
+      "failures": 2.55625
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180005": {
+      "objective": 365.703125,
+      "waiting_cost": 31.6125,
+      "waiting_violation": 0.228125,
+      "terminal_pending": 0.5015625,
+      "failure_cost": 63.5390625,
+      "unavailability_cost": 242.671875,
+      "failures": 4.2359375
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180006": {
+      "objective": 209.2921875,
+      "waiting_cost": 3.54375,
+      "waiting_violation": 0.25625,
+      "terminal_pending": 0.575,
+      "failure_cost": 35.765625,
+      "unavailability_cost": 159.234375,
+      "failures": 2.384375
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180006": {
+      "objective": 419.040625,
+      "waiting_cost": 10.81875,
+      "waiting_violation": 0.6,
+      "terminal_pending": 0.63125,
+      "failure_cost": 61.6640625,
+      "unavailability_cost": 325.21875,
+      "failures": 4.1109375
+    },
+    "covered:cooperative_local_ppo:specialized:12:180006": {
+      "objective": 170.8046875,
+      "waiting_cost": 0.95625,
+      "waiting_violation": 0.0640625,
+      "terminal_pending": 0.4078125,
+      "failure_cost": 37.546875,
+      "unavailability_cost": 118.209375,
+      "failures": 2.503125
+    },
+    "covered:cooperative_local_ppo:specialized:24:180006": {
+      "objective": 341.4640625,
+      "waiting_cost": 2.9625,
+      "waiting_violation": 0.1765625,
+      "terminal_pending": 0.45,
+      "failure_cost": 67.171875,
+      "unavailability_cost": 243.121875,
+      "failures": 4.478125
+    },
+    "covered:cooperative_local_ppo:nominal:12:180006": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180006": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180006": {
+      "objective": 176.2296875,
+      "waiting_cost": 6.5625,
+      "waiting_violation": 0.1453125,
+      "terminal_pending": 0.5,
+      "failure_cost": 35.4609375,
+      "unavailability_cost": 120.496875,
+      "failures": 2.3640625
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180006": {
+      "objective": 367.059375,
+      "waiting_cost": 32.625,
+      "waiting_violation": 0.2703125,
+      "terminal_pending": 0.5171875,
+      "failure_cost": 58.2890625,
+      "unavailability_cost": 248.859375,
+      "failures": 3.8859375
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180007": {
+      "objective": 209.2375,
+      "waiting_cost": 3.54375,
+      "waiting_violation": 0.25625,
+      "terminal_pending": 0.5765625,
+      "failure_cost": 35.484375,
+      "unavailability_cost": 159.478125,
+      "failures": 2.365625
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180007": {
+      "objective": 419.06875,
+      "waiting_cost": 11.00625,
+      "waiting_violation": 0.6140625,
+      "terminal_pending": 0.6421875,
+      "failure_cost": 61.3359375,
+      "unavailability_cost": 325.434375,
+      "failures": 4.0890625
+    },
+    "covered:cooperative_local_ppo:specialized:12:180007": {
+      "objective": 172.5625,
+      "waiting_cost": 1.10625,
+      "waiting_violation": 0.0734375,
+      "terminal_pending": 0.4859375,
+      "failure_cost": 36.234375,
+      "unavailability_cost": 121.471875,
+      "failures": 2.415625
+    },
+    "covered:cooperative_local_ppo:specialized:24:180007": {
+      "objective": 343.0703125,
+      "waiting_cost": 3.2625,
+      "waiting_violation": 0.1890625,
+      "terminal_pending": 0.4703125,
+      "failure_cost": 63.3046875,
+      "unavailability_cost": 248.803125,
+      "failures": 4.2203125
+    },
+    "covered:cooperative_local_ppo:nominal:12:180007": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180007": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180007": {
+      "objective": 176.2703125,
+      "waiting_cost": 6.0375,
+      "waiting_violation": 0.1390625,
+      "terminal_pending": 0.5390625,
+      "failure_cost": 34.3359375,
+      "unavailability_cost": 122.409375,
+      "failures": 2.2890625
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180007": {
+      "objective": 366.31875,
+      "waiting_cost": 29.5875,
+      "waiting_violation": 0.2640625,
+      "terminal_pending": 0.5359375,
+      "failure_cost": 56.15625,
+      "unavailability_cost": 253.696875,
+      "failures": 3.74375
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180008": {
+      "objective": 208.2359375,
+      "waiting_cost": 3.4125,
+      "waiting_violation": 0.2484375,
+      "terminal_pending": 0.534375,
+      "failure_cost": 35.9296875,
+      "unavailability_cost": 157.978125,
+      "failures": 2.3953125
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180008": {
+      "objective": 418.1671875,
+      "waiting_cost": 9.675,
+      "waiting_violation": 0.5484375,
+      "terminal_pending": 0.6546875,
+      "failure_cost": 64.6171875,
+      "unavailability_cost": 322.284375,
+      "failures": 4.3078125
+    },
+    "covered:cooperative_local_ppo:specialized:12:180008": {
+      "objective": 171.4375,
+      "waiting_cost": 1.29375,
+      "waiting_violation": 0.0828125,
+      "terminal_pending": 0.4390625,
+      "failure_cost": 35.765625,
+      "unavailability_cost": 120.09375,
+      "failures": 2.384375
+    },
+    "covered:cooperative_local_ppo:specialized:24:180008": {
+      "objective": 342.046875,
+      "waiting_cost": 3.525,
+      "waiting_violation": 0.2,
+      "terminal_pending": 0.453125,
+      "failure_cost": 64.875,
+      "unavailability_cost": 245.1,
+      "failures": 4.325
+    },
+    "covered:cooperative_local_ppo:nominal:12:180008": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180008": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180008": {
+      "objective": 177.4046875,
+      "waiting_cost": 6.65625,
+      "waiting_violation": 0.146875,
+      "terminal_pending": 0.509375,
+      "failure_cost": 34.875,
+      "unavailability_cost": 121.89375,
+      "failures": 2.325
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180008": {
+      "objective": 369.153125,
+      "waiting_cost": 32.49375,
+      "waiting_violation": 0.2703125,
+      "terminal_pending": 0.525,
+      "failure_cost": 57.7734375,
+      "unavailability_cost": 251.184375,
+      "failures": 3.8515625
+    },
+    "covered:cooperative_local_ppo:homogeneous:12:180009": {
+      "objective": 207.7609375,
+      "waiting_cost": 2.15625,
+      "waiting_violation": 0.1609375,
+      "terminal_pending": 0.5125,
+      "failure_cost": 38.203125,
+      "unavailability_cost": 156.3,
+      "failures": 2.546875
+    },
+    "covered:cooperative_local_ppo:homogeneous:24:180009": {
+      "objective": 419.8921875,
+      "waiting_cost": 6.8625,
+      "waiting_violation": 0.39375,
+      "terminal_pending": 0.73125,
+      "failure_cost": 71.1796875,
+      "unavailability_cost": 319.996875,
+      "failures": 4.7453125
+    },
+    "covered:cooperative_local_ppo:specialized:12:180009": {
+      "objective": 170.3203125,
+      "waiting_cost": 0.46875,
+      "waiting_violation": 0.0328125,
+      "terminal_pending": 0.409375,
+      "failure_cost": 37.734375,
+      "unavailability_cost": 118.003125,
+      "failures": 2.515625
+    },
+    "covered:cooperative_local_ppo:specialized:24:180009": {
+      "objective": 339.146875,
+      "waiting_cost": 1.33125,
+      "waiting_violation": 0.09375,
+      "terminal_pending": 0.425,
+      "failure_cost": 67.6640625,
+      "unavailability_cost": 241.846875,
+      "failures": 4.5109375
+    },
+    "covered:cooperative_local_ppo:nominal:12:180009": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:nominal:24:180009": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_local_ppo:skill_mask:12:180009": {
+      "objective": 176.0921875,
+      "waiting_cost": 6.28125,
+      "waiting_violation": 0.125,
+      "terminal_pending": 0.4953125,
+      "failure_cost": 35.90625,
+      "unavailability_cost": 120.140625,
+      "failures": 2.39375
+    },
+    "covered:cooperative_local_ppo:skill_mask:24:180009": {
+      "objective": 366.6625,
+      "waiting_cost": 31.95,
+      "waiting_violation": 0.24375,
+      "terminal_pending": 0.50625,
+      "failure_cost": 58.7578125,
+      "unavailability_cost": 248.60625,
+      "failures": 3.9171875
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180000": {
+      "objective": 203.0796875,
+      "waiting_cost": 0.13125,
+      "waiting_violation": 0.0109375,
+      "terminal_pending": 0.4,
+      "failure_cost": 41.296875,
+      "unavailability_cost": 149.8125,
+      "failures": 2.753125
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180000": {
+      "objective": 406.1375,
+      "waiting_cost": 1.3125,
+      "waiting_violation": 0.109375,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 76.0078125,
+      "unavailability_cost": 305.334375,
+      "failures": 5.0671875
+    },
+    "covered:cooperative_full_ppo:specialized:12:180000": {
+      "objective": 173.9046875,
+      "waiting_cost": 0.1125,
+      "waiting_violation": 0.009375,
+      "terminal_pending": 0.375,
+      "failure_cost": 43.265625,
+      "unavailability_cost": 115.9875,
+      "failures": 2.884375
+    },
+    "covered:cooperative_full_ppo:specialized:24:180000": {
+      "objective": 346.046875,
+      "waiting_cost": 0.3,
+      "waiting_violation": 0.025,
+      "terminal_pending": 0.396875,
+      "failure_cost": 75.46875,
+      "unavailability_cost": 241.48125,
+      "failures": 5.03125
+    },
+    "covered:cooperative_full_ppo:nominal:12:180000": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180000": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180000": {
+      "objective": 180.725,
+      "waiting_cost": 9.675,
+      "waiting_violation": 0.1796875,
+      "terminal_pending": 0.4734375,
+      "failure_cost": 39.515625,
+      "unavailability_cost": 117.459375,
+      "failures": 2.634375
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180000": {
+      "objective": 381.36875,
+      "waiting_cost": 44.1375,
+      "waiting_violation": 0.2734375,
+      "terminal_pending": 0.4828125,
+      "failure_cost": 64.359375,
+      "unavailability_cost": 245.11875,
+      "failures": 4.290625
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180001": {
+      "objective": 205.2296875,
+      "waiting_cost": 2.325,
+      "waiting_violation": 0.1796875,
+      "terminal_pending": 0.4984375,
+      "failure_cost": 34.9921875,
+      "unavailability_cost": 156.88125,
+      "failures": 2.3328125
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180001": {
+      "objective": 405.0375,
+      "waiting_cost": 5.5125,
+      "waiting_violation": 0.346875,
+      "terminal_pending": 0.621875,
+      "failure_cost": 65.6484375,
+      "unavailability_cost": 311.240625,
+      "failures": 4.3765625
+    },
+    "covered:cooperative_full_ppo:specialized:12:180001": {
+      "objective": 168.425,
+      "waiting_cost": 0.54375,
+      "waiting_violation": 0.0359375,
+      "terminal_pending": 0.434375,
+      "failure_cost": 34.5234375,
+      "unavailability_cost": 119.11875,
+      "failures": 2.3015625
+    },
+    "covered:cooperative_full_ppo:specialized:24:180001": {
+      "objective": 350.3703125,
+      "waiting_cost": 1.05,
+      "waiting_violation": 0.08125,
+      "terminal_pending": 0.43125,
+      "failure_cost": 68.4140625,
+      "unavailability_cost": 251.56875,
+      "failures": 4.5609375
+    },
+    "covered:cooperative_full_ppo:nominal:12:180001": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180001": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180001": {
+      "objective": 173.246875,
+      "waiting_cost": 5.325,
+      "waiting_violation": 0.1109375,
+      "terminal_pending": 0.49375,
+      "failure_cost": 33.9140625,
+      "unavailability_cost": 120.046875,
+      "failures": 2.2609375
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180001": {
+      "objective": 372.9140625,
+      "waiting_cost": 32.41875,
+      "waiting_violation": 0.24375,
+      "terminal_pending": 0.534375,
+      "failure_cost": 60.9140625,
+      "unavailability_cost": 251.2875,
+      "failures": 4.0609375
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180002": {
+      "objective": 206.4765625,
+      "waiting_cost": 2.775,
+      "waiting_violation": 0.2,
+      "terminal_pending": 0.509375,
+      "failure_cost": 34.9921875,
+      "unavailability_cost": 157.771875,
+      "failures": 2.3328125
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180002": {
+      "objective": 413.115625,
+      "waiting_cost": 8.53125,
+      "waiting_violation": 0.496875,
+      "terminal_pending": 0.678125,
+      "failure_cost": 62.8359375,
+      "unavailability_cost": 320.109375,
+      "failures": 4.1890625
+    },
+    "covered:cooperative_full_ppo:specialized:12:180002": {
+      "objective": 168.9921875,
+      "waiting_cost": 0.45,
+      "waiting_violation": 0.03125,
+      "terminal_pending": 0.415625,
+      "failure_cost": 34.875,
+      "unavailability_cost": 119.6625,
+      "failures": 2.325
+    },
+    "covered:cooperative_full_ppo:specialized:24:180002": {
+      "objective": 337.4734375,
+      "waiting_cost": 1.2375,
+      "waiting_violation": 0.084375,
+      "terminal_pending": 0.4515625,
+      "failure_cost": 65.015625,
+      "unavailability_cost": 242.83125,
+      "failures": 4.334375
+    },
+    "covered:cooperative_full_ppo:nominal:12:180002": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180002": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180002": {
+      "objective": 173.559375,
+      "waiting_cost": 5.475,
+      "waiting_violation": 0.1125,
+      "terminal_pending": 0.4609375,
+      "failure_cost": 33.421875,
+      "unavailability_cost": 120.88125,
+      "failures": 2.228125
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180002": {
+      "objective": 359.94375,
+      "waiting_cost": 27.5625,
+      "waiting_violation": 0.2171875,
+      "terminal_pending": 0.509375,
+      "failure_cost": 57.7734375,
+      "unavailability_cost": 246.946875,
+      "failures": 3.8515625
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180003": {
+      "objective": 209.378125,
+      "waiting_cost": 4.10625,
+      "waiting_violation": 0.26875,
+      "terminal_pending": 0.5890625,
+      "failure_cost": 34.7109375,
+      "unavailability_cost": 159.91875,
+      "failures": 2.3140625
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180003": {
+      "objective": 419.2,
+      "waiting_cost": 12.50625,
+      "waiting_violation": 0.5671875,
+      "terminal_pending": 0.6796875,
+      "failure_cost": 59.3671875,
+      "unavailability_cost": 326.128125,
+      "failures": 3.9578125
+    },
+    "covered:cooperative_full_ppo:specialized:12:180003": {
+      "objective": 169.478125,
+      "waiting_cost": 0.95625,
+      "waiting_violation": 0.065625,
+      "terminal_pending": 0.4765625,
+      "failure_cost": 33.140625,
+      "unavailability_cost": 121.5375,
+      "failures": 2.209375
+    },
+    "covered:cooperative_full_ppo:specialized:24:180003": {
+      "objective": 339.5734375,
+      "waiting_cost": 2.325,
+      "waiting_violation": 0.1453125,
+      "terminal_pending": 0.4578125,
+      "failure_cost": 61.9921875,
+      "unavailability_cost": 247.153125,
+      "failures": 4.1328125
+    },
+    "covered:cooperative_full_ppo:nominal:12:180003": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180003": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180003": {
+      "objective": 173.0515625,
+      "waiting_cost": 5.1,
+      "waiting_violation": 0.1171875,
+      "terminal_pending": 0.509375,
+      "failure_cost": 32.015625,
+      "unavailability_cost": 122.26875,
+      "failures": 2.134375
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180003": {
+      "objective": 357.2625,
+      "waiting_cost": 23.0625,
+      "waiting_violation": 0.2203125,
+      "terminal_pending": 0.5234375,
+      "failure_cost": 56.5078125,
+      "unavailability_cost": 250.1625,
+      "failures": 3.7671875
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180004": {
+      "objective": 205.6375,
+      "waiting_cost": 2.175,
+      "waiting_violation": 0.1671875,
+      "terminal_pending": 0.5109375,
+      "failure_cost": 35.390625,
+      "unavailability_cost": 157.10625,
+      "failures": 2.359375
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180004": {
+      "objective": 411.9296875,
+      "waiting_cost": 9.225,
+      "waiting_violation": 0.51875,
+      "terminal_pending": 0.6640625,
+      "failure_cost": 61.921875,
+      "unavailability_cost": 319.059375,
+      "failures": 4.128125
+    },
+    "covered:cooperative_full_ppo:specialized:12:180004": {
+      "objective": 170.03125,
+      "waiting_cost": 0.3375,
+      "waiting_violation": 0.021875,
+      "terminal_pending": 0.4109375,
+      "failure_cost": 35.7421875,
+      "unavailability_cost": 119.8875,
+      "failures": 2.3828125
+    },
+    "covered:cooperative_full_ppo:specialized:24:180004": {
+      "objective": 340.7953125,
+      "waiting_cost": 0.8625,
+      "waiting_violation": 0.0640625,
+      "terminal_pending": 0.453125,
+      "failure_cost": 62.5546875,
+      "unavailability_cost": 249.2625,
+      "failures": 4.1703125
+    },
+    "covered:cooperative_full_ppo:nominal:12:180004": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180004": {
+      "objective": 341.5859375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 2.5078125,
+      "unavailability_cost": 316.809375,
+      "failures": 0.1671875
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180004": {
+      "objective": 173.7484375,
+      "waiting_cost": 4.65,
+      "waiting_violation": 0.0984375,
+      "terminal_pending": 0.490625,
+      "failure_cost": 34.265625,
+      "unavailability_cost": 121.0125,
+      "failures": 2.284375
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180004": {
+      "objective": 357.9375,
+      "waiting_cost": 22.29375,
+      "waiting_violation": 0.2109375,
+      "terminal_pending": 0.5296875,
+      "failure_cost": 57.9609375,
+      "unavailability_cost": 250.05,
+      "failures": 3.8640625
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180005": {
+      "objective": 207.8046875,
+      "waiting_cost": 3.76875,
+      "waiting_violation": 0.2328125,
+      "terminal_pending": 0.540625,
+      "failure_cost": 34.6171875,
+      "unavailability_cost": 158.559375,
+      "failures": 2.3078125
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180005": {
+      "objective": 407.6453125,
+      "waiting_cost": 5.98125,
+      "waiting_violation": 0.371875,
+      "terminal_pending": 0.575,
+      "failure_cost": 66.3046875,
+      "unavailability_cost": 312.7875,
+      "failures": 4.4203125
+    },
+    "covered:cooperative_full_ppo:specialized:12:180005": {
+      "objective": 168.990625,
+      "waiting_cost": 0.7125,
+      "waiting_violation": 0.0484375,
+      "terminal_pending": 0.4390625,
+      "failure_cost": 33.5625,
+      "unavailability_cost": 120.7125,
+      "failures": 2.2375
+    },
+    "covered:cooperative_full_ppo:specialized:24:180005": {
+      "objective": 353.659375,
+      "waiting_cost": 1.35,
+      "waiting_violation": 0.1,
+      "terminal_pending": 0.44375,
+      "failure_cost": 71.4375,
+      "unavailability_cost": 250.9875,
+      "failures": 4.7625
+    },
+    "covered:cooperative_full_ppo:nominal:12:180005": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180005": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180005": {
+      "objective": 174.084375,
+      "waiting_cost": 5.83125,
+      "waiting_violation": 0.125,
+      "terminal_pending": 0.5140625,
+      "failure_cost": 32.2265625,
+      "unavailability_cost": 122.146875,
+      "failures": 2.1484375
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180005": {
+      "objective": 393.5828125,
+      "waiting_cost": 40.7625,
+      "waiting_violation": 0.253125,
+      "terminal_pending": 0.5140625,
+      "failure_cost": 63.421875,
+      "unavailability_cost": 260.025,
+      "failures": 4.228125
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180006": {
+      "objective": 207.7515625,
+      "waiting_cost": 2.75625,
+      "waiting_violation": 0.1984375,
+      "terminal_pending": 0.5484375,
+      "failure_cost": 35.390625,
+      "unavailability_cost": 158.784375,
+      "failures": 2.359375
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180006": {
+      "objective": 414.24375,
+      "waiting_cost": 10.0875,
+      "waiting_violation": 0.5515625,
+      "terminal_pending": 0.6765625,
+      "failure_cost": 60.046875,
+      "unavailability_cost": 322.715625,
+      "failures": 4.003125
+    },
+    "covered:cooperative_full_ppo:specialized:12:180006": {
+      "objective": 169.6734375,
+      "waiting_cost": 0.39375,
+      "waiting_violation": 0.0265625,
+      "terminal_pending": 0.45,
+      "failure_cost": 34.7109375,
+      "unavailability_cost": 120.759375,
+      "failures": 2.3140625
+    },
+    "covered:cooperative_full_ppo:specialized:24:180006": {
+      "objective": 339.4921875,
+      "waiting_cost": 1.05,
+      "waiting_violation": 0.078125,
+      "terminal_pending": 0.475,
+      "failure_cost": 63.1171875,
+      "unavailability_cost": 247.25625,
+      "failures": 4.2078125
+    },
+    "covered:cooperative_full_ppo:nominal:12:180006": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180006": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180006": {
+      "objective": 172.9640625,
+      "waiting_cost": 4.44375,
+      "waiting_violation": 0.09375,
+      "terminal_pending": 0.5015625,
+      "failure_cost": 33.703125,
+      "unavailability_cost": 121.1625,
+      "failures": 2.246875
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180006": {
+      "objective": 357.3453125,
+      "waiting_cost": 22.5375,
+      "waiting_violation": 0.20625,
+      "terminal_pending": 0.496875,
+      "failure_cost": 57.375,
+      "unavailability_cost": 249.9375,
+      "failures": 3.825
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180007": {
+      "objective": 205.7484375,
+      "waiting_cost": 0.675,
+      "waiting_violation": 0.05625,
+      "terminal_pending": 0.453125,
+      "failure_cost": 40.1484375,
+      "unavailability_cost": 153.525,
+      "failures": 2.6765625
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180007": {
+      "objective": 413.6125,
+      "waiting_cost": 3.0375,
+      "waiting_violation": 0.23125,
+      "terminal_pending": 0.6140625,
+      "failure_cost": 74.671875,
+      "unavailability_cost": 313.35,
+      "failures": 4.978125
+    },
+    "covered:cooperative_full_ppo:specialized:12:180007": {
+      "objective": 169.0859375,
+      "waiting_cost": 0.075,
+      "waiting_violation": 0.00625,
+      "terminal_pending": 0.3390625,
+      "failure_cost": 34.96875,
+      "unavailability_cost": 119.85,
+      "failures": 2.33125
+    },
+    "covered:cooperative_full_ppo:specialized:24:180007": {
+      "objective": 337.6109375,
+      "waiting_cost": 0.3375,
+      "waiting_violation": 0.028125,
+      "terminal_pending": 0.359375,
+      "failure_cost": 65.6953125,
+      "unavailability_cost": 242.94375,
+      "failures": 4.3796875
+    },
+    "covered:cooperative_full_ppo:nominal:12:180007": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180007": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180007": {
+      "objective": 174.259375,
+      "waiting_cost": 5.56875,
+      "waiting_violation": 0.103125,
+      "terminal_pending": 0.48125,
+      "failure_cost": 34.2421875,
+      "unavailability_cost": 120.6375,
+      "failures": 2.2828125
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180007": {
+      "objective": 361.128125,
+      "waiting_cost": 27.99375,
+      "waiting_violation": 0.2203125,
+      "terminal_pending": 0.50625,
+      "failure_cost": 58.78125,
+      "unavailability_cost": 246.6375,
+      "failures": 3.91875
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180008": {
+      "objective": 204.678125,
+      "waiting_cost": 0.45,
+      "waiting_violation": 0.0375,
+      "terminal_pending": 0.5,
+      "failure_cost": 42.0703125,
+      "unavailability_cost": 150.478125,
+      "failures": 2.8046875
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180008": {
+      "objective": 403.38125,
+      "waiting_cost": 0.7125,
+      "waiting_violation": 0.05625,
+      "terminal_pending": 0.575,
+      "failure_cost": 77.15625,
+      "unavailability_cost": 301.865625,
+      "failures": 5.14375
+    },
+    "covered:cooperative_full_ppo:specialized:12:180008": {
+      "objective": 173.203125,
+      "waiting_cost": 0.6375,
+      "waiting_violation": 0.046875,
+      "terminal_pending": 0.346875,
+      "failure_cost": 41.484375,
+      "unavailability_cost": 116.578125,
+      "failures": 2.765625
+    },
+    "covered:cooperative_full_ppo:specialized:24:180008": {
+      "objective": 345.8046875,
+      "waiting_cost": 1.7625,
+      "waiting_violation": 0.1328125,
+      "terminal_pending": 0.4609375,
+      "failure_cost": 73.171875,
+      "unavailability_cost": 241.940625,
+      "failures": 4.878125
+    },
+    "covered:cooperative_full_ppo:nominal:12:180008": {
+      "objective": 166.2875,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0125,
+      "failure_cost": 0.65625,
+      "unavailability_cost": 154.359375,
+      "failures": 0.04375
+    },
+    "covered:cooperative_full_ppo:nominal:24:180008": {
+      "objective": 340.184375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.021875,
+      "failure_cost": 0.9375,
+      "unavailability_cost": 317.11875,
+      "failures": 0.0625
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180008": {
+      "objective": 181.6015625,
+      "waiting_cost": 10.33125,
+      "waiting_violation": 0.2015625,
+      "terminal_pending": 0.4546875,
+      "failure_cost": 38.8828125,
+      "unavailability_cost": 118.29375,
+      "failures": 2.5921875
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180008": {
+      "objective": 385.30625,
+      "waiting_cost": 46.9125,
+      "waiting_violation": 0.3390625,
+      "terminal_pending": 0.5390625,
+      "failure_cost": 60.515625,
+      "unavailability_cost": 250.10625,
+      "failures": 4.034375
+    },
+    "covered:cooperative_full_ppo:homogeneous:12:180009": {
+      "objective": 208.4,
+      "waiting_cost": 3.15,
+      "waiting_violation": 0.221875,
+      "terminal_pending": 0.5921875,
+      "failure_cost": 35.3203125,
+      "unavailability_cost": 159.215625,
+      "failures": 2.3546875
+    },
+    "covered:cooperative_full_ppo:homogeneous:24:180009": {
+      "objective": 418.203125,
+      "waiting_cost": 10.10625,
+      "waiting_violation": 0.5609375,
+      "terminal_pending": 0.6734375,
+      "failure_cost": 63.375,
+      "unavailability_cost": 323.259375,
+      "failures": 4.225
+    },
+    "covered:cooperative_full_ppo:specialized:12:180009": {
+      "objective": 168.6421875,
+      "waiting_cost": 0.8625,
+      "waiting_violation": 0.0578125,
+      "terminal_pending": 0.4765625,
+      "failure_cost": 33.4453125,
+      "unavailability_cost": 120.421875,
+      "failures": 2.2296875
+    },
+    "covered:cooperative_full_ppo:specialized:24:180009": {
+      "objective": 342.8515625,
+      "waiting_cost": 2.64375,
+      "waiting_violation": 0.15625,
+      "terminal_pending": 0.490625,
+      "failure_cost": 66.890625,
+      "unavailability_cost": 244.5375,
+      "failures": 4.459375
+    },
+    "covered:cooperative_full_ppo:nominal:12:180009": {
+      "objective": 165.8375,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 154.55625,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:nominal:24:180009": {
+      "objective": 339.5625,
+      "waiting_cost": 0.0,
+      "waiting_violation": 0.0,
+      "terminal_pending": 0.0,
+      "failure_cost": 0.0,
+      "unavailability_cost": 317.4375,
+      "failures": 0.0
+    },
+    "covered:cooperative_full_ppo:skill_mask:12:180009": {
+      "objective": 173.1609375,
+      "waiting_cost": 5.86875,
+      "waiting_violation": 0.1234375,
+      "terminal_pending": 0.5125,
+      "failure_cost": 32.6484375,
+      "unavailability_cost": 120.84375,
+      "failures": 2.1765625
+    },
+    "covered:cooperative_full_ppo:skill_mask:24:180009": {
+      "objective": 370.3796875,
+      "waiting_cost": 31.85625,
+      "waiting_violation": 0.2546875,
+      "terminal_pending": 0.565625,
+      "failure_cost": 60.5859375,
+      "unavailability_cost": 249.80625,
+      "failures": 4.0390625
+    }
+  },
+  "full_seed180005_case": {
+    "homogeneous_H12": {
+      "legacy": {
+        "objective": 205.653125,
+        "waiting_cost": 1.81875,
+        "waiting_violation": 0.1359375,
+        "terminal_pending": 0.4921875,
+        "failure_cost": 36.515625,
+        "unavailability_cost": 156.215625,
+        "failures": 2.434375
+      },
+      "covered": {
+        "objective": 207.8046875,
+        "waiting_cost": 3.76875,
+        "waiting_violation": 0.2328125,
+        "terminal_pending": 0.540625,
+        "failure_cost": 34.6171875,
+        "unavailability_cost": 158.559375,
+        "failures": 2.3078125
+      },
+      "difference": 2.1515625000000114
+    },
+    "homogeneous_H24": {
+      "legacy": {
+        "objective": 411.1796875,
+        "waiting_cost": 4.74375,
+        "waiting_violation": 0.3375,
+        "terminal_pending": 0.628125,
+        "failure_cost": 69.421875,
+        "unavailability_cost": 314.709375,
+        "failures": 4.628125
+      },
+      "covered": {
+        "objective": 407.6453125,
+        "waiting_cost": 5.98125,
+        "waiting_violation": 0.371875,
+        "terminal_pending": 0.575,
+        "failure_cost": 66.3046875,
+        "unavailability_cost": 312.7875,
+        "failures": 4.4203125
+      },
+      "difference": -3.5343750000000114
+    },
+    "specialized_H12": {
+      "legacy": {
+        "objective": 170.73125,
+        "waiting_cost": 0.375,
+        "waiting_violation": 0.028125,
+        "terminal_pending": 0.38125,
+        "failure_cost": 35.8828125,
+        "unavailability_cost": 120.4125,
+        "failures": 2.3921875
+      },
+      "covered": {
+        "objective": 168.990625,
+        "waiting_cost": 0.7125,
+        "waiting_violation": 0.0484375,
+        "terminal_pending": 0.4390625,
+        "failure_cost": 33.5625,
+        "unavailability_cost": 120.7125,
+        "failures": 2.2375
+      },
+      "difference": -1.7406249999999943
+    },
+    "specialized_H24": {
+      "legacy": {
+        "objective": 340.859375,
+        "waiting_cost": 0.46875,
+        "waiting_violation": 0.0375,
+        "terminal_pending": 0.4265625,
+        "failure_cost": 68.484375,
+        "unavailability_cost": 243.403125,
+        "failures": 4.565625
+      },
+      "covered": {
+        "objective": 353.659375,
+        "waiting_cost": 1.35,
+        "waiting_violation": 0.1,
+        "terminal_pending": 0.44375,
+        "failure_cost": 71.4375,
+        "unavailability_cost": 250.9875,
+        "failures": 4.7625
+      },
+      "difference": 12.800000000000011
+    },
+    "nominal_H12": {
+      "legacy": {
+        "objective": 165.8375,
+        "waiting_cost": 0.0,
+        "waiting_violation": 0.0,
+        "terminal_pending": 0.0,
+        "failure_cost": 0.0,
+        "unavailability_cost": 154.55625,
+        "failures": 0.0
+      },
+      "covered": {
+        "objective": 165.8375,
+        "waiting_cost": 0.0,
+        "waiting_violation": 0.0,
+        "terminal_pending": 0.0,
+        "failure_cost": 0.0,
+        "unavailability_cost": 154.55625,
+        "failures": 0.0
+      },
+      "difference": 0.0
+    },
+    "nominal_H24": {
+      "legacy": {
+        "objective": 339.5625,
+        "waiting_cost": 0.0,
+        "waiting_violation": 0.0,
+        "terminal_pending": 0.0,
+        "failure_cost": 0.0,
+        "unavailability_cost": 317.4375,
+        "failures": 0.0
+      },
+      "covered": {
+        "objective": 339.5625,
+        "waiting_cost": 0.0,
+        "waiting_violation": 0.0,
+        "terminal_pending": 0.0,
+        "failure_cost": 0.0,
+        "unavailability_cost": 317.4375,
+        "failures": 0.0
+      },
+      "difference": 0.0
+    },
+    "skill_mask_H12": {
+      "legacy": {
+        "objective": 175.36875,
+        "waiting_cost": 6.50625,
+        "waiting_violation": 0.1484375,
+        "terminal_pending": 0.48125,
+        "failure_cost": 34.078125,
+        "unavailability_cost": 121.134375,
+        "failures": 2.271875
+      },
+      "covered": {
+        "objective": 174.084375,
+        "waiting_cost": 5.83125,
+        "waiting_violation": 0.125,
+        "terminal_pending": 0.5140625,
+        "failure_cost": 32.2265625,
+        "unavailability_cost": 122.146875,
+        "failures": 2.1484375
+      },
+      "difference": -1.2843750000000114
+    },
+    "skill_mask_H24": {
+      "legacy": {
+        "objective": 365.7765625,
+        "waiting_cost": 31.275,
+        "waiting_violation": 0.24375,
+        "terminal_pending": 0.5046875,
+        "failure_cost": 59.90625,
+        "unavailability_cost": 247.06875,
+        "failures": 3.99375
+      },
+      "covered": {
+        "objective": 393.5828125,
+        "waiting_cost": 40.7625,
+        "waiting_violation": 0.253125,
+        "terminal_pending": 0.5140625,
+        "failure_cost": 63.421875,
+        "unavailability_cost": 260.025,
+        "failures": 4.228125
+      },
+      "difference": 27.806249999999977
+    }
+  }
+}

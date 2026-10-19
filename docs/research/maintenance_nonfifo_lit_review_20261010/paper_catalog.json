@@ -1,0 +1,577 @@
+[
+  {
+    "id": "M01",
+    "title": "Multi-agent deep reinforcement learning based Predictive Maintenance on parallel machines",
+    "authors": [
+      "Marcelo Luis Ruiz Rodríguez",
+      "Sylvain Kubler",
+      "Andrea de Giorgio",
+      "Maxime Cordy",
+      "Jérémy Robert",
+      "Yves Le Traon"
+    ],
+    "year": 2022,
+    "venue": "Robotics and Computer-Integrated Manufacturing 78, 102406 (2022).",
+    "doi": "10.1016/j.rcim.2022.102406",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0736584522000928",
+    "pdf_url": "https://orbilu.uni.lu/bitstream/10993/54345/1/1-s2.0-S0736584522000928-main.pdf",
+    "access_status": "Publisher states CC BY open access. University PDF indexed; direct fetch failed. Abstract and indexed Methods 3.2/4.3, Table 5, evaluation 4.4 checked.",
+    "read_scope": "Publisher states CC BY open access. University PDF indexed; direct fetch failed. Abstract and indexed Methods 3.2/4.3, Table 5, evaluation 4.4 checked."
+  },
+  {
+    "id": "M02",
+    "title": "Flexible job-shop scheduling and heterogeneous repairman assignment with maintenance time window and employee timetable constraints",
+    "authors": [
+      "Youjun An",
+      "Xiaohui Chen",
+      "Yinghe Li",
+      "Ji Zhang",
+      "Junwei Jiang"
+    ],
+    "year": 2021,
+    "venue": "Expert Systems with Applications 186, 115693 (2021).",
+    "doi": "10.1016/j.eswa.2021.115693",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0957417421010770",
+    "pdf_url": "",
+    "access_status": "Subscription preview; no verified public PDF found. Abstract/introduction checked, mathematical methods unavailable.",
+    "read_scope": "Subscription preview; no verified public PDF found. Abstract/introduction checked, mathematical methods unavailable."
+  },
+  {
+    "id": "M03",
+    "title": "Multi-machine preventive maintenance scheduling with imperfect interventions: A restless bandit approach",
+    "authors": [
+      "Diego Ruiz-Hernández",
+      "Jesús María Pinar-Pérez",
+      "David Delgado-Gómez"
+    ],
+    "year": 2020,
+    "venue": "Computers & Operations Research 119, 104927 (2020).",
+    "doi": "10.1016/j.cor.2020.104927",
+    "page_url": "https://researchportal.uc3m.es/display/act529211",
+    "pdf_url": "https://arxiv.org/pdf/2401.14055",
+    "access_status": "Public author manuscript; PDF opened successfully. Formulation and numerical sections checked.",
+    "read_scope": "Public author manuscript; PDF opened successfully. Formulation and numerical sections checked."
+  },
+  {
+    "id": "M04",
+    "title": "A restless bandit approach for capacitated condition based maintenance scheduling",
+    "authors": [
+      "Ece Zeliha Demirci",
+      "Joachim Arts",
+      "Geert-Jan van Houtum"
+    ],
+    "year": 2025,
+    "venue": "Flexible Services and Manufacturing Journal 37, 179–207 (2025); online 13 June 2024.",
+    "doi": "10.1007/s10696-024-09544-y",
+    "page_url": "https://link.springer.com/article/10.1007/s10696-024-09544-y",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10696-024-09544-y.pdf",
+    "access_status": "CC BY; PDF opened successfully. Model, MDP/RBP formulation and numerical setup checked.",
+    "read_scope": "CC BY; PDF opened successfully. Model, MDP/RBP formulation and numerical setup checked."
+  },
+  {
+    "id": "M05",
+    "title": "Workers-constrained shutdown maintenance scheduling with skills flexibility: Models and solution algorithms",
+    "authors": [
+      "Mehmet Ertem",
+      "Rami As'ad",
+      "Mahmoud Awad",
+      "AbdulRahman Al-Bar"
+    ],
+    "year": 2022,
+    "venue": "Computers & Industrial Engineering 172, 108575 (2022).",
+    "doi": "10.1016/j.cie.2022.108575",
+    "page_url": "https://www.sciencedirect.com/science/article/abs/pii/S0360835222005769",
+    "pdf_url": "",
+    "access_status": "Publisher abstract/introduction inspected; full manuscript and public PDF not verified.",
+    "read_scope": "Publisher abstract/introduction inspected; full manuscript and public PDF not verified."
+  },
+  {
+    "id": "M06",
+    "title": "Deep Reinforcement Learning Based on Proximal Policy Optimization for the Maintenance of a Wind Farm with Multiple Crews",
+    "authors": [
+      "Luca Pinciroli",
+      "Piero Baraldi",
+      "Guido Ballabio",
+      "Michele Compare",
+      "Enrico Zio"
+    ],
+    "year": 2021,
+    "venue": "Energies 14(20), 6743 (2021).",
+    "doi": "10.3390/en14206743",
+    "page_url": "https://www.mdpi.com/1996-1073/14/20/6743",
+    "pdf_url": "https://www.mdpi.com/1996-1073/14/20/6743/pdf",
+    "access_status": "Open access; indexed full HTML Methods 3.1/3.2 and Results 5 checked; direct fetch failed.",
+    "read_scope": "Open access; indexed full HTML Methods 3.1/3.2 and Results 5 checked; direct fetch failed."
+  },
+  {
+    "id": "M07",
+    "title": "Optimization of the Operation and Maintenance of renewable energy systems by Deep Reinforcement Learning",
+    "authors": [
+      "Luca Pinciroli",
+      "Piero Baraldi",
+      "Guido Ballabio",
+      "Michele Compare",
+      "Enrico Zio"
+    ],
+    "year": 2022,
+    "venue": "Renewable Energy 183, 752–763 (2022), online 2021.",
+    "doi": "10.1016/j.renene.2021.11.052",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0960148121016347",
+    "pdf_url": "",
+    "access_status": "Abstract and indexed introduction/conclusion checked. Repository record exists; direct access returned 403. No direct public PDF verified.",
+    "read_scope": "Abstract and indexed introduction/conclusion checked. Repository record exists; direct access returned 403. No direct public PDF verified."
+  },
+  {
+    "id": "M08",
+    "title": "Dynamic maintenance scheduling approach under uncertainty: Comparison between reinforcement learning, genetic algorithm simheuristic, dispatching rules",
+    "authors": [
+      "Marcelo Luis Ruiz-Rodríguez",
+      "Sylvain Kubler",
+      "Jérémy Robert",
+      "Yves Le Traon"
+    ],
+    "year": 2024,
+    "venue": "Expert Systems with Applications 248, 123404 (2024).",
+    "doi": "10.1016/j.eswa.2024.123404",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0957417424002690",
+    "pdf_url": "https://orbilu.uni.lu/bitstream/10993/62366/1/1-s2.0-S0957417424002690-main.pdf",
+    "access_status": "CC BY university PDF indexed, direct fetch not confirmed. Abstract and indexed Methods 3.2/experimental setup checked.",
+    "read_scope": "CC BY university PDF indexed, direct fetch not confirmed. Abstract and indexed Methods 3.2/experimental setup checked."
+  },
+  {
+    "id": "M09",
+    "title": "Two-stage graph attention networks and Q-learning based maintenance tasks scheduling",
+    "authors": [
+      "Xiaoyong Gao",
+      "Diao Peng",
+      "Yixu Yang",
+      "Fuyu Huang",
+      "Yu Yuan",
+      "Chaodong Tan",
+      "Feifei Li"
+    ],
+    "year": 2025,
+    "venue": "Applied Intelligence 55(5), 331 (2025), online 16 January.",
+    "doi": "10.1007/s10489-025-06249-z",
+    "page_url": "https://link.springer.com/article/10.1007/s10489-025-06249-z",
+    "pdf_url": "",
+    "access_status": "Subscription preview explicitly states paid/institutional access. No public manuscript found after title/DOI/arXiv/author searches. Abstract and university methods summary checked.",
+    "read_scope": "Subscription preview explicitly states paid/institutional access. No public manuscript found after title/DOI/arXiv/author searches. Abstract and university methods summary checked."
+  },
+  {
+    "id": "M10",
+    "title": "Evolutionary multi-objective multi-agent deep reinforcement learning for sustainable maintenance scheduling",
+    "authors": [
+      "Marcelo Luis Ruiz-Rodríguez",
+      "Sylvain Kubler",
+      "Jérémy Robert",
+      "Alexandre Voisin",
+      "Yves Le Traon"
+    ],
+    "year": 2025,
+    "venue": "Engineering Applications of Artificial Intelligence 156, 111126 (2025).",
+    "doi": "10.1016/j.engappai.2025.111126",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0952197625011273",
+    "pdf_url": "https://orbilu.uni.lu/bitstream/10993/66631/1/1-s2.0-S0952197625011273-main.pdf",
+    "access_status": "CC BY publisher/university PDF indexed; direct fetch failed. Abstract and indexed Methods 4 state/actions checked.",
+    "read_scope": "CC BY publisher/university PDF indexed; direct fetch failed. Abstract and indexed Methods 4 state/actions checked."
+  },
+  {
+    "id": "M11",
+    "title": "Hybrid Genetic Algorithm and Deep Reinforcement Learning Framework for IoT-Enabled Healthcare Equipment Maintenance Scheduling",
+    "authors": [
+      "Francesco Nucci",
+      "Gabriele Papadia"
+    ],
+    "year": 2025,
+    "venue": "Electronics 14(21), 4160 (2025).",
+    "doi": "10.3390/electronics14214160",
+    "page_url": "https://www.mdpi.com/2079-9292/14/21/4160",
+    "pdf_url": "https://iris.unisalento.it/bitstream/11587/564147/1/electronics-14-04160.pdf",
+    "access_status": "Open-access publisher and repository file indexed; direct fetch failed. Methods 3 and evaluation/discussion indexed excerpts checked.",
+    "read_scope": "Open-access publisher and repository file indexed; direct fetch failed. Methods 3 and evaluation/discussion indexed excerpts checked."
+  },
+  {
+    "id": "M12",
+    "title": "Dynamic repair and maintenance of heterogeneous machines dispersed on a network: A rollout method for online reinforcement learning",
+    "authors": [
+      "Dongnuan Tian",
+      "Rob Shone"
+    ],
+    "year": 2026,
+    "venue": "Computers & Operations Research 193, 107517 (September 2026).",
+    "doi": "10.1016/j.cor.2026.107517",
+    "page_url": "https://www.sciencedirect.com/science/article/abs/pii/S0305054826001358",
+    "pdf_url": "https://arxiv.org/pdf/2602.19277",
+    "access_status": "Public arXiv PDF opened successfully; formulation, index and rollout method and numerical sections checked.",
+    "read_scope": "Public arXiv PDF opened successfully; formulation, index and rollout method and numerical sections checked."
+  },
+  {
+    "id": "M13",
+    "title": "Optimal maintenance scheduling under uncertainties using Linear Programming-enhanced Reinforcement Learning",
+    "authors": [
+      "Jueming Hu",
+      "Yuhao Wang",
+      "Yutian Pang",
+      "Yongming Liu"
+    ],
+    "year": 2022,
+    "venue": "Engineering Applications of Artificial Intelligence109,104655",
+    "doi": "10.1016/j.engappai.2021.104655",
+    "page_url": "https://www.sciencedirect.com/science/article/pii/S0952197621004565",
+    "pdf_url": "",
+    "access_status": "Publisher lists Open Manuscript; direct public PDF not verified",
+    "read_scope": "Abstract, introduction and section previews"
+  },
+  {
+    "id": "M14",
+    "title": "MIRA: Safety-Constrained Multi-Agent Reinforcement Learning for Joint Prescriptive Maintenance and Production Rescheduling in Industrial IoT",
+    "authors": [
+      "Md. Ashraful Babu",
+      "Ali AlArjani",
+      "Mohamed Lahby"
+    ],
+    "year": 2026,
+    "venue": "Future Internet18(8),430",
+    "doi": "10.3390/fi18080430",
+    "page_url": "https://www.mdpi.com/1999-5903/18/8/430",
+    "pdf_url": "https://www.mdpi.com/1999-5903/18/8/430/pdf",
+    "access_status": "Open-access publisher link; PDF fetch not confirmed",
+    "read_scope": "Metadata and abstract only; contextual neighbor"
+  },
+  {
+    "id": "P01",
+    "title": "Rollout Algorithms for Stochastic Scheduling Problems",
+    "authors": [
+      "Dimitri P. Bertsekas",
+      "David A. Castanon"
+    ],
+    "year": 1999,
+    "venue": "Journal of Heuristics5,89–108",
+    "doi": "10.1023/A:1009634810396",
+    "page_url": "https://link.springer.com/article/10.1023/A:1009634810396",
+    "pdf_url": "https://dspace.mit.edu/bitstreams/2991307d-4523-4309-8562-0e0e3d67af28/download",
+    "access_status": "MIT report1998 public link listed; direct tool HTTP405",
+    "read_scope": "Publisher abstract and MIT metadata"
+  },
+  {
+    "id": "P02",
+    "title": "A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning",
+    "authors": [
+      "Stephane Ross",
+      "Geoffrey Gordon",
+      "Drew Bagnell"
+    ],
+    "year": 2011,
+    "venue": "AISTATS, PMLR15,627–635",
+    "doi": "",
+    "page_url": "https://proceedings.mlr.press/v15/ross11a.html",
+    "pdf_url": "https://proceedings.mlr.press/v15/ross11a/ross11a.pdf",
+    "access_status": "Public PDF fetched",
+    "read_scope": "Abstract, introduction, Algorithm3.1 and related assumptions pp.1–4"
+  },
+  {
+    "id": "P03",
+    "title": "Thinking Fast and Slow with Deep Learning and Tree Search",
+    "authors": [
+      "Thomas Anthony",
+      "Zheng Tian",
+      "David Barber"
+    ],
+    "year": 2017,
+    "venue": "NeurIPS2017",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2017/hash/d8e1344e27a5b08cdfd5d027d9b8d6de-Abstract.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper/2017/file/d8e1344e27a5b08cdfd5d027d9b8d6de-Paper.pdf",
+    "access_status": "Public PDF fetched",
+    "read_scope": "Abstract, methodoverview and Expert Iteration section3"
+  },
+  {
+    "id": "P04",
+    "title": "Improving After-sales Service: Deep Reinforcement Learning for Dynamic Time Slot Assignment with Commitments and Customer Preferences",
+    "authors": [
+      "Xiao Mao",
+      "Albert H. Schrotenboer",
+      "Guohua Wu",
+      "Willem van Jaarsveld"
+    ],
+    "year": 2025,
+    "venue": "arXiv preprint2509.17870",
+    "doi": "10.48550/arXiv.2509.17870",
+    "page_url": "https://arxiv.org/abs/2509.17870",
+    "pdf_url": "https://arxiv.org/pdf/2509.17870",
+    "access_status": "Public PDF fetched; no peer-reviewed publication verified",
+    "read_scope": "HTMLsections3–5; model, rollout, comparison and training per system"
+  },
+  {
+    "id": "P05",
+    "title": "Deep Reinforcement Learning at the Edge of the Statistical Precipice",
+    "authors": [
+      "Rishabh Agarwal",
+      "Max Schwarzer",
+      "Pablo Samuel Castro",
+      "Aaron Courville",
+      "Marc G. Bellemare"
+    ],
+    "year": 2021,
+    "venue": "NeurIPS2021",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2021/hash/f514cec81cb148559cf475e7426eed5e-Abstract.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2021/file/f514cec81cb148559cf475e7426eed5e-Paper.pdf",
+    "access_status": "Public PDF fetched",
+    "read_scope": "Introduction, Table1, sections3–4"
+  },
+  {
+    "id": "P06",
+    "title": "ML4CO-Bench-101: Benchmark Machine Learning for Classic Combinatorial Problems on Graphs",
+    "authors": [
+      "Jiale Ma",
+      "Wenzheng Pan",
+      "Yang Li",
+      "Junchi Yan"
+    ],
+    "year": 2025,
+    "venue": "NeurIPS2025 Datasets and Benchmarks",
+    "doi": "10.52202/085713-3921",
+    "page_url": "https://papers.neurips.cc/paper_files/paper/2025/hash/aa9340420e8d78021c35ae984e1bda85-Abstract-Datasets_and_Benchmarks_Track.html",
+    "pdf_url": "https://papers.neurips.cc/paper_files/paper/2025/file/aa9340420e8d78021c35ae984e1bda85-Paper-Datasets_and_Benchmarks_Track.pdf",
+    "access_status": "Public proceedings PDF fetched; OpenReview anti-bot",
+    "read_scope": "Introduction, sections2.1–2.3 and benchmark overview"
+  },
+  {
+    "id": "G1",
+    "title": "Learning to Dispatch for Job Shop Scheduling via Deep Reinforcement Learning",
+    "authors": [
+      "Cong Zhang",
+      "Wen Song",
+      "Zhiguang Cao",
+      "Jie Zhang",
+      "Puay Siew Tan",
+      "Chi Xu"
+    ],
+    "year": 2020,
+    "venue": "NeurIPS 2020",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper/2020/hash/11958dfee29b6709f48a9ba0387a2431-Abstract.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper/2020/file/11958dfee29b6709f48a9ba0387a2431-Paper.pdf",
+    "access_status": "Public proceedings PDF fetched on 2026-10-10",
+    "read_scope": "Methods and experiments pp.3–8; GIN/PPO candidate-operation dispatch; train20×20/30×20→test50×20/100×20; Tables2–4 and OR-Tools gaps."
+  },
+  {
+    "id": "G2",
+    "title": "Flexible Job Shop Scheduling via Dual Attention Network-Based Reinforcement Learning",
+    "authors": [
+      "Runqing Wang",
+      "Gang Wang",
+      "Jian Sun",
+      "Fang Deng",
+      "Jie Chen"
+    ],
+    "year": 2023,
+    "venue": "IEEE Transactions on Neural Networks and Learning Systems (online publication 2023; final issue year/volume not extracted)",
+    "doi": "10.1109/TNNLS.2023.3306421",
+    "page_url": "https://arxiv.org/abs/2305.05119",
+    "pdf_url": "https://arxiv.org/pdf/2305.05119",
+    "access_status": "Public arXiv manuscript PDF fetched; IEEE version may require subscription",
+    "read_scope": "arXivv2 HTML sectionsII–IV and currentPDF; static FJSP operation/machine attention; feasible pair decisions; train10×5/20×10→test30×10/40×10. Online2023 metadata/DOI confirmed by official author repository; no final volume/year asserted."
+  },
+  {
+    "id": "G3",
+    "title": "Attention, Learn to Solve Routing Problems!",
+    "authors": [
+      "Wouter Kool",
+      "Herke van Hoof",
+      "Max Welling"
+    ],
+    "year": 2019,
+    "venue": "ICLR 2019",
+    "doi": "",
+    "page_url": "https://openreview.net/forum?id=ByxBFsRqYm",
+    "pdf_url": "https://arxiv.org/pdf/1803.08475",
+    "access_status": "Public arXiv PDF fetched; OpenReview direct PDF currently anti-bot; initial arXiv2018, conference2019",
+    "read_scope": "Sections3–5: attention encoder, autoregressive masks/context, REINFORCE greedy rollout baseline; principal sizes20/50/100."
+  },
+  {
+    "id": "G4",
+    "title": "POMO: Policy Optimization with Multiple Optima for Reinforcement Learning",
+    "authors": [
+      "Yeong-Dae Kwon",
+      "Jinho Choo",
+      "Byoungjip Kim",
+      "Iljoo Yoon",
+      "Youngjune Gwon",
+      "Seungjai Min"
+    ],
+    "year": 2020,
+    "venue": "NeurIPS 2020",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2010.16011",
+    "pdf_url": "https://papers.neurips.cc/paper_files/paper/2020/file/f231f2107df69eab0a3862d50018a9b2-Paper.pdf",
+    "access_status": "Public proceedings PDF fetched",
+    "read_scope": "Sections3–5 andTables2–4: multiple starts/shared baseline; augmentation versus single-trajectory inference; TSP/CVRP20/50/100, knapsack50/100/200."
+  },
+  {
+    "id": "G5",
+    "title": "Learning to delegate for large-scale vehicle routing",
+    "authors": [
+      "Sirui Li",
+      "Zhongxia Yan",
+      "Cathy Wu"
+    ],
+    "year": 2021,
+    "venue": "NeurIPS 2021",
+    "doi": "",
+    "page_url": "https://papers.neurips.cc/paper_files/paper/2021/hash/dc9fa5f217a1e57b8a6adeb065560b38-Abstract.html",
+    "pdf_url": "https://papers.neurips.cc/paper_files/paper/2021/file/dc9fa5f217a1e57b8a6adeb065560b38-Paper.pdf",
+    "access_status": "Public proceedings PDF fetched",
+    "read_scope": "Sections4–6: learned subproblem selection and externalsubsolver; trainingmix500/1000/2000 and test3000; fixed-quality speedup versus fixed-time improvement; learned increment versus decomposition."
+  },
+  {
+    "id": "G6",
+    "title": "Neural Combinatorial Optimization with Heavy Decoder: Toward Large Scale Generalization",
+    "authors": [
+      "Fu Luo",
+      "Xi Lin",
+      "Fei Liu",
+      "Qingfu Zhang",
+      "Zhenkun Wang"
+    ],
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/1c10d0c087c14689628124bbc8fa69f6-Abstract-Conference.html",
+    "pdf_url": "https://proceedings.neurips.cc/paper_files/paper/2023/file/1c10d0c087c14689628124bbc8fa69f6-Paper-Conference.pdf",
+    "access_status": "Public proceedings PDF fetched",
+    "read_scope": "Sections3–6: supervised partial-solution reconstruction, dynamic remaining-node decoding; TSP100/CVRP100train, test100/200/500/1000; optionalRRCinference and teacherlabels."
+  },
+  {
+    "id": "G7",
+    "title": "BQ-NCO: Bisimulation Quotienting for Efficient Neural Combinatorial Optimization",
+    "authors": [
+      "Darko Drakulic",
+      "Sofia Michel",
+      "Florian Mai",
+      "Arnaud Sors",
+      "Jean-Marc Andreoli"
+    ],
+    "year": 2023,
+    "venue": "NeurIPS 2023",
+    "doi": "10.52202/075280-3385",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/f445ba15f0f05c26e1d24f908ea78d60-Abstract.html",
+    "pdf_url": "https://papers.nips.cc/paper_files/paper/2023/file/f445ba15f0f05c26e1d24f908ea78d60-Paper-Conference.pdf",
+    "access_status": "Public proceedings and arXivPDFfetched",
+    "read_scope": "Methods/section6in arXivfullversion: bisimulation constructiveMDP, expertimitation; routingtrain100→test100/200/500/1000; nearest250candidate limit; theorem concernsoptimalreducedMDPpolicy."
+  },
+  {
+    "id": "G8",
+    "title": "GLOP: Learning Global Partition and Local Construction for Solving Large-Scale Routing Problems in Real-Time",
+    "authors": [
+      "Haoran Ye",
+      "Jiarui Wang",
+      "Helan Liang",
+      "Zhiguang Cao",
+      "Yong Li",
+      "Fanzhang Li"
+    ],
+    "year": 2024,
+    "venue": "AAAI 2024,38(18):20284–20292",
+    "doi": "10.1609/aaai.v38i18.30009",
+    "page_url": "https://ojs.aaai.org/index.php/AAAI/article/view/30009",
+    "pdf_url": "https://ojs.aaai.org/index.php/AAAI/article/download/30009/31772",
+    "access_status": "Public proceedings PDF fetched; initialarXiv2023, conference2024",
+    "read_scope": "Proceedingspp.1–4intro/method: hierarchicalpartition + localautoregressiveconstruction; headlineTSP100KspecifiedLKHsetting; exactlocaltrainingsizes notextracted."
+  },
+  {
+    "id": "G9",
+    "title": "How Good Is Neural Combinatorial Optimization? A Systematic Evaluation on the Traveling Salesman Problem",
+    "authors": [
+      "Shengcai Liu",
+      "Yu Zhang",
+      "Ke Tang",
+      "Xin Yao"
+    ],
+    "year": 2023,
+    "venue": "IEEE Computational Intelligence Magazine,18(3):14–28",
+    "doi": "10.1109/MCI.2023.3277768",
+    "page_url": "https://arxiv.org/abs/2209.10913",
+    "pdf_url": "https://arxiv.org/pdf/2209.10913",
+    "access_status": "Public arXiv manuscript PDF fetched; publication2023confirmed authorhomepage; initialarXiv2022",
+    "read_scope": "Comparativeexperiments, sectionIV/TableIV: POMO/DACT/NeuroLKHversustunedLKH/EAX; inputsize/distributiongeneralization;50→100DACT/POMOgapdeterioration."
+  },
+  {
+    "id": "G10",
+    "title": "Routing Arena: A Benchmark Suite for Neural Routing Solvers",
+    "authors": [
+      "Daniela Thyssens",
+      "Tim Dernedde",
+      "Jonas K. Falkner",
+      "Lars Schmidt-Thieme"
+    ],
+    "year": 2023,
+    "venue": "arXiv preprint; no peer-reviewed venue verified",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2310.04140",
+    "pdf_url": "https://arxiv.org/pdf/2310.04140",
+    "access_status": "Public arXivPDFfetched",
+    "read_scope": "Sections4/6,Table4,Figure2: fixed-budget/anytime,WRAP/hardwarenormalization caveats; strongORHGS/FILO/LKHversusneural methods."
+  },
+  {
+    "id": "G11",
+    "title": "Improving Generalization of Neural Combinatorial Optimization for Vehicle Routing Problems via Test-Time Projection Learning",
+    "authors": [
+      "Yuanyao Chen",
+      "Rongsheng Chen",
+      "Fu Luo",
+      "Zhenkun Wang"
+    ],
+    "year": 2025,
+    "venue": "NeurIPS 2025",
+    "doi": "",
+    "page_url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/6edd46d69ef91f4555d67f7b321d6902-Abstract-Conference.html",
+    "pdf_url": "https://papers.nips.cc/paper_files/paper/2025/file/6edd46d69ef91f4555d67f7b321d6902-Paper-Conference.pdf",
+    "access_status": "Public proceedings and arXivPDFfetched",
+    "read_scope": "Abstract/intropp.1–2: LLM-discoveredprojection appliedatinference, no backbone retraining; localcandidateprojection/multiviewdecisionfusion;100-trainedbackboneto100K; numericaltablesnotextracted."
+  },
+  {
+    "id": "G12",
+    "title": "PARCO: Parallel AutoRegressive Models for Multi-Agent Combinatorial Optimization",
+    "authors": [
+      "Federico Berto",
+      "Chuanbo Hua",
+      "Laurin Luttmann",
+      "Jiwoo Son",
+      "Junyoung Park",
+      "Kyuree Ahn",
+      "Changhyun Kwon",
+      "Lin Xie",
+      "Jinkyoo Park"
+    ],
+    "year": 2025,
+    "venue": "NeurIPS 2025",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2409.03811",
+    "pdf_url": "https://arxiv.org/pdf/2409.03811",
+    "access_status": "Public arXivv3PDFfetched; acceptanceNeurIPS2025verified; initialpreprint2024titlechanged",
+    "read_scope": "Sections4/5 andAppendixB.2/B.3: Transformercommunication/multiplepointers/conflicthandler; OMDCPDPtrainN50–100/M5–20→testN1000/newM; FFSPseparateconfigurationtraining."
+  },
+  {
+    "id": "G13",
+    "title": "RRNCO: Towards Real-World Routing with Neural Combinatorial Optimization",
+    "authors": [
+      "Jiwoo Son",
+      "Zhikai Zhao",
+      "Federico Berto",
+      "Chuanbo Hua",
+      "Zhiguang Cao",
+      "Changhyun Kwon",
+      "Jinkyoo Park"
+    ],
+    "year": 2026,
+    "venue": "ICLR 2026",
+    "doi": "",
+    "page_url": "https://arxiv.org/abs/2503.16159",
+    "pdf_url": "https://arxiv.org/pdf/2503.16159",
+    "access_status": "Public arXivv2PDFfetched; title/authorsmatch2026version; OpenReviewanti-bot; initialarXiv2025differs",
+    "read_scope": "Sections1/4/5pp.1–8:100cities asymmetricdistance/duration matrices, node+edgeadaptivebias; neuralandtraditionalcomparisons; notmaintenance-scaleproof."
+  }
+]

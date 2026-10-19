@@ -1,0 +1,37 @@
+condition,source,controller,PM_states_with_choice,max_adjusted_gain,margin,near_tie_count,changed,reasons
+dense,18100000,landmark_low_ungated,173,1.1396080255508423,2.3750137865543364,4,42,"{'insufficient_predicted_gain': 131, 'none': 42}"
+dense,18100000,landmark_low_gated,163,0.6567955017089844,2.3750137865543364,0,0,{'insufficient_predicted_gain': 163}
+dense,18100000,opportunity_low_ungated,172,1.4217852354049683,2.164867495596409,4,36,"{'insufficient_predicted_gain': 136, 'none': 36}"
+dense,18100000,opportunity_low_gated,163,1.2506334781646729,2.164867495596409,0,0,{'insufficient_predicted_gain': 163}
+dense,18100000,opportunity_high_ungated,173,1.215035080909729,2.0210194730758664,4,33,"{'insufficient_predicted_gain': 140, 'none': 33}"
+dense,18100000,opportunity_high_gated,163,1.0855448246002197,2.0210194730758664,0,0,{'insufficient_predicted_gain': 163}
+dense,18100001,landmark_low_ungated,158,1.0088019371032715,1.5844514787197113,4,46,"{'insufficient_predicted_gain': 112, 'none': 46}"
+dense,18100001,landmark_low_gated,161,0.8337389230728149,1.5844514787197113,0,0,{'insufficient_predicted_gain': 161}
+dense,18100001,opportunity_low_ungated,158,1.9101649522781372,1.4050034895539283,4,60,"{'insufficient_predicted_gain': 98, 'none': 60}"
+dense,18100001,opportunity_low_gated,156,1.7203867435455322,1.4050034895539283,0,5,"{'insufficient_predicted_gain': 151, 'none': 5}"
+dense,18100001,opportunity_high_ungated,158,1.6143783330917358,1.4640694084763526,4,51,"{'insufficient_predicted_gain': 107, 'none': 51}"
+dense,18100001,opportunity_high_gated,161,1.34172523021698,1.4640694084763526,0,0,{'insufficient_predicted_gain': 161}
+dense,18100002,landmark_low_ungated,166,0.8680469393730164,2.1923536825738847,2,48,"{'insufficient_predicted_gain': 118, 'none': 48}"
+dense,18100002,landmark_low_gated,163,0.6008318066596985,2.1923536825738847,2,0,{'insufficient_predicted_gain': 163}
+dense,18100002,opportunity_low_ungated,165,1.7471919059753418,1.819349955022335,2,52,"{'insufficient_predicted_gain': 113, 'none': 52}"
+dense,18100002,opportunity_low_gated,163,1.0732171535491943,1.819349955022335,2,0,{'insufficient_predicted_gain': 163}
+dense,18100002,opportunity_high_ungated,165,1.546980381011963,1.8857429578900338,2,53,"{'insufficient_predicted_gain': 112, 'none': 53}"
+dense,18100002,opportunity_high_gated,163,0.9687449932098389,1.8857429578900338,2,0,{'insufficient_predicted_gain': 163}
+skill_mask,18100000,landmark_low_ungated,46,0.5700117945671082,1.6582400181889534,4,9,"{'insufficient_predicted_gain': 37, 'none': 9}"
+skill_mask,18100000,landmark_low_gated,44,0.5119505524635315,1.6582400181889534,0,0,{'insufficient_predicted_gain': 44}
+skill_mask,18100000,opportunity_low_ungated,46,0.9559938311576843,1.6230635124444963,4,9,"{'insufficient_predicted_gain': 37, 'none': 9}"
+skill_mask,18100000,opportunity_low_gated,44,0.8637063503265381,1.6230635124444963,0,0,{'insufficient_predicted_gain': 44}
+skill_mask,18100000,opportunity_high_ungated,46,0.6263737678527832,1.319507392346859,4,9,"{'insufficient_predicted_gain': 37, 'none': 9}"
+skill_mask,18100000,opportunity_high_gated,44,0.07763135433197021,1.319507392346859,0,0,{'insufficient_predicted_gain': 44}
+skill_mask,18100001,landmark_low_ungated,67,1.0101500749588013,1.957973400950432,4,17,"{'insufficient_predicted_gain': 50, 'none': 17}"
+skill_mask,18100001,landmark_low_gated,67,0.8362526297569275,1.957973400950432,0,0,{'insufficient_predicted_gain': 67}
+skill_mask,18100001,opportunity_low_ungated,67,1.908216118812561,2.1254556411504746,4,17,"{'insufficient_predicted_gain': 50, 'none': 17}"
+skill_mask,18100001,opportunity_low_gated,67,1.7186399698257446,2.1254556411504746,0,0,{'insufficient_predicted_gain': 67}
+skill_mask,18100001,opportunity_high_ungated,64,1.6147760152816772,2.0426518374681475,4,16,"{'insufficient_predicted_gain': 48, 'none': 16}"
+skill_mask,18100001,opportunity_high_gated,67,1.3435324430465698,2.0426518374681475,0,0,{'insufficient_predicted_gain': 67}
+skill_mask,18100002,landmark_low_ungated,40,1.2006131410598755,2.345653535425663,0,20,"{'none': 20, 'insufficient_predicted_gain': 20}"
+skill_mask,18100002,landmark_low_gated,37,0.9881284236907959,2.345653535425663,0,0,{'insufficient_predicted_gain': 37}
+skill_mask,18100002,opportunity_low_ungated,40,1.6841063499450684,1.7851531475782396,0,19,"{'none': 19, 'insufficient_predicted_gain': 21}"
+skill_mask,18100002,opportunity_low_gated,37,1.4594553709030151,1.7851531475782396,0,0,{'insufficient_predicted_gain': 37}
+skill_mask,18100002,opportunity_high_ungated,40,1.3724365234375,2.0343831253051756,0,19,"{'none': 19, 'insufficient_predicted_gain': 21}"
+skill_mask,18100002,opportunity_high_gated,37,1.0758464336395264,2.0343831253051756,0,0,{'insufficient_predicted_gain': 37}

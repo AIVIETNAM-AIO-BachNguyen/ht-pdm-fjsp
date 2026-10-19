@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "run": "/Users/bachng/Coding/Reinforcement Learning/marl/artifacts/maintenance_lookahead_boundary_v1_full_mac_cpu_20261012T060421Z",
+  "files_checked": 23,
+  "audit": "PASS",
+  "counts": {
+    "episodes": 896,
+    "physical_transitions": 53760,
+    "landmarks": 896
+  },
+  "joint_gate": {
+    "practical_cost": true,
+    "availability": true,
+    "pending": true
+  },
+  "assignment_gate": {
+    "practical_cost": false,
+    "availability": true,
+    "pending": true
+  },
+  "original_scientific_status": "NOT_CONFIRMED"
+}

@@ -1,0 +1,73 @@
+{
+  "status": "ANALYZED",
+  "source": "/Users/bachng/Coding/Reinforcement Learning/marl/lab_results/ra_qmix_policy_supervision_full_cpu_20261003T181732Z",
+  "csv_state_regrets_verified": 107200,
+  "teacher_state_assignments_verified": 1340,
+  "checkpoints_replayed": 180,
+  "checkpoint_decisions_verified": 80400,
+  "exact_policy_costs_recomputed": 240,
+  "checkpoint_scope": "All three shared-agent arms, both regimes, ten seeds; central Joint-Q inference not replayed",
+  "gates_recomputed": {
+    "scientific_gate_applicable": true,
+    "primary": {
+      "learnability": {
+        "cells": {
+          "nominal": {
+            "mean_all_state_regret": 0.0,
+            "seeds_at_99_percent_optimal": 10,
+            "passed": true
+          },
+          "shared_preference": {
+            "mean_all_state_regret": 0.0,
+            "seeds_at_99_percent_optimal": 10,
+            "passed": true
+          },
+          "pressure": {
+            "mean_all_state_regret": 0.0,
+            "seeds_at_99_percent_optimal": 10,
+            "passed": true
+          }
+        },
+        "passed": true
+      },
+      "objective": {
+        "mean_regret_delta": -1.1062218429327473,
+        "ci95": [
+          -1.2062221302723242,
+          -1.0062215555931704
+        ],
+        "baseline_regret": 1.1062218429327473,
+        "relative_reduction": 1.0,
+        "improving_seed_count": 10,
+        "diagnostic_policy_cost_delta_mean": -14.822325000000001,
+        "nominal_cost_relative_increase": -0.8154832608720722,
+        "minimum_absolute_reduction": 0.1,
+        "minimum_relative_reduction": 0.2,
+        "minimum_improving_seed_count": 8,
+        "hypothesis_passed": true
+      }
+    },
+    "positive_control": {
+      "cells": {
+        "nominal": {
+          "all_state_regret": 0.005827056666666678,
+          "undiscounted_policy_gap": 0.05,
+          "passed": true
+        },
+        "shared_preference": {
+          "all_state_regret": 0.0060500180446194365,
+          "undiscounted_policy_gap": 0.0,
+          "passed": true
+        },
+        "pressure": {
+          "all_state_regret": 0.040140785872351266,
+          "undiscounted_policy_gap": 0.7897500000000044,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    "empirical_objective_attribution_supported": true,
+    "interpretation": "Ceiling is allstates fit; split is transductive fixed-teacher transfer. No adaptation/generalization-to-new-environments claim."
+  }
+}

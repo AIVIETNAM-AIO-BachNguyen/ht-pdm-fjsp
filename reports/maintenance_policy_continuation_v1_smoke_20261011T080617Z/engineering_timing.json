@@ -1,0 +1,106 @@
+{
+  "scope": "engineering performance only; four locked smoke states at42, same smoke roles,32 scenarios,3 repeats; no fresh full forecasts",
+  "samples": [
+    {
+      "seconds": 0.016676041996106505,
+      "condition": "dense",
+      "origin": "joint_ppo",
+      "unique_roots": 2,
+      "transitions": 2304,
+      "rl_rows": 320
+    },
+    {
+      "seconds": 0.016860749979969114,
+      "condition": "dense",
+      "origin": "best_rule",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.01637808297527954,
+      "condition": "skill_mask",
+      "origin": "joint_ppo",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.017285500012803823,
+      "condition": "skill_mask",
+      "origin": "best_rule",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.014345792005769908,
+      "condition": "dense",
+      "origin": "joint_ppo",
+      "unique_roots": 2,
+      "transitions": 2304,
+      "rl_rows": 320
+    },
+    {
+      "seconds": 0.017151208012364805,
+      "condition": "dense",
+      "origin": "best_rule",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.017419832991436124,
+      "condition": "skill_mask",
+      "origin": "joint_ppo",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.0170076250215061,
+      "condition": "skill_mask",
+      "origin": "best_rule",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.013923916965723038,
+      "condition": "dense",
+      "origin": "joint_ppo",
+      "unique_roots": 2,
+      "transitions": 2304,
+      "rl_rows": 320
+    },
+    {
+      "seconds": 0.01780508301453665,
+      "condition": "dense",
+      "origin": "best_rule",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.017867624992504716,
+      "condition": "skill_mask",
+      "origin": "joint_ppo",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    },
+    {
+      "seconds": 0.016763083986006677,
+      "condition": "skill_mask",
+      "origin": "best_rule",
+      "unique_roots": 3,
+      "transitions": 3456,
+      "rl_rows": 480
+    }
+  ],
+  "full_worst_window_linear_estimate_seconds": 137.22335994243622,
+  "full_mean_window_linear_estimate_seconds": 85.11340456704298,
+  "full_mean_rl_clock_linear_estimate_seconds": 195.76083050419885,
+  "full_longest_rl_clock_linear_estimate_seconds": 375.077183842659,
+  "estimate_limitations": "Engineering extrapolation from t42 only. Physical-window scaling undercounts inference at earlier landmarks. RL-clock scaling is also not a timing bound; root counts, near ties, tail state distribution, preflight, serialization, bootstrap and Ubuntu hardware differ."
+}

@@ -1,0 +1,118 @@
+{
+  "scope": "debug affected unselected selection root only",
+  "interpretation": "Forcing the other locally tied token reconstructs the stored lab cost/boundaries; inferred cause, no original lab action trace is available.",
+  "variants": [
+    {
+      "forced_first_token_tick35": null,
+      "base": 999.0,
+      "tail": 265.0,
+      "cost": 1264.0,
+      "lab_cost": 1294.0,
+      "boundary_matches_lab": {
+        "cutoff": false,
+        "terminal": false
+      },
+      "tie": {
+        "state": {
+          "ages": [
+            0,
+            4,
+            5,
+            5
+          ],
+          "failed": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "pending_wait": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "remaining": [
+            3,
+            0
+          ],
+          "assigned": [
+            1,
+            -1
+          ]
+        },
+        "tied_best_tokens": [
+          5,
+          7
+        ],
+        "logits": {
+          "5": -1.022182583808899,
+          "7": -1.022182583808899
+        },
+        "normal_argmax": 5,
+        "executed_action": [
+          [
+            2,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "forced_first_token_tick35": 7,
+      "base": 1015.0,
+      "tail": 279.0,
+      "cost": 1294.0,
+      "lab_cost": 1294.0,
+      "boundary_matches_lab": {
+        "cutoff": true,
+        "terminal": true
+      },
+      "tie": {
+        "state": {
+          "ages": [
+            0,
+            4,
+            5,
+            5
+          ],
+          "failed": [
+            false,
+            true,
+            true,
+            true
+          ],
+          "pending_wait": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "remaining": [
+            3,
+            0
+          ],
+          "assigned": [
+            1,
+            -1
+          ]
+        },
+        "tied_best_tokens": [
+          5,
+          7
+        ],
+        "logits": {
+          "5": -1.022182583808899,
+          "7": -1.022182583808899
+        },
+        "normal_argmax": 5,
+        "executed_action": [
+          [
+            3,
+            1
+          ]
+        ]
+      }
+    }
+  ]
+}
