@@ -29,6 +29,8 @@ PLAN = ROOT / "docs" / f"{VERSION}_plan.md"
 REGISTRY = ROOT / "configs" / f"{VERSION}_seed_registry.json"
 SOURCES = ("maintenance_dispatch.py", "maintenance_requests.py",
            "maintenance_request_policies.py", "maintenance_request_experiment.py", "__init__.py")
+EXECUTION_INPUTS = ("src", "configs", "pyproject.toml", "uv.lock", "AGENTS.md",
+                    f"docs/{VERSION}_plan.md")
 
 
 def write_json(path, value):
@@ -37,6 +39,25 @@ def write_json(path, value):
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def git_preflight(root=ROOT):
+    """Protect every runtime/config input, without blocking unrelated reports.
+
+    HEAD diff includes index and working-tree changes. Untracked files under
+    input directories are included because imports and registry discovery can
+    consume them. No files are modified or removed by this check.
+    """
+    def read(*args):
+        return subprocess.check_output(["git", *args], cwd=root, text=True)
+    changed = read("diff", "--name-only", "-z", "HEAD", "--", *EXECUTION_INPUTS)
+    untracked = read("ls-files", "--others", "--exclude-standard", "-z", "--", *EXECUTION_INPUTS)
+    blocking = sorted(set(path for path in (changed + untracked).split("\0") if path))
+    return dict(commit=read("rev-parse", "HEAD").strip(),
+                branch=read("branch", "--show-current").strip(),
+                dirty=bool(read("status", "--porcelain").strip()),
+                source_clean=not blocking, blocking_paths=blocking,
+                guarded_paths=list(EXECUTION_INPUTS))
 
 
 def settings(profile):
@@ -269,11 +290,11 @@ def run(profile, output_dir, device="cpu"):
         raise ValueError("CPU only")
     cfg, configs = settings(profile), family_configs(profile)
     seed_info = seed_audit()
-    git = dict(commit=subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
-               branch=subprocess.check_output(["git", "branch", "--show-current"], cwd=ROOT, text=True).strip(),
-               dirty=bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT, text=True).strip()))
-    if profile == "full" and git["dirty"]:
-        raise RuntimeError("full run requires clean committed source")
+    git = git_preflight()
+    if profile == "full" and not git["source_clean"]:
+        raise RuntimeError("full run requires committed execution inputs; changed paths: "
+                           + ", ".join(git["blocking_paths"])
+                           + ". Existing files were preserved; run the committed revision in a clean worktree.")
     out = Path(output_dir).resolve()
     if out.exists() and (not out.is_dir() or any(out.iterdir())):
         raise FileExistsError("refusing to overwrite run")

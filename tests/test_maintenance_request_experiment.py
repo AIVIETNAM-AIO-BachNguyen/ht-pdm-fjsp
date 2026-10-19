@@ -1,5 +1,6 @@
 import csv
 import json
+import subprocess
 
 import pytest
 
@@ -56,9 +57,57 @@ def test_timeout_writes_failed_manifest(tmp_path, monkeypatch):
 
 
 def test_full_run_is_rejected_with_dirty_source(tmp_path, monkeypatch):
-    original = experiment.subprocess.check_output
-    def fake(command, **kwargs):
-        return " M changed.py\n" if command[:2] == ["git", "status"] else original(command, **kwargs)
-    monkeypatch.setattr(experiment.subprocess, "check_output", fake)
-    with pytest.raises(RuntimeError, match="clean"):
+    monkeypatch.setattr(experiment, "git_preflight", lambda: dict(
+        dirty=True, source_clean=False, blocking_paths=["src/changed.py"]))
+    with pytest.raises(RuntimeError, match="src/changed.py"):
         experiment.run("full", tmp_path / "full")
+
+
+@pytest.fixture
+def git_repo(tmp_path):
+    def git(*args):
+        return subprocess.check_output(["git", *args], cwd=tmp_path, text=True)
+    git("init", "-q")
+    git("config", "user.name", "Test")
+    git("config", "user.email", "test@example.invalid")
+    (tmp_path / "src").mkdir()
+    (tmp_path / "src" / "model.py").write_text("value = 1\n")
+    (tmp_path / "configs").mkdir()
+    (tmp_path / "configs" / "old_seed_registry.json").write_text("{}\n")
+    (tmp_path / "report.md").write_text("old report\n")
+    git("add", ".")
+    git("commit", "-qm", "fixture")
+    return tmp_path, git
+
+
+def test_unrelated_tracked_and_untracked_reports_are_recorded_but_not_blocked(git_repo):
+    root, _ = git_repo
+    (root / "report.md").write_text("updated report\n")
+    (root / "reports").mkdir()
+    (root / "reports" / "local result.txt").write_text("local result\n")
+    state = experiment.git_preflight(root)
+    assert state["dirty"] and state["source_clean"] and not state["blocking_paths"]
+    assert (root / "reports" / "local result.txt").read_text() == "local result\n"
+
+
+@pytest.mark.parametrize("change", ["unstaged", "staged", "deleted", "renamed", "untracked", "registry"])
+def test_execution_input_changes_are_blocked_with_exact_paths(git_repo, change):
+    root, git = git_repo
+    source = root / "src" / "model.py"
+    expected = "src/model.py"
+    if change in ("unstaged", "staged"):
+        source.write_text("value = 2\n")
+        if change == "staged":
+            git("add", "src/model.py")
+    elif change == "deleted":
+        source.unlink()
+    elif change == "renamed":
+        git("mv", "src/model.py", "outside.py")
+    elif change == "untracked":
+        (root / "src" / "extra file.py").write_text("value = 3\n")
+        expected = "src/extra file.py"
+    else:
+        (root / "configs" / "old_seed_registry.json").write_text('{"seed": 1}\n')
+        expected = "configs/old_seed_registry.json"
+    state = experiment.git_preflight(root)
+    assert not state["source_clean"] and expected in state["blocking_paths"]

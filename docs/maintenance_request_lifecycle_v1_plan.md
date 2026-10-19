@@ -90,3 +90,18 @@ episodes.partial.csv, episodes.csv, decisions.jsonl (full state/action/events/
 following/cost/lifecycle), summary.json, audit.json and source_snapshot/.
 No model/checkpoint applies. Replay validates all transitions, request invariants,
 cost decomposition and episode metric sums. Raw artifacts never overwritten.
+
+## Engineering amendment: source preflight (2026-10-19)
+The first lab launch stopped before evaluation because the original guard
+treated any Git status entry as an uncommitted source change, including
+untracked reports. Replace that check with a source-scoped check covering all
+src/, configs/ (all seed registries are read), pyproject.toml, uv.lock,
+AGENTS.md and this protocol. Detect staged/unstaged/deleted/renamed tracked
+inputs and untracked files in those paths. Other workspace status remains
+recorded in the manifest but does not block execution. Error messages must
+list blocking paths; no bypass flag or automatic reset/clean/stash is added.
+Test with real temporary Git repositories, run the existing lifecycle tests
+and a fresh Mac smoke, then commit/push. The safe lab handoff uses a clean
+detached worktree and writes results to the original artifacts directory;
+existing lab files are preserved. No physical parameters, seeds, budgets or
+scientific comparisons change. No full outcomes have been observed here.
