@@ -253,3 +253,32 @@ thay ngưỡng hoặc chọn lại checkpoint. B1/B2/B3/B4 đều không xác nh
 claim B. Bước kế tiếp chỉ dùng train/DEV B4 đã mở để chẩn đoán residual
 cùng trọng số; nếu có căn cứ cơ chế mới thì khóa một panel fresh khác
 trước bất kỳ follow-up khoa học nào.
+
+**B4 chẩn đoán DEV cùng trọng số (19-10-2026 03:43 UTC):**
+kế hoạch thăm dò đã khóa tại `53f3727` sau verdict B4, trước can
+thiệp; script/test `3688fae` đã qua 2 focused tests và smoke 12
+episode, commit/push trước full. Smoke đầu dừng kỹ thuật vì kiểm tra
+hiệu logit sai số làm tròn 1,9×10⁻⁶; đã sửa sang so phép cộng đúng thứ
+tự forward, giữ artifact FAILED và smoke timestamp mới PASS.
+Full DEV-only artifact
+`/home/bachng/ht-pdm-fjsp-prefix-residual-v4/artifacts/technician_prefix_residual_v4_dev_diagnostic_20261019T033805Z`
+`COMPLETED`, 192 episode, 308,60 s, `test_opened=false`.
+Audit độc lập trên hash/panel/hàng DEV đã khóa và phép tổng hợp tại
+`/home/bachng/ht-pdm-fjsp-prefix-residual-v4-confirmation/artifacts/technician_prefix_residual_v4_dev_diagnostic_independent_audit_20261019T034329Z`
+PASS (report SHA-256
+`c590037a5f5b9ff7c8230df54519af31dfdfc29aba540c296e23a131137b81ab`);
+audit này không tự rerun policy/physics.
+
+Tắt **chỉ** direct residual mà giữ encoder, relational prefix,
+capacity, legal mask và mọi trọng số đã fit làm đổi 6/4.608 tick N4
+và 1.490/4.608 tick N8 trên trạng thái full. Cost/machine full so
+với residual-off là 263,5260 vs 264,3464 N4 và 272,7109 vs
+273,4805 N8; full có lợi trên trung bình same-weight, nhưng replica
+N8 seed 69000002 bất lợi (284,4414 vs 282,0625). Đây là bằng chứng
+residual được dùng mạnh ở N8, không phải bằng chứng full vượt
+mask-only huấn luyện riêng. B4 DEV_GATE_FAIL, N8 health fail và B4
+TEST sealed giữ nguyên. B1–B4 cùng mô thức: tín hiệu prefix ảnh hưởng
+policy đã fit nhưng không đạt contrast matched trained. Follow-up
+tiếp theo, nếu làm, nên thử ổn định quá trình học từ cùng precursor
+mask-only với budget và panel mới; không quét hệ số residual hay sửa
+checkpoint/ngưỡng trên B4 DEV.

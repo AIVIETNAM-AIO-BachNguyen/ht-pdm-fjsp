@@ -300,3 +300,14 @@ The scientific B4 TEST panel remains sealed. A same-weight intervention,
 if performed, can diagnose this failure but cannot reverse it. B1–B4
 are four distinct negative developmental rounds for the registered
 prefix-information claim.
+
+A frozen-weight B4 DEV diagnosis then zeroed only the direct selected-edge
+logit residual. This changed 6/4,608 N4 and 1,490/4,608 N8 decisions
+on full-policy states. Mean full costs per machine were 263.5260 versus
+264.3464 with the residual off at N4, and 272.7109 versus 273.4805 at
+N8, although one N8 replica was adverse. The 192-episode DEV-only
+artifact passed an independent saved-output/panel/arithmetic audit.
+This shows use of the fitted residual; it cannot overturn the
+separately trained mask-only contrast, the N8 health failure or the
+sealed B4 TEST. Four rounds now suggest that optimization and stability
+of the augmented actor require investigation before another claim.
