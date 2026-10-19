@@ -288,3 +288,15 @@ conditional confirmation panels are disjoint from B1–B3. Eight focused
 tests and an independently replayed engineering smoke validated the
 implementation; that smoke is not scientific evidence. B4 DEV is pending,
 and the B1–B3 failures remain part of the record.
+
+The fourth preregistered prefix follow-up also failed its DEV screen.
+Its independently audited full-versus-separately-trained mask-only gain
+was −2.0386% pooled, −0.1643% at N4 and −3.9177% at N8. N8 full
+availability was lower by 0.01074, beyond the registered 0.01 point
+guard; all recorded invalid-assignment counts were zero. The DEV run
+used three training bundles and 32 physical seeds per scale, with
+184,320 training episodes across 24 models and 3,072 DEV episodes.
+The scientific B4 TEST panel remains sealed. A same-weight intervention,
+if performed, can diagnose this failure but cannot reverse it. B1–B4
+are four distinct negative developmental rounds for the registered
+prefix-information claim.

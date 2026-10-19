@@ -227,3 +227,29 @@ kiểm cả quỹ đạo full/mask-only, residual/logit, legal set và physics:
 engineering smoke 384+384 state, 2.304 stage, 2.400 tick, zero invalid,
 PASS. Đây là chuẩn bị đường mở TEST có điều kiện, không là kết quả khoa học
 hay giấy phép mở TEST khi DEV chưa đạt.
+
+**B4 DEV verdict (19-10-2026 03:32 UTC): FAIL, TEST sealed.** Run
+`/home/bachng/ht-pdm-fjsp-prefix-residual-v4/artifacts/technician_prefix_residual_v4_development_20261018T231458Z`
+hoàn tất sạch sau 15.364,86 s (service exit 0, manifest `COMPLETED`,
+internal audit PASS), source commit `0d94985` đã push trước FULL.
+Verifier độc lập tại
+`/home/bachng/ht-pdm-fjsp-prefix-residual-v4-confirmation/artifacts/technician_prefix_residual_v4_development_independent_audit_20261019T033153Z`
+PASS (report SHA-256
+`bd26bee4950fb869ed9eedacc9cc2bbed6a36a93efb78506d94931090925a4bb`,
+source manifest SHA-256
+`bcb284ff6af94a0cdce7cd7172c8f42f32d35883fbfba4834d925e7901c24f9e`).
+Audit kiểm 270 source seal, 485 output binding, 184.320 episode huấn
+luyện, 24 model, 61.440 training tape ghép cặp, 3.072 episode DEV,
+checkpoint/cost/health và `test_opened=false`.
+
+Contrast full so với mask-only học riêng theo thước đo đã đăng ký:
+pooled **−2,0386%** (gate DEV +0,5%), N4 **−0,1643%**,
+N8 **−3,9177%**. N8 full availability 0,65823 so với mask-only
+0,66897, chênh **−0,01074** vượt biên −0,01; pending/failure và
+zero-invalid point guards còn lại đạt. Direct logit residual đã đổi
+quyết định ở engineering smoke, nhưng không tạo matched-control gain
+trên DEV mới. Giữ B4 verdict âm, không mở confirmation/TEST, không
+thay ngưỡng hoặc chọn lại checkpoint. B1/B2/B3/B4 đều không xác nhận
+claim B. Bước kế tiếp chỉ dùng train/DEV B4 đã mở để chẩn đoán residual
+cùng trọng số; nếu có căn cứ cơ chế mới thì khóa một panel fresh khác
+trước bất kỳ follow-up khoa học nào.
