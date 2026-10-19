@@ -382,3 +382,14 @@ Bằng chứng này đủ để thiết kế **một** follow-up prospectively: 
 đường direct residual, giữ relational/capacity với shared mask-only
 precursor và budget bằng mask-only, dùng train/DEV/conditional TEST
 seed mới, không quét coefficient hoặc chọn lại B5 checkpoint.
+
+**B6 thiết kế prospective, chưa chạy (19-10-2026 08:38 UTC):**
+`docs/technician_prefix_residual_free_v6_plan.md` khóa đúng một cơ chế
+follow-up: shared mask-only precursor, bật relational/capacity prefix
+sau 245.760 quyết định nhưng triệt direct logit residual trong full arm;
+control mask-only được huấn luyện riêng với cùng ngân sách. Không thay
+đổi DEV/confirmation gates B5, không dựa trên B5 TEST. Registry
+`configs/technician_prefix_residual_free_v6_seed_registry.json` dùng
+370 raw seed mới (train/DEV/conditional TEST/smoke), kiểm tra không
+trùng các registry hiện hữu. Đây là thiết kế từ DEV diagnosis, chưa
+có efficacy result hoặc B6 run.

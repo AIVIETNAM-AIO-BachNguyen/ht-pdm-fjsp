@@ -348,3 +348,9 @@ shared weights. They do not establish the effect after training or change
 the failed B5 matched trained-control verdict. B5 TEST is sealed. A
 separate residual-free, delayed relational/capacity follow-up is being
 specified on fresh seeds and panels before any efficacy run.
+
+The prospectively specified B6 follow-up will test a separately trained,
+residual-free relational/capacity prefix after the same delayed mask-only
+precursor, on fresh training, DEV and conditional TEST panels. The B5 gates
+and equal training budget remain fixed. This is a proposed experiment, not
+an observed B6 result.
