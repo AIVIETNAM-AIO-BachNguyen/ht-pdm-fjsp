@@ -111,7 +111,7 @@ configuration, while its physical transition replay covers the full panel.
 | B1 full vs mask-only vs no-reservation | New N4/N8 DEV gate failed: pooled +0.2205%; N4 +0.6746%, N8 −0.2437%; TEST remains sealed | V4 coordination benefit does not establish an added prefix benefit; no positive prefix claim |
 | A teacher-assisted vs scratch on N8/N16/N32 | A1 DEV running on fresh seeds; no verdict or TEST opened | Must match PPO/optimizer/physics budgets and disclose extra teacher compute |
 | B2 candidate-conditioned relational prefix vs mask-only | DEV gate failed: pooled −0.1644%, N4 −0.0168%, N8 −0.3119%; independent DEV audit passed; TEST sealed | The relational message has no demonstrated gain over a separately trained mask-only control on this DEV panel |
-| C non-V4 skill/capacity and persistent-request families | C1 DEV running on two prospectively fixed N8/N16 families; no verdict or TEST opened | Must beat matched mask-only and match DEV-selected strong FCFS/risk within registered bounds |
+| C non-V4 skill/capacity and persistent-request families | C1 DEV and independent verifier PASS on two fixed N8/N16 families; confirmation running, no TEST verdict yet | Must beat matched mask-only and match DEV-selected strong FCFS/risk within registered bounds |
 
 V4 used 48 policy ticks and 12 common deadline-tail ticks, K=N/2, repeated
 balanced skill blocks. Its N32 failures per machine were higher than the
@@ -352,5 +352,20 @@ specified on fresh seeds and panels before any efficacy run.
 The prospectively specified B6 follow-up will test a separately trained,
 residual-free relational/capacity prefix after the same delayed mask-only
 precursor, on fresh training, DEV and conditional TEST panels. The B5 gates
-and equal training budget remain fixed. This is a proposed experiment, not
-an observed B6 result.
+and equal training budget remain fixed. This was a proposed experiment at registration; B6 DEV is now running,
+with no observed scientific result yet.
+
+C1 completed its developmental screen. An independent audit of 48 fitted
+models, 7,680 DEV episodes, 491,520 training episodes and paired physical
+tapes passed. The selected pooled full-versus-mask-only cost gain was
+12.9747%, with 6.9969% in long service and 20.2024% in skill bottleneck;
+all registered family health point guards passed. The DEV-selected risk
+heuristic was worse than full by 9.4295% pooled. A fresh confirmation run
+is underway with its runner bound to the exact independent DEV PASS.
+These are DEV findings; C1 has no confirmatory TEST verdict yet.
+
+B6 residual-free delayed prefix code passed focused tests and independently
+replayed engineering smoke with zero direct-residual stages and active
+selected-prefix messages. Its new scientific DEV run is in progress.
+Its conditional TEST panel remains sealed and there is no B6 efficacy
+result.

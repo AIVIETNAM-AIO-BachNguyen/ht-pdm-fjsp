@@ -55,7 +55,7 @@ số là claim B.
 | A1 teacher→student | Teacher N4 + distillation giúp graph reservation trên N8/N16/N32 so với scratch cùng PPO budget; `a60f716` | `/home/bachng/ht-pdm-fjsp-teacher-transfer-v1/artifacts/technician_teacher_transfer_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke, chờ DEV hoàn chỉnh. |
 | B2 relational prefix | Candidate-conditioned attention trên các selected edge giúp hơn mask-only học lại, sau B1 FAIL; `b2a271f` | `/home/bachng/ht-pdm-fjsp-relational-v2/artifacts/technician_relational_prefix_v2_development_20261018T134357Z` | DEV GATE FAIL; kiểm toán độc lập PASS; TEST sealed. |
 | B3 selected-pair capacity prefix | Hai scalar tải dịch vụ và phục hồi yếu của cặp đã chọn, cộng B2 relational message; matched mask-only tắt cả hai; `a99ab1c` | `/home/bachng/.codex/worktrees/reservation-prefix-capacity-v3/ht-pdm-fjsp/artifacts/technician_prefix_capacity_v3_development_20261018T173438Z` | DEV GATE FAIL; kiểm toán độc lập PASS; TEST sealed. |
-| C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `396ecb5` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z` | RUNNING, training pool; TEST sealed. Verifier độc lập đã PASS trên smoke. |
+| C1 đa cấu hình | N8/N16 skill/K khác V4 và service 2–4 tick với request bền vững, đối chứng mask-only/scratch/FCFS/risk; `396ecb5` | `/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z` | DEV_GATE_PASS với verifier độc lập PASS; confirmation mới đang chạy, chưa có verdict TEST. |
 
 Các commit verifier/doc sau khi run bắt đầu không đổi mã learner/protocol/
 registry được chụp trong artifact. Không diễn giải progress huấn luyện hoặc
@@ -391,5 +391,44 @@ control mask-only được huấn luyện riêng với cùng ngân sách. Không
 đổi DEV/confirmation gates B5, không dựa trên B5 TEST. Registry
 `configs/technician_prefix_residual_free_v6_seed_registry.json` dùng
 370 raw seed mới (train/DEV/conditional TEST/smoke), kiểm tra không
-trùng các registry hiện hữu. Đây là thiết kế từ DEV diagnosis, chưa
+trùng các registry hiện hữu. Đây là thiết kế từ DEV diagnosis; tại thời điểm khóa chưa
 có efficacy result hoặc B6 run.
+
+**C1 DEV gate và confirmation (19-10-2026 09:02 UTC):** C1 run
+`/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_20261018T134420Z`
+COMPLETED exit 0, internal audit PASS, `test_opened=false`, source
+`396ecb5` đã push, 48 model, 7.680 DEV episode, 68.335,44 s wall.
+Verifier độc lập tại
+`/home/bachng/ht-pdm-fjsp-diverse-v1/artifacts/technician_diverse_maintenance_v1_development_independent_audit_20261019T090024Z`
+PASS, report SHA-256
+`de048191e7e12acac592c665350823867bed92b67722a58bce90c523caed0eba`,
+source manifest SHA-256
+`0c78bc97e855f298142dd6958b4cae28b14a1c8a3f37351e2ffdcc6daccc146c`.
+Kiểm 265 source seal, 691 output binding, 7.936 hàng DEV/reference,
+491.520 training episode và 128 physical tape DEV ghép cặp. DEV screen
+PASS: pooled full/mask gain **12,9747%**, long_service **6,9969%**,
+skill_bottleneck **20,2024%**, gain so với heuristic risk đã chọn trên
+DEV **9,4295%**; tất cả family health point guard PASS. Đây chưa là
+claim TEST.
+
+Confirmation C1 mở bằng runner `d1a8418` đã push, 14 focused tests
+PASS, preflight bind đúng DEV manifest/report/verifier hash. Unit
+`codex-reservation-c1-confirmation-20261019T090238Z`, artifact mới
+`/home/bachng/ht-pdm-fjsp-diverse-confirmation-v1/artifacts/technician_diverse_maintenance_v1_confirmation_20261019T090238Z`
+RUNNING; 5 training bundle và TEST mới được dùng theo protocol khi đến
+đúng stage. Tại lúc ghi, `test_opened=false`, chưa có confirmation
+verdict. Sau COMPLETED phải chạy verifier TEST độc lập trước kết luận C.
+
+**B6 triển khai theo plan đã khóa (19-10-2026 09:09 UTC):** bản sao plan/
+registry đúng hash được push trước code tại `0b8f936`; residual-free
+policy, DEV auditor và TEST verifier ở `cfa3937` đã push sau 16 focused
+regression tests, engineering smoke 384 quyết định/1 bundle và
+independent physical/prefix replay PASS (2.400 tick, zero invalid,
+zero direct-residual stage, 442 nonzero prefix stage). B6 DEV unit
+`codex-reservation-b6-dev-20261019T090913Z`, artifact
+`/home/bachng/ht-pdm-fjsp-prefix-residual-free-v6/artifacts/technician_prefix_residual_free_v6_development_20261019T090913Z`
+RUNNING trên panel DEV mới; `test_opened=false`. Confirmation runner
+riêng `7634d8d` đã push, 19 tests PASS, engineering smoke và replay
+độc lập PASS; guard từ chối DEV RUNNING và yêu cầu exact independent
+`DEV_GATE_PASS` bound bằng hash. B6 chưa có khoa học DEV verdict;
+TEST khoa học vẫn sealed.
