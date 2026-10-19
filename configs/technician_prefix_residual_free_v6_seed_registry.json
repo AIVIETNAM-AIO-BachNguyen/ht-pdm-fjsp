@@ -1,0 +1,27 @@
+{
+  "protocol": "technician_prefix_residual_free_v6",
+  "panels": {
+    "development": {
+      "train_seeds": [73000000, 73000001, 73000002],
+      "development_start": 73100000,
+      "development_count": 32,
+      "analysis_seed": 73200000
+    },
+    "confirmation": {
+      "train_seeds": [73400000, 73400001, 73400002, 73400003, 73400004],
+      "development_start": 73500000,
+      "development_count": 64,
+      "test_start": 73600000,
+      "test_count": 256,
+      "analysis_seed": 73700000
+    },
+    "smoke": {
+      "train_seeds": [73800000],
+      "development_start": 73900000,
+      "development_count": 2,
+      "test_start": 74000000,
+      "test_count": 4,
+      "analysis_seed": 74100000
+    }
+  }
+}
