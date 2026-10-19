@@ -322,3 +322,16 @@ post-branch DEV checkpoints. Fresh DEV and conditional TEST panels and the
 unchanged B4 screen were locked before implementation. Focused tests and
 an independently replayed engineering smoke passed; the B5 scientific DEV
 run is in progress, and no B5 efficacy or confirmation claim is made.
+
+B5 completed and failed its preregistered DEV screen. The independently
+audited pooled full-versus-mask-only selected-cost gain was −12.8136%
+(N4 −8.3221%, N8 −17.2770%), with multiple availability, pending and
+failure health guards failing despite zero invalid assignments. The exact
+common mask-only precursor and branch checkpoint were verified. On the
+opened DEV panel, activating the full prefix at the shared 245,760-step
+checkpoint produced cost-per-machine gaps of 297.7943 versus 263.0130
+at N4 and 383.2148 versus 265.9141 at N8. Further PPO training narrowed
+but did not eliminate the gaps. This descriptive checkpoint trajectory
+does not identify which prefix component caused the damage. B5 TEST
+remains sealed, and B1–B5 are negative developmental results for the
+matched prefix claim. No efficacy or confirmation claim follows from B5.

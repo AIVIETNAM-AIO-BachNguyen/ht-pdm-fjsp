@@ -315,3 +315,37 @@ internal audit PASS, DEV screen PASS, TEST sealed và verifier DEV độc lập
 `DEV_GATE_PASS` gắn đúng manifest/verifier hash. 10 focused tests PASS;
 read-only guard trên snapshot DEV đang chạy PASS và khi thiếu audit độc
 lập nó từ chối mở TEST. Runner chưa được phép chạy confirmation.
+
+**B5 DEV verdict (19-10-2026 08:17 UTC): FAIL, TEST sealed.** Run
+`/home/bachng/ht-pdm-fjsp-prefix-activation-v5/artifacts/technician_prefix_activation_v5_development_20261019T035848Z`
+`COMPLETED` exit 0 sau 15.439,52 s, internal audit PASS, source commit
+`2995987` đã push trước FULL, 24 model và 1.920 DEV episode. Verifier
+độc lập tại
+`/home/bachng/ht-pdm-fjsp-prefix-activation-v5-confirmation/artifacts/technician_prefix_activation_v5_development_independent_audit_20261019T081719Z`
+PASS nhưng verdict `DEV_GATE_FAIL` (report SHA-256
+`0fa48ba2eadbfb3e382e4341fa10fe009756c2daef55afd825387b56efd27c8d`;
+source manifest SHA-256
+`66c242b7b65b0ec1f3d63fab654e67c60a59740cb210c0476f7037aea2ad5c60`;
+verifier SHA-256
+`9f450834f9b5c7210987241cd00418d7151f118371f096ec1294ffef93e8d710`).
+Audit kiểm 275 source seal, 448 output binding, 31.200 precursor record
+full/mask và branch checkpoint, checkpoint/cost/health; `test_opened=false`.
+
+Matched selected-cost gain full so với mask-only là **−12,8136% pooled**,
+N4 **−8,3221%**, N8 **−17,2770%**, thấp xa DEV gate +0,5%.
+Availability full/mask N4 0,65272/0,66748, N8 0,60856/0,66838;
+failures/machine N4 0,90104/0,12240, N8 0,97396/0,10807.
+N4 pending/machine 0,05729/0; N8 0,01823/0. Zero-invalid guard
+đạt, nhưng nhiều health guard khác fail. Không mở B5 confirmation/TEST,
+không sửa checkpoint/ngưỡng hoặc tái diễn giải B1–B4.
+
+Chẩn đoán mô tả **chỉ trên DEV đã mở**, không là kết quả mới: tại
+checkpoint chuyển mode 245.760, cost/machine full/mask N4 297,7943/
+263,0130 (gain −13,2242%), N8 383,2148/265,9141 (−44,1123%).
+Sau thêm PPO đến 491.520, N4 285,7917/265,1198 (−7,7972%),
+N8 312,7279/263,7747 (−18,5587%). Bởi precursor hash, action
+sequence và record full/mask trước branch khớp, tổn thất lớn bắt đầu
+ở việc bật prefix; quá trình học sau đó hồi phục một phần nhưng không
+đạt matched contrast. Chưa định danh riêng tác dụng của relational
+message, capacity và direct residual; cần chẩn đoán cơ chế DEV-only
+trước khi khóa bất kỳ follow-up khoa học mới nào.
