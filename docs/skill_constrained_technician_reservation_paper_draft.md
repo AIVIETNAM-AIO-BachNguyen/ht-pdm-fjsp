@@ -387,3 +387,15 @@ zero-invalid checks passed. Its conditional TEST panel remains sealed.
 B5's earlier same-weight intervention isolated its immediate direct-residual
 damage; B6 has not demonstrated a separately trained prefix benefit. B1–B6 remain
 negative developmental results for that claim.
+
+
+The C1 protocol, fixed before any C1 outcome while B2 DEV was still
+running, also contains the three-arm contrast needed to interpret prefix
+information: a relational selected-edge full policy, separately trained
+matched mask-only policy, and no-reservation/no-prefix policy with the same
+N4 teacher and target PPO budget. If C1 confirmation passes its registered
+full/mask CI and health gates under independent audit, it can support a
+**context-specific** prefix-information claim on the two non-V4 maintenance
+families. It cannot reverse B1–B6 negative balanced-family DEV verdicts or
+establish benefit across arbitrary staffing ratios. This interpretation was
+recorded while C1 TEST remained sealed; no endpoint or threshold is changed.

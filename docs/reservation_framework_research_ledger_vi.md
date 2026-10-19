@@ -461,3 +461,18 @@ arrival load, service duration và skill coverage. Sau verdict C1, nếu
 muốn claim độ rộng staffing, phải đăng ký panel seed mới thay đổi độc
 lập `K/N`, topology kỹ năng và mức tải; báo zero-shot, fine-tuning và
 train mới riêng, không diễn giải fine-tuning là zero-shot.
+
+
+**Diễn giải B/C khóa khi C1 TEST còn sealed (19-10-2026 13:53 UTC):**
+C1 protocol được khóa trước mọi C1 outcome và cả khi B2 DEV còn chạy.
+Nó gồm full relational selected-edge prefix, mask-only huấn luyện riêng
+với cùng N4 teacher/PPO budget/legal set/order, và no-reservation/no-prefix
+cùng teacher/budget. C1 đã đăng ký contrast full/mask trên bốn cấu hình
+non-V4 với point gain >=1%, cận dưới CI một phía sau Bonferroni >0,
+family/health guards. Do đó, nếu confirmation C1 đạt và verifier độc lập
+PASS, cùng panel này có thể hỗ trợ claim B **chỉ trong hai họ non-V4 đã
+đăng ký**, đồng thời là một phần claim C. Điều này không đảo verdict âm
+B1–B6 trên balanced V4, không chứng minh prefix hữu ích ở mọi cấu hình,
+và không cho phép đổi protocol sau khi nhìn TEST. Nếu C1 không đạt, cả
+B lẫn C liên quan vẫn chưa được xác nhận. C1 TEST chưa mở tại thời điểm
+ghi chú này.
