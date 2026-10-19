@@ -1,5 +1,25 @@
 # Minimal HT-PdM-FJSP benchmark
 
+## Explicit shared maintenance requests
+
+The request-lifecycle diagnostic builds on the completion-time maintenance
+kernel at commit `2e19043`. Machines submit persistent PM requests to a shared
+pool, keep operating while queued, and upgrade the same request to CM if they
+fail. A technician is bound only at service start; restoration occurs at
+completion. The historical environments are unchanged.
+
+```bash
+uv run python -m ht_pdm_fjsp.maintenance_request_experiment \
+  --profile smoke --device cpu \
+  --output-dir "artifacts/maintenance_request_lifecycle_v1_smoke_$(date -u +%Y%m%dT%H%M%SZ)"
+```
+
+See [the locked protocol](docs/maintenance_request_lifecycle_v1_plan.md) for
+the request/dispatch factorial, physical family, seed panels, common tail,
+economic objective, waiting/backlog measures and audit contract. Requesting
+early is free in this model, so this experiment does not establish an intrinsic
+optimal timing tradeoff. Smoke results are engineering evidence only.
+
 This repository contains a small, reproducible event-driven benchmark for joint
 flexible-job-shop scheduling, Weibull machine degradation, preventive/corrective
 maintenance, and heterogeneous technician assignment.
