@@ -282,3 +282,27 @@ policy đã fit nhưng không đạt contrast matched trained. Follow-up
 tiếp theo, nếu làm, nên thử ổn định quá trình học từ cùng precursor
 mask-only với budget và panel mới; không quét hệ số residual hay sửa
 checkpoint/ngưỡng trên B4 DEV.
+
+**B5 follow-up ổn định học (19-10-2026 03:58 UTC):** sau chẩn
+đoán B4, khóa trước protocol/panel mới tại commit `703e5e2`, push trước
+code/outcome. Giả thuyết duy nhất: hai arm dùng chung mask-only warm và
+245.760 quyết định PPO đầu hoàn toàn đồng nhất; tại ranh giới rollout,
+chỉ full bật relational prefix, capacity và direct residual cho 245.760
+quyết định còn lại, Adam state giữ nguyên. Kiểm hash tham số, chuỗi
+action, tiến trình và episode ở precursor; lệch là lỗi kỹ thuật. Cả hai
+chọn checkpoint chỉ ở 245.760/368.640/491.520. Giữ nguyên cost/health
+DEV gate B4, physics, budget 491.520, TEST sealed. Seed DEV 71000000–
+71200000, confirmation mới 71400000–71700000, smoke riêng
+71800000–72100000; audit raw IDs không trùng registry trước.
+
+Code B5 `2995987` gồm verifier DEV/TEST độc lập, 8 focused tests
+PASS; engineering smoke cuối `technician_prefix_activation_v5_smoke_20261019T041100Z`
+`COMPLETED`, internal audit PASS, independent replay 2.400 physical tick
+PASS. Tên thư mục smoke được gán trước giờ chạy; UTC thật nằm trong
+manifest (03:56:26–03:57:07 UTC); không dùng smoke để quyết định khoa
+học. Code đã push và đối chiếu remote exact SHA trước FULL. DEV FULL
+artifact mới
+`/home/bachng/ht-pdm-fjsp-prefix-activation-v5/artifacts/technician_prefix_activation_v5_development_20261019T035848Z`
+đang RUNNING ở commit `2995987`, manifest `test_opened=false`. Chỉ khi
+COMPLETED mới chạy verifier DEV; nếu fail, giữ B5 TEST sealed và không
+đổi verdict B1–B4.

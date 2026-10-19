@@ -311,3 +311,14 @@ This shows use of the fitted residual; it cannot overturn the
 separately trained mask-only contrast, the N8 health failure or the
 sealed B4 TEST. Four rounds now suggest that optimization and stability
 of the augmented actor require investigation before another claim.
+
+A fifth developmental follow-up was registered only after the negative B4
+verdict and its same-weight diagnosis. It tests training stability by giving
+full and mask-only policies an identical mask-only warm state and first
+245,760 PPO decisions, then activating the B4 selected-prefix path only in
+the full arm for the remaining 245,760 decisions while retaining Adam state.
+Both arms use the same total budget and select among the same three
+post-branch DEV checkpoints. Fresh DEV and conditional TEST panels and the
+unchanged B4 screen were locked before implementation. Focused tests and
+an independently replayed engineering smoke passed; the B5 scientific DEV
+run is in progress, and no B5 efficacy or confirmation claim is made.
