@@ -432,3 +432,32 @@ riêng `7634d8d` đã push, 19 tests PASS, engineering smoke và replay
 độc lập PASS; guard từ chối DEV RUNNING và yêu cầu exact independent
 `DEV_GATE_PASS` bound bằng hash. B6 chưa có khoa học DEV verdict;
 TEST khoa học vẫn sealed.
+
+**B6 DEV verdict (19-10-2026 13:48 UTC):** run trên hoàn tất exit 0,
+internal audit PASS, 24 model, 1.920 DEV episode, `test_opened=false`.
+Verifier độc lập tại
+`/home/bachng/ht-pdm-fjsp-prefix-residual-free-v6/artifacts/technician_prefix_residual_free_v6_development_independent_audit_20261019T134836Z`
+PASS cho tính đúng và tái tính đúng verdict **`DEV_GATE_FAIL`**; report
+SHA-256 `71cad2c5825c6029396181f2789d03265067bdcc882722f0ac8b83253aa28a26`,
+source manifest SHA-256
+`48b734fb26efe36e72bc9ad49a67f2dba1192376a628ab08d4374ee4b4425019`.
+Selected pooled full/mask cost gain chỉ **+0,0933%**, dưới ngưỡng DEV
++0,5%; N4 **+0,2566%**, N8 **−0,0729%**. Các point health guard và
+zero-invalid đều đạt. Verifier kiểm 280 source seal, 453 output binding,
+24 training audit, 31.200 precursor record và shared branch checkpoint.
+Việc bỏ direct residual loại phần hại tức thời của B5 nhưng không tạo
+được lợi ích prefix đủ mức khi huấn luyện lại với mask-only control.
+Giữ B6 scientific TEST sealed; confirmation runner không được mở.
+B1–B6 đều không đạt DEV gate, không suy ra hiệu quả prefix độc lập.
+Chẩn đoán tiếp theo, nếu có, chỉ dùng B6 train/DEV đã mở và phải khóa
+giả thuyết trước một follow-up mới với seed/panel khác; không quét hậu
+nghiệm các checkpoint hay mở lại TEST B1–B6.
+
+**Giới hạn staffing/generalization:** V4 chỉ dùng `K=N/2`; C1 đang xác
+nhận hai họ non-V4, trong đó `skill_bottleneck` dùng `K/N=3/8=6/16`
+còn `long_service` vẫn dùng `K/N=1/2`. Đây không phải phép chứng minh
+khái quát trên mọi tỷ lệ technician/máy. Tỷ lệ phù hợp còn phụ thuộc
+arrival load, service duration và skill coverage. Sau verdict C1, nếu
+muốn claim độ rộng staffing, phải đăng ký panel seed mới thay đổi độc
+lập `K/N`, topology kỹ năng và mức tải; báo zero-shot, fine-tuning và
+train mới riêng, không diễn giải fine-tuning là zero-shot.

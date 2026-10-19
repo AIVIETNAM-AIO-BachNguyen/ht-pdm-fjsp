@@ -177,6 +177,17 @@ papers has been measured, so we must not claim superiority over their methods.
 ## Limitations and failure cases to retain
 
 - V4 has one balanced physics family, K=N/2, and a common finite horizon.
+- C1 adds K/N=3/8 in the skill-bottleneck family but retains K/N=1/2 in
+  the long-service family. A result on these four configurations cannot
+  establish robustness over staffing ratios, skill coverage, and offered
+  load generally. The appropriate technician-to-machine ratio is a domain
+  parameter, not a fixed law; no plant staffing data validate either ratio.
+  Any broader claim requires a prospectively registered, disjoint panel
+  varying these axes and distinguishing zero-shot from fine-tuning and
+  training anew. Worker-flexibility benchmarks also vary worker counts and
+  eligibility, but their production workers have a different resource role
+  from shared maintenance technicians; see [Hutter et al.
+  (2026)](https://arxiv.org/html/2501.16159v3).
 - The graph student receives the complete current graph and a shared
   reservation service. Local-sensor decentralization and network performance
   were not tested.
@@ -321,7 +332,7 @@ Both arms use the same total budget and select among the same three
 post-branch DEV checkpoints. Fresh DEV and conditional TEST panels and the
 unchanged B4 screen were locked before implementation. Focused tests and
 an independently replayed engineering smoke passed; the B5 scientific DEV
-run is in progress, and no B5 efficacy or confirmation claim is made.
+run subsequently failed its registered screen, as reported below.
 
 B5 completed and failed its preregistered DEV screen. The independently
 audited pooled full-versus-mask-only selected-cost gain was −12.8136%
@@ -346,14 +357,14 @@ machine from 297.7943 to 263.0130 at N4 (mask-only 263.0130) and from
 attribute most *immediate* activation damage to the direct residual at
 shared weights. They do not establish the effect after training or change
 the failed B5 matched trained-control verdict. B5 TEST is sealed. A
-separate residual-free, delayed relational/capacity follow-up is being
-specified on fresh seeds and panels before any efficacy run.
+separate residual-free, delayed relational/capacity follow-up was
+registered on fresh seeds and panels before its efficacy run.
 
-The prospectively specified B6 follow-up will test a separately trained,
+The prospectively specified B6 follow-up tests a separately trained,
 residual-free relational/capacity prefix after the same delayed mask-only
 precursor, on fresh training, DEV and conditional TEST panels. The B5 gates
-and equal training budget remain fixed. This was a proposed experiment at registration; B6 DEV is now running,
-with no observed scientific result yet.
+and equal training budget remain fixed. This was the preregistered design;
+the completed B6 DEV result is reported below.
 
 C1 completed its developmental screen. An independent audit of 48 fitted
 models, 7,680 DEV episodes, 491,520 training episodes and paired physical
@@ -366,6 +377,13 @@ These are DEV findings; C1 has no confirmatory TEST verdict yet.
 
 B6 residual-free delayed prefix code passed focused tests and independently
 replayed engineering smoke with zero direct-residual stages and active
-selected-prefix messages. Its new scientific DEV run is in progress.
-Its conditional TEST panel remains sealed and there is no B6 efficacy
-result.
+selected-prefix messages. Its scientific DEV run completed with internal
+audit PASS, 24 trained models and 1,920 DEV episodes. The independent
+verifier passed 280 source seals, 453 output bindings, and paired precursor
+records, and reproduced **DEV_GATE_FAIL**: selected pooled full-versus-
+mask-only cost gain was only +0.0933% against the registered +0.5% DEV
+screen; N4 was +0.2566% and N8 was −0.0729%. Health point guards and
+zero-invalid checks passed. Its conditional TEST panel remains sealed.
+B5's earlier same-weight intervention isolated its immediate direct-residual
+damage; B6 has not demonstrated a separately trained prefix benefit. B1–B6 remain
+negative developmental results for that claim.
