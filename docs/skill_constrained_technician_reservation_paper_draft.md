@@ -335,3 +335,16 @@ but did not eliminate the gaps. This descriptive checkpoint trajectory
 does not identify which prefix component caused the damage. B5 TEST
 remains sealed, and B1–B5 are negative developmental results for the
 matched prefix claim. No efficacy or confirmation claim follows from B5.
+
+A preregistered, exploratory B5 branch-point intervention used the same
+245,760-step weights on the already opened DEV panel. Independent artifact,
+panel, and arithmetic audit passed for 192 episodes. Removing only the
+direct prefix logit residual, while preserving graph encoding, relational
+prefix, capacity features, legality and base logits, reduced cost per
+machine from 297.7943 to 263.0130 at N4 (mask-only 263.0130) and from
+383.2148 to 266.4740 at N8 (mask-only 265.9141). These comparisons
+attribute most *immediate* activation damage to the direct residual at
+shared weights. They do not establish the effect after training or change
+the failed B5 matched trained-control verdict. B5 TEST is sealed. A
+separate residual-free, delayed relational/capacity follow-up is being
+specified on fresh seeds and panels before any efficacy run.

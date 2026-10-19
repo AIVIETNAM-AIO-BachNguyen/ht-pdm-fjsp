@@ -349,3 +349,36 @@ sequence và record full/mask trước branch khớp, tổn thất lớn bắt �
 đạt matched contrast. Chưa định danh riêng tác dụng của relational
 message, capacity và direct residual; cần chẩn đoán cơ chế DEV-only
 trước khi khóa bất kỳ follow-up khoa học mới nào.
+
+**B5 chẩn đoán cơ chế tại branch, DEV-only (19-10-2026 08:35 UTC):**
+Kế hoạch can thiệp đã khóa và push tại `febac59` sau B5
+`DEV_GATE_FAIL`, trước khi viết code. Script/tests đã qua 12 focused tests,
+smoke 12 episode trên hai seed DEV đầu của mỗi scale, rồi commit/push
+`3198cbc` trước full diagnosis. Artifact mới
+`/home/bachng/ht-pdm-fjsp-prefix-activation-v5-confirmation/artifacts/technician_prefix_activation_v5_diagnostic_full_20261019T082808Z`
+`COMPLETED` 192 episode, 348,36 s, manifest SHA-256
+`5b6be57413edb3623b519fd20f6887d964f51fd4b7b67ade3bf8915bbea03d4c`.
+Independent saved-artifact/panel/arithmetic audit tại
+`/home/bachng/ht-pdm-fjsp-prefix-activation-v5-confirmation/artifacts/technician_prefix_activation_v5_diagnostic_independent_audit_20261019T083505Z`
+PASS, report SHA-256
+`dd0f9af10473d3cb3bc332182499cb581f7f68bf2d1bd19496824f7104d551a8`.
+Checkpoint full/mask 245.760 từng bundle có parameter digest bằng nhau;
+full và mask replay khớp đúng các hàng B5 DEV đã lưu, physical tape
+khớp, zero invalid. Can thiệp cùng trọng số chỉ triệt direct logit
+residual sau graph encoder, giữ nguyên legal mask, resource, stats,
+relational prefix, capacity và base logits trong mọi trace.
+
+Cost/machine trung bình tại branch N4: full **297,7943**, residual-off
+**263,0130**, mask **263,0130**; N8: full **383,2148**,
+residual-off **266,4740**, mask **265,9141**. Residual-off đổi
+1.123/4.608 full-state action N4 và 3.613/4.608 N8, so với full;
+logit residual khác zero ở 3.060/9.216 stage N4 và 12.629/18.432
+stage N8. Như vậy phần lớn tổn thất *tức thời* khi bật B5 là do
+direct residual; relational/capacity một mình tại branch với trọng số
+chưa fine-tune gần mask-only. Đây là phép can thiệp thăm dò trên DEV,
+không chứng minh hiệu quả sau đào tạo hoặc tác dụng nhân quả của các
+thành phần khi đã học. B5 `DEV_GATE_FAIL` và TEST sealed giữ nguyên.
+Bằng chứng này đủ để thiết kế **một** follow-up prospectively: bỏ
+đường direct residual, giữ relational/capacity với shared mask-only
+precursor và budget bằng mask-only, dùng train/DEV/conditional TEST
+seed mới, không quét coefficient hoặc chọn lại B5 checkpoint.
