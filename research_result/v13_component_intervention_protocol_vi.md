@@ -1,0 +1,15 @@
+# Prelocked V13 term-toggle diagnostic on saved training counterfactuals
+
+Locked while V13 full DEV campaign remains RUNNING, before inspecting its selected DEV scores or this diagnostic. This is a secondary mechanism analysis of already-saved **training** states, not a new method, an independent evaluation set, or confirmatory TEST evidence. It cannot promote V13 by itself.
+
+## Question and hypothesis
+
+At a fixed state and fixed trained competition-actor checkpoint, does the matching-conditioned occupation-times-unserved-demand term change the first action toward lower common-bank H64 cost? A beneficial term should improve local root choice across training seeds; if no such signal appears, even a positive trained-arm contrast needs explanation through training trajectory/regularization rather than direct action selection.
+
+For each competition-arm Q row, load the exact old checkpoint from the row's training seed and iteration. With the same current observation and all legal actions, compute `a_full = argmax L(a)` and `a_zero = argmax [L(a)+P(a)]`, with the WAIT head unchanged and deterministic catalogue tie breaking. The saved four-scenario root cost bank is common within that row. Let `D = Q(a_full)-Q(a_zero)`; negative is beneficial. Do not change actor weights, trajectories, observations, legal set, Q bank, physics or request policy.
+
+## Data, metrics, stopping rule
+
+Use all 5 training seeds 72500000-04, six updates, four fixed cases and 64 hash-selected states per case/update: 7,680 competition-arm rows. No DEV/TEST episodes or new seeds. Check complete grid and source/checkpoint/artifact hashes before publishing the result. Primary diagnostic: equal-weight mean of D over all rows, reported by training seed, case and update, plus paired hierarchical 20,000-draw 95% CI (resample five train seeds and, within each, 64 state ranks per case/update). Secondary: fraction of changed actions, improved/worsened/tied rows, number with |D|>=5, decision-class change (WAIT, serviced-machine set, technician assignment), service-cardinality distribution and the mean absolute Q gap. A directional signal requires mean D<=-5, at least 4/5 training-seed means below zero and bootstrap CI upper<0. This is explicitly weaker than goal success and cannot substitute for fresh DEV ablation, planner comparison or independent replication.
+
+Single complete pass; no adaptive state selection, threshold tuning, rerun or peeking at TEST. If incomplete/invalid rows, fail the analysis and repair the deterministic script, preserving the failed artifact. Store in a fresh timestamped `research_result/v13_term_toggle_*` directory: `rows.csv` (one row per saved state with source identity, actions, Q, D and decision class), `summary.json` (prelocked metrics/CI), `manifest.json` (input hashes, code hash, exact count/status and runtime). The independent verifier should reproduce all action scores on a fixed stratified sample and recompute summary from rows; V13's main independent audit remains separate.
