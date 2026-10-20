@@ -1,6 +1,6 @@
 # Ledger mục tiêu method điều phối RL
 
-**Trạng thái: ACTIVE (v4 primary FAIL, independent audit PASS).** Mục tiêu sửa đổi yêu cầu bằng chứng về giá trị của
+**Trạng thái: ACTIVE (v6 primary PASS sát ranh giới; pooled shared vẫn thua flat/risk/rollout).** Mục tiêu sửa đổi yêu cầu bằng chứng về giá trị của
 một thiết kế điều phối, không chỉ pipeline huấn luyện hay tăng điểm PPO.
 Không đánh dấu complete trước khi contrast method đã khóa được kiểm toán
 và giới hạn/điều kiện hiệu quả được báo rõ.
@@ -32,3 +32,25 @@ from parameter sharing/action factorization/training variance. Closest
 literature: AirME HetGPO ICAPS 2022, reusable online matching và opportunity
 loss; không claim novelty. Goal giữ ACTIVE: cần direct structural contrast
 với fresh seeds hoặc kết luận rõ rằng chưa có component đủ mạnh.
+
+## Mốc v6 sau FULL (2026-10-20)
+
+V6 proposal/protocol và verified code commit/push `dbf4014` trước FULL;
+1.505.280 PPO steps, 1.920 DEV, 4.608 TEST, independent audit PASS; xem
+`research_result/framework_v6_findings_vi.md`. Matched-budget shared edge
+head so 8 unshared heads có primary −85,59 cost, hierarchical CI95
+[−171,24;−0,064], đạt rule khóa nhưng chỉ 3/5 train seeds ủng hộ.
+Shared pooled 955,03 còn kém flat 899,08, risk 890,04 và rollout 849,72.
+True-state equivariance của shared actor PASS; unshared không equivariant.
+Post hoc WAIT replay: unshared một số seeds bỏ service hợp lệ 42–48%,
+shared 0%. Weak shared seeds 02/03 gán technician có cùng tập máy nhưng
+tổng duration dài hơn min trong 536/516 ticks, nên mất throughput ở
+reciprocal cases; chưa có can thiệp closed-loop để chứng minh nguyên nhân.
+
+V4/v5 capacity claims thất bại; v6 chứng minh một inductive bias đã biết
+có lợi ích tương đối có giới hạn, chưa thành một phương pháp đủ mạnh để
+vượt baselines pooled hoặc chứng minh scalability/generalization. Literature
+Learning to Dispatch và AirME/HetGPO đã có graph/shared relational policy;
+không claim novelty. Goal giữ ACTIVE. Hướng tiếp phải xét RL chọn request
+set phối hợp allocator technician duration/opportunity-aware với protocol
+fresh seeds và ablation đúng thành phần; không dùng tuning PPO làm trục.
