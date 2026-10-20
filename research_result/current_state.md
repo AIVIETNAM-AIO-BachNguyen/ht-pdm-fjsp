@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke ver
 
 
 
+## V13 failure-exposure diagnostic — prelocked V2, smoke audited
+
+The first prospectively locked event-class split (`v13_failure_event_protocol_vi.md`) was revealed as structurally non-discriminating by a 16-episode V13 smoke replay: the fixed threshold requester admits PM before failure age, and every observed H48 failure was a PM upgrade; new corrective creations and residual failures were zero. The old protocol and smoke artifact are retained, without a full DEV claim. Before full replay, `v13_failure_exposure_protocol_v2_vi.md` locked a distinct at-risk PM exposure metric and feasible-versus-capacity split on immutable V13 opened DEV. Final v2 smoke `v13_failure_exposure_smoke_20261020T191443Z` COMPLETED 16 episodes/1,327 event rows, independent `v13_failure_exposure_smoke_audit_20261020T191443Z` PASS for all actor/planner actions, event rows, source H64 metrics and bootstrap; focused V13/simulator tests 35 PASS. Its untrained smoke actor often WAITed, so smoke values are pipeline evidence only. Commit/push code and both protocol records before full replay. V14 remains live; no TEST.
+
 ## Audited V13 failure-cost decomposition while V14 runs
 
 From V13's independently audited final `episodes.csv`, candidate−rollout cost gaps in interchangeable/reciprocal2/specialist are +56.66/+56.30/+32.29, while failure-cost gaps are +55.50/+54.38/+39.56 (98%/97%/123% of net gaps). H48 service starts are nearly equal (0.00/+0.01/+0.61 candidate−rollout), and candidate availability is slightly higher. This supports a targeted question about preventive timing and machine choice instead of aggregate service capacity; it is observational and cannot prove causality. If V14 misses its gate, probe paired action timing and later failures on already opened DEV before another method proposal. V14 scores have not been read.
