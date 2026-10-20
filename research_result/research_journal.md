@@ -102,3 +102,7 @@ After V11's independently audited failure, locked `v11_wait_bias_diagnostic_plan
 ### 2026-10-20 — V11 WAIT/Q diagnostic audit
 
 Source/protocol/test push `1e84bfb` preceded full diagnostic `v11_wait_bias_dev_20261020T123512Z`. Full 7,680 Q rows, 1,280 episode slots, 61,440 decisions completed in 36.6 s. Independent `verify_v11_wait_bias.py` re-derived every Q delta, replayed every action and source episode metric, checked paired initial weights, hashes and summary; audit `v11_wait_bias_audit_20261020T124045Z` PASS. Reference selected policies legally WAITed 7,338 times versus self 0, concentrated in seeds01/03/04. Q_ref had more large WAIT margins in four seeds but less overall WAIT preference; signed Q disagreement ~31%. Prelocked continuation-bias joint gate not met. Report `v11_wait_bias_findings_vi.md`; retain V11 no-go and closed TEST. Next: quantify Q/gradient/checkpoint stability on existing V11 traces before choosing another learning mechanism.
+
+### 2026-10-20 — V11 stored-Q action-gradient prelock and smoke
+
+Prelocked `v11_gradient_diagnostic_plan_vi.md` before computing new gradients on immutable opened V11 banks. `diagnose_v11_gradient.py` records old-actor WAIT probability, Q-min action and exact first-order WAIT-logit gradient under both continuations, with iteration1 paired initial weights as primary analysis. Focused sign/root tests passed (2); smoke `v11_gradient_smoke_20261020T124628Z` completed on seed70500000/iteration1. Source/plan/tests to be pushed before full DEV. No new training, TEST or confirmation.
