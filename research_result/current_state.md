@@ -1,6 +1,11 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (after V11 scratch-RL DEV audit; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-20 (V13 DEV running; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+
+
+## Recovery checkpoint — 2026-10-20 14:49 UTC
+
+V13 scratch-RL DEV run `research_result/framework_v13_dev_20261020T141536Z` was still actively training after the display interruption: manifest `RUNNING`, trainer PID 3637384 using approximately one CPU, 32/60 training trace rows complete and the counterfactual partial CSV growing. Source/protocol was pushed at `061c788`; independent verifier and prelocked term-toggle diagnostic/auditor were subsequently pushed through `9f02885`. The term-toggle smoke audit passed. Do not treat partial training rows as a DEV outcome. Once V13 is `COMPLETED`, independently audit with `research_result/verify_framework_v13.py`, run and audit the prelocked `research_result/run_v13_term_toggle.py` diagnostic, then apply the V13 prelocked H1/H2 gates. Run the already prelocked capacity-matched V14 control only if H1 passes. No fresh TEST has been opened. Preserve the three pre-existing user worktree changes listed below.
 
 ## Authoritative checkout and preserved work
 
