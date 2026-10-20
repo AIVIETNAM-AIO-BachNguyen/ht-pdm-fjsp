@@ -1,8 +1,13 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (V13 audited DEV promotion; V14 capacity control next; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke verified; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
+
+
+## V14 implementation checkpoint — 2026-10-20 18:40 UTC
+
+After V13 H1 triggered its prospectively prelocked capacity control, a dedicated branch `codex/maintenance-framework-v14-capacity-control` was created from pushed V13 report commit `a6c13aa`; the three pre-existing user changes remain untouched. `research_result/framework_v14_dev_protocol_vi.md` and `configs/maintenance_framework_v14_seed_registry.json` lock the identity-versus-count mechanism, fresh 72600000-04 training/72610000-15 DEV seeds, primary paired case-balanced cost, hierarchical CI, strong comparators, fixed six-update budget, checkpoint rule, timeout and artifact contract before V14 source. New V14 actor/campaign/verifier files retain all legal matchings and scratch RL. Numerical controls and simulator-focused tests passed 33/33. Ubuntu smoke `research_result/framework_v14_smoke_20261020T183916Z` COMPLETED in 20.3 s: both arms had matched initial tensors and physical tapes, 3,219 active parameters on real smoke states, 768 training steps, 32 checkpoint and 160 final episodes; internal conservation/feasibility/source/checkpoint audits PASS. Full repository pytest completed 1,070 PASS (one upstream tqdm warning) in 709.8 s. Do not launch full V14 DEV until code/protocol/verifier are committed and pushed. TEST remains closed.
 
 ## Current decision — audited V13 DEV, 2026-10-20 15:20 UTC
 
