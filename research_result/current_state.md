@@ -1,7 +1,12 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (V13 DEV running; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-20 (V13 audited DEV promotion; V14 capacity control next; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
+
+
+## Current decision — audited V13 DEV, 2026-10-20 15:20 UTC
+
+V13 `framework_v13_dev_20261020T141536Z` COMPLETED; independent verifier `framework_v13_audit_20261020T151831Z` PASS. Competition cost 857.96 versus no-competition 876.13 (−18.17; hierarchical CI95 [−39.42,−2.14], five of five training seeds improve), risk 887.05 and bounded rollout 845.70. Selection 0.0219 versus rollout 0.6535 s/episode. The **prelocked exploratory DEV gate passed**, but candidate remains +1.45% above rollout and fails overall goal A/B on this panel; fresh TEST and replication remain unopened. Gains are mainly reciprocal scale3, with losses in interchangeable and specialist. Crucially, the ablation has 2,354 gradient-active parameters versus candidate 3,219. The prelocked same-checkpoint term-toggle on 7,680 stored training Q states was independently audited PASS but directional gate FALSE (mean −0.30, CI95 [−2.02,+1.25], three of five seed means positive). This does not support a direct local-Q-selection mechanism. Full report: `research_result/framework_v13_dev_findings_vi.md`. The prospectively prelocked V14 capacity-matched identity control `research_result/v14_capacity_matched_control_proposal_vi.md` is now triggered by V13 H1. Implement and run it with fresh seeds, tests/Ubuntu smoke, push before full DEV, independent audit; keep TEST closed.
 
 ## Recovery checkpoint — 2026-10-20 14:49 UTC
 
