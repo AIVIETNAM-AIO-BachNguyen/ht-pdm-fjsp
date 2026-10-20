@@ -1,6 +1,6 @@
 # Ledger mục tiêu method điều phối RL
 
-**Trạng thái: ACTIVE (v6 primary PASS sát ranh giới; pooled shared vẫn thua flat/risk/rollout).** Mục tiêu sửa đổi yêu cầu bằng chứng về giá trị của
+**Trạng thái: COMPLETE với kết luận method có điều kiện; canonical shared vẫn thua risk/rollout pooled.** Mục tiêu sửa đổi yêu cầu bằng chứng về giá trị của
 một thiết kế điều phối, không chỉ pipeline huấn luyện hay tăng điểm PPO.
 Không đánh dấu complete trước khi contrast method đã khóa được kiểm toán
 và giới hạn/điều kiện hiệu quả được báo rõ.
@@ -54,3 +54,25 @@ Learning to Dispatch và AirME/HetGPO đã có graph/shared relational policy;
 không claim novelty. Goal giữ ACTIVE. Hướng tiếp phải xét RL chọn request
 set phối hợp allocator technician duration/opportunity-aware với protocol
 fresh seeds và ablation đúng thành phần; không dùng tuning PPO làm trục.
+
+## Mốc v7 sau FULL (2026-10-20)
+
+Proposal/protocol v7 prelocked, code/tests/smoke audit PASS, commit/push
+`8ede081` trước FULL. Raw `framework_v7_full_20261020T012531Z`, independent
+audit `framework_v7_audit_20261020T020506Z` PASS; xem
+`research_result/framework_v7_findings_vi.md`. RL chọn machine subset,
+shortest-duration allocator chọn technician trong subset; cùng physics/cost.
+Primary shared canonical − shared free = −47,69, hierarchical CI95
+[−85,44;−13,73], PASS. Flat canonical − flat free +0,26
+[−8,17;+9,00], không có generic gain rõ. Hiệu quả shared đến từ ba
+weak train seeds tự chọn 478/510/558 noncanonical assignments; hai strong
+seeds chọn 0 và cost hầu như không đổi. H throughput weak seeds tăng,
+nhưng reciprocal vẫn kém. Shared canonical pooled 961,27 còn kém risk
+906,53 và rollout 861,02; không claim policy tốt nhất hoặc novelty.
+
+Goal ban đầu và mục tiêu sửa đổi được kết luận tại
+`research_result/method_goal_conclusion_v7_vi.md`: framework/simulator/baseline/audit
+đã có, hai component method có evidence có điều kiện theo claim khóa.
+V7 sửa một failure mode nhưng không cạnh tranh trên pooled panel; chưa
+kiểm chứng N/K hoặc benchmark ngoài simulator. Không tái sử dụng TEST v7
+như confirmation mới. Một hướng nghiên cứu tiếp sẽ cần goal/protocol mới.
