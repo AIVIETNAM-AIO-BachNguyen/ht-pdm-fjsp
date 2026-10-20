@@ -114,3 +114,7 @@ Full fixed scan `v11_gradient_dev_20261020T124737Z` completed after pushed `d570
 ### 2026-10-20 — V12 reliability-calibrated scratch RL prelock and smoke
 
 Method/protocol/registry were fixed before implementation: four common H64 actor-continuation scenarios per legal root, paired-scenario 2SE shrink of joint action credit versus same-bank plain credit, with identical V10 λ=.5 assignment term and five fresh training seeds. Focused tests (3) PASS; Ubuntu smoke `framework_v12_smoke_20261020T125448Z` COMPLETED in 14.5 s (768 training steps, 3,730 forecast transitions/arm, 32 DEV checkpoint episodes, 160 comparator episodes). Source/protocol/tests to be committed/pushed before full DEV. No TEST.
+
+### 2026-10-20 — V12 full DEV and independent audit
+
+Pushed `0904078` before full run `framework_v12_dev_20261020T125625Z` (COMPLETED, 40.3 min, 184,320 training steps, 9.40M combined H64 forecast transitions, 4,480 checkpoint DEV and 1,792 comparator episodes). Independent `verify_framework_v12.py` PASS in `framework_v12_audit_20261020T134139Z`: all 15,360 Q rows/weight aggregations, 240 complete same-bank Q replays, 640 selected episodes, summaries and bootstrap. Candidate cost904.08 versus plain897.63, risk892.25, rollout849.56; candidate−plain +6.45 CI95 [−6.60,+28.89], one seed01 reciprocal2 failure +177.56. Speed 55× rollout but cost gap6.42%; risk dominates both. Prelocked DEV gate FALSE; no TEST or independent replication. Report `framework_v12_dev_findings_vi.md`. Goal remains ACTIVE, next method needs materially different mechanism.
