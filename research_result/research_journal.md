@@ -16,3 +16,11 @@ Read V6/V7 actor, 56-D vector observation, request lifecycle, legal matching and
 ## 2026-10-20: V8 context diagnostic complete, independent audit PASS
 
 Prelocked runner commit `a941c8f` pushed after 90 relevant tests and smoke. Full DEV run `v8_context_dev_20261020T051623Z` completed on fixed fresh diagnostic seeds; independent verifier regenerated trajectories, hash sampling, planner values and all policy outputs (`v8_context_dev_audit_20261020T051824Z`, PASS). 384 pairs: 49 planner flips, 31 with both-sided margin≥1, 4 with margin≥5, none ≥10. Shared actor legal logits exact invariant; canonical shared and flat actors 0 action flips; free shared 1 near-tie flip. Material four were WAIT→service in the age-2 state. Flat's nonresponse weakens an explanation solely based on structured representation. Rejected immediate direction: add global context encoder merely because invariant exists. Next experiment should quantify full current-request decision headroom on policy trajectories and decompose timing/subset/assignment/heuristic-mask losses.
+
+## 2026-10-20: Prelocked current-request headroom probe
+
+Registered `research_result/v8_headroom_diagnostic_plan_vi.md` before code. All V7 flat/shared free/canonical training replicas will be replayed on new DEV physical seeds. Fixed hash/clock-bin sampling and common bounded-planner root scores will decompose available-action actor mistakes from V7 canonical-mask exclusions and classify WAIT, subset/cardinality and technician assignment differences. This is an exploratory mechanism gate, not a fresh method confirmation. V8 absent-request context evidence alone did not support context aggregation.
+
+## 2026-10-20: Headroom engineering smoke
+
+The first smoke completed source trajectories but failed while serializing a NumPy integer action index to JSON; its FAILED timestamped directory is retained. The pure index selection was converted to Python `int`, focused tests reran, and a **new** smoke directory `v8_headroom_smoke_20261020T052343Z` completed 120 episodes and 180 fixed sampled states. This is an engineering correction before any DEV result, not an outcome-driven method change.
