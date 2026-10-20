@@ -62,7 +62,11 @@ def episode(case: str, seed: int, train: str, controller, actor,
             observation = vector_observation(cfg, admitted, tick)
             with torch.no_grad():
                 logits = actor(torch.as_tensor(observation).reshape(1, 56))[0].numpy()
-            matching = max(legal, key=lambda a: (float(logits[ACTIONS.index(a)]), -ACTIONS.index(a)))
+            masked = torch.full((len(ACTIONS),), -1e9, dtype=torch.float32)
+            legal_indices = [ACTIONS.index(action) for action in legal]
+            masked[legal_indices] = torch.as_tensor(logits)[legal_indices]
+            choice = int(np.argmax(torch.softmax(masked, dim=0).numpy()))
+            matching = ACTIONS[choice]
             name = 'competition'
         else:
             selections, matching = controller.choose(cfg, before, tick, case=case, seed=seed)
@@ -199,7 +203,7 @@ def audit(source: Path, diagnostic: Path) -> dict:
         src = original_rows[key]
         for field, value in expected.items():
             if field in ('case', 'train_seed', 'controller', 'failure_events'):
-                assert actual[field] == str(value)
+                assert actual[field] == str(value), (key, field, actual[field], value)
             elif field == 'first_failure_tick' and value == '':
                 assert actual[field] == ''
             else:
@@ -236,7 +240,11 @@ def audit(source: Path, diagnostic: Path) -> dict:
             exposure = sum(float(row['H_risk_exposed']) for row in group)
             feasible = sum(float(row['H_risk_feasible_exposed']) for row in group)
             expected_fraction = feasible / exposure if exposure else None
-            assert summary['by_case'][case]['feasible_fraction_of_exposure'][controller] == expected_fraction
+            reported_fraction = summary['by_case'][case]['feasible_fraction_of_exposure'][controller]
+            if expected_fraction is None:
+                assert reported_fraction is None
+            else:
+                close(reported_fraction, expected_fraction, 'feasible exposure fraction')
             for name, sum_key, count_key in (
                 ('pm_start_age_mean', 'H_pm_start_age_sum', 'H_pm_start_count'),
                 ('pm_start_wait_mean', 'H_pm_start_wait_sum', 'H_pm_start_count'),
