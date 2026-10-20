@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke ver
 
 
 
+## V14 guarded post-audit diagnostic watcher — 2026-10-20 19:04 UTC
+
+A separate local watcher PID 4048973 is WAITING in `research_result/v14_identity_diag_watch_20261020T190412Z`. It checks the existing V14 main watcher and source manifest; only after both report COMPLETED and the main independent audit reports PASS for this exact run will it launch the already pushed V14 identity-toggle DEV diagnostic, then its independent verifier, each into a fresh UTC-stamped artifact directory with a 1,300-second step timeout. It records paths and failures in its status/log. V14 trainer PID 4030888 and main watcher PID 4031608 were still live; 8/60 trace rows complete and Q-state output growing. No DEV score or TEST was read.
+
 ## V14 identity-toggle training-state diagnostic — prelocked while full DEV runs
 
 Secondary protocol `research_result/v14_identity_toggle_protocol_vi.md` was locked before reading V14 DEV scores. It compares joint identity versus count-calibrated scoring at the same old competition checkpoints on the 7,680 saved training Q states, with the identical observation, legal mask and four-scenario old-policy continuation bank. Primary Q difference and 20,000-draw hierarchical CI, seed consistency, a directional gate, action classes and opportunity availability are fixed in advance. Ubuntu smoke `research_result/v14_identity_toggle_smoke_20261020T190059Z` COMPLETED (12 rows), and independent verifier `research_result/v14_identity_toggle_smoke_audit_20261020T190059Z` PASS on all actions, both formulas, Q values and aggregates; focused V14 tests 4 PASS. Smoke selected WAIT on all 12 rows, so it tests pipeline correctness rather than mechanism efficacy. Run full diagnostic only after V14 full independent main audit PASS. No DEV score or TEST has been opened for this diagnostic. V14 trainer and watcher were still alive at the latest check, with 6/60 training trace rows and growing Q-state output; continue monitoring rather than restarting.
