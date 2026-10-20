@@ -1,6 +1,6 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (after V8 context DEV audit) (Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-20 (after V8 headroom DEV audit) (Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 ## Authoritative checkout and preserved work
 
@@ -21,3 +21,9 @@ The new goal requires a method with defensible mechanism/prior-work distinction,
 Prelocked DEV-only V8 context probe: 384 paired states from 768 source episodes, independent audit PASS. Bounded planner changed action on 49 pairs, but only 4 had ≥5 cost units two-sided advantage; all four WAIT→service. Shared legal logits were exactly invariant. Flat PPO also changed zero actions despite full observation. See `research_result/v8_context_diagnostic_findings_vi.md`. Conclusion: structural omission is real, economically material examples exist, but they are too sparse under this specific six-tick natural-state probe to justify a context architecture by itself. No new method or TEST claim yet.
 
 Next gate: prelock a current-request on-policy DEV headroom diagnostic on fresh seeds. Compare V7 canonical/free, flat and risk actions against common-bank rollout root values, classifying WAIT/timing, serviced machine set/cardinality, assignment and canonical-mask exclusions. Measure frequency, per-case/seed cost margins and closed-loop plausibility. If most lost value is unavailable to the actor because of action structure, design that method; if it is available but not learned, investigate credit/training without turning PPO tuning into the research axis. Preserve new-goal completion thresholds and require independent replication and fresh confirmation for any eventual method.
+
+## V8 headroom result and current direction
+
+Prelocked DEV probe (runner pushed `1cde5dd`) and independent audit PASS: 1,920 on-policy episodes, 720 sampled states, every trajectory and bounded root score replayed. Canonical mean root regret 3.355 per selected state; 3.307 from choosing among available actions and only 0.047 from canonical-mask exclusion, with planner-best excluded in 3/240 states. Weak structured seeds 02–04 show the large available-action gap; risk and flat often choose better on the same weak-seed states. V8 absent-request context omission was real but material six-tick flips scarce. See `v8_headroom_diagnostic_findings_vi.md`.
+
+Next gate: formulate a resource-competition-aware learned current-matching method with an explicit mechanism for robust action choice and a scratch-RL ablation. Compare to flat PPO, strong structured and heuristic/planner baselines. Use fresh DEV for design, then one prelocked fresh TEST and independent replication only when a defensible candidate exists. Completion criteria remain unmet.

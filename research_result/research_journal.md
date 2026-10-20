@@ -24,3 +24,7 @@ Registered `research_result/v8_headroom_diagnostic_plan_vi.md` before code. All 
 ## 2026-10-20: Headroom engineering smoke
 
 The first smoke completed source trajectories but failed while serializing a NumPy integer action index to JSON; its FAILED timestamped directory is retained. The pure index selection was converted to Python `int`, focused tests reran, and a **new** smoke directory `v8_headroom_smoke_20261020T052343Z` completed 120 episodes and 180 fixed sampled states. This is an engineering correction before any DEV result, not an outcome-driven method change.
+
+## 2026-10-20: Headroom DEV and independent replay
+
+Full prelocked diagnostic completed 1,920 episodes and 720 sampled states; independent audit replayed all episodes, selected states, root scores and decomposition, PASS. Canonical mean six-tick root regret 3.355 per selected state: 3.307 available-action actor selection and only 0.047 canonical-mask restriction; only 3/240 canonical-source states excluded the forecast-best matching. Weak structured seeds 02–04 had much larger actor gaps than strong 00–01; risk matching often beat them on the same states. See `v8_headroom_diagnostic_findings_vi.md` for cases, operational context, provenance and limits. Reject mask removal or absent-request context alone as the main next method. Next: prelock a resource-competition-aware learned matching method and discriminating ablations, with scratch RL and strong baseline gates.
