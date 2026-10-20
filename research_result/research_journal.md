@@ -110,3 +110,7 @@ Prelocked `v11_gradient_diagnostic_plan_vi.md` before computing new gradients on
 ### 2026-10-20 — V11 initial Q-gradient result
 
 Full fixed scan `v11_gradient_dev_20261020T124737Z` completed after pushed `d570c4e`; independent `verify_v11_gradient.py` PASS, 7,680 rows/60 checkpoints/five paired initial banks in audit `v11_gradient_audit_20261020T124821Z`. At same initial actors/states, mean WAIT-logit gradient self Q <0 and reference Q >0 in all five seeds; reference−self +0.167 to +0.412. Reciprocal scale2 has largest directional contribution and Q spread. Prelocked direction gate passes but does not prove network-level update or Q accuracy. Report `v11_gradient_findings_vi.md`. V11 no-go unchanged; V10/V11 self-credit already have H64 actor continuation, so next scratch method must improve credit reliability against a matched plain H64 self-credit arm before touching TEST.
+
+### 2026-10-20 — V12 reliability-calibrated scratch RL prelock and smoke
+
+Method/protocol/registry were fixed before implementation: four common H64 actor-continuation scenarios per legal root, paired-scenario 2SE shrink of joint action credit versus same-bank plain credit, with identical V10 λ=.5 assignment term and five fresh training seeds. Focused tests (3) PASS; Ubuntu smoke `framework_v12_smoke_20261020T125448Z` COMPLETED in 14.5 s (768 training steps, 3,730 forecast transitions/arm, 32 DEV checkpoint episodes, 160 comparator episodes). Source/protocol/tests to be committed/pushed before full DEV. No TEST.
