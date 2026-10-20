@@ -1,0 +1,14 @@
+# Research journal — RL maintenance dispatch continuation
+
+## 2026-10-20: New goal intake and source audit
+
+- Read the attached full objective. Completion bar is stronger than the prior V1–V7 goal: component ablation **and** competitive performance against the strongest prelocked comparator by criterion A (≥5% cost reduction) or B (≤1% cost gap with ≥10× decision speed and no simple-heuristic domination), plus ≥5 training seeds and independent replication. V7 does not meet it.
+- Confirmed authoritative checkout `codex/maintenance-framework-v1-lab` at `5b1124f`; three pre-existing user changes preserved. V1–V7 proposals/protocols/findings and source are present. Historical lab handoff and literature note reviewed; many other branches exist and require targeted read-only comparison before claiming a new method.
+- Current best structured candidate: V7 shared canonical, cost 961.27 on opened V7 TEST; flat 916.58, risk 906.53, rollout 861.02. A relative-to-V7-panel criterion A target is ≤817.97 and B cost bound ≤869.63, but a future campaign must lock comparator/threshold from its own DEV/reference protocol before fresh TEST.
+- Structural source finding: V6/V7 shared actor's edge score has no other-machine context; logits are additive over edges. Its critic sees full 56-D input. This proves an invariance to non-request machine age changes in legal action scores, **not** that this matters to dispatch cost. Need a discriminating DEV diagnostic before architecture choice.
+- Rejected prior hypotheses remain rejected: V4 temporal age2 opportunity and V5 post-decision residual wait did not improve their preregistered primary contrasts. V6 shared tying and V7 shortest-duration allocation had conditional gains but remain below strong baselines.
+- Next: lock and run a paired-state context diagnostic with current-information planner and action-value margin, assess reachable-state frequency and under-service mechanism. If no material decision headroom exists, redirect to learning/credit/action structure rather than adding context aggregation by default.
+
+## 2026-10-20: Prelocked context probe
+
+Read V6/V7 actor, 56-D vector observation, request lifecycle, legal matching and bounded rollout source. `EdgeSharingActor` receives local machine/worker/edge features and clock per edge; additive matching logits cannot incorporate an absent-request machine's age into a current legal action. This is a structural proof but not a cost result. Registered `research_result/v8_context_diagnostic_plan_vi.md` before code: fixed new DEV seeds, six trajectory sources, valid age≤1→2 pair, stratified hash-selected states, common six-tick planner forecast, material action flip margin and all-five-seed policy probes. Negative diagnostic outcome will redirect method search.
