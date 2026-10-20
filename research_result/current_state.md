@@ -1,6 +1,6 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (after V8 representability DEV audit) (Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-20 (after V9 DEV audit) (Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 ## Authoritative checkout and preserved work
 
@@ -31,3 +31,9 @@ Next gate: formulate a resource-competition-aware learned current-matching metho
 ## V8 representability result and next method gate
 
 Corrected, independently audited exact signed-edge collision census on the 720 V8 DEV states found 3 conflict keys covering 8 states at ≥5 two-sided six-tick planner margin; one key/2 states at ≥10. The first census run omitted the prelocked different-full-observation filter and is retained as superseded; correction pushed `f3b39ca`, new run audited PASS. Five-start supervised capacity check on a 449/101/170 physical-seed split found local shared-edge mean heldout root regret 1.479, near risk's 1.456 and below larger flat/joint means ~1.634. This is diagnostic teacher fitting, not RL evidence. See `v8_representability_findings_vi.md`. Working hypothesis now favors credit/optimization robustness across legal matching actions; no V8 method or competitive result yet. Next: prelock a scratch-RL action-credit method and discriminating ablation, then tests/smoke/push before full DEV.
+
+## V9 paired counterfactual credit — DEV failure and next gate
+
+V9 proposal/protocol/source/test push `6f9a01f` preceded the five-seed full DEV campaign. Scratch RL with full-H+tail two-scenario current-actor Q estimates across all legal joint matchings was compared to a compute-matched sampled-action gradient using the same actor/bank. Full run `framework_v9_dev_20261020T062502Z` completed; independent audit `framework_v9_audit_20261020T064820Z` PASS (240 sampled root banks, 640 selected learned episodes, complete grids/selection/bootstrap). All-action cost 961.27 versus chosen-action 1028.35, risk 863.72, rollout 857.81 on equal-weight four-case fresh DEV. Ablation −67.08, CI95 [−141.54,−0.47], but two training seeds generate nearly all gain; remaining three improvements are 0.8–3.0 cost units. All-action remains +103.46 above rollout and risk is cheaper and faster. The prelocked DEV go gate and unchanged goal completion conditions fail. No V9 TEST or replication should be opened as-is. See `framework_v9_dev_findings_vi.md` for cases, failures and compute.
+
+V9 reciprocal-case failure has fewer service starts, much longer CM queue and greater unavailability/failure cost than risk; action-level cause is not established. Next gate: prelock a V9 selected on-policy action trace on already-opened DEV seeds, decompose WAIT versus machine-set and technician assignment choices with common-state risk/planner checks before designing V10. A future method must improve across strong and weak seeds and challenge risk/rollout, not just rescue two weak replicas. Best established structured RL reference remains V7 shared canonical, but no learned method meets the competitive goal. Keep the goal ACTIVE.
