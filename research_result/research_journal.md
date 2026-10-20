@@ -130,3 +130,7 @@ Full opened-DEV diagnostic `v12_sparse_planner_dev_20261020T135214Z` completed a
 ### 2026-10-20 — V12 fixed planner-correction budget curve prelock and smoke
 
 Prelocked `v12_planner_budget_curve_plan_vi.md` after audited one-action diagnosis, with K∈{0,1,2,4}, fixed same-state oracle queries, 20k hierarchical bootstrap draws, cost/runtime gates and immutable opened V12 DEV. Focused correction-accounting tests (2) PASS; Ubuntu smoke `v12_planner_budget_smoke_20261020T135901Z` COMPLETED in 3.2 s (2 case pairs, 8 K episodes, 384 decisions). K0/K1 replay was checked against V12/prior intervention rows. Source/protocol/tests to be committed/pushed before full DEV. No TEST or learned method claim.
+
+### 2026-10-20 — V12 K-budget oracle curve
+
+Full fixed opened-DEV run `v12_planner_budget_dev_20261020T140034Z` completed after pushed `b4fe07a` (160 pairs, 640 episodes, 30,720 decisions, 225.1 s). Independent `verify_v12_planner_budget.py` PASS in `v12_planner_budget_audit_20261020T140436Z`, including all actions, planner queries/forecast counts, K0 V12/K1 prior metrics and bootstrap. K2 interchangeable reaches 681.62 vs rollout677.62 but needs33 planner calls and0.477s; K4 reciprocal2 723.89 vs710.38, 42 calls/0.648s and only2/5 seeds within1%. All prelocked sparse cost/runtime gates FALSE. Direct planner consultation fails the speed route; goal still ACTIVE. Report `v12_planner_budget_curve_findings_vi.md`. Next major method should learn repeated resource-competition decisions; avoid planner imitation as main axis.
