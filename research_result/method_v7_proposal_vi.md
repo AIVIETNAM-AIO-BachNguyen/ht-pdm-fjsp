@@ -1,0 +1,17 @@
+# Method proposal v7: RL chọn tập máy, exact assignment chọn technician
+
+Viết trước implementation và trước mọi DEV/TEST v7. V6 matched-budget shared edge head giảm cost so unshared nhưng hiệu ứng sát ranh giới; pooled còn thua flat/risk/rollout. Post hoc TEST v6 chỉ ra hai weak shared replicas 02/03 nhiều lần chọn assignment có cùng tập máy nhưng tổng service duration dài hơn phương án legal ngắn nhất: 536/516 ticks, tập trung reciprocal2/3, đi cùng H starts thấp. Không có can thiệp closed-loop; không dùng TEST v6 như xác nhận v7. Câu hỏi mới: có nên **phân rã quyết định** thành RL chọn *máy nào được phục vụ ngay* và một bước exact, quan sát được, chọn technician ngắn nhất cho tập máy đó?
+
+## Cơ chế
+
+Giữ centralized MaskablePPO, requester threshold, 56 current features, H48+tail16 objective, four N4/K2 cases, catalogue 21 partial matchings và đầy đủ physics. Với mỗi state, tính legal matchings như cũ. Nhóm legal matchings theo tập machine được phục vụ (WAIT là tập rỗng). Trong mỗi nhóm, chỉ giữ matching có **tổng service duration nhỏ nhất** theo known `config.service_time`; ties giữ tất cả. RL actor vẫn score và quyết định giữa machine subsets bằng logits/mask; assignment technician trong subset do exact allocator xác định. Đây là policy structure/action decomposition, không thay reward, objective, service dynamics hoặc thông tin future. Khi capacity/duration có tradeoff, allocator có thể làm hại vì tổng duration ngắn nhất không luôn giữ đúng specialist cho request tương lai; đây là điều kiện phải đo, không giả định dominance động.
+
+Direct method arm `shared_canonical` dùng cùng actor/critic và 100.352 PPO steps như `shared_free` nhưng legal mask đã lọc matching. `flat_canonical` và `flat_free` là architecture control: nếu lợi ích chỉ do giảm action space chung, flat cũng có thể hưởng. Các policy đều train scratch; không imitation/teacher. Rule risk, FCFS và bounded rollout là performance context, không tối ưu cho allocator. Feasibility luôn do mask. Cấu trúc hai tầng này liên quan các hybrid learning+matching và graph dispatch đã có; chưa claim novelty. Khác v6 ở chỗ technician assignment được xác định bởi exact resource-duration calculation, để RL dành năng lực cho temporal choice of machine subset. Không thêm GNN/hierarchy mặc định.
+
+## Hypothesis/contrasts
+
+Primary H1: case-balanced H+tail cost `shared_canonical − shared_free` <0 ở fresh TEST, với hierarchical CI upper<0 trên 5 training seeds×64 physical seeds, cân bốn cases. Secondary predeclared: `flat_canonical − flat_free`, canonical shared vs canonical flat, vs risk/FCFS/rollout, case-level means/CI, H throughput/availability/queues/failures, count of legal matchings removed, fraction selected noncanonical in free models, compute. Ưu tiên đo reciprocal2/3 nhưng không chọn case thuận lợi sau TEST. Đối chứng same policy weights at initialization, paired physical training tapes, same DEV rule and budgets. Nếu H1 fail, dừng hướng shortest-duration allocator, không sweep penalty/optimizer/budget hay đổi TEST; phân tích xem specialist opportunity, inadequate temporal credit hay underpowered learner.
+
+## Scope/limits
+
+No production jobs, technician travel, uncertain service times, dynamic requests chosen by RL, N/K scaling or external validation in v7. Known service duration là state hiện tại; allocator không được nhìn event tape tương lai. Một FULL mới duy nhất; nếu thành công, chỉ chứng minh component trong simulator và split đã khóa. Ảnh hưởng lên case reciprocal/specialist và stability across train seeds quyết định giới hạn claim.
