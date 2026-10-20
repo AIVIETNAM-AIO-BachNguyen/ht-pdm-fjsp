@@ -1,6 +1,6 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (after V9 assignment-only DEV intervention audit; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-20 (after V10 scratch-RL DEV audit; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 ## Authoritative checkout and preserved work
 
@@ -45,3 +45,7 @@ Prelocked DEV trace on immutable selected V9 checkpoints replayed 640 episodes a
 ## V9 assignment-only closed-loop intervention — causal DEV mechanism, not RL solution
 
 Prelocked intervention source/protocol/tests pushed `d5c004f`; 640 selected V9 control/treatment DEV pairs completed and independent action/metric replay PASS (1,280 episodes, 61,440 H decisions, 2,607 changed treatment assignments). Keeping the actor-chosen machine set but assigning the shortest-duration feasible technicians recovered 85.8% and 86.0% of the weak-versus-strong all-action cost gap in reciprocal scale2/3, respectively. Strong reciprocal seeds had zero swaps/change. All-action four-case mean fell 961.27→898.91, yet remains above risk 863.72 and bounded rollout 857.81. All-action gain remains two weak-replica rescue; specialist swaps have mixed effects and nonshortest assignment can be bounded-planner preferred. See `v9_assignment_intervention_findings_vi.md`. Next prelock a conditional learned assignment-credit RL method that preserves all legal assignments and tests five scratch training seeds against compute-matched ablation plus flat/risk/rollout. Goal remains ACTIVE; no V9 TEST or independent method replication.
+
+## V10 assignment-contrast scratch RL — audited DEV no-go
+
+Prelocked V10 `55878b1` completed five fresh train seeds, six updates, 15,360 selected counterfactual states and 4.80M forecast transitions; independent audit PASS (240 Q banks, all 640 selected RL episodes, grids/selection/bootstrap). Equal-case DEV cost: V10 assignment credit 878.22, matched λ0 joint-credit 882.25, risk 894.61, flat PPO 905.77, bounded rollout 849.34. V10 beats risk in cost but the new term's mean ablation gain is only 4.03 (hierarchical CI95 [−11.64,+0.46]), concentrated mainly in one seed; rollout gap is +28.88 (3.40%). Prelocked DEV gate fails and unchanged goal criterion A/B is unmet. V10 rollout gap is +73.46 interchangeable scale1 and +91.42 reciprocal scale2, while V10 beats rollout by 59.91 reciprocal scale3. See `framework_v10_dev_findings_vi.md`. No V10 TEST or independent method replication. Next prelock a selected-state action/value diagnostic for rollout's advantage in the first two cases before V11. Goal remains ACTIVE.
