@@ -36,3 +36,7 @@ The audited V8 headroom gap does not identify representation versus learning. Lo
 ## 2026-10-20: Representability census correction before result interpretation
 
 Initial all-state artifact `v8_representability_dev_20261020T055400Z` completed, but review found its collision implementation omitted the prelocked different-observed-context check. Opposite preferences with identical 56-D observations can arise from independent finite forecast scenario noise. Mark this run superseded for collision conclusions, preserve it, and apply the exact full-observation-byte inequality. Supervised fit protocol remains fixed. Fresh smoke and source push precede fresh full DEV.
+
+## 2026-10-20: Corrected representability DEV, independent census audit PASS
+
+After pushed correction `f3b39ca`, fresh 720-state DEV run and independent signed-edge/full-observation census audit passed. Exact two-sided ≥5 forecast-margin collisions cover only 8/720 states (3 keys), ≥10 only 2 states. On the physical-seed heldout subset, five fresh supervised edge scorers have mean root regret 1.479 versus risk 1.456, with flat/joint means ~1.634 despite lower score-MSE. This is not RL evidence or proof of full actor sufficiency, but weakens the proposed global-architecture-only direction. The initial unfiltered collision run remains explicitly superseded. Next method should address RL action credit/optimization across legal matchings, with a clear scratch-RL ablation and compute accounting.

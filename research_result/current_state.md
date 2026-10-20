@@ -1,6 +1,6 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (after V8 headroom DEV audit) (Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-20 (after V8 representability DEV audit) (Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 ## Authoritative checkout and preserved work
 
@@ -27,3 +27,7 @@ Next gate: prelock a current-request on-policy DEV headroom diagnostic on fresh 
 Prelocked DEV probe (runner pushed `1cde5dd`) and independent audit PASS: 1,920 on-policy episodes, 720 sampled states, every trajectory and bounded root score replayed. Canonical mean root regret 3.355 per selected state; 3.307 from choosing among available actions and only 0.047 from canonical-mask exclusion, with planner-best excluded in 3/240 states. Weak structured seeds 02–04 show the large available-action gap; risk and flat often choose better on the same weak-seed states. V8 absent-request context omission was real but material six-tick flips scarce. See `v8_headroom_diagnostic_findings_vi.md`.
 
 Next gate: formulate a resource-competition-aware learned current-matching method with an explicit mechanism for robust action choice and a scratch-RL ablation. Compare to flat PPO, strong structured and heuristic/planner baselines. Use fresh DEV for design, then one prelocked fresh TEST and independent replication only when a defensible candidate exists. Completion criteria remain unmet.
+
+## V8 representability result and next method gate
+
+Corrected, independently audited exact signed-edge collision census on the 720 V8 DEV states found 3 conflict keys covering 8 states at ≥5 two-sided six-tick planner margin; one key/2 states at ≥10. The first census run omitted the prelocked different-full-observation filter and is retained as superseded; correction pushed `f3b39ca`, new run audited PASS. Five-start supervised capacity check on a 449/101/170 physical-seed split found local shared-edge mean heldout root regret 1.479, near risk's 1.456 and below larger flat/joint means ~1.634. This is diagnostic teacher fitting, not RL evidence. See `v8_representability_findings_vi.md`. Working hypothesis now favors credit/optimization robustness across legal matching actions; no V8 method or competitive result yet. Next: prelock a scratch-RL action-credit method and discriminating ablation, then tests/smoke/push before full DEV.
