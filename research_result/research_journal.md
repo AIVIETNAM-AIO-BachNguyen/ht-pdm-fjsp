@@ -168,3 +168,7 @@ While full V14 DEV remained RUNNING and before reading any selected DEV scores, 
 ### 2026-10-20 — V14 guarded diagnostic continuation
 
 The V14 trainer remained live and CPU-active with 8/60 training trace rows, main audit watcher WAITING. Started a separate detached local diagnostic watcher PID4048973 at `v14_identity_diag_watch_20261020T190412Z`, verified WAITING. It will run the already prelocked/pushed all-training-state identity-toggle and independent verifier only if the full V14 manifest is COMPLETED and the main V14 independent audit PASS; each step has a 1,300-second timeout, new timestamped artifact and separate log/status. No partial DEV scores were used and TEST remains closed.
+
+### 2026-10-20 — V13 audited failure-component retrospective
+
+While V14 remained live, recomputed final-episode means from independently audited V13 `episodes.csv` without new evaluation. Candidate−rollout net cost gaps are +56.66 interchangeable, +56.30 reciprocal2 and +32.29 specialist; failure costs account for +55.50/+54.38/+39.56, respectively. Service starts are nearly identical and candidate H48 availability slightly higher in all three. This suggests preventive timing/target selection rather than total service throughput as the next discriminating question, but it is only descriptive on selected opened DEV. Do not choose a hazard architecture or infer causal action effects from this decomposition. V14 gate/audit remains pending; TEST closed.

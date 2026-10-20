@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke ver
 
 
 
+## Audited V13 failure-cost decomposition while V14 runs
+
+From V13's independently audited final `episodes.csv`, candidate−rollout cost gaps in interchangeable/reciprocal2/specialist are +56.66/+56.30/+32.29, while failure-cost gaps are +55.50/+54.38/+39.56 (98%/97%/123% of net gaps). H48 service starts are nearly equal (0.00/+0.01/+0.61 candidate−rollout), and candidate availability is slightly higher. This supports a targeted question about preventive timing and machine choice instead of aggregate service capacity; it is observational and cannot prove causality. If V14 misses its gate, probe paired action timing and later failures on already opened DEV before another method proposal. V14 scores have not been read.
+
 ## V14 guarded post-audit diagnostic watcher — 2026-10-20 19:04 UTC
 
 A separate local watcher PID 4048973 is WAITING in `research_result/v14_identity_diag_watch_20261020T190412Z`. It checks the existing V14 main watcher and source manifest; only after both report COMPLETED and the main independent audit reports PASS for this exact run will it launch the already pushed V14 identity-toggle DEV diagnostic, then its independent verifier, each into a fresh UTC-stamped artifact directory with a 1,300-second step timeout. It records paths and failures in its status/log. V14 trainer PID 4030888 and main watcher PID 4031608 were still live; 8/60 trace rows complete and Q-state output growing. No DEV score or TEST was read.
