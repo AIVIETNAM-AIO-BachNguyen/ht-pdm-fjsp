@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke ver
 
 
 
+## V14 independent-verifier seed correction before full audit
+
+Static review while the V14 trainer remained live found `verify_framework_v14.py` still hardcoded V13 train/DEV ranges 72500000–04/72510000–15. The experiment runner, source manifest, registry and training artifacts all use the locked V14 72600000–04/72610000–15 ranges; only the independent verifier was wrong. Corrected it to derive ranges from the immutable V14 manifest and assert the prelocked values. A project-runtime preflight regenerated all 1,920 distinct training physical roles and matched the manifest SHA256/count; V14 focused tests 4 PASS. No training source, physical tape, outcome, protocol or watcher was changed. Push this repair before the main watcher invokes the full audit.
+
 ## V13 failure-exposure full opened-DEV audit — mechanism only
 
 Pushed V13 V2 diagnostic source/protocol/verifier at `201a9b6` before full replay. `v13_failure_exposure_dev_20261020T191544Z` replayed 320 selected V13 actor and 64 rollout episodes on immutable opened DEV; final independent audit `v13_failure_exposure_audit_20261020T191820Z` PASS on every action and 58,259 event rows plus source metrics/bootstrap. Interchangeable/reciprocal2 actor−rollout at-risk PM exposure +5.95 CI95[+4.90,+7.03]/+6.14 CI95[+4.80,+7.41], positive in all five training seeds; prelocked descriptive gate TRUE. Most of the excess is instantaneously capacity constrained (+4.31/+4.09), with +1.64/+2.05 individually feasible. H48 PM starts fall −2.36/−2.01 while total starts remain ~equal and failures rise +2.43/+2.20. Specialist exposure gap is mostly individually feasible; reciprocal3 actor improves. See `v13_failure_exposure_findings_vi.md`. This is observational, does not establish causal benefit of a new controller, and V14 remains RUNNING. No TEST or replication.

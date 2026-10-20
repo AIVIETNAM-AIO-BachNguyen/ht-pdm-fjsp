@@ -184,3 +184,7 @@ After pushed source/protocol/verifier `201a9b6`, full opened-DEV V2 `v13_failure
 ### 2026-10-20 — Resource-reservation prior-art check after V13 exposure audit
 
 Read the primary DRAS IPDPS 2021 paper and updated `v13_prior_art_boundary.md`: hierarchical RL reservation of reusable compute nodes with backfilling already exists, while AirME already discusses balancing maintenance resources against future needs. Thus the observed V13 at-risk capacity exposure cannot motivate a broad novelty claim for RL reservation. Any future proposal needs a narrower stochastic PM-to-CM/heterogeneous-technician mechanism and fair ablation; V14 audit remains pending.
+
+### 2026-10-20 — V14 audit-readiness repair before run completion
+
+While V14 trainer remained RUNNING, a static review caught V13 train/DEV seed ranges mistakenly copied into `verify_framework_v14.py`. This would falsely fail independent full audit despite the V14 run using its correct locked registry. Replaced ranges with manifest-derived values and explicit 72600000–04/72610000–15 assertions. Preflight independently reconstructed 1,920 unique physical-role seeds and matched manifest SHA256/count; focused V14 tests 4 PASS. Trainer/protocol/artifacts unchanged and no V14 DEV score read. Push verifier repair before watcher audit.

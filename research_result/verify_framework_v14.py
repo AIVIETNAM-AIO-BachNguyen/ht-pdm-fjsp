@@ -150,7 +150,14 @@ def audit(run):
     for arm in ('flat_free','shared_free','shared_canonical'):
         for seed in range(68000000,68000005):
             assert sha(V7/prior[arm][str(seed)]['checkpoint'])==manifest['prior_comparator_hashes'][f'{arm}/{seed}']
-    train_seeds=tuple(range(72500000,72500005));dev_seeds=tuple(range(72510000,72510016))
+    training_registry=manifest['registry']['training']
+    development_registry=manifest['registry']['development']
+    train_seeds=tuple(range(training_registry['start'],
+                            training_registry['start']+training_registry['count']))
+    dev_seeds=tuple(range(development_registry['start'],
+                          development_registry['start']+development_registry['count']))
+    assert train_seeds==tuple(range(72600000,72600005))
+    assert dev_seeds==tuple(range(72610000,72610016))
     physical=[physical_seed(seed,iteration,case,index) for seed in train_seeds
               for iteration in range(1,7) for case in CASES for index in range(16)]
     assert len(physical)==len(set(physical))==manifest['training_physical_seed_count']
