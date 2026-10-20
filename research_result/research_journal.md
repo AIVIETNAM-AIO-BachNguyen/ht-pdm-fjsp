@@ -106,3 +106,7 @@ Source/protocol/test push `1e84bfb` preceded full diagnostic `v11_wait_bias_dev_
 ### 2026-10-20 — V11 stored-Q action-gradient prelock and smoke
 
 Prelocked `v11_gradient_diagnostic_plan_vi.md` before computing new gradients on immutable opened V11 banks. `diagnose_v11_gradient.py` records old-actor WAIT probability, Q-min action and exact first-order WAIT-logit gradient under both continuations, with iteration1 paired initial weights as primary analysis. Focused sign/root tests passed (2); smoke `v11_gradient_smoke_20261020T124628Z` completed on seed70500000/iteration1. Source/plan/tests to be pushed before full DEV. No new training, TEST or confirmation.
+
+### 2026-10-20 — V11 initial Q-gradient result
+
+Full fixed scan `v11_gradient_dev_20261020T124737Z` completed after pushed `d570c4e`; independent `verify_v11_gradient.py` PASS, 7,680 rows/60 checkpoints/five paired initial banks in audit `v11_gradient_audit_20261020T124821Z`. At same initial actors/states, mean WAIT-logit gradient self Q <0 and reference Q >0 in all five seeds; reference−self +0.167 to +0.412. Reciprocal scale2 has largest directional contribution and Q spread. Prelocked direction gate passes but does not prove network-level update or Q accuracy. Report `v11_gradient_findings_vi.md`. V11 no-go unchanged; next scratch method should test self-consistent horizon credit against matched short-horizon continuation before touching TEST.
