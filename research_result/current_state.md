@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke ver
 
 
 
+## V13 one-edge technician-commitment causal probe — audited no-go
+
+Prelocked `v13_commitment_intervention_protocol_vi.md` at `92e48fe` before new outcomes, then pushed source/verifier/tests at `71c76fc` after 31 focused tests, Ubuntu smoke/audit PASS and a real triggered narrow smoke. Full already opened V13 DEV `v13_commitment_intervention_dev_20261020T193408Z` completed 320 original/edited pairs; independent `v13_commitment_intervention_audit_20261020T193438Z` PASS for every trigger/action, 30,720 action rows, H64 metrics and hierarchical bootstrap. Editing one prior technician assignment at the first later capacity-constrained at-risk PM tick yields edited−original H64 cost −1.55 CI95[−7.03,+2.81] interchangeable and +7.38 [−14.51,+33.25] reciprocal2, joint target +2.91. The locked directional gate fails. All deleted services were later reissued by the actor; reciprocal3 cost worsens +93.83 [+78.08,+107.89]. This rejects the simple one-edge cancellation as a supported intervention, without ruling out learned reservation or coordinated rescheduling. Report `v13_commitment_intervention_findings_vi.md`; V14 live audit remains pending. No TEST.
+
 ## Conditional V14 validation blocks reserved while DEV is running
 
 Before reading V14 selected DEV scores, `v14_conditional_validation_reservation_vi.md` reserved disjoint 727xxxxx independent replication train/selection/evaluation/forecast/bootstrap blocks and one 728xxxxx confirmation TEST physical panel (64 seeds). Exhaustive integer and expanded start/count checks against all existing seed registries found zero collisions. These blocks remain unopened; no tapes were generated. If V14's audited DEV gate fails, the V14 reservation is retired unopened. If it passes, detailed replication protocol and source must be frozen/pushed, independently replicated, and only then can a single confirmatory TEST be considered. Original A/B cost and replication requirements are unchanged.
