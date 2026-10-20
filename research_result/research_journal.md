@@ -118,3 +118,7 @@ Method/protocol/registry were fixed before implementation: four common H64 actor
 ### 2026-10-20 — V12 full DEV and independent audit
 
 Pushed `0904078` before full run `framework_v12_dev_20261020T125625Z` (COMPLETED, 40.3 min, 184,320 training steps, 9.40M combined H64 forecast transitions, 4,480 checkpoint DEV and 1,792 comparator episodes). Independent `verify_framework_v12.py` PASS in `framework_v12_audit_20261020T134139Z`: all 15,360 Q rows/weight aggregations, 240 complete same-bank Q replays, 640 selected episodes, summaries and bootstrap. Candidate cost904.08 versus plain897.63, risk892.25, rollout849.56; candidate−plain +6.45 CI95 [−6.60,+28.89], one seed01 reciprocal2 failure +177.56. Speed 55× rollout but cost gap6.42%; risk dominates both. Prelocked DEV gate FALSE; no TEST or independent replication. Report `framework_v12_dev_findings_vi.md`. Goal remains ACTIVE, next method needs materially different mechanism.
+
+### 2026-10-20 — V12 sparse-planner first-divergence prelock and smoke
+
+After audited V12 no-go `78843fd`, prelocked `v12_sparse_planner_intervention_plan_vi.md` to distinguish pivotal one-action recovery from a four-tick WAIT option on immutable opened V12 DEV. It is an oracle causal diagnostic, not a new method or TEST. Focused schedule/classification tests (2) PASS; Ubuntu smoke `v12_sparse_planner_smoke_20261020T135111Z` COMPLETED in 2.0 s (2 case pairs, 6 actor/intervention episodes, 288 decisions). Source/protocol/tests to be pushed before fixed full 160-pair DEV.
