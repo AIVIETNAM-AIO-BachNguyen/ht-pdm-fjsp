@@ -45,3 +45,11 @@ def test_split_is_by_physical_seed_and_joint_scores_every_action():
     assert [len(got[k]) for k in ('train','selection','probe')]==[2,2,2]
     assert ACTIONS == catalogue()
     assert JointScorer()(torch.zeros(3,56)).shape==(3,len(ACTIONS))
+
+
+def test_collision_excludes_forecast_noise_for_identical_full_observation():
+    a = (1, 'case', 'arm', 0, 10.0, b'observation')
+    b = (2, 'case', 'arm', 1, -10.0, b'observation')
+    c = (3, 'case', 'arm', 1, -10.0, b'changed context')
+    assert _probe.opposite_context_pairs([a], [b]) == []
+    assert _probe.opposite_context_pairs([a], [b,c]) == [(a,c)]

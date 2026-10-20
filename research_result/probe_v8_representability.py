@@ -68,6 +68,10 @@ def collision_key(obs, left, right):
     return left, right, signed
 
 
+def opposite_context_pairs(plus, minus):
+    return [(p,n) for p in plus for n in minus if p[5] != n[5]]
+
+
 def collisions(items, timeout):
     groups = defaultdict(list)
     pair_records = 0
@@ -81,7 +85,7 @@ def collisions(items, timeout):
                 if margin == 0:
                     continue
                 groups[collision_key(obs, left, right)].append((int(row['state_id']),
-                    row['case'], row['source_arm'], int(row['train_seed']), margin))
+                    row['case'], row['source_arm'], int(row['train_seed']), margin, obs.tobytes()))
                 pair_records += 1
     result = dict(pair_records=pair_records, collision_key_count=len(groups), thresholds={})
     for threshold in (1,5,10):
@@ -93,18 +97,20 @@ def collisions(items, timeout):
         for key, values in groups.items():
             plus = [x for x in values if x[4] >= threshold]
             minus = [x for x in values if x[4] <= -threshold]
-            if not plus or not minus:
+            valid = opposite_context_pairs(plus, minus)
+            if not valid:
                 continue
             keys += 1
-            state_pairs += len(plus) * len(minus)
-            covered.update(x[0] for x in plus+minus)
-            for x in plus+minus:
+            state_pairs += len(valid)
+            involved = {x for pair in valid for x in pair}
+            covered.update(x[0] for x in involved)
+            for x in involved:
                 by_case[x[1]] += 1
                 by_source_seed[f'{x[2]}/{x[3]}'] += 1
             if len(examples) < 12:
                 examples.append(dict(left_action=key[0], right_action=key[1],
-                                     state_a=plus[0][0], state_b=minus[0][0],
-                                     margins=[plus[0][4],minus[0][4]]))
+                                     state_a=valid[0][0][0], state_b=valid[0][1][0],
+                                     margins=[valid[0][0][4],valid[0][1][4]]))
         result['thresholds'][str(threshold)] = dict(collision_keys=keys,
             opposite_preference_record_pairs=state_pairs, unique_states=len(covered),
             states=sorted(covered), by_case=dict(sorted(by_case.items())),

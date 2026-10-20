@@ -32,3 +32,7 @@ Full prelocked diagnostic completed 1,920 episodes and 720 sampled states; indep
 ## 2026-10-20: Prelocked representability probe and smoke
 
 The audited V8 headroom gap does not identify representation versus learning. Locked `v8_representability_probe_plan_vi.md` before implementation: exact local-edge collision census and a small supervised capacity check using only the audited 720 DEV states, physical-seed split, five optimizer starts and fixed 100-epoch budget. This is diagnostic, not imitation-based method evidence. Focused tests passed. Fresh Ubuntu smoke `v8_representability_smoke_20261020T055000Z` completed 128 census states and the tiny train/selection/probe path, with fresh timestamped artifacts. The smoke numbers are only engineering checks. Commit/push verified source before the all-state DEV probe.
+
+## 2026-10-20: Representability census correction before result interpretation
+
+Initial all-state artifact `v8_representability_dev_20261020T055400Z` completed, but review found its collision implementation omitted the prelocked different-observed-context check. Opposite preferences with identical 56-D observations can arise from independent finite forecast scenario noise. Mark this run superseded for collision conclusions, preserve it, and apply the exact full-observation-byte inequality. Supervised fit protocol remains fixed. Fresh smoke and source push precede fresh full DEV.
