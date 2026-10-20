@@ -1,6 +1,6 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-20 (after V10 scratch-RL DEV audit; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-20 (after V10 rollout-gap diagnostic audit; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 ## Authoritative checkout and preserved work
 
@@ -49,3 +49,7 @@ Prelocked intervention source/protocol/tests pushed `d5c004f`; 640 selected V9 c
 ## V10 assignment-contrast scratch RL — audited DEV no-go
 
 Prelocked V10 `55878b1` completed five fresh train seeds, six updates, 15,360 selected counterfactual states and 4.80M forecast transitions; independent audit PASS (240 Q banks, all 640 selected RL episodes, grids/selection/bootstrap). Equal-case DEV cost: V10 assignment credit 878.22, matched λ0 joint-credit 882.25, risk 894.61, flat PPO 905.77, bounded rollout 849.34. V10 beats risk in cost but the new term's mean ablation gain is only 4.03 (hierarchical CI95 [−11.64,+0.46]), concentrated mainly in one seed; rollout gap is +28.88 (3.40%). Prelocked DEV gate fails and unchanged goal criterion A/B is unmet. V10 rollout gap is +73.46 interchangeable scale1 and +91.42 reciprocal scale2, while V10 beats rollout by 59.91 reciprocal scale3. See `framework_v10_dev_findings_vi.md`. No V10 TEST or independent method replication. Next prelock a selected-state action/value diagnostic for rollout's advantage in the first two cases before V11. Goal remains ACTIVE.
+
+## V10 selected-state rollout-gap probe — bounded root gap mostly absent
+
+Prelocked diagnostic `75586d0` replayed all 640 selected V10 DEV episodes/30,720 H decisions and 240 independent common-bank six-tick root states; independent audit PASS (83,424 forecast transitions). In interchangeable scale1 and reciprocal scale2, assignment-credit V10 matched risk on 3,806/3,840 and 3,788/3,840 decisions respectively, never WAITed when legal service existed, and had 0/30 and 1/30 sampled root gaps ≥5 against bounded planner. Rollout's full-episode cost advantage persists across all five V10 training seeds in both cases, so this finite-horizon same-state probe cannot explain it via frequent large assignment or subset root mistakes. The planner chose noncanonical assignment in 3/240 specialist states. See `v10_rollout_gap_findings_vi.md`. Next prelock same-tape rollout versus V10 trajectory/first-divergence and full-H+tail continuation probe; examine causal temporal/state-distribution mechanisms before V11. Goal ACTIVE; no V10 TEST.
