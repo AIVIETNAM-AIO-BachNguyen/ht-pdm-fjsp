@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke ver
 
 
 
+## Conditional V14 validation blocks reserved while DEV is running
+
+Before reading V14 selected DEV scores, `v14_conditional_validation_reservation_vi.md` reserved disjoint 727xxxxx independent replication train/selection/evaluation/forecast/bootstrap blocks and one 728xxxxx confirmation TEST physical panel (64 seeds). Exhaustive integer and expanded start/count checks against all existing seed registries found zero collisions. These blocks remain unopened; no tapes were generated. If V14's audited DEV gate fails, the V14 reservation is retired unopened. If it passes, detailed replication protocol and source must be frozen/pushed, independently replicated, and only then can a single confirmatory TEST be considered. Original A/B cost and replication requirements are unchanged.
+
 ## V14 independent-verifier seed correction before full audit
 
 Static review while the V14 trainer remained live found `verify_framework_v14.py` still hardcoded V13 train/DEV ranges 72500000–04/72510000–15. The experiment runner, source manifest, registry and training artifacts all use the locked V14 72600000–04/72610000–15 ranges; only the independent verifier was wrong. Corrected it to derive ranges from the immutable V14 manifest and assert the prelocked values. A project-runtime preflight regenerated all 1,920 distinct training physical roles and matched the manifest SHA256/count; V14 focused tests 4 PASS. No training source, physical tape, outcome, protocol or watcher was changed. Push this repair before the main watcher invokes the full audit.

@@ -188,3 +188,7 @@ Read the primary DRAS IPDPS 2021 paper and updated `v13_prior_art_boundary.md`: 
 ### 2026-10-20 — V14 audit-readiness repair before run completion
 
 While V14 trainer remained RUNNING, a static review caught V13 train/DEV seed ranges mistakenly copied into `verify_framework_v14.py`. This would falsely fail independent full audit despite the V14 run using its correct locked registry. Replaced ranges with manifest-derived values and explicit 72600000–04/72610000–15 assertions. Preflight independently reconstructed 1,920 unique physical-role seeds and matched manifest SHA256/count; focused V14 tests 4 PASS. Trainer/protocol/artifacts unchanged and no V14 DEV score read. Push verifier repair before watcher audit.
+
+### 2026-10-20 — Conditional V14 validation seed reservation, TEST unopened
+
+While V14 DEV was still RUNNING, checked proposed 727xxxxx replication and 728xxxxx single-TEST blocks against all historical config integers and expanded start/count ranges; zero collisions. Recorded conditional order in `v14_conditional_validation_reservation_vi.md`: only an audited V14 DEV pass triggers freezing method/checkpoints/comparators; then independent scratch-RL replication with separate selection/evaluation seeds; only a supporting replication can trigger one frozen fresh TEST panel. No tapes were generated or TEST opened. If V14 fails, retire these unopened V14-specific blocks and pursue the opened-DEV mechanism question.
