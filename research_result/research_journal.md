@@ -1,3 +1,7 @@
+## 2026-10-21: V20 frozen-comparator audit addendum ready
+
+Primary V20 verifier replays all selected V20/V14 evaluation episodes, sampled full Q banks and recomputes selection/bootstrap/gates; it does not replay frozen V7 or rule episodes. A separate immutable-run addendum `verify_framework_v20_baselines.py` now replays every V7/FCFS/risk/rollout episode, checking matching legality, cost components, operations, request conservation and WAIT frequency. Smoke addendum `framework_v20_baseline_audit_smoke_20261021T131242Z/baseline_replay_audit.json` PASS on all 144 comparator episodes with zero metric error; source pushed `953d7f7`. After full V20 terminal status and primary audit PASS, run this addendum in a new timestamped directory before claiming comparator results. It cannot replay wall-clock selection timings; the campaign records those separately.
+
 ## 2026-10-21: V20 representation audit while DEV runs
 
 - Source inspection of `maintenance_framework_v14_policy.py` and `maintenance_framework_v20_policy.py` confirms both V20 arms inherit V14 `count_calibrated`: each edge sees local machine/worker/edge features and mean global embeddings, but the action opportunity-cost term uses the number of served machines, not the identity of the remaining unserved machines. Its `other_demand` sum includes demand of a second machine even when that machine is served in the same matching. This is a structural limitation of that term; no new experimental result is implied.
