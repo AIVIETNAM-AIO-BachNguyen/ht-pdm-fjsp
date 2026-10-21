@@ -248,3 +248,7 @@ Further primary-paper check: Barreto et al. 2017 already generalize policy impro
 ### 2026-10-21 — V18 full DEV independently audited, locked no-go
 
 Full dual-Q five-seed DEV and frozen V14/V7/heuristic/rollout same-panel evaluation completed in 3,935.5 s; independent audit PASS on source/240 complete dual-Q replays/1,280 learned+V14 final replays/selection/bootstrap/gate. Bounded candidate876.57 vs own-Q883.03, −6.47 CI95[−17.87,+1.40], so material and uncertainty gates fail; V14 joint865.53, rollout857.23, so competitive gates fail. Largest gain comes from reciprocal3 and seed73300004; interchangeable still has 4 versus rollout1 H failures with almost identical service starts. Report `framework_v18_dev_findings_vi.md`. No replication/TEST for V18. Next prelock same-panel first-divergence/continuation diagnostic; original goal ACTIVE.
+
+### 2026-10-21 — V18 post-no-go mechanism probe prelocked
+
+After audited V18 DEV no-go, locked `v18_first_divergence_plan_vi.md` at `4500779` before any new action or Q replay. Questions: why interchangeable keeps a large failure gap to rollout despite similar service counts, and whether reciprocal3's modest bounded-credit gain comes from improved first-root ranking; V14 joint cross-seed action census is descriptive. Only existing DEV physical seeds, fresh diagnostic scenario seeds73370000/01 verified disjoint. Runner/verifier/tests/smoke pending; no TEST/replication or V19 method claim. Goal ACTIVE.
