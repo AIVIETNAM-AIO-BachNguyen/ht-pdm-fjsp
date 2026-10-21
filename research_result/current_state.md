@@ -1,10 +1,14 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V17 continuation diagnostic audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V18 first-divergence diagnostic audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
+
+## V18 post-no-go first-divergence diagnostic — independently audited
+
+Prelocked plan `4500779`, runner/verifier/tests/smoke audit source push `8e7c44e`. Opened-DEV full `v18_first_divergence_dev_20261021T073007Z` COMPLETED in 100.83 s; `v18_first_divergence_audit_20261021T073155Z/independent_audit.json` PASS for 416 H48 episodes, 19,968 actions, 240 pair rows, 101 full 16-scenario dual-continuation Q banks (393,024 transitions), 400 V18/V14 cross-pairs, hashes/bootstrap. Interchangeable V18−rollout actual cost +70.95 and +3 H failures, own-continuation first-root full-Q −0.79 CI95[−2.32,+0.65], risk-continuation +14.01 [+7.37,+21.45]; prelocked continuation-mismatch flag TRUE, but 29/80 first differences are assignment-label choices with risk root-Q zero, so no closed-loop causal attribution. Reciprocal3 V18−own-rank actual −23.88 but own-root full-Q −1.44 [−6.41,+1.41], root-alignment flag FALSE. V18/V14 reciprocal3 first roots same in 270/400 crossed pairs, V18 more service/cardinality in 60, V14 mean cost lower; descriptive only. Report `v18_first_divergence_findings_vi.md`. V18 remains no-go; no TEST/replication. Next design and prelock a genuinely distinct repeated commitment/continuation RL method with fair same-budget ablation, preserving original A/B gates. Goal ACTIVE.
 
 ## V17 first-divergence continuation diagnostic — audited mismatch
 
