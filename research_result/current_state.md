@@ -1,14 +1,14 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V15 Q-bank probe audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V16 Q-bank probe audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
 
-## V16 post-decision compatible-release value — conditional proposal only
+## V16 post-decision release value — audited screening no-go
 
-`v16_postdecision_release_value_proposal_vi.md` proposes a scratch-RL action-value head over the whole post-decision worker release and machine compatibility state, with an equal-capacity pre-decision feature control. V14/V15 indicate that identity pricing and one fixed hazard statistic are too weak; V8 also cautions that generic joint heads can underperform. A new prelocked leave-one-training-seed-out Q-bank representation probe must show material benefit before fresh V16 RL training. No V16 source, new seed or TEST exists; the original completion criteria remain unmet.
+Prelock `v16_postdecision_q_probe_protocol_vi.md` pushed at `736b9ad`; verified source/tests/smoke pushed at `85f308a`. Full 7,680 immutable V14 count-arm Q roots × three paired initialization starts yielded 23,040 held-out choices; independent audit `v16_postdecision_q_probe_audit_20261021T021430Z` PASS for all root features/checkpoint choices/Q/bootstrap (optimizer was not independently retrained). Post-release versus equal-capacity pre-release head Q delta −0.703 CI95[−0.949,−0.471], negative on all five held-out training seeds, 7.33% changed actions, but the locked ≤−1 material gate FALSE. Interchangeable case effect −0.036. Report `v16_postdecision_q_probe_findings_vi.md`. Retire V16 release-conditioned method; no V16 scratch RL, replication or TEST. Next prelock a deterministic-old-actor Q comparison on the same opened bank to distinguish actual policy improvement from beating sampled exploration actions. Goal ACTIVE; original completion gates unmet.
 
 ## V15 release-horizon hazard probe — independently audited screening no-go
 

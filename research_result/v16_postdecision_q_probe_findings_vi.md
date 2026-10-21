@@ -1,0 +1,20 @@
+# V16 post-decision release Q-bank diagnostic — audited no-go
+
+The prelocked protocol `v16_postdecision_q_probe_protocol_vi.md` was pushed at `736b9ad` before V16 implementation/outcomes. Source, verifier and four focused tests were pushed at `85f308a` after a 12-state Ubuntu smoke and independent smoke audit PASS. Full immutable V14 count-arm training-bank diagnostic: `research_result/v16_postdecision_q_probe_dev_20261021T021347Z`; independent audit: `research_result/v16_postdecision_q_probe_audit_20261021T021430Z/independent_audit.json`, **PASS** for all 23,040 held-out state/start choices, exact current-state features, legal actions, saved Q, 30 checkpoint hashes/predictions, aggregate and 20,000-draw CI. The audit did not independently retrain the networks. The original V14 Q bank was already independently audited. No new physical training/DEV/TEST seed or policy evaluation was opened.
+
+## Locked primary result
+
+Both heads had 9,025 parameters, the same 56-D full observation, 8-D matching incidence, 4-D started flags, input width, six-epoch listwise Q objective, 4-seed train/1-seed held-out split and paired initialization. Only the six release channels differed: matching-conditioned post-decision times versus pre-decision times repeated across actions. Mean saved old-policy H64 root Q was **695.555 post** versus **696.258 pre**, paired delta **−0.703** cost unit/state, hierarchical CI95 **[−0.949, −0.471]**. All five held-out training-seed means favored post: −0.711, −0.989, −0.488, −0.839, −0.488. By optimizer start: −0.649, −0.856, −0.605. Choices differed on 1,689/23,040 (7.33%). Thus the feature is active and its small same-bank benefit is consistent, but the **prelocked material gate requires ≤−1**; diagnostic gate **FALSE**. The post head's WAIT rate when service legal was 5.15%, below the 10% guard. Retire the V16 release-conditioned value direction under the locked rule; do not start its scratch-RL campaign or open TEST based on this probe.
+
+| Case | Post−pre saved Q |
+|---|---:|
+| reciprocal scale2 | −1.048 |
+| interchangeable scale1 | −0.036 |
+| reciprocal scale3 | −1.528 |
+| specialist/generalist scale2 | −0.202 |
+
+The near-zero interchangeable effect is a particular concern because V14's competitive gap to bounded rollout was large in that case. The post head's mean regret to best saved legal Q was 12.517, versus 13.220 pre. Its saved Q (695.555) was below the recorded V14 `source_action` Q (701.139), but `source_action` was **sampled** from the V14 actor during on-policy data collection, so this comparison does not establish improvement over the V14 deterministic decision or a closed-loop policy. The V15 scalar hazard signal (−0.269, CI touching zero) was also too small; V16 improves relative Q ranking more consistently but still misses the locked threshold.
+
+## Interpretation and next discriminating question
+
+The capacity-matched post-decision representation adds a modest inductive bias, not enough by the registered criterion to justify another expensive RL campaign. This does not prove post-decision reasoning is useless: only one fixed 9,025-parameter head, six-epoch optimizer and old V14 continuation/four-scenario Q bank were tested. It also does not show that learning a value head improves the *deterministic* V14 actor. The next narrow read-only DEV question is to reconstruct the deterministic old count actor's action on exactly these saved Q states and compare its Q with both held-out heads, by seed/case and with the same hierarchy. If both learned heads mainly beat sampled exploration actions but not deterministic actions, a direct Q-head campaign lacks current support. If they materially beat deterministic actions across seeds and target cases, formulate a distinct scratch-RL **credit/optimization** method with a controlled ablation; do not relabel the failed post-release feature as the contribution. No new TEST, independent method replication or original completion condition is met. Goal remains ACTIVE.
