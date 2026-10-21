@@ -1,0 +1,9 @@
+{
+  "campaign_version": "maintenance_framework_v18_continuation_disagreement_dev_v1",
+  "training": {"start": 73300000, "count": 5},
+  "selection_development": {"start": 73310000, "count": 8},
+  "evaluation_development": {"start": 73311000, "count": 16},
+  "smoke": {"start": 73320000, "count": 2},
+  "forecast_seed": 73330000,
+  "bootstrap_seed": 73340000
+}
