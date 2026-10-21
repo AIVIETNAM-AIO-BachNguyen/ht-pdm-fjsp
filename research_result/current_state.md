@@ -1,10 +1,14 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V16 Q-bank probe audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V17 scratch-RL DEV audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
+
+## V17 full-matching relative-Q projection — audited DEV ablation gain, competitive no-go
+
+Prelocked method/protocol/registry `38cf615`; verified source/tests/Ubuntu smoke and smoke audit pushed `6232fe3` before full. Full scratch-RL `framework_v17_dev_20261021T022840Z` COMPLETED in 2,853.6 s, five train seeds, both equal-capacity 9,025-parameter arms, 15,360 Q roots, disjoint 8-seed selection/16-seed final DEV. Independent `framework_v17_audit_20261021T031626Z` PASS (240 complete Q banks, all 640 selected learned final episodes, hashes/bootstrap/gate). Rank projection cost898.69 versus expected-Q907.45, paired −8.76 CI95[−13.99,−4.02], negative in all five train seeds; controlled credit-objective ablation supported. Yet bounded rollout860.45 is 4.44% cheaper; locked ≤2% rollout DEV go gate FALSE and original A/B competition criteria unmet. Rank improves mainly reciprocal3; interchangeable/reciprocal2 gaps to rollout remain ~+100/+93 with ~4–5 extra failures. Report `framework_v17_dev_findings_vi.md`. V17-specific replication 731xxxxx and TEST 732xxxxx reserved blocks retired unopened; no replication/TEST. Goal ACTIVE. Next post hoc same-panel V14 historical comparator and prelocked temporal/first-divergence diagnosis, then a distinct method if evidence warrants.
 
 ## V16 post-decision release value — audited screening no-go
 
