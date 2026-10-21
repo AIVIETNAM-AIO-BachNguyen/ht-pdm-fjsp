@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V14 training-credit probe independently audited; Asia/Taipe
 
 
 
+## V20 scratch-RL campaign — source pushed, full DEV running
+
+V20 factorized 3,219-parameter policy, two-arm campaign, independent verifier and focused tests implemented. Sixteen focused V20/V14 tests PASS. Ubuntu smoke `framework_v20_smoke_20261021T124850Z` COMPLETE and independent `framework_v20_audit_20261021T124928Z/independent_audit.json` PASS (24 Q rows, eight full source/Q replays, 16 selected new-policy episodes, 80 frozen V14 episode replays, selection/summary/hash/seed gates). Verified source pushed `6760346` before full. Full five-seed DEV started in new `research_result/framework_v20_dev_20261021T125049Z` under the fixed four-hour hard timeout; its manifest and partial trace are authoritative. The run is in progress, not an outcome. Continue by polling the live process/manifest, then independently audit complete results and report H1/H2/original A/B. No V20 replication/TEST yet; goal ACTIVE.
+
 ## V20 activation-margin method/protocol — prospective, no RL outcome
 
 `v20_activation_margin_proposal_vi.md`, `framework_v20_dev_protocol_vi.md`, `v20_primary_prior_art_boundary_vi.md` and seed registry prelock a V14 count-calibrated 3,219-parameter factorized WAIT/start and conditional matching policy. Candidate trains a four-scenario greedy-continuation counterfactual whole-matching WAIT margin; equal-capacity `generic_q` control receives the same Q bank/information/action map/budget with generic expected-Q improvement. Five train seeds73700000–04, eight selection-only and 16 final disjoint DEV physical seeds, eight fixed updates, four equal cases, original A/B and material-ablation gates. Exact new integer roles have no historical collision. This is a hypothesis, not novelty or performance evidence. Next implement policy/campaign/verifier, focused tests, Ubuntu smoke/audit and source push before full DEV. Preserve both V14 joint/count as frozen comparators and user files. Goal ACTIVE.

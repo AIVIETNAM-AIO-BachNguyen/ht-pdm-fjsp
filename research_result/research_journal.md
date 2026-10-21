@@ -1,5 +1,10 @@
 # Research journal — RL maintenance dispatch continuation
 
+## 2026-10-21: V20 implementation, smoke audit and full DEV start
+
+- V20 policy/campaign/verifier and 16 focused V20/V14 tests PASS; smoke `framework_v20_smoke_20261021T124850Z` complete, independent audit `framework_v20_audit_20261021T124928Z` PASS for source/Q, selected actor/V14 episodes, hashes and seed roles. Source pushed `6760346` before full.
+- Full five-seed V20 DEV started `framework_v20_dev_20261021T125049Z` with fixed 8 updates/arm, selection-only physical panel, fresh final panel and 4h engineering deadline. At this journal entry it remains RUNNING; do not infer any result or revise the locked method. Next wait for terminal manifest, independent full audit, case/seed/compute report, then decide gate.
+
 ## 2026-10-21: V20 prospective activation-margin method and literature boundary
 
 - Corrected V14 comparator description: frozen count-calibrated cost857.84 is slightly below joint858.23 on the V19 panel; direct root-Q and logged-credit diagnostics specifically tested joint. The failed joint identity ablation means count-calibrated is the more parsimonious method basis; both stay frozen comparators.
