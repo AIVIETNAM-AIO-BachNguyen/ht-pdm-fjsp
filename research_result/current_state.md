@@ -1,10 +1,14 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V19 first-divergence diagnostic independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V14 direct gap diagnostic independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
+
+## Frozen V14 direct rollout-gap diagnostic — independent audit PASS
+
+Prelocked `v14_direct_gap_plan_vi.md`, source/tests and passing Ubuntu smoke/audit pushed `8c2eb85` before full `v14_direct_gap_dev_20261021T122517Z`; independent `v14_direct_gap_audit_20261021T122749Z/independent_audit.json` PASS on all 192 episodes, 160 first-root pairs, 115 full 16-scenario Q banks/431,360 transitions, source metrics, seed roles and summaries. On interchangeable/reciprocal2, V14−rollout actual cost +60.14/+70.88, H failures +2.80/+2.85 and PM queue +8.80/+9.46 with equal/nearly equal starts. V14 first serves when rollout waits in 32/80 and 45/80 pairs. Forced first-root V14−rollout own-continuation H64 Q +35.16 CI95[25.11,45.59] and +59.90[46.87,73.11], all five seed means positive; both prelocked material-root-failure flags TRUE. This directly implicates over-eager service-start decisions, not the total number of starts, but does not explain the whole closed-loop gap. See `v14_direct_gap_findings_vi.md`. V14 identity-specific ablation remains unsupported; goal ACTIVE, no replication/TEST. Next inspect old V14 training Q/selected logits for credit versus calibration, then propose a distinct V14-anchored scratch-RL method with matched control and fresh DEV.
 
 ## V19 post-no-go first-divergence diagnostic — independent audit PASS
 

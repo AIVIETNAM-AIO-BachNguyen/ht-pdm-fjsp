@@ -1,5 +1,11 @@
 # Research journal — RL maintenance dispatch continuation
 
+## 2026-10-21: Direct V14 rollout-gap diagnostic independently audited
+
+- Frozen V14 versus rollout on already-opened V19 final DEV panel, prelocked before action/Q outcomes. Source push `8c2eb85` followed passing focused tests/Ubuntu smoke/independent replay. Full and audit PASS (`v14_direct_gap_dev_20261021T122517Z`, `v14_direct_gap_audit_20261021T122749Z`).
+- V14 first starts service while rollout waits in 32/80 interchangeable and 45/80 reciprocal2 pairs. Actual V14−rollout cost +60.14/+70.88 with failures +2.80/+2.85 but similar total service starts. Common-shock forced-root own-policy Q +35.16 CI95[25.11,45.59]/+59.90[46.87,73.11], all five training-seed means positive. Root material-failure flags TRUE; this is conditional root evidence, not full policy causal attribution.
+- Next audit old V14 training Q bank and selected logits at early legal WAIT/service states: if Q itself prefers premature starts, target credit/continuation; if Q prefers WAIT but selected actor starts, target calibration/optimization or state coverage. A new V14-anchored scratch-RL method needs fresh proposal, matched ablation and new DEV seeds; no TEST yet.
+
 ## 2026-10-21: V19 first-divergence audit and V14 direction
 
 - Full prelocked V19 first-divergence diagnostic and independent audit PASS (`v19_first_divergence_dev_20261021T120937Z`, `v19_first_divergence_audit_20261021T121317Z`). Seventeen focused tests and Ubuntu smoke/audit passed; source pushed at `581d72c` before full.
