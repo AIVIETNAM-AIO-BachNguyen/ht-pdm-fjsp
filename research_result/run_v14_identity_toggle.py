@@ -19,6 +19,7 @@ from ht_pdm_fjsp.maintenance_requests import state_from_dict, submit_requests
 
 ROOT = Path(__file__).resolve().parent.parent
 ACTIONS = catalogue()
+NUMERIC_TIE_EPS = 1e-6
 
 
 def sha(path: Path) -> str:
@@ -106,6 +107,7 @@ def analyze(run: Path, profile: str, out: Path, main_audit: Path | None) -> None
     assert set(groups) == {(seed, iteration, case) for seed in seeds
                            for iteration in range(1, updates + 1) for case in CASES}
     cube = np.empty((len(seeds), updates, len(CASES), states))
+    structural_cube = np.empty_like(cube)
     output = []
     checkpoint_hashes = {}
     trace = {(int(row['train_seed']), int(row['iteration'])): row['checkpoint_sha256']
@@ -152,8 +154,12 @@ def analyze(run: Path, profile: str, out: Path, main_audit: Path | None) -> None
                     count_scores = count_logits[0].numpy()
                     joint_action = max(legal, key=lambda action: (float(joint_scores[action]), -action))
                     count_action = max(legal, key=lambda action: (float(count_scores[action]), -action))
-                    if joint_action != count_action:
-                        assert len(ACTIONS[joint_action]) == 2 or len(ACTIONS[count_action]) == 2
+                    numeric_tie = (joint_action != count_action and
+                                   len(ACTIONS[joint_action]) < 2 and len(ACTIONS[count_action]) < 2)
+                    if numeric_tie:
+                        values = (joint_scores[joint_action], joint_scores[count_action],
+                                  count_scores[joint_action], count_scores[count_action])
+                        assert float(np.ptp(values)) <= NUMERIC_TIE_EPS
                     eligible_double = [action for action in legal if len(ACTIONS[action]) == 2]
                     effect = (joint_penalty - count_penalty)[0].numpy()
                     opportunity = (len(eligible_double) >= 2 and
@@ -164,11 +170,13 @@ def analyze(run: Path, profile: str, out: Path, main_audit: Path | None) -> None
                     joint_q, count_q = scores[joint_action], scores[count_action]
                     delta = joint_q - count_q
                     cube[si, iteration - 1, ci, ri] = delta
+                    structural_cube[si, iteration - 1, ci, ri] = 0. if numeric_tie else delta
                     output.append(dict(train_seed=seed, iteration=iteration, case=case,
                                        physical_seed=int(row['physical_seed']), tick=int(row['tick']),
                                        rank=row['rank'], joint_action=joint_action,
                                        count_action=count_action, joint_q=joint_q,
-                                       count_q=count_q, delta=delta,
+                                       count_q=count_q, delta=delta, numeric_tie=bool(numeric_tie),
+                                       structural_delta=0. if numeric_tie else delta,
                                        decision_class=classify(joint_action, count_action),
                                        joint_cardinality=len(ACTIONS[joint_action]),
                                        count_cardinality=len(ACTIONS[count_action]),
@@ -183,6 +191,13 @@ def analyze(run: Path, profile: str, out: Path, main_audit: Path | None) -> None
                    by_case={case: float(cube[:, :, i, :].mean()) for i, case in enumerate(CASES)},
                    by_iteration={str(i + 1): float(cube[:, i, :, :].mean())
                                  for i in range(updates)},
+                   numeric_tie_rows=sum(row['numeric_tie'] for row in output),
+                   numeric_tie_raw_delta_sum=float(sum(row['delta'] for row in output if row['numeric_tie'])),
+                   structural_mean_delta=float(structural_cube.mean()),
+                   structural_by_train_seed={str(seed): float(structural_cube[i].mean())
+                                             for i, seed in enumerate(seeds)},
+                   structural_by_case={case: float(structural_cube[:, :, i, :].mean())
+                                       for i, case in enumerate(CASES)},
                    changed_actions=len(changed),
                    changed_fraction=len(changed) / expected,
                    decision_classes={name: sum(row['decision_class'] == name for row in output)
@@ -214,7 +229,7 @@ def analyze(run: Path, profile: str, out: Path, main_audit: Path | None) -> None
                       source_q_sha256=sha(run / 'counterfactual_states.csv'),
                       source_selection_sha256=sha(run / 'selection.json'),
                       script_sha256=sha(Path(__file__)),
-                      protocol_sha256=sha(ROOT / 'research_result/v14_identity_toggle_protocol_vi.md'),
+                      protocol_sha256=sha(ROOT / 'research_result/v14_identity_toggle_protocol_v2_vi.md'),
                       checkpoint_hashes=checkpoint_hashes, profile=profile,
                       main_audit_dir=str(main_audit) if main_audit else None,
                       main_audit_sha256=sha(main_audit / 'independent_audit.json') if main_audit else None,

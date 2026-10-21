@@ -18,6 +18,7 @@ from ht_pdm_fjsp.maintenance_requests import legal_matchings, state_from_dict, s
 
 ROOT = Path(__file__).resolve().parent.parent
 ACTIONS = catalogue()
+NUMERIC_TIE_EPS = 1e-6
 
 
 def sha(path: Path) -> str:
@@ -59,7 +60,7 @@ def audit(run: Path, diagnostic: Path) -> dict:
     assert manifest['source_q_sha256'] == sha(run / 'counterfactual_states.csv')
     assert manifest['source_selection_sha256'] == sha(run / 'selection.json')
     assert manifest['script_sha256'] == sha(ROOT / 'research_result/run_v14_identity_toggle.py')
-    assert manifest['protocol_sha256'] == sha(ROOT / 'research_result/v14_identity_toggle_protocol_vi.md')
+    assert manifest['protocol_sha256'] == sha(ROOT / 'research_result/v14_identity_toggle_protocol_v2_vi.md')
     for name, digest in manifest['artifact_hashes'].items():
         assert sha(diagnostic / name) == digest
     for name, digest in source['artifact_hashes'].items():
@@ -89,6 +90,7 @@ def audit(run: Path, diagnostic: Path) -> dict:
     assert len(output) == len(seeds) * updates * len(CASES) * states
     assert manifest['bootstrap_draws'] == draws
     cube = np.empty((len(seeds), updates, len(CASES), states))
+    structural_cube = np.empty_like(cube)
     model_cache = {}
     decisions = []
     trace = {(int(row['train_seed']), int(row['iteration'])): row['checkpoint_sha256']
@@ -155,8 +157,13 @@ def audit(run: Path, diagnostic: Path) -> dict:
                     chosen_count = sorted(legal, key=lambda a: (-float(count_scores[a]), a))[0]
                     assert int(record['joint_action']) == chosen_joint
                     assert int(record['count_action']) == chosen_count
-                    if chosen_joint != chosen_count:
-                        assert len(ACTIONS[chosen_joint]) == 2 or len(ACTIONS[chosen_count]) == 2
+                    numeric_tie = (chosen_joint != chosen_count and
+                                   len(ACTIONS[chosen_joint]) < 2 and len(ACTIONS[chosen_count]) < 2)
+                    if numeric_tie:
+                        values = (joint_scores[chosen_joint], joint_scores[chosen_count],
+                                  count_scores[chosen_joint], count_scores[chosen_count])
+                        assert float(np.ptp(values)) <= NUMERIC_TIE_EPS
+                    assert record['numeric_tie'] == str(bool(numeric_tie))
                     eligible_double = [action for action in legal if len(ACTIONS[action]) == 2]
                     effect = (joint_penalty - count_penalty)[0].numpy()
                     opportunity = len(eligible_double) >= 2 and np.ptp(effect[eligible_double]) > 1e-6
@@ -167,13 +174,23 @@ def audit(run: Path, diagnostic: Path) -> dict:
                     close(record['count_q'], q[chosen_count], 'count Q')
                     delta = q[chosen_joint] - q[chosen_count]
                     close(record['delta'], delta, 'Q delta')
+                    close(record['structural_delta'], 0. if numeric_tie else delta, 'structural Q delta')
                     assert record['decision_class'] == category(chosen_joint, chosen_count)
                     assert int(record['joint_cardinality']) == len(ACTIONS[chosen_joint])
                     assert int(record['count_cardinality']) == len(ACTIONS[chosen_count])
                     cube[si, update - 1, ci, ri] = delta
+                    structural_cube[si, update - 1, ci, ri] = 0. if numeric_tie else delta
                     decisions.append(record)
     summary = json.loads((diagnostic / 'summary.json').read_text())
     close(summary['mean_delta'], cube.mean(), 'mean delta')
+    assert summary['numeric_tie_rows'] == sum(row['numeric_tie'] == 'True' for row in decisions)
+    close(summary['numeric_tie_raw_delta_sum'],
+          sum(float(row['delta']) for row in decisions if row['numeric_tie'] == 'True'), 'numeric tie Q sum')
+    close(summary['structural_mean_delta'], structural_cube.mean(), 'structural mean')
+    for si, seed in enumerate(seeds):
+        close(summary['structural_by_train_seed'][str(seed)], structural_cube[si].mean(), 'structural seed')
+    for ci, case in enumerate(CASES):
+        close(summary['structural_by_case'][case], structural_cube[:, :, ci, :].mean(), 'structural case')
     for si, seed in enumerate(seeds):
         close(summary['by_train_seed'][str(seed)], cube[si].mean(), 'seed mean')
     for ci, case in enumerate(CASES):
