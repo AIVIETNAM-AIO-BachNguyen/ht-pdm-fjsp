@@ -1,0 +1,9 @@
+# Conditional V17 replication and one TEST seed reservation — unopened
+
+Reserved while V17 full DEV is still training, before checkpoint-selection and final DEV cost scores are available. These numbers reserve namespace only: **no physical tape, checkpoint, outcome or TEST result is generated here**. If the audited V17 final-DEV gate fails, retire the blocks unopened. If it passes, freeze the exact rank-projection method, expected-Q ablation, V7/V14/flat PPO and rule/planner comparators, metrics and threshold before beginning independent replication. This reservation alone does not prelock a complete replication or TEST protocol.
+
+Independent scratch-RL replication blocks: training 73100000–04 (five new seeds); checkpoint selection physical 73110000–07; final replication physical 73111000–15; smoke 73120000–01; forecast anchor 73130000; bootstrap 73140000. Use identical V17 physics, objective, six updates, source/Q budget and both arms, with a separately committed replication protocol and source/audit manifest. Require supported ablation and competitiveness on the replication final panel before any TEST.
+
+One fresh confirmatory TEST reservation: physical seeds 73210000–63 shared by all frozen controllers/cases; bootstrap 73240000. Use each physical seed once for the frozen evaluation, no repeated test cycles or method revisions after opening. Account for historical V1–V16 development and the selection process in claims. The method still needs the user's original ≥5% strongest-comparator or ≤1% planner-cost/≥10× speed route with uncertainty, plus novelty and per-case/compute/failure evidence.
+
+Preflight before this document: exact listed seed integers and each expanded range were disjoint from all existing `configs/*seed_registry.json` integers and one another. Do the check again when writing a complete replication/TEST registry; also verify generated training physical-role streams. No SSH or rsync is started by this reservation.
