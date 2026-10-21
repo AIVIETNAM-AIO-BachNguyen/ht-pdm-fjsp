@@ -242,3 +242,5 @@ V17 first-divergence analysis motivated a bounded relative own/risk continuation
 ### 2026-10-21 — V18 primary-literature boundary while full DEV runs
 
 Directly rechecked Learning to Dispatch (NeurIPS 2020) and AirME/HetGPO (ICAPS 2022) primary papers. AirME already uses multiple simultaneous maintenance decisions, all planes/crews, global state and decision-value nodes, PPO with step-based variance reduction and same-instance rollouts. No novelty claim for joint assignment, global resource observation, stochastic maintenance RL, or matched randomness alone. Documented the narrow conditional V18 distinction and search limit in `v18_primary_prior_art_review_vi.md`. This changes neither the locked V18 campaign nor any interpretation of its not-yet-opened final DEV outcomes.
+
+Further primary-paper check: Barreto et al. 2017 already generalize policy improvement across multiple policy Q functions; Kakade–Langford 2002 and Laroche et al. 2019 cover conservative/baseline-safe improvements with their own assumptions. Recorded in `v18_primary_prior_art_review_vi.md`; V18's bounded blend has no claimed safety theorem. The ongoing run was not modified.
