@@ -1,3 +1,7 @@
+## 2026-10-21: V20 descriptive report helper smoke-verified
+
+Added `analyze_framework_v20.py` for an audited, completed V20 run. It requires a matching primary independent-audit PASS, recomputes descriptive candidate contrasts by case with exploratory hierarchical intervals, records all controllers' cost/operations, seed costs and realized training compute, and checks that its four-case candidate-control mean agrees with the prelocked primary summary. V14 count is treated as the fixed five-replica frozen comparator, and the output states that per-case intervals are exploratory and selection runtime is only campaign-measured. Smoke function PASS on the audited 240-episode V20 smoke artifact. This helper does not change the running V20 campaign, its prelocked gate or source hashes. Apply after full V20 audits; report failure cases directly from final episodes.
+
 ## 2026-10-21: V20 primary-literature addendum while full DEV runs
 
 A publisher abstract for Zhang et al. (2023), *Counterfactual-attention multi-agent reinforcement learning for joint condition-based maintenance and production scheduling*, establishes another close prior use of multi-agent RL, action abstraction and counterfactual framing in joint maintenance/production scheduling. The accessible abstract does not reveal whether it uses the V20 whole-matching WAIT Q margin. Added `v20_primary_prior_art_addendum_vi.md` with the DOI link and this access limit. The prelocked proposal/protocol/source hashes and running V20 campaign are unchanged; no originality claim is promoted.
