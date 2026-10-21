@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V18 first-divergence diagnostic audited; Asia/Taipei). Goal
 
 
 
+## V19 campaign source/Ubuntu smoke — independent audit PASS, full DEV pending
+
+Two-arm full-matching scratch-RL V19 campaign and independent verifier implemented with same 10,177 active network parameters/initial weights, own-policy Q rank objective, equal forecast/update budget, future-demand profile in both arms, and temporal versus snapshot matching deficit as only feature ablation. Frozen V14/V18/V7 and FCFS/risk/rollout are on-panel comparators. Fourteen focused policy/campaign tests PASS. Fresh Ubuntu smoke `framework_v19_smoke_20261021T074909Z` COMPLETED; independent `framework_v19_audit_20261021T0749*` PASS (24 Q rows, 8 full-Q/independent-feature replays, 16 selected RL episode replays, 80 each frozen V14/V18 episode replays, 320 total comparator episodes, checkpoint/seed/bootstrap/gate). Next commit/push this verified source, then full 5-seed V19 DEV under 4h hard timeout; no full V19 result, replication or TEST yet. Goal ACTIVE.
+
 ## V19 exposure feature implementation and opened-DEV sanity — no RL outcome
 
 Prelocked V19 proposal/protocol/registry pushed `82bd7ef`. `maintenance_framework_v19_policy.py` now computes deterministic nine-offset demand and maximum-matching shortage for all 21 full matchings; same 92-input/active-parameter actor in temporal versus snapshot modes. Ten tests against independent brute-force assignment across four cases/two seeds and boundary inputs PASS. Timestamped `v19_profile_discrimination_*` on 128 balanced, already-opened V18 iteration-1 states (32/case) finds temporal versus snapshot shortage differs and varies across legal actions in 128/128; >1% pre-full sanity gate TRUE. This proves feature distinction only, not cost gain. Measured actor-forward ~0.331 ms/decision on one CPU thread, preliminary and not a final comparator timing. Next implement fair scratch-RL campaign/verifier, Ubuntu smoke and push before full DEV. No V19 training/TEST yet; goal ACTIVE.
