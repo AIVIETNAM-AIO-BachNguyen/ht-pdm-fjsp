@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V15 Q-bank probe audited; Asia/Taipei). Goal: **ACTIVE** un
 
 
 
+## V16 post-decision compatible-release value — conditional proposal only
+
+`v16_postdecision_release_value_proposal_vi.md` proposes a scratch-RL action-value head over the whole post-decision worker release and machine compatibility state, with an equal-capacity pre-decision feature control. V14/V15 indicate that identity pricing and one fixed hazard statistic are too weak; V8 also cautions that generic joint heads can underperform. A new prelocked leave-one-training-seed-out Q-bank representation probe must show material benefit before fresh V16 RL training. No V16 source, new seed or TEST exists; the original completion criteria remain unmet.
+
 ## V15 release-horizon hazard probe — independently audited screening no-go
 
 After a prospective pre-code current-tick correction, the prelocked V15 probe evaluated an exact earliest-compatible-release PM hazard against an age-agnostic release proxy on all 7,680 immutable V14 count-arm training Q states. Focused tests 7 PASS, 12-state Ubuntu smoke and independent audit PASS. Full `v15_release_hazard_probe_dev_20261021T020150Z` and independent `v15_release_hazard_probe_audit_20261021T020207Z` PASS for all features/actions/Q/folds/bootstrap. Leave-one-training-seed-out saved-Q delta threshold−control −0.269 CI95[−0.526,+0.001]; five of five seed means negative, 11.4% actions change, but the locked material ≤−1/CI-upper<0 gate FALSE. Reciprocal3 worsens +0.431 Q/state. Feature is active but weak; do not launch V15 scratch RL from this evidence alone. Report `v15_release_hazard_probe_findings_vi.md`. No new seed, replication or TEST. Goal ACTIVE.
