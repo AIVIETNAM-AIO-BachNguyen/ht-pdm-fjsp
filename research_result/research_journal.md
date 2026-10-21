@@ -268,3 +268,7 @@ Implemented present-only event-free 9-offset demand and compatible maximum-match
 ### 2026-10-21 — V19 scratch-RL source and independently audited Ubuntu smoke
 
 Implemented same-parameter temporal versus snapshot profile arms with matched own-policy four-scenario H64 root-Q ranks, soft service-flow and KL; same initial weights and first physical tape. Added frozen V18/V14/V7 and three rules to the final panel. Fourteen focused tests PASS. First smoke and audit passed but were superseded by strengthened independent per-action feature enumeration. Fresh smoke `framework_v19_smoke_20261021T074909Z` COMPLETED; independent smoke audit PASS for source/checkpoint hashes, eight full Q banks and independently enumerated nine-offset exposure features, all 16 learned and 160 frozen V14/V18 episodes, 320 full comparator episodes and bootstrap/gate. Next push verified source before 5-seed full DEV; goal ACTIVE, no V19 full result/TEST.
+
+### 2026-10-21 — V19 full five-seed DEV launched
+
+Source/14 focused tests and fresh independently audited Ubuntu smoke pushed at `a8bf4e2` before full. New run `framework_v19_dev_20261021T075021Z` launched with four-hour deadline and `timeout 14430s`, currently RUNNING in shell session69495, log `/tmp/v19_dev.log`. No final/TEST outcome yet. Next wait on the live process, audit full with independent verifier and report locked five-seed ablation/competition; preserve run and do not relaunch on observation timeout. Goal ACTIVE.

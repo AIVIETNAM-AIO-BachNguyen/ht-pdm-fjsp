@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V18 first-divergence diagnostic audited; Asia/Taipei). Goal
 
 
 
+## V19 full five-seed DEV — RUNNING, no outcome yet
+
+Verified campaign source pushed `a8bf4e2` before full. Fresh `research_result/framework_v19_dev_20261021T075021Z` is RUNNING under four-hour Python deadline plus `timeout 14430s`, on local Ubuntu; shell session ID `69495`, log `/tmp/v19_dev.log`, invocation in run manifest. Do not restart from RUNNING manifest alone; poll the live session or inspect authoritative process state. After completion, run independent `research_result/verify_framework_v19.py` audit in a fresh timestamped directory, interpret locked DEV gate/cases/compute/failures, then decide replication/TEST. No V19 full result yet, original goal ACTIVE.
+
 ## V19 campaign source/Ubuntu smoke — independent audit PASS, full DEV pending
 
 Two-arm full-matching scratch-RL V19 campaign and independent verifier implemented with same 10,177 active network parameters/initial weights, own-policy Q rank objective, equal forecast/update budget, future-demand profile in both arms, and temporal versus snapshot matching deficit as only feature ablation. Frozen V14/V18/V7 and FCFS/risk/rollout are on-panel comparators. Fourteen focused policy/campaign tests PASS. Fresh Ubuntu smoke `framework_v19_smoke_20261021T074909Z` COMPLETED; independent `framework_v19_audit_20261021T0749*` PASS (24 Q rows, 8 full-Q/independent-feature replays, 16 selected RL episode replays, 80 each frozen V14/V18 episode replays, 320 total comparator episodes, checkpoint/seed/bootstrap/gate). Next commit/push this verified source, then full 5-seed V19 DEV under 4h hard timeout; no full V19 result, replication or TEST yet. Goal ACTIVE.
