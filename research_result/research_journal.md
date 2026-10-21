@@ -1,3 +1,9 @@
+## 2026-10-21: V20 representation audit while DEV runs
+
+- Source inspection of `maintenance_framework_v14_policy.py` and `maintenance_framework_v20_policy.py` confirms both V20 arms inherit V14 `count_calibrated`: each edge sees local machine/worker/edge features and mean global embeddings, but the action opportunity-cost term uses the number of served machines, not the identity of the remaining unserved machines. Its `other_demand` sum includes demand of a second machine even when that machine is served in the same matching. This is a structural limitation of that term; no new experimental result is implied.
+- V14 `competition` instead uses an explicit action-specific unserved incidence tensor; its historical weakness does not isolate the value of identity because timing calibration and training credit differed. The V20 gate intervention may improve timing but does not itself restore action-specific unserved identity.
+- If independently audited V20 DEV misses the locked gate, test the interaction of exact unserved-identity opportunity cost and the activation-margin update in a prospective matched 2×2 scratch-RL design, controlling information, actor capacity, Q bank, seed split and budget. Do not launch or revise that campaign based on partial V20 training. Preserve the current V20 run and its prelocked criteria.
+
 # Research journal — RL maintenance dispatch continuation
 
 ## 2026-10-21: V20 implementation, smoke audit and full DEV start
