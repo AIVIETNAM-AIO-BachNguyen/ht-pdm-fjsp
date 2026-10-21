@@ -6,6 +6,10 @@ Updated: 2026-10-21 (V19 full DEV independently audited; Asia/Taipei). Goal: **A
 
 
 
+## V19 post-no-go diagnostic plan — prelocked, no new action/Q outcomes
+
+`v19_first_divergence_plan_vi.md` fixes already-opened V19 final panel comparisons: temporal versus rollout and matched snapshot on interchangeable/reciprocal2, plus 5×5 V19/V14 reciprocal3 descriptive cross-product. First divergences receive 16 fresh disjoint own/risk full-H64 forecast tapes under selected V19 continuation, hierarchical CI and independent action/Q/episode replay. Diagnostic seeds73570000/01, 30-minute runner/audit limits; no new training or TEST. Next code/tests/Ubuntu smoke/source push before full diagnostic. V19 remains no-go; goal ACTIVE.
+
 ## V19 full five-seed DEV — independently audited no-go
 
 Full `framework_v19_dev_20261021T075021Z` COMPLETED in 3,971.05 s; independent `framework_v19_audit_20261021T085652Z/independent_audit.json` PASS on source/comparator hashes, equal 10,177 active parameters/initial weights, 240 full Q/features source replays, all 640 selected V19 + 640 V14 + 640 V18 final episode replays, selection/bootstrap/gate. Candidate temporal deficit869.72 versus matched snapshot877.63, paired −7.91 CI95[−16.11,−1.55], five of five seed means negative, three of three strongest-control seed means negative. Locked material ≤−10 gate FAILS; candidate +3.12% above rollout843.38, 28.31× faster, and +11.49 above V14 joint858.23. Original B ≤1% planner margin misses by17.91 cost; A ≥5% strongest baseline misses by68.51. Interchangeable/reciprocal2 planner gaps remain +63.11/+63.71 with +2.90/+2.61 H failures and +8.91/+7.69 PM queue ticks despite comparable service starts; reciprocal3 gain drives much of ablation. See `framework_v19_dev_findings_vi.md`. No V19 replication/TEST; goal ACTIVE. Next prelock a first-divergence/continuation diagnostic on already-opened V19 DEV to distinguish timing, assignment and credit before a new scratch-RL method.
