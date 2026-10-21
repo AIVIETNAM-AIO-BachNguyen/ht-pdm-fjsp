@@ -1,10 +1,14 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V17 scratch-RL DEV audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V17 continuation diagnostic audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
+
+## V17 first-divergence continuation diagnostic — audited mismatch
+
+Prelock `c641399`; source/tests/smoke audit pushed `f7c5c6d`. Full opened-DEV `v17_first_divergence_dev_20261021T043059Z` and independent audit `v17_first_divergence_audit_20261021T043359Z` PASS for 160 same-tape pairs, 150 complete 16-scenario own/risk Q banks, 192 episode replays, 588,480 forecast transitions. Interchangeable first-root own-policy Q V17−rollout +0.12 CI95[−2.02,+2.30] against actual +99.85; reciprocal2 own-Q −11.33 [−18.10,−4.14] favors V17 against actual +93.45, while risk-Q +23.71 favors rollout. Reciprocal2 48/80 first differences are V17 service versus rollout WAIT. Locked own-Q-favors-rollout gate FALSE. This is a continuation-dependent credit warning; V11 risk-reference training previously collapsed. Report `v17_first_divergence_findings_vi.md`. Next bound disagreement-aware credit on opened states before another RL method. Goal ACTIVE; no replication/TEST.
 
 ## V17 full-matching relative-Q projection — audited DEV ablation gain, competitive no-go
 
