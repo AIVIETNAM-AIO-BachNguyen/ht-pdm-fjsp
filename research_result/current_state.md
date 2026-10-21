@@ -1,12 +1,16 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V19 full DEV independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V19 first-divergence diagnostic independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
 
-## V19 post-no-go diagnostic plan — prelocked, no new action/Q outcomes
+## V19 post-no-go first-divergence diagnostic — independent audit PASS
+
+Prelocked plan `v19_first_divergence_plan_vi.md` and source push `581d72c` preceded full `v19_first_divergence_dev_20261021T120937Z`; independent `v19_first_divergence_audit_20261021T121317Z/independent_audit.json` PASS on 592 episodes, 320 pair rows, all 169 Q banks/655,360 transitions and 400 descriptive V19/V14 crossed pairs. On interchangeable/reciprocal2, V19−rollout actual cost +63.11/+63.71 and failures +2.90/+2.61 despite equal/nearly equal service starts. First-root own-continuation Q −1.35 CI95[−3.19,+0.55]/−4.58[−9.94,+1.27], whereas risk-continuation Q +19.96[+11.04,+29.87]/+25.32[+1.32,+46.94]; continuation-mismatch flags TRUE, causal attribution limited. Temporal versus snapshot root alignment FALSE on both weak cases. V19 costs +53.39 versus frozen V14 on reciprocal3 in descriptive crossed comparison. See `v19_first_divergence_findings_vi.md`. V19 no-go, no replication/TEST. Next diagnose frozen V14 directly versus rollout on these weak cases, then propose V14-anchored scratch-RL improvement if supported. Goal ACTIVE.
+
+## V19 post-no-go diagnostic plan — prelocked before outcomes
 
 `v19_first_divergence_plan_vi.md` fixes already-opened V19 final panel comparisons: temporal versus rollout and matched snapshot on interchangeable/reciprocal2, plus 5×5 V19/V14 reciprocal3 descriptive cross-product. First divergences receive 16 fresh disjoint own/risk full-H64 forecast tapes under selected V19 continuation, hierarchical CI and independent action/Q/episode replay. Diagnostic seeds73570000/01, 30-minute runner/audit limits; no new training or TEST. Next code/tests/Ubuntu smoke/source push before full diagnostic. V19 remains no-go; goal ACTIVE.
 

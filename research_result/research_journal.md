@@ -1,5 +1,12 @@
 # Research journal — RL maintenance dispatch continuation
 
+## 2026-10-21: V19 first-divergence audit and V14 direction
+
+- Full prelocked V19 first-divergence diagnostic and independent audit PASS (`v19_first_divergence_dev_20261021T120937Z`, `v19_first_divergence_audit_20261021T121317Z`). Seventeen focused tests and Ubuntu smoke/audit passed; source pushed at `581d72c` before full.
+- In interchangeable/reciprocal2, V19 still costs +63.11/+63.71 relative to rollout, with +2.90/+2.61 failures despite similar service-start counts. First-root value changes sign between own V19 continuation (−1.35/−4.58, both CI crossing zero) and risk continuation (+19.96/+25.32, both CI lower >0). This supports continuation sensitivity, not a closed-loop causal attribution.
+- Temporal feature versus matched snapshot has near-zero first-root own-Q in both weak cases, so representation change did not resolve their planner gap. On reciprocal3, frozen V14 beats V19 by 53.39 in a descriptive 5×5 crossed comparison.
+- User correctly redirected attention toward V14: it is the strongest structured RL starting point on this panel (858.23 versus V19 869.72 and flat PPO 900.83), though its identity-specific ablation failed and rollout remains 843.38. Next use the already-opened DEV panel for a direct V14-versus-rollout first-divergence/continuation diagnostic before formulating a V14-anchored method. No new TEST or V19 replication.
+
 ## 2026-10-20: New goal intake and source audit
 
 - Read the attached full objective. Completion bar is stronger than the prior V1–V7 goal: component ablation **and** competitive performance against the strongest prelocked comparator by criterion A (≥5% cost reduction) or B (≤1% cost gap with ≥10× decision speed and no simple-heuristic domination), plus ≥5 training seeds and independent replication. V7 does not meet it.
