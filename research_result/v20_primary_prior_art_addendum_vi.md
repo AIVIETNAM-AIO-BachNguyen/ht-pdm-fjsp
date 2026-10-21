@@ -1,0 +1,7 @@
+# V20 prior-art addendum after campaign launch
+
+Date: 2026-10-21. This note supplements the immutable pre-run boundary in `v20_primary_prior_art_boundary_vi.md`. It changes no V20 method, metric, comparator, seed, gate or source file used by the running campaign.
+
+A further primary-source search found [Zhang et al., “Counterfactual-attention multi-agent reinforcement learning for joint condition-based maintenance and production scheduling,” *Journal of Manufacturing Systems* 71 (2023), 70–81, DOI 10.1016/j.jmsy.2023.08.011](https://www.sciencedirect.com/science/article/abs/pii/S0278612523001607). The publisher's abstract describes a joint maintenance/production problem in a deteriorating hybrid flow shop and a multi-agent RL method with attention, action abstraction and coordination modules. This reinforces that maintenance/scheduling RL, high-dimensional action structuring and a broad “counterfactual” framing are established. The accessible abstract does **not** establish that the paper trains a whole-matching service-versus-WAIT Q margin, so no equivalence or distinction at that level is asserted here.
+
+V20's defensible research question remains the narrow matched-ablation claim stated in its prelocked proposal. Even if DEV, independent replication and fresh TEST all succeed, originality would still require a full-text comparison with this and other nearby work. The campaign runs and scientific gates remain unchanged.
