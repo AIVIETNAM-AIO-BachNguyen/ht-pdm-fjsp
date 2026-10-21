@@ -1,5 +1,17 @@
 # Research journal — RL maintenance dispatch continuation
 
+## 2026-10-21: V20 prospective activation-margin method and literature boundary
+
+- Corrected V14 comparator description: frozen count-calibrated cost857.84 is slightly below joint858.23 on the V19 panel; direct root-Q and logged-credit diagnostics specifically tested joint. The failed joint identity ablation means count-calibrated is the more parsimonious method basis; both stay frozen comparators.
+- Primary-source boundary checked Learning to Dispatch, AirME/HetGPO, Option-Critic and learned value plus matching. No generic novelty claim for scheduling RL, stochastic predictive maintenance, hierarchy, waiting or future resource reservation. See `v20_primary_prior_art_boundary_vi.md`.
+- Prospective V20 proposal/protocol/seed registry prelock a same-architecture/capacity two-arm scratch-RL contrast: explicit whole-matching WAIT/start margin versus generic expected-Q, both on identical greedy-continuation Q banks and factorized action map. Fresh 737xxxxx roles checked disjoint. Next implement/tests/smoke/audit/push before full five-seed DEV. No V20 outcome, replication or TEST.
+
+## 2026-10-21: V14 training-credit calibration probe audited
+
+- Retrospective plan was prelocked before old Q/logits; source push `e6dfaf5`, full `v14_training_credit_probe_dev_20261021T123559Z`, independent `v14_training_credit_probe_audit_20261021T123615Z` PASS for 3,840 rows. No new episodes or TEST.
+- Early logged states: WAIT Q better by ≥5 in 92/660 interchangeable, 168/660 reciprocal2; selected V14 nevertheless serves in 92/92 and 114/168. Across all early states, selected WAIT 0%/20.15%, mean Q regret 7.21/24.07. All five seeds show mismatch, though historical Q itself more often favors service.
+- Mechanism hypothesis shifts from representation alone to policy calibration of the WAIT/start boundary, with possible old-policy credit bias. Next inspect primary literature and prelock a distinct V14-anchored scratch-RL method separating defer/activate from conditional matching while controlling capacity, Q data and compute. Original competition and validation gates unchanged.
+
 ## 2026-10-21: Direct V14 rollout-gap diagnostic independently audited
 
 - Frozen V14 versus rollout on already-opened V19 final DEV panel, prelocked before action/Q outcomes. Source push `8c2eb85` followed passing focused tests/Ubuntu smoke/independent replay. Full and audit PASS (`v14_direct_gap_dev_20261021T122517Z`, `v14_direct_gap_audit_20261021T122749Z`).
@@ -11,7 +23,7 @@
 - Full prelocked V19 first-divergence diagnostic and independent audit PASS (`v19_first_divergence_dev_20261021T120937Z`, `v19_first_divergence_audit_20261021T121317Z`). Seventeen focused tests and Ubuntu smoke/audit passed; source pushed at `581d72c` before full.
 - In interchangeable/reciprocal2, V19 still costs +63.11/+63.71 relative to rollout, with +2.90/+2.61 failures despite similar service-start counts. First-root value changes sign between own V19 continuation (−1.35/−4.58, both CI crossing zero) and risk continuation (+19.96/+25.32, both CI lower >0). This supports continuation sensitivity, not a closed-loop causal attribution.
 - Temporal feature versus matched snapshot has near-zero first-root own-Q in both weak cases, so representation change did not resolve their planner gap. On reciprocal3, frozen V14 beats V19 by 53.39 in a descriptive 5×5 crossed comparison.
-- User correctly redirected attention toward V14: it is the strongest structured RL starting point on this panel (858.23 versus V19 869.72 and flat PPO 900.83), though its identity-specific ablation failed and rollout remains 843.38. Next use the already-opened DEV panel for a direct V14-versus-rollout first-divergence/continuation diagnostic before formulating a V14-anchored method. No new TEST or V19 replication.
+- User correctly redirected attention toward V14: it is a strong structured RL starting point on this panel (joint 858.23, count-calibrated 857.84, versus V19 869.72 and flat PPO 900.83), though its identity-specific ablation failed and rollout remains 843.38. Next use the already-opened DEV panel for a direct V14-versus-rollout first-divergence/continuation diagnostic before formulating a V14-anchored method. No new TEST or V19 replication.
 
 ## 2026-10-20: New goal intake and source audit
 

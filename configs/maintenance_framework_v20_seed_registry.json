@@ -1,0 +1,9 @@
+{
+  "campaign_version": "maintenance_framework_v20_activation_margin_dev_v1",
+  "training": {"start": 73700000, "count": 5},
+  "selection_development": {"start": 73710000, "count": 8},
+  "evaluation_development": {"start": 73711000, "count": 16},
+  "smoke": {"start": 73720000, "count": 2},
+  "forecast_seed": 73730000,
+  "bootstrap_seed": 73740000
+}

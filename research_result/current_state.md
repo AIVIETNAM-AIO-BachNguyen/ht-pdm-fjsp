@@ -1,10 +1,18 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V14 direct gap diagnostic independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V14 training-credit probe independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
+
+## V20 activation-margin method/protocol — prospective, no RL outcome
+
+`v20_activation_margin_proposal_vi.md`, `framework_v20_dev_protocol_vi.md`, `v20_primary_prior_art_boundary_vi.md` and seed registry prelock a V14 count-calibrated 3,219-parameter factorized WAIT/start and conditional matching policy. Candidate trains a four-scenario greedy-continuation counterfactual whole-matching WAIT margin; equal-capacity `generic_q` control receives the same Q bank/information/action map/budget with generic expected-Q improvement. Five train seeds73700000–04, eight selection-only and 16 final disjoint DEV physical seeds, eight fixed updates, four equal cases, original A/B and material-ablation gates. Exact new integer roles have no historical collision. This is a hypothesis, not novelty or performance evidence. Next implement policy/campaign/verifier, focused tests, Ubuntu smoke/audit and source push before full DEV. Preserve both V14 joint/count as frozen comparators and user files. Goal ACTIVE.
+
+## V14 logged training-credit versus selected-action probe — independent audit PASS
+
+Prelocked `v14_training_credit_probe_plan_vi.md`, source/tests/smoke audit pushed `e6dfaf5` before full `v14_training_credit_probe_dev_20261021T123559Z`; independent `v14_training_credit_probe_audit_20261021T123615Z/independent_audit.json` PASS for all 3,840 rows, legal sets, Q margins, selected logits, regret, summary and hashes. Early tick<16 states: historical stochastic old-policy Q favored WAIT by ≥5 in 92/660 interchangeable and 168/660 reciprocal2 states, but frozen selected V14 served in 92/92 and 114/168 respectively. Across all early rows selected WAIT was 0% and 20.15%; selected Q regret≥5 in 35.30%/57.88%. All five seeds show the mismatch. Yet historical Q more often favors service (mean ΔQ best-service−WAIT −16.79/−26.45), so calibration and possible continuation/credit bias coexist. See `v14_training_credit_findings_vi.md`. Next propose V14-anchored explicit WAIT-vs-start and conditional matching credit, matched capacity/budget control, fresh five-seed DEV and strong comparators, after primary literature boundary. Goal ACTIVE; no replication/TEST.
 
 ## Frozen V14 direct rollout-gap diagnostic — independent audit PASS
 
