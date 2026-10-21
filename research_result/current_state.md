@@ -6,9 +6,9 @@ Updated: 2026-10-21 (V14 capacity-matched control prelocked and Ubuntu smoke ver
 
 
 
-## V15 release-horizon hazard direction — proposal and probe locked, no training yet
+## V15 release-horizon hazard probe — independently audited screening no-go
 
-After V14's identity-specific no-go, `v15_release_hazard_proposal_vi.md` proposes scoring each legal matching by the known probability that an unserved machine fails before its first compatible technician is released, with a learned current-state weight. The fair control keeps the same count actor and learned weights but uses an age-agnostic bounded release proxy. This targets the observed PM failure/queue gap in interchangeable and reciprocal2 while avoiding a hard WAIT/assignment rule. Closest prior work includes Learning to Dispatch, HetGPO/AirME and multi-maintainer RL; no broad novelty is claimed. `v15_release_hazard_probe_protocol_vi.md` prospectively locks a leave-one-training-seed-out fit on immutable V14 training Q banks before any V15 code or outcomes. Only a material, seed-consistent held-out Q signal would justify a fresh five-seed scratch-RL campaign; the probe is not independent evaluation or goal success. V15 has not trained, and TEST remains closed.
+After a prospective pre-code current-tick correction, the prelocked V15 probe evaluated an exact earliest-compatible-release PM hazard against an age-agnostic release proxy on all 7,680 immutable V14 count-arm training Q states. Focused tests 7 PASS, 12-state Ubuntu smoke and independent audit PASS. Full `v15_release_hazard_probe_dev_20261021T020150Z` and independent `v15_release_hazard_probe_audit_20261021T020216Z` PASS for all features/actions/Q/folds/bootstrap. Leave-one-training-seed-out saved-Q delta threshold−control −0.269 CI95[−0.526,+0.001]; five of five seed means negative, 11.4% actions change, but the locked material ≤−1/CI-upper<0 gate FALSE. Reciprocal3 worsens +0.431 Q/state. Feature is active but weak; do not launch V15 scratch RL from this evidence alone. Report `v15_release_hazard_probe_findings_vi.md`. No new seed, replication or TEST. Goal ACTIVE.
 
 ## V14 identity-specific capacity control — independently audited no-go
 
