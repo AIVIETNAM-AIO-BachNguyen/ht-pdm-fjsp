@@ -24,6 +24,12 @@ def write(path,rows):
     with Path(path).open('w',newline='') as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
 
+def cost_tensor(controller,train_seeds,source,cases,physical):
+    lookup={(r['controller'],str(r['train_seed']),r['case'],int(r['seed'])):float(r['objective'])
+            for r in source}
+    return np.asarray([[[lookup[(controller,str(t),c,seed)] for c in cases]
+                        for seed in physical] for t in train_seeds])
+
 def bootstrap(a,b):
     rng=np.random.default_rng(73040005);results=np.empty(20000)
     for left in tqdm(range(0,20000,1000),desc='V14/V17 hierarchical bootstrap',unit='chunk'):
@@ -82,14 +88,10 @@ def main():
                                for arm in ARMS})
     if args.profile=='dev':
         existing=read(v17/'episodes.csv')
-        def tensor(controller,train_seeds,source):
-            lookup={(r['controller'],r['train_seed'],r['case'],int(r['seed'])):float(r['objective']) for r in source}
-            return np.asarray([[[lookup[(controller,str(t),c,seed)] for c in CASES]
-                                for seed in physical] for t in train_seeds])
-        candidate=tensor('rank_projection',range(73000000,73000005),existing)
+        candidate=cost_tensor('rank_projection',range(73000000,73000005),existing,CASES,physical)
         summary['v17_rank_pooled']=float(candidate.mean())
-        summary['v17_rank_minus_v14']={arm:dict(mean=float(candidate.mean()-tensor(arm,seeds,rows).mean()),
-            ci95=bootstrap(candidate,tensor(arm,seeds,rows))) for arm in ARMS}
+        summary['v17_rank_minus_v14']={arm:dict(mean=float(candidate.mean()-cost_tensor(arm,seeds,rows,CASES,physical).mean()),
+            ci95=bootstrap(candidate,cost_tensor(arm,seeds,rows,CASES,physical))) for arm in ARMS}
     else:summary['v17_rank_pooled']=None;summary['v17_rank_minus_v14']=None
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     manifest=dict(status='COMPLETED',profile=args.profile,v14_run=str(V14),v17_run=str(v17),
