@@ -272,3 +272,7 @@ Implemented same-parameter temporal versus snapshot profile arms with matched ow
 ### 2026-10-21 — V19 full five-seed DEV launched
 
 Source/14 focused tests and fresh independently audited Ubuntu smoke pushed at `a8bf4e2` before full. New run `framework_v19_dev_20261021T075021Z` launched with four-hour deadline and `timeout 14430s`, currently RUNNING in shell session69495, log `/tmp/v19_dev.log`. No final/TEST outcome yet. Next wait on the live process, audit full with independent verifier and report locked five-seed ablation/competition; preserve run and do not relaunch on observation timeout. Goal ACTIVE.
+
+### 2026-10-21 — V19 closer primary prior-work check while full DEV runs
+
+Checked primary Zhang–Dietterich NeurIPS 1995 (time-indexed resource utilization with TD scheduling), Tassel et al. ICAPS 2022 (RL dispatch with time-varying capacities/non-preemptive tasks), Panda–Xiang–Liu EJOR 2024 (multi-period stochastic demand-capacity matching with backlog via RL), and prior AirME. Recorded boundary in `v19_primary_prior_art_boundary_vi.md`: no novelty claim for temporal resource features, dynamic matching, shared maintenance RL or domain-informed policy learning. Only the exact action-dependent future compatible-matching shortfall might distinguish V19, subject to deeper search and the unchanged full empirical gates. The running full DEV was not altered.
