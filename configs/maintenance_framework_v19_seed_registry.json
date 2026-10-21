@@ -1,0 +1,9 @@
+{
+  "campaign_version": "maintenance_framework_v19_temporal_capacity_dev_v1",
+  "training": {"start": 73400000, "count": 5},
+  "selection_development": {"start": 73410000, "count": 8},
+  "evaluation_development": {"start": 73411000, "count": 16},
+  "smoke": {"start": 73420000, "count": 2},
+  "forecast_seed": 73430000,
+  "bootstrap_seed": 73440000
+}
