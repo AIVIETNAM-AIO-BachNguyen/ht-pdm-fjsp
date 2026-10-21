@@ -1,14 +1,14 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V18 first-divergence diagnostic audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+Updated: 2026-10-21 (V19 full DEV independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
 
 
-## V19 full five-seed DEV — RUNNING, no outcome yet
+## V19 full five-seed DEV — independently audited no-go
 
-Verified campaign source pushed `a8bf4e2` before full. Fresh `research_result/framework_v19_dev_20261021T075021Z` is RUNNING under four-hour Python deadline plus `timeout 14430s`, on local Ubuntu; shell session ID `69495`, log `/tmp/v19_dev.log`, invocation in run manifest. Do not restart from RUNNING manifest alone; poll the live session or inspect authoritative process state. After completion, run independent `research_result/verify_framework_v19.py` audit in a fresh timestamped directory, interpret locked DEV gate/cases/compute/failures, then decide replication/TEST. No V19 full result yet, original goal ACTIVE.
+Full `framework_v19_dev_20261021T075021Z` COMPLETED in 3,971.05 s; independent `framework_v19_audit_20261021T085652Z/independent_audit.json` PASS on source/comparator hashes, equal 10,177 active parameters/initial weights, 240 full Q/features source replays, all 640 selected V19 + 640 V14 + 640 V18 final episode replays, selection/bootstrap/gate. Candidate temporal deficit869.72 versus matched snapshot877.63, paired −7.91 CI95[−16.11,−1.55], five of five seed means negative, three of three strongest-control seed means negative. Locked material ≤−10 gate FAILS; candidate +3.12% above rollout843.38, 28.31× faster, and +11.49 above V14 joint858.23. Original B ≤1% planner margin misses by17.91 cost; A ≥5% strongest baseline misses by68.51. Interchangeable/reciprocal2 planner gaps remain +63.11/+63.71 with +2.90/+2.61 H failures and +8.91/+7.69 PM queue ticks despite comparable service starts; reciprocal3 gain drives much of ablation. See `framework_v19_dev_findings_vi.md`. No V19 replication/TEST; goal ACTIVE. Next prelock a first-divergence/continuation diagnostic on already-opened V19 DEV to distinguish timing, assignment and credit before a new scratch-RL method.
 
 ## V19 campaign source/Ubuntu smoke — independent audit PASS, full DEV pending
 
