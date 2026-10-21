@@ -19,7 +19,7 @@ Primary V20 verifier replays all selected V20/V14 evaluation episodes, sampled f
 
 - Corrected V14 comparator description: frozen count-calibrated cost857.84 is slightly below joint858.23 on the V19 panel; direct root-Q and logged-credit diagnostics specifically tested joint. The failed joint identity ablation means count-calibrated is the more parsimonious method basis; both stay frozen comparators.
 - Primary-source boundary checked Learning to Dispatch, AirME/HetGPO, Option-Critic and learned value plus matching. No generic novelty claim for scheduling RL, stochastic predictive maintenance, hierarchy, waiting or future resource reservation. See `v20_primary_prior_art_boundary_vi.md`.
-- Prospective V20 proposal/protocol/seed registry prelock a same-architecture/capacity two-arm scratch-RL contrast: explicit whole-matching WAIT/start margin versus generic expected-Q, both on identical greedy-continuation Q banks and factorized action map. Fresh 737xxxxx roles checked disjoint. Next implement/tests/smoke/audit/push before full five-seed DEV. No V20 outcome, replication or TEST.
+- Prospective V20 proposal/protocol/seed registry prelock a same-architecture/capacity two-arm scratch-RL contrast: explicit whole-matching WAIT/start margin versus generic expected-Q, both with the same greedy-continuation Q-bank procedure and factorized action map; on-policy states and realized Q values can differ after the first update. Fresh 737xxxxx roles checked disjoint. Next implement/tests/smoke/audit/push before full five-seed DEV. No V20 outcome, replication or TEST.
 
 ## 2026-10-21: V14 training-credit calibration probe audited
 
