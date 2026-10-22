@@ -1,6 +1,14 @@
 # Current research state — shared-resource maintenance RL
 
-Updated: 2026-10-21 (V20 five-seed DEV independently audited; Asia/Taipei). Goal: **ACTIVE** under the new V1–V7 continuation objective in the attached user request. This state file records what is established; it is not a completion claim. Full requirement text is in `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
+## New machine-demand/capacity formulation — structural gate, manual screen
+
+2026-10-22 goal direction: study whether separately learned PM demand and technician allocation are necessary under the actual shared-request simulator. Proposal and pre-outcome mechanism protocol: `docs/machine_capacity_coordination_formulation_vi.md`. Existing request admission is free, non-binding and leaves physical dynamics unchanged; matching is decided only by the coordinator. With the same present information, an always-request coordinator can emulate a delayed requester by ignoring extra requests and their earlier timestamps. This is an expressivity argument, not a trained-policy performance claim. V14 count-calibrated remains a frozen baseline candidate and its logged-Q/KL trainer is not PPO.
+
+The new eight-pair, 512-tick manual forced-action screen at `research_result/machine_capacity_manual_screen_20261022T044828898572Z` COMPLETED: physical state, economic components and legal matching superset equal at every tick; request metadata differs on 512/512 ticks and the always-request arm has 1,086 extra queued-PM machine-ticks in total. Seeds 76000000–03 were disjoint from 57 existing registries. The artifact's `protocol_snapshot.md` matches its pre-run protocol SHA256, retained after a later goal-gate amendment. This is engineering mechanism evidence with a self-check, not an independently audited distributional gain. It supports **not launching two-policy training** on the present free-request contract. The proposed second reference-state/capacity screen remains unrun and requires its own locked amendment if pursued. No new training, replication or TEST has opened. User-owned workspace edits are untouched.
+
+The V20 final-state DEV diagnostic `v20_final_state_diag_dev_20261022T035339Z` is COMPLETED; independent verifier `v20_final_state_diag_audit_20261022T043508Z` is still running at this update. Do not interpret its Q outputs as audited until its terminal artifact appears, and do not let it redirect the new goal into scorer tuning. The older interrupted V20 diagnostic remains preserved.
+
+Historical V14–V20 snapshot below (last updated 2026-10-21, Asia/Taipei). It preserves the prior V1–V7 continuation context and verdicts; the active machine-demand/capacity objective and its status are recorded above. The old requirement text remains at `/home/bachng/.codex/attachments/6230f6b6-fe5d-4e53-bd7d-8f728b748019/pasted-text-1.txt`.
 
 
 
